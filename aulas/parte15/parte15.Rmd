@@ -601,7 +601,7 @@ Não sabemos a distribuição de $\hat{p}$, mas o evento $\hat{p}=\gamma$, onde 
 
 ## Exemplo - Solução {.build}
 
-Portanto, $$P \left( \left \{ \sum_{i=1}^{10} X_i = 3 \right \} \right) = {{10}\choose{3}}0.3^3 0.7^7  = 0.267.$$ 
+Portanto, $$P \left( \left \{ \sum_{i=1}^{10} X_i = 3 \right \} \right) = {\binom{10}{3}}0.3^3 0.7^7  = 0.267.$$ 
 
 Temos uma probabilidade que é 5 vezes maior que a aproximação.
 
@@ -617,7 +617,7 @@ Tome $n=50$, agora.  Podemos modificar rapidamente as contas da aproximação no
 
 ## Intervalo de Confiança para proporções
 
-Observe agora que $$P \left( \sum_{i=1}^{50} X_i = 15 \right) = {{50}\choose{15}}0.3^{15} 0.7^{50-15} = 0.12237$$
+Observe agora que $$P \left( \sum_{i=1}^{50} X_i = 15 \right) = {\binom{50}{15}}0.3^{15} 0.7^{50-15} = 0.12237$$
 
 > A diferença agora é muito menor e, à medida que $n \rightarrow \infty$ ela tende a 0, pelo TCL. 
 
