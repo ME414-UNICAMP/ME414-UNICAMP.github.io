@@ -5,9 +5,8 @@ permalink: /aulas/
 ---
 
 
-## Programa
 
-### Estatística Descritiva
+## Estatística Descritiva
 
 * Introdução
 * Variáveis Categóricas
@@ -29,7 +28,7 @@ permalink: /aulas/
 [Parte04](slides/parte04.html)
 
 
-### Probabilidade
+## Probabilidade
 
 * Definição
 * Espaço amostral
@@ -47,7 +46,7 @@ permalink: /aulas/
 
 
 
-### Variáveis aleatórias discretas
+## Variáveis aleatórias discretas
 * Distribuições de Probabilidade Discreta
 * Função Distribuição Acumulada (FDA)
 * Esperança e variância
@@ -59,7 +58,7 @@ permalink: /aulas/
 [Parte11](slides/parte11.html)
 
 
-### Variáveis aleatórias contínuas
+## Variáveis aleatórias contínuas
 * Função densidade
 * Função de distribuição acumulada
 * Esperança e variância
@@ -68,7 +67,7 @@ permalink: /aulas/
 [Parte12](slides/parte12.html)
 [Parte13](slides/parte13.html)
 
-### Distribuição Amostral
+## Distribuição Amostral
 * População e Amostra
 * Estatística e Parâmetro
 * Distribuições Amostrais
@@ -76,7 +75,7 @@ permalink: /aulas/
 
 [Parte14](slides/parte14.html)
 
-### Estimação Pontual e Intervalos de Confiança - uma população
+## Estimação Pontual e Intervalos de Confiança - uma população
 * Estimação Pontual
 * Estimação por intervalo: proporção
 * Estimação por intervalo: média
@@ -84,16 +83,14 @@ permalink: /aulas/
 [Parte15](slides/parte15.html)
 [Parte16](slides/parte16.html)
 
-### Teste de Hipóteses - uma população
-
+## Teste de Hipóteses - uma população
 * Teste de hipótese: proporção
 * Teste de hipótese: média
 
 [Parte17](slides/parte17.html)
 [Parte18](slides/parte18.html)
 
-### Inferência para duas populações
-
+## Inferência para duas populações
 * Intervalo de confiança para duas médias
 * Intervalo de confiança para duas proporções
 * Teste de hipótese para duas médias
@@ -102,7 +99,7 @@ permalink: /aulas/
 [Parte19](slides/parte19.html)
 [Parte20](slides/parte20.html)
 
-### Testes de Aderência, Independência e Homogeneidade
+## Testes de Aderência, Independência e Homogeneidade
 
 [Parte21](slides/parte21.html)
 [Parte22](slides/parte22.html)
