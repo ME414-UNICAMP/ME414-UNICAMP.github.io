@@ -1,0 +1,627 @@
+---
+title: ME414 - Estatística para Experimentalistas
+subtitle: Parte 22
+output: 
+  ioslides_presentation:
+         widescreen: true
+logo: ../logo-imecc.png
+---
+
+
+# Testes de Independência e Homogeneidade
+
+## Tabela de contingência {.build}
+
+Quando dois ou mais atributos são observados para cada elemento amostrado, os dados podem ser simultaneamente classificados com respeito aos níveis de ocorrência para cada um dos atributos.  
+
+> Por exemplo, empregados podem ser classificados de acordo com escolaridade e tipo de ocupação, flores podem ser classificadas com respeito ao tipo de folhagem e tamanho.  
+
+**Tabela de contingência:** enumerar a frequência de obervações da classificação simultânea de duas ou mais características.
+
+
+Podemos usar a tabela de contingência para estudar se certa característica parece se manifestar independentemente da outra ou se níveis de uma característica tendem a estar associados com níveis da outra.
+
+## Exemplo: Racionamento de energia {.build}
+
+
+```{r racionamento, echo=FALSE}
+x <- matrix(c(138,83,64,
+              64,67,84),byrow = TRUE,ncol=3)
+colnames(x) <- c("Favorável","Indiferente","Contrário")
+rownames(x) <- c("A","B")
+library(knitr)
+n <- sum(x)
+```
+
+Uma amostra aleatória de `r n` pessoas responde um questionário sobre filiação partidária (partido $A$ ou $B$) e atitude mediante um programa de racionamento de energia. Os resultados estão apresentados na tabela de contingência a seguir:
+
+```{r, echo=FALSE}
+kable(x)
+```
+
+Os dados indicam que a opinião sobre racionamento de energia é independente da filiação partidária?
+
+Podemos medir quantitativamente a associaçãoo entre as duas características?
+
+
+## Exemplo: Racionamento de energia {.build}
+
+Primeiramente, consideremos a tabela de um ponto de vista descritivo, transformando as contagens em proporcões.
+
+* Proporções por caselas
+
+|   | Favorável                    | Indiferente                  | Contrário                     | Total
+|:--|-----------------------------:|-----------------------------:|------------------------------:|-----:
+|A  |`r round(x[1,1]/sum(x),2)`|`r round(x[1,2]/sum(x),2)`|`r round(x[1,3]/sum(x),2)` | `r round(sum(x[1,])/sum(x), 2)`
+|B  |`r round(x[2,1]/sum(x),2)`|`r round(x[2,2]/sum(x),2)`|`r round(x[2,3]/sum(x),2)` | `r round(sum(x[2,])/sum(x), 2)`
+|Total | `r round(sum(x[,1])/sum(x), 2)` | `r round(sum(x[,2])/sum(x), 2)` | `r round(sum(x[,3])/sum(x), 2)`| 1.00
+
+
+## Exemplo: Racionamento de energia
+
+Primeiramente, consideremos a tabela de um ponto de vista descritivo, transformando as contagens em proporcões.
+
+* Proporções por linhas
+
+|   | Favorável                    | Indiferente                  | Contrário                     | Total
+|:--|-----------------------------:|-----------------------------:|------------------------------:|-----:
+|A  |`r round(x[1,1]/sum(x[1,]),2)`|`r round(x[1,2]/sum(x[1,]),2)`|`r round(x[1,3]/sum(x[1,]),2)` |1.00
+|B  |`r round(x[2,1]/sum(x[2,]),2)`|`r round(x[2,2]/sum(x[2,]),2)`|`r round(x[2,3]/sum(x[2,]),2)` |1.00
+
+
+
+## Exemplo: Racionamento de energia
+
+Primeiramente, consideremos a tabela de um ponto de vista descritivo, transformando as contagens em proporcões.
+
+* Proporções por colunas
+
+|   | Favorável                    | Indiferente                  | Contrário                     |
+|:--|-----------------------------:|-----------------------------:|------------------------------:|
+|A  |`r round(x[1,1]/sum(x[,1]),2)`|`r round(x[1,2]/sum(x[,2]),2)`|`r round(x[1,3]/sum(x[,3]),2)` |
+|B  |`r round(x[2,1]/sum(x[,1]),2)`|`r round(x[2,2]/sum(x[,2]),2)`|`r round(x[2,3]/sum(x[,3]),2)` |
+|Total | 1.00 | 1.00| 1.00|
+
+
+## Exemplo: Racionamento de energia
+
+*  Gráficos de barras: Frequências relativas (caselas, linhas e colunas)
+
+<center>
+```{r,echo=FALSE, fig.height=4.5, fig.width=10}
+par(mfrow=c(1,3))
+barplot(prop.table(x), xlab="Opinião sobre racionamento", main="Proporção por Caselas", beside=TRUE, legend.text=TRUE, ylim=c(0,1), las=1, cex.lab=1.3, cex.main=1.3, cex.axis=1.3, cex.names=1.3)
+barplot(prop.table(x,1),xlab="Opinião sobre racionamento", main="Proporção por Linhas", beside=TRUE,legend.text=TRUE,ylim=c(0,1), las=1, cex.lab=1.3, cex.main=1.3, cex.axis=1.3, cex.names=1.3)
+barplot(prop.table(x,2),xlab="Opinião sobre racionamento", main="Proporção por Colunas", beside=TRUE,legend.text=TRUE,ylim=c(0,1), las=1, cex.lab=1.3, cex.main=1.3, cex.axis=1.3, cex.names=1.3)
+```
+</center>
+
+
+
+## Exemplo: Racionamento de energia {.build}
+
+Através das tabelas de proporções e gráficos de barras, observam-se diferenças aparentes nas distribuições ao longo das linhas, colunas ou das proporções totais das respostas. 
+
+Por exemplo, com relação às proporções por linha, observa-se que as proporções diminuem ao longo da primeira linha e aumentam ao longo da segunda.
+
+Podemos usar um teste estatístico para avaliar possível associação entre filiação partidária e opinião com relação ao programa de racionamento de energia.
+
+## Teste de Independência {.build}
+
+Considere duas características designadas por $A$ e $B$ e suponha que existem $r$ categorias $A_1,A_2, \ldots , A_r$ para $A$ e $c$ categorias $B_1, B_2, \ldots, B_c$ para $B$. 
+
+Suponha que uma amostra de tamanho $n$ é classificada e distribuída nas classes de $A$ e $B$, produzindo uma tabela de contingência em que:
+
+$n_{ij}=$ frequência de observações com as características $A_i$ e $B_j$ conjuntamente. 
+
+$n_{i0}=$ total da $i$-ésima linha, ou frequência de $A_i$. 
+
+$n_{0j}=$ total da $j$-ésima coluna, ou frequência de $B_j$.
+
+
+## Teste de Independência
+
+|   | $B_1$| $B_2$|  $\ldots$ | $B_c$ | Total da linha |
+|:--|-----:|-----:|----------:|------:|---------------:|
+|$A_1$  |$n_{11}$ | $n_{12}$  | $\ldots$ | $n_{1c}$ | $n_{10}$ |
+|$A_2$  |$n_{21}$ | $n_{22}$  | $\ldots$ | $n_{2c}$ | $n_{20}$ |
+|$\vdots$| $\vdots$ | $\vdots$|  $\vdots$ |  $\vdots$ | $\vdots$|
+|$A_r$  |$n_{r1}$ | $n_{r2}$  | $\ldots$ | $n_{rc}$ | $n_{r0}$ |
+| Total da coluna | $n_{01}$ | $n_{02}$ | $\ldots$ | $n_{0c}$ | $n$|
+
+
+
+## Teste de Independência {.smaller}
+
+Podemos usar a população classificada em termos de proporções populacionais e a tabela anterior fica:
+
+|   | $B_1$| $B_2$|  $\ldots$ | $B_c$ | Total da linha |
+|:--|-----:|-----:|----------:|------:|---------------:|
+|$A_1$  |$p_{11}$ | $p_{12}$  | $\ldots$ | $p_{1c}$ | $p_{10}$ |
+|$A_2$  |$p_{21}$ | $p_{22}$  | $\ldots$ | $p_{2c}$ | $p_{20}$ |
+|$\vdots$| $\vdots$ | $\vdots$|  $\vdots$ |  $\vdots$ | $\vdots$|
+|$A_r$  |$p_{r1}$ | $p_{r2}$  | $\ldots$ | $p_{rc}$ | $p_{r0}$ |
+| Total da coluna | $p_{01}$ | $p_{02}$ | $\ldots$ | $p_{0c}$ | $1$|
+
+$p_{ij}=P(A_i \cap B_j)$ é a probabilidade da ocorrência conjunta de $A_i$ e $B_j$. 
+
+$p_{i0}=P(A_{i})$ é a probabilidade total da $i$-ésima linha. 
+
+$p_{0j}=P(B_{j})$ é a probabilidade total da $j$-ésima coluna. 
+
+
+## Teste de Independência 
+
+**Teste de independência:** interesse é testar se as classificações nas categorias de $A$ e $B$ são independentes, ou seja, pretende-se avaliar se 
+$$P(A_i\cap B_j)=P(A_i)P(B_j)$$
+para todo $i=1,2, \ldots , r$ e $j=1,2, \ldots , c$
+
+## Teste de Independência {.build}
+
+**Hipóteses:**
+
+ $H_0: p_{ij}=p_{i0}p_{0j}$ para todas as componentes $(i,j)$ (**independência**)
+
+> $H_a: p_{ij} \neq p_{i0}p_{0j}$ para pelo menos um par $(i,j)$
+
+> O modelo de independência especifica as probabilidades das componentes em termo das probabilidades marginais. **Problema:** as probabilidades marginais são parâmetros desconhecidos. 
+
+> Como $p_{i0}=P(A_i)$, um estimador natural é a frequência relativa amostra de $A_i$,
+<center>$\displaystyle \hat{p}_{i0}=\frac{n_{i0}}{n}$</center>
+
+> Da mesma forma, $p_{0j}=P(B_j)$ é estimado por
+<center>$\displaystyle \hat{p}_{0j}=\frac{n_{0j}}{n}$</center> 
+
+
+## Teste de Independência {.build}
+
+
+Usando essas estimativas a probabilidade da componente $(i,j)$ é estimada por
+$$\hat{p}_{ij}=\hat{p}_{i0}\hat{p}_{0j}=\frac{n_{i0}n_{0j}}{n^2}$$ 
+
+Logo, a frequência relativa esperada sob o modelo de independência é
+
+$$E_{ij}=n \hat{p}_{ij} = \frac{n_{i0}n_{0j}}{n}$$ 
+
+Portanto, a **estatística do teste** é dada por:
+
+$$\chi^2= \sum_{r\times c \text{ componentes }}\frac{(O_{ij}-E_{ij})^2}{E_{ij}} = \sum_{r\times c \text{ componentes }}\frac{(n_{ij}-E_{ij})^2}{E_{ij}}$$
+
+que sob $H_0$ tem distribuição aproximadamente $\chi^2$ com $(r-1)\times(c-1)$ graus de liberdade, para $n$ grande.
+
+
+## Teste de Independência {.build}
+**Valor Crítico**: Para um nível de significância $\alpha$, encontrar o valor crítico $\chi^2_{crit}$ na tabela Chi-quadrado tal que $P(\chi^2_{(r-1)(c-1)} \geq \chi^2_{crit}) = \alpha.$
+
+<center>
+```{r, echo=FALSE, fig.width=6.5, fig.height=3, message=FALSE}
+library(openintro, verbose = FALSE)
+data(COL)
+df <- 4
+alpha <- 0.10
+
+ymax <- max(dchisq(0:16, df))/2
+
+x <- seq(0, 18, length.out = 300)
+y <- dchisq(x, df)
+
+par(mar = c(4, 2, 2, 1))
+plot(x, y, type = 'l', axes = FALSE, lwd=2, main = bquote("Distribuição "* chi[(r-1)(c-1)]^2), 
+     xlab="")
+abline(h = 0)
+axis(1)
+
+chi_crit <- round(qchisq(1-alpha, df), 3)  
+axis(1, at=chi_crit, label= bquote(chi[crit]^2))
+
+these <- which(x >= chi_crit)
+X <- x[c(these[1], these, rev(these)[1])]
+Y <- c(0, y[these], 0)
+polygon(X, Y, col = COL[1])
+
+text(chi_crit + 5, 0.02, labels= expression('área = P('* chi[(r-1)(c-1)]^2 >= chi[crit]^2 *') = '* alpha), pos = 3, cex = 1.2, col = COL[1])
+```
+</center>
+
+**Conclusão**: Rejeitamos $H_0$ se $\chi_{obs}^2 \geq \chi^2_{crit}.$
+
+
+## Exemplo: Racionamento de energia
+```{r racionamento, echo=FALSE}
+```
+
+```{r,echo=FALSE}
+a <- chisq.test(x, correct=FALSE)
+alpha <- 0.05
+chi_crit <- round(qchisq(1-alpha,df=a$parameter),2)
+```
+
+Frequências observadas ($n_{ij}$):
+
+```{r,echo=FALSE}
+kable(a$observed)
+```
+
+Frequências esperadas ($E_{ij}$), segundo hipótese de independência:
+
+```{r,echo=FALSE}
+kable(a$expected)
+```
+
+## Exemplo: Racionamento de energia {.build}
+
+A estatística $\chi^2$ tem o valor observado de 
+
+$$\chi^2_{obs}=4.539 + 0.073 + 4.914 + 6.016 + 0.097 + 6.514=`r round(a$statistic,2)` \stackrel{H_0}{\sim} \chi^2_{`r a$parameter`}$$
+
+Usando o nível de significância $\alpha=`r alpha`$, o valor crítico é $\chi^2_{crit} = \chi^2_{`r a$parameter`, `r alpha`} = `r chi_crit`$.
+
+<center>
+```{r, echo=FALSE, fig.width=6, fig.height=3}
+source("../functions/ChiSquareTail.R")
+xobs <- a$statistic
+df <- a$parameter
+ymax <- max(dchisq(0:15, df))/2
+
+par(mar = c(4, 2, 3, 1))
+ChiSquareTail(chi_crit, df, c(0, 15), col = COL[1])
+
+arrows(chi_crit, ymax, chi_crit, ymax/4, 0.1, col = COL[1])
+text(chi_crit, ymax, labels= bquote(chi[.(paste0(df, ",", alpha))]^2 == .(chi_crit)), pos = 3, cex = 1.2, col = COL[1])
+
+axis(1, at=xobs, label= bquote(chi[obs]^2))
+text(chi_crit + 3, 0.01, labels= bquote("área = "* .(alpha)), pos = 3, cex = 1.2, col = COL[1])
+```
+</center>
+
+## Exemplo: Racionamento de energia {.build}
+
+Como $\chi^2_{obs}= `r round(a$statistic,2)` > `r chi_crit` = \chi^2_{crit}$, rejeitamos a hipótese nula de indepêndencia.
+
+
+Concluímos que os dados trazem evidências de **associação** entre as duas características (filiação e opinião). 
+
+**CUIDADO!!!** Associação não implica CAUSA.
+
+Não podemos afirmar que existe uma relação de causa e efeito, pois os dados são observacionais, isto é, não aleatorizamos as pessoas para serem do partido $A$ ou $B$, por exemplo.
+  
+
+## Exemplo: Gênero e escolha da carreira {.build .smaller}
+
+```{r,echo=FALSE}
+x <- matrix(c(85,35,
+              55,25),byrow = TRUE,ncol=2)
+colnames(x) <- c("Masculino","Feminino")
+rownames(x) <- c("Economia","Administração")
+n <- sum(x)
+
+a <- chisq.test(x,correct=FALSE)
+alpha <- 0.05
+chi_crit <- round(qchisq(1-alpha,df=a$parameter),2)
+```
+
+Existe associação entre sexo e a carreira escolhida por `r n` alunos de Economia e Administração?
+
+Frequências observadas ($n_{ij}$):
+
+```{r,echo=FALSE}
+kable(a$observed)
+```
+
+Frequências esperadas ($E_{ij}$), segundo hipótese de independência:
+
+```{r,echo=FALSE}
+kable(a$expected)
+```
+  
+## Exemplo: Gênero e escolha da carreira {.build}
+  
+  
+A estatística $\chi^2$ tem o valor observado de 
+
+$$\chi^2_{obs}=\frac{(85-84)^2}{84}+\frac{(35-36)^2}{36}+\frac{(55-56)^2}{56}+\frac{(25-24)^2}{24}=`r round(a$statistic,3)` \stackrel{H_0}{\sim} \chi^2_{`r a$parameter`}$$
+ 
+Usando o nível de significância $\alpha=`r alpha`$, o valor crítico é $\chi^2_{crit} = \chi^2_{`r a$parameter`, `r alpha`} = `r chi_crit`$.
+
+<center>
+```{r, echo=FALSE, fig.width=4, fig.height=2.5}
+xobs <- a$statistic
+df <- a$parameter
+ymax <- max(dchisq(0.1:15, df))/2
+
+par(mar = c(3, 2, 3, 1))
+ChiSquareTail(chi_crit, df, c(0, 5), col = COL[1])
+
+arrows(chi_crit, ymax, chi_crit, ymax/4, 0.1, col = COL[1])
+text(chi_crit, ymax, labels= bquote(chi[.(paste0(df, ",", alpha))]^2 == .(chi_crit)), pos = 3, cex = 1.2, col = COL[1])
+```
+</center>
+
+
+Como $\chi^2_{obs}= `r round(a$statistic,3)` < `r chi_crit` = \chi^2_{crit}$, não rejeitamos a hipótese nula de indepêndencia. 
+  
+## Exemplo: Exercícios do Moodle e nota da Prova 1 {.build}
+
+
+```{r,echo=FALSE}
+dados <- read.csv("./dados/notas.csv", na.strings = "-", header=TRUE)
+dados <- dados[complete.cases(dados),]
+dados$P1_5 <- ifelse(dados$P1<5,"< 5 na P1",">= 5 na P1")
+dados$Moodle_5 <- ifelse(dados$Moodle<5,"< 5 no Moodle",">=5 no Moodle")
+
+x <- table(dados$Moodle_5,dados$P1_5)
+
+a <- chisq.test(x,correct=FALSE)
+alpha <- 0.05
+chi_crit <- round(qchisq(1-alpha,df=a$parameter),2)
+```
+
+Existe associação entre obter no mínimo 5 nos exercícios do Moodle e obter no mínimo 5 na prova 1 de ME414?
+
+As notas de `r sum(x)` alunos matriculados nas turmas de ME414 no 2S2015 foram consideradas. Os seguintes resultados foram obtidos:
+
+```{r,echo=FALSE}
+y <- rbind(x,c(sum(x[,1]),sum(x[,2])))
+y <- cbind(y,c(sum(x[1,]),sum(x[2,]), sum(x)))
+colnames(y) <- c("< 5 na P1",">= 5 na P1", "Total")
+rownames(y) <- c("< 5 no Moodle",">= 5 no Moodle", "Total")
+kable(y)
+```
+
+## Exemplo: Exercícios do Moodle e nota da Prova 1 {.smaller .build}
+
+Tabela de frequências esperadas, segundo a hipótese nula de independência:
+
+$$E_{ij}=n\hat{p}_{ij}=\frac{n_{i0}n_{0j}}{n}$$
+
+```{r,echo=FALSE}
+e <- round(a$expected, 2)
+kable(e)
+```
+
+A estatística $\chi^2$ tem o valor observado de 
+
+$$\chi^2_{obs}=\frac{(`r x[1,1]`-`r e[1,1]`)^2}{`r e[1,1]`}+\frac{(`r x[1,2]`-`r e[1,2]`)^2}{`r e[1,2]`}+\frac{(`r x[2,1]`-`r e[2,1]`)^2}{`r e[2,1]`}+\frac{(`r x[2,2]`-`r e[2,2]`)^2}{`r e[2,2]`}=`r round(a$statistic,2)` \stackrel{H_0}{\sim} \chi^2_{`r a$parameter`}$$
+
+Usando o nível de significância $\alpha=`r alpha`$, o valor crítico é $\chi^2_{crit} = \chi^2_{`r a$parameter`, `r alpha`} = `r chi_crit`$.
+
+Como $\chi^2_{obs}= `r round(a$statistic,2)` > `r chi_crit` = \chi^2_{crit}$, rejeitamos a hipótese nula de indepêndencia.
+
+
+# Teste de Homogeneidade
+
+## Teste de Homogeneidade {.build}
+
+Nas situações em que utilizamos os testes de independência, o esquema de amostragem utizado foi baseado numa amostra aleatória de tamanho $n$ que é classificada com respeito a duas características simultaneamente. 
+
+Nesse caso, as frequências marginais totais (totais por linhas e totais por colunas) são variáveis aleatórias, pois a cada nova amostragem, não temos como saber de antemão quais serão os valores dos totais por linhas/colunas.
+
+Se o esquema de amostragem for de dividir a população em duas subpopulações de acordo com as categorias de uma característica e selecionar uma amostra de um tamanho pré-determinado para cada subpopulação, então esta será uma situação de tabela de contingência com margens fixas. 
+
+## Teste de Homogeneidade {.build}
+Por exemplo, no caso do problema de filiação partidária, poderíamos selecionar amostras aleatórias de tamanho $200$ entre afiliados do partido $A$ e $300$ dentre os afiliados do partido $B$ e se classificaria essas amostras de acordo com a atitude (favorável, indiferente ou contrário).
+
+O interesse então é estudar as proporções nessas categorias para determinar se elas são aproximadamente iguais para as diferentes subpopulações. Ou seja, queremos testar se as subpopulações são homogêneas.
+
+
+## Teste de Homogeneidade {.build .smaller}
+
+
+Suponha que amostras aleatórias independentes de tamanho $n_{10}, \ldots, n_{r0}$ são selecionadas de $r$ subpopulações $A_1, \ldots, A_r$ respectivamente.  Classificando cada amostra em uma das categorias $B_1, \ldots, B_c$, obtemos uma tabela de contigência $r \times c$ onde os totais das linhas são tamanhos de amostras fixos. 
+
+Tabelas de contingência $r \times c$ com totais das linhas fixos:
+
+|   | $B_1$| $B_2$|  $\ldots$ | $B_c$ | Total da linha |
+|:--|-----:|-----:|----------:|------:|---------------:|
+|$A_1$  |$n_{11}$ | $n_{12}$  | $\ldots$ | $n_{1c}$ | $n_{10}$ |
+|$A_2$  |$n_{21}$ | $n_{22}$  | $\ldots$ | $n_{2c}$ | $n_{20}$ |
+|$\vdots$| $\vdots$ | $\vdots$|  $\vdots$ |  $\vdots$ | $\vdots$|
+|$A_r$  |$n_{r1}$ | $n_{r2}$  | $\ldots$ | $n_{rc}$ | $n_{r0}$ |
+| Total da coluna | $n_{01}$ | $n_{02}$ | $\ldots$ | $n_{0c}$ | $n$|
+
+## Teste de Homogeneidade {.build .smaller}
+
+
+As probabilidades das várias categorias de $B$ dentro de cada subpopulação de $A$ também são apresentadas a seguir, onde cada $w$ representa uma probabilidade condicional,
+
+$$w_{ij}=P(B_j| A_i)= \text{ probabilidade de } B_j \text{ dentro da população }  A_i.$$
+
+Probabilidades das categorias de $B$ dentro de cada subpopulação:
+
+|   | $B_1$| $B_2$|  $\ldots$ | $B_c$ | Total da linha |
+|:--|-----:|-----:|----------:|------:|---------------:|
+|$A_1$  |$w_{11}$ | $w_{12}$  | $\ldots$ | $w_{1c}$ | $1$ |
+|$A_2$  |$w_{21}$ | $w_{22}$  | $\ldots$ | $w_{2c}$ | $1$ |
+|$\vdots$| $\vdots$ | $\vdots$|  $\vdots$ |  $\vdots$ | $\vdots$|
+|$A_r$  |$w_{r1}$ | $w_{r2}$  | $\ldots$ | $w_{rc}$ | $1$ |
+
+
+## Teste de Homogeneidade {.build}
+
+
+A hipótese nula de iqualdade das categorias $B$ para as $r$ subpopulações é:
+
+$$H_0: w_{1j}=w_{2j}= \cdots = w_{rj}, \mbox{ para todo } j=1,2, \ldots c.$$
+
+
+Sob $H_0$, a probabilidade comum da categoria $B_j$ pode ser estimada do conjunto de amostras notando que de um total de $n$ elementos amostrados, $n_{0j}$ possuem a característica $B_j$, daí a probabilidade estimada fica
+
+$$\hat{w}_{1j}=\hat{w}_{2j}= \cdots =\hat{w}_{rj}= \frac{n_{0j}}{n}$$
+
+
+A frequência esperada estimada na componente $(i,j)$ sob $H_0$ é:
+
+$$\begin{aligned}
+E_{ij} &= (\mbox{Número de $A_i$ amostrados}) \times (\mbox{Probabilidade de $B_j$ dentro de $A_i$}) \\
+&=n_{i0} \hat{w}_{ij}=\frac{n_{i0}n_{0j}}{n}
+\end{aligned}
+$$
+
+
+## Teste de Homogeneidade {.build}
+
+A **estatística do teste** é dada por:
+
+$$\chi^2= \sum_{r \times c \text{ componentes }} \frac{(n_{ij}-E_{ij})^2}{E_{ij}}$$
+que sob $H_0$ segue uma distribuição $\chi^2$ com $(r-1)\times(c-1)$ graus de liberdade.
+
+Pode-se observar que as fórmulas e os graus de liberdade dessa seção são iguais ao da seção anterior, somente o método de amostragem e a formalização da hipótese nula são diferentes.
+
+**Valor Crítico**: Para um nível de significância $\alpha$, encontrar o valor crítico $\chi^2_{crit}$ na tabela Chi-quadrado tal que $P(\chi^2_{(r-1)(c-1)} \geq \chi^2_{crit}) = \alpha.$
+
+**Conclusão**: Rejeitamos $H_0$ se $\chi_{obs}^2 \geq \chi^2_{crit}.$
+
+
+## Exemplo: Alcoolismo e profissões {.build}
+
+Foi feita uma pesquisa para determinar a incidência de alcoolismo em diferentes grupos profissionais.   
+
+Separadamente, um amostra aleatória entre religiosos, educadores, executivos e comerciantes foi coletada.  
+Os dados são apresentados na tabela:
+
+```{r,echo=FALSE}
+
+
+x = matrix(c(32,268,51,199,67,233,83,267),nrow=4,byrow=TRUE)
+ rownames(x) = c("Religiosos","Educadores","Executivos","Comerciantes")
+ colnames(x) = c("Alcoólatras","Não Alcoólatras") 
+
+n <- sum(x)
+
+a <- chisq.test(x,correct=FALSE)
+alpha <- 0.05
+chi_crit <- round(qchisq(1-alpha,df=a$parameter),2)
+```
+
+```{r,echo=FALSE}
+kable(x)
+```
+
+## Exemplo: Alcoolismo e profissões {.build}
+
+
+$$w_{ij}=P(B_j| A_i)= \text{ probabilidade de } B_j \text{ dentro da subpopulação } A_i.$$
+
+$H_0: w_{1j}=w_{2j}= \cdots = w_{rj}$, para todo $j=1,2, \ldots c.$
+
+Tabela de contingência de alcoolismo vs profissão: frequência relativa por linha.
+
+```{r,echo=FALSE}
+kable(round(prop.table(x,1),2))
+```
+
+## Exemplo: Alcoolismo e profissões {.build}
+
+Gráfico de barras de alcoolismo vs profissão: frequência relativa por linha.
+
+<center>
+```{r,echo=FALSE,fig.height=4.5,fig.width=6}
+par(mar=c(3, 3, 1, 1))
+barplot(t(prop.table(x,1)),xlab="Ocupação", main=" ", beside=TRUE,legend.text=TRUE,ylim=c(0,1.1),col=c("lightpink","lightblue"), las=1, cex.axis=1.3,cex.lab=1.3) 
+```
+</center>
+
+
+## Exemplo: Alcoolismo e profissões {.build}
+
+A frequência esperada estimada na componente $(i,j)$ sob $H_0$ é
+
+$$E_{ij}=\frac{n_{i0}n_{0j}}{n}$$
+
+Tabela de frequências esperadas, segundo a hipótese nula de homogeneidade:
+
+```{r,echo=FALSE}
+e <- round(a$expected,2)
+kable(e)
+```
+
+
+## Exemplo: Alcoolismo e profissões {.build}
+
+
+Representando por $p_1, p_2, p_3$ e $p_4$ as proporções de alcoólatras na subpopulação de religiosos, educadores, executivos e comerciantes, respectivamente, queremos testar a hipótese:
+
+$$H_0:  p_1= p_2 = p_3 = p_4 \quad \mbox{vs} \quad H_a: \mbox{pelo menos uma proporção é diferente}$$ 
+
+A estatística observada é:
+
+$$\chi^2_{obs}= \frac{(32-58.25)^2}{58.25}+ \cdots + \frac{(267-282.04)^2}{282.04}=`r round(a$statistic,2)` \stackrel{H_0}{\sim} \chi^2_{`r a$parameter`}$$
+
+Usando o nível de significância $\alpha=`r alpha`$, o valor crítico é $\chi^2_{crit} = \chi^2_{`r a$parameter`, `r alpha`} = `r chi_crit`$.  Como $\chi^2_{obs}= `r round(a$statistic,2)` > `r chi_crit` = \chi^2_{crit}$, rejeitamos a hipótese nula de homogeneidade.
+
+Como a hipótese nula foi rejeitada verificamos que há indícios de que a proporção de alcoólatras nas classes profissionais não é homogênea. 
+
+
+## Exemplo: Google {.build}
+
+
+```{r,echo=FALSE}
+# openintro 3rd edition ex 6.34 adaptado para homogeneidade
+x <- matrix(c(3511,1749,1818,
+              1489,751,682),byrow=TRUE,ncol=3)
+colnames(x) <- c("Atual","Teste 1", "Teste 2")
+rownames(x) <- c("Sem nova busca","nova busca")
+n <- sum(x)
+
+a <- chisq.test(x,correct=FALSE)
+alpha <- 0.01
+chi_crit <- round(qchisq(1-alpha,df=a$parameter),2)
+```
+
+O Google está constantemente elaborando experimentos para testar novos algoritmos de busca. Por exemplo, o Google pode estar interessado em testar 3 algoritmos usando uma amostra aleatória para cada um: `r sum(x[,1])` buscas feitas com o algoritmo atual foram selecionadas ao acaso, `r sum(x[,2])` buscas feitas com o algoritmo teste 1 foram selecionadas ao acaso e `r sum(x[,3])` buscas feitas com o algoritmo teste 2 foram selecionadas ao acaso.
+
+Como avaliar qual o melhor algoritmo? É preciso definir alguma medida. 
+
+No caso, o Google irá avaliar se o usuário clicou em um dos links da busca e depois não realizou uma nova tentativa de busca ou se ele depois realizou nova tentativa (indicando que a primeira busca não foi bem sucedida).
+
+Objetivo: 3 algoritmos têm a mesma performance, isto é, a proporção de buscas que não são refeitas é a mesma para os três algoritmos?
+
+## Exemplo: Google
+
+Suponha que o Google tenha obtido os seguintes resultados:
+
+```{r,echo=FALSE}
+kable(x)
+```
+
+## Exemplo: Google
+
+Tabela de frequências esperadas, segundo a hipótese nula de homogeneidade:
+
+```{r,echo=FALSE}
+e <- round(a$expected,2)
+kable(e)
+```
+
+A estatística $\chi^2$ tem o valor observado de 
+
+$\chi^2_{obs}=\frac{(`r x[1,1]`-`r e[1,1]`)^2}{`r e[1,1]`}+\frac{(`r x[1,2]`-`r e[1,2]`)^2}{`r e[1,2]`}+\frac{(`r x[2,1]`-`r e[2,1]`)^2}{`r e[2,1]`}+\frac{(`r x[2,2]`-`r e[2,2]`)^2}{`r e[2,2]`}=`r round(a$statistic,2)` \stackrel{H_0}{\sim} \chi^2_{`r a$parameter`}$
+
+Usando o nível de significância $\alpha=`r alpha`$, o valor crítico é $\chi^2_{crit} = \chi^2_{`r a$parameter`, `r alpha`} = `r chi_crit`$.  Como $\chi^2_{obs}= `r round(a$statistic,2)` < `r chi_crit` = \chi^2_{crit}$, não rejeitamos a hipótese nula de homogeneidade.
+
+
+## Exemplo: Google
+
+<center>
+```{r,echo=FALSE,fig.height=5,fig.width=6}
+barplot(prop.table(x,2),xlab="Algoritmo", main=" ", beside=TRUE,legend.text=TRUE,ylim=c(0,1),col=c("lightblue","lightpink"), las=1, cex.axis=1.3, cex.lab=1.3, cex.names=1.3)
+```
+</center>
+
+
+
+## Leituras
+
+* [Ross](http://www.sciencedirect.com/science/article/pii/B9780123743886000132): capítulo 13. 
+* [OpenIntro](https://www.openintro.org/stat/textbook.php): seção 6.4
+
+
+##
+
+Slides produzidos pelos professores:
+
+* Samara Kiihl
+
+* Tatiana Benaglia
+
+* Benilton Carvalho

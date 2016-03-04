@@ -1,0 +1,753 @@
+---
+title: ME414 - Estatística para Experimentalistas
+subtitle: Parte 11
+output: 
+  ioslides_presentation:
+         widescreen: true
+logo: ../logo-imecc.png
+---
+
+# Distribuição Binomial
+
+## Exemplo: Sherlock {.build .smaller}
+
+Um inimigo de Sherlock propõe um jogo, que consiste no lançamento de uma moeda honesta várias vezes, em quatro versões: 
+
+<center><img src="figuras/sherlock.jpg" width=350></center>
+
+
+> 1. Se a proporção de caras for maior ou igual do que $0.60$, Sherlock vence. 
+> 2. Se a proporção de caras for maior ou igual do que $0.40$, Sherlock vence. 
+> 3. Se a proporção de caras estiver entre $0.40$ e $0.60$ (inclusive), Sherlock vence. 
+> 4. Se a proporção de caras for menor ou igual do que $0.30$, Sherlock vence. 
+
+> O inimigo escolhe primeiro qual a versão do jogo e depois Sherlock terá que escolher se quer jogar com $10$ ou $100$ lançamentos da moeda.
+
+
+## Exemplo: Sherlock {.build}
+
+Se o inimigo escolhe a versão 1, Sherlock deve escolher 10 ou 100 lançamentos?
+
+Seja $X_i$ a v.a. que indica o resultado do $i$-ésimo lançamento da moeda, ou seja, 
+
+$$X_i = \begin{cases}
+1, & \mbox{se sair cara} \\
+0, & \mbox{se sair coroa}
+\end{cases} \quad \mbox{e} \quad P(X_i=0)=P(X_i=1)=0.5
+$$
+
+Seja $X=\sum_{i=1}^nX_i$ a v.a. que indica o número de caras em $n$ lançamentos da moeda. Então, $X \sim \mbox{Bin}(n, 0.5).$
+
+Na versão 1, Sherlock vence se a proporção de caras é maior do que $0.60$, ou seja, se $X\geq n \times 0.6$.
+
+Basta então Sherlock comparar $P(X\geq n\times 0.6)$ para $n=10$ ou $n=100$ e escolher o que resultar em maior probabilidade.
+
+## Exemplo: Sherlock - Versão 1
+
+Se a proporção de caras for maior ou igual do que $0.60$, Sherlock vence.
+
+<center>
+```{r, echo=FALSE, fig.height=4.5, fig.width=5}
+
+binomshade <- function(n, p, a, b){
+  ## gráfico da função de massa de uma Bin(n, p) e colore os pontos de a até b
+  library(RColorBrewer)
+  mycol <- brewer.pal(8,"Dark2")
+
+  x <- 0:n
+  cores <- rep(mycol[1], n+1)
+  cores[a:b + 1] <- "red"
+  
+  px <- dbinom(x, size=n, prob=p)
+  barplot(px, names.arg=x, xlab="número de caras", ylab="probabilidade", col=cores,
+          main=paste("Bin(", n, ", ",  p, ")", sep=""), 
+          cex.lab=1.2, cex.axis=1.2, cex.names=1.2, cex.main=1.3, las=1)
+  box(bty="l", lwd=2)
+  prob <- round(sum(dbinom(a:b, n, p)), 3)
+  expr <- bquote(P( {.(a) <= X} <= .(b)) == .(prob))
+  title(expr, cex.main=0.95, line=0.5)
+}
+
+binomshade(10, 0.5, 0.6*10, 10)
+binomshade(100, 0.5, 0.6*100, 100)
+```
+</center>
+
+## Exemplo: Sherlock - Versão 2
+
+Se a proporção de caras for maior ou igual do que $0.40$, Sherlock vence.
+
+<center>
+```{r, echo=FALSE, fig.height=4.5, fig.width=5}
+binomshade(10, 0.5, 0.4*10, 10)
+binomshade(100, 0.5, 0.4*100, 100)
+```
+</center>
+
+## Exemplo: Sherlock - Versão 3
+Se a proporção de caras estiver entre $0.40$ e $0.60$ (inclusive), Sherlock vence. 
+
+<center>
+```{r, echo=FALSE, fig.height=4.5, fig.width=5}
+binomshade(10, 0.5, 0.4*10, 0.6*10)
+binomshade(100, 0.5, 0.4*100, 0.6*100)
+```
+</center>
+
+## Exemplo: Sherlock - Versão 4
+Se a proporção de caras for menor ou igual do que $0.30$, Sherlock vence. 
+
+<center>
+```{r, echo=FALSE, fig.height=4.5, fig.width=5}
+binomshade(10, 0.5, 0, 0.3*10)
+binomshade(100, 0.5, 0, 0.3*100)
+```
+</center>
+
+## Exemplo: Sherlock {.build}
+
+Na prática, para tomar uma decisão rápida, Sherlock deve considerar que a proporção esperada de caras é sempre 0.5, mas que quando $n$ é menor, existe maior variabilidade em torno desse valor esperado.
+
+* Se a proporção de caras for maior do que $0.60$, Sherlock vence.  
+
+Aqui Sherlock deve escolher $n=10$, pois a variância de $X/n$ (proporção de caras) é maior com $n=10$.
+
+* Se a proporção de caras for maior do que $0.40$, Sherlock vence.  
+
+Aqui Sherlock deve escolher $n=100$, pois a variância de $X/n$ é menor com $n=100$, portanto chances maiores da proporção observada estar próxima da proporção esperada.
+
+## Exemplo: Sherlock {.build}
+
+*  Se a proporção de caras estiver entre $0.40$ e $0.60$, Sherlock vence. 
+
+Mesmo raciocínio do item anterior.
+
+*  Se a proporção de caras for menor do que $0.30$, Sherlock vence. 
+
+Mesmo raciocínio do item 1.
+
+
+# Distribuição Geométrica
+
+## Distribuição Geométrica {.build}
+
+Consideremos novamente um experimento aleatório com espaço de resultados $\Omega$ e o evento $A$. 
+
+Vamos dizer que ocorreu sucesso se o evento $A$ aconteceu e $p=P(\mbox{sucesso})$.  
+
+Repetimos o experimento até o primeiro sucesso. 
+
+Seja $X$ o número de repetições até o primeiro sucesso.
+
+**Exemplo:** lançar uma moeda repetidas vezes até a primeira cara e $p=P(cara)$.
+
+Os valores possíveis de $X$ são $\{1,2,3,...\}$. 
+
+$$ \begin{aligned} 
+P(X=1) &=p \qquad (\mbox{sucesso logo na primeira tentativa})\\
+P(X=2) &= (1-p)p \qquad (\mbox{1 fracasso seguido de 1 sucesso})\\
+P(X=k) &= (1-p)^{k-1} p \qquad (\mbox{$k-1$ fracassos sucessivos e 1 sucesso})
+\end{aligned}
+$$
+
+## Distribuição Geométrica {.build}
+
+**Modelo Geral:** Suponha uma sequência de ensaios de Bernoulli independentes com probabilidade de sucesso $p$. 
+
+> Seja $X$ a v.a. que representa o número de ensaios de Bernoulli até a ocorrência do primeiro sucesso. Então dizemos que $X$ segue uma distribuição **Geométrica** com parâmetro $p$, ou seja, $X\sim G(p)$.
+
+> A probabilidade de se observar $x$ é dada por: 
+$$P(X=x)=(1-p)^{x-1}p, \qquad x=1,2,\ldots$$
+
+> A esperança e variância de uma v.a. Geométrica são dadas por:
+$$\mathbb E(X)= \frac{1}{p} \qquad \mbox{e} \qquad Var(X)=\frac{1-p}{p^2}$$
+
+## Distribuição Geométrica
+Distribuição de probabilidade de uma $G(p)$, com $p=0.3, 0.5$ e $0.7$.
+
+<center>
+```{r, echo=FALSE, fig.height=4, fig.width=9}
+geometrica <- function(n, ps=c(0.2, 0.5, 0.8), ...){
+  x <- 0:(n-1)
+  par(mfrow=c(1,3))
+  for(i in 1:3){
+    px <- dgeom(x, prob=ps[i])
+    barplot(px, names.arg=x+1, col="blue", main=paste("G(", ps[i], ")", sep=""), 
+            cex.lab=1.5, cex.axis=1.3, cex.names=1.3, cex.main=2, las=1, xlab="x", ylab="P(X=x)", ...)
+    box(bty="l", lwd=2)
+  }
+}
+geometrica(10, ps=c(0.3, 0.5, 0.7), ylim=c(0, .7))
+```
+</center>
+
+## Distribuição Geométrica {.build}
+
+A função de distribuição acumulada de uma v.a. $G(p)$ é dada por:
+$$F(x)=P(X\leq x)=1-(1-p)^x$$
+
+A distribuição geométrica tem uma propriedade que serve para caracterizá-la no conjunto das distribuições discretas: a propriedade de perda de memória
+
+**Propriedade de perda de memória**
+
+$$P(X > x+m \mid X > m)=P(X > x)$$
+
+**Interpretação:** O fato de já termos observado $m$ fracassos sucessivos não muda a probabilidade do número de ensaios até o primeiro sucesso ocorrer.
+
+
+## Propriedade de perda de memória
+
+$$P(X > x+m \mid X > m)=P(X > x)$$
+
+**Demonstração:** 
+
+Lembre-se que:
+$$F(x)=P(X\leq x)=1-(1-p)^x \quad \rightarrow \quad P(X > x)= (1-p)^{x}$$ 
+
+Então,
+$$
+\begin{aligned}
+P(X > x+m \mid X > m) &= \frac{P(X > x+m, X> m)}{P(X> m)} \\
+& = \frac{P(X > x+m)}{P(X> m)} = \frac{(1-p)^{x+m}}{(1-p)^m} \\
+&=(1-p)^{x} = P(X> x) \\
+\end{aligned}
+$$
+
+## Exemplo: Sinal de trânsito {.build}
+
+A probabilidade de se encontrar aberto o sinal de trânsito numa esquina é $0.2$.  
+
+Qual a probabilidade de que seja necessário passar pelo local $5$ vezes para encontrar o sinal aberto pela primeira vez?
+
+$X=$ número de vezes necessárias para encontrar o sinal aberto. 
+
+$p=P(\mbox{sinal aberto}) = 0.2$ 
+
+$$\begin{aligned}
+P(X=5) &= (1-p)^{4} p \\
+&= 0.8^4\times 0.2 \\
+&= 0.0819
+\end{aligned} $$
+
+## Exemplo: lançamento de um dado {.build}
+
+Qual a probabilidade de que um dado deva ser lançado 15 vezes para que ocorra a face 6 pela primeira vez?
+
+$X=$ número de vezes necessárias para ocorrer o resultado 6. 
+
+$p=P(\mbox{face 6})=1/6$ 
+
+$$ \begin{aligned}
+P(X=15) &= (1-p)^{15-1} p \\
+&= \left(\frac{5}{6}\right)^{14}\frac{1}{6} \\
+&=0.01298
+\end{aligned} $$
+
+
+## Exemplo: Roleta Russa {.build}
+
+Em sua autobiografia _A Sort of Life_, o autor inglês Graham Greene descreveu um período de grave depressão em que ele jogava roleta russa.  Esse "jogo" consiste em colocar uma bala em uma das seis câmaras de um revólver, girar o tambor e disparar a arma contra a própria cabeça. 
+
+> * Greene jogou seis partidas deste jogo, e teve a sorte da arma nunca ter disparado.  Qual a probabilidade desse resultado? 
+
+> * Suponha que ele continue jogando roleta russa até a arma finalmente disparar.  Qual é a probabilidade de Greene morrer na $k$-ésima jogada? 
+
+*Fonte: A. Agresti*, Categorical Data Analysis.
+
+## Exemplo: Roleta Russa {.build}
+
+> * Greene jogou seis partidas deste jogo, e teve a sorte da arma nunca ter disparado.  Qual a probabilidade desse resultado? 
+
+> Ao girar o tambor, a arma disparar ou não é um ensaio de Bernoulli com probabilidade $1/6$ de disparar. Como cada uma das jogadas é independente, a probabilidade da arma não ter disparado em nenhuma das seis vezes é
+
+$$\left( \frac{5}{6} \right)^6 = 0.33489 $$
+
+Seja $X$ o número de disparos na roleta russa em 6 partidas e $p=1/6$ a probabilidade de disparo. Então, $X \sim Bin(6, 1/6).$
+
+$$P(X=0)=\binom{6}{0}p^0(1-p)^{6-0} = \left( \frac{5}{6} \right)^6 = 0.33489$$
+
+
+## Exemplo: Roleta Rusfsa {.build}
+
+> * Qual é a probabilidade de Greene morrer na $k$-ésima jogada? 
+
+> Ao efetuar a primeira jogada, o autor pode morrer com probabilidade $1/6$, ou continuar jogando. Se ele sobreviver à primeira, pode jogar pela segunda vez, e morrer com probabilidade $5/6 \times 1/6$, ou continuar jogando.
+
+> Repetindo esse raciocínio, concluímos que a probabilidade de morte na $k$-ésima jogada é  
+$$P(X=k) = \left( \frac{5}{6} \right)^{k-1} \frac{1}{6}$$ 
+
+Ou podemos definir $X$ como o número de tentativas até o primeiro disparo e $p=1/6$ a probabilidade de um disparo ocorrer. Então, podemos calcular a probabilidade acima usando o fato que $X \sim G(1/6).$
+
+## Exemplo: Banco de Sangue {.build}
+
+Um banco de sangue necessita sangue do tipo O negativo. Suponha que a probabilidade de uma pessoa ter este tipo de sangue seja $0.10$.  Doadores permanentes chegam ao hemocentro para fazer sua doação rotineira. Calcule a probabilidade de que o primeiro doador com sangue do tipo O negativo seja:
+
+> * o primeiro a chegar; 
+> * o segundo; 
+> * o sétimo. 
+> * Quantos doadores esperamos passar pelo hospital até encontrarmos um com sangue O negativo? 
+
+> **Fonte:** Prof. Mario Gneri, Notas de Aula.
+
+## Exemplo: Banco de Sangue {.build}
+
+Seja $X$ o número de doadores que chegam no hemocentro até a chegada do primeiro doador com sangue O negativo.
+
+Novamente temos um experimento com distribuição geométrica. Usando a fórmula para a função de probabilidade, send $X \sim G(0.1)$:
+
+$$P(X=x) = 0.9^{x-1} 0.1, \qquad x=1,2,\ldots $$ 
+
+Temos que 
+
+> * $P(X=1) =  0.1$
+> * $P(X=2) =  0.9 \times 0.1 = 0.09$ 
+> * $P(X=7) =  0.9^6 \times 0.1 = 0.053$  
+> * $\mathbb E(X) = 1/0.1=10.$ Neste caso, esperamos que dez doadores passem pelo hospital, em média, para encontrarmos o primeiro com sangue O negativo.
+
+# Hipergeométrica
+
+## Distribuição Hipergeométrica {.build}
+
+> * População dividida em duas características
+> * Extrações casuais sem reposição
+
+> **Detalhes:** 
+
+> * $N$ objetos
+> * $r$ têm a característica A
+> * $N-r$ têm a característica B 
+> * um grupo de $n$ elementos é escolhido ao acaso, dentre os $N$ possíveis, sem reposição. 
+
+> **Objetivo:** calcular a probabilidade de que este grupo de $n$ elementos contenha $x$ elementos com a característica A.
+
+
+## Distribuição Hipergeométrica {.build}
+
+> Seja $X$ a v.a. que representa o número de elementos com a característica A dentre os $n$ selecionados. 
+
+> Então dizemos que $X$ segue uma distribuição **Hipergeométrica** com parâmetros $N,n,r$, ou seja, $X \sim Hip(N,n,r)$.
+
+> A probabilidade de se observar $x$ é dada por: 
+$$P(X=x)=\frac{{r \choose x}{{N-r}\choose{n-x}}}{{{N}\choose{n}}}, \qquad 0\leq x \leq min\{r,n\}$$ 
+
+> A esperança e variância são, respectivamente:
+
+$$E(X)=\frac{nr}{N} \qquad \mbox{e} \qquad Var(X)=\frac{nr}{N}\left(1-\frac{r}{N}\right)\frac{(N-n)}{(N-1)}$$
+
+## Exemplo: Urna {.build}
+
+Uma urna contém 10 bolas: 6 brancas e 4 pretas. 
+
+> Qual a probabilidade de obter 3 bolas brancas dentre 4 bolas retiradas? 
+
+> Seja $X$ o número de bolas brancas dentre as 4 bolas retiradas
+
+> Então, $X\sim Hip(N=10, n=4, r=6)$ e
+
+> $$P(X=x)=\frac{{{r}\choose{x}}{{N-r}\choose{n-x}}}{{{N}\choose{n}}} \qquad 0\leq x \leq min\{r,n\}$$ 
+
+> Portanto,
+$$P(X=3)=\frac{{{6}\choose{3}}{{4}\choose{1}}}{{{10}\choose{4}}}=\frac{8}{21}$$
+
+## Exemplo: Comissão {.build}
+
+Voltando ao exemplo: O Departamento de Estatística é formado por 25 professores, sendo 17 homens e  8 mulheres. Uma comissão será formada por 3 professores. Queremos saber qual é a probabilidade da comissão ser formada por pelo menos duas mulheres?
+
+Seja $X$ o número de mulheres na comissão, então $X \sim Hip(N=25,n=3,r=8)$
+
+$$\begin{aligned}
+P(X=2) &=\frac{{8 \choose 2}{17 \choose 1}}{{25 \choose 3}}=0.21 \\
+P(X=3) &=\frac{{8 \choose 3}{17 \choose 0}}{{25 \choose 3}}=0.02 \\
+P(X \leq 2) &= P(X=2) + P(X=3) = 0.21 + 0.02 = 0.23
+\end{aligned}
+$$
+
+## Exemplo: Loteria {.build}
+
+> * Um jogo de loteria consiste em selecionar 6 dezenas de 00 a 99, com uma bola para cada dezena e sem reposição
+> * Numa aposta o jogador pode escolher de 6 a 10 dezenas
+> * Qual a probabilidade de acertar a quina (5 dezenas)
+marcando-se 10 dezenas na aposta? 
+
+  > + N = 100 (total de dezenas)
+  > + n = 6 (dezenas sorteadas)
+  > + r = 10 (dezenas escolhidas pelo jogador) 
+  > + x = 5 (número de sucessos, queremos 5) 
+
+$$P(X=5)=\frac{\binom{10}{5}\binom{100-10}{6-5}}{\binom{100}{6}}=0.000019$$
+
+
+## Exemplo: Mega-Sena {.build}
+
+Qual a probabilidade de um jogador ganhar na Mega-Sena jogando 6 dezenas?
+
+> * $N=60$ (dezenas de 01 a 60)
+> * $n=6$ (dezenas sorteadas)
+> * $r=6$ (dezenas escolhidas pelo jogador)
+> * $x=6$ (número de sucessos, queremos 6)
+
+> Então, a probabilidade de ganhar na Mega-Sena é:
+
+> $$P(X=6)=\frac{\binom{6}{6}\binom{54}{0}}{\binom{60}{6}}=\frac{1}{50063860}$$
+
+
+## Aplicação: Controle de Qualidade {.build}
+
+Suponha um lote com $N=100$ elementos a ser analisado.  
+
+São escolhidas $n=5$ peças sem reposição.
+
+Sabendo que neste lote de 100 elementos, $r=10$ são defeituosos.
+
+Se $X$ é o número de peças defeituosas em 5 escolhidas, então 
+$$X\sim Hip(N=100, n=5, r=10)$$
+
+A probabilidade de não se obter nenhuma peça defeituosa na amostra retirada é: 
+
+$$P(X=0)= \frac{{{10}\choose{0}}{{100-10}\choose{5-0}}}{{{100}\choose{5}}}= \frac{{{90}\choose{5}}}{{{100}\choose{5}}}\approx0.584$$
+
+
+## Aplicação: Controle de Qualidade {.build}
+
+A probabilidade de se obter pelo menos uma peça defeituosa é: 
+
+$$P(X \geq 1) = \sum_{i=1}^{5}P(X=i)= 1-P(X=0)\approx0.416$$ 
+
+A média e a variância são:
+
+$$ \begin{aligned}
+\mathbb E(X) &= \frac{nr}{N}= \frac{5\times10}{100} = 0.5 \\
+Var(X) &=\frac{nr}{N}\left(1-\frac{r}{N}\right)\frac{(N-n)}{(N-1)} \\ &=\frac{5\times10}{100}\left(1-\frac{10}{100}\right)\frac{(100-5)}{(100-1)}\approx0.409
+\end{aligned} $$
+
+
+## Exemplo {.build}
+
+Pequenos motores são guardados em caixas de $50$ unidades. Um inspetor de qualidade examina cada caixa, antes da remessa, testando $5$ motores. Se nenhum motor for defeituoso, a caixa é aceita. Se pelo menos um for defeituoso, todos os 50 motores são testados. Há 6 motores defeituosos numa caixa. Qual a probabilidade de que seja necessário examinar todos os motores?
+
+$X=$ número de motores defeituosos da amostra. 
+
+$N=50, n=5$ e $r=6$. Então $X\sim Hip(N=50, n=5, r=6)$
+
+Se pelo menos 1 é defeituoso, inspeciona todos os 50. 
+
+$$\begin{aligned}
+P(X\geq 1)&= 1-P(X<1)= 1-P(X=0) \\ 
+&= 1-\frac{\binom{6}{0}\binom{44}{5}}{\binom{50}{5}}=1-0.5126=0.4874
+\end{aligned}
+$$
+
+
+## Exemplo {.build} 
+
+Uma firma compra lâmpadas por centenas. Examina sempre uma amostra de 15 lâmpadas para verificar se estão boas.  Se uma centena inclui 12 lâmpadas queimadas, qual a probabilidade de se escolher uma amostra com pelo menos uma lâmpada queimada?
+
+
+$X=$ número de lâmpadas queimadas da amostra. 
+
+$N=100, n=15$ e $r=12$. Então $X\sim Hip(N=100, n=15, r=12)$
+
+Pelo menos uma queimada: 
+
+$$\begin{aligned}
+P(X\geq 1) &=1-P(X<1)=1-P(X=0) \\
+&=1-\frac{\binom{12}{0}\binom{88}{15}}{\binom{100}{15}}=0.8747
+\end{aligned}
+$$
+
+
+# Aproximação da Binomial pela Poisson
+
+## Distribuição de Poisson {.build}
+ 
+* Muitas vezes, em problemas em que seria natural usar a distribuição binomial, temos $n$ muito grande ($n\to \infty$) e $p$ muito pequeno ($p\to 0$). 
+
+> * Nesses casos, o cálculo fica difícil com calculadoras comuns.  
+
+> * Considerando uma v.a. $X\sim\mbox{Bin}(n,p)$, quando temos grandes valores para $n$ e $p$ pequeno (mantendo-se o produto $np=\lambda$ constante), podemos usar a seguinte aproximação para a probabilidade:  
+
+$$P(X=x)={{n}\choose{x}}p^{x}(1-p)^{n-x} \approx \frac{e^{-np}(np)^{x}}{x!}\,,\quad x=0,1,2,\ldots n$$
+
+
+> * Geralmente considera-se o critério $np\leq7$ para usar essa aproximação.
+
+> * [Demonstração](http://www.proofwiki.org/wiki/Binomial_Distribution_Approximated_by_Poisson_Distribution)
+
+
+## Exemplo {.build}
+
+$X\sim Bin(100,0.065)$, deseja-se obter $P(X=10)$  
+ 
+> * No modelo Binomial: $P(X=10)= {{100}\choose{10}}(0.065)^{10}(0.935)^{100-10}=0.055$ 
+
+> * $\lambda=  np =100\times0.065=6.5\leq7$  
+
+> * No modelo Poisson: $P(X=10)=\frac{e^{-6.5}(6.5)^{10}}{10!}\approx0.056$
+ 
+
+## Poisson para Aproximar uma Binomial {.build}
+
+<center>
+```{r, echo=FALSE, fig.height=5, fig.width=10}
+n <- 100
+p <- 0.065 
+x <- 0:20
+px.binom <- dbinom(x, size=n, prob=p)
+px.pois <- dpois(x, lambda=n*p)
+
+par(mfrow=c(1,2))
+barplot(px.binom, names.arg=x, col="blue", main=paste("Bin(", n, ",",  p, ")", sep=""), 
+        cex.lab=1.5, cex.axis=1.3, cex.names=1.3, cex.main=2, las=1, xlab="x", ylab="P(X=x)", ylim=c(0, .2))
+box(bty="l", lwd=2)
+
+barplot(px.pois, names.arg=x, col="blue", main=paste("Pois(", n*p, ")", sep=""), 
+        cex.lab=1.5, cex.axis=1.3, cex.names=1.3, cex.main=2, las=1, xlab="x", ylab="P(X=x)", ylim=c(0, .2))
+box(bty="l", lwd=2)
+```
+</center>
+ 
+
+## Exemplo {.build} 
+
+A probabilidade de uma lâmpada se queimar ao ser ligada é $1/100$. Numa instalação com 100 lâmpadas, qual a probabilidade de 2 lâmpadas se queimarem ao serem ligadas?  
+ 
+> * No modelo Binomial: $X\sim\mbox{Bin}(100,0.01)$
+
+$P(X=2)= {{100}\choose{2}}(0.01)^{2}(0.99)^{100-2}$=0.1849 
+
+> * $\lambda=  np =100\times0.01=1\leq7$  
+
+> * No modelo Poisson: $P(X=2)=\frac{e^{-1}(1)^{2}}{2!}\approx0.1839$
+
+
+
+## Distribuição de Poisson {.build}
+
+Outro caso em que a distribuição de Poisson é utilizada:  
+ 
+> * Considere a probabilidade de ocorrência de sucessos em um determinado intervalo.  
+
+> * A probabilidade de ocorrência de um sucesso no intervalo é proporcional ao intervalo.  
+
+> * A probabilidade de mais de um sucesso nesse intervalo é bastante pequena com relação à probabilidade de apenas um sucesso.  
+
+## Distribuição de Poisson {.build}
+
+
+> * Seja $X$ o número de sucessos no intervalo, então:  
+$$P(X=x)=\frac{e^{-\lambda}\lambda^x}{x!} \,,\quad x=0,1,2,\ldots$$  
+onde $\lambda$ é a esperança.  
+
+> * Notação: $X\sim\mbox{Poisson}(\lambda)$.
+
+
+## Distribuição de Poisson {.build}
+
+A distribuição de Poisson é muito usada na distribuição do número de:  
+ 
+* carros que passam por um cruzamento por minuto, durante uma certa hora do dia; 
+
+> * erros tipográficos por página, em um livro; 
+
+> * defeitos por unidade ($m^3$, $m^2$, $m$, etc...) por peça fabricada; 
+
+> * colônias de bactérias numa dada cultura por $0,01 mm^2$, numa plaqueta de microscópio; 
+
+> * mortes por ataque de coração por ano, em um certo bairro
+
+* etc...
+
+
+## Distribuição de Poisson {.buid}
+
+Para uma v.a. quantificando eventos raros, sob algumas suposições, podemos usar a distribuição de Poisson. 
+ 
+ 
+> * Uma variável aleatória $X$ tem distribuição de Poisson com parâmetro $\lambda>0$, se sua função de probabilidade é dada por: 
+$$P(X=x)=\frac{e^{-\lambda}\lambda^{x}}{x!}, \qquad x=0,1,2,...$$ 
+
+> * $\lambda$ é chamado de taxa de ocorrência 
+
+> * $\mathbb E(X)=Var(X)=\lambda$
+
+> * Notação: $X\sim P(\lambda)$ 
+
+
+## Exemplo: Erros em um livro {.build}
+
+Num livro de 800 páginas, há 800 erros de impressão. Qual a probabilidade de que uma página contenha pelo menos 3 erros?
+
+$X =$ número de erros por página 
+
+> Taxa de ocorrência: $\lambda=1$
+
+$$
+\begin{aligned}
+P(X\geq 3) &= 1-P(X<3)\\
+ &= 1-[P(X=0)+P(X=1)+P(X=2)]\\
+&=1-\left\{ \frac{e^{-1}1^0}{0!} +   \frac{e^{-1}1^1}{1!} +\frac{e^{-1}1^2}{2!} \right\}\\ 
+&=0.08
+\end{aligned}
+$$
+
+
+## Exemplo: Mensagens no Facebook {.build}
+
+Uma firma recebe 720 mensagens em sua página do Facebook durante as 8 horas de horário comercial. Qual a probabilidade de que em 6 minutos no horário comercial a firma receba pelo menos 4 mensagens no Facebook?
+
+$$ 
+\begin{aligned}
+720\mbox{ mensagens} & \rightarrow 480 \mbox{ min}\\
+\lambda &\rightarrow 6 \mbox{ min}
+\end{aligned} 
+$$
+
+Então, $\lambda=9$ e
+
+$$
+\begin{aligned}
+P(X\geq 4)&=  1-P(X<4)=1-P(X\leq 3)\\ 
+&= 1-\left[\frac{e^{-9}9^0}{0!}+\frac{e^{-9}9^1}{1!} +\frac{e^{-9}9^2}{2!} +\frac{e^{-9}9^3}{3!} \right]\\ 
+&=0.979
+\end{aligned}
+$$
+
+
+## Exemplo: SAC {.build}
+
+<center><img src="figuras/atendimento.png" width=130></center>
+
+
+Numa central de SAC (serviço de atendimento ao consumidor) chegam $300$ telefonemas por hora.   Qual a probabilidade de que:
+ 
+* num minuto não haja nenhuma chamada?  
+
+> * em 2 minutos haja 2 chamadas?  
+
+> * em $t$ minutos não haja chamadas?  
+ 
+
+## Exemplo: SAC {.build .smaller}
+ 
+$X=$ número de chamadas por minuto.
+
+> * Taxa de ocorrência por minuto: $\lambda=  300/60=5$  
+
+$$
+P(X= 0)=\frac{e^{-5}5^0}{0!}=0.0067
+$$
+
+> $X=$ número de chamadas a cada 2 minutos.
+ 
+> * Taxa de ocorrência em 2 minutos: $\lambda= 10$ 
+$$P(X= 2)=\frac{e^{-10}10^2}{2!}=0.00227$$
+
+> $X=$ número de chamadas a cada $t$ minutos.
+
+> * Taxa de ocorrência em $t$ minutos:   $\lambda=5t$
+
+$$P(X=0)=\frac{e^{-5t}(5t)^0}{0!}=e^{-5t}$$
+ 
+
+## Exemplo: Lâmpadas {.build}
+
+A experiência mostra que de cada 400 lâmpadas, 2 se queimam ao serem ligadas. Qual a probabilidade de que numa instalação de:
+ 
+* 600 lâmpadas, no mínimo 3 se queimem?  
+* 900 lâmpadas, exatamente 8 se queimem?  
+ 
+
+## Exemplo: Lâmpadas {.build}
+ 
+$X=$ número de lâmpadas que se queimam numa instalação de 600 lâmpadas.  
+
+> De 400, 2 se queimam, ou seja, de 200, 1 se queima.
+
+> Taxa de ocorrência para 600 lâmpadas: $\lambda=  600/200=3$  
+
+> 600 lâmpadas, no mínimo 3 se queimem:
+$$
+\begin{aligned}
+P(X\geq 3)&= \sum_{x=3}^{\infty}\frac{e^{-3}3^x}{x!}=  1-P(X<3)= \\
+&= 1-[P(X=0)+P(X=1)+P(X=2)]\\ 
+&= 1-\left[ \frac{e^{-3}3^0}{0!}+ \frac{e^{-3}3^1}{1!}+ \frac{e^{-3}3^2}{2!}\right]= 0.5768
+\end{aligned}
+$$
+ 
+
+## Exemplo: Lâmpadas {.build}
+ 
+$X=$ número de lâmpadas que se queimam numa instalação de 900 lâmpadas.  
+
+> Taxa de ocorrência para 900 lâmpadas: $\lambda=  900/200=4.5$ 
+
+> 900 lâmpadas, 8 se queimem:
+
+> $$P(X=8)= \frac{e^{-4.5}(4.5)^8}{8!}=0.0463$$
+
+ 
+## Exemplo: Twitter {.build}
+
+<center><img src="figuras/twitter-117595_640.png" width=150></center>
+
+O número citações de uma certa conta do Twitter ocorre segundo uma  distribuição de Poisson, com a média de oito citações por minuto.
+
+> Determinar qual a probabilidade de que num minuto se tenha:
+ 
+a. dez ou mais citações;
+
+b. menos que nove citações;
+
+c. entre sete (inclusive) e nove (exclusive) citações.
+
+
+## Exemplo: Twitter {.build}
+
+Sabemos que se $X \sim \mbox{Poisson}(\lambda)$, então sua função de probabilidade é $$P(X=x) = \frac{e^{-\lambda} \lambda^x }{ x!}, \qquad x=0,1,\ldots$$  
+
+> Além disso, $\mathbb{E}(X)=\lambda$. 
+
+> O enunciado diz *média de oito citações por minuto*,   então a variável aleatória $X$ = *número de citações por minuto* tem distribuição $\mbox{Poisson}(8)$.  
+
+> * A probabilidade de dez ou mais chamadas é dada por:
+ 
+ $$
+ \begin{aligned}
+P(X\geq10) & =   1-P(X<10) = 1-P(X\leq9)\\
+&= 1-\displaystyle\sum_{k=0}^9 \frac{e^{-8}8^k}{k!} = 1- e^{-8} - \ldots - \displaystyle\frac{e^{-8}8^9}{9!} = 0.2833
+\end{aligned}
+$$
+ 
+## Exemplo: Twitter {.build}
+
+> * A probabilidade de termos menos que nove citações em um minuto é dada por:
+
+$$P(X < 9) = P(X \leq 8) = e^{-8} + \ldots + \displaystyle\frac{e^{-8}8^8}{8!} = 0.5926$$
+
+
+> * A probabilidade de termos entre sete (inclusive) e nove (exclusive) citações em um minuto é dada por:
+
+$$
+\begin{aligned}
+P(7\leq X < 9)&=P(7\leq X \leq 8) = P(X=7)+P(X=8)\\
+&=\displaystyle\frac{e^{-8}8^7}{7!}+\displaystyle\frac{e^{-8}8^8}{8!} = 0.2792
+\end{aligned}
+$$
+
+## Leituras
+
+* [Ross](http://www.sciencedirect.com/science/book/9780123743886): capítulo 5
+* Magalhães: capítulo 3
+* [OpenIntro](https://www.openintro.org/stat/textbook.php): seções 3.3, 3.4, 3.5.2
+
+<center><img src="figuras/fishy.jpg" width=350></center>
+
+##
+
+Slides produzidos pelos professores:
+
+* Samara Kiihl
+
+* Tatiana Benaglia
+
+* Benilton Carvalho
