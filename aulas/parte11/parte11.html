@@ -457,13 +457,13 @@ P(X=15) &amp;= (1-p)^{15-1} p \\
 <p>Então, \(X\sim Hip(N=10, n=4, r=6)\) e</p>
 </blockquote>
 
-<blockquote>
-<p>\[P(X=x)=\frac{{{r}\choose{x}}{{N-r}\choose{n-x}}}{{{N}\choose{n}}} \qquad 0\leq x \leq min\{r,n\}\]</p>
-</blockquote>
+<p>\[P(X=x)=\frac{\binom{r}{x}\binom{N-r}{n-x}}{\binom{N}{n}}, \qquad 0\leq x \leq min\{r,n\}\]</p>
 
 <blockquote>
-<p>Portanto, \[P(X=3)=\frac{{{6}\choose{3}}{{4}\choose{1}}}{{{10}\choose{4}}}=\frac{8}{21}\]</p>
+<p>Portanto,</p>
 </blockquote>
+
+<p>\[P(X=3)=\frac{\binom{6}{3}\binom{4}{1}}{\binom{10}{4}}=\frac{8}{21}\]</p>
 
 </article></slide><slide class=''><hgroup><h2>Exemplo: Comissão</h2></hgroup><article  id="exemplo-comissao" class="build">
 
@@ -472,8 +472,8 @@ P(X=15) &amp;= (1-p)^{15-1} p \\
 <p>Seja \(X\) o número de mulheres na comissão, então \(X \sim Hip(N=25,n=3,r=8)\)</p>
 
 <p>\[\begin{aligned}
-P(X=2) &amp;=\frac{{8 \choose 2}{17 \choose 1}}{{25 \choose 3}}=0.21 \\
-P(X=3) &amp;=\frac{{8 \choose 3}{17 \choose 0}}{{25 \choose 3}}=0.02 \\
+P(X=2) &amp;=\frac{\binom{8}{2}\binom{17}{1}}{\binom{25}{3}}=0.21 \\
+P(X=3) &amp;=\frac{\binom{8}{2}\binom{17}{0}}{\binom{25}{3}}=0.02 \\
 P(X \leq 2) &amp;= P(X=2) + P(X=3) = 0.21 + 0.02 = 0.23
 \end{aligned}
 \]</p>
@@ -526,7 +526,7 @@ P(X \leq 2) &amp;= P(X=2) + P(X=3) = 0.21 + 0.02 = 0.23
 
 <p>A probabilidade de não se obter nenhuma peça defeituosa na amostra retirada é:</p>
 
-<p>\[P(X=0)= \frac{{{10}\choose{0}}{{100-10}\choose{5-0}}}{{{100}\choose{5}}}= \frac{{{90}\choose{5}}}{{{100}\choose{5}}}\approx0.584\]</p>
+<p>\[P(X=0)= \frac{\binom{10}{0}\binom{100-10}{5-0}}{\binom{100}{5}}= \frac{\binom{90}{5}}{\binom{100}{5}}\approx0.584\]</p>
 
 </article></slide><slide class=''><hgroup><h2>Aplicação: Controle de Qualidade</h2></hgroup><article  id="aplicacao-controle-de-qualidade-1" class="build">
 
@@ -589,7 +589,7 @@ P(X\geq 1) &amp;=1-P(X&lt;1)=1-P(X=0) \\
 <li>Considerando uma v.a. \(X\sim\mbox{Bin}(n,p)\), quando temos grandes valores para \(n\) e \(p\) pequeno (mantendo-se o produto \(np=\lambda\) constante), podemos usar a seguinte aproximação para a probabilidade:</li>
 </ul>
 
-<p>\[P(X=x)={{n}\choose{x}}p^{x}(1-p)^{n-x} \approx \frac{e^{-np}(np)^{x}}{x!}\,,\quad x=0,1,2,\ldots n\]</p>
+<p>\[P(X=x)={\binom{n}{x}}p^{x}(1-p)^{n-x} \approx \frac{e^{-np}(np)^{x}}{x!}\,,\quad x=0,1,2,\ldots n\]</p>
 
 <ul class = 'build'>
 <li>Geralmente considera-se o critério \(np\leq7\) para usar essa aproximação.</li>
@@ -604,7 +604,7 @@ P(X\geq 1) &amp;=1-P(X&lt;1)=1-P(X=0) \\
 <p>\(X\sim Bin(100,0.065)\), deseja-se obter \(P(X=10)\)</p>
 
 <ul class = 'build'>
-<li>No modelo Binomial: \(P(X=10)= {{100}\choose{10}}(0.065)^{10}(0.935)^{100-10}=0.055\)</li>
+<li>No modelo Binomial: \(P(X=10)= {\binom{100}{10}}(0.065)^{10}(0.935)^{100-10}=0.055\)</li>
 </ul>
 
 <ul class = 'build'>
@@ -631,7 +631,7 @@ P(X\geq 1) &amp;=1-P(X&lt;1)=1-P(X=0) \\
 <li>No modelo Binomial: \(X\sim\mbox{Bin}(100,0.01)\)</li>
 </ul>
 
-<p>\(P(X=2)= {{100}\choose{2}}(0.01)^{2}(0.99)^{100-2}\)=0.1849</p>
+<p>\(P(X=2)= {\binom{100}{2}}(0.01)^{2}(0.99)^{100-2}\)=0.1849</p>
 
 <ul class = 'build'>
 <li>\(\lambda= np =100\times0.01=1\leq7\)</li>

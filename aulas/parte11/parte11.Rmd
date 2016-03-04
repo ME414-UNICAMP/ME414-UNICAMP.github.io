@@ -344,10 +344,12 @@ Uma urna contém 10 bolas: 6 brancas e 4 pretas.
 
 > Então, $X\sim Hip(N=10, n=4, r=6)$ e
 
-> $$P(X=x)=\frac{{{r}\choose{x}}{{N-r}\choose{n-x}}}{{{N}\choose{n}}} \qquad 0\leq x \leq min\{r,n\}$$ 
+$$P(X=x)=\frac{\binom{r}{x}\binom{N-r}{n-x}}{\binom{N}{n}}, \qquad 0\leq x \leq min\{r,n\}$$ 
 
 > Portanto,
-$$P(X=3)=\frac{{{6}\choose{3}}{{4}\choose{1}}}{{{10}\choose{4}}}=\frac{8}{21}$$
+
+$$P(X=3)=\frac{\binom{6}{3}\binom{4}{1}}{\binom{10}{4}}=\frac{8}{21}$$
+
 
 ## Exemplo: Comissão {.build}
 
@@ -356,8 +358,8 @@ Voltando ao exemplo: O Departamento de Estatística é formado por 25 professore
 Seja $X$ o número de mulheres na comissão, então $X \sim Hip(N=25,n=3,r=8)$
 
 $$\begin{aligned}
-P(X=2) &=\frac{{8 \choose 2}{17 \choose 1}}{{25 \choose 3}}=0.21 \\
-P(X=3) &=\frac{{8 \choose 3}{17 \choose 0}}{{25 \choose 3}}=0.02 \\
+P(X=2) &=\frac{\binom{8}{2}\binom{17}{1}}{\binom{25}{3}}=0.21 \\
+P(X=3) &=\frac{\binom{8}{2}\binom{17}{0}}{\binom{25}{3}}=0.02 \\
 P(X \leq 2) &= P(X=2) + P(X=3) = 0.21 + 0.02 = 0.23
 \end{aligned}
 $$
@@ -404,7 +406,7 @@ $$X\sim Hip(N=100, n=5, r=10)$$
 
 A probabilidade de não se obter nenhuma peça defeituosa na amostra retirada é: 
 
-$$P(X=0)= \frac{{{10}\choose{0}}{{100-10}\choose{5-0}}}{{{100}\choose{5}}}= \frac{{{90}\choose{5}}}{{{100}\choose{5}}}\approx0.584$$
+$$P(X=0)= \frac{\binom{10}{0}\binom{100-10}{5-0}}{\binom{100}{5}}= \frac{\binom{90}{5}}{\binom{100}{5}}\approx0.584$$
 
 
 ## Aplicação: Controle de Qualidade {.build}
@@ -466,7 +468,7 @@ $$
 
 > * Considerando uma v.a. $X\sim\mbox{Bin}(n,p)$, quando temos grandes valores para $n$ e $p$ pequeno (mantendo-se o produto $np=\lambda$ constante), podemos usar a seguinte aproximação para a probabilidade:  
 
-$$P(X=x)={{n}\choose{x}}p^{x}(1-p)^{n-x} \approx \frac{e^{-np}(np)^{x}}{x!}\,,\quad x=0,1,2,\ldots n$$
+$$P(X=x)={\binom{n}{x}}p^{x}(1-p)^{n-x} \approx \frac{e^{-np}(np)^{x}}{x!}\,,\quad x=0,1,2,\ldots n$$
 
 
 > * Geralmente considera-se o critério $np\leq7$ para usar essa aproximação.
@@ -478,7 +480,7 @@ $$P(X=x)={{n}\choose{x}}p^{x}(1-p)^{n-x} \approx \frac{e^{-np}(np)^{x}}{x!}\,,\q
 
 $X\sim Bin(100,0.065)$, deseja-se obter $P(X=10)$  
  
-> * No modelo Binomial: $P(X=10)= {{100}\choose{10}}(0.065)^{10}(0.935)^{100-10}=0.055$ 
+> * No modelo Binomial: $P(X=10)= {\binom{100}{10}}(0.065)^{10}(0.935)^{100-10}=0.055$ 
 
 > * $\lambda=  np =100\times0.065=6.5\leq7$  
 
@@ -513,7 +515,7 @@ A probabilidade de uma lâmpada se queimar ao ser ligada é $1/100$. Numa instal
  
 > * No modelo Binomial: $X\sim\mbox{Bin}(100,0.01)$
 
-$P(X=2)= {{100}\choose{2}}(0.01)^{2}(0.99)^{100-2}$=0.1849 
+$P(X=2)= {\binom{100}{2}}(0.01)^{2}(0.99)^{100-2}$=0.1849 
 
 > * $\lambda=  np =100\times0.01=1\leq7$  
 
