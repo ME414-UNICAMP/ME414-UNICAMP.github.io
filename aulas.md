@@ -1,4 +1,11 @@
-## Programa e Cronograma
+---
+layout: page
+title: Programa
+permalink: /aulas/
+---
+
+
+## Programa
 
 ### Estatística Descritiva
 
