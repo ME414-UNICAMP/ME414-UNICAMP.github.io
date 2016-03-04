@@ -24,6 +24,7 @@ permalink: /aulas/
   + Tabelas de contingência e gráficos de barras
 
 [Parte01](parte01/parte01.html)
+[Parte01a](slides/parte01/parte01.html)
 [Parte02](slides/parte02/parte02.html)
 [Parte03](slides/parte03/parte03.html)
 [Parte04](slides/parte04/parte04.html)
