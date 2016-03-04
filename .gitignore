@@ -4,3 +4,5 @@ _site
 _posts/.Rhistory
 
 .Rmd
+
+_aulas/slides.Rmd
