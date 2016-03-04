@@ -328,7 +328,7 @@ Temos que
 > Então dizemos que $X$ segue uma distribuição **Hipergeométrica** com parâmetros $N,n,r$, ou seja, $X \sim Hip(N,n,r)$.
 
 > A probabilidade de se observar $x$ é dada por: 
-$$P(X=x)=\frac{{r \choose x}{{N-r}\choose{n-x}}}{{{N}\choose{n}}}, \qquad 0\leq x \leq min\{r,n\}$$ 
+$$P(X=x)=\frac{\binom{r}{x}\binom{N-r}{n-x}}{\binom{N}{n}}, \qquad 0\leq x \leq min\{r,n\}$$ 
 
 > A esperança e variância são, respectivamente:
 
