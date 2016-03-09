@@ -1,0 +1,775 @@
+---
+title: ME414 - Estatística para Experimentalistas
+subtitle: Parte 20
+output: 
+  ioslides_presentation:
+         widescreen: true
+logo: ../logo-imecc.png
+---
+
+
+# Inferência para duas populações: Teste de hipótese para duas médias
+
+
+## Teste de hipótese para duas médias {.build}
+
+**População 1:** Coletamos uma amostra aleatória $X_1, X_2, \ldots,X_n$ de uma população com média $\mu_1$ e a variância $\sigma_1^2$ e usamos $\bar{X}$ para estimar $\mu_1$.
+
+**População 2:** Coletamos uma amostra aleatória $Y_1, Y_2, \ldots,Y_m$ de uma população com média $\mu_2$ e a variância $\sigma_2^2$ e usamos $\bar{Y}$ para estimar $\mu_2$.
+
+A população 1 é independente da população 2.
+
+## Teste de hipótese para duas médias {.build}
+
+**Condições:** 
+
+(a) As populações 1 e 2 são aproximadamente normais ou 
+
+(b) Os tamanhos amostrais $n$ e $m$ são suficientemente grandes.
+
+Se pelo menos uma das condições acima é satisfeita, temos:
+$$\bar{X} \sim N\left(\mu_1,\frac{\sigma_1^2}{n} \right) \quad \mbox{e} \quad  \bar{Y} \sim N\left(\mu_2,\frac{\sigma_2^2}{m} \right)$$
+
+
+## Teste de hipótese para duas médias ($\sigma_1^2\neq\sigma_2^2$) {.build}
+**Caso 1: Variâncias diferentes e conhecidas**
+
+Assumindo que as duas amostras $X_1, \ldots, X_n$ e $Y_1, \ldots, Y_m$ são independentes com $\sigma_1^2 \neq \sigma_2^2$ conhecidas, temos:
+
+$$ \bar{X} - \bar{Y} \sim N\left(\mu_1 - \mu_2, \frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}  \right)$$
+
+## Teste de hipótese para duas médias ($\sigma_1^2\neq\sigma_2^2$) {.build}
+**Caso 1: Variâncias diferentes e conhecidas**
+
+Temos interesse em: $H_0$: $\mu_1-\mu_2=\Delta_0$ vs $H_a$: $\mu_1-\mu_2\neq\Delta_0$ (ou $H_a$: $\mu_1-\mu_2< \Delta_0$ ou $H_a$: $\mu_1-\mu_2 > \Delta_0$).
+
+E daí, sob $H_0$, temos que:
+$$Z= \frac{(\bar{X} - \bar{Y}) - \overbrace{(\mu_1 - \mu_2)}^{\Delta_0}}{ \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}} \sim N(0, 1)$$
+
+## Teste de hipótese para duas médias ($\sigma_1^2\neq\sigma_2^2$) {.build}
+
+Se temos interesse em:
+$H_{0}: \mu_{1}-\mu_{2}=\Delta_{0} \hspace{0.3cm} vs \hspace{0.3cm} H_{a}: \mu_{1}-\mu_{2} > \Delta_{0}$.
+
+> Uma amostra aleatória de tamanho $m$ é coletada da população $X$ e calcula-se a média amostral, $\bar{x}$. Similarmente, para a população $Y$, temos $\bar{y}$ obtida a partir de uma amostra aleatória de tamanho $n$.
+
+$$
+\begin{aligned}
+\mbox{p-valor} & =  P\left(\frac{\bar{X}-\bar{Y}-\Delta_{0}}{\sqrt{\sigma_{1}^{2}/n+\sigma_{2}^{2}/m}} \geq \frac{\bar{x}-\bar{y}-\Delta_{0}}{\sqrt{\sigma_1^2/n+\sigma_2^2/m}}\right)  =  P\left(Z \geq \frac{\bar{x}-\bar{y}-\Delta_{0}}{\sqrt{\sigma_{1}^{2}/n+\sigma_{2}^{2}/m}}\right) \\
+& = 1-\Phi\left(\frac{\bar{x}-\bar{y}-\Delta_{0}}{\sqrt{\sigma_{1}^{2}/n+\sigma_{2}^{2}/m}}\right) \nonumber
+\end{aligned}
+$$
+em que $\Phi(z)=P(Z\leq z)$ para $Z\sim N(0,1)$.
+
+## Teste de hipótese para duas médias ($\sigma_1^2\neq\sigma_2^2$) {.build}
+
+Se temos interesse em:
+$H_{0}: \mu_{1}-\mu_{2}=\Delta_{0} \hspace{0.3cm} vs \hspace{0.3cm} H_{a}: \mu_{1}-\mu_{2} < \Delta_{0}$.
+
+
+$$
+\begin{aligned}
+\mbox{p-valor} & =  P\left(\frac{\bar{X}-\bar{Y}-\Delta_{0}}{\sqrt{\frac{\sigma_{1}^{2}}{n}+\frac{\sigma_{2}^{2}}{m}}} \leq \frac{\bar{x}-\bar{y}-\Delta_{0}}{\sqrt{\frac{\sigma_{1}^{2}}{n}+\frac{\sigma_{2}^{2}}{m}}}\right) \nonumber \\
+& =  P\left(Z \leq \frac{\bar{x}-\bar{y}-\Delta_{0}}{\sqrt{\frac{\sigma_{1}^{2}}{n}+\frac{\sigma_{2}^{2}}{m}}}\right) =  \Phi\left(\frac{\bar{x}-\bar{y}-\Delta_{0}}{\sqrt{\frac{\sigma_{1}^{2}}{n}+\frac{\sigma_{2}^{2}}{m}}}\right) \nonumber
+\end{aligned}
+$$
+em que $\Phi(z)=P(Z\leq z)$ para $Z\sim N(0,1)$.
+
+
+## Teste de hipótese para duas médias ($\sigma_1^2\neq\sigma_2^2$) {.build}
+
+Se temos interesse em:
+$H_{0}: \mu_{1}-\mu_{2}=\Delta_{0} \hspace{0.3cm} vs \hspace{0.3cm} H_{a}: \mu_{1}-\mu_{2} \neq \Delta_{0}$.
+
+$$
+\begin{aligned}
+\mbox{p-valor} & =  P\left(\frac{|\bar{X}-\bar{Y}-\Delta_{0}|}{\sqrt{\frac{\sigma_{1}^{2}}{n}+\frac{\sigma_{2}^{2}}{m}}} \geq \frac{|\bar{x}-\bar{y}-\Delta_{0}|}{\sqrt{\frac{\sigma_{1}^{2}}{n}+\frac{\sigma_{2}^{2}}{m}}}\right) \nonumber \\
+& =  P\left(|Z| \geq \frac{|\bar{x}-\bar{y}-\Delta_{0}|}{\sqrt{\frac{\sigma_{1}^{2}}{n}+\frac{\sigma_{2}^{2}}{m}}}\right) =  2\times \left[ 1 - \Phi\left(\frac{|\bar{x}-\bar{y}-\Delta_{0}|}{\sqrt{\frac{\sigma_{1}^{2}}{n}+\frac{\sigma_{2}^{2}}{m}}}\right) \right ]\nonumber
+\end{aligned}
+$$
+em que $\Phi(z)=P(Z\leq z)$ para $Z\sim N(0,1)$.
+
+
+
+
+
+## Teste de hipótese para duas médias ($\sigma_1^2=\sigma_2^2$) {.build}
+**Caso 2: Variâncias iguais e conhecidas**
+
+$$ \bar{X} - \bar{Y} \sim N\left(\mu_1 - \mu_2, \frac{\sigma^{2}}{n} + \frac{\sigma^{2}}{m}  \right)$$
+
+Temos interesse em: $H_0$: $\mu_1-\mu_2=\Delta_0$ vs $H_a$: $\mu_1-\mu_2\neq\Delta_0$ (ou $H_a$: $\mu_1-\mu_2< \Delta_0$ ou $H_a$: $\mu_1-\mu_2 > \Delta_0$).
+
+E daí, sob $H_0$, temos que:
+$$Z= \frac{(\bar{X} - \bar{Y}) - \overbrace{(\mu_1 - \mu_2)}^{\Delta_0}}{ \sqrt{\sigma^2 ( \frac{1}{n} + \frac{1}{m}} )} \sim N(0, 1)$$
+
+
+## Teste de hipótese para duas médias ($\sigma_1^2=\sigma_2^2$ desconhecidas) {.build}
+**Caso 3: Variâncias iguais e desconhecidas**
+
+Assim como no caso de uma média com variância desconhecida, usamos uma estimativa de $\sigma^2$ e a distribuição normal é substituída pela distribuição $t$.
+
+No caso de duas populações, o estimador da variância $\sigma^2$ é a combinação das variâncias amostrais de cada população, ou seja,
+$$S_p^2 = \frac{(n-1)S_1^2 + (m-1)S_2^2}{n+m-2},$$
+sendo $S_i^2$ é a variância amostral da população $i$.
+
+
+## Teste de hipótese para duas médias ($\sigma_1^2=\sigma_2^2$ desconhecidas) {.build}
+
+Quando $\sigma^2$ é conhecida:
+
+$$ \frac{\bar{X} - \bar{Y}-(\mu_1-\mu_2)}{\sqrt{\sigma^2 (1/n + 1/m)}} \sim N(0,1)$$
+
+Quando $\sigma^2$ é desconhecida:
+$$ \frac{\bar{X} - \bar{Y}-(\mu_1-\mu_2)}{\sqrt{S_p^2 (1/n + 1/m)}} \sim t_{n+m-2}$$
+
+## Teste de hipótese para duas médias ($\sigma_1^2=\sigma_2^2$ desconhecidas) {.build}
+
+Temos interesse em: $H_0$: $\mu_1-\mu_2=\Delta_0$ vs $H_a$: $\mu_1-\mu_2\neq\Delta_0$ (ou $H_a$: $\mu_1-\mu_2< \Delta_0$ ou $H_a$: $\mu_1-\mu_2 > \Delta_0$).
+
+E daí, sob $H_0$, temos que:
+$$T= \frac{(\bar{X} - \bar{Y}) - \overbrace{(\mu_1 - \mu_2)}^{\Delta_0}}{ \sqrt{S_p^2 ( \frac{1}{n} + \frac{1}{m}} )} \sim t_{n+m-2}$$
+
+**Observação:** Se $n$ e $m$ são pequenos, as duas amostras devem vir de populações aproximadamente normais. Se $n$ e $m$ são grandes, então a distribuição $t$ com $n+m-2$ graus de liberdade aproxima-se de uma normal.
+
+
+## Resumo: Teste de hipótese para duas médias {.smaller}
+
+Para $H_0$: $\mu_1-\mu_2=\Delta_0$ vs  $H_1$: $\mu_1-\mu_2\neq\Delta_0$
+
+Variâncias | Estatística do teste         | Valor crítico para $\alpha$ | Valor de p
+---------- | -----------------------------|-----------------------------|-----------------
+Diferentes e conhecidas ($\sigma_1^2 \neq \sigma_2^2$) | $$Z= \frac{(\bar{X} - \bar{Y}) - \Delta_0}{ \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}} \sim N(0, 1)$$ | rejeitar se $|z_{obs}|\geq z_{\alpha/2}$ | $2 P(Z\geq |z_{obs}|)$
+Iguais e conhecidas ($\sigma_1^2 = \sigma_2^2 =\sigma^2$) | $$Z= \frac{(\bar{X} - \bar{Y}) - \Delta_0}{ \sqrt{\sigma^2 ( \frac{1}{n} + \frac{1}{m}} )} \sim N(0, 1)$$ | rejeitar se $|z_{obs}|\geq z_{\alpha/2}$ | $2 P(Z\geq |z_{obs}|)$
+Iguais e desconhecidas ($\sigma_1^2 = \sigma_2^2 =\sigma^2$) | $$T\sim\frac{(\bar{X} - \bar{Y}) -\Delta_0}{ \sqrt{S_p^2 ( 1/m + 1/n )}}\sim t_{n+m-2}$$ | rejeitar se $|t_{obs}|\geq t_{n+m-2,\alpha/2}$ | $2 P(T\geq |t_{obs}|)$
+
+
+## Resumo: Teste de hipótese para duas médias {.smaller}
+
+Para $H_0$: $\mu_1-\mu_2=\Delta_0$ vs  $H_1$: $\mu_1-\mu_2\leq\Delta_0$
+
+Variâncias | Estatística do teste         | Valor crítico para $\alpha$ | Valor de p
+---------- | -----------------------------|-----------------------------|-----------------
+Diferentes e conhecidas ($\sigma_1^2 \neq \sigma_2^2$) | $$Z= \frac{(\bar{X} - \bar{Y}) - \Delta_0}{ \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}} \sim N(0, 1)$$ | rejeitar se $z_{obs}\leq -z_{\alpha}$ | $P(Z\leq z_{obs})$
+Iguais e conhecidas ($\sigma_1^2 = \sigma_2^2 =\sigma^2$) | $$Z= \frac{(\bar{X} - \bar{Y}) - \Delta_0}{ \sqrt{\sigma^2 ( \frac{1}{n} + \frac{1}{m}} )} \sim N(0, 1)$$ | rejeitar se $z_{obs}\leq -z_{\alpha}$ | $P(Z\leq z_{obs})$
+Iguais e desconhecidas ($\sigma_1^2 = \sigma_2^2 =\sigma^2$) | $$T\sim\frac{(\bar{X} - \bar{Y}) -\Delta_0}{ \sqrt{S_p^2 ( 1/m + 1/n )}}\sim t_{n+m-2}$$ | rejeitar se $t_{obs}\leq -t_{n+m+2,\alpha}$ | $P(T\leq t_{obs})$
+
+
+## Resumo: Teste de hipótese para duas médias {.smaller}
+
+Para $H_0$: $\mu_1-\mu_2=\Delta_0$ vs  $H_1$: $\mu_1-\mu_2\geq\Delta_0$
+
+Variâncias | Estatística do teste         | Valor crítico para $\alpha$ | Valor de p
+---------- | -----------------------------|-----------------------------|-----------------
+Diferentes e conhecidas ($\sigma_1^2 \neq \sigma_2^2$) | $$Z= \frac{(\bar{X} - \bar{Y}) - \Delta_0}{ \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}} \sim N(0, 1)$$ | rejeitar se $z_{obs}\geq z_{\alpha}$ | $P(Z\geq z_{obs})$
+Iguais e conhecidas ($\sigma_1^2 = \sigma_2^2 =\sigma^2$) | $$Z= \frac{(\bar{X} - \bar{Y}) - \Delta_0}{ \sqrt{\sigma^2 ( \frac{1}{n} + \frac{1}{m}} )} \sim N(0, 1)$$ | rejeitar se $z_{obs}\geq z_{\alpha}$ | $P(Z\geq z_{obs})$
+Iguais e desconhecidas ($\sigma_1^2 = \sigma_2^2 =\sigma^2$) | $$T\sim\frac{(\bar{X} - \bar{Y}) -\Delta_0}{ \sqrt{S_p^2 ( 1/m + 1/n )}}\sim t_{n+m-2}$$ | rejeitar se $t_{obs}\geq t_{n+m+2,\alpha}$ | $P(T\geq t_{obs})$
+
+
+
+## Relembrando: Como encontrar $z_{\alpha/2}$
+
+$$P(|Z|\leq z_{\alpha/2})=P(-z_{\alpha/2}\leq Z \leq z_{\alpha/2})=1-\alpha$$
+
+<center>
+```{r, echo=FALSE, results='hide', fig.height=3.5, fig.width=5, message=FALSE}
+library(openintro)
+par(mar=c(2, 4, 1, 1) + 0.1)
+normTail(U = 2,L=-2,
+         col = COL[1],
+         xlim = c(-3, 3),
+         axes  =  FALSE,
+         lwd  =  2)
+at <- c(-2, 0,2)
+labels <- expression(-z[alpha/2], 0,z[alpha/2])
+axis(1, at, labels, cex.axis = 1)
+yMax <- 0.4
+
+text(0, yMax * 0.4, labels= expression('área '* 1-alpha), cex = 1.2)
+arrows(2.5, yMax / 2,
+       2.5, yMax / 10,
+       length = 0.1,
+       col = COL[1],
+       lwd = 1.5)
+text(2.5, yMax / 2, labels= expression('área '* alpha/2),
+     pos = 3,
+     cex = 1.2,
+     col = COL[1])
+
+
+arrows(-2.5, yMax / 2,
+       -2.5, yMax / 10,
+       length = 0.1,
+       col = COL[1],
+       lwd = 1.5)
+text(-2.5, yMax / 2, labels= expression('área '* alpha/2),
+     pos = 3,
+     cex = 1.2,
+     col = COL[1])
+```
+</center>
+
+Procure na tabela o valor de $z$ tal que a probabilidade acumulada até o valor de $z$, isto é $P(Z\leq z)=\Phi(z)$, seja $1-\alpha/2$.
+
+
+
+
+## Relembrando: Como encontrar $t_{\nu,\alpha/2}$
+
+$$P(-t_{\nu,\alpha/2} < T < t_{\nu,\alpha/2}) = 1-\alpha$$
+
+<center>
+```{r, echo=FALSE, results='hide', fig.height=4, fig.width=6,message=FALSE}
+library(openintro)
+par(mar=c(2, 4, 1, 1) + 0.1)
+normTail(U = 2,L=-2,
+         col = COL[1],
+         xlim = c(-3, 3),
+         axes  =  FALSE,
+         lwd  =  2)
+at <- c(-2, 0,2)
+labels <- expression(-t[alpha/2], 0,t[alpha/2])
+axis(1, at, labels, cex.axis = 1)
+yMax <- 0.4
+
+text(0, yMax * 0.4, labels= expression('área '* 1-alpha), cex = 1.2)
+arrows(2.5, yMax / 2,
+       2.5, yMax / 10,
+       length = 0.1,
+       col = COL[1],
+       lwd = 1.5)
+text(2.5, yMax / 2, labels= expression('área '* alpha/2),
+     pos = 3,
+     cex = 1.2,
+     col = COL[1])
+
+
+arrows(-2.5, yMax / 2,
+       -2.5, yMax / 10,
+       length = 0.1,
+       col = COL[1],
+       lwd = 1.5)
+text(-2.5, yMax / 2, labels= expression('área '* alpha/2),
+     pos = 3,
+     cex = 1.2,
+     col = COL[1])
+```
+</center>
+
+Nesse caso, $\nu=n+m-2$ e os valores da distribuição $t$ encontram-se tabelados.
+
+
+
+
+
+## Exemplo: tempo de incubação de dois vírus {.build}
+```{r, echo=FALSE}
+x <- c(4.56, 3.72, 3.45, 2.86, 4.03,
+4.08, 6.56, 4.31, 0.42, 5.56,
+5.92, 2.65, 4.54, 4.04, 4.23,
+6.24, 6.16, 5.46, 3.22, 2.28)
+
+y <- c(2.44, 1.49, 2.68, 2.60, 1.51,
+1.60, 1.47, 3.70, 2.22, 1.78,
+2.36, 1.56, 2.98, 3.33, 2.22,
+0.58, 2.26, 2.26, 1.92, 0.50,
+1.17, 1.70)
+
+xbar <- round(mean(x), 2)
+ybar <- round(mean(y), 2)
+sigma21 <- 2
+sigma22 <- 1
+n <- length(x)
+m <- length(y)
+Delta0 <- 3
+
+alpha <- .01
+z.alfa2 <- round(qnorm(1-alpha/2), 2)
+
+est <- xbar-ybar-Delta0
+se.est <- sqrt(sigma21/n + sigma22/m)
+ic <- round(est + c(-1, 1)*z.alfa2*se.est, 2)
+zobs <- round(est/se.est,2)
+phiabsz <- round(pnorm(abs(zobs),lower.tail=TRUE),4)
+valorp <- 2*round(pnorm(abs(zobs),lower.tail=FALSE),4)
+zc <- round(qnorm(1-alpha/2,lower.tail=TRUE),2)
+```
+
+O tempo de incubação do vírus 1 segue uma distribuição normal com média $\mu_1$ e desvio padrão $\sigma_{1}=\sqrt{`r sigma21`}$. 
+
+Por outro lado, o tempo de incubação do vírus 2 segue uma distribuição normal com média $\mu_2$ e desvio padrão $\sigma_{2}=`r sqrt(sigma22)`$. 
+
+Os tempos de incubação de ambos os vírus são considerados independentes. 
+
+Afirma-se que em média, o tempo de incubação do vírus 1 é 3 meses depois do tempo médio de incubação do vírus 2.
+
+## Exemplo: tempo de incubação de dois vírus {.build}
+
+Realizaram um estudo de controle e os tempos de incubação registrados foram (tempo em meses):
+
+* X: tempo de incubação do vírus 1 (`r n` observações)
+```{r, echo=FALSE}
+x
+```
+
+* Y: tempo de incubação do vírus 2 (`r m` observações)
+```{r, echo=FALSE}
+y
+```
+
+## Exemplo: tempo de incubação de dois vírus {.build}
+
+Recentemente, pacientes contaminados com os vírus foram avaliados e suspeita-se que talvez o tempo de incubação do vírus 1 não seja 3 meses depois do tempo médio de incubação do vírus 2.
+
+Definindo as hipóteses as serem testadas:
+
+$H_{0}: \mu_{1}-\mu_{2}=3 \hspace{0.3cm} vs \hspace{0.3cm} H_{1}: \mu_{1}-\mu_{2}\neq3$
+
+
+Os dados coletados serão usados para avaliar se temos ou não evidências contra $H_0$.
+
+Vamos calcular a média amostral das duas populações:
+$\bar x=`r xbar`$ e $\bar y = `r ybar`$. 
+
+Pelo enunciado, as duas populações são normais e as variâncias são conhecidas:
+$\sigma_1^2 = `r sigma21`$ e $\sigma_2^2= `r sigma22`$. Veja que as populações são normais, variâncias diferentes mas conhecidas. Além disso, $n=`r n`$ e $m=`r m`$.
+
+## Exemplo: tempo de incubação de dois vírus {.build}
+
+$$
+\begin{aligned}
+\mbox{p-valor} & =  P\left(\frac{|\bar{X}-\bar{Y}-\Delta_{0}|}{\sqrt{\frac{\sigma_{1}^{2}}{m}+\frac{\sigma_{2}^{2}}{n}}}\geq \frac{|`r xbar`-`r ybar`-`r Delta0`|}{\sqrt{\frac{2}{`r m`}+\frac{1}{`r n`}}}\right)  \\
+& =  P\left(|Z|\geq `r abs(zobs)`\right) = 2\times P\left(Z \geq `r abs(zobs)`\right)  \\
+& =  2\times \left[1-\Phi\left(`r abs(zobs)`\right)\right] = 2\times \left[1-`r phiabsz`\right] = `r valorp` 
+\end{aligned}
+$$
+
+Se $\alpha=0.01$, como p-valor=`r valorp` $> \alpha=0.01$, não temos evidência para rejeitar $H_{0}: \mu_{1}=3+\mu_{2}$ com nível de significância 0.01.
+
+Valor crítico para $\alpha=0.01$: `r zc`, ou seja, se $|z_{obs}|\geq `r zc`$ temos evidências para rejeitar $H_0$ com nível de significância $\alpha=0.01$.
+
+## Exemplo: Tecidos {.build}
+
+Dois tipos diferentes de tecido devem ser comparados. Uma máquina de testes *Martindale* pode comparar duas amostras ao mesmo tempo. O peso (em miligramas) para sete experimentos foram:
+
+Tecido|  1|  2|  3|  4|  5|  6|  7 
+------|---|---|---|---|---|---|---
+A     | 36| 26| 31| 38| 28| 20| 37 
+B     | 39| 27| 35| 42| 31| 39| 22 
+
+Construa um teste de hipótese com nível de significância 5% para testar a hipótese nula de igualdade entre os pesos médios dos tecidos. Admita que a variância é a mesma, e igual a 49. 
+
+Quais outras suposições são necessárias para que o teste seja válido?
+
+*Adaptado de: Profa. Nancy Garcia*, Notas de aula.
+
+
+## Exemplo: Tecidos {.build}
+```{r, echo=FALSE}
+x <- c(36, 26, 31, 38, 28, 20, 37)
+y <- c(39, 27, 35, 42, 31, 39, 22)
+
+xbar <- round(mean(x), 2)
+ybar <- round(mean(y), 2)
+sigma2 <- 49
+Delta0=0
+
+sigma21 <- round(var(x), 2)
+sigma22 <- round(var(y), 2)
+n <- length(x)
+m <- length(y)
+
+## Intervalo de Confiança
+alpha <- .05 
+z.alfa2 <- round(qnorm(1-alpha/2), 2)
+
+est <- xbar-ybar
+se.est1 <- sqrt(sigma2*(1/n + 1/m))
+ic1 <- round(est + c(-1, 1)*z.alfa2*se.est1, 2)
+
+zobs <- round(est/se.est1,2)
+phiabsz <- round(pnorm(abs(zobs),lower.tail=TRUE),4)
+valorp <- 2*round(pnorm(abs(zobs),lower.tail=FALSE),4)
+zc <- round(qnorm(1-alpha/2,lower.tail=TRUE),2)
+
+t.alfa2 <- round(qt(1-alpha/2, n+m-2), 2)
+s2p <- round(((n-1)*sigma21 + (m-1)*sigma22)/(n+m-2), 2)
+se.est2 <- sqrt(s2p*(1/n + 1/m))
+ic2 <- round(est + c(-1, 1)*t.alfa2*se.est2, 2)
+
+zobs2 <- round(est/se.est2,2)
+zc2 <- round(qt(1-alpha/2,n+m-2,lower.tail=TRUE),2)
+```
+
+Os tecidos do tipo A tem uma média amostral igual a $\bar{x}_A=`r xbar`$. Já os tecidos do tipo B têm média amostral de $\bar{x}_B=`r ybar`$. 
+
+A variância populacional é igual a `r sigma2`, enquanto as variâncias amostrais são `r sigma21` e `r sigma22`, respectivamente.
+
+**Suposições:** Como os tamanhos amostrais $n=m=`r n`$ são pequenos, devemos assumir os pesos dos tecidos dos dois tipos são normalmente distribuídos ou seja, $X_A \sim N(\mu_A, \sigma^2)$ e $X_B \sim N(\mu_B, \sigma^2)$. Além disso são independentes e com variâncias iguais.
+
+## Exemplo: Tecidos {.build}
+
+Assumimos que as variâncias são iguais e **conhecidas** ($\sigma_1^2=\sigma_2^2=`r sigma2`$). Além disso, $n=`r n`$ e $m=`r m`$.
+
+Definindo as hipóteses as serem testadas:
+
+$H_{0}: \mu_{A}-\mu_{B}=0 \hspace{0.3cm} vs \hspace{0.3cm} H_{1}: \mu_{A}-\mu_{B}\neq 0$.
+
+
+Como a variância é conhecida, a estatística do teste é dada por $$Z = \frac{\bar{X}_A-\bar{X}_B-\Delta_0}{\sigma \sqrt{\frac{1}{n_A} + \frac{1}{n_B}}}$$
+
+Se a hipótese nula é verdadeira, temos que $\Delta_0=\mu_A-\mu_B=0$ e $Z \sim N \left(0, 1 \right)$. Note que a hipótese alternativa é do tipo $\neq$, então o teste é bilateral.
+
+## Exemplo: Tecidos {.build}
+
+$$
+\begin{aligned}
+\mbox{p-valor} & =  P\left(\frac{|\bar{X}_A-\bar{X}_B-\Delta_{0}|}{\sigma\sqrt{\frac{1}{n_A}+\frac{1}{n_B}}}\geq \frac{|`r xbar`-`r ybar`-`r Delta0`|}{`r sqrt(sigma2)`\sqrt{\frac{1}{`r m`}+\frac{1}{`r n`}}}\right)  \\
+& =  P\left(|Z|\geq `r abs(zobs)`\right) = 2\times P\left(Z \geq `r abs(zobs)`\right)  \\
+& =  2\times \left[1-\Phi\left(`r abs(zobs)`\right)\right] = 2\times \left[1-`r phiabsz`\right] = `r valorp` 
+\end{aligned}
+$$
+
+Se $\alpha=`r alpha`$, como p-valor=`r valorp` $> \alpha=`r alpha`$, não temos evidência para rejeitar $H_{0}: \mu_{A}=\mu_{B}$ com nível de significância `r alpha`.
+
+Valor crítico para $\alpha=`r alpha`$: `r zc`, ou seja, se $|z_{obs}|\geq `r zc`$ temos evidências para rejeitar $H_0$ com nível de significância $\alpha=`r alpha`$.
+
+
+## Exemplo: Tecidos {.build}
+
+Vamos assumir agora que a variância populacional não fosse conhecida. 
+
+Assumindo ainda que as variâncias são iguais mas **desconhecidas**, vamos então estimar a variância amostral combinada.
+
+Sabendo que $s_1^2=`r sigma21`$, $s_2^2=`r sigma22`$ e $n=m=`r n`$ temos:
+$$\begin{aligned}
+s_p^2 &= \frac{(n-1)s_1^2 + (m-1)s_2^2}{n+m-2}\\
+&= \frac{(`r n`-1) `r sigma21` + (`r m`-1)`r sigma22`}{`r n` + `r m` - 2} \\
+&= `r s2p`
+\end{aligned}$$
+
+## Exemplo: Tecidos {.build}
+Nesse caso, a estatística do teste, sob $H_0$, é dada por:
+
+$$T=\frac{\bar{X}_A-\bar{X}_B}{\sqrt{S_p^2\left(\frac{1}{n_A}+\frac{1}{n_B}\right)}}\sim t_{n+m-2}$$
+
+$$
+\begin{aligned}
+t_{obs} & =\frac{\bar{x}_A-\bar{x}_B}{\sqrt{s_p^2(1/n_A+1/n_B)}}\\
+        & =\frac{`r xbar`-`r ybar`}{\sqrt{`r s2p`(1/`r n`+1/`r m`)}}= `r zobs2`
+\end{aligned}
+$$
+
+## Exemplo: Tecidos {.build}
+
+
+Considerando nível de significância `r alpha`, rejeitamos $H_0$  se $|t_{obs}|\geq t_{n+m-2,`r alpha/2`}$.
+
+
+Valor crítico para $\alpha=`r alpha`$: `r zc2`, ou seja, se $|t_{obs}|\geq `r zc2`$ temos evidências para rejeitar $H_0$ com nível de significância $\alpha=`r alpha`$. No caso, $|t_{obs}|=`r abs(zobs2)` < `r zc2`$, portanto não encontramos evidências para rejeitar a hipótese de que as médias são iguais.
+
+
+
+
+## Exemplo: tempo de adaptação {.build}
+Num estudo comparativo do tempo médio de adaptação (em anos), uma amostra aleatória, de 50 homens e 50 mulheres de um grande complexo industrial, produziu os seguintes resultados:
+
+  Estatística  | Homens | Mulheres
+------| ------ | --------
+Média | 3.2 | 3.7
+Desvio Padrão | 0.8 | 0.9
+
+Construa um teste de hipótese com nível de significância de 5% para a diferença entre o tempo médio de adaptação para homens e mulheres.
+
+*Fonte:* Adaptado de Morettin \& Bussab, Estatística Básica $5^a$ edição, pág 365.
+
+## Exemplo: tempo de adaptação {.build}
+```{r, echo=FALSE,message=FALSE,warning=FALSE}
+xbar <- 3.2
+ybar <- 3.7
+
+sigma1 <- 0.8
+sigma2 <- 0.9
+n <- m <- 50
+
+## Intervalo de Confiança
+alpha <- .05 
+
+s2p <- round(((n-1)*sigma1^2 + (m-1)*sigma2^2)/(n+m-2), 2)
+
+est <- xbar - ybar
+se.est <- sqrt(s2p*(1/n + 1/m))
+
+zobs <- round(est/se.est,2)
+zc <- round(qt(1-alpha/2,n+m-2,lower.tail=TRUE),2)
+
+```
+
+Veja que não sabemos a variância populacional, mas temos os desvios-padrão amostrais e estes são bem próximos. Então iremos assumir que as variâncias são iguais porém desconhecidas. 
+
+Nesse caso, vamos então estimar a variância amostral combinada.
+
+Sabendo que $s_1=`r sigma1`$, $s_2=`r sigma2`$ e $n=m=`r n`$ temos:
+$$\begin{aligned}
+s_p^2 &= \frac{(n-1)s_1^2 + (m-1)s_2^2}{n+m-2}\\
+&= \frac{(`r n`-1) (`r sigma1`)^2 + (`r m`-1)(`r sigma2`)^2}{`r n` + `r m` - 2} \\
+&= `r s2p`
+\end{aligned}$$
+
+## Exemplo: tempo de adaptação {.build}
+
+Nesse caso, a estatística do teste, sob $H_0$, é dada por:
+
+$$T=\frac{\bar{X}_1 -\bar{X}_2}{\sqrt{S_p^2(\frac{1}{n}+\frac{1}{m})}}\sim t_{n_A+m_B-2}$$
+
+$$
+\begin{aligned}
+t_{obs} & =\frac{\bar{x}_1-\bar{x}_2}{\sqrt{s_p^2(\frac{1}{n}+\frac{1}{m})}}\\
+        & =\frac{`r xbar`-`r ybar`}{\sqrt{`r s2p`(\frac{1}{`r n`}+\frac{1}{`r m`})}}= `r zobs`
+\end{aligned}
+$$
+
+
+## Exemplo: tempo de adaptação {.build}
+
+Considerando nível de significância `r alpha` e $H_a$: $\mu_1\neq\mu_2$, rejeitamos $H_0$  se $|t_{obs}|\geq t_{n+m-2,`r alpha/2`}=`r zc`$.
+
+
+Valor crítico para $\alpha=`r alpha`$: `r zc`, ou seja, se $|t_{obs}|\geq `r zc`$ temos evidências para rejeitar $H_0$ com nível de significância $\alpha=`r alpha`$. No caso, $|t_{obs}|=`r abs(zobs)` > `r zc`$, portanto encontramos evidências para rejeitar a hipótese de que as médias são iguais.
+
+
+# Inferência para duas populações: Teste de hipótese para duas proporções
+
+
+## Teste de hipótese para duas proporções {.build}
+Considere $X_1, \ldots,X_{n_1}$ e $Y_1, \ldots,Y_{n_2}$ duas amostras independentes de ensaios de Bernoulli tal que $X \sim b(p_1)$ e $Y \sim b(p_2)$, com probabilidade $p_1$ e $p_2$ de apresentarem uma certa característica.
+
+Queremos testar: $H_0$: $p_1-p_2=0$ vs $H_a$: $p_1-p_2\neq0$  (ou $H_a$: $p_1-p_2< 0$ ou $H_a$: $p_1-p_2 > 0$).
+
+Em aulas anteriores vimos que:
+$$\hat p_1 \sim N\left(p_1,\frac{p_1(1-p_1)}{n_1} \right) \quad \mbox{e} \quad  \hat p_2 \sim N\left(p_2,\frac{p_2(1-p_2)}{n_2} \right)$$
+
+Como as variâncias de $\hat p_1$ e $\hat p_2$ dependem de $p_1$ e $p_2$ e, portanto, não são conhecidas, iremos usar uma estimativa dessas variâncias.
+
+## Teste de hipótese para duas proporções {.build}
+
+Sob $H_0$, $p_1=p_2=p$, portanto:
+
+$$\hat p_1 \sim N\left(p_1,\frac{p(1-p)}{n_1} \right) \quad \mbox{e} \quad  \hat p_2 \sim N\left(p_2,\frac{p(1-p)}{n_2} \right)$$
+
+No entanto, $p$ é desconhecido. Iremos utilizar como estimativa para $p$: $\hat p$, definido como o número de sucessos entre todos os elementos amostrados. Ou seja, o estimador é a proporção de sucessos na amostra toda, sem levar em consideração as populações, pois, sob $H_0$, $p_1=p_2$ (não há diferença entre as proporções das duas populações).
+
+## Teste de hipótese para duas proporções {.build}
+
+Então, para $H_0$: $p_1=p_2$ usamos a estatística do teste a seguir:
+$$Z = \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}(1 - \hat{p}) \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}} \sim N(0, 1)$$
+
+
+em que $\hat p$  é a proporção de sucessos entre os $n_1 + n_2$ elementos amostrados.
+
+**Condições:** Todas as quantidades $n_1\hat p_1, \; n_1(1- \hat p_1), \; n_2\hat p_2 \; \mbox{ e } \; n_2(1- \hat p_2)$ devem ser pelo menos igual a 10 para que a aproximação pela normal seja válida.
+
+
+## Teste de hipótese para duas proporções 
+
+Resumindo:
+
+Para $H_0$: $p_1-p_2=0$
+
+$H_a$         | Valor crítico para $\alpha$ | Valor de p
+--------------|-----------------------------|-----------------
+$p_1-p_2\neq0$| rejeitar se $|z_{obs}|\geq z_{\alpha/2}$ | $2 P(Z\geq |z_{obs}|)$
+$p_1-p_2<0$| rejeitar se $z_{obs}\leq -z_{\alpha}$ | $P(Z\leq z_{obs})$
+$p_1-p_2>0$| rejeitar se $z_{obs}\geq z_{\alpha}$ | $P(Z\geq z_{obs})$
+
+
+
+
+
+## Exemplo: decisão sobre gastos {.build}
+
+```{r, echo=FALSE,message=FALSE,warning=FALSE}
+# adaptado de de Introductory Statistics with Randomization and Simulation - 1st Edition - Section 2.2  pag 65
+
+tmp <- read.csv("./dados/alunos_info.csv",na.strings = "-",stringsAsFactors = FALSE)
+dados <- tmp[tmp$P1>=5,]
+dados <- dados[complete.cases(dados),]
+
+set.seed(22015)
+totalAmo <- sample(dados$email,200,replace=FALSE)
+grupo1 <- totalAmo[1:100] # recebeu versao 1 do questionario: http://goo.gl/forms/ahkrlNgKqO
+grupo2 <- totalAmo[101:200] # recebeu versao 2 do questionario: http://goo.gl/forms/HdUyJN4jIJ
+
+write.csv(grupo1,file="./dados/emails_versao1.csv")
+write.csv(grupo2,file="./dados/emails_versao2.csv")
+
+```
+
+  
+  
+```{r, echo=FALSE,message=FALSE,warning=FALSE}
+
+
+# baixando as respostas do Google Forms
+library(downloader)
+
+download("https://docs.google.com/spreadsheets/d/1wkRl4U7omcjsKkqLavNLT5OomhCnNxVeV6OV_97fLuY/pub?gid=467476492&single=true&output=csv","./dados/resposta_grupo1.csv")
+
+
+download("https://docs.google.com/spreadsheets/d/1RcUPMxfTUcPAONeW9wyhTKiKEaKs1sIl_phD5PLnrSM/pub?gid=1172315374&single=true&output=csv","./dados/resposta_grupo2.csv")
+
+library(data.table)
+resp1 <- fread("./dados/resposta_grupo1.csv")
+
+resp2 <- fread("./dados/resposta_grupo2.csv")
+
+
+tmp1 <- c(resp1$`O que você faria?`,resp2$`O que você faria?`)
+tmp2 <- c(rep("grupo1",dim(resp1)[1]),rep("grupo2",dim(resp2)[1]))
+
+dadosTodos <- data.frame(Grupo=tmp2,Resposta=tmp1,stringsAsFactors=FALSE)
+
+dadosTodos$RespostaBinaria <- ifelse(dadosTodos$Resposta=="Compraria o DVD.","Compraria","Não compraria")
+          
+d <- as.data.frame(table(dadosTodos$Grupo,dadosTodos$RespostaBinaria))
+
+x1 <- d$Freq[d$Var1=="grupo1" & d$Var2=="Não compraria"]
+n1 <- sum(d$Freq[d$Var1=="grupo1"])
+p1 <- x1/n1
+
+x2 <- d$Freq[d$Var1=="grupo2" & d$Var2=="Não compraria"]
+n2 <- sum(d$Freq[d$Var1=="grupo2"])
+p2 <- x2/n2
+
+p <- (x1+x2)/(n1+n2)
+
+alpha <- .05 
+z.alfa2 <- round(qnorm(1-alpha/2), 2)
+
+est <- p1-p2
+se.est <- sqrt(p*(1-p)*(1/n1 + 1/n2))
+
+zobs <- round(est/se.est,2)
+
+valorp <- round(pnorm(zobs,lower.tail = TRUE),4)
+
+zc <- round(qnorm(alpha,lower.tail=TRUE),2)
+library(MASS)
+
+```
+
+O dinheiro que não é gasto hoje pode ser gasto depois.
+
+
+> Será que ao relembrar o aluno deste fato faz com que tome a decisão sobre uma compra de maneira diferente?
+
+> O cético pode pensar que relembrar não irá influenciar na decisão.
+
+> Podemos utilizar um teste de hipótese: 
+
+* $H_0$: Relembrar o aluno de que ele pode poupar para comprar algo especial depois não irá influenciar na decisão de gasto do aluno. 
+
+* $H_a$: Relembrar o aluno de que ele pode poupar para comprar algo especial depois irá aumentar a chance dele não gastar em algo no presente. 
+
+
+## Exemplo: decisão sobre gastos {.build .smaller}
+
+Alunos de ME414 do segundo semestres de 2015 foram recrutados para um estudo e cada um recebeu a seguinte informação através do Google Forms:
+
+*Imagine que você estivesse poupando para comprar algo especial. Em uma visita ao shopping você encontra um DVD da sua série/filme favorita que estava na sua "lista de desejos" há tempos. O DVD está em promoção, custando R$ 20,00. O que você faria?*
+
+`r n1` alunos  (grupo 1) selecionados ao acaso receberam a seguinte opção de resposta:
+
+* Compraria o DVD.
+* Não compraria o DVD.
+
+
+`r n2` alunos (grupo 2) selecionados ao acaso receberam a seguinte opção de resposta:
+
+* Compraria o DVD.
+* Não compraria o DVD. Pouparia os R$ 20,00 para algo especial.
+
+Obs: estudo adaptado do artigo *[Frederick S, Novemsky N, Wang J, Dhar R, Nowlis S. 2009. Opportunity Cost Neglect. Journal of Consumer Research 36: 553-561.](http://faculty.som.yale.edu/ravidhar/documents/OpportunityCostNeglect.pdf)*
+
+## Exemplo: decisão sobre gastos {.build}
+
+
+```{r,echo=FALSE}
+library(knitr)
+kable(table(dadosTodos$Grupo,dadosTodos$RespostaBinaria))
+```
+
+Entre os alunos do grupo 1, a proporção que decide não comprar foi `r round(p1,2)`.
+
+Entre os alunos do grupo 2, a proporção que decide não comprar foi `r round(p2,2)`.
+
+> Temos evidências contra a hipótese nula, ou seja, relembrar o aluno não influencia na decisão?
+
+
+## Exemplo: decisão sobre gastos {.build}
+
+Para realizar o teste de hipótese, devemos fazer algumas suposições.
+
+> Considere duas populações: $X$ e $Y$ tal que: 
+
+> * $X_i\sim b(p_1)$ indica se o i-ésimo aluno do **grupo 1** decide não comprar o DVD e $p_1$ é a probabilidade de decidir por não comprar.
+
+> * $Y_i\sim b(p_2)$ indica se o i-ésimo aluno do **grupo 2** decide não comprar o DVD e $p_2$ é a probabilidade de decidir por não comprar.
+
+> Queremos testar: 
+
+* $H_0$: $p_1=p_2$
+
+> * $H_a$: $p_1 < p_2$
+
+## Exemplo: decisão sobre gastos {.build .smaller}
+
+Seja $\hat{p}_1$ a proporção que decide não comprar entre os alunos $n_1$ **amostrados do grupo 1**.
+
+Seja $\hat{p}_2$ a proporção que decide não comprar entre os $n_2$ alunos **amostrados do grupo 2**.
+
+> Relembrando o TCL:
+
+$$\hat p_1 \sim N\left(p_1,\frac{ p_1(1 - p_1)}{n_1} \right) \quad \mbox{e} \quad  \hat p_2 \sim N\left(p_2,\frac{ p_2(1 -  p_2)}{n_2} \right)$$
+
+**Condições:** Todas as quantidades $n_1\hat p_1, \; n_1(1- \hat p_1), \; n_2\hat p_2 \; \mbox{ e } \; n_2(1- \hat p_2)$ devem ser pelo menos igual a 10 para que a aproximação pela normal seja válida.
+
+Então, para $H_0$: $p_1=p_2$ usamos a estatística do teste a seguir:
+$$Z = \frac{(\hat p_1 - \hat p_2)}{\sqrt{\hat p(1 - \hat p) \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}} \sim N(0, 1)$$
+
+
+em que $\hat p$  é a proporção que decide não comprar entre os $n_1 + n_2$ alunos amostrados.
+
+## Exemplo: decisão sobre gastos {.build}
+
+$H_0$: $p_1=p_2$ vs $H_a$: $p_1 < p_2$, que é equivalente a testar: $H_0$: $p_1-p_2=0$ vs $H_a$: $p_1-p_2<0$.
+
+$$
+\begin{aligned}
+\mbox{p-valor} & =  P\left(\frac{\hat p_1-\hat p_2}{\sqrt{\hat p(1 - \hat p) \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}}\leq \frac{`r as.character(fractions(p1))`-`r as.character(fractions(p2))`}{\sqrt{`r as.character(fractions(p))`(1-`r as.character(fractions(p))`)(\frac{1}{`r n1`}+\frac{1}{`r n2`})}}\right)  \\
+& = P(Z \leq `r zobs`) = `r valorp`
+\end{aligned}
+$$
+
+
+Se $\alpha=`r alpha`$, como p-valor=`r valorp` $> \alpha=`r alpha`$, não temos evidência para rejeitar $H_{0}$ com nível de significância `r alpha`.
+
+Valor crítico para $\alpha=`r alpha`$: `r zc`, ou seja, se $z_{obs}\leq `r zc`$ temos evidências para rejeitar $H_0$ com nível de significância $\alpha=`r alpha`$.
+
+
+
+## Leituras
+
+* [Ross](http://www.sciencedirect.com/science/article/pii/B9780123743886000107): capítulo 10. 
+* [OpenIntro](https://www.openintro.org/stat/textbook.php): seções 3.2 e 4.3.
+* Magalhães: capítulo 9.
+
+##
+
+Slides produzidos pelos professores:
+
+* Samara Kiihl
+
+* Tatiana Benaglia
+
+* Benilton Carvalho

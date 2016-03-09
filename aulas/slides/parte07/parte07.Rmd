@@ -1,0 +1,432 @@
+---
+title: ME414 - Estatística para Experimentalistas
+subtitle: Parte 7
+output: 
+  ioslides_presentation:
+         widescreen: true
+logo: ../logo-imecc.png
+---
+
+# Probabilidade Condicional e Independência
+
+## Probabilidade condicional {.build .smaller}
+
+**Probabilidade Condicional**: encontrar a probabilidade de um evento quando você tem alguma outra informação sobre o evento.
+
+- Considere o lançamento de dois dados. Espaço amostral:
+
+<center><img src="figuras/DoisDados.png" width=400></center> 
+
+> - Considere que cada resultado tenha a mesma chance de ocorrer: 1/36.
+
+> - Suponha que você lance primeiro um dos dados e o resultado é 4.
+
+> - Qual a probabilidade de que a soma dos resultados dos dois dados seja 10?
+
+
+## Probabilidade condicional {.build}
+
+- Como saiu 4 no primeiro dado, há 6 resultados possíveis:
+
+> $$\Omega_1=\{(4,1),(4,2),(4,3),(4,4),(4,5),(4,6)\}$$
+
+> - Cada resultado tem a mesma probabilidade de ocorrer:  1/6.
+
+> - Dado que o primeiro dado teve resultado 4, então a probabilidade de cada evento em $\Omega_1$ tem igual chance de ocorrer.
+
+> - $B$ = {a soma dos dados é igual a 10}.
+> - $A$ = {no primeiro dado saiu 4}.
+> - **Probabilidade condicional de $B$ dado $A$:**
+> $$P(B\mid A)$$
+
+## Probabilidade condicional $P(B\mid A)$ {.build}
+
+> - Suponha que o resultado do experimento esteja contido no evento $A$.
+
+> - Para que o resultado esteja também no evento $B$, ele precisa necessariamente estar tanto em $A$ quanto em $B$, ou seja, precisa estar em $A\cap B$.
+
+> - Mas, como sabíamos desde o início que o resultado estava em $A$, nosso espaço amostral agora é reduzido para somente os elementos de $A$.
+
+> $$P(B\mid A)=\frac{P(A\cap B)}{P(A)}$$
+
+<center><img src="figuras/BdadoA.png" width=200></center>
+
+
+## Exemplo: Lançamento de dois dados {.build}
+
+> Voltando ao exemplo dos dois dados.
+
+> - $A$ = no primeiro dado saiu 4.
+
+> $$ A = \{(4,1), (4,2), (4,3), (4,4), (4,5), (4,6)\}$$
+
+> - $B$ = a soma dos dados é igual a 10.
+
+> $$ B = \{(4,6), (5,5), (6,4)\}$$
+
+> - Então $A\cap B = \{(4,6) \}$. Portanto:
+
+> $$ P(B\mid A)= \frac{P(A\cap B)}{P(A)} = \frac{1/36}{6/36}= \frac{1}{6}$$
+
+## Exemplo: Qual a chance de cair na malha fina?
+80.2 milhões de declarações. 
+
+```{r, echo=FALSE}
+options(scipen = 9)
+data <- matrix(c(90, 71, 69, 80, 14010, 30629, 24631, 10620), ncol=2)
+tmp <- cbind(data, rowSums(data))
+tabela <- rbind(tmp, colSums(tmp))
+colnames(tabela) <- c("Sim", "Não", "Total")
+rownames(tabela) <- c("D - abaixo de 25.000", "C - 25.000 a 49.999", "B - 50.000 a 99.999", "A - acima de 100.000", "Total")
+
+library(knitr)
+kable(tabela, caption = "Tabela : Renda x Malha Fina")
+
+n <- sum(data)
+```
+
+Para simplificar, uma frequência de 90 representa 90.000.
+
+## Exemplo: Qual a chance de cair na malha fina? {.build}
+- Espaço amostral:
+
+> $$ \Omega=\{\mbox{(A, sim), (B,sim),(C, sim),(D,sim),(A,não),(B,não),(C,não),(D,não)} \}$$
+
+> - Qual a probabilidade de cair na malha fina se a renda for acima de 100.000?
+
+> - $\mathcal{A}$ = {caiu na malha fina} =$\{ \mbox{(A,sim),(B,sim),(C,sim),(D,sim)} \}$
+
+> - $\mathcal{B}$ = {renda acima de 100.000} =$\{\mbox{ (A,sim),(A,não)} \}$.
+
+> $$ P(\mathcal{A} \mid \mathcal{B}) = \frac{P(\mathcal{A} \cap \mathcal{B})}{P(\mathcal{B})} 
+ = \frac{P(\{\mbox{(A,sim)}\})}{P(\{\mbox{(A,sim),(A,não})\})} $$
+ 
+> $$ =\frac{`r tabela[4,1]`/`r n`}{`r tabela[4, 3]`/`r n`}=`r round(tabela[4, 1]/tabela[4, 3], 3)` $$
+
+## Exemplo: Qual a chance de cair na malha fina?
+Probabilidade condicional  por faixa de renda em 2002
+<center>
+
+Renda | Sim | Não 
+----- | --- | ---
+D - abaixo de 25.000 | `r tabela[1,1]`/`r tabela[1,3]` | `r tabela[1,2]`/`r tabela[1,3]`
+C - 25.000 a 49.999  | `r tabela[2,1]`/`r tabela[2,3]` | `r tabela[2,2]`/`r tabela[2,3]`
+B - 50.000 a 99.999  | `r tabela[3,1]`/`r tabela[3,3]` | `r tabela[3,2]`/`r tabela[3,3]`
+A - acima de 100.000 | `r tabela[4,1]`/`r tabela[4,3]` | `r tabela[4,2]`/`r tabela[4,3]`
+</center>
+
+## Exemplo: Qual a chance de cair na malha fina?
+Probabilidade condicional  por faixa de renda em 2002
+<center>
+
+Renda | Sim | Não 
+----- | --- | ---
+D - abaixo de 25.000 | `r round(tabela[1,1]/tabela[1,3], 3)` | `r round(tabela[1,2]/tabela[1,3], 3)`
+C - 25.000 a 49.999  | `r round(tabela[2,1]/tabela[2,3], 3)` | `r round(tabela[2,2]/tabela[2,3], 3)`
+B - 50.000 a 99.999  | `r round(tabela[3,1]/tabela[3,3], 3)` | `r round(tabela[3,2]/tabela[3,3], 3)`
+A - acima de 100.000 | `r round(tabela[4,1]/tabela[4,3], 3)` | `r round(tabela[4,2]/tabela[4,3], 3)`
+</center>
+
+## Independência {.build}
+Vimos que:
+$$P(B\mid A)=\frac{P(A\cap B)}{P(A)}$$
+
+**Regra da multiplicação:**
+
+$$P(A\cap B)=P(A)P(B\mid A)$$ 
+
+Quando $P(B\mid A)=P(B)$ (informação sobre $A$ não altera a probabilidade do evento $B$), dizemos que $B$ e $A$ são **independentes**. Neste caso:
+
+$$P(A\cap B)=P(A)P(B) $$
+
+## Exemplo {.build}
+Considere o lançamento de dois dados "justos" (36 resultados possíveis têm a mesma probabilidade de ocorrer). 
+
+Considere os eventos:
+
+- $A$: primeiro dado tem resultado 3.
+
+- $B$: soma dos dados é igual a 8.
+
+- $C$: soma dos dados é igual a 7.
+
+## Exemplo {.build}
+Eventos $A$ e $B$ são independentes?
+
+$P(A\cap B)= P(\{(3,5)\})=\frac{1}{36}$
+
+$P(A)= P(\{ (3,1),(3,2),(3,3),(3,4),(3,5),(3,6)\})=\frac{6}{36}$
+
+$P(B)= P(\{ (2,6),(3,5),(4,4),(5,3),(6,2)\})=\frac{5}{36}$
+
+$$P(A\cap B)=\frac{1}{36}\neq P(A)\times P(B)=\frac{6}{36}\times\frac{5}{36}$$
+
+Portanto, $A$ e $B$ não são eventos independentes.
+
+## Exemplo {.build}
+Ainda no mesmo exemplo: os eventos $A$ e $C$ são independentes?
+
+$P(A\cap C)= P(\{(3,4)\})=\frac{1}{36}$
+
+$P(A)= P(\{ (3,1),(3,2),(3,3),(3,4),(3,5),(3,6)\})=\frac{6}{36}$
+
+$P(C)= P(\{ (1,6),(2,5),(3,4),(4,3),(5,2),(6,1)\})=\frac{6}{36}$
+
+$$P(A\cap C)=\frac{1}{36}= P(A)\times P(C)=\frac{6}{36}\times\frac{6}{36}$$
+
+Portanto, $A$ e $C$ são eventos independentes.
+
+## Exemplo {.build}
+Suponha que $A$ e $B$ sejam dois eventos disjuntos. 
+
+Suponha que $P(A)>0$ e $P(B)>0$. 
+
+$A$ e $B$ são independentes?
+
+$A$ e $B$ são disjuntos, então $A\cap B=\varnothing$ e $P(A\cap B)=0$.
+
+$P(A)>0$ e $P(B)>0$, portanto:
+
+$$P(A\cap B)=0\neq P(A)P(B)\,.$$
+
+$A$ e $B$ não são independentes.
+
+Além disso: $P(B\mid A)=\frac{P(A\cap B)}{P(A)}=0$, ou seja, dado que $A$ ocorre, $B$ não ocorre.
+
+## Exemplo {.build}
+
+Em uma família com duas crianças, considere os eventos:
+
+$A$={a primeira criança é uma menina} e $B$={as duas crianças são meninas}.
+
+- Mostre que $P(B\mid A)=1/2$.
+
+$$\Omega=\{FF,MM,FM,MF\}$$
+
+$$A=\{FF,FM\}$$
+
+$$B=\{FF\}$$
+
+$$B\cap A= B$$
+
+$$P(B\mid A)=\frac{P(B\cap A)}{P(A)}=\frac{P(\{FF\})}{P(\{FF,FM \})}=\frac{1/4}{1/2}=1/2$$
+
+## Exemplo {.build}
+
+Em uma família com duas crianças, considere os eventos:
+
+$A$={a primeira criança é uma menina} e $B$={as duas crianças são meninas}.
+
+- $A$ e $B$ são eventos independentes?
+
+<div class="columns-2">
+$$\Omega=\{FF,MM,FM,MF\}$$
+$$A=\{FF,FM\}$$
+$$B=\{FF\}$$
+$$B\cap A= B$$
+$$P(B\cap A)=P(B)=1/4$$
+$$P(A)P(B)=\frac{1}{2}\times\frac{1}{4}=\frac{1}{8}$$
+$$P(A\cap B)\neq P(A)P(B)$$
+$A$ e $B$ não são independentes.
+</div>
+
+## *Chutar* as respostas e ainda passar na prova {.build}
+
+**Chutar**: escolher as respostas ao acaso
+
+- Prova com três questões de múltipla escolha.
+
+- Em cada questão há 5 alternativas, apenas 1 é correta. 
+
+- Experimento: anotar o resultado do aluno na prova. 
+
+<center><img src="figuras/popquiz.jpg" width=230></center>
+
+$$\Omega=\{CCC,CCI,CIC,CII,ICC,ICI,IIC,III\}$$
+
+## *Chutar* as respostas e ainda passar na prova {.build}
+Quais as probabilidades dos eventos do espaço amostral?
+
+- Para cada questão: $P(C)=0.2$ e $P(I)=0.8$.
+
+- $P(CCC)= P(C)\times P(C)\times P(C)=0.2^3=0.008$.
+
+<center><img src="figuras/quiz2.jpg" width=300>
+</center>
+
+Qual a probabilidade do aluno acertar pelo menos duas questões?
+
+$$P(CCC)+P(CCI)+P(CIC)+P(ICC)=0.008+3\times0.032=0.104$$
+
+## Cinto de segurança e acidentes {.build}
+
+Uso de cinto/Sobreviveu | Sim (S) | Não (M) | **Total** 
+----------------------- | ------- | ------- | ---------
+Sim (C)         | 414368     | 510      | **412878**
+Não ($\bar{C}$) | 162527     | 1601     | **164128**
+**Total**       | **574895** | **2111** | **577006**
+
+- Qual a probabilidade de que a pessoa morreu no acidente?  
+
+$$P(M)=2111/577006=0.004$$
+
+- Qual a probabilidade de que a pessoa morreu dado que ela usava o cinto de segurança?  
+
+$$P(M\mid C)=P(M\cap C)/P(C)=510/412878=0.001$$
+
+
+## Cinto de segurança e acidentes {.build}
+
+Uso de cinto/Sobreviveu | Sim (S) | Não (M) | **Total** 
+----------------------- | ------- | ------- | ---------
+Sim (C)         | 414368     | 510      | **412878**
+Não ($\bar{C}$) | 162527     | 1601     | **164128**
+**Total**       | **574895** | **2111** | **577006**
+
+- Qual a probabilidade de que a pessoa morreu dado que ela não usava o cinto de segurança?  
+
+$$P(M\mid \bar{C})=P(M\cap \bar{C})/P(\bar{C})=1601/164128=0.01$$
+
+- Morte e uso de cinto são eventos independentes? 
+
+$$P(M\mid\bar{C})\neq P(M)=2111/577006=0.004$$
+
+$$P(M\mid C)\neq P(M)$$
+
+
+## Teorema de Bayes {.build}
+
+Considere dois eventos quaisquer $A$ e $B$. 
+
+Para que um elemento esteja em $A$, há duas possibilidades:
+
+  - o elemento está em $A$ e em $B$;
+
+  - o elemento está em $A$, mas não está em $B$.
+
+## Teorema de Bayes {.build}
+
+  Portanto, podemos escrever:
+  
+  $$A=(A\cap B) \cup (A\cap B^c)$$
+  
+> As duas possibilidades são disjuntas, então:
+  $$P(A)=P(A\cap B)+P(A\cap B^c)$$
+  
+<center><img src="figuras/bayes.png" width=300></center>
+
+## Teorema de Bayes {.build}
+
+  Temos que:
+  $$P(A\cap B)=P(A\mid B) P(B)$$
+  
+  $$P(A\cap B^c)=P(A\mid B^c) P(B^c)$$
+
+  Então reescrevemos:
+  $$P(A)=P(A\mid B) P(B)+P(A\mid B^c) P(B^c)$$
+  
+**Interpretação**: a probabilidade do evento $A$ é uma média ponderada da probabilidade condicional do evento $A$ dado que $B$ ocorre e da probabilidade condicional do evento $A$ dado que $B$ não ocorre.  O peso de cada probabilidade condicional é a probabilidade do evento que está sendo levado em conta ao calcular a probabilidade condicional de $A$.
+
+## Teorema de Bayes {.build}
+
+$$P(B\mid A) = \frac{P(B\cap A)}{P(A)} = \frac{P(A\mid B)P(B)}{P(A\mid B)P(B) + P(A\mid B^c)P(B^c)}$$
+
+## Exemplo: Companhia de Seguros {.build}
+
+Uma companhia de seguros acredita que as pessoas podem ser divididas em duas categorias: 
+
+> 1. aquelas que estão mais sujeitas a acidentes. 
+
+> 2. aquelas que não estão mais sujeitas a acidentes.
+
+> - Os dados indicam que uma pessoa da categoria 1 terá um acidente durante o período de um ano com probabilidade 0.1. A probabilidade para todas as outras pessoas é 0.05.  
+    
+> - Suponha que a probabilidade de um novo cliente pertencer à categoria 1 seja 0.2. 
+
+ 
+## Exemplo: Companhia de Seguros {.build}
+
+**Pergunta**: Qual a probabilidade de que o novo cliente tenha um acidente durante o primeiro ano?
+
+Considere os eventos:
+
+ $A$: o novo cliente tem um acidente durante o primeiro ano. 
+
+ $B$: o novo cliente pertence à categoria 1. 
+ 
+ $B^c$: o novo cliente pertence à categoria 2.
+
+> Pelo Teorema de Bayes:
+
+$$ P(A) = P(A\mid B)P(B)+P(A\mid B^c)P(B^c)$$
+ $$ = 0.1\times 0.2 + 0.05\times 0.8 = 0.06 $$
+
+## Exemplo: Companhia de Seguros {.build}
+
+**Pergunta**: Se um novo cliente tem um acidente durante o primeiro ano, qual é a probabilidade de que ele pertença à categoria 1?
+ 
+ $A$: o novo cliente tem um acidente durante o primeiro ano.
+ 
+ $B$: o novo cliente pertence à categoria 1.
+
+$$ P(B\mid A) = \frac{P(B\cap A)}{P(A)} $$
+
+$$  = \frac{P(A\mid B)P(B)}{P(A)} $$
+
+$$  = \frac{0.1 \times 0.2}{0.06}=\frac{1}{3} $$
+
+## DNA e crime {.build}
+
+> - Dado que o réu é inocente, suponha que a probabilidade do DNA dele ser compatível com o DNA encontrado na cena do crime seja 1 em um milhão.  $$P(Comp\mid Inocente)=0.000001$$
+
+> - Dado que o réu é culpado, suponha que a probabilidade do DNA dele ser compatível com o DNA da cena do crime seja 0.99.  $$P(Comp\mid Culpado)=0.99$$
+
+> - O DNA do réu é compatível com o DNA da cena do crime.
+
+> - Encontre a probabilidade do réu ser inocente dado que o DNA é compatível, sendo que a probabilidade incondicional dele ser inocente é 0.5.
+
+> Queremos $P(Inocente\mid Comp)$, sendo que $P(Inocente)=P(Culpado)=0.5$
+
+## DNA e crime {.build}
+$$ P(Inocente \mid Comp) = \frac{P(Inocente \cap Comp)}{P(Comp)} $$
+
+> $$ = \frac{P(Comp \mid Inocente)P(Inocente)}{P(Comp)} $$
+
+> $$ = \frac{P(Comp \mid Inocente)P(Inocente)}{P(Comp \mid Inocente)P(Inocente) + P(Comp \mid Culpado)P(Culpado)} $$
+
+> $$ = \frac{0.000001 \times 0.50}{0.000001 \times 0.5 + 0.99 \times 0.5} = 0.000001 $$
+
+> A chance de ser inocente dado que houve compatibilidade de DNA é 1 em 1 milhão.
+
+## DNA e crime {.build}
+Encontre a probabilidade do réu ser inocente dado que o DNA é compatível, sendo que a probabilidade incondicional dele ser inocente é 0.99.
+
+> $$ P(Inocente\mid Comp) = \frac{P(Inocente \cap Comp)}{P(Comp)} $$
+
+> $$ = \frac{P(Comp\mid Inocente)P(Inocente)}{P(Comp)} $$
+
+> $$ = \frac{P(Comp\mid Inocente)P(Inocente)}{P(Comp\mid Inocente)P(Inocente)+P(Comp\mid Culpado)P(Culpado)} $$
+
+> $$ = \frac{0.000001\times 0.99}{0.000001\times 0.99 + 0.99\times 0.01} = 0.00001 $$
+
+> A chance de ser inocente dado que houve compatibilidade de DNA é 1 em 100 mil.
+
+## Leituras
+
+* [OpenIntro](https://www.openintro.org/stat/textbook.php): seção 2.2.
+* [Ross](http://www.sciencedirect.com/science/book/9780123743886): seções 4.5, 4.6
+* Magalhães: capítulo 2
+
+## 
+
+<center><img src="figuras/bears.png" width=500></center>
+
+##
+
+Slides produzidos pelos professores:
+
+* Samara Kiihl
+
+* Tatiana Benaglia
+
+* Benilton Carvalho

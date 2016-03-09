@@ -1,0 +1,472 @@
+---
+title: ME414 - Estatística para Experimentalistas
+subtitle: Parte 14
+output: 
+  ioslides_presentation:
+         widescreen: true
+logo: ../logo-imecc.png
+---
+
+
+# Fundamentos de Inferência
+
+## Introdução {.build}
+
+> Um dos principais objetivos da Estatística é tirar conclusões a partir dos dados.
+
+> Dados em geral consistem de uma amostra de elementos de uma população de interesse.
+
+> O objetivo é usar a amostra e tirar conclusões sobre a população.
+
+> Quão confiável será utilizar a informação obtida apenas de uma amostra para concluir algo sobre a população?
+
+## Estatística {.build}
+
+
+> * Seja $X_{1},...,X_{n}$ uma amostra, $T=\mbox{função}(X_{1},...,X_{n})$ é uma estatística.
+
+> * $\bar{X}_{n}=\frac{1}{n}\sum_{i=1}^{n}X_{i}=\frac{X_{1}+...+X_{n}}{n}$: a média amostral é uma estatística. 
+
+> * $X_{(1)}=min\{X_{1},...,X_{n}\}$.
+
+> * $X_{(n)}=max\{X_{1},...,X_{n}\}$.
+
+> * $X_{(i)}$ é o i-ésimo valor da amostra ordenada. 
+
+> * Note que uma estatística é uma função que em uma determinada amostra assume um valor específico.
+
+
+## Estatística {.build}
+
+*  Para que serve uma estatística?  Para "estimar" os valores de uma distribuição, ou características de uma população. 
+
+*  População:
+
+    *  $\mbox{média}_{P}$.
+    *  $\mbox{variância}_{P}$.
+
+*  Amostra: 
+
+    *  $\mbox{média}_{A} = \sum_{i=1}^{n}\frac{X_{i}}{n}$ "estima" a $\mbox{média}_{P}$. 
+    *  $\mbox{variância}_{A} = \sum_{i=1}^{n}\frac{(X_{i}-\mbox{média}_{A})^{2}}{n}$ "estima" a $\mbox{variância}_{P}$
+
+## Exemplo {.build}
+
+Seja $\theta$ a proporção de alunos na Unicamp que concorda com a presença da PM no campus.
+
+> *  Inviável perguntar para todos os estudantes: coleta-se uma amostra. 
+
+> *  Planejamento amostral:  obter uma amostra aleatória simples de tamanho $n=100$ alunos, sem reposição. 
+
+> *  cada $X_{i}$, $i=1,...,100$, vai assumir o valor 1 se o aluno $i$ concorda com presença da PM, e 0 se não. 
+
+> *  estatística: $T=\frac{X_{1}+...+X_{100}}{100}$. 
+
+> *  uma vez que a coleta foi implementada, $T$ assume um valor, por exemplo, $t_{0}$, que será usado para estimar $\theta$, ou seja, $\hat\theta=t_{0}$.
+
+
+## Parâmetro {.build}
+
+> *  Cada quantidade de interesse (como $\theta$ no exemplo anterior) é chamada de parâmetro da população. 
+
+> *  Para apresentar uma estimativa de um parâmetro (como $\hat\theta$), devemos escolher uma estatística (como $T$). 
+
+> *  Note que da maneira que o plano amostral foi executado (amostra aleatória simples), a estatística $T$ é uma variável aleatória, uma vez que cada vez que executarmos o plano amostral poderemos obter resultados diversos.
+
+> *  Portanto, a estatística $T$ possui uma distribuição, que será a **distribuição amostral** de T.
+
+
+# Distribuição Amostral
+
+## Exemplo* {.build}
+
+Imagine um fenômeno de interesse que possa ser representado por uma v.a. $X$ que assume os valores $1$ ou $2$ com igual probabilidade.
+
+> $$\mu=E(X)= 1 \times P(X=1) +2 \times P(X=2) = 1\times \frac{1}{2} + 2\times \frac{1}{2}=\frac{3}{2}$$
+
+> 
+\[
+\begin{aligned}
+\sigma^2& =Var(X)= E[(X-\mu)^2]\\
+&= (1-1.5)^2 \times P(X=1) + (2-1.5)^2 \times P(X=2)\\
+& =\frac{1}{4}
+\end{aligned}
+\]
+
+
+## Exemplo* {.build}
+
+Imagine que uma população de interesse tenha distribuição como a de $X$ definida anteriormente.
+
+> Imagine também que, embora saibamos que os valores possíveis sejam $1$ e $2$, não tenhamos conhecimento sobre suas respectivas probabilidades.
+
+> Isto é, se temos $N$ elementos nessa população, podemos pensar que a característica de interesse de cada elemento $i$ segue uma v.a. $X_i$ em que $P(X_i=1)=P(X_i=2)=1/2$, mas nós não sabemos disso.
+
+> Imagine que o interesse seja $\mu$.
+
+## Exemplo* {.build}
+
+Vamos coletar uma amostra aleatória simples com reposição ($AAS_c$) de tamanho $n=2$ e calcular a média amostral.
+
+> Usaremos esta média amostral para estimar $\mu$.
+
+> Quão útil é esta estimativa que se baseia em apenas 2 elementos da população?
+
+> Quão precisa?
+
+## Exemplo* {.build }
+
+> Imagine que o aluno $A$ realiza uma $AAS_c$ com $n=2$ a partir da população, obtém os dados e calcula $\bar{x}$.
+
+> O aluno $B$ realizar uma $AAS_c$ com $n=2$ a partir da população, obtém os dados e calcula $\bar{x}$.
+
+> As duas médias amostrais serão necessariamente iguais?
+
+> A média amostral é uma v.a. e, portanto, tem uma distribuição de probabilidade.
+
+## Exemplo* {.build .smaller}
+
+> Todas as combinações possíveis de valores para o primeiro e para o segundo elemento amostrados segundo o plano $AAS_c$ com $n=2$ são:
+
+Possibilidades   |$(X_1=1,X_2=1)$|$(X_1=1,X_2=2)$|$(X_1=2,X_2=1)$|$(X_1=2,X_2=2)$
+-----------------|-----------------|-----------------|-----------------|-----------------
+$\bar{x}$        | 1               | 1.5             | 1.5             |   2
+$P(X_1=i,X_2=j)$ | 0.25            | 0.25            | 0.25            | 0.25
+
+> $$E(\bar{X})=1\times \frac{1}{4} + 1.5 \times \frac{1}{2} + 2\times \frac{1}{4}=\frac{3}{2}$$
+
+
+> \[
+\begin{aligned}
+Var(\bar{X})&= E\left[(\bar{X}-E(\bar{X}))^2\right]\\
+&=(1-1.5)^2\times \frac{1}{4} + (1.5-1.5)^2\frac{1}{2} + (2-1.5)^2\frac{1}{4}=\frac{1}{8}
+\end{aligned}
+\]
+
+> Repare que: $E(\bar{X})=\mu=E(X)$ e $Var(\bar{X})=\frac{\sigma^2}{n}=\frac{Var(X)}{n}$.
+
+
+## Exemplo* 
+
+Distribuição de probabilidade de $X$ (esquerda) e de $\bar{X}$ (direita):
+
+<center><img src="figuras/X_Xbar.png" width=500></center>
+
+
+
+## Distribuição Amostral {.build}
+
+**Resultado:** 
+
+> * Seja $X$ uma v.a. com média $\mu$ e variância $\sigma^{2}$. 
+
+> * Seja $X_{1},...,X_{n}$ uma amostra aleatória simples de $X$. 
+
+> *  $\bar{X}_{n}=\frac{X_{1}+...+X_{n}}{n}$. 
+
+> *  $E\left(\bar{X}_{n}\right)=\mu$. 
+
+> *  $Var\left(\bar{X}_{n}\right)=\frac{\sigma^{2}}{n}$. 
+
+> Ou seja, embora $\mu$ seja desconhecido, sabemos que o valor esperado da média amostral é $\mu$. Além disso, conforme o tamanho amostral aumenta, a imprecisão da média amostral para estimar $\mu$ fica cada vez menor, pois $Var(\bar{X})=\sigma^2/n$.
+
+## Exemplo
+
+> *  Exemplo: $X_{1},X_{2},X_{3}$ ensaios de Bernoulli(p) independentes. 
+
+> *  $\mu=E\left(X_{i}\right)=0.3 \hspace{0.2cm} \Rightarrow \hspace{0.2cm} E\left(\bar{X}_{3}\right)=0.3$. 
+
+> * $\sigma^2=Var\left(X_{i}\right)=p(1-p)=0.3(0.7)=0.21 \hspace{0.2cm} \Rightarrow \hspace{0.2cm} Var\left(\bar{X}_{3}\right)=\frac{0.21}{3}=0.07$
+
+
+# Teorema Central do Limite
+
+## {.build}
+
+Usando o resultado enunciado anteriormente, temos a esperança e a variância da média amostral $\bar{X}$: $E(\bar{X})=\mu$ e $Var(\bar{X})=\frac{\sigma^2}{n}$.
+
+> No entanto, para conhecermos a distribuição de probabilidade de $\bar{X}$, como foi feito no Exemplo*, é preciso conhecer todos os valores possíveis de $X$ e suas respectivas probabilidades. 
+
+> Mas, se conhecermos tudo isso, não precisamos fazer amostragem nem inferência: saberemos tudo o que desejarmos daquela população!
+
+> O Exemplo* foi um caso hipotético apenas para demonstrar como a média amostral $\bar{X}$ se comporta quando realizamos a amostragem.
+
+> Na prática, não teremos informações suficientes para de fato descrevermos a distribuição exata de $\bar{X}$.
+
+
+
+## Teorema Central do Limite {.build}
+
+**Resultado** 
+
+Para uma amostra aleatória simples $X_{1},...,X_{n}$ coletada de uma população com média $\mu$ e variância $\sigma^{2}$, a distribuição amostral de $\bar{X}_{n}$ aproxima-se de uma **distribuição Normal** de média $\mu$ e variância $\frac{\sigma^{2}}{n}$, quando $n$ for suficientemente grande.
+
+>
+
+Definimos também: 
+
+$$Z=\frac{\bar{X}_{n}-\mu}{\sigma / \sqrt{n}} \sim N(0,1)$$ 
+
+## Teorema Central do Limite
+
+<center><img src="figuras/TCL.png" width=750></center>
+
+
+## Exemplo {.build .smaller}
+
+$X_{1},...,X_{n}$ uma amostra aleatória de tamanho $n$. 
+
+*  $X\sim Exp(2)$: $f_{X_{i}}(x)=2e^{-2x}\mathbb{I}_{(x>0)}$.
+*  $E\left(X_{i}\right)=\frac{1}{2}$. 
+*  $Var\left(X_{i}\right)=\frac{1}{4}$.
+
+Suponha que $X_{i}$ modela o tempo de vida de um transistor em horas.  Os tempos de vida de 100 transistores são coletados.  Desejamos estudar a variável aleatória $\bar{X}_{100}$ (média amostral de uma amostra de tamanho 100).  Sabemos que:
+
+*  $E\left(\bar{X}_{100}\right)=\frac{1}{2}$.
+*  $Var\left(\bar{X}_{100}\right)=\frac{1/4}{100}=\frac{1}{400}$.
+
+
+Pelo T.C.L., temos que: 
+ $$\bar{X}_{n}\sim N\left(\frac{1}{2},\frac{1}{400}\right)$$
+
+
+
+
+## Exemplo
+
+\[
+\begin{aligned}
+P\left(\bar{X}_{100} \leq x\right) & = & P\left(\frac{\bar{X}_{100}-(1/2)}{(1/2)/\sqrt{100}} \leq \frac{x-(1/2)}{(1/2)/\sqrt{100}}\right)  \\
+& = & P\left(Z \leq 10(2x-1) \right) 
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+P\left(\bar{X}_{100} \geq x\right) & = & 1 - P\left(\bar{X}_{100} \leq x\right)  \\
+ & = & 1 - P\left(\frac{\bar{X}_{100}-(1/2)}{(1/2)/\sqrt{100}} \leq \frac{x-(1/2)}{(1/2)/\sqrt{100}}\right)  \\
+& = & 1 - P\left(Z \leq 10(2x-1) \right) 
+\end{aligned}
+\]
+
+
+
+
+
+
+## Exemplo {.build}
+
+$X=$ resultado obtido no lançamento de um dado honesto.
+
+
+$x$ | 1 | 2 | 3 | 4 | 5 | 6
+----|---|---|---|---|---|----
+$p(x)=P(X=x)$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$
+
+
+> $E(X)=\frac{1}{6}\times(1+2+3+4+5+6)=\frac{21}{6}=3.5$
+
+> $Var(X)=\frac{1}{6}[(1+4+9+16+25+36)-\frac{1}{6}\times(21)^{2}]=\frac{35}{2}=17.5$
+
+> *  $X_i$: resultado do $i$-ésimo lançamento de um dado honesto.
+
+> *  $X_i$ tem distribuição uniforme discreta $\forall i$.
+
+> *  $\mu=E(X_i)=3.5$ e $\sigma^2=Var(X_i)=17.5$, $\forall i$.
+
+## Exemplo {.build .smaller}
+
+> Se temos uma amostra aleatória simples de tamanho $n$: $X_1,X_2,\ldots, X_n$, pelo TCL sabemos que a distribuição amostral de $\bar{X}_n$ é aproximadamente Normal$(3.5,\frac{17.5}{n})$.
+
+
+
+>  O primeiro histograma a seguir mostra o resultado de 10000 repetições do seguinte experimento: observar o resultado do lançamento de 1 dado. Repare que é muito próximo de uma distribuição uniforme discreta (chance 1/6 para cada resultado).
+
+>  O segundo histograma mostra o resultado de 10000 repetições do seguinte experimento: observar a média do lançamento de 2 dados  (equivalente a observar a média de 2 lançamentos de um dado). 
+
+
+>  O último histograma mostra o resultado de 10000 repetições do seguinte experimento: observar a média do lançamento de 100 dados (equivalente a observar a média de 100 lançamentos de um dado). 
+
+>   Repare que conforme o número de dados (tamanho amostral) aumenta, a distribuição da média amostral se aproxima da distribuição normal com média 3.5 e variância cada vez menor (17.5/n).
+
+
+## Exemplo
+
+
+<center>
+```{r,echo=FALSE,fig.width=7,fig.height=4.5}
+par(mfrow=c(2,3))
+
+n1 <- sample(1:6,10000,replace=TRUE)
+
+barplot(table(n1),ylim=c(0,1800),main="Média de 1 dado",col="blue")
+
+n1a <- sample(1:6,10000,replace=TRUE)
+n2a <- sample(1:6,10000,replace=TRUE)
+n2 <- (n1a+n2a)/2
+
+barplot(table(n2),ylim=c(0,1800),main="Média de 2 dados",col="blue")
+
+
+
+n1a <- sample(1:6,10000,replace=TRUE)
+n2a <- sample(1:6,10000,replace=TRUE)
+n3a <- sample(1:6,10000,replace=TRUE)
+n3 <- (n1a+n2a+n3a)/3
+
+barplot(table(n3),ylim=c(0,1800),main="Média de 3 dados",col="blue")
+
+
+n=10
+
+N <- matrix(sample(1:6,10000*n,replace=TRUE),ncol=n)
+
+nn <- apply(N,1,mean)
+
+#barplot(table(nn),ylim=c(0,1800),main="Média de 10 dados",col="blue")
+hist(nn,xlim=c(1,6), main="Média de 10 dados",col="blue",xlab=" ",ylim=c(0,1800))
+
+
+
+n=50
+
+N <- matrix(sample(1:6,10000*n,replace=TRUE),ncol=n)
+
+nn <- round(apply(N,1,mean),2)
+
+#barplot(table(nn),ylim=c(0,1800),main="Média de 50 dados",col="blue")
+
+hist(nn,xlim=c(1,6), main="Média de 50 dados",col="blue",xlab=" ",ylim=c(0,1800))
+
+
+
+
+n=100
+
+N <- matrix(sample(1:6,10000*n,replace=TRUE),ncol=n)
+
+nn <- round(apply(N,1,mean),2)
+
+#barplot(table(nn),ylim=c(0,1800), main="Média de 100 dados",col="blue")
+hist(nn,xlim=c(1,6), main="Média de 100 dados",col="blue",xlab=" ",ylim=c(0,1800))
+```
+</center>
+
+
+## Teorema Central do Limite
+
+Você pode verificar o comportamento de $\bar{X}$ para vários tipos de distribuição de $X$:
+
+
+https://nishantsbi.shinyapps.io/CLT_Shiny
+
+https://gallery.shinyapps.io/CLT_mean/
+
+
+# Aproximação da Distribuição Binomial pela Normal
+
+## Aproximação da Binomial pela Normal {.build}
+
+
+> *  Consideremos uma população em que a proporção de indivíduos portadores de uma certa característica seja $p$. 
+$$ X_{i} = \left\{
+\begin{array}{ll}
+1, & \mbox{se o indivíduo i possui a característica} \\
+0, & \mbox{caso contrário} \\
+\end{array}
+\right.$$ 
+
+> *  $\Rightarrow$ $X_{i}\sim Bernoulli(p)$; $i=1,2,...,n$. 
+
+> *  Se as observações são independentes: $S_{n}=X_{1}+...+X_{n}\sim  Bin(n,p)$. 
+
+> *  Após a coleta de uma amostra aleatória simples de $n$ indivíduos, podemos considerar: 
+
+> *  $\hat{p}=\frac{S_{n}}{n}$  (média amostral como estimador da média populacional).
+
+
+
+## Aproximação da Binomial pela Normal {.build}
+
+Utilizando a distribuição exata (n pequeno):
+$P\left(\hat{p}=\frac{k}{n}\right)=P\left(\frac{S_{n}}{n}=\frac{k}{n}\right)=P\left(S_{n}=k\right)=\left(\begin{array}{l}
+n \\
+k \\
+\end{array}\right)p^{k}\left(1-p\right)^{n-k}$ 
+$k=0,1,...,n$. 
+
+
+> Utilizando a aproximação para a Normal (n grande): 
+$\hat{p}\sim N\left(p,\frac{p(1-p)}{n}\right)$
+
+
+## Exemplo {.build}
+
+Se $p$ for a proporção de fumantes no estado de SP, $p=0.2$ e tivermos coletado uma amostra aleatória simples de 500 indivíduos:
+$$ X_{i} = \left\{
+\begin{array}{ll}
+1, & \mbox{se o indivíduo i é fumante} \\
+0, & \mbox{caso contrário} \\
+\end{array}
+\right.$$
+
+> *  $\hat{p}=\frac{\sum_{i=1}^{500}X_{i}}{500}$. 
+
+> *  $\hat{p}\sim N\left(0.2,\frac{0.2\times0.8}{500}\right)=N\left(0.2,0.00032\right)$ 
+
+> *  $P\left(\hat{p}\leq 0.25\right)= P\left(Z\leq 2.795\right)=\Phi\left(2.795\right)=0.9974$
+
+
+## Aproximação da Binomial pela Normal {.build}
+
+> *  $\hat{p}=\frac{S_{n}}{n}$  $\Rightarrow$ $S_{n}=n\hat{p}$. 
+
+> *  Quando $n$ é grande o suficiente $\hat{p}\sim N\left(p,\frac{p(1-p)}{n}\right)$. 
+
+> *  Qual a distribuição de $S_{n}$ quando n é grande o suficiente?
+
+> *  $S_{n}=X_{1}+...+X_{n}$ 
+
+> *  $\hat{p}=\frac{S_{n}}{n} \sim N\left(p,\frac{p(1-p)}{n}\right)$ 
+
+> *  $S_{n}=n\hat{p}\sim N\left(np,np(1-p)\right)$ 
+
+> *  Portanto: $Bin(n,p)\approx N\left(np,np(1-p)\right)$ quando $n$ é grande
+
+
+## Exemplo {.build}
+
+ $X\sim Bin(100,0.4)$ 
+
+> *  $E(X)=100\times0.4=40$ 
+
+> *  $Var(X)=100\times0.4\times0.6=24$ 
+
+> *  $X \approx N(40,24)$ 
+
+> *  $P\left(X\leq 50\right)= P\left(Z\leq \frac{50-40}{\sqrt{24}}\right)\approx \Phi\left(\frac{10}{\sqrt{24}}\right)=\Phi\left(2.04\right)\approx0.9793$
+
+
+
+
+
+
+
+## Leituras
+
+
+
+
+* [Ross](http://www.sciencedirect.com/science/article/pii/B9780123743886000077): capítulo 7. 
+* [OpenIntro](https://www.openintro.org/stat/textbook.php): seção 4.1.
+* Magalhães: capítulo 7.
+
+##
+
+Slides produzidos pelos professores:
+
+* Samara Kiihl
+
+* Tatiana Benaglia
+
+* Benilton Carvalho
