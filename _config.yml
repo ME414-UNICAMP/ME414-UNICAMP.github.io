@@ -9,3 +9,4 @@ github_username2:  benilton
 
 # Build settings
 markdown: kramdown
+exclude: ['*.Rmd']
