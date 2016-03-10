@@ -219,7 +219,7 @@ Para dados discretos com poucos valores diferentes, a mediana ignora muita infor
 No entanto, como neste caso temos apenas os valores 0, 1 e 2, podemos apresentar os dados usando gráficos de barra.
 
 
-```{r,echo=FALSE,message=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
 casamento <- data.frame(Sexo=rep(c("Feminino","Masculino"),times=c(8739,8678)),Vezes=rep(c(0,1,2,0,1,2),times=c(5861,2773,105,7074,1561,43)))
 casamento$Vezes <- as.factor(casamento$Vezes)
 
