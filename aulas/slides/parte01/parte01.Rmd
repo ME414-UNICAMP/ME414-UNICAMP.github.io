@@ -169,7 +169,7 @@ Estatística é a arte do aprendizado através de dados.
 > $45/224=`r round(45/224,2)` = `r round(45/224,2)*100`\%$
 
 
-```{r,echo=FALSE,message=FALSE,eval=FALSE}
+```{r,echo=FALSE,message=FALSE,eval=FALSE,warning=FALSE}
 
 trinta <- data.frame(Grupo=c("Tratamento","Controle","Tratamento","Controle"),Infarto=c("sim","sim","não","não"),Freq=c(33,13,191,214))
 trintaLong <- data.frame(Grupo=rep(c("Tratamento","Tratamento","Controle","Controle"),times=c(33,191,13,214)),Infarto=rep(c("sim","não","sim","não"),times=c(33,191,13,214)))
@@ -412,7 +412,7 @@ whos
 
 Gráfico de barras das frequências
 
-```{r,echo=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
 
 library(ggplot2)
 colnames(whos) <- c("doctor","n_episodes","prop")
@@ -426,7 +426,7 @@ ggplot(whos, aes(doctor, n_episodes)) +
 
 Gráfico de barras das proporções
 
-```{r,echo=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
 
 ggplot(whos, aes(doctor, prop)) +
   geom_bar(stat = "identity") +
@@ -457,7 +457,7 @@ dias
 
 Como o número de valores distintos nos dados é pequeno, podemos usar uma tabela para apresentar a frequência de cada valor:
 
-```{r,echo=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
 
 freq <- as.data.frame(table(dias))
 freq$prop <- round(freq$Freq/length(dias),2)
@@ -480,7 +480,7 @@ ggplot(freq, aes(dias, Freq)) +
 
 ## Exemplo: Licença Médica
 
-```{r,echo=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
 #Prop <- freq$Freq/length(dias)
 #barplot(Prop, main="Licença Médica", xlab="Dias",  
 #   ylab="Proporção",names.arg=freq$dias,col="lightblue")
