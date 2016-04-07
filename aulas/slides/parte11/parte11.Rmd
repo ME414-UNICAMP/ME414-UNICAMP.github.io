@@ -267,7 +267,7 @@ Seja $X$ o número de disparos na roleta russa em 6 partidas e $p=1/6$ a probabi
 $$P(X=0)=\binom{6}{0}p^0(1-p)^{6-0} = \left( \frac{5}{6} \right)^6 = 0.33489$$
 
 
-## Exemplo: Roleta Rusfsa {.build}
+## Exemplo: Roleta Russa {.build}
 
 > * Qual é a probabilidade de Greene morrer na $k$-ésima jogada? 
 
