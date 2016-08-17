@@ -475,7 +475,10 @@ freq1
 
 #http://docs.ggplot2.org/0.9.3.1/geom_bar.html
 ggplot(freq, aes(dias, Freq)) +
-  geom_bar(stat = "identity",fill="blue") + ylab("Frequência") + xlab("Dias de Licença")+theme(axis.text.x = element_text(face="bold", hjust = 1,size=12,color="black"),axis.text.y = element_text(face="bold", hjust = 1,size=12,color="black"))
+  geom_bar(stat = "identity", fill="blue") + 
+    ylab("Frequência") + xlab("Dias de Licença") +
+    theme(axis.text = element_text(face="bold", size=12, color="black"),
+          axis.title = element_text(face="bold", size=12, color="black"))
 ```
 
 ## Exemplo: Licença Médica
@@ -486,7 +489,10 @@ ggplot(freq, aes(dias, Freq)) +
 #   ylab="Proporção",names.arg=freq$dias,col="lightblue")
 
 ggplot(freq, aes(dias, prop)) +
-  geom_bar(stat = "identity",fill="blue") + ylab("Proporção") + xlab("Dias de Licença")+theme(axis.text.x = element_text(face="bold", hjust = 1,size=12,color="black"),axis.text.y = element_text(face="bold", hjust = 1,size=12,color="black"))
+    geom_bar(stat = "identity", fill="blue") + 
+    ylab("Proporção") + xlab("Dias de Licença") +
+    theme(axis.text = element_text(face="bold", size=12, color="black"),
+          axis.title = element_text(face="bold", size=12, color="black"))
 
 ```
 
@@ -573,8 +579,9 @@ stem(QI)
 Um professor apresenta à classe as notas do exame usando um gráfico de ramo-e-folhas.
 
 ```{r, echo=FALSE}
-notas <- c(65,68,68,70,71,71,73,76,77,77,79,81,82,82,83,83,83,84,86,87,87,87,88,89,90,91,91,92,93,94,94,95,98)
-stem(notas,scale=0.5)
+notas <- c(65,68,68,70,71,71,73,76,77,77,79,81,82,82,83,83,83,84,
+           86,87,87,87,88,89,90,91,91,92,93,94,94,95,98)
+stem(notas, scale=0.5)
 ```
 
 > Qual o total de alunos?
@@ -585,8 +592,14 @@ stem(notas,scale=0.5)
 
 ## Exemplo: Notas dos Alunos
 
-```{r,echo=FALSE}
-hist(notas, col="lightblue",xlab="Notas",ylab="Frequência",main=" ",nclass=4,cex.axis=1.5,cex.lab=1.5)
+```{r, echo=FALSE}
+## hist(notas, col="lightblue",xlab="Notas",ylab="Frequência",main=" ",nclass=4,cex.axis=1.5,cex.lab=1.5)
+
+ggplot(data=data.frame(notas=notas), aes(notas)) + 
+    geom_histogram(breaks = seq(60, 100, by=10), colour="black", fill="blue") +
+    labs(x="Notas", y="Frequência") +
+    theme(axis.title = element_text(face="bold", size=12, color="black"),
+          axis.text = element_text(face="bold", size=12, color="black"))
 ```
 
 ## Ramos-e-Folhas x Histograma
