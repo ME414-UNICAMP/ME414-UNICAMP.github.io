@@ -406,7 +406,7 @@ whos
 
 ## Gráfico de Barras
 
-![he-man](figuras/heman.png)
+![heman](figuras/heman.png)
 
 ## Exemplo: Doctor Who
 
