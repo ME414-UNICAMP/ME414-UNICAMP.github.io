@@ -412,26 +412,25 @@ whos
 
 Gráfico de barras das frequências
 
-```{r,echo=FALSE}
-
+```{r, echo=FALSE}
 library(ggplot2)
 colnames(whos) <- c("doctor","n_episodes","prop")
 
 ggplot(whos, aes(doctor, n_episodes)) +
-  geom_bar(stat = "identity") +
-  coord_flip() + ylab("Número de episódios") +xlab("Atores")+theme(axis.text.x = element_text(face="bold", hjust = 1,size=12,color="black"),axis.text.y = element_text(face="bold", hjust = 1,size=12,color="black"))
+    geom_bar(stat = "identity") +
+    coord_flip() + ylab("Número de episódios") + xlab("Atores") + 
+    theme(axis.text = element_text(face="bold", size=12, color="black"))
 ```
 
 ## Exemplo: Doctor Who
 
 Gráfico de barras das proporções
 
-```{r,echo=FALSE}
-
+```{r, echo=FALSE}
 ggplot(whos, aes(doctor, prop)) +
-  geom_bar(stat = "identity") +
-  coord_flip() + ylab("Proporção") + xlab("Atores")+theme(axis.text.x = element_text(face="bold", hjust = 1,size=12,color="black"),axis.text.y = element_text(face="bold", hjust = 1,size=12,color="black"))
-
+    geom_bar(stat = "identity") +
+    coord_flip() + ylab("Proporção") + xlab("Atores") + 
+    theme(axis.text = element_text(face="bold", size=12, color="black"))
 ```
 
 
@@ -447,7 +446,7 @@ ggplot(whos, aes(doctor, prop)) +
 
 > Os dados a seguir representam o número de dias de licença médica de 50 funcionários de uma fábrica nas últimas 6 semanas:
 
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 dias <- c(2,2,0,0,5,8,3,4,1,0,0,7,1,7,1,5,4,0,4,0,1,8,9,7,0, 1,7,2,5,5,4,3,3,0,0,2,5,1,3,0,1,0,2,4,5,0,5,7,5,1)
 
 dias
@@ -457,10 +456,9 @@ dias
 
 Como o número de valores distintos nos dados é pequeno, podemos usar uma tabela para apresentar a frequência de cada valor:
 
-```{r,echo=FALSE}
-
+```{r, echo=FALSE}
 freq <- as.data.frame(table(dias))
-freq$prop <- round(freq$Freq/length(dias),2)
+freq$prop <- round(freq$Freq/length(dias), 2)
 freq1 <- freq
 colnames(freq1) <- c("Dias de licença","Frequência","Proporção")
 rownames(freq1)<- NULL
@@ -469,13 +467,13 @@ freq1
 
 ## Exemplo: Licença Médica
 
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 #barplot(freq$Freq, main="Licença Médica", xlab="Dias",  
 #   ylab="Frequência",names.arg=freq$dias,col="lightblue")
 
 #http://docs.ggplot2.org/0.9.3.1/geom_bar.html
 ggplot(freq, aes(dias, Freq)) +
-  geom_bar(stat = "identity", fill="blue") + 
+    geom_bar(stat = "identity", fill="blue") + 
     ylab("Frequência") + xlab("Dias de Licença") +
     theme(axis.text = element_text(face="bold", size=12, color="black"),
           axis.title = element_text(face="bold", size=12, color="black"))
@@ -483,7 +481,7 @@ ggplot(freq, aes(dias, Freq)) +
 
 ## Exemplo: Licença Médica
 
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 #Prop <- freq$Freq/length(dias)
 #barplot(Prop, main="Licença Médica", xlab="Dias",  
 #   ylab="Proporção",names.arg=freq$dias,col="lightblue")
@@ -565,12 +563,12 @@ ggplot(data=dadosQI, aes(dadosQI$QI)) +
 
 ## Exemplo: QI {.smaller}
 Dados:
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 QI
 ```
 
 Ramo-e-folhas: 
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 stem(QI)
 ```
 
