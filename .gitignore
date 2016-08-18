@@ -1,11 +1,8 @@
 _site
 .sass-cache
-
 _posts/.Rhistory
-
 .Rmd
-
 _aulas/slides/.Rmd
-
 aulas/slides/parte01/.Rhistory
 .Rproj.user
+ME414-UNICAMP.github.io.Rproj
