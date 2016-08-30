@@ -127,27 +127,29 @@ Estatística é a arte do aprendizado através de dados.
 
 > No entanto, muitas vezes esses estudos podem ser realizados com técnicas simples de amostragem, análise de dados e conceitos fundamentais de inferência estatística.
 
-## Estudo de Caso: stents e prevenção de infarto {.build}
+## Estudo de Caso: stents e prevenção de AVC {.build}
 
 > Problema comum em medicina: como avaliar a eficácia de um procedimento médico?
 
-> [Estudo](http://www.nejm.org/doi/full/10.1056/NEJMoa1105335): [stents](http://www.nhlbi.nih.gov/health/health-topics/topics/stents) são eficazes no tratamento de pacientes com risco de infarto?
+> [Estudo](http://www.nejm.org/doi/full/10.1056/NEJMoa1105335): [stents](http://www.nhlbi.nih.gov/health/health-topics/topics/stents) são eficazes no tratamento de pacientes com risco de Acidente Vascular Cerebral (AVC)?
 
-> Stents são usados para a recuperação de pacientes que já sofreram infarto.
+> Stents são usados para a recuperação de pacientes que já sofreram AVC.
 
+## Estudo de Caso: stents e prevenção de AVC
 <center>
-> <img src="figuras/Stent_NIH.gif" width=200>
+<img src="figuras/Stent_NIH.gif" width=300>
+<figcaption>Figura: Stents no tratamento de AVC </figcaption>
 </center>
 
-## Estudo de Caso: stents e prevenção de infarto {.build}
+## Estudo de Caso: stents e prevenção de AVC {.build}
 
-> Os pesquisadores do estudo investigaram se havia benefícios também para pacientes com risco de infarto.
+> Os pesquisadores do estudo investigaram se havia benefícios também para pacientes com risco de AVC.
 
 > * Pergunta de interesse: 
 
-> O uso de stent reduz o risco de infarto?
+> O uso de stent reduz o risco de AVC?
 
-> * Os pesquisadores coletaram dados de 451 pacientes com risco de infarto que se voluntariaram para o estudo.
+> * Os pesquisadores coletaram dados de 451 pacientes com risco de AVC que se voluntariaram para o estudo.
 
 > Cada paciente foi alocado aleatoriamente em um dos grupos:
 
@@ -155,7 +157,7 @@ Estatística é a arte do aprendizado através de dados.
 
 > * **Grupo Controle** - paciente recebe a mesma medicação do grupo tratamento, mas não recebe stent.
 
-## Estudo de Caso: stents e prevenção de infarto {.build}
+## Estudo de Caso: stents e prevenção de AVC {.build}
 
 > Cada paciente foi avaliado em duas ocasiões: primeiros 30 dias e após 1 ano.
 
@@ -165,17 +167,17 @@ Estatística é a arte do aprendizado através de dados.
 
 > Como poderíamos resumir?
 
-## Estudo de Caso: stents e prevenção de infarto {.build}
+## Estudo de Caso: stents e prevenção de AVC {.build}
 
 <center><img src="figuras/stent2.png" width=500></center>
 
-> 33 pacientes do grupo tratamento tiveram um infarto durante os primeiros 30 dias.
+> 33 pacientes do grupo tratamento tiveram um AVC durante os primeiros 30 dias.
 
-> Dentre os 224 pacientes do grupo tratamento, 45 sofreram infarto durante o primeiro ano.
+> Dentre os 224 pacientes do grupo tratamento, 45 tiveram AVC durante o primeiro ano.
 
-> Qual a proporção de pacientes do grupo tratamento que sofreram infarto durante o primeiro ano?
+> Qual a proporção de pacientes do grupo tratamento que sofreram AVC durante o primeiro ano?
 
-> $45/224=`r round(45/224,2)` = `r round(45/224,2)*100`\%$
+> $$45/224=`r round(45/224,2)` = `r round(45/224,2)*100`\%$$
 
 
 ```{r,echo=FALSE,message=FALSE,eval=FALSE}
@@ -190,44 +192,46 @@ g<-ggplot(trintaLong,aes(x = Grupo,fill=Infarto)) +
   geom_bar(position=position_dodge(),aes(y = ..count..)) + 
   ylab("Número de Pacientes")+
   scale_x_discrete("Grupo") +
-  scale_fill_discrete(name ="Infartou?")+theme(axis.text.x = element_text(face="bold", hjust = 1,size=12,color="black"),axis.text.y = element_text(face="bold", hjust = 1,size=12,color="black"))
+  scale_fill_discrete(name ="AVC?")+theme(axis.text.x = element_text(face="bold", hjust = 1,size=12,color="black"),axis.text.y = element_text(face="bold", hjust = 1,size=12,color="black"))
 print(g)
 
 g<-ggplot(trintaLong,aes(x = Grupo,fill=Infarto)) + 
   geom_bar(position="fill") + 
   ylab("Proporção de Pacientes")+
   scale_x_discrete("Grupo") +
-  scale_fill_discrete(name ="Infartou?")+theme(axis.text.x = element_text(face="bold", hjust = 1,size=12,color="black"),axis.text.y = element_text(face="bold", hjust = 1,size=12,color="black"))
+  scale_fill_discrete(name ="AVC?")+theme(axis.text.x = element_text(face="bold", hjust = 1,size=12,color="black"),axis.text.y = element_text(face="bold", hjust = 1,size=12,color="black"))
 print(g)
 ```
 
 
   
-## Estudo de Caso: stents e prevenção de infarto {.build}
+## Estudo de Caso: stents e prevenção de AVC {.build}
 
 <center><img src="figuras/stent2.png"></center>
 
 > Podemos calcular **estatísticas sumárias** a partir da tabela.
 
-> **Estatística Sumária**: número obtido a partir de informações dos dados coletados para resumi-los.
+> **Estatística Sumária**: número obtido a partir de informações dos dados coletados para resumí-los.
 
-> Proporção de pacientes do grupo tratamento que sofreram infarto: $45/224=`r round(45/224,2)` = `r round(45/224,2)*100`\%$
+> Proporção de pacientes do grupo tratamento que sofreram AVC: 
+$$45/224=`r round(45/224,2)` = `r round(45/224,2)*100`\%$$
 
-> Proporção de pacientes do grupo controle que sofreram infarto: $28/227=`r round(28/227,2)` = `r round(28/227,2)*100`\%$
+> Proporção de pacientes do grupo controle que sofreram AVC: 
+$$28/227=`r round(28/227,2)` = `r round(28/227,2)*100`\%$$
 
-## Estudo de Caso: uso de stents e prevenção de infarto {.build}
+## Estudo de Caso: stents e prevenção de AVC {.build}
 
-> No grupo tratamento, temos 8% a mais de pacientes que sofreram de infarto.
+> No grupo tratamento, temos 8% a mais de pacientes que sofreram AVC.
 
 > Isto está de acordo com a expectativa dos pesquisadores do estudo? (relembre a pergunta de interesse)
 
-> 8% é uma diferença *considerável*? 
+> 8% é uma diferença **considerável**? 
 
-> Uma diferença de 8% poderia acontecer ao acaso, mesmo que os dois tratamentos na verdade oferecessem o mesmo risco de infarto?
+> Uma diferença de 8% poderia acontecer ao acaso, mesmo que os dois tratamentos na verdade oferecessem o mesmo risco de AVC?
 
-> Utilizando metodologia estatística, os pesquisadores chegaram à conclusão de que stents são prejudiciais para pacientes com risco de infarto.
+> Utilizando metodologia estatística, os pesquisadores chegaram à conclusão de que stents são prejudiciais para pacientes com risco de AVC.
 
-## Estudo de Caso: stents e prevenção de infarto {.build}
+## Estudo de Caso: stents e prevenção de AVC {.build}
 <div class="red2">
 **CUIDADO!**
 
@@ -240,8 +244,8 @@ print(g)
 
 # Estatística Descritiva: Introdução
 
-##  {.build}
-> Estatística descritiva se refere a métodos para resumir dados.
+## Estatística Descritiva {.build}
+> **Estatística descritiva** se refere a métodos para resumir dados.
 
 > Gráficos, tabelas, médias, porcentagens,...
 
@@ -252,9 +256,9 @@ print(g)
 
 É mais simples olharmos gráficos ou 35.723.254 questionários?
 
-![censo-sp](figuras/censo-sp.png)
+![](figuras/censo-sp.png)
 
-[http://www.censo2010.ibge.gov.br](http://www.censo2010.ibge.gov.br)
+Fonte: [http://www.censo2010.ibge.gov.br](http://www.censo2010.ibge.gov.br)
 
 # Estatística Descritiva: Estrutura básica de dados
 
