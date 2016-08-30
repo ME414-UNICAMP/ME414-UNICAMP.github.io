@@ -317,7 +317,9 @@ pessoa, os valores mudam.
 
 ## Tipos de variável
 
-![var](figuras/FIG_ESB_001.png)
+<center>
+![Tipos de Variáveis](figuras/FIG_ESB_001.png)
+</center>
 
 ## Tipos de variável{.build}
 
@@ -419,7 +421,7 @@ whos
 
 ## Gráfico de Barras
 
-![heman](figuras/heman.png)
+![He-Man](figuras/heman.png)
 
 ## Exemplo: Doctor Who
 
@@ -564,7 +566,7 @@ dadosQI <- data.frame(QI = QI)
 
 ggplot(data=dadosQI, aes(dadosQI$QI)) + 
     geom_histogram(bins = 9, colour="black", fill="blue") +
-    labs(x="QI", y="Frequência") +
+    labs(x="QI", y="Frequência") + 
     theme(axis.title = element_text(face="bold", size=12, color="black"),
           axis.text = element_text(face="bold", size=12, color="black"))
 ```
