@@ -9,13 +9,13 @@ logo: ../logo-imecc.png
 
 # Introdução
 
-## 
+## Estatísticas
 
 <center>
 ![chaves](figuras/chaves.png)
 </center>
 
-[Chaves e as Estatísticas](https://www.youtube.com/watch?v=VC1NmtmF4zE)
+[Vídeo: Chaves e as Estatísticas](https://www.youtube.com/watch?v=VC1NmtmF4zE)
 
 ## 
 
@@ -43,6 +43,15 @@ logo: ../logo-imecc.png
  No livro [Mankind in the Making](http://www.goodreads.com/book/show/1940169.Mankind_in_the_Making), de 1903, [H.G. Wells](http://pt.wikipedia.org/wiki/H._G._Wells) [escreveu](http://www.statschat.org.nz/2012/08/13/what-wells-actually-said-in-context/):   
 
 >... e não estamos muito longe do tempo em que se entenderá que, para exercermos a cidadania de maneira eficiente, será tão necessário saber calcular e pensar em médias, máximos e mínimos, quanto é agora necessário saber ler e escrever.
+
+## Introdução
+
+
+![](figuras/Dilma.jpg)
+
+
+[Vídeo: Dilma se enrola com as contas!](https://www.youtube.com/watch?v=A1K4rlBFT2w)
+
 
 
 ## Introdução{.build}
