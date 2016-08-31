@@ -565,7 +565,7 @@ dadosQI <- data.frame(QI = QI)
 ## hist(QI, col="lightblue", xlab="QI", ylab="Frequência", main=" ", cex.lab=1.5, cex.axis=1.5)
 
 ggplot(data=dadosQI, aes(dadosQI$QI)) + 
-    geom_histogram(bins = 9, colour="black", fill="blue") +
+    geom_histogram(binwidth = 5, center=97.5, colour="black", fill="blue") +
     labs(x="QI", y="Frequência") + 
     theme(axis.title = element_text(face="bold", size=12, color="black"),
           axis.text = element_text(face="bold", size=12, color="black"))
@@ -611,7 +611,7 @@ stem(notas, scale=0.5)
 ## hist(notas, col="lightblue",xlab="Notas",ylab="Frequência",main=" ",nclass=4,cex.axis=1.5,cex.lab=1.5)
 
 ggplot(data=data.frame(notas=notas), aes(notas)) + 
-    geom_histogram(breaks = seq(60, 100, by=10), colour="black", fill="blue") +
+    geom_histogram(binwidth = 10, closed="right", center=65, colour="black", fill="blue") +
     labs(x="Notas", y="Frequência") +
     theme(axis.title = element_text(face="bold", size=12, color="black"),
           axis.text = element_text(face="bold", size=12, color="black"))
