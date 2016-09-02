@@ -99,7 +99,10 @@ cereais$Calorias
 ```{r,echo=FALSE}
 sort(cereais$Calorias)
 ```
-> Mediana é `r median(cereais$Calorias)`.
+> Mediana é `r median(cereais$Calorias)` (5ª observação).
+
+> Se descartássemos o maior valor, 119, teríamos oito observações e aí a mediana seria:
+$$\mbox{mediana} = \frac{109 + 113}{2} = 111.$$
 
 ## Moda{.build}
 
@@ -123,10 +126,10 @@ Emissão per capita (em toneladas) para 8 países, em 2009 ([http://data.worldba
 
 País | Emissão $CO_2$ | País | Emissão $CO_2$   
 ---- | -------------- | ---- | --------------
-China | 5,8 | Brazil | 1,9
-Índia | 1,7 | Rússia | 11,1 
-EUA   | 17,3 | Paquistão | 0,9
-Indonésia | 1,9 | Bangaladesh | 0,3
+China | 5.8 | Brazil | 1.9
+Índia | 1.7 | Rússia | 11.1 
+EUA   | 17.3 | Paquistão | 0.9
+Indonésia | 1.9 | Bangaladesh | 0.3
 
 <center>
 ```{r, echo=FALSE, fig.height=2.5, fig.width=8}
@@ -138,7 +141,7 @@ stripchart(co2, xlab="Emissão de CO2 per capita (em toneladas)", col="blue", pc
 
 ## Exemplo: Emissão de $CO_2${.build}
 
-$\bar{x}=\frac{1}{8}(5,8+1,7+17,3+1,9+1,9+11,1+0,9+0,3)\approx`r round(mean(co2),2)`$
+$\bar{x}=\frac{1}{8}(5.8+1.7+17.3+1.9+1.9+11.1+0.9+0.3)\approx`r round(mean(co2),2)`$
 
 > Ordenando:
 ```{r,echo=FALSE}
@@ -159,7 +162,7 @@ co2
 ```
 
 
-$\bar{x}=\frac{1}{7}(5,8+1,7+1,9+1,9+11,1+0,9+0,3)\approx `r  round(mean(co2),2)`$
+$\bar{x}=\frac{1}{7}(5.8+1.7+1.9+1.9+11.1+0.9+0.3)\approx `r  round(mean(co2),2)`$
 
 > Ordenando:
 ```{r,echo=FALSE}
@@ -173,7 +176,7 @@ sort(co2)
 
 ## Exemplo: número de casamentos
 
-Total de vezes que casou ($x_{i}$) | Freq. (mulheres) | Freq. (homens) 
+Total de vezes que casou ($x_{i}$) | Frequência (mulheres) | Frequência (homens) 
 ---------------------------------- | ---------------- | --------------
 0 | 5861 | 7074
 1 | 2773 | 1561
@@ -208,9 +211,9 @@ $$\underbrace{0\,0\,0\,\ldots0}_{\mbox{5861 0's}}\quad \underbrace{1\,1\,1\,\ldo
 Média entre as mulheres:
 
 
-$$\bar{x}=\frac{0\times 5861+1\times 2773+2\times 105}{8739}=0,34$$
+$$\bar{x}=\frac{0\times 5861+1\times 2773+2\times 105}{8739}=0.34$$
 
-Média entre os homens: $\bar{x}=0,19$.
+Média entre os homens: $\bar{x}=0.19$.
 
 Para dados discretos com poucos valores diferentes, a mediana ignora muita informação.
 
@@ -269,11 +272,11 @@ Média de $A$: 10.
 Mediana de $A$: 10.
 
 > 
-Média de $B$: 27,6.
+Média de $B$: 27.6.
 Mediana de $B$: 10.
 
 >
-Média de $C$: 207,6.
+Média de $C$: 207.6.
 Mediana de $C$: 10.
 
 ## Exemplo: Transporte{.build}
@@ -286,7 +289,7 @@ $$1,1,4,1,1,1,10,1,6,1$$
 
 > Encontre a média, a mediana e a moda.
 
-> Média é 2,7. 
+> Média é 2.7. 
 
 > Ordenando: 1,1,1,1,__1,1__,1,4,6,10.
 
@@ -303,7 +306,7 @@ $$1,1,4,1,1,1,10,1,6,1,90$$
 
 > Mediana é 1.
 
-> Média é 10,64
+> Média é 10.64
 
 > Qual medida de posição representa melhor a distância do grupo de funcionários?
 
@@ -366,11 +369,11 @@ stripchart(C,method="stack",offset=1,at=0,ylim=c(0,11),cex=1.7,cex.axis=2,xlab="
 
 > Gráfico C: média é `r round(mean(C),2)`, mediana é `r round(median(C),2)`.
 
-## Assimetria {.build}
+## Assimetria (Caso Unimodal) {.build}
 
 <center><img src="figuras/assimetria.png" width=800></center>
 
-> Se os dados são simétricos, a média coincide com a mediana e a moda
+> Se os dados são simétricos, a média coincide com a mediana e a moda.
 
 > Assimetria à direita (positiva): Média > Mediana > Moda
 
@@ -385,30 +388,35 @@ Salário anual hipotético de professores de música na Dinamarca (esquerda) e n
 
 ```{r,echo=FALSE}
 set.seed(3)
-usa <- rnorm(800,mean=40,sd=10)
-den <- rnorm(800,mean=40,sd=4)
+usa <- rnorm(800, mean=40, sd=10)
+den <- rnorm(800, mean=40, sd=4)
+dados <- data.frame(cidade=rep(c("Dinamarca", "USA"), each=800), salario=c(den, usa))
 ```
 
-```{r,echo=FALSE,fig.height=3.5, fig.width=8}
-par(mfrow=c(1,2), mar=c(5.1,4.1,1.1,2.1))
-hist(den,freq=FALSE,xlab="Salário anual (mil dólares)",ylab="Densidade",main=" ",xlim=c(0,80),ylim=c(0,.1),cex.axis=1.5,cex.lab=1.5, col="lightblue")
-hist(usa,freq=FALSE,xlab="Salário anual (mil dólares)",ylab="Densidade",main=" ",xlim=c(0,80),ylim=c(0,.1),cex.axis=1.5,cex.lab=1.5, col="lightblue")
+
+```{r, echo=FALSE, fig.height=3.5, fig.width=8}
+ggplot(data=dados, aes(salario, ..density..)) + 
+    geom_histogram(binwidth=3, colour="black", fill="blue") +
+    labs(x="Salário anual (mil dólares)", y="Densidade") + 
+    facet_grid(~ cidade) + 
+    theme(axis.title = element_text(face="bold", size=12, color="black"),
+          axis.text = element_text(face="bold", size=12, color="black"))
 ```
 
-> Média salarial EUA: `r round(mean(usa),2)`. Média salarial Dinamarca: `r round(mean(den),2)`.
+> Média salarial Dinamarca: `r round(mean(den),2)`. Média salarial EUA: `r round(mean(usa),2)`. 
 
 
 ## Amplitude {.build}
 
 Uma medida de dispersão é **amplitude**: a diferença entre o maior e o menor valor observado na amostra.
 
-> Nos EUA, os salários variam de `r round(min(usa),0)` a `r round(max(usa),0)`.
-
-> Amplitude dos salários nos EUA: $`r round(max(usa),0)`-`r round(min(usa),0)` = `r round(max(usa),0)-round(min(usa),0)`$.
-
-> Na Dinamarca, variam de `r round(min(den),0)` a `r round(max(den),0)`.
+> Na Dinamarca, os salários variam de `r round(min(den),0)` a `r round(max(den),0)`.
 
 > Amplitude dos salários na Dinamarca: $`r round(max(den),0)`-`r round(min(den),0)`=`r round(max(den),0)-round(min(den),0)`$.
+
+> Nos EUA, variam de `r round(min(usa),0)` a `r round(max(usa),0)`.
+
+> Amplitude dos salários nos EUA: $`r round(max(usa),0)`-`r round(min(usa),0)` = `r round(max(usa),0)-round(min(usa),0)`$.
 
 > Problema com a amplitude: utiliza apenas duas observações (a máxima e a mínima).
 
@@ -449,8 +457,9 @@ $A=\{1,2,5,6,6\}$ e $B=\{ -40,0,5,20,35\}$
 
 > Alternativas:
 
-*  $\sum_{i=1}^n\mid x_i-\bar{x}\mid$
-*  $\sum_{i=1}^n(x_i-\bar{x})^2$
+> $\displaystyle \sum_{i=1}^n\mid x_i-\bar{x}\mid$
+
+> $\displaystyle \sum_{i=1}^n(x_i-\bar{x})^2$
 
 Ambas alternativas evitam que desvios iguais em módulo, mas com sinais opostos, se anulem.
 
@@ -458,11 +467,11 @@ Ambas alternativas evitam que desvios iguais em módulo, mas com sinais opostos,
 ## Variância e Desvio-padrão {.build}
 
 > A média dos desvios ao quadrado é denominada **variância**:
-$$s^2=\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})^2\,.$$
+$$s^2=\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})^2$$
 
 > **Desvio padrão** é a raiz da variância:
 
-$$s=\sqrt{\frac{\sum_{i=1}^n(x_i-\bar{x})^2}{n-1}}$$
+$$s=\sqrt{\frac{1}{n-1} \sum_{i=1}^n(x_i-\bar{x})^2}$$
 
 > Interpretação: distância típica entre uma observação e a média dos dados.
 
@@ -483,7 +492,7 @@ Conjunto de dados $A: \{1,2,5,6,6\}$.
 
 > $(x_i-\bar{x})^2$:  $\quad 9 \quad 4 \quad 1 \quad 4 \quad 4$
 
-> $$s^2=\frac{9+4+1+4+4}{5-1}=5,5$$
+> $$s^2=\frac{9+4+1+4+4}{5-1}=5.5$$
 
 ## Exemplo{.build}
 
@@ -497,7 +506,7 @@ Conjunto de dados $B: \{-40,0,5,20,35\}$.
 
 > $(x_i-\bar{x})^2$:  $\quad 1936 \quad 16 \quad 1 \quad 256 \quad 961$
 
-> $$s^2=\frac{1936+16+1+256+961}{5-1}=792,5$$
+> $$s^2=\frac{1936+16+1+256+961}{5-1}=792.5$$
 
 
 ## Exemplo: "Qual o número ideal de filhos?"{.build}
@@ -526,7 +535,7 @@ stripchart(mulheres,method="stack",offset=1,at=0.1,ylim=c(0,5),cex=1.7,cex.axis=
  
 > * Para mulheres: desvio típico da média é menor do que o dos homens, pois a grande maioria das observações coincide com a própria média.
 
-> * Desvio-padrão entre homens: $s=\sqrt{\frac{\sum_{i=1}^n(x_i-\bar{x})^2}{n-1}}=`r round(sd(homens),2)`\,.$
+> * Desvio-padrão entre homens: $s=\sqrt{\frac{1}{n-1} \sum_{i=1}^n(x_i-\bar{x})^2}=`r round(sd(homens),2)`\,.$
 
 > * Desvio-padrão entre mulheres: $s=`r round(sd(mulheres),2)`$.
 
