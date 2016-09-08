@@ -103,8 +103,10 @@ Permite comparar a distribuição de $Y$ (procedência) conforme o grau de instr
 
 ## Procedência conforme o grau de instrução {.build}
 
-```{r,echo=FALSE,fig.width=8,fig.height=5}
-barplot(prop.table(x,2),xlab=" ", main=" ", beside=TRUE,legend.text=TRUE,ylim=c(0,.8),col=c("lightgreen","lightyellow","lightpink"),cex.axis=1.5,cex.lab=1.5) 
+```{r, echo=FALSE, fig.width=8, fig.height=5}
+barplot(prop.table(x, 2), xlab=" ", main=" ", beside=TRUE, legend.text=TRUE,
+        ylim=c(0, .8), col=c("lightgreen", "lightyellow", "lightpink"),
+        cex.axis=1.5, cex.lab=1.5) 
 ```
 
 > Observando o gráfico e a tabela de proporções  parece haver evidências de associação entre o grau de instrução e a procedência do funcionário.
@@ -114,8 +116,8 @@ barplot(prop.table(x,2),xlab=" ", main=" ", beside=TRUE,legend.text=TRUE,ylim=c(
 
 Distribuição das frequências relativas ao total de cada linha.
 
-```{r,echo=FALSE}
-kable(addmargins(prop.table(x,1),2), digits = 3)
+```{r, echo=FALSE}
+kable(addmargins(prop.table(x, 1), 2), digits=3)
 ```
 
 Entre os funcionários do interior:
@@ -131,23 +133,25 @@ Permite comparar a distribuição do grau de instrução ($X$) conforme a proced
 
 ## Grau de instrução conforme a procedência {.build}
 
-```{r,echo=FALSE,fig.width=8,fig.height=5}
-barplot(t(prop.table(x,1)),xlab=" ", main=" ", beside=TRUE,legend.text=TRUE,ylim=c(0,.8),col=c("lightgreen","lightyellow","lightpink"),cex.axis=1.5,cex.lab=1.5) 
+```{r, echo=FALSE, fig.width=8, fig.height=5}
+barplot(t(prop.table(x, 1)), xlab=" ", main=" ", beside=TRUE, legend.text=TRUE,
+        ylim=c(0, .8), col=c("lightgreen", "lightyellow", "lightpink"),
+        cex.axis=1.5, cex.lab=1.5) 
 ```
 
 
 ## Exemplo: Escolha da carreira {.build}
 Existe dependência entre o sexo ($X$) e a carreira escolhida ($Y$) por 200 alunos de Economia e Administração?
 
-```{r,echo=FALSE}
-x = matrix(c(85,35,55,25),nrow=2,byrow=TRUE)
- rownames(x) = c("Economia","Administração")
- colnames(x) = c("Masculino","Feminino")
+```{r, echo=FALSE}
+x <- matrix(c(85, 35, 55, 25), nrow=2, byrow=TRUE)
+ rownames(x) <- c("Economia", "Administração")
+ colnames(x) <- c("Masculino", "Feminino")
  
-y <- rbind(x,c(85+55,35+25))
-y <- cbind(y,c(85+35,55+25,sum(x)))
-rownames(y) <- c("Economia","Administração","Total")
-colnames(y) <- c("Masculino","Feminino","Total")
+y <- rbind(x, c(85 + 55, 35 + 25))
+y <- cbind(y, c(85 + 35, 55 + 25, sum(x)))
+rownames(y) <- c("Economia", "Administração", "Total")
+colnames(y) <- c("Masculino", "Feminino", "Total")
 kable(y)
 ```
 
@@ -171,8 +175,8 @@ kable(y)
 
 ## Exemplo: Escolha da carreira {.smaller .build} 
 
-```{r,echo=FALSE}
-kable(addmargins(round(prop.table(y[-3,],2),2),1))
+```{r, echo=FALSE}
+kable(addmargins(round(prop.table(y[-3,], 2), 2), 1))
 ```
 
 > * No geral (última coluna), sem considerar os sexos, temos que $60\%$ dos estudantes preferem economia e $40\%$ administração.
@@ -188,8 +192,10 @@ kable(addmargins(round(prop.table(y[-3,],2),2),1))
 ## Exemplo: Escolha da carreira conforme gênero
 
 
-```{r,echo=FALSE,fig.width=8,fig.height=5}
-barplot(prop.table(x,2),xlab=" ", main=" ", beside=TRUE,legend.text=TRUE,ylim=c(0,1),col=c("lightblue","lightpink"),cex.axis=1.5,cex.lab=1.5) 
+```{r, echo=FALSE, fig.width=8, fig.height=5}
+barplot(prop.table(x, 2),xlab=" ", main=" ", beside=TRUE, legend.text=TRUE,
+        ylim=c(0, 1), col=c("lightblue", "lightpink"), cex.axis=1.5,
+        cex.lab=1.5) 
 ```
 
 Observando o gráfico e a tabela de proporções condicionais  parece não haver evidências de associação entre gênero e escolha da carreira.
@@ -197,16 +203,16 @@ Observando o gráfico e a tabela de proporções condicionais  parece não haver
 ## Exemplo: Pesticidas{.smaller .build}
 > Uma [pesquisa](http://www.tandfonline.com/doi/abs/10.1080/02652030110113799#.VbOlP-hVhBA) foi feita para investigar a presença de pesticidas em alimentos orgânicos e convencionais.
 
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 # A tabela a seguir apresenta a distribuição conjunta das frequências do tipo de alimento e presença de pesticida.
-x = matrix(c(29,98,19485,7086),nrow=2,byrow=TRUE)
- rownames(x) = c("Orgânico","Convencional")
- colnames(x) = c("Pesticida Presente","Pesticida Ausente") 
+x <- matrix(c(29, 98, 19485, 7086), nrow=2, byrow=TRUE)
+ rownames(x) <- c("Orgânico", "Convencional")
+ colnames(x) <- c("Pesticida Presente", "Pesticida Ausente") 
 
-y <- rbind(x,c(29+19485,98+7086))
-y <- cbind(y,c(29+98,19485+7086,sum(x)))
-rownames(y) <- c("Orgânico","Convencional","Total")
-colnames(y) <- c("Pesticida Presente","Pesticida Ausente","Total")
+y <- rbind(x, c(29 + 19485, 98 + 7086))
+y <- cbind(y, c(29 + 98, 19485 + 7086, sum(x)))
+rownames(y) <- c("Orgânico", "Convencional", "Total")
+colnames(y) <- c("Pesticida Presente", "Pesticida Ausente", "Total")
 kable(y)
 ``` 
 
@@ -230,8 +236,8 @@ kable(y)
 
 - Qual a proporção de pesticidas entre alimentos convencionais?
 
-```{r,echo=FALSE}
-a <- addmargins(round(prop.table(x,1),2),2)
+```{r, echo=FALSE}
+a <- addmargins(round(prop.table(x, 1), 2), 2)
 #kable(a)
 ```
 
@@ -243,8 +249,11 @@ a <- addmargins(round(prop.table(x,1),2),2)
 ## Presença de pesticida por tipo de alimento
 <center>
 ```{r, echo=FALSE, fig.width=7, fig.height=4.5}
-par(mar=c(5.1,4.1,1.1,2.1))
-barplot(t(prop.table(x,1)), xlab="Tipo de Alimento", ylab="frequência relativa", main=" ", beside=TRUE, legend.text=TRUE, ylim=c(0,1.1), col=c("lightpink","lightblue"), cex.axis=1.5, cex.lab=1.5)
+par(mar=c(5.1, 4.1, 1.1, 2.1))
+barplot(t(prop.table(x, 1)), xlab="Tipo de Alimento", 
+        ylab="frequência relativa", main=" ", beside=TRUE, legend.text=TRUE,
+        ylim=c(0, 1.1), col=c("lightpink","lightblue"), cex.axis=1.5,
+        cex.lab=1.5)
 ```
 </center>
 
@@ -258,17 +267,15 @@ Observando o gráfico e a tabela de proporções condicionais parece haver evid�
   
   - Comparando com as demais famílias dos EUA, como você considera  sua renda familiar?
   
-```{r,echo=FALSE}
+```{r, echo=FALSE}
+x <- matrix(c(17, 90, 51, 45, 265, 143, 31, 139, 71), nrow=3, byrow=TRUE)
+ rownames(x) <- c("Acima da média", "Na média", "Abaixo da média")
+ colnames(x) <- c("Não muito feliz", "Feliz", "Muito feliz")
 
-x = matrix(c(17,90,51,45,265,143,31,139,71),nrow=3,byrow=TRUE)
- rownames(x) = c("Acima da média","Na média","Abaixo da média")
- colnames(x) = c("Não muito feliz","Feliz","Muito feliz")
-
-
-y <- rbind(x,colSums(x))
-y <- cbind(y,as.vector(rowSums(y)))
-rownames(y) <- c("Acima da média","Na média","Abaixo da média","Total")
-colnames(y) <- c("Não muito feliz","Feliz","Muito feliz","Total")
+y <- rbind(x, colSums(x))
+y <- cbind(y, as.vector(rowSums(y)))
+rownames(y) <- c("Acima da média", "Na média", "Abaixo da média", "Total")
+colnames(y) <- c("Não muito feliz", "Feliz", "Muito feliz", "Total")
 #kable(y)
 ```
 
@@ -282,13 +289,13 @@ colnames(y) <- c("Não muito feliz","Feliz","Muito feliz","Total")
 
 
 ## Exemplo: Renda e Felicidade {.build}
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 kable(y)
 ```
 
 No geral, qual a proporção de pessoas diz que está **Muito feliz**?
  
-> $$\frac{265}{852}=`r round(265/852,2)`$$
+> $$\frac{265}{852}=`r round(265/852, 2)`$$
  
 > Será que o nível de felicidade muda para cada tipo de renda? Como comparar?
 
@@ -296,8 +303,8 @@ No geral, qual a proporção de pessoas diz que está **Muito feliz**?
 
 Proporções condicionais do nível de felicidade para cada nível de renda:
 
-```{r,echo=FALSE}
-a <- addmargins(round(prop.table(x,1),2),2)
+```{r, echo=FALSE}
+a <- addmargins(round(prop.table(x, 1), 2), 2)
 kable(a)
 ```
 
@@ -305,8 +312,11 @@ kable(a)
 ## Nível de felicidade por cada nível de renda
 
 
-```{r,echo=FALSE,fig.width=8,fig.height=5}
-barplot(t(prop.table(x,1)),xlab="Renda", main=" ", beside=TRUE,legend.text=TRUE,ylim=c(0,1.1),col=c("lightgreen","lightyellow","lightpink"),cex.axis=1.5,cex.lab=1.5) 
+```{r, echo=FALSE, fig.width=8, fig.height=5}
+barplot(t(prop.table(x, 1)), xlab="Renda", main=" ", beside=TRUE,
+        legend.text=TRUE, ylim=c(0, 1.1), 
+        col=c("lightgreen", "lightyellow", "lightpink"), cex.axis=1.5, 
+        cex.lab=1.5) 
 ```
 
 Observando o gráfico e a tabela de proporções condicionais parece não haver evidências de associação entre nível de felicidade e nível de renda.
@@ -330,17 +340,15 @@ A Escola de Saúde Pública da Harvard fez uma pesquisa com 200 cursos de gradua
 
 ## Exemplo: Bebidas alcoólicas {.build}
 
-```{r,echo=FALSE}
+```{r, echo=FALSE}
+x <- matrix(c(1908, 2017, 2854, 4125), nrow=2, byrow=TRUE)
+ rownames(x) <- c("Masculino", "Feminino")
+ colnames(x) <- c("Bebida em excesso - Sim", "Bebida em excesso - Não")
 
-
-x = matrix(c(1908,2017,2854,4125),nrow=2,byrow=TRUE)
- rownames(x) = c("Masculino","Feminino")
- colnames(x) = c("Bebida em excesso - Sim","Bebida em excesso - Não")
-
-y <- rbind(x,colSums(x))
-y <- cbind(y,as.vector(rowSums(y)))
-rownames(y) <- c("Masculino","Feminino","Total")
-colnames(y) <- c("Bebida em excesso - Sim","Bebida em excesso - Não","Total")
+y <- rbind(x, colSums(x))
+y <- cbind(y, as.vector(rowSums(y)))
+rownames(y) <- c("Masculino", "Feminino", "Total")
+colnames(y) <- c("Bebida em excesso - Sim", "Bebida em excesso - Não", "Total")
 #kable(y)
 ```
 |          | Bebida em excesso - Sim| Bebida em excesso - Não| Total|
@@ -364,20 +372,22 @@ Usando diretamente a tabela, podemos responder à pergunta:
 Proporções condicionais de ocorrência de bebida em excesso por gênero:
 
 
-```{r,echo=FALSE}
-a <- addmargins(round(prop.table(x,1),2),2)
+```{r, echo=FALSE}
+a <- addmargins(round(prop.table(x, 1), 2), 2)
 kable(a)
 ```
 
-Proporção de ocorrência de bebida em excesso entre homens: $\frac{1908}{3925}=0,49$.
+Proporção de ocorrência de bebida em excesso entre homens: $\frac{1908}{3925}=0.49$.
 
-Proporção de ocorrência de bebida em excesso entre mulheres: $\frac{2854}{4125}=0,41$.
+Proporção de ocorrência de bebida em excesso entre mulheres: $\frac{2854}{4125}=0.41$.
 
 ## Ocorrência de bebida em excesso por gênero
 <center>
 ```{r, echo=FALSE, fig.width=7, fig.height=4.5}
-par(mar=c(5.1,4.1,1.1,2.1))
-barplot(t(prop.table(x,1)), xlab="Gênero", ylab="frequência relativa", main=" ", beside=TRUE, legend.text=TRUE, ylim=c(0,1.1), col=c("lightpink","lightblue"), cex.axis=1.5, cex.lab=1.5)
+par(mar=c(5.1, 4.1, 1.1, 2.1))
+barplot(t(prop.table(x, 1)), xlab="Gênero", ylab="frequência relativa", 
+        main=" ", beside=TRUE, legend.text=TRUE, ylim=c(0, 1.1),
+        col=c("lightpink", "lightblue"), cex.axis=1.5, cex.lab=1.5)
 ```
 </center>
 
@@ -421,10 +431,11 @@ Total | 25 | 300
 ## Exemplo: Tempo de serviço e total de clientes
 <center>
 ```{r, echo=FALSE, fig.height=4.5, fig.width=7}
-x <- c(2,4,5,6,8)
-y <- c(48,56,54,60,72)
-par(mar=c(5.1,4.1,1.1,2.1))
-plot(x=x, y=y, xlab="Tempo de serviço (anos)", ylab="Número de clientes", main=" " , pch=19, cex.axis=1.2, cex.lab=1.2, col="blue", lwd=2)
+x <- c(2, 4, 5, 6, 8)
+y <- c(48, 56, 54, 60, 72)
+par(mar=c(5.1, 4.1, 1.1, 2.1))
+plot(x=x, y=y, xlab="Tempo de serviço (anos)", ylab="Número de clientes", 
+     main=" ", pch=19, cex.axis=1.2, cex.lab=1.2, col="blue", lwd=2)
 ```
 </center>
 
@@ -437,11 +448,11 @@ O gráfico indica uma possível dependência linear positiva entre as variáveis
 * $\%$ da Renda gasta com Assistência Médica ($Y$)
 
 
-```{r,echo=FALSE}
-x <- c(12,16,18,20,28,30,40,48,50,54)
-y <- c(7.2,7.4,7,6.5,6.6,6.7,6,5.6,6,5.5)
+```{r, echo=FALSE}
+x <- c(12, 16, 18, 20, 28, 30, 40, 48, 50, 54)
+y <- c(7.2, 7.4, 7, 6.5, 6.6, 6.7, 6, 5.6, 6, 5.5)
 
-data <- data.frame(Familia=c("A","B","C","D","E","F","G","H","I","J"),X=x,Y=y)
+data <- data.frame(Familia=c("A","B","C","D","E","F","G","H","I","J"), X=x, Y=y)
 
 data
 ```
@@ -449,8 +460,9 @@ data
 ## Exemplo: Renda e gasto com assistência médica
 <center>
 ```{r, echo=FALSE, fig.height=4.5, fig.width=7}
-par(mar=c(5.1,4.1,1.1,2.1))
-plot(x=x, y=y, xlab="Renda bruta", ylab=" % da Renda gasta com Assistência", main=" ", pch=19, cex.axis=1.2, cex.lab=1, col="blue", lwd=2)
+par(mar=c(5.1, 4.1, 1.1, 2.1))
+plot(x=x, y=y, xlab="Renda bruta", ylab=" % da Renda gasta com Assistência",
+     main=" ", pch=19, cex.axis=1.2, cex.lab=1, col="blue", lwd=2)
 ```
 </center>
 
@@ -520,13 +532,15 @@ $$Corr(X,Y)=\frac{1}{n-1}\sum_{i=1}^{n}z_{x_i}z_{y_i}=\frac{3.8}{5-1}=0.95$$
 
 Número de passos diários foram coletados para uma pessoa usando um \href{http://en.wikipedia.org/wiki/Fitbit}{Fitbit} durante 297 dias.
 
-```{r,echo=FALSE,fig.height=3,fig.width=5}
-fitbit <- read.csv("Fitbit.csv",sep=";")
-fitbit <- fitbit[-which(fitbit$steps<300),] # removendo os dias em que não usou Fitbit
-nf <- layout(mat = matrix(c(1,2),2,1, byrow=TRUE),  height = c(1,1.5))
-    par(mar=c(3, 3, .2, .2))
-boxplot(fitbit$steps, horizontal=TRUE,  outline=TRUE,ylim=c(0,31000),col="lightblue",type=3)
-hist(fitbit$steps,nclass=20,xlab="",ylab="Frequência",col="lightblue",main="",xlim=c(0,31000))
+```{r, echo=FALSE, fig.height=3, fig.width=5}
+fitbit <- read.csv("Fitbit.csv", sep=";")
+fitbit <- fitbit[-which(fitbit$steps<300), ] # removendo os dias em que não usou Fitbit
+nf <- layout(mat = matrix(c(1, 2), 2, 1, byrow=TRUE),  height=c(1, 1.5))
+par(mar=c(3, 3, .2, .2))
+boxplot(fitbit$steps, horizontal=TRUE, outline=TRUE, ylim=c(0, 31000),
+        col="lightblue", type=3)
+hist(fitbit$steps, nclass=20, xlab="", ylab="Frequência", col="lightblue",
+     main="", xlim=c(0, 31000))
 ```
 
 > Qual é maior? Média ou mediana?
@@ -543,8 +557,10 @@ hist(fitbit$steps,nclass=20,xlab="",ylab="Frequência",col="lightblue",main="",x
 
 <center>
 ```{r, echo=FALSE, fig.height=4, fig.width=6}
-par(mar=c(5.1,4.1,1.1,2.1))
-plot(x=fitbit$steps, y=fitbit$minutesVeryActive, xlab="Passos", ylab="Tempo (min) de atividade intensa", cex.axis=1.2, cex.lab=1.2, col="blue")
+par(mar=c(5.1, 4.1, 1.1, 2.1))
+plot(x=fitbit$steps, y=fitbit$minutesVeryActive, xlab="Passos", 
+     ylab="Tempo (min) de atividade intensa", cex.axis=1.2, cex.lab=1.2,
+     col="blue")
 ```
 </center>
 
@@ -555,15 +571,14 @@ plot(x=fitbit$steps, y=fitbit$minutesVeryActive, xlab="Passos", ylab="Tempo (min
 Diagrama de dispersão: número de passos e tempo de sedentarismo.
 <center>
 ```{r, echo=FALSE, fig.height=4, fig.width=6}
-par(mar=c(5.1,4.1,1.1,2.1))
+par(mar=c(5.1, 4.1, 1.1, 2.1))
 plot(x=fitbit$steps[fitbit$minutesSedentary>1000], y=fitbit$minutesSedentary[fitbit$minutesSedentary>1000], xlab="Passos", ylab="Tempo (min) sedentário", cex.axis=1.2, cex.lab=1.2, col="blue")
 ```
 </center>
 
-> Correlação: `r round(cor(x=fitbit$steps[fitbit$minutesSedentary>1000],y=fitbit$minutesSedentary[fitbit$minutesSedentary>1000]),2)`.
+> Correlação: `r round(cor(x=fitbit$steps[fitbit$minutesSedentary>1000], y=fitbit$minutesSedentary[fitbit$minutesSedentary>1000]), 2)`.
 
 ## Exemplo: Fitbit {.build}
-
 
 Baseado na altura, peso e gênero, o Fitbit estima o comprimento de cada passo.
 
@@ -571,8 +586,9 @@ Diagrama de dispersão: número de passos e distância percorrida.
 
 <center>
 ```{r, echo=FALSE, fig.height=3.7, fig.width=6}
-par(mar=c(5.1,4.1,1.1,2.1))
-plot(x=fitbit$steps, y=fitbit$distance, xlab="Passos", ylab="Distância (km)", cex.axis=1.2, cex.lab=1.2, col="blue")
+par(mar=c(5.1, 4.1, 1.1, 2.1))
+plot(x=fitbit$steps, y=fitbit$distance, xlab="Passos", ylab="Distância (km)",
+     cex.axis=1.2, cex.lab=1.2, col="blue")
 ```
 </center>
 
