@@ -31,19 +31,17 @@ logo: ../logo-imecc.png
 
 ## Exemplo: Grau de instrução X Procedência {.smaller .build}
 
-Queremos estudar o comportamento conjunto de duas variáveis:  Grau de Instrução ($X$)
-e Região de Procedência ($Y$).
+Queremos estudar o comportamento conjunto de duas variáveis:  Grau de Instrução ($X$) e Região de Procedência ($Y$).
 
-```{r,echo=FALSE}
+```{r, echo=FALSE}
+x <- matrix(c(4, 5, 2, 3, 7, 2, 5, 6, 2), nrow=3, byrow=TRUE)
+rownames(x) <- c("Capital","Interior", "Outra")
+colnames(x) <- c("Ensino Fundamental", "Ensino Médio", "Ensino Superior")
 
-x = matrix(c(4,5,2,3,7,2,5,6,2),nrow=3,byrow=TRUE)
- rownames(x) = c("Capital","Interior","Outra")
- colnames(x) = c("Ensino Fundamental","Ensino Médio","Ensino Superior")
-
-y <- rbind(x,c(12,18,6))
-y <- cbind(y,c(11,12,13,36))
-rownames(y) <- c("Capital","Interior","Outra","Total")
-colnames(y) <- c("Ensino Fundamental","Ensino Médio","Ensino Superior","Total")
+y <- rbind(x, c(12, 18, 6))
+y <- cbind(y, c(11, 12, 13, 36))
+rownames(y) <- c("Capital", "Interior", "Outra", "Total")
+colnames(y) <- c("Ensino Fundamental", "Ensino Médio", "Ensino Superior", "Total")
 #library(printr)
 library(knitr)
 kable(y)
@@ -56,7 +54,6 @@ kable(y)
 
 
 ## Frequências Relativas {.build}
-
 
 Podemos considerar também proporções condicionais (frequências relativas):
 
@@ -74,19 +71,18 @@ Distribuição das frequências relativas ao total da amostra.
 
 Total da amostra é 36.
 
-
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 kable(addmargins(prop.table(x)), digits=3)
 ```
 
-
 11\% dos funcionários são da capital e possuem ensino fundamental.
+
 
 ## Frequências relativas ao total das colunas  {.build .smaller}
 
 Distribuição das frequências relativas ao total de cada coluna.
 
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 kable(addmargins(prop.table(x, 2), 1), digits=3)
 ```
 
@@ -98,16 +94,20 @@ Entre os funcionários com ensino médio:
 
 * $33\%$ são de outros locais.
 
+Permite comparar a distribuição de procedência ($Y$) conforme o grau de instrução ($X$).
 
-Permite comparar a distribuição de $Y$ (procedência) conforme o grau de instrução ($X$).
 
 ## Procedência conforme o grau de instrução {.build}
 
-```{r, echo=FALSE, fig.width=8, fig.height=5}
-barplot(prop.table(x, 2), xlab=" ", main=" ", beside=TRUE, legend.text=TRUE,
-        ylim=c(0, .8), col=c("lightgreen", "lightyellow", "lightpink"),
-        cex.axis=1.5, cex.lab=1.5) 
+<center>
+```{r, echo=FALSE, fig.width=8, fig.height=4.5}
+par(mar=c(4.1, 4.1, 1.1, 2.1))
+barplot(prop.table(x, 2), xlab=" ", ylab="Proporção", main=" ",
+        beside=TRUE, legend.text=TRUE, ylim=c(0, .6), 
+        col=c("lightgreen", "lightyellow", "lightpink"), cex.axis=1.3,
+        cex.lab=1.3, cex=1.3, las=1) 
 ```
+</center>
 
 > Observando o gráfico e a tabela de proporções  parece haver evidências de associação entre o grau de instrução e a procedência do funcionário.
 
@@ -128,25 +128,27 @@ Entre os funcionários do interior:
 
 * $17\%$ possuem Ensino Superior.
 
-
 Permite comparar a distribuição do grau de instrução ($X$) conforme a procedência ($Y$).
 
 ## Grau de instrução conforme a procedência {.build}
 
-```{r, echo=FALSE, fig.width=8, fig.height=5}
-barplot(t(prop.table(x, 1)), xlab=" ", main=" ", beside=TRUE, legend.text=TRUE,
-        ylim=c(0, .8), col=c("lightgreen", "lightyellow", "lightpink"),
-        cex.axis=1.5, cex.lab=1.5) 
+<center>
+```{r, echo=FALSE, fig.width=8, fig.height=4.5}
+par(mar=c(3.1, 4.1, 1.1, 2.1))
+barplot(t(prop.table(x, 1)), xlab=" ", ylab="Proporção", main=" ",
+        beside=TRUE, legend.text=TRUE, ylim=c(0, .8), 
+        col=c("lightgreen", "lightyellow", "lightpink"), cex.axis=1.3,
+        cex.lab=1.3, cex=1.3, las=1) 
 ```
-
+</center>
 
 ## Exemplo: Escolha da carreira {.build}
 Existe dependência entre o sexo ($X$) e a carreira escolhida ($Y$) por 200 alunos de Economia e Administração?
 
 ```{r, echo=FALSE}
 x <- matrix(c(85, 35, 55, 25), nrow=2, byrow=TRUE)
- rownames(x) <- c("Economia", "Administração")
- colnames(x) <- c("Masculino", "Feminino")
+rownames(x) <- c("Economia", "Administração")
+colnames(x) <- c("Masculino", "Feminino")
  
 y <- rbind(x, c(85 + 55, 35 + 25))
 y <- cbind(y, c(85 + 35, 55 + 25, sum(x)))
@@ -160,7 +162,6 @@ kable(y)
 * Distribuição das frequências relativas ao total de cada coluna?
 
 * Distribuição das frequências relativas ao total de cada linha?
-
 
  
 ## Exemplo: Escolha da carreira {.build} 
@@ -176,10 +177,12 @@ kable(y)
 ## Exemplo: Escolha da carreira {.smaller .build} 
 
 ```{r, echo=FALSE}
-kable(addmargins(round(prop.table(y[-3,], 2), 2), 1))
+y2 <- addmargins(round(prop.table(y[-3,], 2), 2), 1)
+rownames(y2) <- c("Economia", "Administração", "Total")
+kable(y2)
 ```
 
-> * No geral (última coluna), sem considerar os sexos, temos que $60\%$ dos estudantes preferem economia e $40\%$ administração.
+> * No geral, sem considerar os sexos (última coluna), temos que $60\%$ dos estudantes preferem economia e $40\%$ administração.
 
 > * Se sexo e carreira escolhida forem independentes (sem associação), espera-se que, para cada sexo, a escolha das carreiras tenha essas mesmas proporções.
 
@@ -189,14 +192,17 @@ kable(addmargins(round(prop.table(y[-3,], 2), 2), 1))
 
 > * Os dados indicam que não há associação entre as variáveis.
 
+
 ## Exemplo: Escolha da carreira conforme gênero
 
-
-```{r, echo=FALSE, fig.width=8, fig.height=5}
-barplot(prop.table(x, 2),xlab=" ", main=" ", beside=TRUE, legend.text=TRUE,
-        ylim=c(0, 1), col=c("lightblue", "lightpink"), cex.axis=1.5,
-        cex.lab=1.5) 
+<center>
+```{r, echo=FALSE, fig.width=7, fig.height=4.5}
+par(mar=c(4.1, 4.1, 1.1, 2.1))
+barplot(prop.table(x, 2), xlab=" ", ylab="Proporção", main=" ", beside=TRUE,
+        legend.text=TRUE, ylim=c(0, 0.9), col=c("lightgreen", "lightpink"),
+        cex.axis=1.3, cex.lab=1.3, cex=1.3, las=1) 
 ```
+</center>
 
 Observando o gráfico e a tabela de proporções condicionais  parece não haver evidências de associação entre gênero e escolha da carreira.
 
@@ -218,15 +224,15 @@ kable(y)
 
 > Qual a proporção de alimentos com pesticida?
 
-> $19514/26698=`r round(19514/26698,3)`$.
+> $19514/26698=`r round(19514/26698,3)`$
 
 > Qual a proporção de alimentos com pesticidas dentre os orgânicos?
 
-> $29/127=`r round(29/127,3)`$.
+> $29/127=`r round(29/127,3)`$
 
 > Qual a proporção de alimentos com pesticidas dentre os convencionais?
 
-> $19484/26571=`r round(19484/26571,3)`$.
+> $19484/26571=`r round(19484/26571,3)`$
 
 ## Proporção Condicional {.build}
 
@@ -251,9 +257,9 @@ a <- addmargins(round(prop.table(x, 1), 2), 2)
 ```{r, echo=FALSE, fig.width=7, fig.height=4.5}
 par(mar=c(5.1, 4.1, 1.1, 2.1))
 barplot(t(prop.table(x, 1)), xlab="Tipo de Alimento", 
-        ylab="frequência relativa", main=" ", beside=TRUE, legend.text=TRUE,
-        ylim=c(0, 1.1), col=c("lightpink","lightblue"), cex.axis=1.5,
-        cex.lab=1.5)
+        ylab="Proporção", main=" ", beside=TRUE, legend.text=TRUE,
+        ylim=c(0, 1.1), col=c("lightpink","lightgreen"), cex.axis=1.3,
+        cex.lab=1.3, cex=1.3, las=1)
 ```
 </center>
 
@@ -269,8 +275,8 @@ Observando o gráfico e a tabela de proporções condicionais parece haver evid�
   
 ```{r, echo=FALSE}
 x <- matrix(c(17, 90, 51, 45, 265, 143, 31, 139, 71), nrow=3, byrow=TRUE)
- rownames(x) <- c("Acima da média", "Na média", "Abaixo da média")
- colnames(x) <- c("Não muito feliz", "Feliz", "Muito feliz")
+rownames(x) <- c("Acima da média", "Na média", "Abaixo da média")
+colnames(x) <- c("Não muito feliz", "Feliz", "Muito feliz")
 
 y <- rbind(x, colSums(x))
 y <- cbind(y, as.vector(rowSums(y)))
@@ -311,15 +317,18 @@ kable(a)
 
 ## Nível de felicidade por cada nível de renda
 
-
-```{r, echo=FALSE, fig.width=8, fig.height=5}
-barplot(t(prop.table(x, 1)), xlab="Renda", main=" ", beside=TRUE,
-        legend.text=TRUE, ylim=c(0, 1.1), 
-        col=c("lightgreen", "lightyellow", "lightpink"), cex.axis=1.5, 
-        cex.lab=1.5) 
+<center>
+```{r, echo=FALSE, fig.width=8, fig.height=4.5}
+par(mar=c(5.1, 4.1, 1.1, 2.1))
+barplot(t(prop.table(x, 1)), xlab="Renda", ylab="Proporção", main=" ",
+        beside=TRUE, legend.text=TRUE, ylim=c(0, .9), 
+        col=c("lightgreen", "lightyellow", "lightpink"), cex.axis=1.3, 
+        cex.lab=1.3, cex=1.3, las=1) 
 ```
+</center>
 
 Observando o gráfico e a tabela de proporções condicionais parece não haver evidências de associação entre nível de felicidade e nível de renda.
+
 
 ## Exemplo: Bebidas alcoólicas {.build}
 
@@ -359,13 +368,14 @@ colnames(y) <- c("Bebida em excesso - Sim", "Bebida em excesso - Não", "Total")
 
 Qual o número de alunos:
 
-* do sexo masculino e beberam em excesso?
+* do sexo masculino e que beberam em excesso?
 
-* do sexo feminino e beberam em excesso?
+* do sexo feminino e que beberam em excesso?
 
 
 Usando diretamente a tabela, podemos responder à pergunta:
 **Há diferença entre homens e mulheres na proporção de ocorrência de bebida em excesso?**
+
 
 ## Exemplo: Bebidas alcoólicas
 
@@ -377,27 +387,30 @@ a <- addmargins(round(prop.table(x, 1), 2), 2)
 kable(a)
 ```
 
-Proporção de ocorrência de bebida em excesso entre homens: $\frac{1908}{3925}=0.49$.
+Proporção de ocorrência de bebida em excesso entre homens: $$\frac{1908}{3925}=`r round(1908/3925, 2)`$$
 
-Proporção de ocorrência de bebida em excesso entre mulheres: $\frac{2854}{4125}=0.41$.
+Proporção de ocorrência de bebida em excesso entre mulheres: $$\frac{2854}{6979}=`r round(2854/6979, 2)`$$
 
 ## Ocorrência de bebida em excesso por gênero
 <center>
 ```{r, echo=FALSE, fig.width=7, fig.height=4.5}
 par(mar=c(5.1, 4.1, 1.1, 2.1))
-barplot(t(prop.table(x, 1)), xlab="Gênero", ylab="frequência relativa", 
-        main=" ", beside=TRUE, legend.text=TRUE, ylim=c(0, 1.1),
-        col=c("lightpink", "lightblue"), cex.axis=1.5, cex.lab=1.5)
+barplot(t(prop.table(x, 1)), xlab="", ylab="Proporção", main=" ",
+        beside=TRUE, legend.text=TRUE, ylim=c(0, .9), 
+        col=c("lightpink", "lightgreen"), cex.axis=1.3, cex.lab=1.3, 
+        cex=1.3, las=1)
 ```
 </center>
 
 Observando o gráfico e a tabela de proporções condicionais parece haver evidências de associação entre gênero e bebida em excesso.
 
+
 ## Exemplo: Tipo de risada e gênero
 
 <center><img src="figuras/face_risada.png" width=550></center>
 
-[Fonte](https://research.facebook.com/blog/1605690073053884/the-not-so-universal-language-of-laughter/)
+**Fonte**: [https://research.facebook.com/blog/1605690073053884/the-not-so-universal-language-of-laughter/](https://research.facebook.com/blog/1605690073053884/the-not-so-universal-language-of-laughter/)
+
 
 ## Exemplo: Tipo de risada e cidade
 
@@ -412,8 +425,8 @@ Observando o gráfico e a tabela de proporções condicionais parece haver evid�
 
 Associação entre duas variáveis **qualitativas**: comparar proporções condicionais.
 
-
 Associação entre duas variáveis **quantitativas**: comparamos como a mudança de uma variável afeta a outra variável.
+
 
 # Diagrama de dispersão
 
@@ -435,7 +448,7 @@ x <- c(2, 4, 5, 6, 8)
 y <- c(48, 56, 54, 60, 72)
 par(mar=c(5.1, 4.1, 1.1, 2.1))
 plot(x=x, y=y, xlab="Tempo de serviço (anos)", ylab="Número de clientes", 
-     main=" ", pch=19, cex.axis=1.2, cex.lab=1.2, col="blue", lwd=2)
+     main=" ", pch=19, cex.axis=1.2, cex.lab=1.2, las=1, col="blue", lwd=2)
 ```
 </center>
 
@@ -461,35 +474,34 @@ data
 <center>
 ```{r, echo=FALSE, fig.height=4.5, fig.width=7}
 par(mar=c(5.1, 4.1, 1.1, 2.1))
-plot(x=x, y=y, xlab="Renda bruta", ylab=" % da Renda gasta com Assistência",
-     main=" ", pch=19, cex.axis=1.2, cex.lab=1, col="blue", lwd=2)
+plot(x=x, y=y, xlab="Renda bruta", ylab=" % da renda gasta com assistência",
+     main=" ", pch=19, cex.axis=1.2, cex.lab=1, col="blue", lwd=2, las=1)
 ```
 </center>
 
 Nesse caso, a dependência entre $X$ e $Y$ parece ser linear negativa.
 
 
-
 ## Coeficiente de Correlação {.build}
 
-> * Objetivo: obter uma medida que permita quantificar a dependência que pode existir entre duas variáveis (positiva, negativa, muita ou pouca).
+> * **Objetivo:** obter uma medida que permita quantificar a dependência que pode existir entre duas variáveis (positiva, negativa, muita ou pouca).
 
 > * Dado $n$ pares de observações $(x_{1},y_{1}),(x_{2},y_{2}),...,(x_{n},y_{n})$: 
 $$Corr(X,Y)=\frac{1}{n-1}\sum_{i=1}^{n}\left(\frac{x_{i}-\bar{x}}{s_x}\right)\left(\frac{y_{i}-\bar{y}}{s_y}\right)$$
 onde $s_x$ é o desvio padrão de $X$ e $s_y$ é o desvio padrão de $Y$.
 
-* Essa medida leva em consideração todos os desvios $(x_{i}-\bar{x})$ e $(y_{i}-\bar{y})$ padronizados da forma $\frac{x_{i}-\bar{x}}{s_x}$ e $\frac{y_{i}-\bar{y}}{s_y}$.
+* Essa medida leva em consideração todos os desvios $(x_{i}-\bar{x})$ e $(y_{i}-\bar{y})$ padronizados da forma $z_{x_i}=\frac{x_{i}-\bar{x}}{s_x}$ e $z_{y_i}=\frac{y_{i}-\bar{y}}{s_y}$.
 
+> * Interpretação: $z_{x_i}$ indica o número de desvios-padrão que a observação $x_i$ está afastada da média de X.
 
-> * $z_{x_i}=\frac{x_i-\bar{x}}{s_x}$. Interpretação: $z_{x_i}$ indica o número de desvios-padrão que a observação $x_i$ está afastada da média de X.
 
 ## Propriedades {.build}
 
-> * $-1 \leq Corr(X,Y) \leq 1$
+> * $-1 \leq Corr(X, Y) \leq 1$
 
-> * $Corr(X,Y)$ próxima de 1: $X$ e $Y$ estão positivamente associadas e o tipo de associação entre as variáveis é linear.
+> * $Corr(X, Y)$ próxima de 1: $X$ e $Y$ estão positivamente associadas e o tipo de associação entre as variáveis é linear.
 
-> * $Corr(X,Y)$ próxima de -1: $X$ e $Y$ estão negativamente associadas e o tipo de associação entre as variáveis é linear.
+> * $Corr(X, Y)$ próxima de -1: $X$ e $Y$ estão negativamente associadas e o tipo de associação entre as variáveis é linear.
 
 > Se $z_{x}$ e $z_y$ têm o mesmo sinal, estamos somando um termo positivo na expressão da correlação. 
 
@@ -497,9 +509,10 @@ onde $s_x$ é o desvio padrão de $X$ e $s_y$ é o desvio padrão de $Y$.
 
 >  Correlação é a média dos produtos de $z_x$ e $z_y$.
 
-## Exemplo: Tempo de serviço e total de clientes {.smaller}
 
-Agente | Anos de Serviço ($X$) | $N^{o}$ de Clientes ($Y$)
+## Exemplo: Tempo de serviço e total de clientes {.build}
+
+Agente | Anos de Serviço ($X$) | Nº de Clientes ($Y$)
 -------|-----------------------|--------------------------
 A | 2 | 48 
 B | 4 | 56 
@@ -508,110 +521,115 @@ D | 6 | 60
 E | 8 | 72 
 Total | 25 | 300 
 
+> Anos de Serviço ($X$): $\quad \bar{x}=5 \quad \mbox{e} \quad s_x=2.24$
 
-* $\bar{x}=5$
-* $s_x=2,24$
-* $\bar{y}=60$
-* $s_y=8,94$
+> Nº de Clientes ($Y$): $\quad \bar{y}=60 \quad \mbox{e} \quad s_y=8.94$
+
 
 ## Exemplo: Tempo de serviço e total de clientes {.build}
 
-
 Agente | $X$ | $Y$ | $z_x=\frac{x_{i}-\bar{x}}{s_x}$ | $z_y=\frac{y_{i}-\bar{y}}{s_y}$ | $z_x\times z_y$
--------|-----|-----|---------------------------------|---------------------------------|----------------
+-------|-----|-----|----------------------|----------------------|-------------
 A | 2 | 48 | -1.34 | -1.34 | 1.8
 B | 4 | 56 | -0.45 | -0.45 | 0.2 
 C | 5 | 64 | 0 | 0.45 | 0 
 D | 6 | 60 | 0.45 | 0 | 0 
 E | 8 | 72  | 1.34 | 1.34 | 1.8 
 
+$$Corr(X, Y)=\frac{1}{n-1}\sum_{i=1}^{n}z_{x_i}z_{y_i}=\frac{3.8}{5-1}=0.95$$
 
-$$Corr(X,Y)=\frac{1}{n-1}\sum_{i=1}^{n}z_{x_i}z_{y_i}=\frac{3.8}{5-1}=0.95$$
 
 ## Exemplo: Fitbit {.build}
 
-Número de passos diários foram coletados para uma pessoa usando um \href{http://en.wikipedia.org/wiki/Fitbit}{Fitbit} durante 297 dias.
+Número de passos diários coletados para uma pessoa usando um [Fitbit](http://en.wikipedia.org/wiki/Fitbit) durante 297 dias.
 
-```{r, echo=FALSE, fig.height=3, fig.width=5}
+<center>
+```{r, echo=FALSE, fig.height=3.5, fig.width=5}
 fitbit <- read.csv("Fitbit.csv", sep=";")
 fitbit <- fitbit[-which(fitbit$steps<300), ] # removendo os dias em que não usou Fitbit
-nf <- layout(mat = matrix(c(1, 2), 2, 1, byrow=TRUE),  height=c(1, 1.5))
-par(mar=c(3, 3, .2, .2))
+nf <- layout(mat = matrix(c(1, 2), 2, 1, byrow=TRUE),  height=c(1, 2))
+par(mar=c(3, 4, .2, .2))
 boxplot(fitbit$steps, horizontal=TRUE, outline=TRUE, ylim=c(0, 31000),
         col="lightblue", type=3)
-hist(fitbit$steps, nclass=20, xlab="", ylab="Frequência", col="lightblue",
-     main="", xlim=c(0, 31000))
+par(mar=c(5, 4, .2, .2))
+hist(fitbit$steps, nclass=20, xlab="Número de passos por dia",
+     ylab="Frequência", col="lightblue", main="", xlim=c(0, 31000), las=1)
+abline(v=mean(fitbit$steps), col="red", lty=2, lwd=2)
 ```
+</center>
 
 > Qual é maior? Média ou mediana?
 
 > Média é `r round(mean(fitbit$steps),0)` e mediana é `r round(median(fitbit$steps),0)`.
 
-## Exemplo: Fitbit  {.build .smaller}
+
+## Exemplo: Fitbit  {.build}
 
 > Além do total de passos, Fitbit também registra o tempo gasto em cada tipo de atividade.
 
-> Há relação entre o total de passos e o tempo gasto em ativiade intensa?
-
->
+> Há relação entre o total de passos e o tempo gasto em atividade intensa?
 
 <center>
-```{r, echo=FALSE, fig.height=4, fig.width=6}
-par(mar=c(5.1, 4.1, 1.1, 2.1))
-plot(x=fitbit$steps, y=fitbit$minutesVeryActive, xlab="Passos", 
-     ylab="Tempo (min) de atividade intensa", cex.axis=1.2, cex.lab=1.2,
-     col="blue")
+```{r, echo=FALSE, fig.height=3.5, fig.width=5.5}
+par(mar=c(4.1, 4.1, 0.1, 2.1))
+plot(x=fitbit$steps, y=fitbit$minutesVeryActive, xlab="Número de Passos", 
+     ylab="Tempo (min) de atividade intensa", col="blue", las=1)
 ```
 </center>
 
-> Correlação: `r round(cor(x=fitbit$steps,y=fitbit$minutesVeryActive),2)`.
+> Correlação: `r round(cor(x=fitbit$steps, y=fitbit$minutesVeryActive), 2)`
+
 
 ## Exemplo: Fitbit {.build}
 
-Diagrama de dispersão: número de passos e tempo de sedentarismo.
+> Há relação entre o total de passos e o tempo (em minutos) de sedentarismo?
+
 <center>
 ```{r, echo=FALSE, fig.height=4, fig.width=6}
 par(mar=c(5.1, 4.1, 1.1, 2.1))
-plot(x=fitbit$steps[fitbit$minutesSedentary>1000], y=fitbit$minutesSedentary[fitbit$minutesSedentary>1000], xlab="Passos", ylab="Tempo (min) sedentário", cex.axis=1.2, cex.lab=1.2, col="blue")
+plot(x=fitbit$steps[fitbit$minutesSedentary > 1000], 
+     y <- fitbit$minutesSedentary[fitbit$minutesSedentary > 1000],
+     xlab="Número de Passos", ylab="Tempo (min) sedentário", 
+     col="blue", cex.lab=1.2, las=1)
 ```
 </center>
 
-> Correlação: `r round(cor(x=fitbit$steps[fitbit$minutesSedentary>1000], y=fitbit$minutesSedentary[fitbit$minutesSedentary>1000]), 2)`.
+> Correlação: `r round(cor(x=fitbit$steps[fitbit$minutesSedentary > 1000], y=fitbit$minutesSedentary[fitbit$minutesSedentary > 1000]), 2)`
+
 
 ## Exemplo: Fitbit {.build}
 
 Baseado na altura, peso e gênero, o Fitbit estima o comprimento de cada passo.
 
-Diagrama de dispersão: número de passos e distância percorrida.
+> Há relação entre o total de passos e distância percorrida?
 
 <center>
-```{r, echo=FALSE, fig.height=3.7, fig.width=6}
+```{r, echo=FALSE, fig.height=3.5, fig.width=5.5}
 par(mar=c(5.1, 4.1, 1.1, 2.1))
-plot(x=fitbit$steps, y=fitbit$distance, xlab="Passos", ylab="Distância (km)",
-     cex.axis=1.2, cex.lab=1.2, col="blue")
+plot(x=fitbit$steps, y=fitbit$distance, xlab="Número de Passos",
+     ylab="Distância (km)", cex.lab=1.2, col="blue", las=1)
 ```
 </center>
 
-> Correlação: `r round(cor(x=fitbit$steps,y=fitbit$distance),2)`.
+> Correlação: `r round(cor(x=fitbit$steps, y=fitbit$distance), 2)`
 
 
 ## Compartilhei, pois li e achei legal! {.build}
 
-> Recebemos, na timeline do Facebook, diversas notícias compartilhadas pelos amigos. 
-
+> Recebemos na nossa linha do tempo do Facebook diversas notícias compartilhadas pelos amigos. 
 
 > Imagina-se que uma notícia com grande número de compartilhamentos seja uma leitura interessante, fazendo com que o leitor leia até o final.
-
 
 > Mas será que seu amigo de fato leu a notícia toda, antes de sair compartilhando? 
 
 > Você lê a notícia toda para só depois compartilhar?
 
+
 ## {.build}
 
 [Dados](http://flowingdata.com/2014/03/12/how-people-really-read-and-share-online/): 10 mil notícias. Para cada notícia calcula-se o **número de compartilhamentos** e o **tempo médio gasto pelo leitor** naquela notícia.
 
-<center><img src="figuras/compart.png" width=400></center>
+<center><img src="figuras/compart.png" width=500></center>
 
 > Você fica surpreso com este gráfico? O que ele está mostrando?
 
@@ -619,34 +637,49 @@ plot(x=fitbit$steps, y=fitbit$distance, xlab="Passos", ylab="Distância (km)",
 
 ## Correlação
 
-
 <center><img src="figuras/pearson-1.png" width=900></center>
+
 
 ## Correlação
 
+<center><img src="figuras/pearson-2.png" width=700></center>
 
-<center><img src="figuras/pearson-2.png" width=800></center>
 
-## Cuidado: correlação e *outliers*
+## Cuidado: correlação e *outliers* {.smaller}
 
-<center><img src="figuras/supp_figure_2.png" width=500></center>
+<center><img src="figuras/supp_figure_2.png" width=450></center>
 
-[Fonte](http://simplystatistics.org/2015/08/12/correlation-is-not-a-measure-of-reproducibility/)
+**Fonte**: [http://simplystatistics.org/2015/08/12/correlation-is-not-a-measure-of-reproducibility/](http://simplystatistics.org/2015/08/12/correlation-is-not-a-measure-of-reproducibility/)
 
 
 ## Cuidado: correlação não implica causa!
 
 <center><img src="figuras/pirata.png" width=600></center>
 
-## Taxa de analfabetismo e mortalidade infantil
 
-<center><img src="figuras/brasil.png" width=500></center>
+## Consumo de Queijo e Morte com Lençol {.smaller}
+
+<center><img src="figuras/correlationCheese.png" width=800></center>
+
+**Fonte:** [http://www.tylervigen.com/spurious-correlations](http://www.tylervigen.com/spurious-correlations)
+
+
+## Doutorado em Matemática e Suicídio {.smaller}
+
+<center><img src="figuras/correlationMathSuicide.jpg" width=700></center>
+
+**Fonte:** [http://twentytwowords.com/funny-graphs-show-correlation-between-completely-unrelated-stats-9-pictures/3/](http://twentytwowords.com/funny-graphs-show-correlation-between-completely-unrelated-stats-9-pictures/3/)
+
+
+## Taxa de analfabetismo e mortalidade infantil {.smaller}
+
+<center><img src="figuras/brasil.png" width=550></center>
 
 Mortalidade: número de mortes de crianças de até 5 anos por mil nascidos vivos. 
 
 Analfabetismo: % de analfabetos na população de 18 anos ou mais.
 
-[Fonte](http://blog.estadaodados.com/analfabetismo-mortalidade/)
+**Fonte:** [http://blog.estadaodados.com/analfabetismo-mortalidade/](http://blog.estadaodados.com/analfabetismo-mortalidade/)
 
 
 ## Google Correlate
@@ -658,7 +691,8 @@ Quais os termos de busca mais se correlacionam a outros?
 <center><img src="figuras/agua.png" width=600></center>
 
 
-##
+## Cuidado: Correlação não implica causa!
+
 <center><img src="figuras/dilbert.png" width=800></center>
 
 
@@ -669,24 +703,27 @@ Quais os termos de busca mais se correlacionam a outros?
 
 **Variável qualitativa:** região de NY
 
-<center><img src="figuras/ny1.png" width=600></center> 
+<center><img src="figuras/ny1.png" width=500></center> 
+
 
 ## Histogramas dos acidentes de carro diários por região de NY
 
 <center><img src="figuras/ny2.png" width=1000></center> 
 
-## Boxplots dos acidentes de carro diários por região de NY
+
+## Boxplots dos acidentes de carro diários por região de NY {.smaller}
 
 <center><img src="figuras/ny3boxplot.png" width=800></center> 
 
-[Fonte](https://plot.ly/4916/~etpinard/)
+**Fonte:** [https://plot.ly/4916/~etpinard/](https://plot.ly/4916/~etpinard/)
 
 
-## Exemplo: Tipo de risada e idade
+## Exemplo: Tipo de risada e idade {.smaller}
 
 <center><img src="figuras/face_risada3.png" width=550></center>
 
-[Fonte](https://research.facebook.com/blog/1605690073053884/the-not-so-universal-language-of-laughter/)
+**Fonte:** [https://research.facebook.com/blog/1605690073053884/the-not-so-universal-language-of-laughter/](https://research.facebook.com/blog/1605690073053884/the-not-so-universal-language-of-laughter/)
+
 
 ## Leituras
 
@@ -696,6 +733,7 @@ Quais os termos de busca mais se correlacionam a outros?
 Leitura complementar: [Online Dashboards: Eight Helpful Tips You Should Hear From Visualization Experts](http://blog.plot.ly/post/123617968702/online-dashboards-eight-helpful-tips-you-should)
 
 <center><img src="figuras/raquete.jpg" width=250></center>
+
 
 ##
 
