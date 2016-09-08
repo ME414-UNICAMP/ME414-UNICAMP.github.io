@@ -224,15 +224,15 @@ kable(y)
 
 > Qual a proporção de alimentos com pesticida?
 
-> $19514/26698=`r round(19514/26698,3)`$
+> $19514/26698=`r round(19514/26698, 3)`$
 
 > Qual a proporção de alimentos com pesticidas dentre os orgânicos?
 
-> $29/127=`r round(29/127,3)`$
+> $29/127=`r round(29/127, 3)`$
 
 > Qual a proporção de alimentos com pesticidas dentre os convencionais?
 
-> $19484/26571=`r round(19484/26571,3)`$
+> $19485/26571=`r round(19485/26571, 3)`$
 
 ## Proporção Condicional {.build}
 
@@ -446,9 +446,18 @@ Total | 25 | 300
 ```{r, echo=FALSE, fig.height=4.5, fig.width=7}
 x <- c(2, 4, 5, 6, 8)
 y <- c(48, 56, 54, 60, 72)
-par(mar=c(5.1, 4.1, 1.1, 2.1))
-plot(x=x, y=y, xlab="Tempo de serviço (anos)", ylab="Número de clientes", 
-     main=" ", pch=19, cex.axis=1.2, cex.lab=1.2, las=1, col="blue", lwd=2)
+# par(mar=c(5.1, 4.1, 1.1, 2.1))
+# plot(x=x, y=y, xlab="Tempo de serviço (anos)", ylab="Número de clientes", 
+#      main=" ", pch=19, cex.axis=1.2, cex.lab=1.2, las=1, col="blue", lwd=2)
+
+dados <- data.frame(x=x, y=y)
+
+library(ggplot2)
+ggplot(dados, aes(x, y)) + 
+    geom_point(col="blue", size=3) + 
+    labs(x="Tempo de serviço (anos)", y="Número de clientes") +
+    theme(axis.text=element_text(size=12), 
+          axis.title=element_text(size=14, face="bold"))
 ```
 </center>
 
@@ -473,9 +482,15 @@ data
 ## Exemplo: Renda e gasto com assistência médica
 <center>
 ```{r, echo=FALSE, fig.height=4.5, fig.width=7}
-par(mar=c(5.1, 4.1, 1.1, 2.1))
-plot(x=x, y=y, xlab="Renda bruta", ylab=" % da renda gasta com assistência",
-     main=" ", pch=19, cex.axis=1.2, cex.lab=1, col="blue", lwd=2, las=1)
+# par(mar=c(5.1, 4.1, 1.1, 2.1))
+# plot(x=x, y=y, xlab="Renda bruta", ylab=" % da renda gasta com assistência",
+#      main=" ", pch=19, cex.axis=1.2, cex.lab=1, col="blue", lwd=2, las=1)
+
+ggplot(data, aes(X, Y)) + 
+    geom_point(col="blue", size=3) +
+    labs(x="Renda Bruta", y="% da renda gasta com assistência") + 
+    theme(axis.text=element_text(size=12), 
+          axis.title=element_text(size=14, face="bold"))
 ```
 </center>
 
@@ -571,9 +586,15 @@ abline(v=mean(fitbit$steps), col="red", lty=2, lwd=2)
 
 <center>
 ```{r, echo=FALSE, fig.height=3.5, fig.width=5.5}
-par(mar=c(4.1, 4.1, 0.1, 2.1))
-plot(x=fitbit$steps, y=fitbit$minutesVeryActive, xlab="Número de Passos", 
-     ylab="Tempo (min) de atividade intensa", col="blue", las=1)
+# par(mar=c(4.1, 4.1, 0.1, 2.1))
+# plot(x=fitbit$steps, y=fitbit$minutesVeryActive, xlab="Número de Passos", 
+#      ylab="Tempo (min) de atividade intensa", col="blue", las=1)
+
+ggplot(fitbit, aes(steps, minutesVeryActive)) + 
+    geom_point(col="blue", size=2) +
+    labs(x="Número de Passos", y="Tempo (min) de atividade intensa") + 
+    theme(axis.text=element_text(size=12), 
+          axis.title=element_text(size=14, face="bold"))
 ```
 </center>
 
@@ -586,11 +607,18 @@ plot(x=fitbit$steps, y=fitbit$minutesVeryActive, xlab="Número de Passos",
 
 <center>
 ```{r, echo=FALSE, fig.height=4, fig.width=6}
-par(mar=c(5.1, 4.1, 1.1, 2.1))
-plot(x=fitbit$steps[fitbit$minutesSedentary > 1000], 
-     y <- fitbit$minutesSedentary[fitbit$minutesSedentary > 1000],
-     xlab="Número de Passos", ylab="Tempo (min) sedentário", 
-     col="blue", cex.lab=1.2, las=1)
+## par(mar=c(5.1, 4.1, 1.1, 2.1))
+## plot(x=fitbit$steps[fitbit$minutesSedentary > 1000], 
+##      y <- fitbit$minutesSedentary[fitbit$minutesSedentary > 1000],
+##      xlab="Número de Passos", ylab="Tempo (min) sedentário", 
+##      col="blue", cex.lab=1.2, las=1)
+
+fitbit2 <- subset(fitbit, minutesSedentary > 1000)
+ggplot(fitbit2, aes(steps, minutesSedentary)) + 
+    geom_point(col="blue", size=2) +
+    labs(x="Número de Passos", y="Tempo (min) sedentário") + 
+    theme(axis.text=element_text(size=12), 
+          axis.title=element_text(size=14, face="bold"))
 ```
 </center>
 
@@ -605,9 +633,15 @@ Baseado na altura, peso e gênero, o Fitbit estima o comprimento de cada passo.
 
 <center>
 ```{r, echo=FALSE, fig.height=3.5, fig.width=5.5}
-par(mar=c(5.1, 4.1, 1.1, 2.1))
-plot(x=fitbit$steps, y=fitbit$distance, xlab="Número de Passos",
-     ylab="Distância (km)", cex.lab=1.2, col="blue", las=1)
+# par(mar=c(5.1, 4.1, 1.1, 2.1))
+# plot(x=fitbit$steps, y=fitbit$distance, xlab="Número de Passos",
+#      ylab="Distância (km)", cex.lab=1.2, col="blue", las=1)
+
+ggplot(fitbit, aes(steps, distance)) + 
+    geom_point(size=3, colour="blue") +
+    labs(x="Número de Passos", y="Distância (km)") + 
+    theme(axis.text=element_text(size=12), 
+          axis.title=element_text(size=14, face="bold")) 
 ```
 </center>
 
