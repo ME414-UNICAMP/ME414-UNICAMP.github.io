@@ -8,6 +8,15 @@ logo: ../logo-imecc.png
 
 ---
 
+```{r, include=FALSE}
+library(reshape2)
+library(ggplot2)
+library(plotly)
+
+# library(printr)
+library(knitr)
+```
+
 # Análise Bivariada
 
 ## Associação entre duas variáveis {.build}
@@ -42,8 +51,7 @@ y <- rbind(x, c(12, 18, 6))
 y <- cbind(y, c(11, 12, 13, 36))
 rownames(y) <- c("Capital", "Interior", "Outra", "Total")
 colnames(y) <- c("Ensino Fundamental", "Ensino Médio", "Ensino Superior", "Total")
-# library(printr)
-library(knitr)
+
 kable(y)
 ```
 
@@ -112,21 +120,20 @@ barplot(prop.table(x, 2), xlab=" ", ylab="Proporção", main=" ",
 
 <center>
 ```{r, echo=FALSE, fig.width=10, fig.height=4.5}
-library(reshape2)
-library(ggplot2)
-
 ## Definir os parâmetros dos eixos para todos os gráficos
 eixos <- theme(axis.text = element_text(size=14), 
                axis.title = element_text(size=14),
                legend.title = element_text(size=14, face="bold"), 
                legend.text=element_text(size=14))
 
-x.long <- melt(prop.table(x, 2), varnames=c("Procedencia", "Instrucao"))
+x.long <- melt(prop.table(x, 2), varnames=c("Procedência", "Instrução"),
+               value.name="Proporção")
 
-ggplot(x.long, aes(x=Instrucao, y=value, fill=factor(Procedencia)))+
+g <- ggplot(x.long, aes(x=Instrução, y=Proporção, fill=Procedência)) + 
     geom_bar(stat="identity", width=0.7, position="dodge", colour="lightgrey") +
     scale_fill_brewer(name="Procedência", palette="Accent") +
-    xlab("") + ylab("Proporção") + ylim(0, 0.5) + eixos
+    xlab("") + ylim(0, 0.5) + eixos
+ggplotly(g)
 ```
 </center>
 
@@ -151,7 +158,7 @@ Entre os funcionários do interior:
 
 Permite comparar a distribuição do grau de instrução ($X$) conforme a procedência ($Y$).
 
-## Grau de instrução conforme a procedência {.build}
+## Grau de instrução conforme a procedência
 
 <center>
 ```{r, echo=FALSE, eval=FALSE, fig.width=8, fig.height=4.5}
@@ -165,12 +172,14 @@ barplot(t(prop.table(x, 1)), xlab=" ", ylab="Proporção", main=" ",
 
 <center>
 ```{r, echo=FALSE, fig.width=10, fig.height=5}
-x.long <- melt(prop.table(x, 1), varnames=c("Procedencia", "Instrucao"))
+x.long <- melt(prop.table(x, 1), varnames=c("Procedência", "Instrução"),
+               value.name="Proporção")
 
-ggplot(x.long, aes(x=Procedencia, y=value, fill=factor(Instrucao)))+
+g <- ggplot(x.long, aes(x=Procedência, y=Proporção, fill=Instrução))+
     geom_bar(stat="identity", width=0.7, position="dodge", colour="lightgrey") +
     scale_fill_brewer(name="Grau de Instrução", palette="Accent") +
-    xlab("") + ylab("Proporção") + ylim(0, 0.7) + eixos
+    xlab("") + ylim(0, 0.7) + eixos
+ggplotly(g)
 ```
 </center>
 
@@ -239,12 +248,14 @@ barplot(prop.table(x, 2), xlab=" ", ylab="Proporção", main=" ", beside=TRUE,
 
 <center>
 ```{r, echo=FALSE, fig.width=8, fig.height=4.5}
-x.long <- melt(prop.table(x, 2), varnames=c("Carreira", "Sexo"))
+x.long <- melt(prop.table(x, 2), varnames=c("Carreira", "Sexo"), 
+               value.name="Proporção")
 
-ggplot(x.long, aes(x=Sexo, y=value, fill=factor(Carreira)))+
+g <- ggplot(x.long, aes(x=Sexo, y=Proporção, fill=Carreira))+
     geom_bar(stat="identity", width=0.6, position="dodge", colour="lightgrey") +
     scale_fill_brewer(name="Carreira", palette="Set2") +
-    xlab("Sexo") + ylab("Proporção") + ylim(0, 0.7) + eixos
+    xlab("Sexo") + ylim(0, 0.7) + eixos
+ggplotly(g)
 ```
 </center>
 
@@ -310,12 +321,14 @@ barplot(t(prop.table(x, 1)), xlab="Tipo de Alimento",
 <center>
 ```{r, echo=FALSE, fig.width=8, fig.height=4.5}
 colnames(x) <- c("Presente", "Ausente") 
-x.long <- melt(prop.table(x, 1), varnames=c("Alimento", "Pesticida"))
+x.long <- melt(prop.table(x, 1), varnames=c("Alimento", "Pesticida"), 
+               value.name="Proporção")
 
-ggplot(x.long, aes(x=Alimento, y=value, fill=factor(Pesticida)))+
+g <- ggplot(x.long, aes(x=Alimento, y=Proporção, fill=Pesticida))+
     geom_bar(stat="identity", width=0.6, position="dodge", colour="lightgrey") +
     scale_fill_brewer(name="Pesticida", palette="Set2") +
-    xlab("Tipo de Alimento") + ylab("Proporção") + ylim(0, 0.9) + eixos
+    xlab("Tipo de Alimento") + ylim(0, 0.9) + eixos
+ggplotly(g)
 ```
 </center>
 
@@ -372,7 +385,7 @@ kable(a)
 ```
 
 
-## Nível de felicidade por cada nível de renda
+## Nível de felicidade por nível de renda
 
 <center>
 ```{r, echo=FALSE, eval=FALSE, fig.width=8, fig.height=4.5}
@@ -386,12 +399,14 @@ barplot(t(prop.table(x, 1)), xlab="Renda", ylab="Proporção", main=" ",
 
 <center>
 ```{r, echo=FALSE, fig.width=10, fig.height=4.5}
-x.long <- melt(prop.table(x, 1), varnames=c("Renda", "Felicidade"))
+x.long <- melt(prop.table(x, 1), varnames=c("Renda", "Felicidade"),
+               value.name="Proporção")
 
-ggplot(x.long, aes(x=Renda, y=value, fill=factor(Felicidade)))+
+g <- ggplot(x.long, aes(x=Renda, y=Proporção, fill=Felicidade))+
     geom_bar(stat="identity", width=0.7, position="dodge", colour="lightgrey") +
     scale_fill_brewer(name="Nível de Felicidade", palette="Accent") +
-    xlab("Renda") + ylab("Proporção") + ylim(0, 0.7) + eixos
+    xlab("Renda") + ylim(0, 0.7) + eixos
+ggplotly(g)
 ```
 </center>
 
@@ -473,12 +488,14 @@ barplot(t(prop.table(x, 1)), xlab="", ylab="Proporção", main=" ",
 <center>
 ```{r, echo=FALSE, fig.width=8, fig.height=4.5}
 colnames(x) <- c("Sim", "Não")
-x.long <- melt(prop.table(x, 1), varnames=c("Sexo", "ExcessoBebida"))
+x.long <- melt(prop.table(x, 1), varnames=c("Sexo", "Excesso_Bebida"),
+               value.name="Proporção")
 
-ggplot(x.long, aes(x=Sexo, y=value, fill=factor(ExcessoBebida)))+
+g <- ggplot(x.long, aes(x=Sexo, y=Proporção, fill=Excesso_Bebida)) +
     geom_bar(stat="identity", width=0.6, position="dodge", colour="lightgrey") +
-    scale_fill_brewer(name="Bebida em excesso?", palette="Set2") +
-    xlab("Sexo") + ylab("Proporção") + ylim(0, 0.7) + eixos
+    scale_fill_brewer(name="Excesso?", palette="Set2") +
+    xlab("Sexo") + ylim(0, 0.7) + eixos
+ggplotly(g)
 ```
 </center>
 
@@ -535,9 +552,10 @@ dados <- data.frame(x=x, y=y)
 library(RColorBrewer)
 mycol <- brewer.pal(8, "Dark2")
 
-ggplot(dados, aes(x, y)) + 
-    geom_point(col=mycol[1], size=4) + 
+g <- ggplot(dados, aes(x, y)) + 
+    geom_point(col=mycol[1], size=3) + 
     xlab("Tempo de serviço (anos)") + ylab("Número de clientes") + eixos
+ggplotly(g)
 ```
 </center>
 
@@ -566,11 +584,10 @@ data
 # plot(x=x, y=y, xlab="Renda bruta", ylab=" % da renda gasta com assistência",
 #      main=" ", pch=19, cex.axis=1.2, cex.lab=1, col="blue", lwd=2, las=1)
 
-ggplot(data, aes(X, Y)) + 
-    geom_point(col="blue", size=3) +
-    labs(x="Renda Bruta", y="% da renda gasta com assistência") + 
-    theme(axis.text=element_text(size=12), 
-          axis.title=element_text(size=14, face="bold"))
+g <- ggplot(data, aes(X, Y)) + 
+    geom_point(col=mycol[1], size=3) +
+    labs(x="Renda Bruta", y="% da renda gasta com assistência") + eixos
+ggplotly(g)
 ```
 </center>
 
@@ -642,7 +659,8 @@ Número de passos diários coletados para uma pessoa usando um [Fitbit](http://e
 ```{r, echo=FALSE, fig.height=3.5, fig.width=5}
 fitbit <- read.csv("Fitbit.csv", sep=";")
 fitbit <- fitbit[-which(fitbit$steps<300), ] # removendo os dias em que não usou Fitbit
-nf <- layout(mat = matrix(c(1, 2), 2, 1, byrow=TRUE),  height=c(1, 2))
+
+nf <- graphics::layout(mat = matrix(c(1, 2), 2, 1, byrow=TRUE),  height=c(1, 2))
 par(mar=c(3, 4, .2, .2))
 boxplot(fitbit$steps, horizontal=TRUE, outline=TRUE, ylim=c(0, 31000),
         col="lightblue", type=3)
@@ -670,9 +688,10 @@ abline(v=mean(fitbit$steps), col="red", lty=2, lwd=2)
 # plot(x=fitbit$steps, y=fitbit$minutesVeryActive, xlab="Número de Passos", 
 #      ylab="Tempo (min) de atividade intensa", col="blue", las=1)
 
-ggplot(fitbit, aes(steps, minutesVeryActive)) + 
+g <- ggplot(fitbit, aes(steps, minutesVeryActive)) + 
     geom_point(col=mycol[1], size=3, alpha=0.6) +
     labs(x="Número de Passos", y="Tempo (min) de atividade intensa") + eixos
+ggplotly(g)
 ```
 </center>
 
@@ -692,9 +711,10 @@ ggplot(fitbit, aes(steps, minutesVeryActive)) +
 ##      col="blue", cex.lab=1.2, las=1)
 
 fitbit2 <- subset(fitbit, minutesSedentary > 1000)
-ggplot(fitbit2, aes(steps, minutesSedentary)) + 
+g <- ggplot(fitbit2, aes(steps, minutesSedentary)) + 
     geom_point(col=mycol[1], size=3, alpha=0.6) +
     labs(x="Número de Passos", y="Tempo (min) sedentário") + eixos
+ggplotly(g)
 ```
 </center>
 
@@ -713,9 +733,10 @@ Baseado na altura, peso e gênero, o Fitbit estima o comprimento de cada passo.
 # plot(x=fitbit$steps, y=fitbit$distance, xlab="Número de Passos",
 #      ylab="Distância (km)", cex.lab=1.2, col="blue", las=1)
 
-ggplot(fitbit, aes(steps, distance)) + 
+g <- ggplot(fitbit, aes(steps, distance)) + 
     geom_point(size=3, colour=mycol[1], alpha=0.6) +
     labs(x="Número de Passos", y="Distância (km)") + eixos
+ggplotly(g)
 ```
 </center>
 
