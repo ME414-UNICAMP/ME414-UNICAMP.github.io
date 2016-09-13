@@ -8,6 +8,19 @@ logo: ../logo-imecc.png
 
 ---
 
+```{r, include=FALSE, echo=FALSE}
+library(reshape2)
+library(ggplot2)
+library(plotly)
+
+# library(printr)
+library(knitr)
+library(DT)
+
+library(RColorBrewer)
+mycol <- brewer.pal(8, "Dark2")
+```
+
 # Probabilidade
 
 ## Introdução {.build}
@@ -38,7 +51,7 @@ Exemplo: lançamento de um dado com todas as faces iguais a 6
 <img src="figuras/dice-six-every-face.jpg" width=80>
 </div>
 
-**Experimento Aleatório:** é aquele em que não se tem certeza sobre seus resultados, a prior. Mútiplos resultados podem ser obtidos a partir de uma única ação. Cada vez que se repete o experimento, o resultado pode ser diferente. 
+**Experimento Aleatório:** é aquele em que não se tem certeza sobre seus resultados, a priori. Mútiplos resultados podem ser obtidos a partir de uma única ação. Cada vez que se repete o experimento, o resultado pode ser diferente. 
 
 Exemplo: lançamento de um dado de seis faces 
 
@@ -111,22 +124,21 @@ plot.dice(x1, layout=c(15, 7))
 ```
 </center>
 
-```{r,echo=FALSE}
-library(knitr)
-
+```{r, echo=FALSE}
 a <- as.data.frame(table(x1))
 
 d <- data.frame(Freq=a$Freq)
 d <- t(d)
-colnames(d) <- c(" 1"," 2"," 3"," 4"," 5"," 6")
+colnames(d) <- as.character(1:6)
 rownames(d) <- c("Freq")
 kable(d)
 
-cum1 <- matrix(NA,ncol=1,nrow=length(x1$Red))
-for (i in 1:length(x1$Red))
-  {
-    cum1[i] <- length(which(x1$Red[1:i]==6))/i
-  }
+# cum1 <- matrix(NA, ncol=1, nrow=length(x1$Red))
+# for (i in 1:length(x1$Red)){
+#     cum1[i] <- length(which(x1$Red[1:i]==6))/i
+# }
+
+cum1 <- cumsum(x1$Red==6)/1:length(x1$Red)
 ```
 
 ## Simulação 2: lançamento de um dado 100 vezes {.smaller }
@@ -144,112 +156,166 @@ a <- as.data.frame(table(x2))
 
 d <- data.frame(Freq=a$Freq)
 d <- t(d)
-colnames(d) <- c(" 1"," 2"," 3"," 4"," 5"," 6")
+colnames(d) <- as.character(1:6)
 rownames(d) <- c("Freq")
 kable(d)
 
-cum2 <- matrix(NA,ncol=1,nrow=length(x2$Red))
-for (i in 1:length(x2$Red))
-  {
-    cum2[i] <- length(which(x2$Red[1:i]==6))/i
-  }
+# cum2 <- matrix(NA, ncol=1, nrow=length(x2$Red))
+# for (i in 1:length(x2$Red)){
+#     cum2[i] <- length(which(x2$Red[1:i]==6))/i
+# }
+
+cum2 <- cumsum(x2$Red==6)/1:length(x2$Red)
 ```
 
 
 ## Simulação 3: lançamento de um dado 100 vezes {.smaller }
 
 <center>
-```{r,echo=FALSE,message=FALSE,fig.height=4}
+```{r, echo=FALSE, message=FALSE, fig.height=4}
 set.seed(12347)
-x <- dice(rolls=100,ndice=1)
+x <- dice(rolls=100, ndice=1)
 plot.dice(x)
 ```
 </center>
 
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 a <- as.data.frame(table(x))
 
 d <- data.frame(Freq=a$Freq)
 d <- t(d)
-colnames(d) <- c(" 1"," 2"," 3"," 4"," 5"," 6")
+colnames(d) <- as.character(1:6)
 rownames(d) <- c("Freq")
 kable(d)
 ```
 
 ## Simulação 3: lançamento de um dado 100 vezes {.smaller }
 
-```{r,echo=FALSE}
-cum <- matrix(NA,ncol=1,nrow=length(x$Red))
-for (i in 1:length(x$Red))
-  {
-    cum[i] <- length(which(x$Red[1:i]==6))/i
-  }
+```{r, echo=FALSE}
+## cum <- matrix(NA, ncol=1, nrow=length(x$Red))
+## for (i in 1:length(x$Red)){
+##     cum[i] <- length(which(x$Red[1:i]==6))/i
+##   }
 
-ocorre6 <- ifelse(x$Red==6,"sim","não")
-dd <- data.frame(v1=1:100,v2=ocorre6,v3=round(cum,2))
-colnames(dd)=c("Lançamento","6 ocorre?","Proporção Acumulada de 6")
-kable(dd[c(1:4,96:100),])
+cs6 <- cumsum(x$Red==6)
+cum3 <- round(cs6/1:100, 2)
 
+ocorre6 <- ifelse(x$Red==6, "sim", "não")
+dd <- data.frame(v1=1:100, v2=ocorre6, v3=cs6, v4=cum3)
+colnames(dd)=c("Lançamento", "Face 6 ocorre?", "Soma Acumulada de 6", "Proporção Acumulada de 6")
+## kable(dd[c(1:4, 96:100), ])
+
+datatable(dd, rownames=FALSE)
 ```
 
 ## Simulação 3: lançamento de um dado 100 vezes {.smaller }
 
 <center>
-```{r,echo=FALSE,fig.height=5}
-plot(x=1:length(x$Red), y=cum, ylim=c(0,1), type="l", xlab="Número de Lançamentos", ylab="Proporção Acumulada de 6", cex.axis=1.3, cex.lab=1.3, lwd=2, col="blue")
-abline(h=1/6, col="red", lwd=2, lty=2)
+```{r, echo=FALSE, fig.height=5}
+# plot(x=1:length(x$Red), y=cum3, ylim=c(0, 1), type="l", 
+#      xlab="Número de Lançamentos", ylab="Proporção Acumulada de 6",
+#      cex.axis=1.3, cex.lab=1.3, lwd=2, col="blue", las=1)
+# abline(h=1/6, col="red", lwd=2, lty=2)
+
+eixos <- theme(plot.title = element_text(size=16, face="bold"),
+               axis.text = element_text(size=14), 
+               axis.title = element_text(size=14),
+               legend.title = element_text(size=14, face="bold"), 
+               legend.text=element_text(size=14))
+
+dados <- data.frame(x=1:length(cum3), y=cum3)
+
+g <- ggplot(dados, aes(x=x, y=y)) + 
+    geom_hline(yintercept = 1/6, colour="red", linetype="dashed") +
+    geom_line(colour=mycol[1], size=1.05) +
+    xlab("Número de Lançamentos") + ylab("Proporção Acumulada de 6") + 
+    ggtitle("Simulação 3") + xlim(0, 100) + ylim(0, 1) + eixos
+ggplotly(g)
 ```
 </center>
 
 
-## Simulação 2: lançamento de um dado 100 vezes {.smaller }
+## Simulação 2: lançamento de um dado 100 vezes {.smaller}
 
 <center>
-```{r,echo=FALSE,fig.height=5}
-plot(x=1:length(x2$Red), y=cum2, ylim=c(0,1), type="l", xlab="Número de Lançamentos", ylab="Proporção Acumulada de 6", cex.axis=1.3, cex.lab=1.3, lwd=2, col="blue")
-abline(h=1/6, col="red", lwd=2, lty=2)
+```{r, echo=FALSE, fig.height=5}
+# plot(x=1:length(x2$Red), y=cum2, ylim=c(0, 1), type="l", 
+#      xlab="Número de Lançamentos", ylab="Proporção Acumulada de 6",
+#      cex.axis=1.3, cex.lab=1.3, lwd=2, col="blue", las=1)
+# abline(h=1/6, col="red", lwd=2, lty=2)
+
+dados <- data.frame(x=1:100, y=cum2)
+
+g <- ggplot(dados, aes(x=x, y=y)) + 
+    geom_hline(yintercept = 1/6, colour="red", linetype="dashed") +
+    geom_line(colour=mycol[2], size=1.05) +
+    xlab("Número de Lançamentos") + ylab("Proporção Acumulada de 6") + 
+    ggtitle("Simulação 2") + xlim(0, 100) + ylim(0, 1) + eixos
+ggplotly(g)
 ```
 </center>
 
 
-## Simulação 1: lançamento de um dado 100 vezes {.smaller }
+## Simulação 1: lançamento de um dado 100 vezes {.smaller}
 
 <center>
-```{r,echo=FALSE,fig.height=5}
-plot(x=1:length(x1$Red), y=cum1,ylim=c(0,1), type="l", xlab="Número de Lançamentos", ylab="Proporção Acumulada de 6", cex.axis=1.3, cex.lab=1.3, lwd=2, col="blue")
-abline(h=1/6,col="red", lwd=2, lty=2)
+```{r, echo=FALSE, fig.height=5}
+# plot(x=1:length(x1$Red), y=cum1, ylim=c(0, 1), type="l", 
+#      xlab="Número de Lançamentos", ylab="Proporção Acumulada de 6",
+#      cex.axis=1.3, cex.lab=1.3, lwd=2, col="blue", las=1)
+# abline(h=1/6,col="red", lwd=2, lty=2)
+
+
+dados <- data.frame(x=1:100, y=cum1)
+g <- ggplot(dados, aes(x=x, y=y)) + 
+    geom_hline(yintercept = 1/6, colour="red", linetype="dashed") +
+    geom_line(colour=mycol[3], size=1.05) +
+    xlab("Número de Lançamentos") + ylab("Proporção Acumulada de 6") + 
+    ggtitle("Simulação 1") + xlim(0, 100) + ylim(0, 1) + eixos
+ggplotly(g)
 ```
 </center>
 
 
 ## Simulação: lançamento de um dado 100 vezes {.smaller .build}
 
-> A cada simulação  (100 lançamentos e anotando o total de 6) obtivemos um resultado diferente: `r length(which(x1$Red[1:i]==6))`, `r length(which(x2$Red[1:i]==6))` e `r length(which(x$Red[1:i]==6))`.
+> A cada simulação  (100 lançamentos e anotando o total de 6) obtivemos um resultado diferente: `r length(which(x1$Red==6))`, `r length(which(x2$Red==6))` e `r length(which(x$Red==6))`.
 
 > Se repetirmos as simulação 1000 vezes, temos uma idéia da distribuição de frequências da proporção de 6 em 100 lançamentos.
 
-```{r,echo=FALSE,fig.height=3.5}
-B=1000
-X=100
-propSix <- matrix(NA,ncol=1,nrow=B)
-for (i in 1:B)
-  {
-    x <- dice(rolls=X,ndice=1)
-    propSix[i] <- length(which(x$Red==6))/100
-  }
+<center>
+```{r, echo=FALSE, fig.height=3.5}
+B <- 1000
+X <- 100
+# propSix <- matrix(NA, ncol=1, nrow=B)
+# for (i in 1:B){
+#     x <- dice(rolls=X, ndice=1)
+#     propSix[i] <- mean(x$Red==6)
+# }
 
-hist(propSix,xlab="Proporção Acumulada de 6 em 100 lançamentos",ylab="Frequência",main="",col="lightblue",cex.axis=1.5,cex.lab=1.5)
+prop <- data.frame(six = replicate(B, mean(dice(rolls=X, ndice=1)$Red==6)))
+
+ggplot(prop, aes(x=six)) + 
+    geom_histogram(bins=11, fill=mycol[1], col="black", alpha=0.8) + 
+    geom_vline(xintercept = mean(prop$six), col="red", linetype="dashed") + 
+    xlab("Proporção Acumulada de 6 em 100 lançamentos") + 
+    ylab("Frequência") + eixos
+
+# hist(prop$six, xlab="Proporção Acumulada de 6 em 100 lançamentos",
+#      ylab="Frequência", main="", col="lightblue", 
+#      cex.axis=1.3, cex.lab=1.3, las=1)
 ```
+</center>
 
-   Média: `r round(mean(propSix),3)`. Mediana: `r round(median(propSix),3)`.
+Média: `r round(mean(prop$six), 3)`. Mediana: `r round(median(prop$six), 3)`.
 
 
-## Simulação 4: lançamento de um dado 1000 vezes {.smaller }
+## Simulação 4: lançamento de um dado 5000 vezes
 
 <center>
-```{r,echo=FALSE,fig.height=4}
+```{r, echo=FALSE, fig.height=4}
 set.seed(12347)
-x <- dice(rolls=10000,ndice=1)
+x <- dice(rolls=5000, ndice=1)
 
 #a <- as.data.frame(table(x))
 
@@ -260,19 +326,28 @@ x <- dice(rolls=10000,ndice=1)
 #kable(d)
 
 ##### Propocao acumulada de 6
-cum <- matrix(NA,ncol=1,nrow=length(x$Red))
-for (i in 1:length(x$Red))
-  {
-    cum[i] <- length(which(x$Red[1:i]==6))/i
-  }
+cum4 <- cumsum(x$Red==6)/1:length(x$Red)
 
-par(mar=c(5.1,4.1,1.1,2.1))
-plot(x=1:length(x$Red), y=cum, ylim=c(0, 0.4), type="l", xlab="Número de Lançamentos", ylab="Proporção Acumulada de 6", cex.axis=1.3, cex.lab=1.3, col="blue", lwd=2)
-abline(h=1/6, col="red", lty=2, lwd=2)
+# par(mar=c(5.1, 4.1, 1.1, 2.1))
+# plot(x=1:length(x$Red), y=cum4, ylim=c(0, 0.4), type="l",
+#      xlab="Número de Lançamentos", ylab="Proporção Acumulada de 6",
+#      cex.axis=1.3, cex.lab=1.3, col="blue", lwd=2)
+# abline(h=1/6, col="red", lty=2, lwd=2)
+
+dados <- data.frame(x=1:length(x$Red), y=cum4)
+
+g <- ggplot(dados, aes(x=x, y=y)) + 
+    geom_hline(yintercept = 1/6, colour="red", linetype="dashed") +
+    geom_line(colour=mycol[1], size=1.05) +
+    xlab("Número de Lançamentos") + ylab("Proporção Acumulada de 6") + 
+    ylim(0, 0.4) + eixos
+ggplotly(g)
 ```
 </center>
 
+
 > Com poucos lançamentos, a proporção de 6 pode flutuar bastante, mas com o aumento do número de lançamentos, a proporção acumulada de 6 estabiliza em $1/6$.
+
 
 ## Lei dos Grandes Números {.build}
 
@@ -330,7 +405,7 @@ Estudar as probabilidades de ocorrência das faces de um dado.
 
 > Distribuição empírica das probabilidades:
 
-$$f_{i}=\frac{n_{i}}{n}\,.$$
+$$f_{i}=\frac{n_{i}}{n}.$$
 
 
 > Para diferentes vezes que esse experimento for realizado, 
@@ -358,15 +433,14 @@ Face  | 1  | 2  | 3  | 4  | 5 | 6 | Total
 ------|----|----|----|----|---|---|------
 Freq. Teórica | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | 1 
 
+
 ## Espaço Amostral {.build}
 
 Para quantificar incerteza em fenômenos aleatórios usando probabilidades, precisamos primeiro especificar o conjunto de todos os  possíveis resultados do fenômeno em questão.
 
-
 > * **Espaço Amostral**: todos os resultados possíveis do experimento (aleatório), denotado por $\Omega=\{\omega_{1},\omega_{2},... \}$.
 
 > * **Probabilidade**: $P(\omega)$, para cada "ponto amostral"  $\omega$.
-
 
 
 ## Exemplos de Espaço amostral {.build}
@@ -376,7 +450,7 @@ Para quantificar incerteza em fenômenos aleatórios usando probabilidades, prec
 $\Omega=\{F, M\}$ <img src="figuras/meninomenina.png" width=150>
 </center>
 
-2. Se o experimento consiste em observar os resultados ao lançar uma moeda duas vezes:
+ > 2. Se o experimento consiste em observar os resultados ao lançar uma moeda duas vezes:
 
 $$\Omega=\{\omega_{1},\omega_{2},\omega_{3},\omega_{4}\}$$
 
@@ -386,23 +460,23 @@ $C=cara \quad \mbox{e} \quad X=coroa$
 
 
 
-## Exemplo: dois dados {.build}
+## Exemplo: dois dados {.build .smaller}
 
 Experimento é lançar dois dados (1 vermelho e 1 azul) e anotar os valores:
-<div class="columns-2">
-<font size="4">
-$$\Omega = \{(1,1),(1,2),(1,3),(1,4),(1,5),(1,6), \\ 
-(2,1),(2,2),(2,3),(2,4), (2, 5), (2, 6), \\ 
-(3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6), \\
-(4, 1), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6), \\
-(5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6), \\
-(6, 1), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6)\}
+
 $$
-</font>
+\begin{align}
+\Omega = \{&(1,1),(1,2),(1,3),(1,4),(1,5),(1,6), \\ 
+& (2,1),(2,2),(2,3),(2,4), (2, 5), (2, 6), \\ 
+& (3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6), \\
+& (4, 1), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6), \\
+& (5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6), \\
+& (6, 1), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6)\}
+\end{align}
+$$
 
 <center><img src="figuras/DoisDados.png" width=400></center>
 
-</div>
 
 ## Exemplo: testinho surpresa {.smaller .build}
 
@@ -414,13 +488,10 @@ Testinho surpresa com três questões de múltipla escolha.
 
 > Ex: $CCI$ significa que o aluno acertou as duas primeiras questões e errou a última.
 
-<div class="columns-2">
-
-> $$\Omega=\{CCC,CCI,CIC,CII, \\
-ICC,ICI,IIC,III\}$$
+> $$\Omega=\{CCC, CCI, CIC, CII, ICC, ICI, IIC, III\}$$
 
 <center><img src="figuras/popquiz.jpg" width=250></center>
-</div>
+
 
 ## Evento {.build}
 
@@ -431,29 +502,33 @@ ICC,ICI,IIC,III\}$$
 
 > * Experimento é lançar dois dados (1 vermelho e 1 verde) e anotar os valores:
 <font size="4">
-$$\Omega = \{(1,1),(1,2),(1,3),(1,4),(1,5),(1,6), \\ 
-(2,1),(2,2),(2,3),(2,4), (2, 5), (2, 6), \\ 
-(3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6), \\
-(4, 1), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6), \\
-(5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6), \\
-(6, 1), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6)\}
+$$
+\begin{align}
+\Omega = \{&(1,1),(1,2),(1,3),(1,4),(1,5),(1,6), \\ 
+& (2,1),(2,2),(2,3),(2,4), (2, 5), (2, 6), \\ 
+& (3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6), \\
+& (4, 1), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6), \\
+& (5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6), \\
+& (6, 1), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6)\}
+\end{align}
 $$
 </font>
 
 > **Evento:** soma dos valores é igual a 3.
 
-> $$A=\{ (1,2),(2,1)\}$$
+> $$A=\{ (1,2), (2,1)\}$$
+
 
 ## Exemplo: testinho surpresa {.build }
 
 <center><img src="figuras/popquiz.jpg" width=300></center>
 
-$$\Omega=\{CCC,CCI,CIC,CII,ICC,ICI,IIC,III\}$$
+$$\Omega=\{CCC, CCI, CIC, CII, ICC, ICI, IIC, III\}$$
 
+**Evento:** o aluno acertou pelo menos duas questões e foi aprovado.
 
-Evento: o aluno acertou pelo menos duas questões e foi aprovado.
+$$A=\{CCC, CCI, CIC, ICC\}$$
 
-$$A=\{CCC,CCI,CIC,ICC\}$$
 
 ## Probabilidade de um evento {.build}
 
@@ -474,19 +549,18 @@ $$A=\{CCC,CCI,CIC,ICC\}$$
 
 ## Exemplo: lançar uma moeda duas vezes {.build}
 
-$C=cara$ 
+$C$ = cara
 
+$X$ =coroa
 
-$X=coroa$
-
- $\Omega=\{\omega_{1},\omega_{2},\omega_{3},\omega_{4}\}$ 
+$\Omega=\{\omega_{1},\omega_{2},\omega_{3},\omega_{4}\} = \{(C,C), (C,X), (X,C), (X,X) \}$ 
  
-$\omega_{1}=(C,C)$; $\omega_{2}=(C,X)$; $\omega_{3}=(X,C)$; $\omega_{4}=(X,X)$.
+Então $\omega_{1}=(C,C)$; $\omega_{2}=(C,X)$; $\omega_{3}=(X,C)$ e  $\omega_{4}=(X,X)$.
 
-> * considerando que a moeda é honesta: $$P(\omega_{i})=\frac{1}{4}\,,\quad\forall i=1,2,3,4\,.$$
+> * Considerando que a moeda é honesta: $$P(\omega_{i})=\frac{1}{4}\,,\quad\forall i=1,2,3,4\,.$$
 
 
-> * seja o evento $A=\{\omega_{1},\omega_{4}\}=$ obter duas faces iguais:
+> * Seja o evento $A=\{\omega_{1}, \omega_{4}\}=$ obter duas faces iguais:
 
 $P(A)=P(\{\omega_{1},\omega_{4}\})=P(\omega_{1})+P(\omega_{4})=\frac{1}{4}+\frac{1}{4}=\frac{2}{4}=\frac{1}{2}$
 
@@ -496,24 +570,26 @@ $P(A)=P(\{\omega_{1},\omega_{4}\})=P(\omega_{1})+P(\omega_{4})=\frac{1}{4}+\frac
 
 > $\Omega=\{\omega_{1},...,\omega_{n}\}$ finito.
 
-> $P(\omega_{i})=\frac{1}{n}$, $\forall$ $i=1,2,...,n$.
+> **Equiprobabilidade:** Todos os elementos do espaço amostral tem a mesma probabilidade de acontecer, ou seja, 
 
-> $A=\{\omega_{A_1},...,\omega_{A_m}\}$ evento em $\Omega$ com $m\leq n$ pontos amostrais
+> $$P(\omega_{i})=\frac{1}{n}, \qquad \forall i=1,2, \ldots, n$$
+> Seja $A=\{\omega_{A_1},...,\omega_{A_m}\}$ um evento em $\Omega$ com $m\leq n$ pontos amostrais, então
 
-> então $P(A)=\frac{m}{n}$.
+> $$P(A)=\frac{m}{n}$$
+
 
 ## Probabilidade de um evento {.build}
-
 
 A probabilidade de um evento $A$, denotada por $P(A)$, é obtida somando as probabilidades de cada elemento do espaço amostral que pertence ao evento $A$.
 
 > Quando cada elemento do espaço amostral tem a mesma probabilidade de ocorrer:
 $$P(A)=\frac{\mbox{número de elementos no evento $A$}}{\mbox{número de elementos do espaço amostral}}$$
 
+
 ## Exemplos {.build}
 
 **Exemplo 1:** moeda honesta é lançada uma vez
-$\Omega= \{C,X\}$
+$\Omega= \{C, X\}$
 
 $P(C)=P(X)=\frac{1}{2}$
 
@@ -545,7 +621,8 @@ $$P(A)=P(\{2\},\{4\},\{6\})=P(2)+P(4)+P(6)=\frac{3}{6}=\frac{1}{2}$$
 
 ## Propriedades: Modelo Teórico {.build}
 <div class="columns-2">
-$(\Omega,P)$:
+ 
+ $(\Omega,P)$:
 
 >    + $\Omega$ é o espaço amostral.
 
@@ -566,16 +643,15 @@ Propriedades:
 </div> 
 
 
-
 ## Exemplo: Alunos de um Instituto {.smaller .build}
 
-  Curso  | Masculino (Ma)  |  Feminino (Fe) | Total 
-  --|-----------------|----------------|-------
-  Matemática Pura (M) | 70 | 40| 110
-  Matemática Aplicada (A) | 15 | 15| 30
-  Estatística (E) | 10 | 20 | 30
-  Computação (C) | 20 | 10 | 30
-  Total|115|85|200
+  Curso  | Masculino (M)  |  Feminino (F) | Total 
+  -------|-----------------|----------------|-------
+  Matemática Pura (MP)    |  70 | 40 | 110
+  Matemática Aplicada (A) |  15 | 15 |  30
+  Estatística (E)         |  10 | 20 |  30
+  Computação (C)          |  20 | 10 |  30
+  Total                   | 115 | 85 | 200
 
 > Escolhendo um aluno ao acaso:
 
@@ -583,21 +659,22 @@ $$P(MP)=\frac{110}{200}=0.550 \qquad \qquad P(E)=\frac{30}{200}=0.150$$
 
 $$P(M)=\frac{115}{200}=0.575 \qquad \qquad P(F)=\frac{85}{200}=0.425$$
 
+
 ##  Exemplo: Alunos de um Instituto {.smaller .build}
 
-  Curso  | Masculino (Ma)  |  Feminino (Fe) | Total 
-  --|-----------------|----------------|-------
-  Matemática Pura (M) | 70 | 40| 110
-  Matemática Aplicada (A) | 15 | 15| 30
-  Estatística (E) | 10 | 20 | 30
-  Computação (C) | 20 | 10 | 30
-  Total|115|85|200
+  Curso  | Masculino (M)  |  Feminino (F) | Total 
+  -------|-----------------|----------------|-------
+  Matemática Pura (MP)    |  70 | 40 | 110
+  Matemática Aplicada (A) |  15 | 15 |  30
+  Estatística (E)         |  10 | 20 |  30
+  Computação (C)          |  20 | 10 |  30
+  Total                   | 115 | 85 | 200
 
 Seja o evento $I$: escolher ao acaso um aluno e ele ser estudante de estatística e do sexo masculino.
 
->  $I=E\cap Ma$, o evento $I$ é a interseção dos eventos $E$ e $Ma$.
+>  $I=E\cap M$, o evento $I$ é a interseção dos eventos $E$ e $M$.
 
-> $P(E\cap Ma)=\frac{10}{200}=0.05$
+> $$P(E\cap M)=\frac{10}{200}=0.05$$
 
 
 ## Interseção de Eventos
@@ -636,47 +713,46 @@ Na figura da direita, $A$ e $B$ são denominados **disjuntos**, pois $A\cap B=\v
 
 ## Exemplo: Alunos de um Instituto {.smaller .build}
 
-  Curso  | Masculino (Ma)  |  Feminino (Fe) | Total 
-  --|-----------------|----------------|-------
-  Matemática Pura (M) | 70 | 40| 110
-  Matemática Aplicada (A) | 15 | 15| 30
-  Estatística (E) | 10 | 20 | 30
-  Computação (C) | 20 | 10 | 30
-  Total|115|85|200
+  Curso  | Masculino (M)  |  Feminino (F) | Total 
+  -------|-----------------|----------------|-------
+  Matemática Pura (MP)    |  70 | 40 | 110
+  Matemática Aplicada (A) |  15 | 15 |  30
+  Estatística (E)         |  10 | 20 |  30
+  Computação (C)          |  20 | 10 |  30
+  Total                   | 115 | 85 | 200
 
-  
   Seja $U$ o evento: escolher um aluno ao acaso e ele ser estudante de estatística ou do sexo masculino.
   
-> $U=E\cup Ma$, o evento $U$ é uma união dos eventos $E$ e $Ma$.
+> $U=E\cup M$, o evento $U$ é uma união dos eventos $E$ e $Ma$.
 
- $P(E\cup Ma)= P(E)+P(Ma)-P(E\cap Ma)$ 
+ $P(E\cup M)= P(E) + P(M) - P(E\cap M)$ 
 
-$$P(E)=\frac{10+20}{200}=0.150\quad\quad P(Ma)= \frac{70+15+10+20}{200}=0.575$$
+$$P(E)=\frac{10+20}{200}=0.150\quad\quad P(M)= \frac{70+15+10+20}{200}=0.575$$
 
-$$P(E\cap Ma)=\frac{10}{200}=0.050$$
+$$P(E\cap M)=\frac{10}{200}=0.050$$
 
-$$P(E\cup Ma)=0.150+0.575-0.050=0.675$$
+$$P(E\cup M)=0.150+0.575-0.050=0.675$$
 
 
 ## Exemplo: Alunos de um Instituto {.smaller .build}
 
-  Curso  | Masculino (Ma)  |  Feminino (Fe) | Total 
-  --|-----------------|----------------|-------
-  Matemática Pura (M) | 70 | 40| 110
-  Matemática Aplicada (A) | 15 | 15| 30
-  Estatística (E) | 10 | 20 | 30
-  Computação (C) | 20 | 10 | 30
-  Total|115|85|200
+  Curso  | Masculino (M)  |  Feminino (F) | Total 
+  -------|-----------------|----------------|-------
+  Matemática Pura (MP)    |  70 | 40 | 110
+  Matemática Aplicada (A) |  15 | 15 |  30
+  Estatística (E)         |  10 | 20 |  30
+  Computação (C)          |  20 | 10 |  30
+  Total                   | 115 | 85 | 200
 
 No caso de eventos mutuamente exclusivos ou disjuntos, a interseção é vazia ($\varnothing$).
 
 > Probabilidade de escolher um aluno ao acaso e ele ser estudante da matemática pura **e** da computação:
  
- $$P(M\cap C)=P(\varnothing)=0$$
+ $$P(MP \cap C)=P(\varnothing)=0$$
 
 > Probabilidade de escolher um aluno ao acaso e ele ser estudante da matemática pura **ou** da computação:
 
-$$P(M\cup C)=P(M)+P(C)-P(M\cap C)=P(M)+P(C)=\frac{140}{200}=0.700$$
+$$P(MP\cup C)=P(MP)+P(C)-P(M\cap C)=P(MP)+P(C)=\frac{140}{200}=0.700$$
 
 
 
@@ -765,7 +841,7 @@ No caso geral, sejam $A$ e $B$ subconjuntos de $\Omega$:
 
 ## Exemplo: Cartões de Crédito {.build}
 
-<center><img src="figuras/cartoes.jpg" width=500></center> 
+<center><img src="figuras/cartoes.jpg" width=400></center> 
 
 
 Um estabelecimento aceita Visa ou Mastercard. Dentre os clientes, 22\% possuem Mastercard, 58\% possuem Visa e 14\% possuem os dois. Qual a probabilidade de que um cliente tenha pelo menos um destes cartões?
@@ -777,17 +853,18 @@ Um estabelecimento aceita Visa ou Mastercard. Dentre os clientes, 22\% possuem M
 Um estabelecimento aceita Visa ou Mastercard. Dentre os clientes, 22\% possuem Mastercard, 58\% possuem Visa e 14\% possuem os dois. Qual a probabilidade de que um cliente tenha pelo menos um destes cartões?
 
 
-> Espaço amostral: $\Omega=\{V,M,VM,N\}$, onde V="tem só Visa", M="tem só Matercard", VM="tem Visa e Mastercard", N="não tem Visa nem Mastercard".
+> Espaço amostral: $\Omega=\{V, M, VM, N\}$, onde V="tem só Visa", M="tem só Matercard", VM="tem Visa e Mastercard", N="não tem Visa nem Mastercard".
 
-> Evento A: cliente possui Mastercard. $A=\{M,VM\}$.
+> Evento A: cliente possui Mastercard. $A=\{M, VM\}$.
 
-> Evento B: cliente possui Visa.  $B=\{V,VM\}$.
+> Evento B: cliente possui Visa.  $B=\{V, VM\}$.
 
 > $P(A)=0.22$
 
-> $P(B)=0.58$.
+> $P(B)=0.58$
 
-> $P(A\cap B)=0.14$. 
+> $P(A\cap B)=0.14$
+
 
 ## Exemplo: Cartões de Crédito {.build}
 
@@ -811,12 +888,11 @@ Não ($\bar{C}$) | 162527 | 1601 | 164128
 Total | 574895 | 2111 | 577006
 
 
-
 $$\Omega=\{(C,S),(C,\bar{S}),(\bar{C},S),(\bar{C},\bar{S}) \} $$ 
 
 Se selecionarmos um registro ao acaso, qual a probabilidade dele conter uma morte registrada?
 
-$P(M)=\frac{2111}{577006}=0.004$
+$$P(M)=\frac{2111}{577006}=0.004$$
 
 
 ## Exemplo: Cinto de segurança e acidentes {.build}
@@ -828,13 +904,13 @@ Não ($\bar{C}$) | 162527 | 1601 | 164128
 Total | 574895 | 2111 | 577006
 
 
-
 $$\Omega=\{(C,S),(C,\bar{S}),(\bar{C},S),(\bar{C},\bar{S}) \} $$ 
 
 
  Se selecionarmos um registro ao acaso, qual a probabilidade de constar que o cinto não foi usado?
 
-$P(\bar{C})=\frac{164128}{577006}=0.284$
+$$P(\bar{C})=\frac{164128}{577006}=0.284$$
+
 
 ## Leituras
 
