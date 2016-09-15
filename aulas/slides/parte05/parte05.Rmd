@@ -1,11 +1,11 @@
 ---
-title: ME414 - Estatística para Experimentalistas
-subtitle: Parte 5
-output: 
+title: "ME414 - Estatística para Experimentalistas"
+output:
   ioslides_presentation:
-         widescreen: true
+    widescreen: yes
+  beamer_presentation: default
+subtitle: Parte 5
 logo: ../logo-imecc.png
-
 ---
 
 ```{r, include=FALSE, echo=FALSE}
@@ -379,11 +379,12 @@ Em um fenômeno aleatório, a **probabilidade** de um resultado acontecer é a p
 
 > <center> 
 <figure>
-<img src="figuras/NasaColumbia.jpg" width=250>
+<img src="figuras/NasaColumbia.jpg" width=230>
 <figcaption> <font size="4">Ônibus espacial Columbia </font></figcaption>
 </figure>
 </center>
 </div>
+
 
 ## Probabilidade {.build}
 
@@ -462,7 +463,7 @@ $C=cara \quad \mbox{e} \quad X=coroa$
 
 ## Exemplo: dois dados {.build .smaller}
 
-Experimento é lançar dois dados (1 vermelho e 1 azul) e anotar os valores:
+Experimento é lançar dois dados (1 vermelho e 1 verde) e anotar os valores:
 
 $$
 \begin{align}
@@ -608,13 +609,13 @@ $\Omega=\{(C,C), (X,C), (C,X), (X,X)\}$
  
 $\Omega=\{\omega_{1},\omega_{2},\omega_{3},\omega_{4},\omega_{5},\omega_{6}\}$
 
-em que $\omega_{i}=$ face $i$, $\forall$ $i=1,2,3,4,5,6\,.$
+em que $\omega_{i}=$ face $i$, $\forall$ $i=1,2,3,4,5,6.$
 
 <center><img src="figuras/dicesixface.jpeg"></center>
 
-Como o dado é honesto, $P(\omega_{i})=\frac{1}{6}\,.$
+Como o dado é honesto, $P(\omega_{i})=\frac{1}{6}.$
  
-Seja o evento $A=\{\mbox{a face é um número par}\}=\{\omega_{2},\omega_{4},\omega_{6}\}=\{2,4,6\}$ 
+Seja o evento $A=\{\mbox{a face é um número par}\}=\{\omega_{2}, \omega_{4}, \omega_{6}\}=\{2, 4, 6\}$ 
  
 $$P(A)=P(\{2\},\{4\},\{6\})=P(2)+P(4)+P(6)=\frac{3}{6}=\frac{1}{2}$$
 
@@ -723,15 +724,13 @@ Na figura da direita, $A$ e $B$ são denominados **disjuntos**, pois $A\cap B=\v
 
   Seja $U$ o evento: escolher um aluno ao acaso e ele ser estudante de estatística ou do sexo masculino.
   
-> $U=E\cup M$, o evento $U$ é uma união dos eventos $E$ e $Ma$.
+> $U=E\cup M$, o evento $U$ é uma união dos eventos $E$ e $M$.
 
  $P(E\cup M)= P(E) + P(M) - P(E\cap M)$ 
 
-$$P(E)=\frac{10+20}{200}=0.150\quad\quad P(M)= \frac{70+15+10+20}{200}=0.575$$
+$$P(E)=\frac{30}{200}=0.150 \quad P(M)= \frac{115}{200}=0.575 \qquad P(E\cap M)=\frac{10}{200}=0.050$$
 
-$$P(E\cap M)=\frac{10}{200}=0.050$$
-
-$$P(E\cup M)=0.150+0.575-0.050=0.675$$
+$$P(E\cup M)=0.150 + 0.575 - 0.050 = 0.675$$
 
 
 ## Exemplo: Alunos de um Instituto {.smaller .build}
@@ -892,7 +891,7 @@ $$\Omega=\{(C,S),(C,\bar{S}),(\bar{C},S),(\bar{C},\bar{S}) \} $$
 
 Se selecionarmos um registro ao acaso, qual a probabilidade dele conter uma morte registrada?
 
-$$P(M)=\frac{2111}{577006}=0.004$$
+$$P(\bar{S})=\frac{2111}{577006}=0.004$$
 
 
 ## Exemplo: Cinto de segurança e acidentes {.build}
