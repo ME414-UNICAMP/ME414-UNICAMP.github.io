@@ -24,12 +24,14 @@ logo: ../logo-imecc.png
  
  > $$P(A)=\frac{\mbox{número de elementos em A}}{\mbox{número de elementos em $\Omega$}}= \frac{1}{8}$$
 
+
 ## Experimento: Lançamento de 3 moedas {.build}
 > Qual a probabilidade de obtermos pelo menos 2 caras?
  
  > $B=\{(CCC),(CCX),(CXC),(XCC)\}$
  
  > $$P(B)=\frac{\mbox{número de elementos em B}}{\mbox{número de elementos em $\Omega$}}= \frac{4}{8}=\frac{1}{2}$$
+
 
 ## Jogo de dados {.build}
 Dois dados honestos são lançados simultaneamente
@@ -46,12 +48,14 @@ Dois dados honestos são lançados simultaneamente
 
 > Qual das duas possibilidades ele deve escolher? 
 
+
 ## Jogo de dados {.build}
 Espaço amostral:
 
 > <center><img src="figuras/jogo1.png" width=400></center> 
 
 > Dados honestos, então cada elemento do espaço amostral tem igual probabilidade de ocorrer: 1/36
+
 
 ## Jogo de dados {.build}
 $A=\{\mbox{conjunto dos pares  (i,j) tais que i+j=7}\}$
@@ -61,6 +65,7 @@ $A=\{\mbox{conjunto dos pares  (i,j) tais que i+j=7}\}$
 > $A=\{(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)\}$
  
 > $$P(A)=\frac{\mbox{número de elementos em A}}{\mbox{número de elementos em $\Omega$}}=\frac{6}{36}$$
+ 
  
 ## Jogo de dados {.build}
 
@@ -74,18 +79,20 @@ $B=\{\mbox{conjunto dos pares (i,j) tais que } i \leq 3 \mbox{ e } j \leq 3 \}$
 
 > Como $P(A)<P(B)$ é mais vantajoso escolher a opção "maior valor seja no máximo 3"
  
+ 
 # Regras de Contagem
 
 ## Regras de contagem {.build}
 * Espaço amostral finito $\Omega=\{\omega_1,\ldots,\omega_n\}$ com elementos equiprováveis, então:
 
-> $$P(A)=\frac{\mbox{número de elementos no evento A}}{\mbox{número de elementos no espaço amostral}}\,.$$
+> $$P(A)=\frac{\mbox{número de elementos no evento A}}{\mbox{número de elementos no espaço amostral}}.$$
  
 > * Precisamos conhecer regras de contagem para calcular probabilidade de eventos.
 
 > **Exemplo:** Em um grupo de 100 pessoas, 2 são daltônicas. Dez pessoas são escolhidas ao acaso e sem reposição. Qual a probabilidade de escolhermos apenas uma pessoa daltônica?
 
 >  De quantas maneiras podemos selecionar 10 pessoas a partir de um grupo de 100 pessoas, sem reposição?
+
 
 ## Regra da adição {.build}
 
@@ -95,9 +102,19 @@ $B=\{\mbox{conjunto dos pares (i,j) tais que } i \leq 3 \mbox{ e } j \leq 3 \}$
 
 > O total de maneiras para executarmos a tarefa é então dado por $n_1+n_2$.
 
+
+## Regra da adição {.build}
 * **Exemplo:** Entre as opções de sobremesa de um restaurante, você pode escolher entre sorvete e torta. Há dois sabores de torta: baunilha ou cereja.  Há três sabores de sorvete: morango, chocolate e creme.
 
-> Portanto, há $2+3= `r 2+3`$ opções de sobremesa no restaurante.
+<center>
+<img src="figuras/sobremesa.jpg" width=350>
+<img src="figuras/sorvete.jpg" width=350>
+</center> 
+
+> Quantas opções você tem no total?
+
+> Você pode escolher torta OU sorvete, então existem $2+3= `r 2+3`$ opções de sobremesa.
+
 
 ## Regra da multiplicação {.build}
 
@@ -107,33 +124,39 @@ $B=\{\mbox{conjunto dos pares (i,j) tais que } i \leq 3 \mbox{ e } j \leq 3 \}$
 
 > O total de maneiras para executarmos a tarefa é dado por $n_1 \times  n_2$.
 
-* **Exemplo:** Uma peça manufaturada deve passar por três estações de controle.
 
-> Em cada estação a peça é inspecionada com relação a uma determinada característica e marcada adequadamente. 
+## Regra da multiplicação {.build}
 
-## Regras de contagem {.build}
-Na primeira estação, três classificações são possíveis (ok, excelente, retrabalho), enquanto que nas duas últimas, duas classificações são possíveis (ok, retrabalho). 
+**Exemplo:** Você vai no Spoleto e vê no cardápio "[Monte sua Massa](http://www.spoleto.com.br/monteseuprato/massas?refogar=1)".
 
-> De quantas maneiras uma peça pode ser marcada?
+Tipo de Massa | Tamanho  | Molho     | Gratinar?
+------------- | -------  | -----     | ---------
+Farfale       | Bambini  | Bolognesa | Sim
+Fettuccine    | Normal   | Branco    | Não
+Fusili Integrale | Mamma | Funghi    |
+Penne         |          | 4 Queijos |
+Spaghetti     |          | Tomate    |
 
-1. Primeira estação: 3 maneiras diferentes.
+> Quantas opções de pratos você têm no total?
 
-2. Segunda estação: 2 maneiras diferentes.
+> Você pode criar $5 \times 3 \times 5 \times 2= `r 5*3*5*2`$ pratos diferentes.
 
-3. Terceira estação: 2 maneiras diferentes.
-
-> A peça pode ser marcada de $3\times2\times2= `r 3*2*2`$ maneiras diferentes.
 
 ## Exemplo: Sobremesas {.build}
-Entre as opções de sobremesa de um restaurante, você pode escolher entre sorvete e torta. Há dois sabores de torta: baunilha ou cereja. Há três sabores de sorvete: morango, chocolate e creme.
+Você volta no mesmo restaurante das tortas e sorvetes. Há dois sabores de torta (baunilha ou cereja) e três sabores de sorvete (morango, chocolate e creme).
+<center>
+<img src="figuras/sobremesa.jpg" width=280>
+<img src="figuras/sorvete.jpg" width=280>
+</center> 
 
-> Apenas aos sábados, o restaurante oferece a "Torta da Casa", que é uma torta com sorvete em cima. Aos sábados, quantas opções de sobremesa tem um cliente?
+> Apenas aos sábados, o restaurante oferece a "Torta da Casa", que é uma torta com sorvete em cima. Aos sábados, quantas opções de sobremesa você?
 
 > * $2+3= `r 2+3`$ opções caso não escolha "Torta da Casa".
 
-> * $2\times 3= `r 2*3`$ opções de Torta da Casa".
+> * $2\times 3= `r 2*3`$ opções de "Torta da Casa".
 
 > * Total: `r 2+3 + 2*3` opções de sobremesa.
+
 
 ## Exemplo: Placa de carro {.build}
 
@@ -153,15 +176,18 @@ De quantas formas diferentes podemos escolher a placa de um carro, tendo essa 3 
 > * O número de maneiras que podemos fazer isto é denominado **permutação**.
 
 > * Suponha que temos $n$ caixas e queremos dispor os $n$ objetos de $O$ nessas caixas. 
+
 > <center><img src="figuras/fatorial.png" width=350></center>
 
 > Aplicando a regra da multiplicação, temos que o número de maneiras de permutar $n$ elementos é:
 >       $$n\times(n-1)\times\ldots\times1=n!$$
 
+
 ## Exemplos {.build}
 * **Exemplo 1**: Se tivermos três CD's ($a$, $b$ e $c$). De quantas formas diferentes posso distribuí-los para três amigos?
 
-> $$3! = 3 \times 2 \times 1 = 6 $$ 
+<center><img src="figuras/cds.jpg" width=200></center>
+$$3! = 3 \times 2 \times 1 = 6 $$ 
 
 >Ou seja, temos as seguintes permutações: $abc, acb, bac, bca, cab, cba$.
 
@@ -169,13 +195,14 @@ De quantas formas diferentes podemos escolher a placa de um carro, tendo essa 3 
 
 > $$ 1 \times 6! \times 2 = `r factorial(6)*2`$$
 
+
 ## Permutação {.build}
 
 Suponha que queremos permutar $n$ objetos, mas alguns deles são indistinguíveis.
 
 > **Exemplo**: Quantos anagramas podemos formar com a palavra PEPPER?
 	
->	Seria $6! = 720$, certo?
+> Seria $6! = 720$, certo?
 	
 > Mas note que P^1^E^1^P^2^P^3^E^2^R = P^2^E^1^P^1^P^3^E^2^R
 
@@ -183,7 +210,8 @@ Suponha que queremos permutar $n$ objetos, mas alguns deles são indistinguívei
 
 > Portanto, o número de possíveis anagramas distintos é:
 
-$$ \frac{6!}{3!2!} = `r factorial(6)/(factorial(3)*factorial(2))`$$
+$$\frac{6!}{3!2!} = `r factorial(6)/(factorial(3)*factorial(2))`$$
+
 
 ## Arranjo {.build}
 * Suponha que tenhamos uma coleção $O=\{w_1,w_2,...,w_n\}$ de $n$ objetos. 
@@ -195,6 +223,7 @@ $$ \frac{6!}{3!2!} = `r factorial(6)/(factorial(3)*factorial(2))`$$
 > * Suponha que temos $r$ caixas e queremos dispor os $n$ objetos de $O$ nessas caixas. 
 > <center><img src="figuras/arranjo.png" width=450></center>
 
+
 ## Arranjo {.build}
 
 > Aplicando a regra da multiplicação, temos que o número de maneiras de arranjar $n$ elementos em $r$ caixas é: 
@@ -202,9 +231,10 @@ $$ \frac{6!}{3!2!} = `r factorial(6)/(factorial(3)*factorial(2))`$$
        
 > * **Exemplo:** Se tivermos os objetos $a$, $b$, $c$ e $d$, de quantas maneiras podemos escolher 2 elementos: 
 
-> $$ A(4, 2) = \frac{4!}{(4-2)!} = 12 $$
+> $$A(4, 2) = \frac{4!}{(4-2)!} = 12$$
 
 > Que seriam o seguinte: $ab,ac,ad,ba,bc,bd,ca,cb,cd,da,db,dc$.
+
 
 ## Combinação {.build}
 * Suponha que tenhamos uma coleção $O=\{w_1,w_2,...,w_n\}$ de $n$ objetos. 
@@ -216,6 +246,7 @@ $$ \frac{6!}{3!2!} = `r factorial(6)/(factorial(3)*factorial(2))`$$
 > * O número de maneiras de alocarmos os $n$ objetos em $r$ caixas é:
 > $$\frac{n!}{(n-r)!}$$
 
+
 ## Combinação {.build}
 * Após alocarmos os $r$ objetos, temos $r!$ formas de permutá-los, então o número de maneiras de escolhermos $r$ objetos sem importar a ordem dentre $n$ objetos é:
 
@@ -226,6 +257,7 @@ $$ \frac{6!}{3!2!} = `r factorial(6)/(factorial(3)*factorial(2))`$$
 > $$ C(4, 2) = \binom{4}{2} = `r choose(4, 2)`$$
 
 > Que seriam o seguinte: $ab,ac,ad,bc,bd,cd$.
+
 
 ## Exemplo {.build}
 Sete atletas estão competindo nas olimpíadas. O pódium tem 3 lugares: ouro, prata e bronze. Quantos pódiuns podem ser feitos?
@@ -244,9 +276,10 @@ Sete atletas estão competindo nas olimpíadas. O pódium tem 3 lugares: ouro, p
 > $$C(7,3)=\frac{7!}{3!(7-3)!}= `r choose(7, 3)`$$
 </div>
 
+
 ## Exemplo {.build .smaller}
 
-> <center><img src="figuras/daltonismo_daltonico.jpg" width=250></center> 
+> <center><img src="figuras/daltonismo_daltonico.jpg" width=300></center> 
 
 Em um grupo de 100 pessoas, 2 são daltônicas. Dez pessoas são escolhidas ao acaso e sem reposição. Qual a probabilidade de escolhermos apenas uma pessoa daltônica?
 
@@ -256,7 +289,7 @@ Em um grupo de 100 pessoas, 2 são daltônicas. Dez pessoas são escolhidas ao a
  
 > De quantas maneiras podemos selecionar 1 pessoa a partir de um grupo de 2 pessoas daltônicas?
   
->  $$C(2,1)=\binom{2}{1}$$
+> $$C(2,1)=\binom{2}{1}$$
   
 
 ## Exemplo {.build}
@@ -269,16 +302,18 @@ Em um grupo de 100 pessoas, 2 são daltônicas. Dez pessoas são escolhidas ao a
 > Então, a probabilidade de escolhermos apenas uma pessoa daltônica:
 > $$\frac{\binom{2}{1}\binom{98}{9}}{\binom{100}{10}}$$
 
+
 ## Exemplo {.build}
 Uma caixa contém 2 bolas vermelhas, 3 verdes e 2 azuis. Duas bolas são selecionadas aleatoriamente. Qual a probabilidade de que nenhuma bola seja azul?
 
-> * Total de bolas: 7.
-> * Maneiras de sortear 2 bolas dentre 7 bolas:  $C(7,2)=\binom{7}{2}=\frac{7!}{2!(7-2)!}=21$.
+> * Total de bolas: 7
+> * Maneiras de sortear 2 bolas dentre 7 bolas:  $C(7,2)=\binom{7}{2}=\frac{7!}{2!(7-2)!}=21$
 > * $A$=sortear 2 bolas, nenhuma sendo azul.
 
 > $$C(5,2)=\frac{5!}{2!(5-2)!}=`r choose(5, 2)`$$
 
-> * $$P(A)=\frac{10}{21}$$
+> $$P(A)=\frac{10}{21}$$
+
 
 ## Exemplo {.build}
 ```{r, echo=FALSE}
@@ -296,7 +331,7 @@ chooset <- choose(nt, t)
 Em uma classe, há `r na` meninos e `r nb` meninas. Três alunos são selecionados ao acaso. Qual a probabilidade de sortear `r b` menina e `r a` meninos?
 
 > * Maneiras de sortear `r t` alunos dentre `r nt`:  
-> $C(`r nt`,`r t`)=\binom{`r nt`}{`r t`}=\frac{`r nt`!}{`r t`!(`r nt`-`r t`3)!}= `r chooset`$.
+> $C(`r nt`,`r t`)=\binom{`r nt`}{`r t`}=\frac{`r nt`!}{`r t`!(`r nt`-`r t`3)!}= `r chooset`$
 
 > * $A$=sortear `r b` menina e `r a` meninos.
 
@@ -304,7 +339,8 @@ Em uma classe, há `r na` meninos e `r nb` meninas. Três alunos são selecionad
 
 > Número de elementos em $A$= $C(`r nb`,`r b`)$ x $C(`r na`,`r a`) = `r chooseb * choosea`$.
 
-> * $$P(A)=\frac{`r chooseb * choosea`}{`r chooset`}=\frac{21}{46}$$
+> $$P(A)=\frac{`r chooseb * choosea`}{`r chooset`}=\frac{21}{46}$$
+
 
 ## Exemplo {.build}
 ```{r, echo=FALSE}
@@ -319,22 +355,62 @@ comb_bvk <- choose(bv, k)
 
 Uma sacola tem `r bb` bolas brancas, `r bv` vermelhas e `r ba` azuis. Três bolas são selecionadas ao acaso da sacola. Qual a probabilidade de que todas elas sejam vermelhas?
 
-> * Total de bolas: `r t`.
+> * Total de bolas: `r t`
 > * Maneiras de sortear `r k` bolas dentre `r t` bolas:  
-> $C(`r t`, `r k`)=\binom{`r t`}{`r k`}=\frac{`r t`!}{`r k`!(`r t`-`r k`)!}=`r comb_tk`$.
+> $C(`r t`, `r k`)=\binom{`r t`}{`r k`}=\frac{`r t`!}{`r k`!(`r t`-`r k`)!}=`r comb_tk`$
 > * $A$=sortear `r k` bolas vermelhas. 
 
-> $$C(`r bv`, `r k`)=\frac{`r bv`!}{`r k`!(`r bv`-`r k`)!}=`r comb_bvk`\,.$$
+> $$C(`r bv`, `r k`)=\frac{`r bv`!}{`r k`!(`r bv`-`r k`)!}=`r comb_bvk`$$
 
-> * $$P(A)=\frac{`r comb_bvk`}{`r comb_tk`}=\frac{2}{91}\,.$$
+> $$P(A)=\frac{`r comb_bvk`}{`r comb_tk`}=\frac{2}{91}$$
+
+
+## Aniversários no mesmo dia? {.build}
+
+> Nessa sala com mais de 100 alunos, quantas pessoas vocês acham que fazem aniversário no mesmo dia?
+
+> <center><img src="figuras/aniversarios.png" width=450></center>
+
+> Eu aposto que existem pelo menos um par de pessoas que fazem aniversário no mesmo dia!!!
+
+> Vamos verificar?
+
+
+## Paradoxo do Aniversário {.build}
+
+Qual é a probabilidade de pelo menos uma coincidência?
+
+<center>
+```{r, echo=FALSE}
+n <- 1:100
+probNiver <- function(n){
+  1 - prod(365:(365 - n +1))/365^n
+}
+p <- sapply(1:100, probNiver)
+
+plot(n, p, type="s", lwd=3, col="#1B9E77", 
+     main="Probabilidade de pelo menos uma coincidência", 
+     xlab="número de pessoas (n)", 
+     ylab="Probabilidade", bty="l", axes=FALSE, cex.lab=1.3, ylim=c(0,1), xlim=c(0, 70))
+## box(bty="l", lwd=2)
+axis(1, seq(0, 100, by=10), pos=0, cex.axis=1.2, lwd=2)
+axis(2, seq(0, 1, by=.2), cex.axis=1.2, pos=0, las=2, lwd=2)
+points(23, probNiver(23), pch=19, col="red")
+arrows(23, 0, 23, probNiver(23), length=0, col="red", lty=2, lwd=2)
+arrows(0, probNiver(23), 23, probNiver(23), length=0, col="red", lty=2, lwd=2)
+abline(h=1, lty=2, col="darkgrey")
+```
+</center>
+
 
 # Amostragem
 
 ## Amostragem
 <center><img src="figuras/amostragem.jpg" width=500></center>
 
+
 ## Amostragem Aleatória Simples {.build}
-Amostragem aleatória simples (AAS) é um plano amostral no qual $n$ unidades são selecionadas de uma lista com $N$ unidades, de tal forma que cada combinação possível das $n$ unidades tenha a mesma probabilidade de ser selecionada.
+**Amostragem Aleatória Simples (AAS)** é um plano amostral no qual $n$ unidades são selecionadas de uma lista com $N$ unidades, de tal forma que cada combinação possível das $n$ unidades tenha a mesma probabilidade de ser selecionada.
 
 > Há dois tipos de AAS:
 
@@ -342,55 +418,61 @@ Amostragem aleatória simples (AAS) é um plano amostral no qual $n$ unidades s�
 
 > * $AAS_s$: amostragem aleatória simples sem reposição.
 
+
 ## Seleção de Amostras {.build}
 Número de amostras possíveis de $n$ elementos de uma população de $N$.
  
-> * $AAS_c$: $N^n$.
+> * $AAS_c$: $N^n$
 
 > * $AAS_s$: 
     + $\binom{N}{n}$, caso não ordenado.
     + $\frac{N!}{(N-n)!}$, caso ordenado.
  
+
 ## Amostragem Aleatória Simples {.build}
 
 **Exemplo**: amostra de tamanho $n=2$ de uma população de tamanho $N=4$. 
  
-> Elementos da população: A, B, C e D.
+> Elementos da população: {A, B, C, D}
 
 > Usando $AAS_c$, podemos obter: $4^2=16$ amostras diferentes.
 
 > <center><img src="figuras/AASc.png" width=300></center>
 
+
 ## Amostragem Aleatória Simples {.build}
 
 **Exemplo:** amostra de tamanho $n=2$ de uma população de tamanho $N=4$. 
  
-> Elementos da população: A, B, C e D.
+> Elementos da população: {A, B, C, D}
  
 > Usando $AAS_s$, ordenada, podemos obter: $4!/(4-2)!=12$ amostras diferentes.
 
 > <center><img src="figuras/AASs-ord.png" width=300></center> 
 
+
 ## Amostragem Aleatória Simples {.build}
 
 **Exemplo:** amostra de tamanho $n=2$ de uma população de tamanho $N=4$. 
  
-> Elementos da população: A, B, C e D.
+> Elementos da população: {A, B, C, D}
  
 > Usando $AAS_s$, não-ordenada, podemos obter: $\binom{4}{2}=6$ amostras diferentes.
 
 > <center><img src="figuras/AASs-nord.png" width=300></center> 
+
 
 ## Amostragem Aleatória Simples {.build} 
  $AAS$: todas as amostras têm a mesma probabilidade de serem selecionadas. 
  
 > A probabilidade de se selecionar cada amostra de tamanho $n$ é:
  
-> * $AAS_c$:  $1/N^n$.
+> * $AAS_c$:  $1/N^n$
  
 > * $AAS_s$: 
      + $1/\binom{N}{n}$, caso não ordenado.
      + $1/\frac{N!}{(N-n)!}$, caso ordenado.
+    
      
 ## Piada no Facebook
 
@@ -406,6 +488,7 @@ Uma comissão formada por 3 estudantes tem que ser selecionada numa classe de 20
 
 (sem reposição e ordem não importa)
 
+
 ## Exemplo {.build}
 Um ônibus possui 10 assentos disponíveis. 
 
@@ -414,6 +497,7 @@ Um ônibus possui 10 assentos disponíveis.
 > $$ \frac{10!}{(10-7)!}=\frac{10!}{3!}=10\times9\times8\times7\times6\times5\times4=604800$$
 
 (sem reposição e ordem importa)
+
 
 ## Exemplo {.build .smaller}
 Quantos números de 4 dígitos podemos formar com os dígitos 1, 2, 3, 4, 5, 6?
@@ -430,7 +514,10 @@ Quantos números de 4 dígitos podemos formar com os dígitos 1, 2, 3, 4, 5, 6?
 
 > * Para o quarto dígito, temos 5 possibilidades, pois ele deve ser diferente do primeiro (e do segundo).
 
-> A probabilidade é  $\frac{6 \times 1 \times 5 \times 5}{1296}= \frac{25}{216} \approx 0.12$.
+> A probabilidade é  
+
+$$\frac{6 \times 1 \times 5 \times 5}{1296}= \frac{25}{216} \approx 0.12$$
+
 
 ##
 
