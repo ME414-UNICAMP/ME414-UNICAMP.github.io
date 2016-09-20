@@ -39,6 +39,7 @@ logo: ../logo-imecc.png
 > - **Probabilidade condicional de $B$ dado $A$:**
 > $$P(B\mid A)$$
 
+
 ## Probabilidade condicional $P(B\mid A)$ {.build}
 
 > - Suponha que o resultado do experimento esteja contido no evento $A$.
@@ -68,6 +69,7 @@ logo: ../logo-imecc.png
 
 > $$ P(B\mid A)= \frac{P(A\cap B)}{P(A)} = \frac{1/36}{6/36}= \frac{1}{6}$$
 
+
 ## Exemplo: Qual a chance de cair na malha fina?
 80.2 milhões de declarações. 
 
@@ -80,52 +82,56 @@ colnames(tabela) <- c("Sim", "Não", "Total")
 rownames(tabela) <- c("D - abaixo de 25.000", "C - 25.000 a 49.999", "B - 50.000 a 99.999", "A - acima de 100.000", "Total")
 
 library(knitr)
-kable(tabela, caption = "Tabela : Renda x Malha Fina")
+kable(tabela, caption = "Renda x Caiu na Malha Fina?", dimnames=c("Renda", "Caiu na Malha Fina"))
 
 n <- sum(data)
 ```
 
 Para simplificar, uma frequência de 90 representa 90.000.
 
+
 ## Exemplo: Qual a chance de cair na malha fina? {.build}
 - Espaço amostral:
 
-> $$ \Omega=\{\mbox{(A, sim), (B,sim),(C, sim),(D,sim),(A,não),(B,não),(C,não),(D,não)} \}$$
+> $$ \Omega=\{\mbox{(A, sim), (A,não), (B,sim), (B,não), (C, sim), (C,não), (D,sim), (D,não)}\}$$
 
 > - Qual a probabilidade de cair na malha fina se a renda for acima de 100.000?
 
-> - $\mathcal{A}$ = {caiu na malha fina} =$\{ \mbox{(A,sim),(B,sim),(C,sim),(D,sim)} \}$
+> - $\mathcal{A}$ = {caiu na malha fina} =$\{\mbox{(A,sim),(B,sim),(C,sim),(D,sim)}\}$
 
-> - $\mathcal{B}$ = {renda acima de 100.000} =$\{\mbox{ (A,sim),(A,não)} \}$.
+> - $\mathcal{B}$ = {renda acima de 100.000} =$\{\mbox{(A,sim),(A,não)}\}$
 
 > $$ P(\mathcal{A} \mid \mathcal{B}) = \frac{P(\mathcal{A} \cap \mathcal{B})}{P(\mathcal{B})} 
  = \frac{P(\{\mbox{(A,sim)}\})}{P(\{\mbox{(A,sim),(A,não})\})} $$
  
 > $$ =\frac{`r tabela[4,1]`/`r n`}{`r tabela[4, 3]`/`r n`}=`r round(tabela[4, 1]/tabela[4, 3], 3)` $$
 
-## Exemplo: Qual a chance de cair na malha fina?
-Probabilidade condicional  por faixa de renda em 2002
-<center>
-
-Renda | Sim | Não 
------ | --- | ---
-D - abaixo de 25.000 | `r tabela[1,1]`/`r tabela[1,3]` | `r tabela[1,2]`/`r tabela[1,3]`
-C - 25.000 a 49.999  | `r tabela[2,1]`/`r tabela[2,3]` | `r tabela[2,2]`/`r tabela[2,3]`
-B - 50.000 a 99.999  | `r tabela[3,1]`/`r tabela[3,3]` | `r tabela[3,2]`/`r tabela[3,3]`
-A - acima de 100.000 | `r tabela[4,1]`/`r tabela[4,3]` | `r tabela[4,2]`/`r tabela[4,3]`
-</center>
 
 ## Exemplo: Qual a chance de cair na malha fina?
 Probabilidade condicional  por faixa de renda em 2002
 <center>
 
-Renda | Sim | Não 
------ | --- | ---
-D - abaixo de 25.000 | `r round(tabela[1,1]/tabela[1,3], 3)` | `r round(tabela[1,2]/tabela[1,3], 3)`
-C - 25.000 a 49.999  | `r round(tabela[2,1]/tabela[2,3], 3)` | `r round(tabela[2,2]/tabela[2,3], 3)`
-B - 50.000 a 99.999  | `r round(tabela[3,1]/tabela[3,3], 3)` | `r round(tabela[3,2]/tabela[3,3], 3)`
-A - acima de 100.000 | `r round(tabela[4,1]/tabela[4,3], 3)` | `r round(tabela[4,2]/tabela[4,3], 3)`
+Renda X Caiu na Malha Fina? | Sim | Não | Total
+----------------------------| --- | --- | -----
+D - abaixo de 25.000 | `r tabela[1,1]`/`r tabela[1,3]` | `r tabela[1,2]`/`r tabela[1,3]` | `r tabela[1,3]`/`r tabela[1,3]`
+C - 25.000 a 49.999  | `r tabela[2,1]`/`r tabela[2,3]` | `r tabela[2,2]`/`r tabela[2,3]` | `r tabela[2,3]`/`r tabela[2,3]`
+B - 50.000 a 99.999  | `r tabela[3,1]`/`r tabela[3,3]` | `r tabela[3,2]`/`r tabela[3,3]` | `r tabela[3,3]`/`r tabela[3,3]`
+A - acima de 100.000 | `r tabela[4,1]`/`r tabela[4,3]` | `r tabela[4,2]`/`r tabela[4,3]` | `r tabela[4,3]`/`r tabela[4,3]`
 </center>
+
+
+## Exemplo: Qual a chance de cair na malha fina?
+Probabilidade condicional  por faixa de renda em 2002
+<center>
+
+Renda X Caiu na Malha Fina? | Sim | Não | Total
+--------------------------- | --- | --- | -----
+D - abaixo de 25.000 | `r round(tabela[1,1]/tabela[1,3], 3)` | `r round(tabela[1,2]/tabela[1,3], 3)` | 1
+C - 25.000 a 49.999  | `r round(tabela[2,1]/tabela[2,3], 3)` | `r round(tabela[2,2]/tabela[2,3], 3)` | 1
+B - 50.000 a 99.999  | `r round(tabela[3,1]/tabela[3,3], 3)` | `r round(tabela[3,2]/tabela[3,3], 3)` | 1
+A - acima de 100.000 | `r round(tabela[4,1]/tabela[4,3], 3)` | `r round(tabela[4,2]/tabela[4,3], 3)` | 1
+</center>
+
 
 ## Independência {.build}
 Vimos que:
@@ -139,6 +145,7 @@ Quando $P(B\mid A)=P(B)$ (informação sobre $A$ não altera a probabilidade do 
 
 $$P(A\cap B)=P(A)P(B) $$
 
+
 ## Exemplo {.build}
 Considere o lançamento de dois dados "justos" (36 resultados possíveis têm a mesma probabilidade de ocorrer). 
 
@@ -149,6 +156,7 @@ Considere os eventos:
 - $B$: soma dos dados é igual a 8.
 
 - $C$: soma dos dados é igual a 7.
+
 
 ## Exemplo {.build}
 Eventos $A$ e $B$ são independentes?
@@ -163,6 +171,7 @@ $$P(A\cap B)=\frac{1}{36}\neq P(A)\times P(B)=\frac{6}{36}\times\frac{5}{36}$$
 
 Portanto, $A$ e $B$ não são eventos independentes.
 
+
 ## Exemplo {.build}
 Ainda no mesmo exemplo: os eventos $A$ e $C$ são independentes?
 
@@ -175,6 +184,7 @@ $P(C)= P(\{ (1,6),(2,5),(3,4),(4,3),(5,2),(6,1)\})=\frac{6}{36}$
 $$P(A\cap C)=\frac{1}{36}= P(A)\times P(C)=\frac{6}{36}\times\frac{6}{36}$$
 
 Portanto, $A$ e $C$ são eventos independentes.
+
 
 ## Exemplo {.build}
 Suponha que $A$ e $B$ sejam dois eventos disjuntos. 
@@ -193,6 +203,7 @@ $A$ e $B$ não são independentes.
 
 Além disso: $P(B\mid A)=\frac{P(A\cap B)}{P(A)}=0$, ou seja, dado que $A$ ocorre, $B$ não ocorre.
 
+
 ## Exemplo {.build}
 
 Em uma família com duas crianças, considere os eventos:
@@ -201,15 +212,13 @@ $A$={a primeira criança é uma menina} e $B$={as duas crianças são meninas}.
 
 - Mostre que $P(B\mid A)=1/2$.
 
-$$\Omega=\{FF,MM,FM,MF\}$$
+$\Omega=\{FF,MM,FM,MF\}$
 
-$$A=\{FF,FM\}$$
+$A=\{FF,FM\} \qquad B=\{FF\}  \qquad \Longrightarrow \quad B\cap A= B$
 
-$$B=\{FF\}$$
-
-$$B\cap A= B$$
-
+Portanto,
 $$P(B\mid A)=\frac{P(B\cap A)}{P(A)}=\frac{P(\{FF\})}{P(\{FF,FM \})}=\frac{1/4}{1/2}=1/2$$
+
 
 ## Exemplo {.build}
 
@@ -219,16 +228,16 @@ $A$={a primeira criança é uma menina} e $B$={as duas crianças são meninas}.
 
 - $A$ e $B$ são eventos independentes?
 
-<div class="columns-2">
-$$\Omega=\{FF,MM,FM,MF\}$$
-$$A=\{FF,FM\}$$
-$$B=\{FF\}$$
-$$B\cap A= B$$
-$$P(B\cap A)=P(B)=1/4$$
-$$P(A)P(B)=\frac{1}{2}\times\frac{1}{4}=\frac{1}{8}$$
-$$P(A\cap B)\neq P(A)P(B)$$
-$A$ e $B$ não são independentes.
-</div>
+$\Omega =\{FF,MM,FM,MF\}$
+
+$A=\{FF,FM\} \qquad B=\{FF\}  \qquad \Longrightarrow \quad B\cap A= B$
+
+Então, $P(B\cap A) = P(B) = \frac{1}{4}$ e
+
+$$P(A)P(B) =\frac{1}{2}\times\frac{1}{4}=\frac{1}{8} \neq P(B\cap A) $$
+
+> Portanto, $A$ e $B$ não são independentes.
+
 
 ## *Chutar* as respostas e ainda passar na prova {.build}
 
@@ -244,12 +253,13 @@ $A$ e $B$ não são independentes.
 
 $$\Omega=\{CCC,CCI,CIC,CII,ICC,ICI,IIC,III\}$$
 
+
 ## *Chutar* as respostas e ainda passar na prova {.build}
 Quais as probabilidades dos eventos do espaço amostral?
 
-- Para cada questão: $P(C)=0.2$ e $P(I)=0.8$.
+- Para cada questão: $P(C)=0.2 \quad \mbox{e} \quad P(I)=0.8$
 
-- $P(CCC)= P(C)\times P(C)\times P(C)=0.2^3=0.008$.
+- $P(CCC)= P(C)\times P(C)\times P(C)=0.2^3=0.008$
 
 <center><img src="figuras/quiz2.jpg" width=300>
 </center>
@@ -258,40 +268,41 @@ Qual a probabilidade do aluno acertar pelo menos duas questões?
 
 $$P(CCC)+P(CCI)+P(CIC)+P(ICC)=0.008+3\times0.032=0.104$$
 
-## Cinto de segurança e acidentes {.build}
 
-Uso de cinto/Sobreviveu | Sim (S) | Não (M) | **Total** 
------------------------ | ------- | ------- | ---------
+## Cinto de segurança e acidentes {.build .smaller}
+
+Uso de cinto / Sobreviveu | Sim (S) | Não ($\bar{S}$) | **Total** 
+------------------------- | ------- | ------- | ---------
 Sim (C)         | 414368     | 510      | **412878**
 Não ($\bar{C}$) | 162527     | 1601     | **164128**
 **Total**       | **574895** | **2111** | **577006**
 
 - Qual a probabilidade de que a pessoa morreu no acidente?  
 
-$$P(M)=2111/577006=0.004$$
+$$P(\bar{S})=\frac{2111}{577006} = 0.004$$
 
 - Qual a probabilidade de que a pessoa morreu dado que ela usava o cinto de segurança?  
 
-$$P(M\mid C)=P(M\cap C)/P(C)=510/412878=0.001$$
+$$P(\bar{S} \mid C)=P(\bar{S} \cap C)/P(C) = \frac{510}{412878} = 0.001$$
 
 
-## Cinto de segurança e acidentes {.build}
+## Cinto de segurança e acidentes {.build .smaller}
 
-Uso de cinto/Sobreviveu | Sim (S) | Não (M) | **Total** 
------------------------ | ------- | ------- | ---------
+Uso de cinto / Sobreviveu | Sim (S) | Não ($\bar{S}$) | **Total** 
+------------------------- | ------- | ------- | ---------
 Sim (C)         | 414368     | 510      | **412878**
 Não ($\bar{C}$) | 162527     | 1601     | **164128**
 **Total**       | **574895** | **2111** | **577006**
 
 - Qual a probabilidade de que a pessoa morreu dado que ela não usava o cinto de segurança?  
 
-$$P(M\mid \bar{C})=P(M\cap \bar{C})/P(\bar{C})=1601/164128=0.01$$
+$$P(\bar{S} \mid \bar{C})=\frac{P(\bar{S} \cap \bar{C})}{P(\bar{C})} = \frac{1601}{164128} = 0.01$$
 
 - Morte e uso de cinto são eventos independentes? 
 
-$$P(M\mid\bar{C})\neq P(M)=2111/577006=0.004$$
+$$P(\bar{S} \mid \bar{C})\neq P(\bar{S}) = \frac{2111}{577006} = 0.004$$
 
-$$P(M\mid C)\neq P(M)$$
+$$P(M\mid C)\neq P(\bar{S})$$
 
 
 ## Teorema de Bayes {.build}
@@ -300,9 +311,12 @@ Considere dois eventos quaisquer $A$ e $B$.
 
 Para que um elemento esteja em $A$, há duas possibilidades:
 
+<center><img src="figuras/bayes.png" width=300></center>
+
   - o elemento está em $A$ e em $B$;
 
   - o elemento está em $A$, mas não está em $B$.
+  
 
 ## Teorema de Bayes {.build}
 
@@ -314,6 +328,7 @@ Para que um elemento esteja em $A$, há duas possibilidades:
   $$P(A)=P(A\cap B)+P(A\cap B^c)$$
   
 <center><img src="figuras/bayes.png" width=300></center>
+
 
 ## Teorema de Bayes {.build}
 
@@ -327,17 +342,29 @@ Para que um elemento esteja em $A$, há duas possibilidades:
   
 **Interpretação**: a probabilidade do evento $A$ é uma média ponderada da probabilidade condicional do evento $A$ dado que $B$ ocorre e da probabilidade condicional do evento $A$ dado que $B$ não ocorre.  O peso de cada probabilidade condicional é a probabilidade do evento que está sendo levado em conta ao calcular a probabilidade condicional de $A$.
 
-## Teorema de Bayes {.build}
 
-$$P(B\mid A) = \frac{P(B\cap A)}{P(A)} = \frac{P(A\mid B)P(B)}{P(A\mid B)P(B) + P(A\mid B^c)P(B^c)}$$
+## Teorema de Bayes {.build}
+Sejam dois eventos quaisquer $A$ e $B$, tal que $P(A) \neq 0$. 
+
+Pelos resultados anteriores podemos escrever:
+
+$$
+\begin{aligned}
+P(B\mid A) &= \frac{P(B\cap A)}{P(A)} \\
+&= \frac{P(A\mid B)P(B)}{P(A\mid B)P(B) + P(A\mid B^c)P(B^c)}
+\end{aligned}
+$$
+
+Essa relação é chamada de **Teorema de Bayes**.
+
 
 ## Exemplo: Companhia de Seguros {.build}
 
 Uma companhia de seguros acredita que as pessoas podem ser divididas em duas categorias: 
 
-> 1. aquelas que estão mais sujeitas a acidentes. 
+1. aquelas que estão mais sujeitas a acidentes. 
 
-> 2. aquelas que não estão mais sujeitas a acidentes.
+2. aquelas que não estão mais sujeitas a acidentes.
 
 > - Os dados indicam que uma pessoa da categoria 1 terá um acidente durante o período de um ano com probabilidade 0.1. A probabilidade para todas as outras pessoas é 0.05.  
     
@@ -356,24 +383,37 @@ Considere os eventos:
  
  $B^c$: o novo cliente pertence à categoria 2.
 
-> Pelo Teorema de Bayes:
+> Não sabemos $P(A)$ diretamente, mas podemos calculá-la usando a seguinte fórmula:
 
 $$ P(A) = P(A\mid B)P(B)+P(A\mid B^c)P(B^c)$$
- $$ = 0.1\times 0.2 + 0.05\times 0.8 = 0.06 $$
+$$ = 0.1\times 0.2 + 0.05\times 0.8 = 0.06 $$
+
 
 ## Exemplo: Companhia de Seguros {.build}
 
 **Pergunta**: Se um novo cliente tem um acidente durante o primeiro ano, qual é a probabilidade de que ele pertença à categoria 1?
  
- $A$: o novo cliente tem um acidente durante o primeiro ano.
+$A$: o novo cliente tem um acidente durante o primeiro ano.
  
- $B$: o novo cliente pertence à categoria 1.
+$B$: o novo cliente pertence à categoria 1.
 
 $$ P(B\mid A) = \frac{P(B\cap A)}{P(A)} $$
 
 $$  = \frac{P(A\mid B)P(B)}{P(A)} $$
 
 $$  = \frac{0.1 \times 0.2}{0.06}=\frac{1}{3} $$
+
+
+## Câncer de Mama {.build}
+
+Câncer de mama afeta 1% das mulheres. 
+
+Mamografia é o teste padrão para detectar câncer de mama. Mas sabe-se que não é um teste perfeito.
+
+Estatísticas mostram que a acurácia da mamografia é 80%, ou seja, a probabilidade de detectar o câncer quando este realmente existe. E 9.6% das mamografias resultam em falsos positivos (teste positivo quando o câncer não existe). 
+
+Suponha que sua mãe faz uma mamografia e o resultado é positivo. Qual é a probabilidade dela realmente  estar com câncer de mama? 
+
 
 ## DNA e crime {.build}
 
@@ -387,6 +427,7 @@ $$  = \frac{0.1 \times 0.2}{0.06}=\frac{1}{3} $$
 
 > Queremos $P(Inocente\mid Comp)$, sendo que $P(Inocente)=P(Culpado)=0.5$
 
+
 ## DNA e crime {.build}
 $$ P(Inocente \mid Comp) = \frac{P(Inocente \cap Comp)}{P(Comp)} $$
 
@@ -397,6 +438,7 @@ $$ P(Inocente \mid Comp) = \frac{P(Inocente \cap Comp)}{P(Comp)} $$
 > $$ = \frac{0.000001 \times 0.50}{0.000001 \times 0.5 + 0.99 \times 0.5} = 0.000001 $$
 
 > A chance de ser inocente dado que houve compatibilidade de DNA é 1 em 1 milhão.
+
 
 ## DNA e crime {.build}
 Encontre a probabilidade do réu ser inocente dado que o DNA é compatível, sendo que a probabilidade incondicional dele ser inocente é 0.99.
@@ -410,6 +452,7 @@ Encontre a probabilidade do réu ser inocente dado que o DNA é compatível, sen
 > $$ = \frac{0.000001\times 0.99}{0.000001\times 0.99 + 0.99\times 0.01} = 0.00001 $$
 
 > A chance de ser inocente dado que houve compatibilidade de DNA é 1 em 100 mil.
+
 
 ## Leituras
 
