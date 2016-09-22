@@ -12,11 +12,11 @@ logo: ../logo-imecc.png
 ```{r,echo=FALSE,eval=FALSE}
 # gerar onde estará o bombom (rodar 1 vez)
 
-#set.seed(2015)
-#tmp <- sample(1:3,200,replace=TRUE)
+# set.seed(2015)
+# tmp <- sample(1:3,200,replace=TRUE)
 
-#dados <- data.frame(Experimento=1:length(tmp),Premio=tmp)
-#write.csv(dados,file="dadosOrdem.csv")
+# dados <- data.frame(Experimento=1:length(tmp),Premio=tmp)
+# write.csv(dados,file="dadosOrdem.csv")
 ```
 
 
@@ -33,7 +33,6 @@ logo: ../logo-imecc.png
 > *  Após a sua escolha, ele mostra uma porta que está vazia pra você. Então ele pergunta se você quer trocar a sua porta pela outra que restou.
 
 
-
 ## Porta dos Desesperados {.build}
 
 > Qual a melhor estratégia? 
@@ -42,32 +41,33 @@ logo: ../logo-imecc.png
 
 > Há alguma diferença?
 
+
 # Comparando as duas estratégias através da repetição do experimento aleatório
 
-## Experimentos 2S - 2015 - ME414C
+## Experimentos 2S - 2016 - ME414I
 
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 dados <- read.csv("dados.csv", sep=",", header = T)
 dados <- dados[complete.cases(dados),]
 ```
 
 A seguir apresentamos os resultados obtidos durante a aula:
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 #instale o pacote, para isso, retire # do início da primeira linha, rode uma vez e volte a incluir #
 #install.packages('printr',type = 'source',repos = c('http://yihui.name/xran', 'http://cran.rstudio.com'))
+
 library(printr)
 table(dados$Trocou, dados$Ganhou, dnn = c("Trocou?", "Ganhou?"))
 ```
 
 
-$$ P(ganhou|troucou) = `r round(mean(dados$Trocou=="s" & dados$Ganhou=="s")/(mean(dados$Trocou=="s")),2)`$$
+$$ P(\mbox{Ganhou }| \mbox{ Trocou}) = `r round(mean(dados$Trocou=="Sim" & dados$Ganhou=="Sim")/(mean(dados$Trocou=="Sim")),2)`$$
 
-$$ P(ganhou|naotrocou) = `r round(mean(dados$Trocou=="n" & dados$Ganhou=="s")/(mean(dados$Trocou=="n")),2)`$$
+$$ P(\mbox{Ganhou }| \mbox{ Não Trocou}) = `r round(mean(dados$Trocou=="Nao" & dados$Ganhou=="Sim")/(mean(dados$Trocou=="Nao")),2)`$$
 
+Entre os participantes que escolheram a **estratégia de trocar de porta**, temos que `r round(mean(dados$Trocou=="Sim" & dados$Ganhou=="Sim")/(mean(dados$Trocou=="Sim")), 2)*100`% saíram vencedores. 
 
-Entre os participantes que escolheram a **estratégia de trocar de porta**, temos que `r round(mean(dados$Trocou=="s" & dados$Ganhou=="s")/(mean(dados$Trocou=="s")),2)*100`% saíram vencedores. 
-
-Já entre os que escolheram **não trocar**, temos que `r round(mean(dados$Trocou=="n" & dados$Ganhou=="s")/(mean(dados$Trocou=="n")),2)*100`% venceram.
+Já entre os que escolheram **não trocar**, temos que `r round(mean(dados$Trocou=="Nao" & dados$Ganhou=="Sim")/(mean(dados$Trocou=="Nao")), 2)*100`% venceram.
 
 
 ## Simulação computacional: comparando as duas estratégias
@@ -80,32 +80,41 @@ Algo perto de infinito!
 
 Como temos tempo e bombons finitos, podemos fazer uma simulação da "Porta dos Desesperados", através de um programa de computador.
 
-## {.smaller}
-O código a seguir apresenta a simulação de 10000 programas da "Porta dos Desesperados".
 
-```{r,echo=TRUE}
-n=10000
+## {.smaller}
+O código a seguir (em R) apresenta a simulação de 10000 programas da **"Porta dos Desesperados"**.
+
+```{r, echo=TRUE}
+n <- 10000
 resultadoQuandoNaoTroca <- c()
 resultadoQuandoTroca <- c()
 portas <- c("A","B","C")
-for (i in 1:n)
-  {
-  portapremio <- sample(portas,size=1) # número da porta com o prêmio, escolhida ao acaso pela produção do programa
-  portaescolhida <- sample(portas,size=1) # número da porta escolhida ao acaso pelo participante
+for (i in 1:n) {
+  ## número da porta com o prêmio, escolhida ao acaso pela produção do programa
+  portapremio <- sample(portas, size=1) 
+  ## número da porta escolhida ao acaso pelo participante
+  portaescolhida <- sample(portas, size=1) 
+  
   portaslivres <- portas[portas != portaescolhida & portas !=portapremio]
-  ApresentadorMostra <- sample(portaslivres,size=1) # porta mostrada pelo apresentador, escolhida ao acaso entre as portas vazias disponíveis.
-  trocouPorta <- portas[portas != portaescolhida & portas !=ApresentadorMostra] # indica a porta escolhida após a troca
-  resultadoQuandoNaoTroca[i] <- ifelse(portaescolhida==portapremio,"ganhou","perdeu")
-  resultadoQuandoTroca[i] <- ifelse(trocouPorta==portapremio,"ganhou","perdeu")
+  
+  ## porta mostrada pelo apresentador, escolhida ao acaso entre as portas vazias disponíveis.
+  ApresentadorMostra <- sample(portaslivres, size=1) 
+  
+  ## indica a porta escolhida após a troca
+  trocouPorta <- portas[portas != portaescolhida & portas != ApresentadorMostra] 
+  
+  resultadoQuandoNaoTroca[i] <- ifelse(portaescolhida == portapremio, "ganhou", "perdeu")
+  resultadoQuandoTroca[i] <- ifelse(trocouPorta == portapremio, "ganhou", "perdeu")
   }
 
-proporcaoManteveGanhou <- mean(resultadoQuandoNaoTroca=="ganhou")
-proporcaoTrocouGanhou <- mean(resultadoQuandoTroca=="ganhou")
+proporcaoManteveGanhou <- mean(resultadoQuandoNaoTroca == "ganhou")
+proporcaoTrocouGanhou <- mean(resultadoQuandoTroca == "ganhou")
 ```
+
 
 ## Resultados da simulação
 
-Em `r n` vezes: 
+Em `r format(n)` vezes: 
 
 Estratégia não trocar de porta: ganha `r 100*proporcaoManteveGanhou`\% das vezes.
 
@@ -117,15 +126,14 @@ Portanto, a estratégia trocar de porta é a que tem maior chance de ganhar.
 # Comparando as duas estratégias através da Teoria da Probabilidade
 
 
-##
+## Qual a melhor estratégia?
 
 <center><img src="figuras/porta_monica.png" width=600></center>
 
 
-##
+## Qual a melhor estratégia?
 
-<center><img src="figuras/porta_leo.jpg" width=650></center>
-
+<center><img src="figuras/porta_leo.jpg" width=700></center>
 
 
 # Comparando as duas estratégias através do Teorema de Bayes
@@ -152,34 +160,34 @@ Para avaliar qual a melhor estratégia, temos também a opção de fazer os cál
 
 Suponha o seguinte cenário (sem perda de generalidade): o jogador escolhe a porta número 1. Considere os eventos:
 
-* $A_1$: prêmio está na porta 1.
-* $A_2$: prêmio está na porta 2.
-* $A_3$: prêmio está na porta 3.
-* $O$: apresentador abre a porta 3.
+* $A_1$: prêmio está na porta 1
+* $A_2$: prêmio está na porta 2
+* $A_3$: prêmio está na porta 3
+* $O$: apresentador abre a porta 3
 
 Temos que:
 
-* $P(A_1)=P(A_2)=P(A_3)=\frac{1}{3}$.
+* $P(A_1)=P(A_2)=P(A_3)=\frac{1}{3}$
+* $P(O\mid A_1)=\frac{1}{2}$
+* $P(O\mid A_2)=1$
+* $P(O\mid A_3)=0$
 
-* $P(O\mid A_1)=\frac{1}{2}$.
 
-* $P(O\mid A_2)=1$.
-
-* $P(O\mid A_3)=0$.
-
-##
+## Qual a melhor estratégia? {.build}
 
 A probabilidade do prêmio estar na porta 1 (porta escolhida pelo jogador), dado que o apresentador mostra a porta 3:
 
-$P(A_1 \mid O)=\frac{P(O\mid A_1)P(A_1)}{P(O\mid A_1)P(A_1)+P(O\mid A_2)P(A_2)+P(O\mid A_3)P(A_3)}=\frac{\frac{1}{2}\times \frac{1}{3}}{\frac{1}{2}\times\frac{1}{3}+1\times\frac{1}{3}+0\times\frac{1}{3}}$
+$P(A_1 \mid O)=\frac{P(O\mid A_1)P(A_1)}{P(O\mid A_1)P(A_1)+P(O\mid A_2)P(A_2)+P(O\mid A_3)P(A_3)}=\frac{\frac{1}{2}\times \frac{1}{3}}{\frac{1}{2}\times\frac{1}{3}+1\times\frac{1}{3}+0\times\frac{1}{3}} = \frac{1}{3}$
 
 
 A probabilidade do prêmio estar na porta 2 (ou seja, se o jogador trocasse do porta, venceria), dado que o apresentador mostra a porta 3:
 
-$P(A_2 \mid O)=\frac{P(O\mid A_2)P(A_2)}{P(O\mid A_1)P(A_1)+P(O\mid A_2)P(A_2)+P(O\mid A_3)P(A_3)}=\frac{1\times \frac{1}{3}}{\frac{1}{2}\times\frac{1}{3}+1\times\frac{1}{3}+0\times\frac{2}{3}}$
+$P(A_2 \mid O)=\frac{P(O\mid A_2)P(A_2)}{P(O\mid A_1)P(A_1)+P(O\mid A_2)P(A_2)+P(O\mid A_3)P(A_3)}=\frac{1\times \frac{1}{3}}{\frac{1}{2}\times\frac{1}{3}+1\times\frac{1}{3}+0\times\frac{2}{3}} = \frac{2}{3}$
 
+Portanto, se o jogador escolhe a porta 1 e: 
 
-Portanto, se o jogador escolhe a porta 1 e não troca, a probabilidade de vencer o prêmio é $1/3$. Se o jogador escolhe a porta 1 e troca, a probabilidade de vencer o prêmio é $2/3$.
+* **não troca**: a probabilidade de vencer o prêmio é $1/3$
+* **troca**: a probabilidade de vencer o prêmio é $2/3$
 
 
 ##
