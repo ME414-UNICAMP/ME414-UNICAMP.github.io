@@ -302,7 +302,24 @@ $$P(\bar{S} \mid \bar{C})=\frac{P(\bar{S} \cap \bar{C})}{P(\bar{C})} = \frac{160
 
 $$P(\bar{S} \mid \bar{C})\neq P(\bar{S}) = \frac{2111}{577006} = 0.004$$
 
-$$P(M\mid C)\neq P(\bar{S})$$
+$$P(\bar{S} \mid C)\neq P(\bar{S})$$
+
+
+## Exemplo {.build}
+
+Uma sacola contém 10 sementes de flores vermelhas e 5 de flores brancas. Selecionamos duas sementes ao acaso, uma a uma e sem reposição.
+
+Qual é a probabilidade de que : 
+
+  > + a primeira semente seja vermelha? 
+  > + a segunda seja branca se a primeira foi vermelha? 
+
+Defina os eventos:
+
+$A$: a primeira semente é vermelha e $B$: a segunda semente é branca
+
+Então:
+$$P(A) = \frac{10}{15} = \frac{2}{3} \qquad \mbox{e} \qquad P(B|A) = \frac{5}{14}$$
 
 
 ## Teorema de Bayes {.build}
@@ -328,9 +345,9 @@ Para que um elemento esteja em $A$, há duas possibilidades:
   $$P(A)=P(A\cap B)+P(A\cap B^c)$$
   
 <center><img src="figuras/bayes.png" width=300></center>
-
-
-## Teorema de Bayes {.build}
+  
+  
+## Teorema das Probabilidades Totais {.build}
 
   Temos que:
   $$P(A\cap B)=P(A\mid B) P(B)$$
@@ -343,28 +360,64 @@ Para que um elemento esteja em $A$, há duas possibilidades:
 **Interpretação**: a probabilidade do evento $A$ é uma média ponderada da probabilidade condicional do evento $A$ dado que $B$ ocorre e da probabilidade condicional do evento $A$ dado que $B$ não ocorre.  O peso de cada probabilidade condicional é a probabilidade do evento que está sendo levado em conta ao calcular a probabilidade condicional de $A$.
 
 
-## Teorema de Bayes {.build}
-Sejam dois eventos quaisquer $A$ e $B$, tal que $P(A) \neq 0$. 
+## Teorema das Probabilidades Totais {.build}
 
-Pelos resultados anteriores podemos escrever:
+Dizemos que os eventos $\{B_1, B_2, \ldots, B_k\}$ formam um partição do espaço amostral $\Omega$ se 
+ são mutuamente exclusivos e a união desses eventos é $\Omega$.
+ 
+ <center><img src="figuras/totalprobability.png" width=350></center>
+
+Então,
+
+$$P(A) = \sum_{i=1}^n P(A \mid B_i) P(B_i)$$
+
+
+## Teorema de Bayes {.build}
+
+Se considerarmos a partição $B$ e $B^c$ do espaço amostral $\Omega$ e $A$ um evento em $\Omega$. Então:
+
+$$P(B\mid A) = \frac{P(B\cap A)}{P(A)} = \frac{P(A\mid B)P(B)}{P(A\mid B)P(B) + P(A\mid B^c)P(B^c)}$$
+
+No caso geral, seja $\{B_1, \ldots, B_n\}$ uma partição de eventos de $\Omega$ e $A$ um evento em $\Omega$:
+
+$$ P(B_i \mid A) = \frac{P(A\mid B_i)P(B_i)}{\sum_{i=1}^n P(A \mid B_i) P(B_i)}$$
+
+
+## Exemplo: Teste de diagnóstico {.build}
+
+Um exame de sangue é 99% efetivo em detectar uma certa doença quando esta está presente. No entanto, 2% são falso-positivos. Suponha que 0,5% da população tem a doença.
+
+Qual a probabilidade condicional de que um indivíduo testado aleatoriamente tenha a doença dado que o teste deu positivo? 
+
+Considere os eventos: $D$ = {estar doente} e $TP$ = {testar positivo}
+
+$P(TP \mid D)=0.99 \qquad P(TP \mid D^c)=0.02	\quad \mbox{e} \quad P(D)=0.005$
 
 $$
 \begin{aligned}
-P(B\mid A) &= \frac{P(B\cap A)}{P(A)} \\
-&= \frac{P(A\mid B)P(B)}{P(A\mid B)P(B) + P(A\mid B^c)P(B^c)}
+P(D \mid TP) & = \frac{P(TP \mid D)P(D)}{P(TP \mid D)P(D) + P(TP \mid D^c)P(D^c)} \\
+& = \frac{0.99 \times 0.005}{0.99 \times 0.005 + 0.02 \times 0.995} = 0.20
 \end{aligned}
 $$
 
-Essa relação é chamada de **Teorema de Bayes**.
+
+## Câncer de Mama {.build}
+
+Câncer de mama afeta 1% das mulheres. 
+
+Mamografia é o teste padrão para detectar câncer de mama. Mas sabe-se que não é um teste perfeito.
+
+Estatísticas mostram que a mamografia é 80% efetiva em detectar o câncer quando este realmente existe. E 9.6% das mamografias resultam em falsos positivos (teste positivo quando o câncer não existe). 
+
+Suponha que sua mãe faz uma mamografia e o resultado é positivo. Qual é a probabilidade dela realmente estar com câncer de mama? 
 
 
 ## Exemplo: Companhia de Seguros {.build}
 
 Uma companhia de seguros acredita que as pessoas podem ser divididas em duas categorias: 
 
-1. aquelas que estão mais sujeitas a acidentes. 
-
-2. aquelas que não estão mais sujeitas a acidentes.
+> 1. aquelas que estão mais sujeitas a acidentes. 
+> 2. aquelas que não estão mais sujeitas a acidentes.
 
 > - Os dados indicam que uma pessoa da categoria 1 terá um acidente durante o período de um ano com probabilidade 0.1. A probabilidade para todas as outras pessoas é 0.05.  
     
@@ -377,79 +430,82 @@ Uma companhia de seguros acredita que as pessoas podem ser divididas em duas cat
 
 Considere os eventos:
 
- $A$: o novo cliente tem um acidente durante o primeiro ano. 
+ $A$: o novo cliente tem um acidente durante o primeiro ano 
 
- $B$: o novo cliente pertence à categoria 1. 
+ $B$: o novo cliente pertence à categoria 1
  
- $B^c$: o novo cliente pertence à categoria 2.
+ $B^c$: o novo cliente pertence à categoria 2
 
-> Não sabemos $P(A)$ diretamente, mas podemos calculá-la usando a seguinte fórmula:
+> Pelo Teorema das Probabilidades Totais:
 
-$$ P(A) = P(A\mid B)P(B)+P(A\mid B^c)P(B^c)$$
-$$ = 0.1\times 0.2 + 0.05\times 0.8 = 0.06 $$
+$$ 
+\begin{aligned} P(A) & = P(A\mid B)P(B)+P(A\mid B^c)P(B^c) \\
+ & = 0.1\times 0.2 + 0.05\times 0.8 = 0.06 
+\end{aligned} 
+$$
 
 
 ## Exemplo: Companhia de Seguros {.build}
 
 **Pergunta**: Se um novo cliente tem um acidente durante o primeiro ano, qual é a probabilidade de que ele pertença à categoria 1?
  
-$A$: o novo cliente tem um acidente durante o primeiro ano.
+ $A$: o novo cliente tem um acidente durante o primeiro ano
  
-$B$: o novo cliente pertence à categoria 1.
+ $B$: o novo cliente pertence à categoria 1
 
-$$ P(B\mid A) = \frac{P(B\cap A)}{P(A)} $$
+Pelo Teorema de Bayes
 
-$$  = \frac{P(A\mid B)P(B)}{P(A)} $$
-
-$$  = \frac{0.1 \times 0.2}{0.06}=\frac{1}{3} $$
-
-
-## Câncer de Mama {.build}
-
-Câncer de mama afeta 1% das mulheres. 
-
-Mamografia é o teste padrão para detectar câncer de mama. Mas sabe-se que não é um teste perfeito.
-
-Estatísticas mostram que a acurácia da mamografia é 80%, ou seja, a probabilidade de detectar o câncer quando este realmente existe. E 9.6% das mamografias resultam em falsos positivos (teste positivo quando o câncer não existe). 
-
-Suponha que sua mãe faz uma mamografia e o resultado é positivo. Qual é a probabilidade dela realmente  estar com câncer de mama? 
+$$ 
+\begin{aligned}
+P(B\mid A) & = \frac{P(B\cap A)}{P(A)} = \frac{P(A\mid B)P(B)}{P(A)} \\
+& = \frac{0.1 \times 0.2}{0.06}=\frac{1}{3} 
+\end{aligned}
+$$
 
 
-## DNA e crime {.build}
+## Exemplo: DNA e crime {.build}
 
-> - Dado que o réu é inocente, suponha que a probabilidade do DNA dele ser compatível com o DNA encontrado na cena do crime seja 1 em um milhão.  $$P(Comp\mid Inocente)=0.000001$$
+> - Dado que o réu é inocente ($I$), suponha que a probabilidade do DNA dele ser compatível ($C$) com o DNA encontrado na cena do crime seja 1 em um milhão.  
 
-> - Dado que o réu é culpado, suponha que a probabilidade do DNA dele ser compatível com o DNA da cena do crime seja 0.99.  $$P(Comp\mid Culpado)=0.99$$
+$$P(C \mid I)=0.000001$$
+
+> - Dado que o réu é culpado ($\bar{I}$), suponha que a probabilidade do DNA dele ser compatível com o DNA da cena do crime seja 0.99.  
+
+$$P(C \mid \bar{I})=0.99$$
 
 > - O DNA do réu é compatível com o DNA da cena do crime.
 
-> - Encontre a probabilidade do réu ser inocente dado que o DNA é compatível, sendo que a probabilidade incondicional dele ser inocente é 0.5.
+> - Encontre a probabilidade do réu ser inocente dado que o DNA é compatível, sendo que a probabilidade incondicional dele ser inocente, $P(I)$, é 0.5.
 
-> Queremos $P(Inocente\mid Comp)$, sendo que $P(Inocente)=P(Culpado)=0.5$
+> Queremos $P(I \mid C)$, sendo que $P(I)=P(\bar{I})=0.5$
 
 
-## DNA e crime {.build}
-$$ P(Inocente \mid Comp) = \frac{P(Inocente \cap Comp)}{P(Comp)} $$
+## Exemplo: DNA e crime {.build}
 
-> $$ = \frac{P(Comp \mid Inocente)P(Inocente)}{P(Comp)} $$
-
-> $$ = \frac{P(Comp \mid Inocente)P(Inocente)}{P(Comp \mid Inocente)P(Inocente) + P(Comp \mid Culpado)P(Culpado)} $$
-
-> $$ = \frac{0.000001 \times 0.50}{0.000001 \times 0.5 + 0.99 \times 0.5} = 0.000001 $$
+Pelo Teorema de Bayes:
+$$
+\begin{aligned}
+P(I \mid C) &= \frac{P(I \cap C)}{P(C)} = \frac{P(C \mid I)P(I)}{P(C)} \\
+& = \frac{P(C \mid I)P(I)}{P(C \mid I)P(I) + P(C \mid \bar{I})P(\bar{I})} \\
+& = \frac{0.000001 \times 0.50}{0.000001 \times 0.5 + 0.99 \times 0.5} \\
+& = 0.000001 
+\end{aligned} 
+$$
 
 > A chance de ser inocente dado que houve compatibilidade de DNA é 1 em 1 milhão.
 
 
-## DNA e crime {.build}
-Encontre a probabilidade do réu ser inocente dado que o DNA é compatível, sendo que a probabilidade incondicional dele ser inocente é 0.99.
+## Exemplo: DNA e crime {.build}
+Encontre a probabilidade do réu ser inocente dado que o DNA é compatível, sendo que a probabilidade incondicional dele ser inocente, $P(I)$, é 0.99.
 
-> $$ P(Inocente\mid Comp) = \frac{P(Inocente \cap Comp)}{P(Comp)} $$
-
-> $$ = \frac{P(Comp\mid Inocente)P(Inocente)}{P(Comp)} $$
-
-> $$ = \frac{P(Comp\mid Inocente)P(Inocente)}{P(Comp\mid Inocente)P(Inocente)+P(Comp\mid Culpado)P(Culpado)} $$
-
-> $$ = \frac{0.000001\times 0.99}{0.000001\times 0.99 + 0.99\times 0.01} = 0.00001 $$
+$$ 
+\begin{aligned}
+P(I\mid C) & = \frac{P(I \cap C)}{P(C)} = \frac{P(C\mid I)P(I)}{P(C)} \\
+& = \frac{P(C\mid I)P(I)}{P(C\mid I)P(I)+P(C\mid \bar{I})P(\bar{I})} \\
+& = \frac{0.000001\times 0.99}{0.000001\times 0.99 + 0.99\times 0.01} \\
+&= 0.00001 
+\end{aligned}
+$$
 
 > A chance de ser inocente dado que houve compatibilidade de DNA é 1 em 100 mil.
 
