@@ -32,6 +32,7 @@ $$
 
 > No entanto, claramente a dispersão é bem diferente para as três variáveis.
 
+
 ## Variância: variável aleatória discreta {.build}
 
 Queremos uma medida para quantificar quão distantes os valores da v.a. $X$ estão da sua esperança.
@@ -93,6 +94,7 @@ Var(X) & = p-p^2=p(1-p)
 \end{aligned} 
 $$
 
+
 ## Propriedades da Esperança {.build}
  
 1. Para qualquer v.a. $X$ e constantes $a$ e $b$:
@@ -104,6 +106,7 @@ $$
 
 2. Se $X_1, X_2, \ldots, X_n$ são variáveis aleatórias:
  $$ \mathbb E\left(\sum_{i=1}^n X_i \right) = \sum_{i=1}^n \mathbb E(X_i)$$
+
 
 ## Propriedades da Esperança {.build}
 
@@ -118,6 +121,7 @@ $$ X=  \begin{cases}
 \end{cases}$$
 
 $$\mathbb E(X^2) = 1^2 \times p + 0^2 \times (1-p) = p$$
+
 
 ## Propriedades da Variância {.build}
  
@@ -146,6 +150,7 @@ $$P\left(X \geq Md\right)\geq \frac{1}{2} \quad \mbox{e} \quad P\left(X \leq Md\
 
 $$P\left(X=Mo\right)=\max\{p_{1},p_{2},\ldots \}$$
 
+
 ## Medidas de posição para v.a.'s discretas {.build}
 
 **Exemplo:** considere a v.a. discreta $X$, tal que:
@@ -162,6 +167,7 @@ $P(X=x)$ | 0.3 | 0.2 | 0.4 | 0.1
 
 > * Obs: note que nem a média (8.5) nem a mediana (12.5) são valores assumidos pela variável $X$.
 
+
 ## Medidas de posição para v.a.'s discretas {.build}
 
 **Exemplo:** considere a v.a. $X$ tal que:
@@ -175,6 +181,7 @@ $P(X=x)$ | 0.1 | 0.3 | 0.2 | 0.2 | 0.2
 > $$Mo(X)=5$$
 
 > $$Md(X)=8$$
+
 
 ## Medidas de posição para v.a.'s discretas {.build}
 
@@ -194,6 +201,7 @@ $$Mo(Y)=5Mo(X)-10 = 5 \times 5 - 10 = 15$$
 
 $$Md(Y)=5Md(X)-10 = 5 \times 8 = 10= 30$$
 
+
 ## Exemplo {.build}
 
 Considere uma urna contendo três bolas vermelhas e cinco pretas. 
@@ -210,11 +218,13 @@ Considere uma urna contendo três bolas vermelhas e cinco pretas.
 
 > - a segunda terá 5 em 7 se a primeira for vermelha, ou 4 em 7 se a primeira foi preta, e assim por diante.
 
+
 ## Exemplo (continuação) 
 
 Retirar 3 bolas, sem reposição, de uma urna com 3 bolas vermelhas e 5 pretas
 
 <center><img src="figuras/organ.png" width=550></center>
+
 
 ## Exemplo (continuação) {.smaller}
 
@@ -231,6 +241,7 @@ VPV | $3/8\times5/7\times2/6 = 5/56$
 VVP | $3/8\times2/7\times5/6 = 5/56$ 
 VVV | $3/8\times2/7\times1/6 = 1/56$
 
+
 ## Exemplo (continuação) {.build}
 
 Como $X$ é o número de bolas pretas, temos que:
@@ -244,6 +255,7 @@ $\{VVV\}$ | 0 | $0.02$
 $\{VVP\} \cup \{VPV\} \cup \{PVV\}$ | 1 | 0.27
 $\{PPV\} \cup \{PVP\} \cup \{VPP\}$ | 2 | 0.53
 $\{PPP\}$ | 3 | 0.18
+
 
 ## Exemplo (continuação) {.build}
 
@@ -259,7 +271,8 @@ Var(X) & = \mathbb E[(X-\mu)^2] = \sum_{x=0}^3 (x-\mu)^2 p_X(x) \\
   & + (2-1.87)^2\times 0.53 + (3-1.87)^2 \times 0.18= 0.51 
 \end{aligned} 
 $$
-  
+
+
 ## Exemplo {.build}
 
 O tempo $T$, em minutos, necessário para um operário processar certa peça é uma v.a. com a seguinte distribuição de probabilidade:
@@ -274,6 +287,7 @@ $P(T=t)$ | $0.1$ | $0.1$ | $0.3$ | $0.2$ | $0.2$ | $0.1$
 2. Cada peça processada paga ao operador $\$2.00$ mas, se ele processa a peça em menos de 6 minutos, ganha $\$0.50$ por minuto poupado. Por exemplo, se ele processa a peça em 4 minutos, ganha um bônus de $\$1.00$. Encontre a distribuição, a média e a variância da v.a. $S$: quantia paga por peça.
 
 *Fonte: Morettin & Bussab*, Estatística Básica $5^a$ edição, pág 140.
+
 
 ## Exemplo (continuação) {.build}
 
@@ -291,6 +305,7 @@ $S$ |  $\$4.00$ | $\$3.50$ | $\$3.00$ | $\$2.50$ | $\$2.00$
 --- | :-----: | :----: | :----: | :----: | :----:
 $P(S=s)$ | $0.1$ | $0.1$ | $0.3$ | $0.2$ | $0.3$
 
+
 ## Exemplo (continuação) {.build}
 
 Obtemos a média e a variância de $S$ através da definição:
@@ -306,6 +321,7 @@ $$
 $$
 
 Então, $$\mbox{Var} (S) = 7.975 - (2.75)^2 = 0.4125$$
+
 
 # Principais Modelos Discretos
 
@@ -347,6 +363,7 @@ ou
 
 $Var(X) = \mathbb E(X^2) - [\mathbb E(X)]^2 = \displaystyle \frac{1}{k} \left[\sum_{j=1}^{k}x_{j}^{2} - \frac{1}{k} \left ( \displaystyle\sum_{j=1}^{k}x_{j} \right)^{2} \right]$
 
+
 ## Uniforme Discreta {.build}
 
 > **Exemplo:** lançamento de um dado honesto de 6 faces
@@ -361,6 +378,7 @@ $\mathbb E(X) = \frac{1}{6} (1+2+3+4+5+6)= \frac{21}{6} = 3.5$
 
 $Var(X) = \displaystyle \frac{1}{6} \left[(1 + 4 + 9 + 16 + 25 + 36) - \frac{1}{6} (21)^{2} \right] = \frac{1}{6} \times \frac{35}{2} = 2.92$
 
+
 ## Uniforme Discreta {.build}
 
 Cálculo da função de distribuição acumulada (f.d.a.) de uma variável uniforme discreta:
@@ -373,6 +391,7 @@ $$F(x)= P(X\leq x)= \sum_{x_i \leq x} \frac{1}{k} = \frac{\#(x_i \leq x)}{k}$$
 
 * $F(2.5)= P(X\leq2.5)= P(X=1)+P(X=2)=\frac{2}{6}$
 
+
 ## Uniforme Discreta - f.d.a
 
 $X$ |$p(x)$ | $F(x)$ 
@@ -383,6 +402,7 @@ $X$ |$p(x)$ | $F(x)$
 4 | $\frac{1}{6}$ | $\frac{4}{6}$ 
 5 | $\frac{1}{6}$ | $\frac{5}{6}$  
 6 | $\frac{1}{6}$ | $\frac{6}{6}$ 
+
 
 ## Uniforme Discreta - Gráficos
 
@@ -403,6 +423,7 @@ plotcdf(x, p)
 ```
 </center>
 
+
 ## Bernoulli {.build}
 Em muitas aplicações, cada observação de um experimento aleatório é **binária**: tem apenas dois resultados possíveis.  
 
@@ -411,7 +432,6 @@ Em muitas aplicações, cada observação de um experimento aleatório é **bin�
 >  + aceitar ou recusar uma oferta de cartão de crédito de seu banco.
    
 >  + votar sim ou não em uma assembléia.
-
 
 
 ## Modelo Bernoulli {.build}
@@ -423,6 +443,7 @@ Em muitas aplicações, cada observação de um experimento aleatório é **bin�
 > * **Exemplo:** lançar uma moeda e verificar se cai cara ou coroa. Consideramos como sucesso, a obtenção de cara. Se a moeda é honesta, $p=1/2$.
 
 > * Esse tipo de experimento é conhecido como **Ensaio de Bernoulli**.
+
 
 ## Modelo Bernoulli {.build}
 
@@ -442,6 +463,7 @@ $$
 
 > $$P(X=1)=P(sucesso)=p  \;\; \rightarrow \;\; P(X=0)=P(fracasso)=1-p$$
 
+
 ## Modelo Bernoulli {.build}
 
 Seja $X$ uma v.a. discreta assumindo apenas valores 0 e 1, onde $X=1$ corresponde a sucesso e seja $p$ a probabilidade de sucesso. 
@@ -458,6 +480,7 @@ Ou de forma equivalente, podemos escrever como:
 $$P(X=x) = p^{x}(1-p)^{1-x},  \quad \mbox{para } x=0,1$$ 
 
 **Notação:** $X \sim b(p)$
+
 
 ## Bernoulli - Esperança e Variância {.build}
 
@@ -477,6 +500,7 @@ Var(X) &= \mathbb E(X^{2})-[\mathbb E(X)]^{2}  \\
 & = p-p^{2} =p(1-p)
 \end{aligned}
 $$
+
 
 ## Bernoulli {.smaller}
 
@@ -514,6 +538,7 @@ arrows(x0=0:1, y0=c(0, p[1])+.03, y1=c(p[1],1)-.03, length=.1, code=3, col="red"
 text(c(0.2, 1.1), c(0.15, 0.7), labels=c("1-p", "p"), cex=1.2)
 ```
 
+
 ## Bernoulli {.build}
 
 **Exemplo:** lançamos um dado e consideramos sucesso a obtenção da face 5
@@ -533,7 +558,8 @@ $$
 >  $\qquad \mathbb E(X)=\frac{1}{6} \qquad \qquad \mathbb E(X^2)=\frac{1}{6}$
 
 >  $\qquad Var(X)=\frac{1}{6}-\frac{1}{36}=\frac{6-1}{36}=\frac{5}{36}$ 
-  
+
+
 ## Modelo Binomial {.build}
 
 Ao obtermos uma amostra do experimento/fenômeno aleatório com observações binárias, podemos resumir os resultados usando o número ou a proporção de observações com o resultado de interesse.
@@ -541,7 +567,7 @@ Ao obtermos uma amostra do experimento/fenômeno aleatório com observações bi
 > Sob certas condições, a v.a. $X$ que conta o número de vezes que um resultado específico ocorreu, dentre dois possíveis, tem uma distribuição de probabilidade chamada **Binomial**. 
 
 
-* Considere um experimento aleatório com espaço amostral $\Omega$ e o evento $A$. 
+* Considere um experimento aleatório com espaço amostral $\Omega$ e o evento $A$.
 
 > * Vamos dizer que ocorreu sucesso se o evento $A$ aconteceu. Se $A$ não aconteceu ocorreu fracasso. 
 
@@ -567,6 +593,7 @@ $$
 
 >  Pelo enunciado, sabe-se que $P(X_{i}=1)=p=0.8$.
 
+
 ## Exemplo: vacinas {.build}
 
 * Os indivíduos 1, 2 e 3 são independentes.  
@@ -576,6 +603,7 @@ $$
 > * Se o interesse está em estudar $X=$ número de indivíduos imunizados no grupo, $X$ poderá assumir valores $\{0,1,2,3\}$. 
 
 > * Note que $X=X_{1}+X_{2}+X_{3}$.
+
 
 ## Exemplo: vacinas {.smaller}
 
@@ -590,6 +618,7 @@ $X_{1}=1$, $X_{2}=0$, $X_{3}=1$ | $(0.8)^{2}\times0.2$ | 2
 $X_{1}=0$, $X_{2}=1$, $X_{3}=1$ | $(0.8)^{2}\times0.2$ | 2 
 $X_{1}=1$, $X_{2}=1$, $X_{3}=1$ | $(0.8)^{3}$ | 3 
 
+
 ## Modelo Binomial {.build}
 * Assim, as probabilidades de cada valor possível de $X$ são:
 
@@ -602,6 +631,7 @@ $P(X=x)$ | $(0.2)^{3}$ | $3\times0.8\times(0.2)^{2}$ | $3\times(0.8)^{2}\times0.
 
 > $$P(X=x)={3\choose x}(0.8)^{x}(0.2)^{3-x}, \qquad x=0,1,2,3$$
 
+
 ## Binomial {.build}
 **Modelo Geral:** Considere a repetição de $n$ ensaios $X_i$ Bernoulli independentes e todos com a mesma probabilidade de sucesso $p$.  
 
@@ -612,6 +642,7 @@ $P(X=x)$ | $(0.2)^{3}$ | $3\times0.8\times(0.2)^{2}$ | $3\times(0.8)^{2}\times0.
 
 > A esperança e variância de uma v.a. Binomial são dadas por:
 > $$\mathbb E(X)=np \qquad \mbox{e} \qquad Var(X)=np(1-p)$$
+
 
 ## Modelo Binomial
 Distribuição de probabilidade de uma $Bin(3, p)$, com $p=0.2, 0.5$ e $0.8$.
@@ -635,6 +666,7 @@ binomial(3, ylim=c(0, .5))
 ```
 </center>
 
+
 ## Modelo Binomial
 Distribuição de probabilidade de uma $Bin(10, p)$, com $p=0.2, 0.5$ e $0.8$.
 <center>
@@ -643,6 +675,7 @@ binomial(10, ylim=c(0, .3))
 ```
 </center>
 
+
 ## Exemplo: Vacina {.build}
 
 * No exemplo da vacina, temos então que o número de indíviduos imunizados segue uma distribuição Binomial com $n=3$ e $p=0.8$
@@ -650,11 +683,12 @@ binomial(10, ylim=c(0, .3))
 > $$X\sim Bin(3,0.8)$$
 
 > * Qual a probabilidade de que dentre os 3 indíviduos, nenhum tenha sido imunizado?
-> $$ P(X=0) = {3 \choose 0} 0.8^0 0.2^3 = `r dbinom(0, 3, .8)`$$
+> $$ P(X=0) = {3 \choose 0} (0.8)^0 (0.2)^3 = `r dbinom(0, 3, .8)`$$
 
 > * Encontre a esperança e variância:
 
 > $$\mathbb E(X)=3\times 0.8 = `r 3 * 0.8` \qquad \mbox{e} \qquad Var(X)=3\times0.8\times0.2 = `r 3*.8*.2`$$
+
 
 ## Exemplo: Inspeção {.build}
 
@@ -664,6 +698,7 @@ Um inspetor de qualidade extrai uma amostra aleatória de 10 tubos armazenados n
 
 > Se $X$ denotar a variável "número de tubos defeituosos em 10 extrações independentes e aleatórias", qual o seu valor esperado? Qual a variância?
 
+
 ## Exemplo: Inspeção {.build}
 
 Note que a variável aleatória $X$ = número de tubos defeituosos em 10 extrações tem distribuição binomial, com parâmetros $n=10$ e $p=0.2$.
@@ -671,14 +706,15 @@ Note que a variável aleatória $X$ = número de tubos defeituosos em 10 extraç
 > Então, "não mais do que dois tubos defeituosos" é o evento $\{X\leq2\}$. 
 
 > Sabemos que, para $X \sim Bin(10, 0.2)$ 
-> $$P(X=x) = { 10\choose x } 0.2^x (1-0.2)^{10-x}, \qquad x=0,1, \ldots, 10$$ 
+> $$P(X=x) = { 10\choose x } (0.2)^x (0.8)^{10-x}, \qquad x=0,1, \ldots, 10$$ 
 
 > e que 
 $$\begin{aligned}
 P(X\leq2) &=  P(X=0) + P(X=1) + P(X=2) \\
-&=(1-0.2)^{10} + 10 \times 0.2 (1-0.2)^{9} + 45 \times 0.2^2 (1-0.2)^8 = 0.6778
+&=(0.8)^{10} + 10 (0.2)(0.8)^{9} + 45 (0.2)^2 (0.8)^8 = 0.678
 \end{aligned}
 $$
+
 
 ## Exemplo: Inspeção {.build}
 
@@ -698,6 +734,7 @@ P(X\geq 4) &=  1 - P(X < 4) \\
 &= 1 - P(X \leq 3) \\
 &= 1-0.879 = 0.121
 \end{aligned} $$
+
 
 ## Exemplo: Comprador A ou B? {.build}
 
@@ -725,15 +762,16 @@ O experimento do **comprador A** tem distribuição $X_A \sim Bin(5, 1/5)$  enqu
 Para o **comprador A**, temos que: 
 $$ \begin{aligned}
 P(X_A > 1 ) &= 1 - P(X_A = 0 ) - P(X_A = 1 ) \\
-&= 1 - {5 \choose 0} \left (1-\frac{1}{5} \right)^5- {5 \choose 1} \left( \frac{1}{5} \right) \left (1-\frac{1}{5} \right)^4 = 0.2627
+&= 1 - {5 \choose 0} \left (1-\frac{1}{5} \right)^5- {5 \choose 1} \left( \frac{1}{5} \right) \left (1-\frac{1}{5} \right)^4 = 0.263
 \end{aligned}$$ 
+
 
 ## Exemplo: Comprador A ou B? {.build}
 
 De modo similar, para o **comprador B** temos:
 $$\begin{aligned}
 P(X_B > 2 ) &= 1 - {10 \choose 0} \left (1-\frac{1}{5} \right )^{10} - {10 \choose 1} \frac{1}{5} \left (1-\frac{1}{5} \right )^9 \\
-&- {10 \choose 2} \left( \frac{1}{5} \right)^2 \left (1-\frac{1}{5} \right )^8 = 0.3222
+&- {10 \choose 2} \left( \frac{1}{5} \right)^2 \left (1-\frac{1}{5} \right )^8 = 0.322
 \end{aligned}$$ 
 
 Como o segundo comprador irá classificar o lote como $II$ com maior probabilidade que o primeiro, ele é o que oferece menor lucro para o fornecedor. 
@@ -747,17 +785,18 @@ Preço por peça na categoria $I$: \$1.20. Preço por peça na categoria $II$: \
 
 Se o industrial decidir vender o lote para o **comprador A**, temos que  
 
-$$\mathbb E(\mbox{lucro A}) = 1.20 \times 0.7373 + 0.80 \times 0.2627 \approx 1.09$$ 
+$$\mathbb E(\mbox{lucro A}) = 1.20 \times 0.737 + 0.80 \times 0.263 \approx 1.09$$ 
 
 Ou seja, ele irá lucrar em média $\$ 1.09$ por peça. 
  
 Já se ele vender para o **comprador B**, temos que 
  
-$$\mathbb E(\mbox{lucro B}) =  1.20 \times 0.6778 + 0.80 \times 0.3222 \approx 1.07$$ 
+$$\mathbb E(\mbox{lucro B}) =  1.20 \times 0.678 + 0.80 \times 0.322 \approx 1.07$$ 
  
 que é um lucro dois centavos inferior. 
  
 Portanto, é mais interessante ao industrial que o comprador A examine mais peças.
+
 
 ## Leituras
 
