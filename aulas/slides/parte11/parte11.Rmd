@@ -15,7 +15,6 @@ Um inimigo de Sherlock propõe um jogo, que consiste no lançamento de uma moeda
 
 <center><img src="figuras/sherlock.jpg" width=350></center>
 
-
 > 1. Se a proporção de caras for maior ou igual do que $0.60$, Sherlock vence. 
 > 2. Se a proporção de caras for maior ou igual do que $0.40$, Sherlock vence. 
 > 3. Se a proporção de caras estiver entre $0.40$ e $0.60$ (inclusive), Sherlock vence. 
@@ -41,6 +40,7 @@ Seja $X=\sum_{i=1}^nX_i$ a v.a. que indica o número de caras em $n$ lançamento
 Na versão 1, Sherlock vence se a proporção de caras é maior do que $0.60$, ou seja, se $X\geq n \times 0.6$.
 
 Basta então Sherlock comparar $P(X\geq n\times 0.6)$ para $n=10$ ou $n=100$ e escolher o que resultar em maior probabilidade.
+
 
 ## Exemplo: Sherlock - Versão 1
 
@@ -73,6 +73,7 @@ binomshade(100, 0.5, 0.6*100, 100)
 ```
 </center>
 
+
 ## Exemplo: Sherlock - Versão 2
 
 Se a proporção de caras for maior ou igual do que $0.40$, Sherlock vence.
@@ -84,6 +85,7 @@ binomshade(100, 0.5, 0.4*100, 100)
 ```
 </center>
 
+
 ## Exemplo: Sherlock - Versão 3
 Se a proporção de caras estiver entre $0.40$ e $0.60$ (inclusive), Sherlock vence. 
 
@@ -94,6 +96,7 @@ binomshade(100, 0.5, 0.4*100, 0.6*100)
 ```
 </center>
 
+
 ## Exemplo: Sherlock - Versão 4
 Se a proporção de caras for menor ou igual do que $0.30$, Sherlock vence. 
 
@@ -103,6 +106,7 @@ binomshade(10, 0.5, 0, 0.3*10)
 binomshade(100, 0.5, 0, 0.3*100)
 ```
 </center>
+
 
 ## Exemplo: Sherlock {.build}
 
@@ -115,6 +119,7 @@ Aqui Sherlock deve escolher $n=10$, pois a variância de $X/n$ (proporção de c
 * Se a proporção de caras for maior do que $0.40$, Sherlock vence.  
 
 Aqui Sherlock deve escolher $n=100$, pois a variância de $X/n$ é menor com $n=100$, portanto chances maiores da proporção observada estar próxima da proporção esperada.
+
 
 ## Exemplo: Sherlock {.build}
 
@@ -144,11 +149,12 @@ Seja $X$ o número de repetições até o primeiro sucesso.
 Os valores possíveis de $X$ são $\{1,2,3,...\}$. 
 
 $$ \begin{aligned} 
-P(X=1) &=p \qquad (\mbox{sucesso logo na primeira tentativa})\\
-P(X=2) &= (1-p)p \qquad (\mbox{1 fracasso seguido de 1 sucesso})\\
-P(X=k) &= (1-p)^{k-1} p \qquad (\mbox{$k-1$ fracassos sucessivos e 1 sucesso})
+P(X=1) &=p  && (\mbox{sucesso logo na primeira tentativa})\\
+P(X=2) &= (1-p)p  && (\mbox{1 fracasso seguido de 1 sucesso})\\
+P(X=k) &= (1-p)^{k-1} p && (\mbox{$k-1$ fracassos sucessivos e 1 sucesso})
 \end{aligned}
 $$
+
 
 ## Distribuição Geométrica {.build}
 
@@ -161,6 +167,7 @@ $$P(X=x)=(1-p)^{x-1}p, \qquad x=1,2,\ldots$$
 
 > A esperança e variância de uma v.a. Geométrica são dadas por:
 $$\mathbb E(X)= \frac{1}{p} \qquad \mbox{e} \qquad Var(X)=\frac{1-p}{p^2}$$
+
 
 ## Distribuição Geométrica
 Distribuição de probabilidade de uma $G(p)$, com $p=0.3, 0.5$ e $0.7$.
@@ -181,14 +188,15 @@ geometrica(10, ps=c(0.3, 0.5, 0.7), ylim=c(0, .7))
 ```
 </center>
 
+
 ## Distribuição Geométrica {.build}
 
 A função de distribuição acumulada de uma v.a. $G(p)$ é dada por:
 $$F(x)=P(X\leq x)=1-(1-p)^x$$
 
-A distribuição geométrica tem uma propriedade que serve para caracterizá-la no conjunto das distribuições discretas: a propriedade de perda de memória
+A distribuição geométrica tem uma propriedade que serve para caracterizá-la no conjunto das distribuições discretas: a propriedade de perda de memória!
 
-**Propriedade de perda de memória**
+**Propriedade de Perda de Memória**
 
 $$P(X > x+m \mid X > m)=P(X > x)$$
 
@@ -202,7 +210,7 @@ $$P(X > x+m \mid X > m)=P(X > x)$$
 **Demonstração:** 
 
 Lembre-se que:
-$$F(x)=P(X\leq x)=1-(1-p)^x \quad \rightarrow \quad P(X > x)= (1-p)^{x}$$ 
+$$F(x)=P(X\leq x)=1-(1-p)^x \quad \Longrightarrow \quad P(X > x)= (1-p)^{x}$$ 
 
 Então,
 $$
@@ -212,6 +220,7 @@ P(X > x+m \mid X > m) &= \frac{P(X > x+m, X> m)}{P(X> m)} \\
 &=(1-p)^{x} = P(X> x) \\
 \end{aligned}
 $$
+
 
 ## Exemplo: Sinal de trânsito {.build}
 
@@ -228,6 +237,7 @@ P(X=5) &= (1-p)^{4} p \\
 &= 0.8^4\times 0.2 \\
 &= 0.0819
 \end{aligned} $$
+
 
 ## Exemplo: lançamento de um dado {.build}
 
@@ -271,12 +281,12 @@ $$P(X=0)=\binom{6}{0}p^0(1-p)^{6-0} = \left( \frac{5}{6} \right)^6 = 0.33489$$
 
 > * Qual é a probabilidade de Greene morrer na $k$-ésima jogada? 
 
-> Ao efetuar a primeira jogada, o autor pode morrer com probabilidade $1/6$, ou continuar jogando. Se ele sobreviver à primeira, pode jogar pela segunda vez, e morrer com probabilidade $5/6 \times 1/6$, ou continuar jogando.
+> Ao efetuar a 1ª jogada, o autor pode morrer com probabilidade $1/6$, ou continuar jogando. Se ele sobreviver à primeira, pode jogar pela 2ª vez, e morrer com probabilidade $5/6 \times 1/6$, ou continuar jogando. Repetindo esse raciocínio, a probabilidade de morte na $k$-ésima jogada é  
+$$\left( \frac{5}{6} \right)^{k-1} \frac{1}{6}$$ 
 
-> Repetindo esse raciocínio, concluímos que a probabilidade de morte na $k$-ésima jogada é  
+Ou podemos definir $X$ como o número de tentativas até o 1º disparo e $p=1/6$ a probabilidade de um disparo ocorrer. Então, $X \sim G(1/6)$ e:
 $$P(X=k) = \left( \frac{5}{6} \right)^{k-1} \frac{1}{6}$$ 
 
-Ou podemos definir $X$ como o número de tentativas até o primeiro disparo e $p=1/6$ a probabilidade de um disparo ocorrer. Então, podemos calcular a probabilidade acima usando o fato que $X \sim G(1/6).$
 
 ## Exemplo: Banco de Sangue {.build}
 
@@ -288,6 +298,7 @@ Um banco de sangue necessita sangue do tipo O negativo. Suponha que a probabilid
 > * Quantos doadores esperamos passar pelo hospital até encontrarmos um com sangue O negativo? 
 
 > **Fonte:** Prof. Mario Gneri, Notas de Aula.
+
 
 ## Exemplo: Banco de Sangue {.build}
 
@@ -303,6 +314,7 @@ Temos que
 > * $P(X=2) =  0.9 \times 0.1 = 0.09$ 
 > * $P(X=7) =  0.9^6 \times 0.1 = 0.053$  
 > * $\mathbb E(X) = 1/0.1=10.$ Neste caso, esperamos que dez doadores passem pelo hospital, em média, para encontrarmos o primeiro com sangue O negativo.
+
 
 # Hipergeométrica
 
@@ -334,6 +346,7 @@ $$P(X=x)=\frac{\binom{r}{x}\binom{N-r}{n-x}}{\binom{N}{n}}, \qquad 0\leq x \leq 
 
 $$E(X)=\frac{nr}{N} \qquad \mbox{e} \qquad Var(X)=\frac{nr}{N}\left(1-\frac{r}{N}\right)\frac{(N-n)}{(N-1)}$$
 
+
 ## Exemplo: Urna {.build}
 
 Uma urna contém 10 bolas: 6 brancas e 4 pretas. 
@@ -363,6 +376,7 @@ P(X=3) &=\frac{\binom{8}{2}\binom{17}{0}}{\binom{25}{3}}=0.02 \\
 P(X \leq 2) &= P(X=2) + P(X=3) = 0.21 + 0.02 = 0.23
 \end{aligned}
 $$
+
 
 ## Exemplo: Loteria {.build}
 
@@ -404,14 +418,14 @@ Sabendo que neste lote de 100 elementos, $r=10$ são defeituosos.
 Se $X$ é o número de peças defeituosas em 5 escolhidas, então 
 $$X\sim Hip(N=100, n=5, r=10)$$
 
-A probabilidade de não se obter nenhuma peça defeituosa na amostra retirada é: 
+A probabilidade de nenhuma peça defeituosa na amostra retirada é: 
 
 $$P(X=0)= \frac{\binom{10}{0}\binom{100-10}{5-0}}{\binom{100}{5}}= \frac{\binom{90}{5}}{\binom{100}{5}}\approx0.584$$
 
 
 ## Aplicação: Controle de Qualidade {.build}
 
-A probabilidade de se obter pelo menos uma peça defeituosa é: 
+A probabilidade de pelo menos uma peça defeituosa é: 
 
 $$P(X \geq 1) = \sum_{i=1}^{5}P(X=i)= 1-P(X=0)\approx0.416$$ 
 
@@ -553,7 +567,7 @@ A distribuição de Poisson é muito usada na distribuição do número de:
 
 > * defeitos por unidade ($m^3$, $m^2$, $m$, etc...) por peça fabricada; 
 
-> * colônias de bactérias numa dada cultura por $0,01 mm^2$, numa plaqueta de microscópio; 
+> * colônias de bactérias numa dada cultura por $0.01 mm^2$, numa plaqueta de microscópio; 
 
 > * mortes por ataque de coração por ano, em um certo bairro
 
@@ -743,6 +757,7 @@ $$
 * [OpenIntro](https://www.openintro.org/stat/textbook.php): seções 3.3, 3.4, 3.5.2
 
 <center><img src="figuras/fishy.jpg" width=350></center>
+
 
 ##
 
