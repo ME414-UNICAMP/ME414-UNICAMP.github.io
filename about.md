@@ -35,7 +35,7 @@ Cada aluno deverá inserir os códigos recebidos durante a aula para validação
 * P2 (Prova 2 - 21/06/2017)
 * MG (Média Geral)
 * MF (Média Final)
-* EF (Exame Final)
+* EF (Exame Final - 10/07/2017)
 
 MG = 0.20 A + 0.35 P1 + 0.45 P2.
 
@@ -83,5 +83,5 @@ Se MG < 6 e frequência inferior a 75%, o aluno está reprovado e MF = MG
 | 19/06/2017    | Aula 29      |    | [Aula 29](https://goo.gl/forms/a6nEFeOUVHJanWaJ3)
 | 21/06/2017    | Prova 2      |    | -
 | 26/06/2017    | Prova Substitutiva      |   | -
-
+| 10/07/2017    | Exame Final   |   |  -
 
