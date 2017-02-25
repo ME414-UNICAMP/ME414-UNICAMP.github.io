@@ -7,8 +7,8 @@ permalink: /about/
 * Professora: Samara F. Kiihl - Sala 245 - IMECC
 * Horário das aulas: Segunda 8-10 e Quarta 8-10
 * PAD: Lucas Mattos Souza RA 172868
-* Atendimento:
-* Comunicação por email: APENAS para meu email samara@ime.unicamp.br, APENAS com [ME414-A] especificado no assunto da mensagem, APENAS remetentes dos emails dac.unicamp.br ou g.unicamp.br serão lidos. Qualquer outra mensagem de aluno sem essas especificações [será ignorada](images/hqdefault.jpg).
+* Atendimento: Terças e Quintas 13-14
+* Comunicação por email: APENAS para meu email samara@ime.unicamp.br, APENAS com [ME414-A] especificado no assunto da mensagem, APENAS remetentes dos emails XXX.unicamp.br serão lidos. Qualquer outra mensagem de aluno sem essas especificações [será ignorada](images/hqdefault.jpg).
 
 * Atividades e notas estão disponíveis na [página do Moodle](http://www.ggte.unicamp.br/eam/course/view.php?id=3618). Você deverá logar com o mesmo usuário e senha que usar para acessar os serviços da DAC. 
 * Sobre abono de faltas, consulte o [regimento](http://www.dac.unicamp.br/portal/grad/regimento/capitulo_v/secao_x/).
