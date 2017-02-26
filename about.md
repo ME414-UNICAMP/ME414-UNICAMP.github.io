@@ -28,6 +28,7 @@ Para acessar livros digitais fora da Unicamp, você precisará do VPN. Veja inst
 
 Cada aluno deverá inserir os códigos recebidos durante a aula para validação de presença em aula através de um Formulário do Google (veja em Cronograma). Para acesso ao formulário, você deverá primeiro se autenticar no [Google Apps for Education da Unicamp](https://sites.google.com/site/unicampgonnagafe/). No caso em que dois códigos sejam distribuídos durante a aula, apenas alunos com os dois códigos (início e final) referentes à aula válidos receberão presença.
 
+Consulte suas presenças [aqui](ListaDePresenca.html).
 
 ### Critérios de Avaliação e Datas Importantes
 
