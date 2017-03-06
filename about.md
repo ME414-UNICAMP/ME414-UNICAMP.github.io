@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 * Professora: Samara F. Kiihl - Sala 245 - IMECC
-* Horário das aulas: Segunda 8-10 e Quarta 8-10
+* Horário das aulas: Segunda 8-10 sala FA36 e Quarta 8-10 sala PB14
 * PAD: Lucas Mattos Souza RA 172868
 * Atendimento: Terças e Quintas 13-14 - Sala 224 - IMECC
 * Comunicação por email: APENAS para meu email samara@ime.unicamp.br, APENAS com [ME414-A] especificado no assunto da mensagem, APENAS remetentes dos emails XXX.unicamp.br serão lidos. Qualquer outra mensagem de aluno sem essas especificações [será ignorada](images/hqdefault.jpg).
