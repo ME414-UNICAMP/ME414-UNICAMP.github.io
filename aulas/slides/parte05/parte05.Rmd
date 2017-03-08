@@ -3,8 +3,8 @@ title: "ME414 - Estatística para Experimentalistas"
 output:
   ioslides_presentation:
     widescreen: yes
-  beamer_presentation: default
-subtitle: Parte 5
+    mathjax: local
+    self_contained: false
 logo: ../logo-imecc.png
 ---
 

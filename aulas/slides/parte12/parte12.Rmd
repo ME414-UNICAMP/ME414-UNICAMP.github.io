@@ -1,11 +1,12 @@
 ---
 title: ME414 - Estatística para Experimentalistas
 subtitle: Parte 12
-output: 
+output:
   ioslides_presentation:
-    widescreen: true
+    widescreen: yes
+    mathjax: local
+    self_contained: false
 logo: ../logo-imecc.png
-
 ---
 
 # Variáveis Aleatórias Contínuas

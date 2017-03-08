@@ -1,9 +1,11 @@
 ---
 title: ME414 - Estatística para Experimentalistas
 subtitle: Parte 23
-output: 
+output:
   ioslides_presentation:
-         widescreen: true
+    widescreen: yes
+    mathjax: local
+    self_contained: false
 logo: ../logo-imecc.png
 ---
 
