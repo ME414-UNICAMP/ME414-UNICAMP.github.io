@@ -6,7 +6,7 @@ output:
     widescreen: yes
     mathjax: local
     self_contained: false
-logo: ../logo-imecc.png
+logo: logo-imecc.png
 ---
 
 # Introdução
