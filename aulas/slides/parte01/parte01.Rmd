@@ -625,10 +625,20 @@ Qual o tipo de informação você obtém através de um gráfico de ramo-e-folha
 
 No link [http://wolfr.am/OvitOo](http://wolfr.am/OvitOo) você pode obter diversos gráficos descritivos usando informações do seu perfil do Facebook.
 
+
+
+## Dados sobre vacinas nos EUA
+
+No link [http://graphics.wsj.com/infectious-diseases-and-vaccines/](http://graphics.wsj.com/infectious-diseases-and-vaccines/) temos vários gráficos mostrando muito bem o efeito de vacinas ao longo dos anos para cada estado americano, para várias doenças.
+
+
+<center><img src="figuras/measles.png" width=500></center>
+
 ## Leitura
 
 * [OpenIntro](https://www.openintro.org/stat/textbook.php): seções 1.1, 1.2, 1.6, 1.7
 * [Ross](http://www.sciencedirect.com/science/book/9780123743886): seções 1.1, 1.2, 1.3, 1.4, 2.1, 2.2, 2.3, 2.4
+
 
 ##
 
