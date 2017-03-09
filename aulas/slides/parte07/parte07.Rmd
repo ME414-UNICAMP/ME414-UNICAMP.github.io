@@ -4,8 +4,6 @@ subtitle: Parte 7
 output:
   ioslides_presentation:
     widescreen: yes
-    mathjax: local
-    self_contained: false
 logo: ../logo-imecc.png
 ---
 
