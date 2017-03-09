@@ -7,7 +7,7 @@ permalink: /about/
 * Professora: Samara F. Kiihl - Sala 245 - IMECC
 * Horário das aulas: Segunda 8-10 sala PB13 e Quarta 8-10 sala PB14
 * PAD: Lucas Mattos Souza RA 172868
-* Atendimento: Terças e Quintas 13-14 - Sala 224 - IMECC
+* Atendimento: Terças e Quintas 13-14 - Sala ? - IMECC
 * Comunicação por email: APENAS para meu email samara@ime.unicamp.br, APENAS com [ME414-A] especificado no assunto da mensagem, APENAS remetentes dos emails XXX.unicamp.br serão lidos. Qualquer outra mensagem de aluno sem essas especificações [será ignorada](images/hqdefault.jpg).
 
 * Atividades e notas estão disponíveis na [página do Moodle](http://www.ggte.unicamp.br/eam/course/view.php?id=3618). Você deverá logar com o mesmo usuário e senha que usar para acessar os serviços da DAC. 
@@ -54,8 +54,8 @@ Se MG < 6 e frequência inferior a 75%, o aluno está reprovado e MF = MG
 | Data          | Aula          | Slides  | Formulário de presença |
 | ------------- |:-------------:| -------:| -------:|
 | 06/03/2017    | Aula 1        |  [Parte 1](http://me414-unicamp.github.io/aulas/slides/parte01/parte01.html)| [Aula 1](https://goo.gl/forms/lROolBcvXCPjMVEo1)
-| 08/03/2017    | Aula 2      |    | [Aula 2](https://goo.gl/forms/zGBbDpRuAR3plFKY2)
-| 13/03/2017    | Aula 3      |    | [Aula 3](https://goo.gl/forms/B2F1N1YSTTcpKah83)
+| 08/03/2017    | Aula 2      | [Parte 2](http://me414-unicamp.github.io/aulas/slides/parte02/parte02.html)| [Aula 2](https://goo.gl/forms/zGBbDpRuAR3plFKY2)
+| 13/03/2017    | Aula 3      |[Parte 3](http://me414-unicamp.github.io/aulas/slides/parte03/parte03.html)| [Aula 3](https://goo.gl/forms/B2F1N1YSTTcpKah83)
 | 15/03/2017    | Aula 4      |    | [Aula 4](https://goo.gl/forms/6OrbDJ0nuOmm8Ck62)
 | 20/03/2017    | Aula 5      |    | [Aula 5](https://goo.gl/forms/Pa64rphqqHvEuXXu1)
 | 22/03/2017    | Aula 6      |    | [Aula 6](https://goo.gl/forms/OrSOUGmoRdRmD3Hy1)
