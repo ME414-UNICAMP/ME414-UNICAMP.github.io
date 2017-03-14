@@ -31,8 +31,6 @@ Cada aluno deverá inserir os códigos recebidos durante a aula para validação
 
 Consulte suas presenças [aqui](ListaDePresenca.html). 
 
-A lista é atualizada todos os dias depois das 22 horas. Se o seu RA aparece com falta **após a atualização**, mas você inseriu o código, entre em contato via email (seguindo sempre as regras acima descritas para envio de email), pois provavelmente você inseriu o código de maneira incorreta.
-
 ### Critérios de Avaliação e Datas Importantes
 
 * A (Atividades: exercícios/testes no Moodle, exercícios/testes em sala de aula)
