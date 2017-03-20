@@ -9,7 +9,7 @@ permalink: /about/
 * PED: Marcos Tadeu Andrade Cordeiro RA 162346
 * PED: Victor Freguglia Souza RA 137784
 * PAD: Lucas Mattos Souza RA 172868
-* Atendimento: Terças e Quintas 12-13 - Sala SI03 - PB; Terças 18-19 - Sala 222 - IMECC
+* Atendimento: Terças e Quintas 12-13 - Sala SI03 - PB; Terças 18-19 - Sala 222 - IMECC; Terças e Quartas 18-18:50 - Sala 225 - IMECC
 * Comunicação por email: APENAS para meu email samara@ime.unicamp.br, APENAS com [ME414-A] especificado no assunto da mensagem, APENAS remetentes dos emails XXX.unicamp.br serão lidos. Qualquer outra mensagem de aluno sem essas especificações [será ignorada](images/hqdefault.jpg).
 
 * Atividades e notas estão disponíveis na [página do Moodle](http://www.ggte.unicamp.br/eam/course/view.php?id=3618). Você deverá logar com o mesmo usuário e senha que usar para acessar os serviços da DAC. 
