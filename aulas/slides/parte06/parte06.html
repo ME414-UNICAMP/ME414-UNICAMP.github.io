@@ -724,6 +724,28 @@ Você volta no mesmo restaurante das tortas e sorvetes. Há dois sabores de tort
 
 </article></slide><slide class=''><hgroup><h2>Paradoxo do Aniversário</h2></hgroup><article  id="paradoxo-do-aniversario" class="build">
 
+<p>Para calcular a probabilidade de que em uma sala com \(n\) pessoas, pelo menos duas possuam o mesmo aniversário: desprezamos variações na distribuição, tais como anos bissextos, gêmeos, variações sazonais ou semanais, e assumimos que 365 possíveis aniversários são todos igualmente prováveis.</p>
+
+<p>É mais fácil calcular a probabilidade do evento \(A\), definido como todos os \(n\) aniversários são diferentes:</p>
+
+<p>\[\begin{eqnarray} 
+P(A)&amp;=&amp;1\cdot \left(1-{\frac {1}{365}}\right)\cdot \left(1-{\frac {2}{365}}\right)\cdots \left(1-{\frac {n-1}{365}}\right)\\
+&amp;=&amp;{365\cdot 364\cdots (365-n+1) \over 365^{n}}\\
+&amp;=&amp;{365! \over 365^{n}(365-n)!}
+\end{eqnarray}\]</p>
+
+</article></slide><slide class=''><hgroup><h2>Paradoxo do Aniversário</h2></hgroup><article  id="paradoxo-do-aniversario-1" class="build">
+
+<p>A segunda pessoa não pode ter o mesmo aniversário do que o primeiro (364/365), o terceiro não pode ter o mesmo aniversário do que o segundo (363/365), etc.</p>
+
+<p>O evento de pelo menos duas pessoas entre \(n\) terem o mesmo aniversário (chamaremos de evento \(B\)) é o complementar de todos \(n\) serem diferentes (evento \(A\)).</p>
+
+<p>Consequentemente, sua probabilidade é:</p>
+
+<p>\[P(B)=1-P(A)\]</p>
+
+</article></slide><slide class=''><hgroup><h2>Paradoxo do Aniversário</h2></hgroup><article  id="paradoxo-do-aniversario-2" class="build">
+
 <p>Qual é a probabilidade de pelo menos uma coincidência?</p>
 
 <center>

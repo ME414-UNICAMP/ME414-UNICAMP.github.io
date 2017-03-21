@@ -377,6 +377,28 @@ Uma sacola tem `r bb` bolas brancas, `r bv` vermelhas e `r ba` azuis. Três bola
 
 ## Paradoxo do Aniversário {.build}
 
+Para calcular a probabilidade de que em uma sala com $n$ pessoas, pelo menos duas possuam o mesmo aniversário: desprezamos variações na distribuição, tais como anos bissextos, gêmeos, variações sazonais ou semanais, e assumimos que 365 possíveis aniversários são todos igualmente prováveis.
+
+É mais fácil calcular a probabilidade do evento $A$, definido como todos os $n$ aniversários são diferentes:
+
+$$\begin{eqnarray} 
+P(A)&=&1\cdot \left(1-{\frac {1}{365}}\right)\cdot \left(1-{\frac {2}{365}}\right)\cdots \left(1-{\frac {n-1}{365}}\right)\\
+&=&{365\cdot 364\cdots (365-n+1) \over 365^{n}}\\
+&=&{365! \over 365^{n}(365-n)!}
+\end{eqnarray}$$
+
+## Paradoxo do Aniversário {.build}
+
+A segunda pessoa não pode ter o mesmo aniversário do que o primeiro (364/365), o terceiro não pode ter o mesmo aniversário do que o segundo (363/365), etc.
+
+O evento de pelo menos duas pessoas entre $n$ terem o mesmo aniversário (chamaremos de evento $B$) é o complementar de todos $n$ serem diferentes (evento $A$). 
+
+Consequentemente, sua probabilidade é:
+
+$$P(B)=1-P(A)$$
+
+## Paradoxo do Aniversário {.build}
+
 Qual é a probabilidade de pelo menos uma coincidência?
 
 <center>
