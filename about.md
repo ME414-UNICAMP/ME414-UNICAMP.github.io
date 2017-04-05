@@ -64,7 +64,7 @@ Se MG < 6 e frequência inferior a 75%, o aluno está reprovado por falta e MF =
 | 27/03/2017    | Aula 7      |[Parte 7](http://me414-unicamp.github.io/aulas/slides/parte07/parte07.html)    | [Aula 7](https://goo.gl/forms/uJzvFudJpbiO2eT32)
 | 29/03/2017    | Aula 8      |[Parte 8](http://me414-unicamp.github.io/aulas/slides/parte08/parte08.html)    | 
 | 03/04/2017    | Aula 9      |[Parte 9](http://me414-unicamp.github.io/aulas/slides/parte09/parte09.html)      | 
-| 05/04/2017    | Aula 10      |[Parte 10](http://me414-unicamp.github.io/aulas/slides/parte10/parte10.html)      | [Aula 10](https://goo.gl/forms/HwN3RSvKdLnI4hxQ2)
+| 05/04/2017    | Aula 10      |[Parte 10](http://me414-unicamp.github.io/aulas/slides/parte10/parte10.html)      | 
 | 10/04/2017    | Aula 11      |    | [Aula 11](https://goo.gl/forms/9zH12vvQPdfc2ovA2)
 | 12/04/2017    | Aula 12      |    | [Aula 12](https://goo.gl/forms/MsmJ11N3uZpz7Vzi1)
 | 17/04/2017    | Aula 13      |    | [Aula 13](https://goo.gl/forms/Y9JsXG0bedA50cyH3)
