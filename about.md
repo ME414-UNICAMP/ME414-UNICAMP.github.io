@@ -65,26 +65,26 @@ Se MG < 6 e frequência inferior a 75%, o aluno está reprovado por falta e MF =
 | 29/03/2017    | Aula 8      |[Parte 8](http://me414-unicamp.github.io/aulas/slides/parte08/parte08.html)    | 
 | 03/04/2017    | Aula 9      |[Parte 9](http://me414-unicamp.github.io/aulas/slides/parte09/parte09.html)      | 
 | 05/04/2017    | Aula 10      |[Parte 10](http://me414-unicamp.github.io/aulas/slides/parte10/parte10.html)      | 
-| 10/04/2017    | Aula 11      |    | [Aula 11](https://goo.gl/forms/9zH12vvQPdfc2ovA2)
-| 12/04/2017    | Aula 12      |    | [Aula 12](https://goo.gl/forms/MsmJ11N3uZpz7Vzi1)
-| 17/04/2017    | Aula 13      |    | [Aula 13](https://goo.gl/forms/Y9JsXG0bedA50cyH3)
+| 10/04/2017    | Aula 11      |[Parte 10](http://me414-unicamp.github.io/aulas/slides/parte10/parte10.html)      | 
+| 12/04/2017    | Aula 12      |[Parte 11](http://me414-unicamp.github.io/aulas/slides/parte11/parte11.html)    |
+| 17/04/2017    | Aula 13      | Dúvidas   | 
 | 19/04/2017    | Prova 1      |    | -
-| 24/04/2017    | Aula 14      |    | [Aula 14](https://goo.gl/forms/XqtmyyILbnnhBgZR2)
-| 26/04/2017    | Aula 15      |    | [Aula 15](https://goo.gl/forms/syTZHGfNE5y0OY6N2)
-| 03/05/2017    | Aula 16      |    | [Aula 16](https://goo.gl/forms/QniFL5ZZbQMD6MA93)
-| 08/05/2017    | Aula 17      |    | [Aula 17](https://goo.gl/forms/fKvNBtDbHJ8xKh6Q2)
-| 10/05/2017    | Aula 18      |    | [Aula 18](https://goo.gl/forms/HpdZUgrTzGFw8cLp2)
-| 15/05/2017    | Aula 19      |    | [Aula 19](https://goo.gl/forms/zoe8ufhVxwVcGoa83)
-| 17/05/2017    | Aula 20      |    | [Aula 20](https://goo.gl/forms/6CtadAloYmI53o6k1)
-| 22/05/2017    | Aula 21      |    | [Aula 21](https://goo.gl/forms/fmUj2aFPo2Nqh66u2)
-| 24/05/2017    | Aula 22      |    | [Aula 22](https://goo.gl/forms/wqkFhjeJ0RMnUpsc2)
-| 29/05/2017    | Aula 23      |    | [Aula 23](https://goo.gl/forms/3gyTwpPqiE6gqrXG2)
-| 31/05/2017    | Aula 24      |    | [Aula 24](https://goo.gl/forms/oZijpEIBsMZVNTpm2)
-| 05/06/2017    | Aula 25      |    | [Aula 25](https://goo.gl/forms/qDtPtzBoGAwTkhRk1)
-| 07/06/2017    | Aula 26      |    | [Aula 26](https://goo.gl/forms/rV4IqRssGHgnc08k1)
-| 12/06/2017    | Aula 27      |    | [Aula 27](https://goo.gl/forms/00t6gMEg98hOfjIq1)
-| 14/06/2017    | Aula 28      |    | [Aula 28](https://goo.gl/forms/8b4gB8XEv1z2yQnd2)
-| 19/06/2017    | Aula 29      |    | [Aula 29](https://goo.gl/forms/a6nEFeOUVHJanWaJ3)
+| 24/04/2017    | Aula 14      |    |
+| 26/04/2017    | Aula 15      |    | 
+| 03/05/2017    | Aula 16      |    |
+| 08/05/2017    | Aula 17      |    | 
+| 10/05/2017    | Aula 18      |    | 
+| 15/05/2017    | Aula 19      |    | 
+| 17/05/2017    | Aula 20      |    |
+| 22/05/2017    | Aula 21      |    | 
+| 24/05/2017    | Aula 22      |    |
+| 29/05/2017    | Aula 23      |    | 
+| 31/05/2017    | Aula 24      |    | 
+| 05/06/2017    | Aula 25      |    | 
+| 07/06/2017    | Aula 26      |    | 
+| 12/06/2017    | Aula 27      |    | 
+| 14/06/2017    | Aula 28      |    |
+| 19/06/2017    | Aula 29      |    |
 | 21/06/2017    | Prova 2      |    | -
 | 26/06/2017    | Prova Substitutiva      |   | -
 | 10/07/2017    | Exame Final   |   |  -
