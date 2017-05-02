@@ -63,6 +63,7 @@ permalink: /aulas/
 * Função de distribuição acumulada
 * Esperança e variância
 * Distribuições contínuas: Uniforme, Exponencial, Normal
+* Aproximação da Binomial pela Normal
 
 [Parte12](slides/parte12/parte12.html)
 [Parte13](slides/parte13/parte13.html)
