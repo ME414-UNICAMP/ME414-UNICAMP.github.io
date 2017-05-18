@@ -74,8 +74,8 @@ Se MG < 6 e frequência inferior a 75%, o aluno está reprovado por falta e MF =
 | 03/05/2017    | Aula 17      | [Parte 14](http://me414-unicamp.github.io/aulas/slides/parte14/parte14.html)   |
 | 08/05/2017    | Aula 18      | [Parte 15](http://me414-unicamp.github.io/aulas/slides/parte15/parte15.html)   | 
 | 10/05/2017    | Aula 19      | [Parte 15](http://me414-unicamp.github.io/aulas/slides/parte15/parte15.html) | 
-| 15/05/2017    | Aula 20      |    | 
-| 17/05/2017    | Aula 21      |    |
+| 15/05/2017    | Aula 20      | [Parte 16](http://me414-unicamp.github.io/aulas/slides/parte16/parte16.html)   | 
+| 17/05/2017    | Aula 21      | Introdução à Teste de Hipóteses    |
 | 22/05/2017    | Aula 22      |    | 
 | 24/05/2017    | Aula 23      |    |
 | 29/05/2017    | Aula 24      |    | 
