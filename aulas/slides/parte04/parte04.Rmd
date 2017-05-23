@@ -118,7 +118,7 @@ barplot(prop.table(x, 2), xlab=" ", ylab="Proporção", main=" ",
 </center>
 
 <center>
-```{r, echo=FALSE, fig.width=10, fig.height=4.5}
+```{r, echo=FALSE, fig.width=10, fig.height=4.5,warning=FALSE}
 ## Definir os parâmetros dos eixos para todos os gráficos
 eixos <- theme(axis.text = element_text(size=14), 
                axis.title = element_text(size=14),
@@ -170,7 +170,7 @@ barplot(t(prop.table(x, 1)), xlab=" ", ylab="Proporção", main=" ",
 </center>
 
 <center>
-```{r, echo=FALSE, fig.width=10, fig.height=5}
+```{r, echo=FALSE, fig.width=10, fig.height=5,warning=FALSE}
 x.long <- melt(prop.table(x, 1), varnames=c("Procedência", "Instrução"),
                value.name="Proporção")
 
@@ -246,7 +246,7 @@ barplot(prop.table(x, 2), xlab=" ", ylab="Proporção", main=" ", beside=TRUE,
 </center>
 
 <center>
-```{r, echo=FALSE, fig.width=8, fig.height=4.5}
+```{r, echo=FALSE, fig.width=8, fig.height=4.5,warning=FALSE}
 x.long <- melt(prop.table(x, 2), varnames=c("Carreira", "Sexo"), 
                value.name="Proporção")
 
@@ -318,7 +318,7 @@ barplot(t(prop.table(x, 1)), xlab="Tipo de Alimento",
 </center>
 
 <center>
-```{r, echo=FALSE, fig.width=8, fig.height=4.5}
+```{r, echo=FALSE, fig.width=8, fig.height=4.5,warning=FALSE}
 colnames(x) <- c("Presente", "Ausente") 
 x.long <- melt(prop.table(x, 1), varnames=c("Alimento", "Pesticida"), 
                value.name="Proporção")
@@ -387,7 +387,7 @@ kable(a)
 ## Nível de felicidade por nível de renda
 
 <center>
-```{r, echo=FALSE, eval=FALSE, fig.width=8, fig.height=4.5}
+```{r, echo=FALSE, eval=FALSE, fig.width=8, fig.height=4.5,warning=FALSE}
 par(mar=c(5.1, 4.1, 1.1, 2.1))
 barplot(t(prop.table(x, 1)), xlab="Renda", ylab="Proporção", main=" ",
         beside=TRUE, legend.text=TRUE, ylim=c(0, .9), 
@@ -397,7 +397,7 @@ barplot(t(prop.table(x, 1)), xlab="Renda", ylab="Proporção", main=" ",
 </center>
 
 <center>
-```{r, echo=FALSE, fig.width=10, fig.height=4.5}
+```{r, echo=FALSE, fig.width=10, fig.height=4.5,warning=FALSE}
 x.long <- melt(prop.table(x, 1), varnames=c("Renda", "Felicidade"),
                value.name="Proporção")
 
@@ -485,7 +485,7 @@ barplot(t(prop.table(x, 1)), xlab="", ylab="Proporção", main=" ",
 </center>
 
 <center>
-```{r, echo=FALSE, fig.width=8, fig.height=4.5}
+```{r, echo=FALSE, fig.width=8, fig.height=4.5,warning=FALSE}
 colnames(x) <- c("Sim", "Não")
 x.long <- melt(prop.table(x, 1), varnames=c("Sexo", "Excesso_Bebida"),
                value.name="Proporção")
@@ -539,7 +539,7 @@ Total | 25 | 300
 
 ## Exemplo: Tempo de serviço e total de clientes
 <center>
-```{r, echo=FALSE, fig.height=4.5, fig.width=7}
+```{r, echo=FALSE, fig.height=4.5, fig.width=7,warning=FALSE}
 x <- c(2, 4, 5, 6, 8)
 y <- c(48, 56, 54, 60, 72)
 # par(mar=c(5.1, 4.1, 1.1, 2.1))
@@ -578,7 +578,7 @@ data
 
 ## Exemplo: Renda e gasto com assistência médica
 <center>
-```{r, echo=FALSE, fig.height=4.5, fig.width=7}
+```{r, echo=FALSE, fig.height=4.5, fig.width=7,warning=FALSE}
 # par(mar=c(5.1, 4.1, 1.1, 2.1))
 # plot(x=x, y=y, xlab="Renda bruta", ylab=" % da renda gasta com assistência",
 #      main=" ", pch=19, cex.axis=1.2, cex.lab=1, col="blue", lwd=2, las=1)
@@ -702,7 +702,7 @@ ggplotly(g)
 > Há relação entre o total de passos e o tempo (em minutos) de sedentarismo?
 
 <center>
-```{r, echo=FALSE, fig.height=4, fig.width=6}
+```{r, echo=FALSE, fig.height=4, fig.width=6,warning=FALSE}
 ## par(mar=c(5.1, 4.1, 1.1, 2.1))
 ## plot(x=fitbit$steps[fitbit$minutesSedentary > 1000], 
 ##      y <- fitbit$minutesSedentary[fitbit$minutesSedentary > 1000],
