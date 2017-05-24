@@ -75,9 +75,9 @@ Se MG < 6 e frequência inferior a 75%, o aluno está reprovado por falta e MF =
 | 08/05/2017    | Aula 18      | [Parte 15](http://me414-unicamp.github.io/aulas/slides/parte15/parte15.html)   | 
 | 10/05/2017    | Aula 19      | [Parte 15](http://me414-unicamp.github.io/aulas/slides/parte15/parte15.html) | 
 | 15/05/2017    | Aula 20      | [Parte 16](http://me414-unicamp.github.io/aulas/slides/parte16/parte16.html)   | 
-| 17/05/2017    | Aula 21      | Introdução à Teste de Hipóteses    |
-| 22/05/2017    | Aula 22      |    | 
-| 24/05/2017    | Aula 23      |    |
+| 17/05/2017    | Aula 21      | Introdução à Teste de Hipóteses - Coca-Cola vs Coca Zero    |
+| 22/05/2017    | Aula 22      | [Parte 17](http://me414-unicamp.github.io/aulas/slides/parte17/parte17.html)  | 
+| 24/05/2017    | Aula 23      | [Parte 18](http://me414-unicamp.github.io/aulas/slides/parte18/parte18.html)   |
 | 29/05/2017    | Aula 24      |    | 
 | 31/05/2017    | Aula 25      |    | 
 | 05/06/2017    | Aula 26      |    | 
