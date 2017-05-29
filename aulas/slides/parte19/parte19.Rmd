@@ -251,7 +251,7 @@ IC(\mu_1-\mu_2, 0.95)&= (\bar{x} - \bar{y}) \pm z_{0.025} \sqrt{\frac{\sigma_1^{
 
 ## Exemplo {.build}
 
-Dois tipos diferentes de tecido devem ser comparados. Uma máquina de testes *Martindale* pode comparar duas amostras ao mesmo tempo. O peso (em miligramas) para sete experimentos foram:
+Dois tipos diferentes de tecido devem ser comparados. Uma máquina de testes *Martindale* pode comparar duas amostras ao mesmo tempo. Os pesos (em miligramas) para sete experimentos foram:
 
 Tecido|  1|  2|  3|  4|  5|  6|  7 
 ------|---|---|---|---|---|---|---
