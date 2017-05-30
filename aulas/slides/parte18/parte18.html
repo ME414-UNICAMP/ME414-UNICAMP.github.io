@@ -536,7 +536,7 @@ P(\mbox{Erro Tipo II}) &amp; =  P(\mbox{Não Rejeitar }H_{0}|H_{0}\mbox{ falsa})
 
 <p>Para as hipóteses unilaterais, o raciocínio é semelhante ao que foi feito anteriormente quando \(\sigma\) é conhecido.</p>
 
-</article></slide><slide class=''><hgroup><h2>Teste de hipóteses para média (\(\sigma\) desconhecido)</h2></hgroup><article  id="teste-de-hipoteses-para-media-sigma-desconhecido-2" class="build">
+</article></slide><slide class=''><hgroup><h2>Teste de hipóteses para média (\(\sigma\) desconhecido)</h2></hgroup><article  id="teste-de-hipoteses-para-media-sigma-desconhecido-2" class="build smaller">
 
 <p>No nosso exemplo, suponha que não sabemos o valor de \(\sigma\), mas o desvio padrão da amostra é 7.1g. Queremos testar \[H_0: \mu = 500 \quad \mbox{vs} \quad H_a: \mu \neq 500\]</p>
 
@@ -545,6 +545,8 @@ P(\mbox{Erro Tipo II}) &amp; =  P(\mbox{Não Rejeitar }H_{0}|H_{0}\mbox{ falsa})
 <p><strong>valor-de-p:</strong> \(P(|t_{24}| ≥ 10.56) = 2P(t_{24} ≥ 10.56) \approx 0\)</p>
 
 <p><strong>Conclusão:</strong> Rejeitamos a hipótese de que a média é 500g.</p>
+
+<p><strong>valor crítico:</strong> para nível de significância \(\alpha=0.05\) e teste bilateral, \(t_{crit}\) é tal que \(P(t_{24}&gt;t_{crit})=P(t_{24}&lt;-t_{crit})=0.025\). De maneira que \(t_{crit}=2.06\). Portanto, se \(|t_{obs}|&gt;t_{crit}\), rejeita-se \(H_0\).</p>
 
 </article></slide><slide class=''><hgroup><h2>Exemplo: Dieta com poucos carboidratos</h2></hgroup><article  id="exemplo-dieta-com-poucos-carboidratos" class="build">
 
@@ -654,7 +656,7 @@ P(\mbox{Erro Tipo II}) &amp; =  P(\mbox{Não Rejeitar }H_{0}|H_{0}\mbox{ falsa})
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

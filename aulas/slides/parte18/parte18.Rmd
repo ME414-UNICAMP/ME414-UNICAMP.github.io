@@ -540,7 +540,7 @@ $$t = \frac{\bar{X}-\mu_0}{s/\sqrt{n}} \overset{H_0}{\sim} t_{n-1}$$
 Para as hipóteses unilaterais, o raciocínio é semelhante ao que foi feito anteriormente quando $\sigma$ é conhecido.
 
 
-## Teste de hipóteses para média ($\sigma$ desconhecido) {.build}
+## Teste de hipóteses para média ($\sigma$ desconhecido) {.build .smaller}
 
 No nosso exemplo, suponha que não sabemos o valor de $\sigma$, mas o desvio padrão da amostra é 7.1g. Queremos testar
  $$H_0: \mu = 500 \quad \mbox{vs} \quad H_a: \mu \neq 500$$
@@ -552,6 +552,7 @@ $$t_{obs} = \frac{\bar{X}-\mu_0}{s/\sqrt{n}} = \frac{485-500}{7.1/5} = -10.56$$
 
 **Conclusão:** Rejeitamos a hipótese de que a média é 500g.
 
+**valor crítico:** para nível de significância $\alpha=0.05$ e teste bilateral, $t_{crit}$ é tal que $P(t_{24}>t_{crit})=P(t_{24}<-t_{crit})=0.025$. De maneira que $t_{crit}=`r round(qt(.975,24),2)`$. Portanto, se $|t_{obs}|>t_{crit}$, rejeita-se $H_0$.
 
 
 ## Exemplo: Dieta com poucos carboidratos {.build}
