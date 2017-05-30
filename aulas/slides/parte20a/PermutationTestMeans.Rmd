@@ -208,6 +208,8 @@ Como temos `r choose(6,3)` combinações possíveis e apenas `r sum(abs(diff)>=a
 
 $$ \frac{`r sum(abs(diff)>=abs(xbarA-xbarB))`}{`r choose(6,3)`}=`r mean(abs(diff)>=abs(xbarA-xbarB))` $$
 
+Desta maneira, uma valor de diferença como o observado ou ainda mais extremo pode ocorrer ao acaso com probabilidade 0.20. Os dados portanto não trazem evidências para rejeitar a hipótese de que não há diferença entre os tratamentos.
+
 ## Exemplo
 
 Se utilizarmos o teste *t-student* para duas amostras (variâncias iguais):
