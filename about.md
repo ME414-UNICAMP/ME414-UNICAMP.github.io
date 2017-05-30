@@ -79,7 +79,7 @@ Se MG < 6 e frequência inferior a 75%, o aluno está reprovado por falta e MF =
 | 22/05/2017    | Aula 22      | [Parte 17](http://me414-unicamp.github.io/aulas/slides/parte17/parte17.html)  | 
 | 24/05/2017    | Aula 23      | [Parte 18](http://me414-unicamp.github.io/aulas/slides/parte18/parte18.html)   |
 | 29/05/2017    | Aula 24      | [Parte 19](http://me414-unicamp.github.io/aulas/slides/parte19/parte19.html)   | 
-| 31/05/2017    | Aula 25      | [Introdução à Teste de Hipóteses para Duas Médias]([Parte 19](http://me414-unicamp.github.io/aulas/slides/parte20a/parte20a.html) )   | 
+| 31/05/2017    | Aula 25      | [Introdução à Teste de Hipóteses para Duas Médias]([Parte 19](http://me414-unicamp.github.io/aulas/slides/parte20a/PermutationTestMeans.html) )   | 
 | 05/06/2017    | Aula 26      |    | 
 | 07/06/2017    | Aula 27      |    | 
 | 12/06/2017    | Aula 28      |    | 
