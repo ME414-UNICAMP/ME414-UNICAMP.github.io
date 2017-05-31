@@ -121,7 +121,7 @@ Iremos, desta forma, repetir o argumento da $H_0$: avaliar todas as alocações 
 
 Quantas maneiras temos de escolher ao acaso 3 pessoas, de um grupo de 6?
 
-> $$\binom{6}{2}=`r choose(6,3)`$$
+> $$\binom{6}{3}=`r choose(6,3)`$$
 
 > Temos `r choose(6,3)` maneiras de alocar 3 pessoas para o tratamento $A$ e as restantes para o tratamento $B$.
 
