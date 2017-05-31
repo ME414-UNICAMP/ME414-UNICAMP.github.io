@@ -219,10 +219,10 @@
 <p>Para \(H_0\): \(\mu_1-\mu_2=\Delta_0\) vs \(H_1\): \(\mu_1-\mu_2\neq\Delta_0\)</p>
 
 <table class = 'rmdtable'>
-<col width="12%" />
-<col width="33%" />
-<col width="33%" />
-<col width="20%" />
+<col width="24%" />
+<col width="45%" />
+<col width="22%" />
+<col width="7%" />
 <tr class="header">
 <th align="left">Variâncias</th>
 <th align="left">Estatística do teste</th>
@@ -232,20 +232,20 @@
 <tr class="odd">
 <td align="left">Diferentes e conhecidas (\(\sigma_1^2 \neq \sigma_2^2\))</td>
 <td align="left">\[Z= \frac{(\bar{X} - \bar{Y}) - \Delta_0}{ \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}} \sim N(0, 1)\]</td>
-<td align="left">rejeitar se $</td>
-<td align="left">z_{obs}</td>
+<td align="left">\[\mbox{rejeitar se }\mid z_{obs}\mid\geq z_{\alpha/2}\]</td>
+<td align="left">\[2 P(Z\geq \mid z_{obs}\mid)\]</td>
 </tr>
 <tr class="even">
 <td align="left">Iguais e conhecidas (\(\sigma_1^2 = \sigma_2^2 =\sigma^2\))</td>
 <td align="left">\[Z= \frac{(\bar{X} - \bar{Y}) - \Delta_0}{ \sqrt{\sigma^2 ( \frac{1}{n} + \frac{1}{m}} )} \sim N(0, 1)\]</td>
-<td align="left">rejeitar se $</td>
-<td align="left">z_{obs}</td>
+<td align="left">\[\mbox{rejeitar se }\mid z_{obs}\mid\geq z_{\alpha/2}\]</td>
+<td align="left">\[2 P(Z\geq \mid z_{obs}\mid)\]</td>
 </tr>
 <tr class="odd">
 <td align="left">Iguais e desconhecidas (\(\sigma_1^2 = \sigma_2^2 =\sigma^2\))</td>
 <td align="left">\[T\sim\frac{(\bar{X} - \bar{Y}) -\Delta_0}{ \sqrt{S_p^2 ( 1/m + 1/n )}}\sim t_{n+m-2}\]</td>
-<td align="left">rejeitar se $</td>
-<td align="left">t_{obs}</td>
+<td align="left">\[\mbox{rejeitar se }\mid t_{obs}\mid\geq t_{n+m-2,\alpha/2}\]</td>
+<td align="left">\[2 P(T\geq \mid t_{obs}\mid)\]</td>
 </tr>
 </table>
 

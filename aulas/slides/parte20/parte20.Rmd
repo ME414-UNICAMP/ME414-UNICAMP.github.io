@@ -137,11 +137,11 @@ $$T= \frac{(\bar{X} - \bar{Y}) - \overbrace{(\mu_1 - \mu_2)}^{\Delta_0}}{ \sqrt{
 
 Para $H_0$: $\mu_1-\mu_2=\Delta_0$ vs  $H_1$: $\mu_1-\mu_2\neq\Delta_0$
 
-Variâncias | Estatística do teste         | Valor crítico para $\alpha$ | Valor de p
----------- | -----------------------------|-----------------------------|-----------------
-Diferentes e conhecidas ($\sigma_1^2 \neq \sigma_2^2$) | $$Z= \frac{(\bar{X} - \bar{Y}) - \Delta_0}{ \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}} \sim N(0, 1)$$ | rejeitar se $|z_{obs}|\geq z_{\alpha/2}$ | $2 P(Z\geq |z_{obs}|)$
-Iguais e conhecidas ($\sigma_1^2 = \sigma_2^2 =\sigma^2$) | $$Z= \frac{(\bar{X} - \bar{Y}) - \Delta_0}{ \sqrt{\sigma^2 ( \frac{1}{n} + \frac{1}{m}} )} \sim N(0, 1)$$ | rejeitar se $|z_{obs}|\geq z_{\alpha/2}$ | $2 P(Z\geq |z_{obs}|)$
-Iguais e desconhecidas ($\sigma_1^2 = \sigma_2^2 =\sigma^2$) | $$T\sim\frac{(\bar{X} - \bar{Y}) -\Delta_0}{ \sqrt{S_p^2 ( 1/m + 1/n )}}\sim t_{n+m-2}$$ | rejeitar se $|t_{obs}|\geq t_{n+m-2,\alpha/2}$ | $2 P(T\geq |t_{obs}|)$
+Variâncias                                                   | Estatística do teste                                                                                               | Valor crítico para $\alpha$                             | Valor de p
+------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|-----------------
+Diferentes e conhecidas ($\sigma_1^2 \neq \sigma_2^2$)       | $$Z= \frac{(\bar{X} - \bar{Y}) - \Delta_0}{ \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}} \sim N(0, 1)$$ |  $$\mbox{rejeitar se }\mid z_{obs}\mid\geq z_{\alpha/2}$$      | $$2 P(Z\geq \mid z_{obs}\mid)$$
+Iguais e conhecidas ($\sigma_1^2 = \sigma_2^2 =\sigma^2$)    | $$Z= \frac{(\bar{X} - \bar{Y}) - \Delta_0}{ \sqrt{\sigma^2 ( \frac{1}{n} + \frac{1}{m}} )} \sim N(0, 1)$$          | $$\mbox{rejeitar se }\mid z_{obs}\mid\geq z_{\alpha/2}$$       | $$2 P(Z\geq \mid z_{obs}\mid)$$
+Iguais e desconhecidas ($\sigma_1^2 = \sigma_2^2 =\sigma^2$) | $$T\sim\frac{(\bar{X} - \bar{Y}) -\Delta_0}{ \sqrt{S_p^2 ( 1/m + 1/n )}}\sim t_{n+m-2}$$                           | $$\mbox{rejeitar se }\mid t_{obs}\mid\geq t_{n+m-2,\alpha/2}$$ | $$2 P(T\geq \mid t_{obs}\mid)$$
 
 
 ## Resumo: Teste de hipótese para duas médias {.smaller}
