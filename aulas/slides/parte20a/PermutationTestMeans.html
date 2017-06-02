@@ -676,7 +676,44 @@
 ##  -5.27682 -1.32318
 ## sample estimates:
 ## mean in group A mean in group B 
-##             4.1             7.4</pre></article></slide>
+##             4.1             7.4</pre>
+
+</article></slide><slide class=''><hgroup><h2>Passo-a-passo</h2></hgroup><article  id="passo-a-passo">
+
+<ul>
+<li><p>\(H_0\): \(\mu_A=\mu_B\)</p></li>
+<li><p>Aloque as pessoas em um dos dois tratamentos, aleatoriamente: \(m\) alocados ao Tratamento A e \(n\) alocados ao Tratamento \(B\)</p></li>
+<li><p>Calcule a média para cada tratamento: \(\bar{x}_A\) e \(\bar{x}_B\)</p></li>
+<li><p>Calcule a diferença entre as médias: \(D_{obs}=\bar{x}_A-\bar{x}_B\)</p></li>
+<li><p>Permute as \(m+n\) observações entre os dois tratamentos, obtenha uma lista com todas as permutações possíveis:</p></li>
+</ul>
+
+<p>\[\binom{m+n}{m}=\frac{(m+n)!}{m!n!}\]</p>
+
+</article></slide><slide class=''><hgroup><h2>Passo-a-passo</h2></hgroup><article  id="passo-a-passo-1" class="smaller">
+
+<ul>
+<li><p>Para cada permutação, calcule \(D\), a diferença entre as médias dos tratamentos.</p></li>
+<li>Encontre o p-valor:
+
+<ul>
+<li>\(H_a\): \(\mu_A&gt;\mu_B\)</li>
+</ul>
+
+<p>\[\mbox{p-valor}=\frac{\# \{D \geq D_{obs}\}}{\binom{m+n}{m}}\]</p>
+
+<ul>
+<li>\(H_a\): \(\mu_A&lt;\mu_B\)</li>
+</ul>
+
+<p>\[\mbox{p-valor}=\frac{\#\{ D \leq D_{obs}\}}{\binom{m+n}{m}}\]</p>
+
+<ul>
+<li>\(H_a\): \(\mu_A\neq\mu_B\)</li>
+</ul>
+
+<p>\[\mbox{p-valor}=\frac{\#\{ |D| \geq |D_{obs}|\}}{\binom{m+n}{m}}\]</p></li>
+</ul></article></slide>
 
 
   <slide class="backdrop"></slide>
@@ -688,7 +725,7 @@
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

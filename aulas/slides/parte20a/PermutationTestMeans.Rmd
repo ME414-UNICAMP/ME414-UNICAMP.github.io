@@ -346,3 +346,40 @@ t.test(Resposta ~ Tratamento,data=dados,alternative="two.sided",var.equal=FALSE)
 
 ```
 
+
+
+## Passo-a-passo
+
+* $H_0$: $\mu_A=\mu_B$
+
+* Aloque as pessoas em um dos dois tratamentos, aleatoriamente: $m$ alocados ao Tratamento A e $n$ alocados ao Tratamento $B$
+
+* Calcule a média para cada tratamento: $\bar{x}_A$ e $\bar{x}_B$
+
+* Calcule a diferença entre as médias: $D_{obs}=\bar{x}_A-\bar{x}_B$
+
+* Permute as $m+n$ observações entre os dois tratamentos, obtenha uma lista com todas as permutações possíveis:
+
+$$\binom{m+n}{m}=\frac{(m+n)!}{m!n!}$$
+
+
+## Passo-a-passo {.smaller}
+
+* Para cada permutação, calcule $D$, a diferença entre as médias dos tratamentos.
+
+* Encontre o p-valor:
+    * $H_a$: $\mu_A>\mu_B$
+    
+      $$\mbox{p-valor}=\frac{\# \{D \geq D_{obs}\}}{\binom{m+n}{m}}$$
+      
+    * $H_a$: $\mu_A<\mu_B$
+    
+      $$\mbox{p-valor}=\frac{\#\{ D \leq D_{obs}\}}{\binom{m+n}{m}}$$
+
+    * $H_a$: $\mu_A\neq\mu_B$
+    
+      $$\mbox{p-valor}=\frac{\#\{ |D| \geq |D_{obs}|\}}{\binom{m+n}{m}}$$
+            
+      
+
+
