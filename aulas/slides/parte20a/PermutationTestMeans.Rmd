@@ -20,7 +20,7 @@ Testes de permutação/aleatorização podem ser utilizados para avaliar hipóte
 
 ## Exemplo
 
-As 6 pessoas são alocadas, aleatorimamente, a um dos tratamentos:
+As 6 pessoas são alocadas, aleatoriamente, a um dos tratamentos:
 
 <center><img src="figuras/IMG_20170530_143757477.jpg" width=650></center>
 
@@ -273,7 +273,7 @@ Um grupo de pesquisadores quer avaliar se dois tratamentos, $A$ e $B$ apresentam
 > Os pesquisadores têm à disposição 20 pessoas.
 
 
-As 20 pessoas são alocadas, aleatorimamente, a um dos tratamentos.
+As 20 pessoas são alocadas, aleatoriamente, a um dos tratamentos.
 
 Após aplicar o tratamento, coletamos a variável resposta de interesse em cada pessoa.
 
