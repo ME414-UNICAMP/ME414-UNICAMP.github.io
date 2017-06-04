@@ -6,7 +6,6 @@ permalink: /about/
 
 * Professora: Samara F. Kiihl - Sala 245 - IMECC
 * Horário das aulas: Segunda 8-10 sala PB13 e Quarta 8-10 sala PB14
-* PED: Marcos Tadeu Andrade Cordeiro RA 162346
 * PED: Victor Freguglia Souza RA 137784
 * PAD: Lucas Mattos Souza RA 172868
 * Atendimento: Terças e Quintas 12-13 - Sala SI03 - PB; Terças e Quartas 18-18:50 - Sala 225 - IMECC
