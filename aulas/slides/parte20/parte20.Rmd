@@ -578,7 +578,7 @@ Para $H_0$: $p_1-p_2=0$
 
 $H_a$         | Valor crítico para $\alpha$ | Valor de p
 --------------|-----------------------------|-----------------
-$p_1-p_2\neq0$| rejeitar se $|z_{obs}|\geq z_{\alpha/2}$ | $2 P(Z\geq |z_{obs}|)$
+$p_1-p_2\neq0$| rejeitar se $\mid z_{obs}\mid\geq z_{\alpha/2}$ | $2 P(Z\geq \mid z_{obs}\mid)$
 $p_1-p_2<0$| rejeitar se $z_{obs}\leq -z_{\alpha}$ | $P(Z\leq z_{obs})$
 $p_1-p_2>0$| rejeitar se $z_{obs}\geq z_{\alpha}$ | $P(Z\geq z_{obs})$
 
@@ -760,7 +760,7 @@ Valor crítico para $\alpha=`r alpha`$: `r zc`, ou seja, se $z_{obs}\leq `r zc`$
 
 ## Leituras
 
-* [Ross](http://www.sciencedirect.com/science/article/pii/B9780123743886000107): capítulo 10. 
+* [Ross](http://www.sciencedirect.com/science/article/pii/B9780123743886000107): seções 10.1, 10.2, 10.3, 10.4 e 10.6. 
 * [OpenIntro](https://www.openintro.org/stat/textbook.php): seções 3.2 e 4.3.
 * Magalhães: capítulo 9.
 

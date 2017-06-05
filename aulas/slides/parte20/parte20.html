@@ -599,6 +599,9 @@ t_{obs} &amp; =\frac{\bar{x}_1-\bar{x}_2}{\sqrt{s_p^2(\frac{1}{n}+\frac{1}{m})}}
 <p>Para \(H_0\): \(p_1-p_2=0\)</p>
 
 <table class = 'rmdtable'>
+<col width="20%" />
+<col width="41%" />
+<col width="25%" />
 <tr class="header">
 <th align="left">\(H_a\)</th>
 <th align="left">Valor crítico para \(\alpha\)</th>
@@ -606,8 +609,8 @@ t_{obs} &amp; =\frac{\bar{x}_1-\bar{x}_2}{\sqrt{s_p^2(\frac{1}{n}+\frac{1}{m})}}
 </tr>
 <tr class="odd">
 <td align="left">\(p_1-p_2\neq0\)</td>
-<td align="left">rejeitar se $</td>
-<td align="left">z_{obs}</td>
+<td align="left">rejeitar se \(\mid z_{obs}\mid\geq z_{\alpha/2}\)</td>
+<td align="left">\(2 P(Z\geq \mid z_{obs}\mid)\)</td>
 </tr>
 <tr class="even">
 <td align="left">\(p_1-p_2&lt;0\)</td>
@@ -756,7 +759,7 @@ t_{obs} &amp; =\frac{\bar{x}_1-\bar{x}_2}{\sqrt{s_p^2(\frac{1}{n}+\frac{1}{m})}}
 </article></slide><slide class=''><hgroup><h2>Leituras</h2></hgroup><article  id="leituras">
 
 <ul>
-<li><a href='http://www.sciencedirect.com/science/article/pii/B9780123743886000107' title=''>Ross</a>: capítulo 10.</li>
+<li><a href='http://www.sciencedirect.com/science/article/pii/B9780123743886000107' title=''>Ross</a>: seções 10.1, 10.2, 10.3, 10.4 e 10.6.</li>
 <li><a href='https://www.openintro.org/stat/textbook.php' title=''>OpenIntro</a>: seções 3.2 e 4.3.</li>
 <li>Magalhães: capítulo 9.</li>
 </ul>
@@ -781,7 +784,7 @@ t_{obs} &amp; =\frac{\bar{x}_1-\bar{x}_2}{\sqrt{s_p^2(\frac{1}{n}+\frac{1}{m})}}
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
