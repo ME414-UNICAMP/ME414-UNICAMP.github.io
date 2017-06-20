@@ -12,6 +12,7 @@ permalink: /about/
 * Comunicação por email: APENAS para meu email samara@ime.unicamp.br, APENAS com [ME414-A] especificado no assunto da mensagem, APENAS remetentes dos emails XXX.unicamp.br serão lidos. Qualquer outra mensagem de aluno sem essas especificações [será ignorada](images/hqdefault.jpg).
 
 * Atividades e notas estão disponíveis na [página do Moodle](http://www.ggte.unicamp.br/eam/course/view.php?id=3618). Você deverá logar com o mesmo usuário e senha que usar para acessar os serviços da DAC. 
+* As atividades do Moodle têm data para fechar, você deverá submeter antes da data para receber a nota. Após a data de fechamento, caso você não tenha aberto a atividade nenhuma vez, no será possível ler o enunciado.
 * Sobre abono de faltas, consulte o [regimento](http://www.dac.unicamp.br/portal/grad/regimento/capitulo_v/secao_x/).
 * O aluno deverá proceder de forma respeitosa e honesta durante as provas bem como na resolução de qualquer outra atividade que seja parte da avaliação do curso.
 * O login usado para acessar o Moodle é intransferível. Capítulo VI, artigo 59: [http://www.pg.unicamp.br/mostra_norma.php?id_norma=3256](http://www.pg.unicamp.br/mostra_norma.php?id_norma=3256)
@@ -81,9 +82,9 @@ Se MG < 6 e frequência inferior a 75%, o aluno está reprovado por falta e MF =
 | 31/05/2017    | Aula 25      | [Introdução à Teste de Hipóteses para Duas Médias](http://me414-unicamp.github.io/aulas/slides/parte20a/PermutationTestMeans.html)   | 
 | 05/06/2017    | Aula 26      | [Parte 20](http://me414-unicamp.github.io/aulas/slides/parte20/parte20.html)   | 
 | 07/06/2017    | Aula 27      | [Parte 21](http://me414-unicamp.github.io/aulas/slides/parte21/parte21.html)   | 
-| 12/06/2017    | Aula 28      |    | 
-| 14/06/2017    | Aula 29      |    |
-| 19/06/2017    | Aula 30      |    |
+| 12/06/2017    | Aula 28      | [Parte 22](http://me414-unicamp.github.io/aulas/slides/parte22/parte22.html)   | 
+| 14/06/2017    | Aula 29      | Cancelada   |
+| 19/06/2017    | Aula 30      |  Dúvidas  |
 | 21/06/2017    | Prova 2      |    | -
 | 26/06/2017    | Prova Substitutiva      |   | -
 | 10/07/2017    | Exame Final   |   |  -
