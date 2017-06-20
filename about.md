@@ -84,7 +84,7 @@ Se MG < 6 e frequência inferior a 75%, o aluno está reprovado por falta e MF =
 | 07/06/2017    | Aula 27      | [Parte 21](http://me414-unicamp.github.io/aulas/slides/parte21/parte21.html)   | 
 | 12/06/2017    | Aula 28      | [Parte 22](http://me414-unicamp.github.io/aulas/slides/parte22/parte22.html)   | 
 | 14/06/2017    | Aula 29      | Cancelada   |
-| 19/06/2017    | Aula 30      |  Dúvidas  |
+| 19/06/2017    | Aula 30      |  Dúvidas  |
 | 21/06/2017    | Prova 2      |    | -
 | 26/06/2017    | Prova Substitutiva      |   | -
 | 10/07/2017    | Exame Final   |   |  -
