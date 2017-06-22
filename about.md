@@ -51,6 +51,9 @@ Se MG < 6 e frequência inferior a 75%, o aluno está reprovado por falta e MF =
 
 Último dia para desistência de matrícula em disciplinas - 03/05/2017.
 
+Consulte suas notas [aqui](Notas.html). 
+
+
 ### Cronograma
 
 | Data          | Aula          | Slides  | Formulário de presença |
