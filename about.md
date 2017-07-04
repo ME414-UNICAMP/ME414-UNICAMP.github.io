@@ -6,9 +6,9 @@ permalink: /about/
 
 * Professora: Samara F. Kiihl - Sala 245 - IMECC
 * Horário das aulas: Segunda 8-10 sala PB13 e Quarta 8-10 sala PB14
-* PED: Victor Freguglia Souza RA 137784
-* PAD: Lucas Mattos Souza RA 172868
-* Atendimento: Terças e Quintas 12-13 - Sala SI03 - PB; Terças e Quartas 18-18:50 - Sala 225 - IMECC
+* PED: 
+* PAD: 
+* Atendimento: 
 * Comunicação por email: APENAS para meu email samara@ime.unicamp.br, APENAS com [ME414-A] especificado no assunto da mensagem, APENAS remetentes dos emails XXX.unicamp.br serão lidos. Qualquer outra mensagem de aluno sem essas especificações [será ignorada](images/hqdefault.jpg).
 
 * Atividades e notas estão disponíveis na [página do Moodle](http://www.ggte.unicamp.br/eam/course/view.php?id=3618). Você deverá logar com o mesmo usuário e senha que usar para acessar os serviços da DAC. 
@@ -27,8 +27,6 @@ permalink: /about/
 Para acessar livros digitais fora da Unicamp, você precisará do VPN. Veja instruções de instalação [aqui](http://www.ccuec.unicamp.br/ccuec/acesso_remoto_vpn).
 
 ### Presença em aula
-
-Cada aluno deverá inserir os códigos recebidos durante a aula para validação de presença em aula através de um Formulário do Google (veja em Cronograma). Para acesso ao formulário, você deverá primeiro se autenticar no [Google Apps for Education da Unicamp](https://sites.google.com/site/unicampgonnagafe/). No caso em que dois códigos sejam distribuídos durante a aula, apenas alunos com os dois códigos (início e final) referentes à aula válidos receberão presença.
 
 Consulte suas presenças [aqui](ListaDePresenca.html). 
 
