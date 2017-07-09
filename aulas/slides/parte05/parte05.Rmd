@@ -209,7 +209,7 @@ datatable(dd, rownames=FALSE)
 ## Simulação 3: lançamento de um dado 100 vezes {.smaller }
 
 <center>
-```{r, echo=FALSE, fig.height=5}
+```{r, echo=FALSE, fig.height=5,message=FALSE,warning=FALSE}
 # plot(x=1:length(x$Red), y=cum3, ylim=c(0, 1), type="l", 
 #      xlab="Número de Lançamentos", ylab="Proporção Acumulada de 6",
 #      cex.axis=1.3, cex.lab=1.3, lwd=2, col="blue", las=1)
@@ -236,7 +236,7 @@ ggplotly(g)
 ## Simulação 2: lançamento de um dado 100 vezes {.smaller}
 
 <center>
-```{r, echo=FALSE, fig.height=5}
+```{r, echo=FALSE, fig.height=5,message=FALSE,warning=FALSE}
 # plot(x=1:length(x2$Red), y=cum2, ylim=c(0, 1), type="l", 
 #      xlab="Número de Lançamentos", ylab="Proporção Acumulada de 6",
 #      cex.axis=1.3, cex.lab=1.3, lwd=2, col="blue", las=1)
@@ -257,7 +257,7 @@ ggplotly(g)
 ## Simulação 1: lançamento de um dado 100 vezes {.smaller}
 
 <center>
-```{r, echo=FALSE, fig.height=5}
+```{r, echo=FALSE, fig.height=5,message=FALSE,warning=FALSE}
 # plot(x=1:length(x1$Red), y=cum1, ylim=c(0, 1), type="l", 
 #      xlab="Número de Lançamentos", ylab="Proporção Acumulada de 6",
 #      cex.axis=1.3, cex.lab=1.3, lwd=2, col="blue", las=1)
@@ -282,7 +282,7 @@ ggplotly(g)
 > Se repetirmos as simulação 1000 vezes, temos uma idéia da distribuição de frequências da proporção de 6 em 100 lançamentos.
 
 <center>
-```{r, echo=FALSE, fig.height=3.5}
+```{r, echo=FALSE, fig.height=3.5,message=FALSE,warning=FALSE}
 B <- 1000
 X <- 100
 # propSix <- matrix(NA, ncol=1, nrow=B)
@@ -311,7 +311,7 @@ Média: `r round(mean(prop$six), 3)`. Mediana: `r round(median(prop$six), 3)`.
 ## Simulação 4: lançamento de um dado 5000 vezes
 
 <center>
-```{r, echo=FALSE, fig.height=4}
+```{r, echo=FALSE, fig.height=4,message=FALSE,warning=FALSE}
 set.seed(12347)
 x <- dice(rolls=5000, ndice=1)
 
