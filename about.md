@@ -80,7 +80,7 @@ Consulte suas notas [aqui](Notas.html).
 | 22/05/2017    | Aula 22      | [Parte 17](http://me414-unicamp.github.io/aulas/slides/parte17/parte17.html)  | 
 | 24/05/2017    | Aula 23      | [Parte 18](http://me414-unicamp.github.io/aulas/slides/parte18/parte18.html)   |
 | 29/05/2017    | Aula 24      | [Parte 19](http://me414-unicamp.github.io/aulas/slides/parte19/parte19.html)   | 
-| 31/05/2017    | Aula 25      | [Introdução à Teste de Hipóteses para Duas Médias](http://me414-unicamp.github.io/aulas/slides/parte20a/PermutationTestMeans.html)   | 
+| 31/05/2017    | Aula 25      | [Introdução à Teste de Hipóteses para Duas Médias](http://me414-unicamp.github.io/aulas/slides/parte20b/PermutationTestMeans.html)   | 
 | 05/06/2017    | Aula 26      | [Parte 20](http://me414-unicamp.github.io/aulas/slides/parte20/parte20.html)   | 
 | 07/06/2017    | Aula 27      | [Parte 21](http://me414-unicamp.github.io/aulas/slides/parte21/parte21.html)   | 
 | 12/06/2017    | Aula 28      | [Parte 22](http://me414-unicamp.github.io/aulas/slides/parte22/parte22.html)   | 
