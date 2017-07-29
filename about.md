@@ -4,6 +4,7 @@ title: Informações gerais
 permalink: /about/
 ---
 
+
 ## Turmas Segundo Semestre 2017
 
 ### ME414 - A
@@ -86,5 +87,4 @@ permalink: /about/
 * Quinta 18-19
 * Sexta 12-13
 * Sexta 13-14
-
 
