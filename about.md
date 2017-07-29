@@ -51,7 +51,7 @@ permalink: /about/
 
 * Professor: [Larissa Avila Matos](http://www.ime.unicamp.br/departamentos/estatistica/corpo-docente#)
 * Horário das aulas: Quartas 10 às 12 - CB13 e Sextas 10 às 12 - CB11
-* Informações da disciplina
+* [Informações da disciplina](http://www.ggte.unicamp.br/eam/course/view.php?id=4705)
 
 ## Monitorias
 
