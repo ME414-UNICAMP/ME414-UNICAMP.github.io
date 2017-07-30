@@ -56,7 +56,7 @@ permalink: /about/
 ## ME414 - I
 
 * Professor: [Rafael Pimentel Maia](http://www.ime.unicamp.br/~rafaelmaia/)
-* Horário das aulas: Terças e Quintas 16 às 18
+* Horário das aulas: Terças e Quintas 16 às 18 - CB05
 * [Informações da disciplina](http://www.ggte.unicamp.br/eam/enrol/index.php?id=4949)
 
 
