@@ -53,6 +53,13 @@ permalink: /about/
 * Horário das aulas: Quartas 10 às 12 - CB13 e Sextas 10 às 12 - CB11
 * [Informações da disciplina](http://www.ggte.unicamp.br/eam/course/view.php?id=4705)
 
+## ME414 - I
+
+* Professor: [Rafael Pimentel Maia](http://www.ime.unicamp.br/~rafaelmaia/)
+* Horário das aulas: Terças e Quintas 16 às 18
+* [Informações da disciplina](http://www.ggte.unicamp.br/eam/enrol/index.php?id=4949)
+
+
 ## Monitorias
 
 ### PEDs
