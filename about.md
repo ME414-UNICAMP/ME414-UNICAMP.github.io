@@ -76,6 +76,8 @@ permalink: /about/
 
 * PED-C: Simone Tatiane do Canto - RA 123676
 
+* PED-C: Nícolas Romano - RA 147534
+
 * PAD: Sabrina Alves Rojas De Souza - RA 186914
 
 ### Horário de atendimento
