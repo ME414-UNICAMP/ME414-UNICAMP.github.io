@@ -20,21 +20,6 @@ permalink: /about/
 * Informações da disciplina
 
 
-### ME414 - C
-
-* Professor: [Diego Fernando De Bernardini](http://www.ime.unicamp.br/~bernardini/)
-* Horário das aulas: Segundas 21 às 23 CB01 e Quartas 19 às 21 - PB13
-* Informações da disciplina 
-
-
-
-### ME414 - D
-
-* Professor: [Sebastião de Amorim](http://www.ime.unicamp.br/~amorim/)
-* Horário das aulas: Terças e Quintas 8 às 10 - CB06
-* Informações da disciplina
-
-
 ### ME414 - E
 
 * Professor: [Samara Flamini Kiihl](http://www.ime.unicamp.br/~samara/)
@@ -73,8 +58,6 @@ permalink: /about/
 * PED-C: Christian Eduardo Galarza Morales - RA 143711
 
 * PED-C: Nathalia Lima Chaves - RA 149075
-
-* PED-C: Simone Tatiane do Canto - RA 123676
 
 * PED-C: Nícolas Romano - RA 147534
 
