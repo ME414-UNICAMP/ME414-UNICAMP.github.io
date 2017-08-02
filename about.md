@@ -11,7 +11,7 @@ permalink: /about/
 
 * Professor: [Ronaldo Dias](http://www.ime.unicamp.br/~dias/)
 * Horário das aulas: Segundas e Quintas 21 às 23 - CB04
-* Informações da disciplina
+* [Informações da disciplina](http://www.ime.unicamp.br/~dias/ME414-A.html)
 
 ### ME414 - B
 
