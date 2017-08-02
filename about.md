@@ -65,18 +65,18 @@ permalink: /about/
 
 ### Horário de atendimento
 
-* Segunda 12-13
-* Segunda 13-14
-* Segunda 18-19
-* Terça 12-13
-* Terça 13-14
-* Terça 18-19
-* Quarta 12-13
-* Quarta 13-14
-* Quarta 18-19
-* Quinta 12-13
-* Quinta 13-14
-* Quinta 18-19
-* Sexta 12-13
-* Sexta 13-14
+* Segunda 12-13 - IMECC 223
+* Segunda 13-14 - IMECC 324
+* Segunda 18-19 - IMECC 124
+* Terça 12-13 - IMECC 223
+* Terça 13-14 - IMECC 224
+* Terça 18-19 - IMECC 124
+* Quarta 12-13 - IMECC 223
+* Quarta 13-14 - IMECC 324
+* Quarta 18-19 - IMECC 124
+* Quinta 12-13 - IMECC 223
+* Quinta 13-14 - IMECC 223
+* Quinta 18-19 - IMECC 124
+* Sexta 12-13 - IMECC 124
+* Sexta 13-14 - IMECC 124
 
