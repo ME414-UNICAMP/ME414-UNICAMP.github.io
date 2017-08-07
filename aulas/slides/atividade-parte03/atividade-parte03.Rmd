@@ -1,0 +1,58 @@
+---
+title: ME414 - Estatística para Experimentalistas
+subtitle: Atividade em Classe 2
+output:
+  ioslides_presentation:
+    widescreen: yes
+logo: ../logo-imecc.png
+---
+
+# Quanto tempo duram 30 segundos?
+
+## Coleta de dados
+
+Vocês irão trabalhar em pares:
+
+* um colega (A) irá ficar responsável por iniciar e finalizar o cronômetro (use o do celular, certifique-se de que saiba usar antes do experimento).
+
+* o outro colega (B) irá dizer COMECE e, depois do que JULGAR serem 30 segundos, irá dizer PARE, no que o colega (A) com o cronômetro irá parar imediatamente.
+
+* anote o resultado: tempo que se passou de fato e o sexo do colega.
+
+* troque os papéis e repita o procedimento.
+
+* os dados deverão ser transferidos para a lousa
+
+## Análise descritiva
+
+* Mínimo
+
+* Máximo
+
+* Média
+
+* Mediana
+
+* Ramo-e-folhas
+
+* boxplot
+
+* Repita os resumos acima, separadamente para cada sexo
+
+## Usando o R
+
+
+Online: [R-fiddle](http://www.r-fiddle.org/#/)
+
+
+## Mais sobre o R
+
+Informações e tutoriais
+
+[https://me111-unicamp.github.io/aulas/](https://me111-unicamp.github.io/aulas/)
+
+##
+
+Slides produzidos por:
+
+* Samara Kiihl
