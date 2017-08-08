@@ -551,6 +551,10 @@ stripchart(mulheres,method="stack",offset=1,at=0.1,ylim=c(0,5),cex=1.7,cex.axis=
 
 * [Ross](http://www.sciencedirect.com/science/book/9780123743886): seções 3.1, 3.2, 3.3, 3.4, 3.5
 
+* [Por que $n-1$ no cálculo de $s^2$?](https://www.youtube.com/watch?v=KkaU2ur3Ymw)
+
+* [Simulação mostrando o porque de usarmos $n-1$ no cálculo de $s^2$](https://www.youtube.com/watch?v=0QS4VHPV4JA)
+
 ##
 
 Slides produzidos pelos professores:
