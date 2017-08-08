@@ -11,15 +11,15 @@ logo: ../logo-imecc.png
 
 ## Coleta de dados
 
-Vocês irão trabalhar em pares:
+Vocês irão trabalhar em grupos:
 
-* um colega (A) irá ficar responsável por iniciar e finalizar o cronômetro (use o do celular, certifique-se de que saiba usar antes do experimento).
+* Um colega (A) irá ficar responsável por iniciar e finalizar o cronômetro (use o do celular, certifique-se de que saiba usar antes do experimento).
 
-* o outro colega (B) irá dizer COMECE e, depois do que JULGAR serem 30 segundos, irá dizer PARE, no que o colega (A) com o cronômetro irá parar imediatamente.
+* O outro colega (B) irá dizer COMECE e, depois do que JULGAR serem 30 segundos, irá dizer PARE, no que o colega (A) com o cronômetro irá parar imediatamente.
 
-* anote o resultado: tempo que se passou de fato e o sexo do colega.
+* O colega A irá anotar o resultado: tempo que se passou de fato e o sexo do colega.
 
-* troque os papéis e repita o procedimento.
+* O colega A irá repetir o procedimento com os demais membros do grupo.
 
 * os dados deverão ser transferidos para a lousa
 
