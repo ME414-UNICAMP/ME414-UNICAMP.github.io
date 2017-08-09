@@ -17,7 +17,7 @@ permalink: /about/
 
 * Professor: [Mariana Rodrigues Motta](http://www.ime.unicamp.br/~marianar/)
 * Horário das aulas: Terças 16 às 18 CB01 e Quintas 16 às 18 - CB06
-* Informações da disciplina
+* [Informações da disciplina](http://www.ggte.unicamp.br/eam/course/view.php?id=5081)
 
 
 ### ME414 - E
@@ -30,7 +30,7 @@ permalink: /about/
 
 * Professor: Aline Martines Piroutek
 * Horário das aulas: Terças e Quintas 8 às 10 - CB01
-* Informações da disciplina
+* [Informações da disciplina](http://www.ggte.unicamp.br/eam/course/view.php?id=5104)
 
 ## ME414 - H
 
