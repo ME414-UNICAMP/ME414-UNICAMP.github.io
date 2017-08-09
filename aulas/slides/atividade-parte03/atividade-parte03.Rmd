@@ -15,6 +15,8 @@ Vocês irão trabalhar em grupos:
 
 * Um colega (A) irá ficar responsável por iniciar e finalizar o cronômetro (use o do celular, certifique-se de que saiba usar antes do experimento).
 
+* O colega A, responsável pelo cronômetro, tem que garantir que nenhum outro colega veja o cronômetro durante o experimento.
+
 * O outro colega (B) irá dizer COMECE e, depois do que JULGAR serem 30 segundos, irá dizer PARE, no que o colega (A) com o cronômetro irá parar imediatamente.
 
 * O colega A irá anotar o resultado: tempo que se passou de fato e o sexo do colega.
