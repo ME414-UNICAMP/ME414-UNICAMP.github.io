@@ -39,23 +39,6 @@ feminino <- sort(c(33.34,27.35,33.04,22.45,33.77,32.14,26.2,25.08,32.35,31.05,24
               25,31.35,23,31,22.53,28.65,30.55,23.75,32.98,18.53,29.05,27,34.21,23.1,
               37.88,31.94,25.51,29.65,46.98,36.45,21.87,35.34,27.94,26.88))
 feminino
-```
-
-Foram coletados dados de `r length(feminino)` mulheres.
-
-Média: `r mean(feminino)`
-
-Mediana: `r median(feminino)`
-
-## Dados coletados - 09/08/2017 - ME414E
-
-
-```{r,echo=TRUE}
-feminino <- sort(c(33.34,27.35,33.04,22.45,33.77,32.14,26.2,25.08,32.35,31.05,24.99,26.86,
-              27.63,24.24,26.39,33,34,29.92,32.92,24.47,28.28,28.21,24.21,31.09,28.39,
-              25,31.35,23,31,22.53,28.65,30.55,23.75,32.98,18.53,29.05,27,34.21,23.1,
-              37.88,31.94,25.51,29.65,46.98,36.45,21.87,35.34,27.94,26.88))
-feminino
 mean(feminino)
 ```
 
@@ -117,9 +100,12 @@ Online: [R-fiddle](http://www.r-fiddle.org/#/)
 
 ## Mais sobre o R e RStudio
 
-Informações e tutoriais
+Informações e tutoriais:
 
 [https://me111-unicamp.github.io/aulas/](https://me111-unicamp.github.io/aulas/)
+
+Livro de estatística básica usando R: [http://moderndive.com/index.html](http://moderndive.com/index.html)
+
 
 ##
 
