@@ -49,7 +49,7 @@ permalink: /about/
 
 ### PEDs
 
-* PED-B: David Ricardo Barreto Lima Silva - RA 042885
+* PED-C: David Ricardo Barreto Lima Silva - RA 042885
 
 * PED-B: Gabriel Franco de Souza - RA 081453
 
