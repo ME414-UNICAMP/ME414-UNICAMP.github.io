@@ -7,7 +7,7 @@ output:
 logo: ../logo-imecc.png
 ---
 
-```{r, include=FALSE}
+```{r, include=FALSE,message=FALSE,warning=FALSE}
 library(reshape2)
 library(ggplot2)
 library(plotly)
@@ -160,7 +160,7 @@ Permite comparar a distribuição do grau de instrução ($X$) conforme a proced
 ## Grau de instrução conforme a procedência
 
 <center>
-```{r, echo=FALSE, eval=FALSE, fig.width=8, fig.height=4.5}
+```{r, echo=FALSE, eval=FALSE, fig.width=8, fig.height=4.5,warning=FALSE}
 par(mar=c(3.1, 4.1, 1.1, 2.1))
 barplot(t(prop.table(x, 1)), xlab=" ", ylab="Proporção", main=" ",
         beside=TRUE, legend.text=TRUE, ylim=c(0, .8), 
@@ -655,7 +655,7 @@ $$Corr(X, Y)=\frac{1}{n-1}\sum_{i=1}^{n}z_{x_i}z_{y_i}=\frac{3.8}{5-1}=0.95$$
 Número de passos diários coletados para uma pessoa usando um [Fitbit](http://en.wikipedia.org/wiki/Fitbit) durante 297 dias.
 
 <center>
-```{r, echo=FALSE, fig.height=3.5, fig.width=5}
+```{r, echo=FALSE, fig.height=3.5, fig.width=5,warning=FALSE}
 fitbit <- read.csv("Fitbit.csv", sep=";")
 fitbit <- fitbit[-which(fitbit$steps<300), ] # removendo os dias em que não usou Fitbit
 
@@ -682,7 +682,7 @@ abline(v=mean(fitbit$steps), col="red", lty=2, lwd=2)
 > Há relação entre o total de passos e o tempo gasto em atividade intensa?
 
 <center>
-```{r, echo=FALSE, fig.height=3.5, fig.width=5.5}
+```{r, echo=FALSE, fig.height=3.5, fig.width=5.5,warning=FALSE}
 # par(mar=c(4.1, 4.1, 0.1, 2.1))
 # plot(x=fitbit$steps, y=fitbit$minutesVeryActive, xlab="Número de Passos", 
 #      ylab="Tempo (min) de atividade intensa", col="blue", las=1)
@@ -727,7 +727,7 @@ Baseado na altura, peso e gênero, o Fitbit estima o comprimento de cada passo.
 > Há relação entre o total de passos e distância percorrida?
 
 <center>
-```{r, echo=FALSE, fig.height=3.5, fig.width=5.5}
+```{r, echo=FALSE, fig.height=3.5, fig.width=5.5,warning=FALSE}
 # par(mar=c(5.1, 4.1, 1.1, 2.1))
 # plot(x=fitbit$steps, y=fitbit$distance, xlab="Número de Passos",
 #      ylab="Distância (km)", cex.lab=1.2, col="blue", las=1)
