@@ -50,21 +50,22 @@ Eixo y: proporção de faces 1
 
 
 
+
+
+
 ## Simulação computacional 
 
 ```{r,echo=TRUE}
-grupos = 50
-repeticoes = 50
-dados <- matrix(0,ncol=2,nrow=grupos) # numero de lancamentos, total de 1 em cada grupo
-for (i in 1:grupos)
-{
-  tmp <- sample(x=c(0,1),size=repeticoes,replace=TRUE)
-  total1 <- sum(tmp)
-  dados[i,] <- c(repeticoes,total1)
-}
+repeticoes = 2500
 
-resultados <- data.frame(Col1 = repeticoes, Col2= dados[,2], 
-                         Col3= cumsum(dados[,1]),Col4=cumsum(dados[,2]))
+experimento = 1:repeticoes
+
+moedaresultado <- sample(c(0,1),size=repeticoes,replace=TRUE)
+
+propacum <- cumsum(moedaresultado)/experimento
+
+resultados <- data.frame(Col1 = 1, Col2= moedaresultado, 
+                         Col3= experimento,Col4=cumsum(moedaresultado))
 resultados$Col5=resultados$Col4/resultados$Col3
 ```
 
