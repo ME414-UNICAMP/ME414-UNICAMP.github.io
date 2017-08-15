@@ -1,5 +1,6 @@
 ---
 title: "ME414 - Estatística para Experimentalistas"
+subtitle: Parte 5
 output:
   ioslides_presentation:
     widescreen: yes

@@ -1,0 +1,98 @@
+---
+title: ME414 - Estatística para Experimentalistas
+subtitle: Atividade em Classe 3
+output:
+  ioslides_presentation:
+    widescreen: yes
+logo: ../logo-imecc.png
+---
+
+# Lei dos grandes números
+
+## Coleta de dados
+
+Vocês irão trabalhar em duplas:
+
+* Um colega irá lançar a moeda de 1 real.
+
+* O outro colega irá anotar 1 se sair a face indicando 1 da moeda e 0 caso contrário. 
+
+* Repitam 50 vezes.
+
+* Transfiram o resultado para a lousa.
+
+
+## Coleta de dados
+
+Na lousa:
+
+* Coluna 1: Total de lançamentos
+
+* Coluna 2: Total de faces 1
+
+* Coluna 3: Total acumulado de lançamentos
+
+* Coluna 4: Total acumulado de faces 1
+
+* Coluna 5: Proporção de faces 1
+
+
+
+## Análise descritiva
+
+Gráfico:
+
+Eixo x: total acumulado de lançamentos
+
+Eixo y: proporção de faces 1
+
+## Dados coletados - 16/08/2017 - ME414E
+
+
+
+## Simulação computacional 
+
+```{r,echo=TRUE}
+grupos = 50
+repeticoes = 50
+dados <- matrix(0,ncol=2,nrow=grupos) # numero de lancamentos, total de 1 em cada grupo
+for (i in 1:grupos)
+{
+  tmp <- sample(x=c(0,1),size=repeticoes,replace=TRUE)
+  total1 <- sum(tmp)
+  dados[i,] <- c(repeticoes,total1)
+}
+
+resultados <- data.frame(Col1 = repeticoes, Col2= dados[,2], 
+                         Col3= cumsum(dados[,1]),Col4=cumsum(dados[,2]))
+resultados$Col5=resultados$Col4/resultados$Col3
+```
+
+## Simulação computacional
+
+```{r,echo=TRUE,fig.align='center',fig.height=4}
+plot(y=resultados$Col5,x=resultados$Col3,type="l",xlab="Total de lançamentos", 
+     ylab="Proporção de face 1",ylim=c(0,1))
+abline(h=0.50,col="red")
+```
+
+
+
+## Mais sobre o R e RStudio
+
+Online (sem instalar): [R-fiddle](http://www.r-fiddle.org/#/)
+
+
+Informações e tutoriais:
+
+[https://me111-unicamp.github.io/aulas/](https://me111-unicamp.github.io/aulas/)
+
+Livro de estatística básica usando R: [http://moderndive.com/index.html](http://moderndive.com/index.html)
+
+
+##
+
+Slides produzidos por:
+
+* Samara Kiihl
+
