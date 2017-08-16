@@ -280,7 +280,7 @@ ggplotly(g)
 
 > A cada simulação  (100 lançamentos e anotando o total de 6) obtivemos um resultado diferente: `r length(which(x1$Red==6))`, `r length(which(x2$Red==6))` e `r length(which(x$Red==6))`.
 
-> Se repetirmos as simulação 1000 vezes, temos uma idéia da distribuição de frequências da proporção de 6 em 100 lançamentos.
+> Se repetirmos a simulação 1000 vezes, temos uma idéia da distribuição de frequências da proporção de 6 em 100 lançamentos.
 
 <center>
 ```{r, echo=FALSE, fig.height=3.5,message=FALSE,warning=FALSE}
