@@ -1,0 +1,39 @@
+---
+title: ME414 - Estatística para Experimentalistas
+subtitle: Atividade em Classe 4
+output:
+  ioslides_presentation:
+    widescreen: yes
+logo: ../logo-imecc.png
+---
+
+# Jogo do relógio
+
+## 
+```{r,echo=FALSE,message=FALSE,warning=FALSE,result='hide'}
+
+png(file = "grafico.png",width = 1480, height = 1480)
+plot(1, type="n", xlab="", ylab="", xlim=c(0, 60), ylim=c(0, 60),cex.axis=2)
+grid(64,col=1)
+dev.off()
+
+```
+
+## Mais sobre o R e RStudio
+
+Online (sem instalar): [R-fiddle](http://www.r-fiddle.org/#/)
+
+
+Informações e tutoriais:
+
+[https://me111-unicamp.github.io/aulas/](https://me111-unicamp.github.io/aulas/)
+
+Livro de estatística básica usando R: [http://moderndive.com/index.html](http://moderndive.com/index.html)
+
+
+##
+
+Slides produzidos por:
+
+* Samara Kiihl
+

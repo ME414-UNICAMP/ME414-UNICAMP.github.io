@@ -1,0 +1,356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
+	<head>
+		<script type="text/javascript" src="js/protoaculous.js"></script>
+		<script type="text/javascript" src="js/conteudo.js"></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<style type="text/css" media="screen, projection">
+		*
+		{
+			font: 12px/15px "Lucida Sans Unicode", "Lucida Sans", "Bitstream Vera Sans", Sans-serif;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			text-decoration: none;
+			border: none;
+			color: black;
+		}
+
+		html
+		{
+			overflow: auto;
+		}
+
+		body
+		{
+			background-color: white;
+		}
+
+		strong { font-weight: bold; }
+		em { font-style: italic; }
+
+
+		/* cabeçalho e textos, corpo mais geral do site */ 
+
+
+		#container
+		{
+			width: 710px;
+			margin-left: 37px;
+			margin-right: 10px;
+		}
+
+		#cabecalho
+		{
+			width: 100%;
+			height: 32px;
+			border-bottom: 3px solid RGB(238, 52, 36);
+			padding-top: 37px;
+		}
+
+		#cabecalho h1 {float:left; font-size: 21px; line-height: 25px; }
+		#cabecalho h2 {float:left; font-size: 13px; line-height:30px;  margin-left: 10px;  font-variant: small-caps;}
+
+		#logo {float:right; margin-top: -25px; margin-right: -2px;}
+		#logo #unicamp{}
+		#logo #projeto {margin-right: 30px;}
+
+
+
+		#conteudo
+		{
+			width: 100%;
+			margin-top: 20px;
+			float:left;
+		}
+
+
+		#conteudo #esquerda
+		{
+			float:left;
+			width: 390px;
+			padding: 10px 10px 10px 0px;
+		}
+
+		#conteudo #esquerda h2 {font-family: "Lucida Sans", "Lucida Sans Unicode", "Bitstream Vera Sans", Sans-serif; font-size: 16px; font-weight: bold; margin-bottom: 5px;}
+		#conteudo #esquerda h3 {font-family: "Lucida Sans", "Lucida Sans Unicode", "Bitstream Vera Sans", Sans-serif; font-size: 11px; font-weight: 600; margin-top: 20px;}
+		#conteudo #esquerda p {font-size: 11px; font-family: "Lucida Sans", "Lucida Sans Unicode", "Bitstream Vera Sans", Sans-serif; font-style: italic; width:392px;}
+		#conteudo #esquerda a {font-size: 11px; color: RGB(0,0,170); text-decoration: underline;}
+
+		#conteudo #esquerda #sobre { border-top: 2px solid RGB(238, 52, 36); width: 390px; padding-top:20px;  }
+		#conteudo #esquerda #sobre h2 {font-size: 16px; font-family: "Lucida Sans", "Lucida Sans Unicode", "Bitstream Vera Sans", Sans-serif; font-weight: bold; margin-bottom: 20px; }
+		#conteudo #esquerda #sobre p {margin-bottom:15px; width:392px; font-style: normal; font-size: 12px;}
+
+
+		#conteudo #direita
+		{
+			float:left;
+			width: 210px;
+			background-color: RGB(245, 248, 244);
+			padding: 10px;
+			margin-left: 80px;
+		}
+
+		#conteudo #direita h2 {font-size: 16px; line-height:15px; margin-bottom: 5px;}
+		#conteudo #direita h3 {font-family: "Lucida Sans", "Lucida Sans Unicode", "Bitstream Vera Sans", Sans-serif; font-size: 11px; line-height:15px; font-weight: 600; margin-top: 20px;}
+		#conteudo #direita p {font-size: 11px; line-height:15px;}
+
+
+		#patrocinio
+		{
+			width: 710px;
+			margin-top: 15px;
+			border-top: 5px solid RGB(204,208,203);
+			padding-top: 5px;
+		}
+
+		#patrocinio p {width:607px;}
+		#patrocinio img
+		{
+			padding-right: 15px;
+			margin-top: 5px;
+		}
+
+		.limpador
+		{
+			height: 5px;
+			clear: both;
+		}
+
+		.a_esquerda {float: left; }
+		.a_direita {float: right; }
+		.sem_padding {padding: 0 !important; }
+		.espaco_superior {margin-top:15px;}
+		
+		
+		#conteudo #esquerda a 
+		{
+			display: block;
+			padding: 4px;
+			margin: 2px 0;
+			background: #ffc;
+			color: black;
+		}
+		
+		#conteudo #esquerda a:visited { background: RGB(245, 248, 244); }
+		#conteudo #esquerda a:hover   { color: #fff; background: RGB(238, 52, 36); }
+		
+		
+		#conteudo #esquerda #sobre a
+		{
+			display: inline;
+			font-size: 12px;
+			font-family: "Lucida Sans", "Lucida Sans Unicode", "Bitstream Vera Sans", Sans-serif;
+			background: none;
+			padding: 0;
+			margin: 0;
+		}
+		
+		#conteudo #esquerda #sobre a:visited { color: #111; }
+		#conteudo #esquerda #sobre a:hover   { color: #fff; background: RGB(238, 52, 36);  text-decoration: none }
+
+		.arquivo_principal
+		{
+			background: #f44 !important;
+			color: white !important;
+			font-weight: bold;
+		}
+		
+		#patrocinio .a_esquerda p *
+		{	
+			font-size: 11px;
+		}
+		
+		em
+		{
+			font-family: "Lucida Sans", "Lucida Sans Unicode", "Bitstream Vera Sans", Sans-serif;
+			font-style: italic;
+		}
+		
+		hr
+		{
+			border-top: 2px solid RGB(238, 52, 36);
+			margin: 30px 0 20px;
+		}
+
+		</style>
+
+
+	
+		<title>
+			Experimento
+		</title>
+	</head>
+	<body>
+		
+		
+		<div id="container">
+			<div id="cabecalho">
+				<h1>
+					<script type="text/javascript">
+						document.write(nome_do_experimento);
+					</script>
+				</h1>
+				<h2>
+					<script type="text/javascript">
+						document.write(tipo);
+					</script>
+				</h2>
+				<div id="logo">
+					<script type="text/javascript">
+						document.write('<a href="' + site_projeto + '">');
+					</script>
+						<img id="projeto" alt="logo da Matemática Multimídia" src="imgs/logo.png" />
+					<script>					
+						document.write('</a>');
+					</script>
+					<a href="http://www.unicamp.br">
+						<img id="unicamp" alt="logo da unicamp" src="imgs/logo_unicamp.gif" />
+					</a>
+				</div>
+			</div>
+			<div id="conteudo">
+				<div id="esquerda">
+					<h2 style="padding-bottom: 20px;">Como usar este arquivo</h2>
+					<p>
+						<script type="text/javascript">
+							document.write(como_usar);
+						</script>
+					</p>
+					<hr />
+					<h2>Os documentos</h2>
+					
+					<div id="impressao"></div>
+					<div id="visualizacao"></div>
+					
+					<br class="limpador" />
+					
+					<div id="sobre">
+						<h2>Sobre o M³ &ndash; Matemática Multimídia</h2>
+						<p> 
+							<script type="text/javascript">
+								document.write(sobre_projeto);
+							</script>
+						</p>
+						<p>
+							<script type="text/javascript">
+								document.write('Para saber mais veja <a href="' + site_projeto + '">a página do M³</a>.');
+							</script>
+						</p>
+					</div>
+				</div>
+				<div id="ficha_tecnica"></div>
+			</div>
+			
+			<br class="limpador" />
+			<div id="patrocinio">
+				<div class="a_esquerda">
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/br/">
+						<img alt="Creative Commons License" class="a_esquerda" src="imgs/cc.gif" />
+					</a>
+				</div>
+				<div class="a_esquerda">
+					<p>
+						<em>
+							<script type="text/javascript">
+								document.write(sobre_licensas);
+							</script>
+						</em>
+					</p>
+				</div>
+				<br class="limpador" />
+				<div class="a_esquerda espaco_superior">
+					<script type="text/javascript">
+						document.write('<a href="' + link_fnde + '">');
+					</script>
+						<img class="a_esquerda" src="imgs/fnde.png" />
+					<script>
+						document.write('</a>');
+					</script>
+				</div>
+				<div class="a_direita espaco_superior">
+					<script type="text/javascript">
+						document.write('<a href="' + link_seed + '">');
+					</script>
+						<img class="a_esquerda" src="imgs/educacao_distante.png" />
+					<script>
+						document.write('</a>');
+						document.write('<a href="' + link_mct + '">');
+					</script>
+					<img class="a_esquerda" src="imgs/ciencia.png" />
+					<script>
+						document.write('</a>');
+						document.write('<a href="' + link_mec + '">');
+					</script>
+					<img class="a_esquerda" src="imgs/educacao.png" />
+					<script>
+						document.write('</a>');
+						document.write('<a href="' + link_governo + '">');
+					</script>
+					<img class="a_esquerda sem_padding" src="imgs/brasil.png"/>
+					<script>
+						document.write('</a>');
+					</script>
+				</div>
+				<br class="limpador" />
+			</div>
+			
+		</div>
+
+	</body>
+	
+	<script type="text/javascript">
+		document.title = nome_do_experimento;
+		var titulo_impressao = 0;
+		var titulo_visualizacao = 0;
+		var ficha_tecnica = 0;
+		
+		Impressao.each(function(item)
+		{
+			dados = item.value;
+			var pai = $('impressao');
+			if (titulo_impressao == 0)
+			{
+				pai.insert(new Element('h3').update('Para impressão'));
+				titulo_impressao = 1;
+			}
+			pai.insert(new Element('a', {href: 'arquivos/'+codigo_do_experimento+'---'+dados.arquivo}).update(dados.titulo));
+			pai.insert(new Element('p').update(dados.conteudo));
+		});
+		
+		Visualizacao.each(function(item)
+		{
+			dados = item.value;
+			var pai = $('visualizacao');
+			if (titulo_visualizacao == 0)
+			{
+				pai.insert(new Element('h3').update('Para visualização na tela'));
+				titulo_visualizacao = 1;
+			}
+			pai.insert(new Element('a', {href: 'arquivos/TELA-'+codigo_do_experimento+'---'+dados.arquivo}).update(dados.titulo));
+			pai.insert(new Element('p').update(dados.conteudo));
+		});
+		
+		FichaTecnica.each(function(item)
+		{
+			dados = item.value;
+			if (ficha_tecnica == 0)
+			{
+				div_ficha = new Element('div', {id: 'direita'});
+				div_ficha.insert(new Element('h2').update('Ficha técnica do experimento'));
+				ficha_tecnica = 1;
+			}
+			div_ficha.insert(new Element('h3').update(dados.titulo));
+			div_ficha.insert(new Element('p').update(dados.conteudo));
+		});
+		
+		if (div_ficha)
+		{
+			var pai = $('ficha_tecnica');
+			pai.insert(div_ficha);
+		}
+		
+	</script>
+
+</html>
