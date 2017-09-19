@@ -193,6 +193,7 @@ $P(Y=y)$ | 0.1 | 0.3 | 0.2 | 0.2 | 0.2
 
 $$\mu_{Y}=41.5, \qquad Mo(Y)=15 \qquad \mbox{e} \qquad Md(Y)=30$$ 
 
+
 Note que, como $Y = 5X - 10$:
 
 $$\mu_{Y}=5\mu_{X}-10 = 5\times 10.3 - 10 = 41.5$$
