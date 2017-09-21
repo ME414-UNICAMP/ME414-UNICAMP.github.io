@@ -8,18 +8,101 @@ logo: ../logo-imecc.png
 ---
 
 
-# Cadê o ônibus?
+# Cadê o ponto de ônibus?
 
 ## Introdução
 
-
-Imagine que eu queira estimar a proporção da área de Campinas que tenha pelo menos um ponto de ônibus a menos de 1 milha de distância.
+Imagine que eu queira estimar a proporção da área de Campinas que tenha pelo menos um ponto de ônibus a menos de XXXXX km de distância.
 
 Como fazer? Qual estratégia você consegue pensar para descobrir isso? É factível?
 
+## "Censo"
+
+Podemos pensar em dividir todo o território de Campinas em quadrados de 1 $m^2$, por exemplo, e denotar contar, quantos desses quadrados têm pelo um ponto de ônibus a menos de XXXXX km de distância. A proporção então é 
+
+$$p=\frac{\# \mbox{ quadrados de 1 }m^2\mbox{ com pelo menos 1 ponto de ônibus a menos de XXXX de distância}}{\# \mbox{ quadrados de 1 }m^2}$$
+
+Levaria um certo tempo/esforço para conseguir esta informação.
+
 ## Usando inferência estatística
 
-Iremos utilizar apenas uma amostra de alguns locais de Campinas.
+
+
+Seja $X_i$ uma variável aleatória indicando se o ponto $i$ na cidade de Campinas tem pelo menos 1 ponto de ônibus a menos de XXXX km de distância. $X_i=1$ se tem e 0 se não tem.
+
+Se a verdadeira proporção de locais com pelo menos 1 ponto de ônibus a menos de xxxx km de distância é $p$, então temos que $P(X_i=1)=p$ e $P(X_i=0)=1-p$.
+
+$$X_i\sim b(p)\,\quad \forall i$$ 
+
+$$E(X_i)=p\,\quad \forall i$$
+
+$$Var(X_i)=p(1-p)\,\quad \forall i$$
+
+
+## Usando inferência estatística
+
+Se definirmos $X=\sum_{i=1^n}X_i$, sabemos que $X\sim Binomial(n,p)$, portanto $E(X)=np$ e $Var(X)=np(1-p)$.
+
+Queremos um estimador para $p$: $\hat{p}=\frac{1}{n}\sum_{i=1}^n X_i=\frac{X}{n}$. 
+
+Queremos um estimador com "boas propriedades".
+
+Primeiro, note que 
+
+$$E(\hat{p})=E\left( \frac{X}{n}  \right) = \frac{1}{n}E(X)=\frac{np}{n}=p$$
+
+Ou seja, para cada amostra aleatória de $X_i$'s, calculamos $\hat{p}$ e este será diferente para cada amostra. No entanto, o valor esperado é exatamente igual ao parâmetro que queremos estimar.
+
+## Usando inferência estatística
+
+
+Além disso, note que: 
+
+$$Var(\hat{p})=Var\left( \frac{X}{n}  \right) = \frac{1}{n^2}Var(X)=\frac{np(1-p)}{n^2}=\frac{p(1-p)}{n}$$
+Ou seja, para cada amostra aleatória de $X_i$'s, calculamos $\hat{p}$ e este será diferente para cada amostra, mas a variabilidade desses valores em cada amostra ao redor do verdadeiro parâmetro, diminui, se aumentarmos o tamanho da amostra.
+
+
+## Usando inferência estatística
+
+Uma boa propriedade, por exemplo:
+
+$$P(\mid\hat{p}-p\mid < 0.01) = 0.95$$
+
+Podemos usar o Teorema Central do Limite, que nos diz:
+
+$$\hat{p} \sim N(p, p(1-p)/n)$$
+De forma que:
+
+$$P(\mid\hat{p}-p\mid < 0.01) = 0.95$$
+
+$$P(-0.01 < \hat{p}-p < 0.01) = 0.95$$
+
+## Usando inferência estatística
+
+$$P\left(-\frac{0.01}{\sqrt{p(1-p)/n}} < \frac{\hat{p}-p}{\sqrt{p(1-p)/n}} < \frac{0.01}{\sqrt{p(1-p)/n}}\right) \approx 0.95$$
+$$P\left(-\frac{0.01}{\sqrt{p(1-p)/n}} < Z < \frac{0.01}{\sqrt{p(1-p)/n}}\right) \approx 0.95$$
+em que $Z\sim N(0,1)$.
+
+Queremos saber o tamanho amostral para ter a boa propriedade.
+
+
+## Usando inferência estatística
+
+
+Mas $p$ é desconhecido de maneira que $Var(\hat{p})$ não pode ser utilizada. Consideramos o "pior caso": $Var(\hat{p})=\frac{1}{4n}$.
+
+$$P\left(-\frac{0.01}{\sqrt{1/4n}} < Z < \frac{0.01}{\sqrt{1/4n}}\right) \approx 0.95$$
+
+A solução:
+
+$$\frac{0.01}{\sqrt{1/4n}}=1.96$$
+
+$$ n = \frac{1.96^2}{4\times 0.01^2} \approx 9604$$
+Um número alto, mas lembre que consideramos o pior caso, em que $p=1/2$. Esta suposição é plausível em Campinas?
+
+## Usando inferência estatística
+
+Iremos utilizar uma amostra de tamanho $n$ de alguns locais de Campinas.
 
 Não iremos fisicamente nos locais, usaremos o GoogleMaps.
 
@@ -52,7 +135,7 @@ E o site me informa os quatro pontos do retângulo em latitude e longitude:
 
 ## Amostra aleatória
 
-Usando o RStudio, temos o pacote `mosaic` com a função `rgeo`, que permite sortear ao acaso latitude e longitude de uma área específica.
+Agora podemos preencher a função `rgeo` com as informações de Campinas para realizar o sorteio dos locais.
 
 ```{r,eval=FALSE}
 library(mosaic)
@@ -61,8 +144,6 @@ total_amostras = 25
 amostras = rgeo(n=total_amostras, latlim = c(-23.00414,-22.791414), 
                 lonlim=c(-47.143304,-46.994937))
 ```
-
-
 
 
 ## Amostra aleatória
@@ -81,7 +162,7 @@ getLocation = function(counter) {
 ## Coleta dos dados
 
 
-Você deverá então produzir uma tabela, em arquivo .csv com as seguintes colunas: "Latitude", "Longitude", "Ponto de ônibus dentro do raio?" (sim ou não).
+Você deverá então produzir uma tabela, em arquivo .csv com as seguintes colunas: "lat", "lon", "ponto" (sim ou não).
 
 Para salvar a tabela das latitudes e longitudes em arquivo .csv:
 
@@ -89,13 +170,13 @@ Para salvar a tabela das latitudes e longitudes em arquivo .csv:
 write.csv(amostras, file="dados_XXXXXXX.csv") # substitua XXXXX pelo seu RA
 ```
 
-E aí você vai preenchendo este arquivo com a terceira coluna.
+E aí você vai preenchendo este arquivo com a terceira coluna, segundo informações obtidas pelo comando `getLocation(1)`, `getLocation(2)`, etc....
 
 ## Resumo dos comandos
 
 ```{r,echo=TRUE,eval=FALSE}
 library(mosaic)
-set.seed(XYZ)  # substitua XYZ pelos 3 ultimos digitos do RA
+set.seed(XYZ)  # substitua XYZ pelos 3 ultimos digitos do RA de alguém do grupo
 total_amostras = 25
 amostras = rgeo(n=total_amostras, latlim = c(-23.00414,-22.791414), 
                 lonlim=c(-47.143304,-46.994937))
@@ -114,6 +195,15 @@ getLocation(2)
 getLocation(25)
 
 ```
+
+## Entregar via Moodle
+
+* O arquivo `dados_XXXXXXX.csv`, substituindo XXXXX pelo RA cujos 3 últimos dígitos foram utilizados no comando `set.seed`. O arquivo deve ter a terceira coluna preenchida com a informação: sim caso o local tenha ponto de ônibus dentro do raio e não, caso contrário.
+
+
+* Um arquivo .pdf com o intervalo de confiança de 95% para a verdadeira proporção de locais com pontos de ônibus dentro do raio especificado na área de Campinas. Mostre dos os cálculos intermediários até o resultado. Interprete o intervalo de confiança para este problema. Fale sobre as suposições para que o intervalo seja válido. Sua amostra satisfaz essas suposições? Discuta em detalhes.
+
+##
 
 Slides produzidos por:
 

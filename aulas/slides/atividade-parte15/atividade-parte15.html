@@ -106,17 +106,89 @@
           </hgroup>
   </slide>
 
-<slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Cadê o ônibus?</h2></hgroup><article  id="cade-o-onibus">
+<slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Cadê o ponto de ônibus?</h2></hgroup><article  id="cade-o-ponto-de-onibus">
 
 </article></slide><slide class=''><hgroup><h2>Introdução</h2></hgroup><article  id="introducao">
 
-<p>Imagine que eu queira estimar a proporção da área de Campinas que tenha pelo menos um ponto de ônibus a menos de 1 milha de distância.</p>
+<p>Imagine que eu queira estimar a proporção da área de Campinas que tenha pelo menos um ponto de ônibus a menos de XXXXX km de distância.</p>
 
 <p>Como fazer? Qual estratégia você consegue pensar para descobrir isso? É factível?</p>
 
+</article></slide><slide class=''><hgroup><h2>&quot;Censo&quot;</h2></hgroup><article  id="censo">
+
+<p>Podemos pensar em dividir todo o território de Campinas em quadrados de 1 \(m^2\), por exemplo, e denotar contar, quantos desses quadrados têm pelo um ponto de ônibus a menos de XXXXX km de distância. A proporção então é</p>
+
+<p>\[p=\frac{\# \mbox{ quadrados de 1 }m^2\mbox{ com pelo menos 1 ponto de ônibus a menos de XXXX de distância}}{\# \mbox{ quadrados de 1 }m^2}\]</p>
+
+<p>Levaria um certo tempo/esforço para conseguir esta informação.</p>
+
 </article></slide><slide class=''><hgroup><h2>Usando inferência estatística</h2></hgroup><article  id="usando-inferencia-estatistica">
 
-<p>Iremos utilizar apenas uma amostra de alguns locais de Campinas.</p>
+<p>Seja \(X_i\) uma variável aleatória indicando se o ponto \(i\) na cidade de Campinas tem pelo menos 1 ponto de ônibus a menos de XXXX km de distância. \(X_i=1\) se tem e 0 se não tem.</p>
+
+<p>Se a verdadeira proporção de locais com pelo menos 1 ponto de ônibus a menos de xxxx km de distância é \(p\), então temos que \(P(X_i=1)=p\) e \(P(X_i=0)=1-p\).</p>
+
+<p>\[X_i\sim b(p)\,\quad \forall i\]</p>
+
+<p>\[E(X_i)=p\,\quad \forall i\]</p>
+
+<p>\[Var(X_i)=p(1-p)\,\quad \forall i\]</p>
+
+</article></slide><slide class=''><hgroup><h2>Usando inferência estatística</h2></hgroup><article  id="usando-inferencia-estatistica-1">
+
+<p>Se definirmos \(X=\sum_{i=1^n}X_i\), sabemos que \(X\sim Binomial(n,p)\), portanto \(E(X)=np\) e \(Var(X)=np(1-p)\).</p>
+
+<p>Queremos um estimador para \(p\): \(\hat{p}=\frac{1}{n}\sum_{i=1}^n X_i=\frac{X}{n}\).</p>
+
+<p>Queremos um estimador com &quot;boas propriedades&quot;.</p>
+
+<p>Primeiro, note que</p>
+
+<p>\[E(\hat{p})=E\left( \frac{X}{n}  \right) = \frac{1}{n}E(X)=\frac{np}{n}=p\]</p>
+
+<p>Ou seja, para cada amostra aleatória de \(X_i\)&#39;s, calculamos \(\hat{p}\) e este será diferente para cada amostra. No entanto, o valor esperado é exatamente igual ao parâmetro que queremos estimar.</p>
+
+</article></slide><slide class=''><hgroup><h2>Usando inferência estatística</h2></hgroup><article  id="usando-inferencia-estatistica-2">
+
+<p>Além disso, note que:</p>
+
+<p>\[Var(\hat{p})=Var\left( \frac{X}{n}  \right) = \frac{1}{n^2}Var(X)=\frac{np(1-p)}{n^2}=\frac{p(1-p)}{n}\] Ou seja, para cada amostra aleatória de \(X_i\)&#39;s, calculamos \(\hat{p}\) e este será diferente para cada amostra, mas a variabilidade desses valores em cada amostra ao redor do verdadeiro parâmetro, diminui, se aumentarmos o tamanho da amostra.</p>
+
+</article></slide><slide class=''><hgroup><h2>Usando inferência estatística</h2></hgroup><article  id="usando-inferencia-estatistica-3">
+
+<p>Uma boa propriedade, por exemplo:</p>
+
+<p>\[P(\mid\hat{p}-p\mid &lt; 0.01) = 0.95\]</p>
+
+<p>Podemos usar o Teorema Central do Limite, que nos diz:</p>
+
+<p>\[\hat{p} \sim N(p, p(1-p)/n)\] De forma que:</p>
+
+<p>\[P(\mid\hat{p}-p\mid &lt; 0.01) = 0.95\]</p>
+
+<p>\[P(-0.01 &lt; \hat{p}-p &lt; 0.01) = 0.95\]</p>
+
+</article></slide><slide class=''><hgroup><h2>Usando inferência estatística</h2></hgroup><article  id="usando-inferencia-estatistica-4">
+
+<p>\[P\left(-\frac{0.01}{\sqrt{p(1-p)/n}} &lt; \frac{\hat{p}-p}{\sqrt{p(1-p)/n}} &lt; \frac{0.01}{\sqrt{p(1-p)/n}}\right) \approx 0.95\] \[P\left(-\frac{0.01}{\sqrt{p(1-p)/n}} &lt; Z &lt; \frac{0.01}{\sqrt{p(1-p)/n}}\right) \approx 0.95\] em que \(Z\sim N(0,1)\).</p>
+
+<p>Queremos saber o tamanho amostral para ter a boa propriedade.</p>
+
+</article></slide><slide class=''><hgroup><h2>Usando inferência estatística</h2></hgroup><article  id="usando-inferencia-estatistica-5">
+
+<p>Mas \(p\) é desconhecido de maneira que \(Var(\hat{p})\) não pode ser utilizada. Consideramos o &quot;pior caso&quot;: \(Var(\hat{p})=\frac{1}{4n}\).</p>
+
+<p>\[P\left(-\frac{0.01}{\sqrt{1/4n}} &lt; Z &lt; \frac{0.01}{\sqrt{1/4n}}\right) \approx 0.95\]</p>
+
+<p>A solução:</p>
+
+<p>\[\frac{0.01}{\sqrt{1/4n}}=1.96\]</p>
+
+<p>\[ n = \frac{1.96^2}{4\times 0.01^2} \approx 9604\] Um número alto, mas lembre que consideramos o pior caso, em que \(p=1/2\). Esta suposição é plausível em Campinas?</p>
+
+</article></slide><slide class=''><hgroup><h2>Usando inferência estatística</h2></hgroup><article  id="usando-inferencia-estatistica-6">
+
+<p>Iremos utilizar uma amostra de tamanho \(n\) de alguns locais de Campinas.</p>
 
 <p>Não iremos fisicamente nos locais, usaremos o GoogleMaps.</p>
 
@@ -153,7 +225,7 @@ samples = rgeo(n=total_amostras, latlim = c(?? , ??), lonlim=c(??, ??))</pre>
 
 </article></slide><slide class=''><hgroup><h2>Amostra aleatória</h2></hgroup><article  id="amostra-aleatoria-1">
 
-<p>Usando o RStudio, temos o pacote <code>mosaic</code> com a função <code>rgeo</code>, que permite sortear ao acaso latitude e longitude de uma área específica.</p>
+<p>Agora podemos preencher a função <code>rgeo</code> com as informações de Campinas para realizar o sorteio dos locais.</p>
 
 <pre class = 'prettyprint lang-r'>library(mosaic)
 set.seed(XYZ)  # substitua XYZ pelos 3 ultimos digitos do RA
@@ -172,18 +244,18 @@ amostras = rgeo(n=total_amostras, latlim = c(-23.00414,-22.791414),
 
 </article></slide><slide class=''><hgroup><h2>Coleta dos dados</h2></hgroup><article  id="coleta-dos-dados">
 
-<p>Você deverá então produzir uma tabela, em arquivo .csv com as seguintes colunas: &quot;Latitude&quot;, &quot;Longitude&quot;, &quot;Ponto de ônibus dentro do raio?&quot; (sim ou não).</p>
+<p>Você deverá então produzir uma tabela, em arquivo .csv com as seguintes colunas: &quot;lat&quot;, &quot;lon&quot;, &quot;ponto&quot; (sim ou não).</p>
 
 <p>Para salvar a tabela das latitudes e longitudes em arquivo .csv:</p>
 
 <pre class = 'prettyprint lang-r'>write.csv(amostras, file=&quot;dados_XXXXXXX.csv&quot;) # substitua XXXXX pelo seu RA</pre>
 
-<p>E aí você vai preenchendo este arquivo com a terceira coluna.</p>
+<p>E aí você vai preenchendo este arquivo com a terceira coluna, segundo informações obtidas pelo comando <code>getLocation(1)</code>, <code>getLocation(2)</code>, etc&#8230;.</p>
 
 </article></slide><slide class=''><hgroup><h2>Resumo dos comandos</h2></hgroup><article  id="resumo-dos-comandos">
 
 <pre class = 'prettyprint lang-r'>library(mosaic)
-set.seed(XYZ)  # substitua XYZ pelos 3 ultimos digitos do RA
+set.seed(XYZ)  # substitua XYZ pelos 3 ultimos digitos do RA de alguém do grupo
 total_amostras = 25
 amostras = rgeo(n=total_amostras, latlim = c(-23.00414,-22.791414), 
                 lonlim=c(-47.143304,-46.994937))
@@ -200,6 +272,15 @@ getLocation(2)
 # etc...
 
 getLocation(25)</pre>
+
+</article></slide><slide class=''><hgroup><h2>Entregar via Moodle</h2></hgroup><article  id="entregar-via-moodle">
+
+<ul>
+<li><p>O arquivo <code>dados_XXXXXXX.csv</code>, substituindo XXXXX pelo RA cujos 3 últimos dígitos foram utilizados no comando <code>set.seed</code>. O arquivo deve ter a terceira coluna preenchida com a informação: sim caso o local tenha ponto de ônibus dentro do raio e não, caso contrário.</p></li>
+<li><p>Um arquivo .pdf com o intervalo de confiança (exato e o aproximado) de 95% para a verdadeira proporção de locais com pontos de ônibus dentro do raio especificado na área de Campinas. Mostre dos os cálculos intermediários até o resultado. Interprete o intervalo de confiança para este problema. Fale sobre as suposições para que o intervalo seja válido. Sua amostra satisfaz essas suposições? Discuta em detalhes.</p></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2></h2></hgroup><article  id="section">
 
 <p>Slides produzidos por:</p>
 
