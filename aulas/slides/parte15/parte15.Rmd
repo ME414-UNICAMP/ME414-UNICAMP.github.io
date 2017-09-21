@@ -579,7 +579,7 @@ Sabemos que $\mathbb E(\bar{X}_n)= \mathbb E(X_i)=p$ e   $Var(\bar{X}_n)=\frac{V
 
 $$P \left( |\hat{p}-p| < 0.01 \right) =  P \left( -0.01 < \hat{p} - p < 0.01 \right )$$
 
-> $$P \left( -\frac{0.01}{\sqrt{Var(\hat{p})}} < \frac{\hat{p} - p}{Var(\hat{p})} < \frac{0.01}{Var(\hat{p})} \right )$$
+> $$P \left( -\frac{0.01}{\sqrt{Var(\hat{p})}} < \frac{\hat{p} - p}{\sqrt{Var(\hat{p})}} < \frac{0.01}{\sqrt{Var(\hat{p})}} \right )$$
 
 > $$P \left( \frac{-0.01}{\sqrt{0.021}} < Z < \frac{0.01}{\sqrt{0.021}} \right) = P(-0.07 < Z < 0.07) =  0.056\,.$$ 
 
