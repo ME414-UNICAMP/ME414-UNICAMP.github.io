@@ -1,6 +1,6 @@
 ---
 title: ME414 - Estatística para Experimentalistas
-subtitle: Atividade em Classe
+subtitle: Atividade em Classe 5
 output:
   ioslides_presentation:
     widescreen: yes
@@ -176,11 +176,11 @@ E aí você vai preenchendo este arquivo com a terceira coluna, segundo informa�
 
 ```{r,echo=TRUE,eval=FALSE}
 library(mosaic)
-set.seed(XYZ)  # substitua XYZ pelos 3 ultimos digitos do RA de alguém do grupo
+set.seed(XXXXXXX)  # substitua XXXXXXX pelo RA de alguém do grupo
 total_amostras = 25
 amostras = rgeo(n=total_amostras, latlim = c(-23.00414,-22.791414), 
                 lonlim=c(-47.143304,-46.994937))
-write.csv(amostras, file="dados_XXXXXXX.csv") # substitua XXXXX pelo seu RA
+write.csv(amostras, file="dados_XXXXXXX.csv") # substitua XXXXXXX pelo RA usado no comando set.seed
 
 getLocation = function(counter) {
   googleMap(amostras[counter,"lat"], amostras[counter,"lon"], 
@@ -198,10 +198,9 @@ getLocation(25)
 
 ## Entregar via Moodle
 
-* O arquivo `dados_XXXXXXX.csv`, substituindo XXXXX pelo RA cujos 3 últimos dígitos foram utilizados no comando `set.seed`. O arquivo deve ter a terceira coluna preenchida com a informação: sim caso o local tenha ponto de ônibus dentro do raio e não, caso contrário.
+* O arquivo `dados_XXXXXXX.csv`, substituindo XXXXX pelo RA utilizado no comando `set.seed`. O arquivo deve ter a terceira coluna preenchida com a informação: 1 caso o local tenha ponto de ônibus dentro do raio e 0, caso contrário.
 
-
-* Um arquivo .pdf com o intervalo de confiança de 95% para a verdadeira proporção de locais com pontos de ônibus dentro do raio especificado na área de Campinas. Mostre dos os cálculos intermediários até o resultado. Interprete o intervalo de confiança para este problema. Fale sobre as suposições para que o intervalo seja válido. Sua amostra satisfaz essas suposições? Discuta em detalhes.
+* Um arquivo .pdf com o intervalo de confiança de 95% para a verdadeira proporção de locais com pontos de ônibus dentro do raio especificado na área de Campinas. Mostre os cálculos intermediários até o resultado. Interprete o intervalo de confiança para este problema. Fale sobre as suposições para que o intervalo seja válido. Sua amostra satisfaz essas suposições? Discuta em detalhes.
 
 ##
 

@@ -21,7 +21,7 @@
       // Slide settings
       settings: {
                 title: 'ME414 - Estatística para Experimentalistas',
-                        subtitle: 'Atividade em Classe',
+                        subtitle: 'Atividade em Classe 5',
                 useBuilds: true,
         usePrettify: true,
         enableSlideAreas: true,
@@ -255,11 +255,11 @@ amostras = rgeo(n=total_amostras, latlim = c(-23.00414,-22.791414),
 </article></slide><slide class=''><hgroup><h2>Resumo dos comandos</h2></hgroup><article  id="resumo-dos-comandos">
 
 <pre class = 'prettyprint lang-r'>library(mosaic)
-set.seed(XYZ)  # substitua XYZ pelos 3 ultimos digitos do RA de alguém do grupo
+set.seed(XXXXXXX)  # substitua XXXXXXX pelo RA de alguém do grupo
 total_amostras = 25
 amostras = rgeo(n=total_amostras, latlim = c(-23.00414,-22.791414), 
                 lonlim=c(-47.143304,-46.994937))
-write.csv(amostras, file=&quot;dados_XXXXXXX.csv&quot;) # substitua XXXXX pelo seu RA
+write.csv(amostras, file=&quot;dados_XXXXXXX.csv&quot;) # substitua XXXXXXX pelo RA usado no comando set.seed
 
 getLocation = function(counter) {
   googleMap(amostras[counter,&quot;lat&quot;], amostras[counter,&quot;lon&quot;], 
@@ -276,8 +276,8 @@ getLocation(25)</pre>
 </article></slide><slide class=''><hgroup><h2>Entregar via Moodle</h2></hgroup><article  id="entregar-via-moodle">
 
 <ul>
-<li><p>O arquivo <code>dados_XXXXXXX.csv</code>, substituindo XXXXX pelo RA cujos 3 últimos dígitos foram utilizados no comando <code>set.seed</code>. O arquivo deve ter a terceira coluna preenchida com a informação: sim caso o local tenha ponto de ônibus dentro do raio e não, caso contrário.</p></li>
-<li><p>Um arquivo .pdf com o intervalo de confiança (exato e o aproximado) de 95% para a verdadeira proporção de locais com pontos de ônibus dentro do raio especificado na área de Campinas. Mostre dos os cálculos intermediários até o resultado. Interprete o intervalo de confiança para este problema. Fale sobre as suposições para que o intervalo seja válido. Sua amostra satisfaz essas suposições? Discuta em detalhes.</p></li>
+<li><p>O arquivo <code>dados_XXXXXXX.csv</code>, substituindo XXXXX pelo RA utilizado no comando <code>set.seed</code>. O arquivo deve ter a terceira coluna preenchida com a informação: 1 caso o local tenha ponto de ônibus dentro do raio e 0, caso contrário.</p></li>
+<li><p>Um arquivo .pdf com o intervalo de confiança de 95% para a verdadeira proporção de locais com pontos de ônibus dentro do raio especificado na área de Campinas. Mostre os cálculos intermediários até o resultado. Interprete o intervalo de confiança para este problema. Fale sobre as suposições para que o intervalo seja válido. Sua amostra satisfaz essas suposições? Discuta em detalhes.</p></li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2></h2></hgroup><article  id="section">
