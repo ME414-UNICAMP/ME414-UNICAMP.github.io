@@ -68,7 +68,7 @@ permalink: /about/
 * Segunda 12-13 - IMECC 223 - Ana
 * Segunda 13-14 - IMECC 324 - Nícolas
 * Segunda 18-19 - IMECC 124 - David
-* Terça 12-13 - IMECC 223 - Gabriel
+* Terça 12-13 - IMECC 223 - Nathalia
 * Terça 13-14 - IMECC 224 - Nícolas
 * Terça 18-19 - IMECC 124 - Gabriel
 * Quarta 12-13 - IMECC 223 - Christian
@@ -76,7 +76,7 @@ permalink: /about/
 * Quarta 18-19 - IMECC 124 - David
 * Quinta 12-13 - IMECC 223 - Christian
 * Quinta 13-14 - IMECC 223 - Ana
-* Quinta 18-19 - IMECC 124 - Nathalia
+* Quinta 18-19 - IMECC 124 - Gabriel
 * Sexta 12-13 - IMECC 124 - Sabrina
 * Sexta 13-14 - IMECC 124 - Sabrina
 
