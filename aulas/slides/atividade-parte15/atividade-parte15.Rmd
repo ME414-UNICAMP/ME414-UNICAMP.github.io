@@ -66,21 +66,21 @@ Ou seja, para cada amostra aleatória de $X_i$'s, calculamos $\hat{p}$ e este se
 
 Uma boa propriedade, por exemplo:
 
-$$P(\mid\hat{p}-p\mid < 0.01) = 0.95$$
+$$P(\mid\hat{p}-p\mid < 0.05) = 0.95$$
 
 Podemos usar o Teorema Central do Limite, que nos diz:
 
 $$\hat{p} \sim N(p, p(1-p)/n)$$
 De forma que:
 
-$$P(\mid\hat{p}-p\mid < 0.01) = 0.95$$
+$$P(\mid\hat{p}-p\mid < 0.05) = 0.95$$
 
-$$P(-0.01 < \hat{p}-p < 0.01) = 0.95$$
+$$P(-0.05 < \hat{p}-p < 0.05) = 0.95$$
 
 ## Usando inferência estatística
 
-$$P\left(-\frac{0.01}{\sqrt{p(1-p)/n}} < \frac{\hat{p}-p}{\sqrt{p(1-p)/n}} < \frac{0.01}{\sqrt{p(1-p)/n}}\right) \approx 0.95$$
-$$P\left(-\frac{0.01}{\sqrt{p(1-p)/n}} < Z < \frac{0.01}{\sqrt{p(1-p)/n}}\right) \approx 0.95$$
+$$P\left(-\frac{0.05}{\sqrt{p(1-p)/n}} < \frac{\hat{p}-p}{\sqrt{p(1-p)/n}} < \frac{0.05}{\sqrt{p(1-p)/n}}\right) \approx 0.95$$
+$$P\left(-\frac{0.05}{\sqrt{p(1-p)/n}} < Z < \frac{0.05}{\sqrt{p(1-p)/n}}\right) \approx 0.95$$
 em que $Z\sim N(0,1)$.
 
 Queremos saber o tamanho amostral para ter a boa propriedade.
@@ -91,13 +91,13 @@ Queremos saber o tamanho amostral para ter a boa propriedade.
 
 Mas $p$ é desconhecido de maneira que $Var(\hat{p})$ não pode ser utilizada. Consideramos o "pior caso": $Var(\hat{p})=\frac{1}{4n}$.
 
-$$P\left(-\frac{0.01}{\sqrt{1/4n}} < Z < \frac{0.01}{\sqrt{1/4n}}\right) \approx 0.95$$
+$$P\left(-\frac{0.05}{\sqrt{1/4n}} < Z < \frac{0.05}{\sqrt{1/4n}}\right) \approx 0.95$$
 
 A solução:
 
-$$\frac{0.01}{\sqrt{1/4n}}=1.96$$
+$$\frac{0.05}{\sqrt{1/4n}}=1.96$$
 
-$$ n = \frac{1.96^2}{4\times 0.01^2} \approx 9604$$
+$$ n = \frac{1.96^2}{4\times 0.05^2} \approx 385$$
 Um número alto, mas lembre que consideramos o pior caso, em que $p=1/2$. Esta suposição é plausível em Campinas?
 
 ## Usando inferência estatística
@@ -172,35 +172,69 @@ write.csv(amostras, file="dados_XXXXXXX.csv") # substitua XXXXX pelo seu RA
 
 E aí você vai preenchendo este arquivo com a terceira coluna, segundo informações obtidas pelo comando `getLocation(1)`, `getLocation(2)`, etc....
 
+
+## Obtendo intervalos de confiança
+
+Como visto na aula anterior, os intervalos de $100 (1-\alpha)\%$ de confiança para $p$ podem então ser de duas formas: 
+
+1) Método Conservador
+$$IC_1(p, 1-\alpha)=\left[\hat{p}-z_{\alpha/2}\sqrt{\frac{1}{4n}};\hat{p}+z_{\alpha/2}\sqrt{\frac{1}{4n}}\right]$$ 
+
+2) Usando $\hat p$ para estimar o erro-padrão
+$$IC_2(p, 1-\alpha)=\left[\hat{p}-z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}};\hat{p}+z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\right]$$
+
+
 ## Resumo dos comandos
 
 ```{r,echo=TRUE,eval=FALSE}
 library(mosaic)
 set.seed(XXXXXXX)  # substitua XXXXXXX pelo RA de alguém do grupo
-total_amostras = 25
-amostras = rgeo(n=total_amostras, latlim = c(-23.00414,-22.791414), 
+total_amostras1 = 10
+amostras1 = rgeo(n=total_amostras1, latlim = c(-23.00414,-22.791414), 
                 lonlim=c(-47.143304,-46.994937))
-write.csv(amostras, file="dados_XXXXXXX.csv") # substitua XXXXXXX pelo RA usado no comando set.seed
+write.csv(amostras1, file="dados_10_XXXXXXX.csv") # substitua XXXXXXX pelo RA usado no comando set.seed
 
 getLocation = function(counter) {
-  googleMap(amostras[counter,"lat"], amostras[counter,"lon"], 
+  googleMap(amostras1[counter,"lat"], amostras1[counter,"lon"], 
+            mark=TRUE, maptype="terrain", radius=.1, browse=TRUE)
+}
+
+# para coletar os dados:
+getLocation(1)
+getLocation(2)
+# etc...
+getLocation(10)
+```
+
+## Resumo dos comandos (cont.)
+
+
+```{r,eval=FALSE}
+set.seed(XXXXXXX)  # substitua XXXXXXX pelo RA de alguém do grupo
+total_amostras2 = 30
+amostras2 = rgeo(n=total_amostras2, latlim = c(-23.00414,-22.791414), 
+                lonlim=c(-47.143304,-46.994937))
+write.csv(amostras2, file="dados_30_XXXXXXX.csv") # substitua XXXXXXX pelo RA usado no comando set.seed
+
+getLocation = function(counter) {
+  googleMap(amostras2[counter,"lat"], amostras2[counter,"lon"], 
             mark=TRUE, maptype="terrain", radius=.1, browse=TRUE)
 }
 
 getLocation(1)
 getLocation(2)
-
 # etc...
-
-getLocation(25)
-
+getLocation(30)
 ```
 
 ## Entregar via Moodle
 
-* O arquivo `dados_XXXXXXX.csv`, substituindo XXXXX pelo RA utilizado no comando `set.seed`. O arquivo deve ter a terceira coluna preenchida com a informação: 1 caso o local tenha ponto de ônibus dentro do raio e 0, caso contrário.
+* O arquivo `dados_10_XXXXXXX.csv`, substituindo XXXXX pelo RA utilizado no comando `set.seed`. O arquivo deve ter a terceira coluna preenchida com a informação: 1 caso o local tenha ponto de ônibus dentro do raio e 0, caso contrário.
 
-* Um arquivo .pdf com o intervalo de confiança de 95% para a verdadeira proporção de locais com pontos de ônibus dentro do raio especificado na área de Campinas. Mostre os cálculos intermediários até o resultado. Interprete o intervalo de confiança para este problema. Fale sobre as suposições para que o intervalo seja válido. Sua amostra satisfaz essas suposições? Discuta em detalhes.
+* O arquivo `dados_30_XXXXXXX.csv`, substituindo XXXXX pelo RA utilizado no comando `set.seed`. O arquivo deve ter a terceira coluna preenchida com a informação: 1 caso o local tenha ponto de ônibus dentro do raio e 0, caso contrário.
+
+
+* Um arquivo .pdf com o intervalo de confiança (conservador e não conservador) de 95% para a verdadeira proporção de locais com pontos de ônibus dentro do raio especificado na área de Campinas. Mostre os cálculos intermediários até o resultado. Interprete o intervalo de confiança para este problema. Fale sobre as suposições para que o intervalo seja válido. Sua amostra satisfaz essas suposições? Discuta em detalhes. São 4 IC a serem feitos: conservador e não conservador para $n=10$ e $n=30$.
 
 ##
 
