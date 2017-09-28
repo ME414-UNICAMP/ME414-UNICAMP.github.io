@@ -136,7 +136,7 @@
 
 </article></slide><slide class=''><hgroup><h2>Usando inferência estatística</h2></hgroup><article  id="usando-inferencia-estatistica-1">
 
-<p>Se definirmos \(X=\sum_{i=1^n}X_i\), sabemos que \(X\sim Binomial(n,p)\), portanto \(E(X)=np\) e \(Var(X)=np(1-p)\).</p>
+<p>Se definirmos \(X=\sum_{i=1}^nX_i\), sabemos que \(X\sim Binomial(n,p)\), portanto \(E(X)=np\) e \(Var(X)=np(1-p)\).</p>
 
 <p>Queremos um estimador para \(p\): \(\hat{p}=\frac{1}{n}\sum_{i=1}^n X_i=\frac{X}{n}\).</p>
 
@@ -271,16 +271,14 @@ amostras1 = rgeo(n=total_amostras1, latlim = c(-23.00414,-22.791414),
 write.csv(amostras1, file=&quot;dados_10_XXXXXXX.csv&quot;) # substitua XXXXXXX pelo RA usado no comando set.seed
 
 getLocation = function(counter) {
-  googleMap(amostras[counter,&quot;lat&quot;], amostras[counter,&quot;lon&quot;], 
+  googleMap(amostras1[counter,&quot;lat&quot;], amostras1[counter,&quot;lon&quot;], 
             mark=TRUE, maptype=&quot;terrain&quot;, radius=.1, browse=TRUE)
 }
 
 # para coletar os dados:
 getLocation(1)
 getLocation(2)
-
 # etc...
-
 getLocation(10)</pre>
 
 </article></slide><slide class=''><hgroup><h2>Resumo dos comandos (cont.)</h2></hgroup><article  id="resumo-dos-comandos-cont.">
@@ -292,15 +290,13 @@ amostras2 = rgeo(n=total_amostras2, latlim = c(-23.00414,-22.791414),
 write.csv(amostras2, file=&quot;dados_30_XXXXXXX.csv&quot;) # substitua XXXXXXX pelo RA usado no comando set.seed
 
 getLocation = function(counter) {
-  googleMap(amostras[counter,&quot;lat&quot;], amostras[counter,&quot;lon&quot;], 
+  googleMap(amostras2[counter,&quot;lat&quot;], amostras2[counter,&quot;lon&quot;], 
             mark=TRUE, maptype=&quot;terrain&quot;, radius=.1, browse=TRUE)
 }
 
 getLocation(1)
 getLocation(2)
-
 # etc...
-
 getLocation(30)</pre>
 
 </article></slide><slide class=''><hgroup><h2>Entregar via Moodle</h2></hgroup><article  id="entregar-via-moodle">
@@ -308,7 +304,15 @@ getLocation(30)</pre>
 <ul>
 <li><p>O arquivo <code>dados_10_XXXXXXX.csv</code>, substituindo XXXXX pelo RA utilizado no comando <code>set.seed</code>. O arquivo deve ter a terceira coluna preenchida com a informação: 1 caso o local tenha ponto de ônibus dentro do raio e 0, caso contrário.</p></li>
 <li><p>O arquivo <code>dados_30_XXXXXXX.csv</code>, substituindo XXXXX pelo RA utilizado no comando <code>set.seed</code>. O arquivo deve ter a terceira coluna preenchida com a informação: 1 caso o local tenha ponto de ônibus dentro do raio e 0, caso contrário.</p></li>
+</ul>
+
+<p>(continua)</p>
+
+</article></slide><slide class=''><hgroup><h2>Entregar via Moodle (cont.)</h2></hgroup><article  id="entregar-via-moodle-cont.">
+
+<ul>
 <li><p>Um arquivo .pdf com o intervalo de confiança (conservador e não conservador) de 95% para a verdadeira proporção de locais com pontos de ônibus dentro do raio especificado na área de Campinas. Mostre os cálculos intermediários até o resultado. Interprete o intervalo de confiança para este problema. Fale sobre as suposições para que o intervalo seja válido. Sua amostra satisfaz essas suposições? Discuta em detalhes. São 4 IC a serem feitos: conservador e não conservador para \(n=10\) e \(n=30\).</p></li>
+<li><p>Na interpretação tome cuidado ao mencionar o parâmetro da população para a qual estamos fazendo a inferência. A população de interesse era a cidade de Campinas, mas por logística, ficou sendo apenas aquela região retangular da figura apresentada.</p></li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2></h2></hgroup><article  id="section">

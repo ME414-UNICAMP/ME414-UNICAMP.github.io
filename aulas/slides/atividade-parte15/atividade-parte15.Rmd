@@ -41,7 +41,7 @@ $$Var(X_i)=p(1-p)\,\quad \forall i$$
 
 ## Usando inferência estatística
 
-Se definirmos $X=\sum_{i=1^n}X_i$, sabemos que $X\sim Binomial(n,p)$, portanto $E(X)=np$ e $Var(X)=np(1-p)$.
+Se definirmos $X=\sum_{i=1}^nX_i$, sabemos que $X\sim Binomial(n,p)$, portanto $E(X)=np$ e $Var(X)=np(1-p)$.
 
 Queremos um estimador para $p$: $\hat{p}=\frac{1}{n}\sum_{i=1}^n X_i=\frac{X}{n}$. 
 
@@ -234,7 +234,13 @@ getLocation(30)
 * O arquivo `dados_30_XXXXXXX.csv`, substituindo XXXXX pelo RA utilizado no comando `set.seed`. O arquivo deve ter a terceira coluna preenchida com a informação: 1 caso o local tenha ponto de ônibus dentro do raio e 0, caso contrário.
 
 
+(continua)
+
+## Entregar via Moodle (cont.)
+
 * Um arquivo .pdf com o intervalo de confiança (conservador e não conservador) de 95% para a verdadeira proporção de locais com pontos de ônibus dentro do raio especificado na área de Campinas. Mostre os cálculos intermediários até o resultado. Interprete o intervalo de confiança para este problema. Fale sobre as suposições para que o intervalo seja válido. Sua amostra satisfaz essas suposições? Discuta em detalhes. São 4 IC a serem feitos: conservador e não conservador para $n=10$ e $n=30$.
+
+* Na interpretação tome cuidado ao mencionar o parâmetro da população para a qual estamos fazendo a inferência. A população de interesse era a cidade de Campinas, mas por logística, ficou sendo apenas aquela região retangular da figura apresentada.
 
 ##
 
