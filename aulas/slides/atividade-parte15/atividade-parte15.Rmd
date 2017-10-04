@@ -348,6 +348,19 @@ Para $n=10$: $\hat{p}=`r round(mean(p_a_10),2)`$.
 Para $n=30$: $\hat{p}=`r round(mean(p_a_30),2)`$.
 
 
+## Resultados 
+
+Usando todas as amostras de tamanho 30 da classe como se fosse uma amostra só com $n=`r length(p_a_30)`$, temos como estimativa $\hat{p}=\frac{`r sum(p_a_30)`}{`r length(p_a_30)`}=`r round(mean(p_a_30),2)`$.
+
+IC 95% para a verdadeira proporção ($p$) de locais na região delimitada com pelo menos um ponto de ônibus a XX de distância:
+
+$$IC_2(p, 1-\alpha)=\left[\hat{p}-z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}};\hat{p}+z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\right]$$
+
+$$IC_2(p, 0.95)=\left[`r round(mean(p_a_30),2)`-1.96\sqrt{\frac{`r round(mean(p_a_30),2)`(1-`r round(mean(p_a_30),2)`)}{`r length(p_a_30)`}};`r round(mean(p_a_30),2)`+1.96\sqrt{\frac{`r round(mean(p_a_30),2)`(1-`r round(mean(p_a_30),2)`)}{`r length(p_a_30)`}}\right]$$
+
+$$IC_2(p, 0.95)=[`r round(round(mean(p_a_30),2)-1.96*sqrt( round(mean(p_a_30),2)*(1-round(mean(p_a_30),2))/length(p_a_30)),2)`;`r round(round(mean(p_a_30),2)+1.96*sqrt( round(mean(p_a_30),2)*(1-round(mean(p_a_30),2))/length(p_a_30)),2)`]$$
+
+
 ##
 
 Slides produzidos por:
