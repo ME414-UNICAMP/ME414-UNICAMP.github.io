@@ -242,6 +242,112 @@ getLocation(30)
 
 * Na interpretação tome cuidado ao mencionar o parâmetro da população para a qual estamos fazendo a inferência. A população de interesse era a cidade de Campinas, mas por logística, ficou sendo apenas aquela região retangular da figura apresentada.
 
+
+
+
+
+```{r,echo=FALSE}
+arquivos <- list.files("./dadosalunos_10")
+p_10 <- c()
+p_a_10 <-c()
+for (i in 1:length(arquivos))
+{
+  tmp <- read.csv(paste0("./dadosalunos_10/",arquivos[i]),header=TRUE)
+  p_10[i] <- mean(tmp[,1])
+  p_a_10 <- c(p_a_10,tmp[,1])
+}
+
+```
+
+```{r, echo=FALSE, fig.height=3.5,message=FALSE,warning=FALSE,fig.align='center',eval=FALSE}
+library(ggplot2)
+
+library(RColorBrewer)
+mycol <- brewer.pal(8, "Dark2")
+
+
+eixos <- theme(plot.title = element_text(size=16, face="bold"),
+               axis.text = element_text(size=14), 
+               axis.title = element_text(size=14),
+               legend.title = element_text(size=14, face="bold"), 
+               legend.text=element_text(size=14))
+
+prop <- data.frame(six = p_10)
+
+ggplot(prop, aes(x=six)) + 
+    geom_histogram(bins=11, fill=mycol[1], col="black", alpha=0.8) + 
+    geom_vline(xintercept = mean(prop$six), col="red", linetype="dashed") + 
+    xlab("Proporção de locais com pontos de ônibus dentro do raio") + 
+    ylab("Frequência") + eixos
+
+```
+
+
+```{r,echo=FALSE}
+arquivos <- list.files("./dadosalunos_30")
+p_30 <- c()
+p_a_30 <-c()
+for (i in 1:length(arquivos))
+{
+  tmp <- read.csv(paste0("./dadosalunos_30/",arquivos[i]),header=TRUE)
+  p_30[i] <- mean(tmp[,1])
+  p_a_30 <- c(p_a_30,tmp[,1])
+}
+
+```
+
+
+```{r, echo=FALSE, fig.height=3.5,message=FALSE,warning=FALSE,fig.align='center',eval=FALSE}
+
+prop <- data.frame(six = p_30)
+
+ggplot(prop, aes(x=six)) + 
+    geom_histogram(bins=11, fill=mycol[1], col="black", alpha=0.8) + 
+    geom_vline(xintercept = mean(prop$six), col="red", linetype="dashed") + 
+    xlab("Proporção de locais com pontos de ônibus dentro do raio") + 
+    ylab("Frequência") + eixos
+
+```
+
+
+
+## Resultados para $n=10$ e $n=30$
+
+
+```{r,echo=FALSE,meassage=FALSE,warning=FALSE,fig.align='center'}
+dados <- data.frame(cidade=rep(c("10", "30"), each=44), salario=c(p_10, p_30))
+```
+
+
+```{r, echo=FALSE, fig.height=3.5, fig.width=8,fig.align='center'}
+
+library(ggplot2)
+
+library(RColorBrewer)
+mycol <- brewer.pal(8, "Dark2")
+
+
+eixos <- theme(plot.title = element_text(size=16, face="bold"),
+               axis.text = element_text(size=14), 
+               axis.title = element_text(size=14),
+               legend.title = element_text(size=14, face="bold"), 
+               legend.text=element_text(size=14))
+
+
+ggplot(data=dados, aes(salario)) + 
+    geom_histogram(bins=11, colour="black", fill=mycol[1],alpha=0.8) +
+    labs(x="Proporção de locais com pontos de ônibus dentro do raio", y="Frequência") + 
+    facet_grid(~ cidade) + 
+    theme(axis.title = element_text(face="bold", size=12, color="black"),
+          axis.text = element_text(face="bold", size=12, color="black"))
+```
+
+Para $n=10$: $\hat{p}=`r round(mean(p_a_10),2)`$.
+
+
+Para $n=30$: $\hat{p}=`r round(mean(p_a_30),2)`$.
+
+
 ##
 
 Slides produzidos por:
