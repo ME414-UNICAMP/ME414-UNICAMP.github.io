@@ -1,0 +1,247 @@
+---
+title: ME414 - Estatística para Experimentalistas
+subtitle: Uma senhora toma chá, mas eu tomo Coca-Cola! 
+output:
+  ioslides_presentation:
+    widescreen: yes
+logo: logo-imecc.png
+---
+
+```{r, include=FALSE}
+
+```
+
+# Teste de Hipóteses - Introdução
+
+## Uma senhora toma chá  {.build}
+
+[R. A. Fisher](https://pt.wikipedia.org/wiki/Ronald_Fisher) foi um dos fundadores da Estatística moderna. 
+
+Em um de seus famosos experimentos, ele testou a capacidade de uma senhora em distinguir se a xícara estava servida com o leite colocado antes ou depois do chá.
+
+<center><img src="figuras/cha.png" width=450></center>
+
+[Vídeo](https://youtu.be/lgs7d5saFFc)
+
+## Uma senhora toma chá  {.build}
+
+Como planejar um experimento para testar a capacidade da pessoa distinguir se o chá foi preparado com leite primeiro ou por último?
+
+> * Como lidar com variações na temperatura do chá, quantidade de açúcar, entre outras?
+
+> * Quantas xícaras devem ser usadas no teste? Qual a ordem de apresentação dessas xícaras?
+
+> * Qual conclusão iremos tirar caso a pessoa erre somente uma vez? Ou duas vezes?
+
+
+## Experimento {.build}
+
+> * 8 xícaras: 4 com chá colocado antes do leite e 4 com leite antes do chá.
+
+> * As oito xícaras foram apresentadas em ordem aleatória para a senhora, mas a informação de que eram 4 de cada tipo foi passada a ela.
+
+> * A senhora deveria provar a bebida das oito xícaras e escolher as 4 xícaras que acreditava estar com chá primeiro.
+
+> * Verificou-se quantas dentre as 4 xícaras ela escolheu corretamente.
+
+> * Quais os resultados possíveis do experimento?
+
+## Resultados possíveis {.build}
+
+
+* Tarefa da senhora: escolher as 4 xícaras com chá primeiro.
+
+> * São 8 xícaras: 4 com leite primeiro e 4 com chá primeiro.
+
+> * A senhora escolhe 4 dentre 8, sem reposição. 
+
+> * De quantas formas ela pode fazer isso, caso ela de fato não saiba distinguir e esteja fazendo tudo ao acaso?
+
+$$\binom{8}{4}=`r choose(8,4)`$$
+
+## Resultados possíveis {.build}
+
+
+* É possível que ela escolha as 4 corretamente: 4 com chá primeiro.
+
+> * De quantas formas ela pode escolher 4 corretas?
+
+> * Para escolher 4 corretas, duas coisas devem ocorrer: escolher 4 com chá primeiro (dentre 4 com chá primeiro) e não escolher nenhuma dentre as 4 com leite primeiro. 
+
+> * De quantas formas é possível fazer isso, caso ela de fato não saiba distinguir e esteja fazendo tudo ao acaso?
+
+$$\binom{4}{4}\binom{4}{0}=`r choose(4,4)*choose(4,0)`$$
+
+## Resultados possíveis {.build}
+
+* É possível que ela escolha 3 corretamente: 3 com chá primeiro e 1 com leite primeiro.
+
+> * De quantas formas ela pode escolher 3 corretas, caso ela de fato não saiba distinguir e esteja fazendo tudo ao acaso?
+
+$$\binom{4}{3}\binom{4}{1}=`r choose(4,3)*choose(4,1)`$$
+
+
+## Resultados possíveis {.build}
+
+* É possível que ela escolha 2 corretamente: 2 com chá primeiro e 2 com leite primeiro.
+
+> * De quantas formas ela pode escolher 2 corretas, caso ela de fato não saiba distinguir e esteja fazendo tudo ao acaso?
+
+$$\binom{4}{2}\binom{4}{2}=`r choose(4,2)*choose(4,2)`$$
+
+
+## Resultados possíveis {.build}
+
+* É possível que ela escolha 1 corretamente: 1 com chá primeiro e 3 com leite primeiro.
+
+> * De quantas formas ela pode escolher 1 correta, caso ela de fato não saiba distinguir e esteja fazendo tudo ao acaso?
+
+$$\binom{4}{1}\binom{4}{3}=`r choose(4,1)*choose(4,3)`$$
+
+## Resultados possíveis {.build}
+
+* É possível que ela erre todas: 0 com chá primeiro e 4 com leite primeiro.
+
+> * De quantas formas ela pode errar todas, caso ela de fato não saiba distinguir e esteja fazendo tudo ao acaso?
+
+$$\binom{4}{0}\binom{4}{4}=`r choose(4,0)*choose(4,4)`$$
+
+## Resultados possíveis {.build}
+
+
+```{r,echo=FALSE,fig.align='center'}
+barplot(c(choose(4,4)*choose(4,0),choose(4,3)*choose(4,1),choose(4,2)*choose(4,2),choose(4,1)*choose(4,3),choose(4,0)*choose(4,4)), names.arg=0:4, col="blue", main="", 
+            cex.lab=1.5, cex.axis=1.3, cex.names=1.3, cex.main=2, las=1, xlab="Total de acertos", ylab="Total de maneiras")
+```
+
+## Teste de hipótese {.build}
+
+* $H_0$: A senhora não consegue distinguir entre chá ou leite primeiro e escolhe ao acaso durante o experimento.
+
+> * $H_a$: A senhora consegue distinguir.
+
+> * Estatística do teste: Total de acertos ($X$)
+
+> * Para decidir, precisamos primeiramente da distribuição de probabilidade da estatística do teste quando $H_0$ é verdadeira.
+
+## Distribuição Hipergeométrica {.build}
+
+* População dividida em duas características
+
+> * Extrações casuais sem reposição
+
+> * $N$ objetos
+
+> * $r$ têm a característica A
+
+> * $N-r$ têm a característica B 
+
+> * um grupo de $n$ elementos é escolhido ao acaso, dentre os $N$ possíveis, sem reposição. 
+
+> Queremos calcular a probabilidade de que este grupo de $n$ elementos contenha $x$ elementos com a característica A.
+
+## Distribuição Hipergeométrica {.smaller}
+
+  Elemento escolhido                     | Característica $A$  | Característica $B$|   Total    
+------------------------| ------------------------- | ------------------------- |---------- 
+**sim** | $x$                       |            $n-x$            | $n$ 
+**não** |                     |                       | $N-n$ 
+            **Total**              | $r$                   | $N-r$                     | $N$      
+
+
+Seja $X$ a v.a. que representa o número de elementos com a característica A dentre os $n$ escolhidos ao acaso. 
+
+Então dizemos que $X$ segue uma distribuição **Hipergeométrica** com parâmetros $N,n,r$, ou seja, $X \sim Hip(N,n,r)$. 
+
+A probabilidade de se observar $x$ é dada por: $$P(X=x)=\frac{\binom{r}{x}\binom{N-r}{n-x}}{\binom{N}{n}}\,,\quad\quad0\leq x \leq min\{r,n\}$$
+
+
+
+## Teste de hipótese
+
+* População dividida em duas características: chá primeiro, leite primeiro. 
+* Extrações casuais sem reposição
+* $N$ objetos: 8 xícaras
+* $r$ têm a característica A: 4 com chá primeiro
+* $N-r$ têm a característica B: 4 com leite primeiro   
+* Um grupo de $n$ elementos é **escolhido ao acaso**, dentre os $N$ possíveis, sem reposição: a senhora escolhe 4 xícaras dentre as 8.
+
+## Teste de hipótese
+
+Queremos calcular a probabilidade de que dentre as 4 xícaras escolhidas $x$ tenham de fato o chá colocado primeiro. 
+
+Seja $X$ a v.a. que representa o número de xícaras com chá primeiro dentre as 4 selecionadas.
+
+Então dizemos que $X$ segue uma distribuição **Hipergeométrica** com parâmetros $N,n,r$, ou seja, $X \sim Hip(N=8,n=4,r=4)$.
+
+A probabilidade de se observar $x$ é dada por: 
+$$P(X=x)=\frac{\binom{4}{x}\binom{4}{n-x}}{\binom{8}{4}}, \qquad 0\leq x \leq 4$$ 
+
+## Teste de hipótese
+
+* $H_0$: A senhora não consegue distinguir entre chá ou leite primeiro e escolhe ao acaso durante o experimento.
+
+* Estatística do teste: Total de acertos ($X$)
+
+* Distribuição de probabilidade da estatística do teste, quando $H_0$ é verdadeira.
+
+$$P(X=x)=\frac{\binom{4}{x}\binom{4}{4-x}}{\binom{8}{4}}, \qquad 0\leq x \leq 4$$
+
+
+## Teste de Hipótese
+
+Distribuição da Estatística do Teste sob $H_0$
+
+```{r,echo=FALSE,fig.align='center'}
+barplot(c(choose(4,4)*choose(4,0),choose(4,3)*choose(4,1),choose(4,2)*choose(4,2),choose(4,1)*choose(4,3),choose(4,0)*choose(4,4))/choose(8,4), names.arg=0:4, col="blue", main="", 
+            cex.lab=1.5, cex.axis=1.3, cex.names=1.3, cex.main=2, las=1, xlab="x", ylab="P(X=x)")
+```
+
+## Teste de Hipótese {.build}
+
+Como decidir se rejeitamos ou não $H_0$ de acordo com a estatística do teste observada?
+
+> Como decidir se rejeitamos a hipótese de que a senhora não consegue distinguir os chás, sendo que ela acertou, por exemplo, 3? Se ela tivesse acertado todas as 4 xícaras? Seria por pura sorte? Ou ela tem algum conhecimento?
+
+> Calculamos a probabilidade de um valor igual ou mais extremo ao da estatística do teste observada (**valor-de-p**). Mais extremo: mais evidência contra $H_0$.
+
+> Se o valor-de-p obtido é bem pequeno, por exemplo, 0.01, isto quer dizer que se $H_0$ é verdadeira, então seria incomum obter uma amostra com os resultados como o observado. 
+
+Um valor-de-p muito baixo traz fortes evidências contra $H_0$.
+
+## Conclusão {.build}
+
+
+Se a senhora acertou 3 xícaras:
+
+```{r,echo=FALSE}
+library(MASS)
+p0 = fractions(dhyper(0,4,4,4))
+p1 = fractions(dhyper(1,4,4,4))
+p2 = fractions(dhyper(2,4,4,4))
+p3 = fractions(dhyper(3,4,4,4))
+p4 = fractions(dhyper(4,4,4,4))
+pvalue = fractions(dhyper(3,4,4,4)+dhyper(4,4,4,4))
+```
+
+$$P(X=3) = \frac{\binom{4}{3}\binom{4}{1}}{\binom{8}{4}}=`r as.character(p3)` $$
+
+> Calculamos a probabilidade de um valor igual ou mais extremo ao da estatística do teste observada (**valor-de-p**). Mais extremo: mais evidência contra $H_0$.
+
+> Se a senhora tivesse acertado 4, seria ainda mais evidência contra $H_0$, de forma que o valor de p é calculado como:
+
+$$P(X=3)+P(X=4)=`r as.character(p3)` + `r as.character(p4)` = `r as.character(pvalue)`$$
+
+> Se este valor for considerado alto, não temos evidências, baseando-se no experimento realizado, para rejeitar $H_0$. 
+
+
+
+ 
+ 
+
+
+##
+
+Slides produzidos por:
+
+* Samara Kiihl
