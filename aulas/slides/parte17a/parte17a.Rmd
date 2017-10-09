@@ -203,7 +203,7 @@ Como decidir se rejeitamos ou não $H_0$ de acordo com a estatística do teste o
 
 > Como decidir se rejeitamos a hipótese de que a senhora não consegue distinguir os chás, sendo que ela acertou, por exemplo, 3? Se ela tivesse acertado todas as 4 xícaras? Seria por pura sorte? Ou ela tem algum conhecimento?
 
-> Calculamos a probabilidade de um valor igual ou mais extremo ao da estatística do teste observada (**valor-de-p**). Mais extremo: mais evidência contra $H_0$.
+> Calculamos a probabilidade, sob $H_0$, de um valor igual ou mais extremo ao da estatística do teste observada (**valor-de-p**). Mais extremo: mais evidência contra $H_0$.
 
 > Se o valor-de-p obtido é bem pequeno, por exemplo, 0.01, isto quer dizer que se $H_0$ é verdadeira, então seria incomum obter uma amostra com os resultados como o observado. 
 
