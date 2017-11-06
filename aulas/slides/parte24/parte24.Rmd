@@ -258,7 +258,7 @@ muk <- round(stats[, 2], 2)
 mu <- round(mean(stats[, 2]), 2)
 ```
 
-A média geral, considerando todas as notas como sendo de uma única turma é $\bar X = `r mu$.
+A média geral, considerando todas as notas como sendo de uma única turma é $\bar X = `r mu`$.
 
 ## Cálculo das Somas de Quadrados 
 ```{r, echo=FALSE}

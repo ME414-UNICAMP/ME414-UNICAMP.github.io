@@ -198,6 +198,7 @@ barplot(bb$Freq, names.arg=namess, col="blue", main="",
             cex.lab=1.0, cex.axis=1.0, cex.names=1.0, cex.main=2, las=2, xlab="Diferença entre A e B", ylab="Frequência")
 ```
 
+
 ## Exemplo
 
 A diferença observada foi de `r xbarA-xbarB`.
@@ -312,16 +313,15 @@ Quantas maneiras temos de escolher ao acaso 10 pessoas, de um grupo de 20?
 
 Todas as diferenças obtidas através de alocação ao acaso nos tratamentos:
 
+
 ```{r,echo=FALSE,fig.align='center'}
-hist(diff,xlab="Diferença entre A e B", ylab="Frequência",main="")
+bb <- as.data.frame(table(diff))
+namess <- as.character(round(as.numeric(as.character(bb$diff)),2))
+barplot(bb$Freq, names.arg=namess, col="blue", main="", 
+            cex.lab=1.0, cex.axis=1.0, cex.names=1.0, cex.main=2, las=2, xlab="Diferença entre A e B", ylab="Frequência")
 ```
 
 ## Exemplo 2
-
-```{r,echo=FALSE,fig.align='center',fig.height=3.5}
-hist(diff,xlab="Diferença entre A e B", ylab="Frequência",main="")
-abline(v=diffobs,col="red")
-```
 
 P-valor: diferenças iguais ou maiores, em valor absoluto, do que o valor absoluto da diferença observada, $|`r diffobs`|$.
 
