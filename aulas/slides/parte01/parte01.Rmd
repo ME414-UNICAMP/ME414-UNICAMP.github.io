@@ -44,15 +44,6 @@ logo: ../logo-imecc.png
 
 >... e não estamos muito longe do tempo em que se entenderá que, para exercermos a cidadania de maneira eficiente, será tão necessário saber calcular e pensar em médias, máximos e mínimos, quanto é agora necessário saber ler e escrever.
 
-## Introdução
-
-
-![](figuras/Dilma.jpg)
-
-
-[Vídeo: Dilma se enrola com as contas!](https://www.youtube.com/watch?v=A1K4rlBFT2w)
-
-
 
 ## Introdução{.build}
 
