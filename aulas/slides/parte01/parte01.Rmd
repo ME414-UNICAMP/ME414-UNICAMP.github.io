@@ -77,6 +77,12 @@ Jornais e revistas estão repletos de informações obtidas através de pesquisa
 </center>
 
 
+## Introdução
+
+<center>
+![Pesquisa](figuras/graficofake2.png "Pesquisa")
+</center>
+
 ## Introdução {.build}
 
 > * Em 1920, estudando dados de produtividade de cultivo, [Ronald Fisher](http://en.wikipedia.org/wiki/Ronald_Fisher) formou a base da estatística moderna.
