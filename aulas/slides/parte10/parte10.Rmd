@@ -326,6 +326,13 @@ Então, $$\mbox{Var} (S) = 7.975 - (2.75)^2 = 0.4125$$
 
 # Principais Modelos Discretos
 
+## Uniforme Discreta
+
+<center><img src="figuras/mega-sena.png" width=550></center>
+
+
+https://veja.abril.com.br/economia/apesar-de-resultado-improvavel-quatro-pessoas-levam-mega-sena-de-sabado/
+
 ## Uniforme Discreta {.build}
 
 **Exemplo:** Uma rifa tem 100 bilhetes numerados de 1 a 100. Tenho 5 bilhetes consecutivos numerados de 21 a 25, e meu colega tem outros 5 bilhetes, com os números 1, 11, 29, 68 e 93.  
