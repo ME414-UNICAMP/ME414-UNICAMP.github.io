@@ -5,44 +5,28 @@ permalink: /about/
 ---
 
 
-## Turmas Segundo Semestre 2017
-
-### ME414 - A
-
-* Professor: [Ronaldo Dias](http://www.ime.unicamp.br/~dias/)
-* Horário das aulas: Segundas e Quintas 21 às 23 - CB04
-* [Informações da disciplina](http://www.ime.unicamp.br/~dias/ME414-A.html)
-
-### ME414 - B
-
-* Professor: [Mariana Rodrigues Motta](http://www.ime.unicamp.br/~marianar/)
-* Horário das aulas: Terças 16 às 18 CB01 e Quintas 16 às 18 - CB06
-* [Informações da disciplina](http://www.ggte.unicamp.br/eam/course/view.php?id=5081)
+## Turmas Segundo Semestre 2018
 
 
-### ME414 - E
+
+
+### ME414 - D
 
 * Professor: [Samara Flamini Kiihl](http://www.ime.unicamp.br/~samara/)
-* Horário das aulas: Segundas e Quartas 14 às 16 - CB04
-* [Informações da disciplina](http://www.ggte.unicamp.br/eam/course/view.php?id=4724)
+* Horário das aulas: Terças e Quintas 8 às 10 - CB06
+* [Informações da disciplina]()
 
 ### ME414 - F
 
-* Professor: Aline Martines Piroutek
+* Professor: Tatiana Andrea Benaglia
 * Horário das aulas: Terças e Quintas 8 às 10 - CB01
-* [Informações da disciplina](http://www.ggte.unicamp.br/eam/course/view.php?id=5104)
+* [Informações da disciplina]()
 
 ## ME414 - H
 
-* Professor: [Larissa Avila Matos](http://www.ime.unicamp.br/departamentos/estatistica/corpo-docente#)
-* Horário das aulas: Quartas 10 às 12 - CB13 e Sextas 10 às 12 - CB11
-* [Informações da disciplina](http://www.ggte.unicamp.br/eam/course/view.php?id=4705)
-
-## ME414 - I
-
 * Professor: [Rafael Pimentel Maia](http://www.ime.unicamp.br/~rafaelmaia/)
-* Horário das aulas: Terças e Quintas 16 às 18 - CB05
-* [Informações da disciplina](http://www.ggte.unicamp.br/eam/enrol/index.php?id=4949)
+* Horário das aulas: Quartas 10 às 12 -  e Sextas 10 às 12 - 
+* [Informações da disciplina]()
 
 
 ## Monitorias
