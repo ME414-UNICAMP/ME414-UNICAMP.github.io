@@ -32,7 +32,7 @@ permalink: /about/
 ## Monitorias
 
 ### PEDs
-* PED-C: Tatiany Mafra da Silva (Turma F) - RA 164354
+* PED-C: Tatiany Mafra da Silva - RA 164354
 
 * PED-C: Gabriel Franco de Souza - RA 081453
 
