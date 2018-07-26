@@ -18,9 +18,9 @@ permalink: /about/
 
 ### ME414 - F
 
-* Professor: Tatiana Andrea Benaglia
-* Horário das aulas: Terças e Quintas 8 às 10 - CB01
-* [Informações da disciplina]()
+* Professor: Tatiana Benaglia
+* Horário das aulas: Terças e Quintas 8 às 10h - CB01
+* [Informações da disciplina](http://www.ggte.unicamp.br/eam/course/view.php?id=8323)
 
 ## ME414 - H
 
@@ -32,6 +32,7 @@ permalink: /about/
 ## Monitorias
 
 ### PEDs
+* PED-C: Tatiany Mafra da Silva (Turma F) - RA 164354
 
 * PED-C: David Ricardo Barreto Lima Silva - RA 042885
 
@@ -55,6 +56,7 @@ permalink: /about/
 * Terça 12-13 - IMECC 223 - Nathalia
 * Terça 13-14 - IMECC 224 - Nícolas
 * Terça 18-19 - IMECC 124 - Gabriel
+* Quarta 12-13 - sala a ser definida - Tatiany
 * Quarta 12-13 - IMECC 223 - Christian
 * Quarta 13-14 - IMECC 324 - Nathalia
 * Quarta 18-19 - IMECC 124 - David
@@ -62,5 +64,6 @@ permalink: /about/
 * Quinta 13-14 - IMECC 223 - Ana
 * Quinta 18-19 - IMECC 124 - Gabriel
 * Sexta 12-13 - IMECC 124 - Sabrina
+* Sexta 12-13 - sala a ser definida - Tatiany
 * Sexta 13-14 - IMECC 124 - Sabrina
 
