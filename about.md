@@ -34,36 +34,26 @@ permalink: /about/
 ### PEDs
 * PED-C: Tatiany Mafra da Silva (Turma F) - RA 164354
 
-* PED-C: David Ricardo Barreto Lima Silva - RA 042885
-
-* PED-B: Gabriel Franco de Souza - RA 081453
-
-* PED-C: Ana Julieth Calderón Márquez - RA 191357    
-
-* PED-C: Christian Eduardo Galarza Morales - RA 143711
+* PED-C: Gabriel Franco de Souza - RA 081453
 
 * PED-C: Nathalia Lima Chaves - RA 149075
 
-* PED-C: Nícolas Romano - RA 147534
-
-* PAD: Sabrina Alves Rojas De Souza - RA 186914
-
 ### Horário de atendimento
 
-* Segunda 12-13 - IMECC 223 - Ana
-* Segunda 13-14 - IMECC 324 - Nícolas
-* Segunda 18-19 - IMECC 124 - David
-* Terça 12-13 - IMECC 223 - Nathalia
-* Terça 13-14 - IMECC 224 - Nícolas
-* Terça 18-19 - IMECC 124 - Gabriel
+* Segunda 12-13 - IMECC  - 
+* Segunda 13-14 - IMECC  - 
+* Segunda 18-19 - IMECC  - 
+* Terça 12-13 - IMECC - 
+* Terça 13-14 - IMECC  - 
+* Terça 18-19 - IMECC  - 
 * Quarta 12-13 - sala a ser definida - Tatiany
-* Quarta 12-13 - IMECC 223 - Christian
-* Quarta 13-14 - IMECC 324 - Nathalia
-* Quarta 18-19 - IMECC 124 - David
-* Quinta 12-13 - IMECC 223 - Christian
-* Quinta 13-14 - IMECC 223 - Ana
-* Quinta 18-19 - IMECC 124 - Gabriel
-* Sexta 12-13 - IMECC 124 - Sabrina
+* Quarta 12-13 - IMECC  - 
+* Quarta 13-14 - IMECC  - 
+* Quarta 18-19 - IMECC  - 
+* Quinta 12-13 - IMECC  - 
+* Quinta 13-14 - IMECC  - 
+* Quinta 18-19 - IMECC  - 
+* Sexta 12-13 - IMECC  - 
 * Sexta 12-13 - sala a ser definida - Tatiany
-* Sexta 13-14 - IMECC 124 - Sabrina
+* Sexta 13-14 - IMECC  - 
 
