@@ -67,6 +67,8 @@ Jornais e revistas estão repletos de informações obtidas através de pesquisa
 
 > * Como predizer o valor de venda de uma casa?
 
+> * Como o Netflix sabe que tipo de filmes/séries você gosta?
+
 > Na era da internet e do "Big Data", entender estatística é essencial.
 
 
