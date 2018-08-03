@@ -48,12 +48,12 @@ permalink: /about/
 * Terça 18-19 - IMECC  - 
 * Quarta 12-13 - sala a ser definida - Tatiany
 * Quarta 12-13 - IMECC  - 
-* Quarta 13-14 - IMECC  - 
+* Quarta 13-14 - sala 322 IMECC - Nathalia
 * Quarta 18-19 - IMECC  - 
 * Quinta 12-13 - IMECC  - 
 * Quinta 13-14 - IMECC  - 
 * Quinta 18-19 - IMECC  - 
 * Sexta 12-13 - IMECC  - 
 * Sexta 12-13 - sala a ser definida - Tatiany
-* Sexta 13-14 - IMECC  - 
+* Sexta 13-14 - sala 323 IMECC - Nathalia
 
