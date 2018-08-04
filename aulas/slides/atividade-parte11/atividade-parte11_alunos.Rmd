@@ -1,0 +1,87 @@
+---
+title: "Atividade em classe"
+output: pdf_document
+---
+
+### Introdução
+
+Você está muito entediado e começou a jogar, sozinho, um jogo bem simples. Você usou o tabuleiro abaixo, uma peça para marcar a casa no tabuleiro e um dado comum de 6 faces.
+
+\begin{center} 
+\includegraphics[width=2in]{figuras/tabuleiro.png} 
+\end{center}
+
+Você deverá jogar da seguinte maneira:
+
+* Coloque a peça na casa **START**
+* Jogue o dado
+* Se sair um número **PAR**, vá uma casa para **CIMA**
+* Se sair um número **ÍMPAR**, vá um casa para a **ESQUERDA**
+* Caso o resultado coloque sua peça fora do tabuleiro, você perde o jogo.
+* Se conseguir chegar na casa **FINISH** você ganhou o jogo.
+
+
+### Experimento Aleatório e Espaço Amostral
+
+Considere uma partida deste jogo como um experimento aleatório, ou seja, a sequência de jogadas da partida (ex: "PPP") é um fenômeno aleatório, pois não conhecemos _a priori_ a sequência de jogadas. 
+
+**Construa uma tabela com duas colunas: o ponto do espaço amostral do experimento e a probabilidade dele ocorrer.**
+
+TABELA
+
+### Variável Aleatória Discreta
+
+No caso da partida do jogo, não temos interesse na sequência de resultados obtida, mas apenas no resultado final: ganhou ou não. Desta maneira, temos dois eventos de interesse no espaço amostral: 
+
+* Evento $A$, com pontos amostrais que levam à vitória
+* Evento $B$, com pontos amostrais que levam à derrota
+
+
+**Apresente uma tabela com duas colunas: pontos amostrais do evento $A$ e a probabilidade de cada ponto amostral.**
+
+
+TABELA
+
+
+Uma **função $X$** que associa a cada elemento do espaço amostral um valor num conjunto enumerável de pontos da reta é denominada **variável aleatória discreta**. 
+
+O resultado de uma partida deste jogo pode ser considerado como uma variável aleatória, $X$, tendo os seguintes resultados possíveis ganhar (1) ou perder (0).  
+
+**A probabilidade de vencer o jogo é $P(X=1)=P(A)=\quad\quad\quad\quad$     e a de perder é $P(X=0)=P(B)=\quad\quad\quad\quad$.**
+
+### Esperança de uma Variável Aleatória Discreta
+
+Seja $X$ uma v.a. discreta assumindo os valores $x_1 , \ldots , x_n$.
+A esperança (ou valor esperado ou valor médio) da variável X é dada por:
+
+$$E(X)=\sum_{i=1}^n x_i\,P(X=x_i)\,.$$
+
+Interpretação: A esperança de X é a média ponderada de todos os valores
+possíveis de X, onde o peso de cada valor é a sua probabilidade de ocorrência.
+
+No caso do jogo considerado, a esperança da variável aleatória $X$ é:
+
+$$E(X)=1\times P(X=1) + 0\times P(X=0)=$$
+
+### Variância de uma Variável Aleatória Discreta
+
+Uma medida para quantificar quão distantes os valores da variável aleatória $X$ estão da sua esperança: variância. 
+
+Se $X$ é uma v.a. com esperança $E(X)=\mu$, então a variância de $X$ é:
+  $$Var(X)=E[(X-\mu)^2]= E(X^2)-[E(X)]^2=E(X^2)-\mu^2\,.$$
+  
+No caso do jogo considerado, já calculamos $E(X)$ e precisamos calcular $E(X^2)$. Para tanto, considere a seguinte variável aleatória:
+
+\[
+X^2=  \begin{cases} 
+1^2, & \mbox{se $X=1$}\\ 
+0^2, & \mbox{se $X=0$}\\
+\end{cases}
+\]
+
+$E(X^2)=1 \times P(X=1) + 0\times P(X=0)=$
+
+Portanto $Var(X)=E(X^2)-[E(X)]^2=$
+
+
+

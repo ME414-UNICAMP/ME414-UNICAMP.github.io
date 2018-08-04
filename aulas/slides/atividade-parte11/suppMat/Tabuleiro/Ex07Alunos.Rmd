@@ -1,0 +1,247 @@
+# Exercício 7
+
+Você está muito entediado e começou a jogar, sozinho, um jogo bem simples. Você usou um tabuleiro, uma peça para marcar a casa no tabuleiro e um dado comum de 6 faces.
+
+![Tabuleiro](tabuleiro.png)
+
+Você deverá jogar da seguinte maneira:
+
+* Coloque a peça na casa **START**
+* Jogue o dado
+* Se sair um número **PAR**, vá uma casa para **CIMA**
+* Se sair um número **ÍMPAR**, vá um casa para a **ESQUERDA**
+* Caso o resultado coloque sua peça fora do tabuleiro, você perde o jogo.
+* Se conseguir chegar na casa **FINISH** você ganhou o jogo.
+
+Ao lançar o dado, a chance de sair um número par é $1/2$, e a chance de sair um número ímpar é $1/2$.
+
+### Experimento Aleatório e Espaço Amostral
+
+Considere uma partida deste jogo como um experimento aleatório, ou seja, a sequência de jogadas da partida (ex: "PPP") é um fenômeno aleatório, pois não conhecemos _a priori_ a sequência de jogadas. Construa uma tabela com duas colunas: o ponto do espaço amostral do experimento e a probabilidade dele ocorrer.
+
+```{r,echo=FALSE}
+PontoAmostral=c(XXXXXXXXXXXXXXXX)
+# para facilitar o calculo das probabilidades, procure entender o que faz a função nchar
+Prob <- XXXXXXXXXX
+
+ExperimentoAleatorio <- data.frame(PontoAmostral,Prob,stringsAsFactors=FALSE)
+
+library(knitr)
+kable(cbind(PontoAmostral,Prob), format = "markdown",row.names=FALSE,col.names=c("Ponto Amostral","Probabilidade"))
+```
+
+
+### Variável Aleatória Discreta
+
+No caso da partida do jogo, não temos interesse na sequência de resultados obtida, mas apenas no resultado final: ganhou ou não. Desta maneira, temos dois eventos de interesse no espaço amostral: 
+
+* Evento $A$, com pontos amostrais que levam à vitória
+* Evento $B$, com pontos amostrais que levam à derrota
+
+A tabela a seguir apresenta apenas com os pontos amostrais do evento $A$:
+
+```{r,echo=FALSE}
+ExperimentoAleatorioVitoria <- ExperimentoAleatorio[ExperimentoAleatorio$PontoAmostral %in% c(XXXXXXXXXXX),]
+
+kable(cbind(ExperimentoAleatorioVitoria$PontoAmostral,ExperimentoAleatorioVitoria$Prob), format = "markdown",row.names=FALSE,col.names=c("Ponto Amostral","Probabilidade"))
+```
+
+Uma **função $X$** que associa a cada elemento do espaço amostral um valor num conjunto enumerável de pontos da reta é denominada **variável aleatória discreta**. 
+
+O resultado de uma partida deste jogo pode ser considerado como uma variável aleatória, $X$, tendo os seguintes resultados possíveis ganhar (1) ou perder (0).  A probabilidade de vencer o jogo é $P(X=1)=P(A)=`r XXXXXXXX`$ e a de perder é $P(X=0)=P(B)=`r XXXXXXXX`$. 
+
+### Esperança de uma Variável Aleatória Discreta
+
+Seja $X$ uma v.a. discreta assumindo os valores $x_1 , \ldots , x_n$.
+A esperança (ou valor esperado ou valor médio) da variável X é dada por:
+
+$$E(X)=\sum_{i=1}^n x_i\,P(X=x_i)\,.$$
+
+Interpretação: A esperança de X é a média ponderada de todos os valores
+possíveis de X, onde o peso de cada valor é a sua probabilidade de ocorrência.
+
+No caso do jogo considerado, a esperança da variável aleatória $X$ é:
+
+$$E(X)=1\times P(X=1) + 0\times P(X=0)=`r XXXXXXX`\,.$$
+
+### Variância de uma Variável Aleatória Discreta
+
+Uma medida para quantificar quão distantes os valores da variável aleatória $X$ estão da sua esperança: variância. 
+
+Se $X$ é uma v.a. com esperança $E(X)=\mu$, então a variância de $X$ é:
+  $$Var(X)=E[(X-\mu)^2]= E(X^2)-[E(X)]^2=E(X^2)-\mu^2\,.$$
+  
+No caso do jogo considerado, já calculamos $E(X)$ e precisamos calcular $E(X^2)$. Para tanto, considere a seguinte variável aleatória:
+
+\[
+X^2=  \begin{cases} 
+1^2, & \mbox{se $X=1$}\\ 
+0^2, & \mbox{se $X=0$}\\
+\end{cases}
+\]
+
+$E(X^2)=1 \times P(X=1) + 0\times P(X=0)=`r XXXXXXX`$.
+
+Portanto $Var(X)=E(X^2)-[E(X)]^2=XXXXXXX$.
+
+
+### Modelo de Bernoulli
+
+Assim como no exemplo do jogo, em muitas aplicações, cada observação de um experimento aleatório é **binária**: tem apenas dois resultados possíveis.
+
+Por exemplo, uma pessoa pode:
+
+* aceitar ou recusar uma oferta de cartão de crédito de seu banco.
+* ter ou não um plano de saúde.
+* votar sim ou não em uma assembléia.
+
+#### Ensaio de Bernoulli
+
+* Considere um experimento $E$ com espaço de resultados $\Omega$ e o evento $A$.
+* Vamos dizer que ocorreu **sucesso** se o evento $A$ aconteceu. 
+* Se $A$ não aconteceu ocorreu **fracasso**. 
+* Exemplo: Experimento $E$ é uma partida do jogo descrito acima, $\Omega$ são todas as sequências possíveis da partida (primeira tabela apresentada) e o evento $A$ são as sequências de jogadas que levam à vitória (segunda tabela apresentada). 
+* Este tipo de experimento se chama ensaio Bernoulli. 
+
+No modelo de Bernoulli, $X$ é a variável aleatória que representa o resultado do experimento: sucesso ($X=1$) ou fracasso ($X=0$).  Forma geral de escrever a probabilidade de uma variável Bernoulli: $P(X=x)=p^{x}(1-p)^{1-x}$ em que $x=0,1$ e $p$ é a probabilidade de sucesso. Indicamos por $X\sim\mbox{Bernoulli}(p)$.
+
+* $E(X)= 0\times(1-p) + 1\times p = p$ 
+* $E(X^{2})= 0^{2}\times(1-p) + 1^{2}\times p = p$
+* $Var(X)=E(X^{2})-[E(X)]^{2}  = p-p^{2}=p(1-p)$
+
+
+### Modelo Binomial
+
+* Considere novamente um experimento $E$ com espaço de resultados $\Omega$ e o evento $A$. 
+* Vamos dizer que ocorreu sucesso se o evento $A$ aconteceu. Se $A$ não aconteceu ocorreu fracasso. 
+* Repetimos o experimento $n$ vezes, de forma independente.
+* $Y$=Número de sucessos nos $n$ experimentos.
+* A repetição de ensaios de Bernoulli independentes dão origem a uma variável aleatória Binomial.
+* $Y\sim\mbox{Binomial}(n,p)$ representa o total de sucessos em $n$ repetições de um ensaio de Bernoulli com probabilidade de sucesso $p$.
+* Exemplo: Experimento $E$ é uma partida do jogo descrito acima, $\Omega$ são todas as sequências possíveis da partida (primeira tabela apresentada) e o evento $A$ são as sequências de jogadas que levam à vitória (segunda tabela apresentada). $X_i$ é o resultado do $i$-ésima partida do jogo.
+
+$X_i = \left\{
+\begin{array}{ll}
+1, & \mbox{ganhou, ie, A ocorreu} \\
+0, & \mbox{perdeu, ie, A não ocorreu}
+\end{array}
+\right.$ 
+
+Sabemos que $P(X_i=1)=`r XXXXXXX`$.
+
+Seja $Y$ o número de partidas ganhas de um total de $n$ partidas. Se as partidas forem independentes, então $Y=\sum_{i=1}^nX_i\sim\mbox{Binomial}(n,p=`r XXXXXXX`)$.
+
+Se as $n$ partidas são jogadas pela mesma pessoa, elas são independentes? Justifique sua resposta.
+
+Considere 3 partidas independentes. Preencha a tabela a seguir:
+
+Resultado de cada uma das partidas  | Probabilidade | valor de $Y$
+----------------------------------- | ------------- | ------------
+$X_1=0$, $X_2=0$, $X_3=0$           | `r XXXXXX` | 0
+$X_1=1$, $X_2=0$, $X_3=0$         | `r XXXXXXX`| 1
+$X_1=0$, $X_2=1$, $X_3=0$         | `r XXXXXXX`| 1
+$X_1=0$, $X_2=0$, $X_3=1$         |`r XXXXXXX`| 1
+$X_1=1$, $X_2=1$, $X_3=0$         |`r XXXXXXX`| 2
+$X_1=1$, $X_2=0$, $X_3=1$         |`r XXXXXXX`| 2
+$X_1=0$, $X_2=1$, $X_3=1$         |`r XXXXXXX`| 2
+$X_1=1$, $X_2=1$, $X_3=1$         |  `r XXXXXXX` | 3
+
+
+Portanto temos que a distribuição de probabilidade da variável aleatória $Y$ é:
+
+ Probabilidade | valor de $Y$
+-------------  | ------------
+`r XXXXX` | 0
+`r XXXXX`| 1
+`r XXXXX`| 2
+`r XXXXX` | 3
+
+Forma geral: $Y\sim\mbox{Binomial}(n,p)$, $P(Y=y)=\binom{n}{y}p^y(1-p)^{n-y}$, $\forall y=0,1,\ldots,n$.
+
+* $E(X)= np$ 
+* $Var(X)=np(1-p)$
+
+É possível calcular $P(Y=y)$ automaticamente através da função **dbinom**. Usando esta função, preencha a seguir, considerando o jogo descrito acima:
+
+* a probabilidade de vencer 4 vezes dentre 10 partidas é: `r dbinom(x=XXX,size=XXXX,prob=XXXXX)`.
+* a probabilidade de vencer 5 vezes dentre 7 partidas é: `r dbinom(x=XXX,size=XXX,prob=XXXXX)`.
+* a probabilidade de vencer 1 dentre 3 partidas é: `r dbinom(x=XXX,size=XXX,prob=XXX)`.
+
+Para calcular $P(Y\leq y)$ ou $P(Y>y)$ automaticamente, usamos a função **pbinom**. Usando esta função, preencha a seguir:
+
+* a probabilidade de vencer no máximo 2 vezes dentre 3 partidas é `r pbinom(q=XXX,size=XXXX,prob=XXXXX,lower.tail=XXXXX)`.
+
+* a probabilidade de vencer pelo menos 7 vezes dentre 10 partidas é `r pbinom(q=XXXX,size=XXX,prob=XXXX,lower.tail=XXXX)`.
+
+* a probabilidade de vencer pelo menos 5 vezes dentre 7 partidas é `r pbinom(q=XXXX,size=XX,prob=XXXXX,lower.tail=XXXX)`.
+
+
+### Modelo Geométrico
+
+* Considere novamente um experimento $E$ com espaço de resultados $\Omega$ e o evento $A$. 
+* Vamos dizer que ocorreu sucesso se o evento $A$ aconteceu. Se $A$ não aconteceu ocorreu fracasso. 
+* Repetimos o experimento até o primeiro sucesso, de forma independente.
+* $Y$=Número de repetições até o primeiro sucesso.
+* $Y\sim\mbox{Geom}(p)$ representa o número de repetições até o primeiro sucesso, em que a  probabilidade de sucesso do ensaio de Bernoulli é $p$.
+
+Portanto temos que a distribuição de probabilidade da variável aleatória $Y$ é:
+
+ Probabilidade | valor de $Y$
+-------------  | ------------
+`r XXXX` | 1
+`r XXXXX`| 2
+`r XXXXX`| 3
+`r XXXXXX`            | 4
+
+etc...
+
+Forma geral: $Y\sim\mbox{Geom}(p)$, $P(Y=y)=(1-p)^{y-1}p$, $\forall y=1,2, \ldots$.
+
+* $E(X)= \frac{1}{p}$ [(demonstração)](http://www.proofwiki.org/wiki/Expectation_of_Geometric_Distribution)
+* $Var(X)=\frac{1-p}{p^2}$ [(demonstração)](http://www.proofwiki.org/wiki/Variance_of_Geometric_Distribution)
+
+Há outra parametrização do modelo geométrico: $Z$ é número de fracassos antes do primeiro sucesso. $P(Z=z)=(1-p)^z p$, $\forall z=0,1,2,\ldots$. Repare que $Z=Y-1$.
+
+É possível calcular $P(Z=z)$ automaticamente através da função **dgeom**. Usando esta função, preencha a seguir, considerando o jogo descrito acima:
+
+* probabilidade da primeira vitória ocorrer na décima partida: `r dgeom(x=XXX,prob=XXXX)`.
+
+* probabilidade de perder 5 vezes até que a primeira vitória aconteça: `r dgeom(x=XXX,prob=XXXXX)`.
+
+* probabilidade da primeira vitória acontecer na segunda partida: `r dgeom(x=XXXX,prob=XXXX)`.
+
+* a probabilidade de perder 2 vezes até que a primeira vitória aconteça: `r dgeom(x=XXX,prob=XXXXX)`.
+
+
+### Sherlock
+
+![Desafio](http://images5.fanpop.com/image/photos/26100000/A-Study-in-Pink-sherlock-26191611-624-352.jpg)
+
+Um inimigo de Sherlock propõe um jogo, que consiste no lançamento de uma moeda honesta várias vezes, em quatro versões: 
+
+1. Se a proporção de caras for maior ou igual do que $0.60$, Sherlock vence. 
+2. Se a proporção de caras for maior ou igual do que $0.40$, Sherlock vence. 
+3. Se a proporção de caras estiver entre $0.40$ e $0.60$ (inclusive), Sherlock vence. 
+4. Se a proporção de caras for menor ou igual do que $0.30$, Sherlock vence. 
+
+
+O inimigo escolhe primeiro qual a versão do jogo e depois Sherlock terá que escolher se quer jogar com $10$ ou $100$ lançamentos da moeda.
+
+Vamos estudar os 4 cenários.
+
+1. Se o inimigo escolher a primeira versão do jogo. Qual a melhor estratégia para Sherlock? Escolher $10$ ou $100$ lançamentos da moeda? Apresente os cálculos.
+
+
+2. Se o inimigo escolher a segunda versão do jogo. Qual a melhor estratégia para Sherlock? Escolher $10$ ou $100$ lançamentos da moeda? Apresente os cálculos.
+
+De maneira que Sherlock terá mais chances de vencer se escolher $100$ lançamentos.
+
+
+3. Se o inimigo escolher a terceira versão do jogo. Qual a melhor estratégia para Sherlock? Escolher $10$ ou $100$ lançamentos da moeda? Apresente os cálculos.
+
+
+4. Se o inimigo escolher a quarta versão do jogo. Qual a melhor estratégia para Sherlock? Escolher $10$ ou $100$ lançamentos da moeda? Apresente os cálculos.
+
+
+
+     
