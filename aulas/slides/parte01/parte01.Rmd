@@ -620,9 +620,6 @@ ggplot(data=data.frame(notas=notas), aes(notas)) +
 
 Qual o tipo de informação você obtém através de um gráfico de ramo-e-folhas mas não não através de um histograma?
 
-## Dados do seu Facebook
-
-No link [http://wolfr.am/OvitOo](http://wolfr.am/OvitOo) você pode obter diversos gráficos descritivos usando informações do seu perfil do Facebook.
 
 
 
