@@ -1,6 +1,6 @@
 ---
 title: ME414 - Estatística para Experimentalistas
-subtitle: Atividade em Classe 5
+subtitle: Atividade em Classe 6
 output:
   ioslides_presentation:
     widescreen: yes
