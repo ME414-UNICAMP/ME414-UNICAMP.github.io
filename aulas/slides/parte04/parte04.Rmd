@@ -107,7 +107,7 @@ Permite comparar a distribuição de procedência ($Y$) conforme o grau de instr
 ## Procedência conforme o grau de instrução {.build}
 
 <center>
-```{r, echo=FALSE, eval=FALSE, fig.width=8, fig.height=4.5}
+```{r, echo=FALSE, eval=FALSE, fig.width=8, fig.height=4.5,warning=FALSE,message=FALSE}
 ## Se quiser fazer o barplot normal trocar por 'eval=TRUE'
 par(mar=c(4.1, 4.1, 1.1, 2.1))
 barplot(prop.table(x, 2), xlab=" ", ylab="Proporção", main=" ",
@@ -118,7 +118,7 @@ barplot(prop.table(x, 2), xlab=" ", ylab="Proporção", main=" ",
 </center>
 
 <center>
-```{r, echo=FALSE, fig.width=10, fig.height=4.5,warning=FALSE}
+```{r, echo=FALSE, fig.width=10, fig.height=4.5,warning=FALSE,message=FALSE}
 ## Definir os parâmetros dos eixos para todos os gráficos
 eixos <- theme(axis.text = element_text(size=14), 
                axis.title = element_text(size=14),
@@ -170,7 +170,7 @@ barplot(t(prop.table(x, 1)), xlab=" ", ylab="Proporção", main=" ",
 </center>
 
 <center>
-```{r, echo=FALSE, fig.width=10, fig.height=5,warning=FALSE}
+```{r, echo=FALSE, fig.width=10, fig.height=5,warning=FALSE,message=FALSE}
 x.long <- melt(prop.table(x, 1), varnames=c("Procedência", "Instrução"),
                value.name="Proporção")
 
@@ -182,6 +182,107 @@ ggplotly(g)
 ```
 </center>
 
+
+## Exemplo: Marvel vs DC
+
+Existe dependência entre o gênero dos personagens ($X$) e a editora ($Y$)?
+
+<center><img src="figuras/marveldc.jpg" width=550></center>
+
+Banco de dados: https://www.kaggle.com/claudiodavi/superhero-set/home
+
+## Exemplo: Marvel vs DC {.smaller}
+
+
+
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+herois <- read.csv("heroes_information.csv")
+
+library(dplyr)
+
+herois_3 <-
+  herois %>%
+   filter((Publisher == "DC Comics") | (Publisher == "Marvel Comics")) %>%
+   filter((Gender == "Male") | (Gender == "Female")) %>%
+   filter((Alignment == "good") | (Alignment == "bad") | (Alignment == "neutral"))
+
+library(tidyr)
+herois_3%>%
+  group_by(Gender, Publisher)%>%
+  summarise(n=n())%>%
+  spread(Gender, n)%>%
+  kable()
+
+```
+
+A proporção de personagens femininos é similar em cada editora?
+
+Devemos avaliar: 
+
+* Distribuição das frequências relativas ao total de cada coluna?
+
+* Distribuição das frequências relativas ao total de cada linha?
+
+
+## Exemplo: Marvel vs DC
+
+Por coluna (100% em cada gênero):
+
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+herois_3%>%
+  group_by(Gender, Publisher)%>%
+  summarize(n=n())%>%
+  mutate(prop=round(n/sum(n),3))%>%
+  subset(select=c(Gender,Publisher,prop))%>%   #drop the frequency value
+  spread(Gender, prop)%>%
+  kable()
+```
+
+Dentre os personagens de gênero feminino, 65%  estão na Marvel.
+
+Dentre os personagens de gênero masculino, 62%  estão na Marvel.
+
+## Exemplo: Marvel vs DC
+
+Por linha (100% em cada editora):
+
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+
+herois_3%>%
+  group_by(Publisher,Gender)%>%
+  summarize(n=n())%>%
+  mutate(prop=round(n/sum(n),3))%>%
+  subset(select=c(Gender,Publisher,prop))%>%   #drop the frequency value
+  spread(Gender, prop)%>%
+  kable()
+
+
+```
+
+
+Dentre os personagens da Marvel, 30.8%  são do gênero feminino.
+
+Dentre os personagens da DC, 28.6%  são do gênero feminino.
+
+## Exemplo: Marvel vs DC
+
+<center>
+```{r, echo=FALSE, fig.width=8, fig.height=4.5,warning=FALSE,message=FALSE}
+herois_4 <- herois_3%>%
+  group_by(Publisher,Gender)%>%
+  summarize(n=n())%>%
+  mutate(prop=round(n/sum(n),3))
+
+
+g <- ggplot(as.data.frame(herois_4), aes(x=Publisher, y=prop, fill=Gender))+
+    geom_bar(stat="identity", width=0.6, position="dodge", colour="lightgrey") +
+    scale_fill_brewer(name="Gênero", palette="Set2") +
+    xlab("Editora") + ylim(0, 0.8) + eixos
+ggplotly(g)
+```
+</center>
+
+Observando o gráfico e a tabela de proporções condicionais  parece não haver evidências de associação entre gênero e editora.
 
 ## Exemplo: Escolha da carreira {.build}
 Existe dependência entre o sexo ($X$) e a carreira escolhida ($Y$) por 200 alunos de Economia e Administração?
@@ -197,12 +298,6 @@ rownames(y) <- c("Economia", "Administração", "Total")
 colnames(y) <- c("Masculino", "Feminino", "Total")
 kable(y)
 ```
-
-> Se quisermos estudar se a proporção de mulheres escolhendo Economia é similar à proporção de homens que escolhem Economia, devemos avaliar: 
-
-* Distribuição das frequências relativas ao total de cada coluna?
-
-* Distribuição das frequências relativas ao total de cada linha?
 
  
 ## Exemplo: Escolha da carreira {.build} 
@@ -246,7 +341,7 @@ barplot(prop.table(x, 2), xlab=" ", ylab="Proporção", main=" ", beside=TRUE,
 </center>
 
 <center>
-```{r, echo=FALSE, fig.width=8, fig.height=4.5,warning=FALSE}
+```{r, echo=FALSE, fig.width=8, fig.height=4.5,warning=FALSE,message=FALSE}
 x.long <- melt(prop.table(x, 2), varnames=c("Carreira", "Sexo"), 
                value.name="Proporção")
 
@@ -318,7 +413,7 @@ barplot(t(prop.table(x, 1)), xlab="Tipo de Alimento",
 </center>
 
 <center>
-```{r, echo=FALSE, fig.width=8, fig.height=4.5,warning=FALSE}
+```{r, echo=FALSE, fig.width=8, fig.height=4.5,warning=FALSE,message=FALSE}
 colnames(x) <- c("Presente", "Ausente") 
 x.long <- melt(prop.table(x, 1), varnames=c("Alimento", "Pesticida"), 
                value.name="Proporção")
@@ -397,7 +492,7 @@ barplot(t(prop.table(x, 1)), xlab="Renda", ylab="Proporção", main=" ",
 </center>
 
 <center>
-```{r, echo=FALSE, fig.width=10, fig.height=4.5,warning=FALSE}
+```{r, echo=FALSE, fig.width=10, fig.height=4.5,warning=FALSE,message=FALSE}
 x.long <- melt(prop.table(x, 1), varnames=c("Renda", "Felicidade"),
                value.name="Proporção")
 
@@ -485,7 +580,7 @@ barplot(t(prop.table(x, 1)), xlab="", ylab="Proporção", main=" ",
 </center>
 
 <center>
-```{r, echo=FALSE, fig.width=8, fig.height=4.5,warning=FALSE}
+```{r, echo=FALSE, fig.width=8, fig.height=4.5,warning=FALSE,message=FALSE}
 colnames(x) <- c("Sim", "Não")
 x.long <- melt(prop.table(x, 1), varnames=c("Sexo", "Excesso_Bebida"),
                value.name="Proporção")
@@ -539,7 +634,7 @@ Total | 25 | 300
 
 ## Exemplo: Tempo de serviço e total de clientes
 <center>
-```{r, echo=FALSE, fig.height=4.5, fig.width=7,warning=FALSE}
+```{r, echo=FALSE, fig.height=4.5, fig.width=7,warning=FALSE,message=FALSE}
 x <- c(2, 4, 5, 6, 8)
 y <- c(48, 56, 54, 60, 72)
 # par(mar=c(5.1, 4.1, 1.1, 2.1))
@@ -655,7 +750,7 @@ $$Corr(X, Y)=\frac{1}{n-1}\sum_{i=1}^{n}z_{x_i}z_{y_i}=\frac{3.8}{5-1}=0.95$$
 Número de passos diários coletados para uma pessoa usando um [Fitbit](http://en.wikipedia.org/wiki/Fitbit) durante 297 dias.
 
 <center>
-```{r, echo=FALSE, fig.height=3.5, fig.width=5,warning=FALSE}
+```{r, echo=FALSE, fig.height=3.5, fig.width=5,warning=FALSE,message=FALSE}
 fitbit <- read.csv("Fitbit.csv", sep=";")
 fitbit <- fitbit[-which(fitbit$steps<300), ] # removendo os dias em que não usou Fitbit
 
@@ -682,7 +777,7 @@ abline(v=mean(fitbit$steps), col="red", lty=2, lwd=2)
 > Há relação entre o total de passos e o tempo gasto em atividade intensa?
 
 <center>
-```{r, echo=FALSE, fig.height=3.5, fig.width=5.5,warning=FALSE}
+```{r, echo=FALSE, fig.height=3.5, fig.width=5.5,warning=FALSE,message=FALSE}
 # par(mar=c(4.1, 4.1, 0.1, 2.1))
 # plot(x=fitbit$steps, y=fitbit$minutesVeryActive, xlab="Número de Passos", 
 #      ylab="Tempo (min) de atividade intensa", col="blue", las=1)
@@ -702,7 +797,7 @@ ggplotly(g)
 > Há relação entre o total de passos e o tempo (em minutos) de sedentarismo?
 
 <center>
-```{r, echo=FALSE, fig.height=4, fig.width=6,warning=FALSE}
+```{r, echo=FALSE, fig.height=4, fig.width=6,warning=FALSE,message=FALSE}
 ## par(mar=c(5.1, 4.1, 1.1, 2.1))
 ## plot(x=fitbit$steps[fitbit$minutesSedentary > 1000], 
 ##      y <- fitbit$minutesSedentary[fitbit$minutesSedentary > 1000],
@@ -727,7 +822,7 @@ Baseado na altura, peso e gênero, o Fitbit estima o comprimento de cada passo.
 > Há relação entre o total de passos e distância percorrida?
 
 <center>
-```{r, echo=FALSE, fig.height=3.5, fig.width=5.5,warning=FALSE}
+```{r, echo=FALSE, fig.height=3.5, fig.width=5.5,warning=FALSE,message=FALSE}
 # par(mar=c(5.1, 4.1, 1.1, 2.1))
 # plot(x=fitbit$steps, y=fitbit$distance, xlab="Número de Passos",
 #      ylab="Distância (km)", cex.lab=1.2, col="blue", las=1)

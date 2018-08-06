@@ -1,0 +1,180 @@
+---
+title: "TRABALHO FINAL"
+subtitle: Heroes_information
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+##Introdução:
+
+###Banco De Dados:
+
+O pacote "heroes_information.csv" traz informações sobre 734 personagens de histórias em quadrinhos. Neste data frame, temos as variáveis: nome, gênero, cor dos olhos, raça, cor do cabelo, peso, editora, cor da pele, "alinhamento" (caráter) e altura. 
+Link para obtenção do banco de dados: https://www.kaggle.com/claudiodavi/superhero-set/data#heroes_information.csv
+
+```{r message=FALSE, warning=FALSE, echo = FALSE}
+library(readr)
+library(dplyr)
+library(ggplot2)
+herois <- read.csv("https://docs.google.com/uc?export=download&id=1xXZnL5vBDLOegW3QxcBOkYVoPmuaOWrC")
+```
+
+###Pergunta de Interesse:
+
+A partir deste banco dados:
+
+* Vamos relacionar o peso e a altura dos personagens para obter a informação a respeito do IMC de cada um. O IMC é uma relação que delimita se uma pessoa está saudavel ou não com relação ao peso. Temos os níveis: "muito abaixo do peso", "abaixo do peso", "peso normal", "acima do peso", "obesidade I", "obesidade II (severa)" e "obesidade III (mórbida)". Aplicaremos a fórmula do imc com o intuito de ver como medidas de personagens fictícias se comportam nesse indíce real.
+
+* Nas editoras Marvel Comics e DC Comics, qual o tipo de personagem predominante em relação ao gênero e ao alinhamento?
+
+##IMC:
+
+###Summary
+
+Abaixo temos a média, mediana, mínimo, máximo e quartis dos IMC's dos personagens
+
+```{r message=FALSE, warning=FALSE, echo = FALSE}
+herois_2 <- 
+  herois%>%
+  filter(Height >= 0) %>%
+  filter(Weight >= 0)
+  
+imc <- round(((herois_2$Weight)/(herois_2$Height/100)^2), digits = 2)
+herois_2 <- cbind(herois_2, imc)
+
+herois_2 <- 
+  herois_2 %>%
+    arrange(imc)
+
+#Media, Mediana, Quartis:
+summary(imc)
+```
+
+###Gráfico de pontos:
+
+Abaixo temos três gráficos de pontos em que cada ponto representa um personagem e estão distribuidos de acordo com o seu IMC (eixo y). 
+
+A diferença entre os três gráficos é que o primeiro inclui todo o intervalo de y ([0.08, 2510.0]) provocando uma dificuldade na análise do gráfico pois inclui os "outliers". 
+
+O segundo gráfico seleciona o intervalo [10, 100] de y, excluindo os "outliers" muito baixos e muito altos. Mas ainda assim não é um gráfico muito adequado para classificarmos de acordo com o IMC, pois este é um cálculo que obtem valores entre 10 e 60 aproximadamente. 
+O terceiro gráfico delimita o y neste intervalo, facilitando na classificação.
+
+```{r message=FALSE, warning=FALSE, echo = FALSE}
+
+
+ggplot(herois_2, aes(x = X, y = imc, color = Gender)) + 
+  geom_point() + 
+  scale_color_manual(values = c("yellow", "magenta", "royalblue1")) +
+  labs(title = "IMC de todos", x = "Personagens", y = "IMC")
+
+ggplot(herois_2, aes(x = X, y = imc, color = Gender)) + 
+  geom_point() + 
+  ylim(10, 100) +
+  scale_color_manual(values = c("yellow", "magenta", "royalblue1")) +
+  labs(title = "IMC sem outliers", x = "Personagens", y = "IMC")
+
+ggplot(herois_2, aes(x = X, y = imc, color = Gender)) + 
+  geom_point() + 
+  ylim(10, 60) + 
+  geom_hline(yintercept = 17) +
+  geom_hline(yintercept = 18.5) +
+  geom_hline(yintercept = 25) +
+  geom_hline(yintercept = 30) +
+  geom_hline(yintercept = 35) +
+  geom_hline(yintercept = 40) +
+  scale_color_manual(values = c("yellow", "magenta", "royalblue1")) +
+  labs(title = "Faixa de IMC", x = "Personagens", y = "IMC")
+```
+
+Podemos concluir a partir do terceiro gráfico que a maioria dos personagens têm peso e altura semelhantes às medidas humanas, e além disso, estão nas classificação "Peso normal" (18.5 < IMC < 20) ou "Acima do peso" (25 < IMC < 30).
+
+Outra coisa que podemos notar com o gráfico é que a faixa do peso normal tem bastante personagens mulheres, e que a faixa do acima do peso é predominantemente composta por homens.
+
+###Gráficos de pizza:
+
+Além disso, calculamos como estão dividias as duas faixas de peso com maior número de personagens. Concluímos que a faixa de peso normal é formada majoritariamente por personaegens mulheres. E que a faixa do acima do peso tem predomínio de personagens masculinos. Fizemos dois gráficos de pizza que mostram essa conclusão.  
+
+```{r message=FALSE, warning=FALSE, echo = FALSE, out.width = '50%'}
+peso_normal <-
+  herois_2 %>%
+    filter((imc > 18.5) & (imc < 20)) %>%
+    filter(Gender != "-")
+
+acima_do_peso <- 
+  herois_2 %>% 
+    filter((imc > 25) & (imc < 30)) %>%
+    filter(Gender != "-")
+
+pie(summary(peso_normal$Gender), col = c("royalblue1", "magenta"))
+
+pie(summary(acima_do_peso$Gender), col = c("royalblue1", "magenta"))
+
+```
+
+##Gráfico de Percentil:
+
+O gráfico a seguir mostra os IMC's separados por gênero, nele notamos que os IMC's dos homens é maior que os das mulheres.
+
+```{r message=FALSE, warning=FALSE, echo = FALSE}
+d = data.frame(p = seq(0,1,.01), valF = sapply(seq(0,1,.01), function (x) {herois_2 %>% filter(Gender == "Female", imc < 200) %>% summarise(perc  = quantile(imc, x))}) %>% unlist(), valM = sapply(seq(0,1,.01), function (x) {herois_2 %>% filter(Gender == "Male", imc < 200) %>% summarise(perc  = quantile(imc, x))}) %>% unlist())
+
+ggplot(d, aes(x = p)) + 
+  geom_point(aes(y = valM, col = "Masculino")) + 
+  geom_line(aes(y = valM, col = "Masculino")) + 
+  geom_point(aes(y = valF, col = "Feminino")) + 
+  geom_line(aes(y = valF, col = "Feminino")) + 
+  labs(title = "IMC por Gênero", x = "Percentil", y = "IMC", col = "Gênero") +
+  theme(legend.position = "bottom")
+
+```
+
+## Personagem Predominante
+
+Análise da quantidade de personagens por gênero e por alinhamento nas editoras DC Comics e Marvel Comics:
+
+```{r message=FALSE, warning=FALSE, echo = FALSE}
+herois_3 <-
+  herois %>%
+   filter((Publisher == "DC Comics") | (Publisher == "Marvel Comics")) %>%
+   filter((Gender == "Male") | (Gender == "Female")) %>%
+   filter((Alignment == "good") | (Alignment == "bad") | (Alignment == "neutral"))
+
+ggplot(herois_3, aes(x = Publisher, fill = Gender))+
+  geom_bar(position="fill") +
+  labs(title = "Editora VS Gênero - Proporção", x = "Editora", fill = "Gênero") +
+  scale_fill_manual(values = c("cadetblue", "firebrick")) +
+  theme(legend.position = "bottom", axis.title.y = element_blank())
+
+```
+
+Este primeiro gráfico mostra a proporção dos gêneros em cada editora, nela percebemos proporções semelhantes entre homens e mulheres quando comparadas entre as duas editoras.
+
+```{r message=FALSE, warning=FALSE, echo = FALSE}
+ggplot(herois_3, aes(x = Publisher, fill = Gender))+
+  geom_bar(position="dodge") +
+  labs(title = "Editora VS Gênero - Quantidade", x = "Editora", fill = "Gênero", y = "Quantidade") +
+  scale_fill_manual(values = c("cadetblue", "firebrick")) +
+  theme(legend.position = "bottom", axis.title.y = element_blank())
+
+```
+
+No segundo gráfico vemos que no banco de dados com o qual estamos trabalhando, há mais personagens da Marvel Comics do que personagens da DC Comics, também vemos que há bem mais homens do que mulheres.
+
+```{r message=FALSE, warning=FALSE, echo = FALSE}
+ggplot(herois_3, aes(x = Publisher, fill = Alignment))+
+  geom_bar(position = "dodge") +
+  labs(title = "Editora VS Alinhamento", x = "Editora", fill = "Alinhamento") +
+  scale_fill_manual(values = c("darkorange2", "royalblue3","seagreen4")) +
+  theme(axis.title.y = element_blank()) 
+```
+
+Já o terceiro gráfico mostra o alinhamento dos personagens em cada editora, em ambos os casos a quantidade de personagens bons é maior, a quantidade de personagens maus é menos que metade da quantidade de personagens bons, e a quantidade de personagens neutros é a menor.
+
+## Considerações Finais
+
+A partir de um banco de dados que contém informações de personagens de histórias de quadrinhos, tais como peso, altura, raça, cor do cabelo, cor da pele, gênero; aplicamos a fórmula do IMC (indíce de massa corporea) a fim de ver o seu comportamento em medidas fictícias. Feitas as análises, vimos que na maioria dos personagens o imc esta dentro de faixas reais.Também notamos que o IMC's dos personagens do gênero masculino é maior que os IMC's das personagens femininas.
+
+Depois analisamos a quantidade de personagens por gênero e por alinhamento nas editoras Marvel Comics e DC Comics, e concluimos que em ambas as editoras os comportamentos são bem parecidos, em ambas são predominantes personagens masculinos e bons.
+
