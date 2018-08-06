@@ -122,17 +122,19 @@ idade=48
 ```
 
 
-## Grupos
+## Grupos {.msaller}
 
 Formam-se 10 grupos.
 
-Grupo 1 fica responsável por coletar os dados (tiras referentes à Pessoa 1) dos chutes referentes à Pessoa 1.
+Grupo X fica responsável por coletar os dados (tiras de papel referentes à Pessoa X) dos chutes referentes à Pessoa X. O grupo deverá **apresentar** medidas resumo e gráficos e que julgar necessários **no quadro** e um número como o "chute" final da classe para a Pessoa X.
 
-Grupo 1 deverá apresentar medidas resumo e gráficos e que julgar necessários no quadro e, apresentar apenas um número como o "chute" final da classe para a Pessoa 1.
+Cada grupo deve entregar uma folha com:
 
-O mesmo procedimento é realizado pelos demais grupos.
-
-
+* Título: Pessoa X
+* RA e nome de cada membro do grupo X
+* estatísticas sumárias
+* boxplot, ramo-e-folhas (ou histograma)
+* estimativa para a idade da Pessoa X, baseando-se na análise descritiva realizada
 
 
 ##
