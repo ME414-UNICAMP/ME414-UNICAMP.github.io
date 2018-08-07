@@ -133,8 +133,8 @@ Cada grupo deve entregar uma folha com:
 * Título: Pessoa X
 * RA e nome de cada membro do grupo X
 * estatísticas sumárias
-* boxplot, ramo-e-folhas (ou histograma)
-* estimativa para a idade da Pessoa X, baseando-se na análise descritiva realizada
+* histograma e/ou ramo-e-folhas
+* uma estimativa para a idade da Pessoa X, baseando-se na análise descritiva realizada
 
 
 ##
