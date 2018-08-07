@@ -185,8 +185,6 @@ Qual a proporção de pacientes do grupo tratamento que sofreram infarto durante
 
 $$\frac{45}{224} = `r round(45/224,2)` = `r round(45/224,2)*100`\%$$
 
-
-## Estudo de Caso: stents e prevenção de infarto
 ```{r, echo=FALSE, message=FALSE, eval=FALSE}
 
 trinta <- data.frame(Grupo = c("Tratamento", "Controle", "Tratamento", "Controle"), 
