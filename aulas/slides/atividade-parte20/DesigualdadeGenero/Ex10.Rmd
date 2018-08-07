@@ -1,0 +1,75 @@
+---
+title: "Exercício 10"
+output: html_document
+---
+
+Considere o seguinte experimento: 48 gerentes do sexo masculino receberam um currículo para julgar se o(a) candidato(a) deveria ser provido(a) ou não. Os currículos dos candidatos eram todos idênticos, exceto que metade indicava que o candidato era homem e metade indicava que era mulher. Os 48 gerentes receberam um CV cada, de maneira aleatória.
+
+A tabela a seguir apresenta o resultado do experimento:
+
+
+|   Gênero/Decisão | promovido | não promovido | Total |   
+|--------|-----------|---------------|-------|
+| homem  | 21        | 3             | 24    |   
+| mulher | 14        | 10            | 24    |   
+| Total  | 35        | 13            | 48    |
+
+1. Estatísticos são muitas vezes requisitados para avaliar a força de uma evidência. Ao observar as taxas de promoção para homens e mulheres no estudo, por que poderíamos ser tentados a concluir imediatamente que as mulheres estão sofrendo discriminação? 
+
+A diferença na proporção de promovidos entre homens e entre mulheres é `r round(21/24-14/24,2)`.
+
+
+
+O tamanho amostral do estudo é pequeno, portanto esta alta diferença observada entre as proporções de promoção de homens e mulheres pode ter ocorrido ao acaso.
+
+Temos duas hipóteses:
+
+* $H_0$: Hipótese Nula. Gênero e decisão quanto à promoção são independentes. 
+Não há relação entre as duas coisas e a diferença observada entre as proporções de promoção de homens e mulheres ocorreu ao acaso.
+
+* $H_1$: Hipótese Alternativa. Gênero e decisão quanto à promoção não são independentes. A diferença observada entre as proporções de promoção de homens e mulheres não ocorreu ao acaso, pois mulheres sofreram discriminação.
+
+2. O que significa, com relação à atitude dos gerentes,  dizer que a hipótese nula é verdadeira?
+
+
+3. O que significa, com relação à atitude dos gerentes,  dizer que a hipótese alternativa é verdadeira?
+
+
+Devemos decidir, baseando-se nos dados, se temos evidências ou não para rejeitar a hipótese nula.
+
+Iremos simular várias repetições do experimento descrito, mas assumindo que a hipótese nula é verdadeira. O código a seguir produz a simulação:
+
+```{r,echo=TRUE}
+B <- 10000
+CVs <- 1:48
+
+mulheres <- 1:24
+homens <- 25:48
+
+Dif <- matrix(NA,ncol=1,nrow=B)
+for (i in 1:B)
+  {
+  CVsAleatorizados <- sample(CVs,length(CVs), replace=FALSE)
+  promovidos <- CVsAleatorizados[1:35]
+  naopromovidos <- CVsAleatorizados[36:48]
+  ProporcaoHomensPromovidos <- mean(homens %in% promovidos)
+  ProporcaoMulheresPromovidas <- mean(mulheres %in% promovidos)
+  Dif[i] <- ProporcaoHomensPromovidos-ProporcaoMulheresPromovidas
+}
+```
+
+O histograma a seguir apresenta a distribuição de todas as diferenças observadas entre as proporções de promoção de homens e mulheres nas simulações. A linha vertical vermelha indica a diferença observada no experimento original.
+
+Descreva a distribuição. Qual seu valor central aproximado? O valor central da dsitribuição das diferenças simuladas é condizente com a hipótese nula? Discuta.
+
+```{r,echo=FALSE}
+hist(Dif,main=" ",xlab="Proporção de Homens - Proporção de Mulheres",ylab="Frequência",col="lightblue")
+abline(v=(21/24-14/24),col="red")
+```
+
+4. A diferença observada no experimento ocorrido foi `r round(21/24-14/24,2)`. Você acredita é plausível que ele tenha ocorrido simplesmente ao acaso, se a hipótese nula é verdadeira? Discuta.
+
+
+Dentre as diferenças simuladas, apenas `r 100*mean(Dif > (21/24-14/24))`% delas é superior à diferença observada no experimento original.
+
+

@@ -1,0 +1,71 @@
+---
+title: "Exercício 8 - Quão molhada é a Terra?"
+output: html_document
+---
+
+Será que podemos usar uma amostra aleatória de pontos ao redor da Terra para estimar a proporção da superfície que está sob a água?
+
+Para obter uma amostra aleatória de pontos ao redor da Terra, usaremos o site http://www.geomidpoint.com/random/
+
+Selecione as seguinte opções:
+
+* Circular Region
+* Select the whole earth
+* No. of points: coloque 20
+* Latitude: deixe como está
+* Longitude: deixe como está
+* Max distance: deixe como está
+
+Clique em **Get random point(s)** e depois em **See it on map**.
+
+Salve o link da página do mapa gerado.
+
+Use o zoom quando necessário para avaliar se cada ponto amostrado está na água ou não. Cuidado para não considerar um ponto duas vezes.
+
+Dentre os 20 pontos amostrados, quantos estavam na água? Ignore o ponto azul, ele apenas indica o ponto central.
+
+Repita novamente (não esqueça de clicar em **reset**), mas agora considerando 50 pontos. Salve o link da página do mapa gerado.
+
+Dentre os 50 pontos amostrados, quantos estavam na água? Ignore o ponto azul, ele apenas indica o ponto central.
+
+Submeta seus resultados pelo formulário:
+
+http://goo.gl/forms/lIVxdcUC5a
+
+
+O comando a seguir importa para o R a planilha com os dados de todos os alunos.
+
+```{r,echo=TRUE,message=FALSE,warning=FALSE}
+library(downloader)
+download("https://docs.google.com/spreadsheets/d/1pzV6maBCXYOqh1fEOnVIkcB6DN2YvQIBKf8JbEJyP2U/export?format=csv","TerraMolhada.csv")
+dadosClasse <- read.csv("TerraMolhada.csv")
+colnames(dadosClasse) <- c("hora","ra","Agua20","Agua50","Link20","Link50")
+```
+
+Considerando apenas as respostas referentes aos mapas com 20 pontos gerados, apresente um histograma e um boxplot da proporção de pontos que caíram na água.
+
+```{r,echo=FALSE}
+# comando para histograma
+# comando para boxplot
+```
+
+
+Considerando apenas as respostas referentes aos mapas com 50 pontos gerados, apresente um histograma e um boxplot da proporção de pontos que caíram na água.
+
+```{r,echo=FALSE}
+# comando para histograma
+# comando para boxplot
+```
+
+Compare as duas distribuições e apresente uma discussão tendo como foco decidir se é melhor utilizar amostra de tamanho 20 ou 50. Lembre-se de calcular médias, medianas, quartis, variâncias para fazer uma comparação quantitativa. Dica: para facilitar a comparação visual entre os dois histogramas, utilize a opção `xlim`; já entre os dois boxplots, utilize a opção `ylim`. 
+
+
+
+
+
+
+
+
+
+
+
