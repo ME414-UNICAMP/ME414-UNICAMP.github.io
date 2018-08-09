@@ -1,125 +1,140 @@
 ---
 title: ME414 - Estatística para Experimentalistas
-subtitle: Atividade em Classe 2
+subtitle: Atividade em Classe 1
 output:
   ioslides_presentation:
     widescreen: yes
 logo: ../logo-imecc.png
 ---
 
-# Quanto tempo duram 30 segundos?
+# Qual a idade?
 
 ## Coleta de dados
 
-Vocês irão trabalhar em grupos:
+Cada aluno pega uma folha faz uma tabela com 10 linhas e 2 colunas:
 
-* Um colega (A) irá ficar responsável por iniciar e finalizar o cronômetro (use o do celular, certifique-se de que saiba usar antes do experimento).
+Coluna 1: Pessoa
 
-* O colega A, responsável pelo cronômetro, tem que garantir que nenhum outro colega veja o cronômetro durante o experimento.
+Coluna 2: Chute da idade
 
-* O outro colega (B) irá dizer COMECE e, depois do que JULGAR serem 30 segundos, irá dizer PARE, no que o colega (A) com o cronômetro irá parar imediatamente.
-
-* O colega A irá anotar o resultado: tempo que se passou de fato e o sexo do colega.
-
-* O colega A irá repetir o procedimento com os demais membros do grupo.
-
-* os dados deverão ser transferidos para a lousa
-
-## Análise descritiva
-
-Apresente, lado a lado, com o mesmo eixo-y, um boxplot para os dados do sexo feminino e outro para os dados do sexo masculino.
+Faça com letras grandes e linhas bem espaçadas para depois cortar em tiras (1 tira para cada linha).
 
 
-## Dados coletados - 09/08/2017 - ME414E
+## Pessoa 1
+
+```{r,echo=FALSE}
+# http://www.aceshowbiz.com/events/Daryl%20Hannah/daryl-hannah-stars-2012-benefit-gala-01.html
+
+# foto de 2012
+
+idade=52
+```
+<center><img src="figuras/daryl-hannah-stars-2012-benefit-gala-01.jpg" width=450></center>
 
 
-```{r,echo=TRUE}
-feminino <- sort(c(33.34,27.35,33.04,22.45,33.77,32.14,26.2,25.08,32.35,31.05,24.99,26.86,
-              27.63,24.24,26.39,33,34,29.92,32.92,24.47,28.28,28.21,24.21,31.09,28.39,
-              25,31.35,23,31,22.53,28.65,30.55,23.75,32.98,18.53,29.05,27,34.21,23.1,
-              37.88,31.94,25.51,29.65,46.98,36.45,21.87,35.34,27.94,26.88))
-feminino
-mean(feminino)
+## Pessoa 2
+
+```{r,echo=FALSE}
+# https://pt.wikipedia.org/wiki/Jodie_Foster
+# foto de 1989
+
+idade=27
+```
+<center><img src="figuras/Jodie_Foster_at_the_1989_Academy_Awards.jpg" width=450></center>
+
+
+## Pessoa 3
+
+```{r,echo=FALSE}
+# http://static1.purepeople.com/articles/1/17/35/21/@/2092987-johnny-depp-a-cannes-en-1992-950x0-2.jpg
+# foto de 1992
+
+idade=29
+```
+<center><img src="figuras/2092987-johnny-depp-a-cannes-en-1992-950x0-2.jpg" width=450></center>
+
+
+## Pessoa 4
+
+
+```{r,echo=FALSE}
+# http://www.gettyimages.com/event/liam-gallagher-self-assignment-june-19-2017-700070321?esource=SEO_GIS_CDN_Redirect#singer-and-musician-liam-gallagher-is-photographed-on-june-19-2017-in-picture-id800194674
+# foto de 2017
+
+idade=45
+```
+<center><img src="figuras/Screen Shot 2017-08-06 at 13.41.06.png" width=550></center>
+
+
+
+## Pessoa 5
+
+<center><img src="figuras/Elton John1968.jpg" width=500></center>
+
+```{r,echo=FALSE}
+# Elton John
+# foto de 1968
+idade=21
 ```
 
-## Dados coletados - 09/08/2017 - ME414E
+## Pessoa 6
 
-```{r,echo=TRUE}
-median(feminino)
+
+<center><img src="figuras/A-66089-1336554906-5167.jpg" width=500></center>
+
+```{r,echo=FALSE}
+# Bonnie Prince Billy
+idade=33
+```
+
+## Pessoa 7
+
+
+<center><img src="figuras/400px-Christie_Brinkley_at_Met_Opera_4.jpg" width=600></center>
+
+```{r,echo=FALSE}
+idade=54
+```
+
+## Pessoa 8
+
+
+<center><img src="figuras/zach-galifianakis-wallpaper-59415-61201-hd-wallpapers.jpg" width=600></center>
+
+```{r,echo=FALSE}
+idade=47
+```
+
+## Pessoa 9
+
+<center><img src="figuras/13465976_10154674692372923_8617974188435350826_n.jpg" width=500></center>
+
+```{r,echo=FALSE}
+idade=35
+```
+
+## Pessoa 10
+
+<center><img src="figuras/marcelo_knobel_reitoriaunicamp03-8051.jpg" width=600></center>
+
+```{r,echo=FALSE}
+idade=48
 ```
 
 
-Foram coletados dados de `r length(feminino)` mulheres.
+## Grupos {.msaller}
 
-Média: `r round(mean(feminino),2)`
+Formam-se 10 grupos.
 
-Mediana: `r median(feminino)`
+Grupo X fica responsável por coletar os dados (tiras de papel referentes à Pessoa X) dos chutes referentes à Pessoa X. O grupo deverá **apresentar** medidas resumo e gráficos e que julgar necessários **no quadro** e um número como o "chute" final da classe para a Pessoa X.
 
-## Dados coletados - 09/08/2017 - ME414E
+Cada grupo deve entregar uma folha com:
 
-```{r,echo=TRUE,message=FALSE,warning=FALSE}
-library(aplpack)
-stem.leaf(feminino,m=1)
-```
-
-
-
-## Dados coletados - 09/08/2017 - ME414E {.smaller}
-
-
-```{r,echo=TRUE}
-masculino <- sort(c(26.51,30.99,28.4,31.8,28.86,28.25,28.74,23.72,36.93,32.94
-                    ,39.18,29.47,22.37,25.17,16.35,26,21,32,34,31,39.03,28.95,
-                    37.05,32.82,32.92,35.45,27.6,24.71,30.76,22.7,20.1,40.65,31.02,
-                    34.69,32.88,28.18,35.85,22.35,32.28,30.71,21.78,29.73,28.32,
-                    35.3,42.35,32.88,45.99,31.43,37.34,28.14,30.44,26.05,34.22,
-                    29.84,44.1,32.08,24.48,30.45,32.65,27.98,31.83,34.42,27.48,
-                    33.63,32.86,33.92))
-masculino
-mean(masculino)
-```
-
-## Dados coletados - 09/08/2017 - ME414E
-
-```{r,echo=TRUE}
-median(masculino)
-```
-
-
-Foram coletados dados de `r length(masculino)` homens
-
-Média: `r round(mean(masculino),2)`
-
-Mediana: `r median(masculino)`
-
-## Dados coletados - 09/08/2017 - ME414E
-
-```{r,echo=TRUE,message=FALSE,warning=FALSE}
-library(aplpack)
-stem.leaf(masculino,m=1)
-```
-
-
-## Dados coletados - 09/08/2017 - ME414E
-
-```{r,echo=TRUE}
-boxplot(list(feminino=feminino,masculino=masculino),type=2)
-abline(h=30,col="red")
-```
-
-## Usando o R online (sem instalar)
-
-
-Online: [R-fiddle](http://www.r-fiddle.org/#/)
-
-
-## Mais sobre o R e RStudio
-
-Informações e tutoriais:
-
-[https://me111-unicamp.github.io/aulas/](https://me111-unicamp.github.io/aulas/)
-
-Livro de estatística básica usando R: [http://moderndive.com/index.html](http://moderndive.com/index.html)
+* Título: Pessoa X
+* RA e nome de cada membro do grupo X
+* estatísticas sumárias (mínimo, máximo, média, mediana, moda, desvio padrão)
+* histograma, boxplot, ramo-e-folhas (escolha pelo menos um)
+* uma estimativa para a idade da Pessoa X, baseando-se na análise descritiva realizada
 
 
 ##
@@ -127,6 +142,3 @@ Livro de estatística básica usando R: [http://moderndive.com/index.html](http:
 Slides produzidos por:
 
 * Samara Kiihl
-
-<center><img src="figuras/coelho.jpg" width=450></center>
-

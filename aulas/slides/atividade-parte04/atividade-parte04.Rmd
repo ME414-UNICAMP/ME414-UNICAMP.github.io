@@ -1,0 +1,132 @@
+---
+title: ME414 - Estatística para Experimentalistas
+subtitle: Atividade em Classe 2
+output:
+  ioslides_presentation:
+    widescreen: yes
+logo: ../logo-imecc.png
+---
+
+# Quanto tempo duram 30 segundos?
+
+## Coleta de dados
+
+Vocês irão trabalhar em grupos:
+
+* Um colega (A) irá ficar responsável por iniciar e finalizar o cronômetro (use o do celular, certifique-se de que saiba usar antes do experimento).
+
+* O colega A, responsável pelo cronômetro, tem que garantir que nenhum outro colega veja o cronômetro durante o experimento.
+
+* O outro colega (B) irá dizer COMECE e, depois do que JULGAR serem 30 segundos, irá dizer PARE, no que o colega (A) com o cronômetro irá parar imediatamente.
+
+* O colega A irá anotar o resultado: tempo que se passou de fato e o sexo do colega.
+
+* O colega A irá repetir o procedimento com os demais membros do grupo.
+
+* os dados deverão ser transferidos para a lousa
+
+## Análise descritiva
+
+Apresente, lado a lado, com o mesmo eixo-y, um boxplot para os dados do sexo feminino e outro para os dados do sexo masculino.
+
+
+## Dados coletados - 09/08/2017 - ME414E
+
+
+```{r,echo=TRUE}
+feminino <- sort(c(33.34,27.35,33.04,22.45,33.77,32.14,26.2,25.08,32.35,31.05,24.99,26.86,
+              27.63,24.24,26.39,33,34,29.92,32.92,24.47,28.28,28.21,24.21,31.09,28.39,
+              25,31.35,23,31,22.53,28.65,30.55,23.75,32.98,18.53,29.05,27,34.21,23.1,
+              37.88,31.94,25.51,29.65,46.98,36.45,21.87,35.34,27.94,26.88))
+feminino
+mean(feminino)
+```
+
+## Dados coletados - 09/08/2017 - ME414E
+
+```{r,echo=TRUE}
+median(feminino)
+```
+
+
+Foram coletados dados de `r length(feminino)` mulheres.
+
+Média: `r round(mean(feminino),2)`
+
+Mediana: `r median(feminino)`
+
+## Dados coletados - 09/08/2017 - ME414E
+
+```{r,echo=TRUE,message=FALSE,warning=FALSE}
+library(aplpack)
+stem.leaf(feminino,m=1)
+```
+
+
+
+## Dados coletados - 09/08/2017 - ME414E {.smaller}
+
+
+```{r,echo=TRUE}
+masculino <- sort(c(26.51,30.99,28.4,31.8,28.86,28.25,28.74,23.72,36.93,32.94
+                    ,39.18,29.47,22.37,25.17,16.35,26,21,32,34,31,39.03,28.95,
+                    37.05,32.82,32.92,35.45,27.6,24.71,30.76,22.7,20.1,40.65,31.02,
+                    34.69,32.88,28.18,35.85,22.35,32.28,30.71,21.78,29.73,28.32,
+                    35.3,42.35,32.88,45.99,31.43,37.34,28.14,30.44,26.05,34.22,
+                    29.84,44.1,32.08,24.48,30.45,32.65,27.98,31.83,34.42,27.48,
+                    33.63,32.86,33.92))
+masculino
+mean(masculino)
+```
+
+## Dados coletados - 09/08/2017 - ME414E
+
+```{r,echo=TRUE}
+median(masculino)
+```
+
+
+Foram coletados dados de `r length(masculino)` homens
+
+Média: `r round(mean(masculino),2)`
+
+Mediana: `r median(masculino)`
+
+## Dados coletados - 09/08/2017 - ME414E
+
+```{r,echo=TRUE,message=FALSE,warning=FALSE}
+library(aplpack)
+stem.leaf(masculino,m=1)
+```
+
+
+## Dados coletados - 09/08/2017 - ME414E
+
+```{r,echo=TRUE}
+boxplot(list(feminino=feminino,masculino=masculino),type=2)
+abline(h=30,col="red")
+```
+
+## Usando o R online (sem instalar)
+
+
+Online: [R-fiddle](http://www.r-fiddle.org/#/)
+
+
+## Mais sobre o R e RStudio
+
+Informações e tutoriais:
+
+[https://me111-unicamp.github.io/aulas/](https://me111-unicamp.github.io/aulas/)
+
+Livro de estatística básica usando R: [http://moderndive.com/index.html](http://moderndive.com/index.html)
+
+
+##
+
+Slides produzidos por:
+
+* Samara Kiihl
+
+<center><img src="figuras/coelho.jpg" width=450></center>
+
