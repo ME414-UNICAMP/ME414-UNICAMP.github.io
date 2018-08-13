@@ -105,22 +105,26 @@ ggplot(data=provas, aes(notas, ..density..)) +
 
 > Neste caso, como as escalas são diferentes, não podemos tirar conclusões usando apenas o desvio padrão.
 
-## Coeficiente de Variação{.build}
+
+## Coeficiente de Variação {.build}
 $$\mbox{Coeficiente de Variação (CV)}= \frac{s}{\bar{x}}$$
 
-> **Exemplo:** 
+</br>
+**Exemplo:** 
 $A = \{10, 20, 30\}$,  $\overline{x}_A = 20$, $s_A= 10$.
 
 $B = \{10000, 10010, 10020\}$,  $\overline{x}_B = 10010$, $s_B= 10$. 
 
-> $CV_A = \frac{s_A}{\overline{x}_A} = 0.5$ e $CV_B = \frac{s_B}{\overline{x}_B} \approx 0.0009$.
+$CV_A = \frac{s_A}{\overline{x}_A} = 0.5$ e $CV_B = \frac{s_B}{\overline{x}_B} \approx 0.0009$.
 
-> **Exemplo:** 
+</br>
+**Exemplo:** 
 Prova 1: 0 a 100. Média da turma: 70. Desvio padrão 1.
 
 Prova 2: 0 a 10. Média da turma: 7. Desvio padrão 1.
   
-> $CV_1 = \frac{s_1}{\overline{x}_1} = 0.014$ e $CV_2 = \frac{s_2}{\overline{x}_2} \approx 0.14$.
+$CV_1 = \frac{s_1}{\overline{x}_1} = 0.014$ e $CV_2 = \frac{s_2}{\overline{x}_2} \approx 0.14$.
+
 
 ## Usando medidas de posição para descrever dispersão {.build}
 
@@ -134,18 +138,18 @@ Prova 2: 0 a 10. Média da turma: 7. Desvio padrão 1.
 
 > O **p-ésimo percentil** é o valor tal que uma porcentagem **p** dos dados ficam abaixo dele.
 
+
 ## Quartis {.build}
 
 <center>
 ![quart](figuras/quartiles.png)
 </center>
 
-> Para obter os quartis:
+Para obter os quartis:
 
 > * Ordene os dados em ordem crescente.
 > * Encontre a mediana: $Q_2$=mediana.
 > * Considere o subconjunto de dados abaixo da mediana. $Q_1$ é a mediana deste subconjunto de dados.
-
 > * Considere o subconjunto de dados acima da mediana. $Q_3$ é a mediana deste subconjunto de dados.
 
 
@@ -160,11 +164,13 @@ Prova 2: 0 a 10. Média da turma: 7. Desvio padrão 1.
  Para calcular $Q3$: calcula-se a mediana considerando apenas as 10 últimas observações ordenadas:
  **200**, 210, 210, 220, $\underbrace{220, 230}_{Q_3=225}$, 250, 260, 290, 290
 
+
 ## Quartis e Assimetria
 
  Os quartis também fornecem informação sobre o formato da distribuição.
-```{r, echo=FALSE, fig.height=4}
+```{r, echo=FALSE, fig.height=3}
 set.seed(2015)
+par(mar = c(3, 3, 2, 1))
 asymDir <- round(c(rchisq(1000, df=15)), 0)
 a <- boxplot(asymDir, plot=FALSE)
 q1 <- round(a$stats[2], 0)
@@ -180,7 +186,9 @@ axis(side=1, at=c(q1,q2,q3), labels=c(paste0("Q1=", q1),
 ```
 
 A mediana $Q_2$ é 14. 
+
 A distância entre $Q_1$ e $Q_2$ é `r q2-q1`, enquanto que a distância entre $Q_2$ e $Q_3$ é `r q3-q2`, indicando que a distribuição é assimétrica à direita.
+ 
  
 ## Usando quartis para medir dispersão {.build}
 
@@ -190,7 +198,8 @@ A distância entre $Q_1$ e $Q_2$ é `r q2-q1`, enquanto que a distância entre $
 
 > Representa 50\% dos dados localizados na parte central da distribuição.
 
-```{r,echo=FALSE,fig.height=3.5}
+```{r, echo=FALSE, fig.height=3}
+par(mar = c(3, 3, 2, 1))
 dens <- density(asymDir)
 plot(dens, ylab="", main=" ", xlim=c(4, 35), axes=FALSE, xlab="", 
      cex.lab=1.5, lwd=3)
@@ -202,6 +211,7 @@ with(dens, polygon(x=c(x[c(x1, x1:x2, x2)]), y=c(0, y[x1:x2], 0),
 # abline(v=q1, col="red", lty=2, lwd=3)
 # abline(v=q3, col="red", lty=2, lwd=3)
 ```
+
 
 # Esquema dos 5 números
 
@@ -248,11 +258,12 @@ Importante: examinar os dados para verificar se há observações discrepantes.
 
 > * Podemos usar o IQ como um critério mais geral de detecção de dados discrepantes.
 
+
 ## Dados discrepantes (*outliers*) {.build}
 
 > Uma observação é um potencial *outlier* se está abaixo de $Q_1-1.5\times IQ$ ou se está acima de $Q_3+1.5 \times IQ$.
 
-```{r,echo=FALSE,fig.height=3,fig.width=10}
+```{r, echo=FALSE, fig.height=3, fig.width=10}
 par(mfrow=c(1, 4))
 set.seed(44)
 asymDir <- c(rchisq(1000, df=15))
@@ -302,7 +313,31 @@ axis(side=1, at=c(LS), labels=c("Q3 + 1.5 IQ"), cex.axis=1.5, cex.lab=1.5)
 ## Boxplot {.build}
 
 > O esquema dos 5 números forma a base do gráfico denominado **boxplot**.
- 
+
+</br> 
+**Exemplo:** Considere as quantidades de sódio (mg) em 20 cereais matinais:
+
+<font size=4>
+$$ 0, 70, 125, 125, 140, 150, 170, 170, 180, 200, 200, 210, 210, 220, 220, 230, 250, 260, 290, 290$$ 
+</font>
+
+Esses valores podem ser representados pelo boxplot a seguir:
+
+```{r, echo=FALSE}
+cereais <- c(0, 70, 125, 125, 140, 150, 170, 170, 180, 200,
+             200, 210, 210, 220, 220, 230, 250, 260, 290, 290)
+```
+
+<center>
+```{r, echo=FALSE, fig.width=5, fig.height=2.5}
+par(mar=c(5, 1, 1, 1))
+boxplot(cereais, horizontal=TRUE, outline=TRUE, ylim=c(-1,330), 
+        col="lightblue", type=3, xlab="Quantidade de Sódio (mg)")
+```
+</center>
+
+
+## Construção do Boxplot
 
 **Primeiro passo:** construir uma caixa que vai do primeiro ao terceiro quartil.
 
@@ -310,28 +345,33 @@ axis(side=1, at=c(LS), labels=c("Q3 + 1.5 IQ"), cex.axis=1.5, cex.lab=1.5)
 <img src="figuras/box1.png" width=300> 
 </center>
 
-## Boxplot
+
+## Construção do Boxplot
 
 **Segundo passo:** construir uma linha no meio da caixa, na altura da mediana ($Q_2$).
 
 <center><img src="figuras/box2.png" width=300></center>
 
 
-## Boxplot
+## Construção do Boxplot
 
 **Terceiro passo:** definir os limites para que uma observação seja considerada *outlier*.
 
 <center><img src="figuras/box3.png" width=300></center>
 
-## Boxplot 
+
+## Construção do Boxplot 
 
 **Quarto passo:** desenhar uma linha que saia da parte inferior da caixa e desça até o menor valor dos dados, mas que não ultrapasse os limites do critério de outliers. Desenhar uma linha que saia da parte superior da caixa e suba até o maior valor dos dados, mas que não ultrapasse os limites do critério de outliers. Outliers, quando existem, aparecem indicados separadamente no gráfico.
 
 <center><img src="figuras/box4.png" width=300></center>
 
-## Exemplo: População, em 1000 habitantes, dos estados brasileiros {.build}
 
-```{r,echo=FALSE}
+## Exemplo:  População dos estados brasileiros {.build}
+
+A população está representado em 1000 habitantes:
+
+```{r, echo=FALSE}
 estados <- c(325,478,558,1158,1380,1785,2052,2079,2505,2777,2813,2823,2844,3098,
              3444,5004,5357,5652,6193,7431,7919,9564,10188,13071,14392,17892,37033)
 
@@ -343,18 +383,39 @@ IQ <- IQR(estados, type=2) # IQ
 
 <center><img src="figuras/estados.png" width=350></center>
 
-> 27 estados, $n$ é ímpar, mediana é $x_{\left(\frac{n+1}{2}\right)}= x_{\left(\frac{27+1}{2}\right)}=x_{(14)}=3098$ (ES).
+</br>
+27 estados, $n$ é ímpar, mediana é $x_{\left(\frac{n+1}{2}\right)}= x_{\left(\frac{27+1}{2}\right)}=x_{(14)}=3098$ (ES).
 
-> A metade inferior dos dados: 13 observações. A mediana deste subconjunto é $Q_1=x_{(7)}=
+A metade inferior dos dados: 13 observações. A mediana deste subconjunto é $Q_1=x_{(7)}=
 2052$ (DF).
 
+A metade superior dos dados: 13 observações. A mediana deste subconjunto é $Q_3=x_{(21)}=7919$ (PE).
 
-> A metade superior dos dados: 13 observações. A mediana deste subconjunto é $Q_3=x_{(21)}=7919$ (PE).
 
-## Exemplo: População dos estados brasileiros{.build}
+## Exemplo: População dos estados brasileiros {.build}
 
-> $IQ=Q_3-Q_1=7919-2052=5867$
+<style>
+.column-left{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.column-right{
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+</style>
 
+<div class="column-left">
+
+População em 1000 habitantes:
+</br>
+
+<center><img src="figuras/estados.png" width=350></center>
+
+</br> 
+$IQ=Q_3-Q_1=7919-2052=5867$
 
 > $Q_1-1.5\times IQ=-6748.5$
 
@@ -362,15 +423,22 @@ IQ <- IQR(estados, type=2) # IQ
 
 > Temos outliers?
 
->
+</div>
+
+<div class="column-right">
 <center>
-```{r, echo=FALSE, fig.width=4, fig.height=3.2}
-par(mar=c(2, 4, 2, 1))
-boxplot(estados, main="População (em 1000 habitantes)", ylab="População", type=2, col="lightblue")
+```{r, echo=FALSE, fig.width=4, fig.height=4.5}
+par(mar=c(2, 5, 2, 1), mgp = c(3.5, 0.6, 0))
+boxplot(estados, main="População (em 1000 habitantes)", 
+        ylab="População", type=2, col="lightblue", las = 1)
 ```
 </center>
+</div>
 
-## Exemplo: Quantidade de sódio (mg) em 20 cereais matinais{.build}
+
+## Exemplo: Sódio em cereais matinais {.build}
+
+Vamos voltar no exemplo da quantidade de sódio (mg) em 20 cereais matinais
 
  0, 70, 125, 125, $\underbrace{140, 150}_{Q_1=145}$, 170, 170, 180, **200**
  
@@ -383,10 +451,6 @@ $Q_1-1.5\times IQ=145-1.5\times 80=25$
  
 $Q_3+1.5\times IQ=145+1.5\times 80=345$
 
-```{r, echo=FALSE}
-cereais <- c(0, 70, 125, 125, 140, 150, 170, 170, 180, 200,
-             200, 210, 210, 220, 220, 230, 250, 260, 290, 290)
-```
 
 ## Exemplo: Sódio em cereais matinais {.build .smaller}
 
@@ -412,17 +476,19 @@ boxplot(cereais, horizontal=TRUE, outline=TRUE, ylim=c(-1,330),
 
 > Desconsiderando o outlier, o valor mínimo dos dados é 70, que está no intervalo. Portanto, a linha do lado direito vai até 70.
 
+
 ## Exemplo: Sódio em cereais matinais {.build .smaller}
 
 ```{r, echo=FALSE, fig.width=6, fig.height=5}
 par(mfrow=c(2, 1))
-nf <- layout(mat=matrix(c(1,2), 2, 1, byrow=TRUE),  height=c(1, 2))
-    par(mar=c(4, 4, .5, .5))
+nf <- layout(mat = matrix(c(1,2), 2, 1, byrow=TRUE),  heights = c(1, 2))
+par(mar=c(4, 4, .5, .5))
 boxplot(cereais, horizontal=TRUE,  outline=TRUE, ylim=c(-1, 330),
         col="lightblue", type=3)
 hist(cereais, xlim=c(-1, 330), breaks=seq(0, 320, by=40),
      main="", col="lightblue", xlab="Sódio (mg)", ylab="Frequência", las=1)
 ```
+
 
 ## Boxplot x Histograma {.build}
 
@@ -460,7 +526,10 @@ hist(log(bimodalData), nclass=20, xlab="", ylab="Frequência",
 ```
 </center>
 
-## Exemplo: Peso (em libras) de 64 alunas de educação física {.smaller .build}
+
+## Exemplo: Pesos de alunas de Educação Física  {.smaller .build}
+
+Temos os pesos (em libras) de 64 alunas de Educação Física:
 
 > $\bar{x}=133$, $Q_1=119$, mediana=131.5, $Q_3=144$.
 
