@@ -45,7 +45,7 @@ permalink: /about/
 ### Horário de atendimento
 
 * Terça 12-13 - sala 323 IMECC - Francis
-* Terça 13-14 - sala a ser definida IMECC - Gabriel
+* Terça 13-14 - sala 150 IMECC - Gabriel
 * Terça 18-19 - sala 222 IMECC  - Lisbeth
 * Quarta 12-13 - sala a ser definida - Tatiany
 * Quarta 13-14 - sala 322 IMECC - Nathalia
