@@ -96,18 +96,26 @@ abline(v=media, col="red", lwd=2)
 </center>
 
 
-## Mediana{.build}
+## Mediana {.build}
 
 A mediana é o valor que deixa 50% das observações abaixo dele e 50% acima.
 
-> Determinando a mediana:
+> Determinando a mediana (também conhecida como $Q_2$):
 
-> * Ordene as $n$ observações.
+> * Ordene as $n$ observações: $x_{(1)}, x_{(2)}, \ldots, x_{(k)}, \ldots, x_{(n)}$
 
 > * Se $n$ é ímpar, a mediana é o valor do meio, na sequência ordenada.
 
 > * Se $n$ é par, a mediana é a média aritmética das duas observações  que caem no meio da sequência ordenada.
 
+A fórmula da mediana pode ser escrita como:
+
+$$
+Q_2= \begin{cases}
+   x_{\left(\frac{n+1}{2}\right)} \,,& \mbox{se  $n$ é ímpar} \\ 
+    \frac{x_{\left(\frac{n}{2}\right)}+x_{\left(\frac{n}{2}+1\right)}}{2}\,, & \mbox{se  $n$ é par}
+  \end{cases}
+$$
 
 ## Exemplo: Cereais matinais{.build}
 
