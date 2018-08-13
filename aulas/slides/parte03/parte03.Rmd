@@ -69,6 +69,7 @@ Considere dois conjuntos de dados:
 
 > A maior observação do conjunto $A$, 30, é  3 vezes maior do que a menor observação, 10.
 
+
 ## Exemplo {.build}
 Considere notas de 2 provas:
 
@@ -153,15 +154,20 @@ Para obter os quartis:
 > * Considere o subconjunto de dados acima da mediana. $Q_3$ é a mediana deste subconjunto de dados.
 
 
-## Exemplo: Quantidade de sódio (mg) em 20 cereais matinais{.build}
+## Exemplo: Sódio em cereais matinais {.build}
 
+Considere as quantidades de sódio (mg) em 20 cereais matinais:
+
+<center>
  0, 70, 125, 125, 140, 150, 170, 170, 180, **200**
  
 **200**, 210, 210, 220, 220, 230, 250, 260, 290, 290
- 
-> Para calcular $Q1$: calcula-se a mediana considerando apenas as 10 primeiras observações ordenadas: 0, 70, 125, 125, $\underbrace{140, 150}_{Q_1=145}$, 170, 170, 180, **200**
+</center>
 
- Para calcular $Q3$: calcula-se a mediana considerando apenas as 10 últimas observações ordenadas:
+</br>
+Para calcular $Q1$: calcula-se a mediana considerando apenas as 10 primeiras observações ordenadas: 0, 70, 125, 125, $\underbrace{140, 150}_{Q_1=145}$, 170, 170, 180, **200**
+
+Para calcular $Q3$: calcula-se a mediana considerando apenas as 10 últimas observações ordenadas:
  **200**, 210, 210, 220, $\underbrace{220, 230}_{Q_3=225}$, 250, 260, 290, 290
 
 
@@ -223,6 +229,8 @@ with(dens, polygon(x=c(x[c(x1, x1:x2, x2)]), y=c(0, y[x1:x2], 0),
 
 Notação:  $x_{(1)}$ = mínimo, $x_{(n)}$ = máximo, onde $x_{(k)}$ é a $k$-ésima observação depois de ordenar os dados.
 
+A fórmula da mediana ($Q_2$) pode ser escrita como:
+
 $$
 Q_2= \begin{cases}
    x_{\left(\frac{n+1}{2}\right)} \,,& \mbox{se  $n$ é ímpar} \\ 
@@ -245,6 +253,7 @@ Para uma distribuição simétrica ou aproximadamente simétrica:
 > * $Q_1-x_{(1)} \approx x_{(n)}-Q_3$
 
 > * distâncias entre a mediana e $Q_1$, $Q_3$ menores do que as distâncias entre os extremos e $Q_1$, $Q_3$.
+
 
 ## Dados discrepantes (*outliers*) {.build}
 
@@ -315,7 +324,7 @@ axis(side=1, at=c(LS), labels=c("Q3 + 1.5 IQ"), cex.axis=1.5, cex.lab=1.5)
 > O esquema dos 5 números forma a base do gráfico denominado **boxplot**.
 
 </br> 
-**Exemplo:** Considere as quantidades de sódio (mg) em 20 cereais matinais:
+**Exemplo:** Voltando no exemplo das quantidades de sódio (mg) em 20 cereais matinais:
 
 <font size=4>
 $$ 0, 70, 125, 125, 140, 150, 170, 170, 180, 200, 200, 210, 210, 220, 220, 230, 250, 260, 290, 290$$ 
@@ -403,7 +412,7 @@ A metade superior dos dados: 13 observações. A mediana deste subconjunto é $Q
 .column-right{
   float: right;
   width: 50%;
-  text-align: right;
+  text-align: left;
 }
 </style>
 
@@ -507,17 +516,17 @@ cpct <- 0.4
 
 bimodalDistFunc <- function(n, cpct, mu1, mu2, sig1, sig2){
     set.seed(4)
-    y0 <- rlnorm(n, mean=mu1, sd=sig1)
+    y0 <- rlnorm(n, meanlog=mu1, sdlog=sig1)
     set.seed(5)
-    y1 <- rlnorm(n, mean=mu2 , sd=sig2)
+    y1 <- rlnorm(n, meanlog=mu2 , sdlog=sig2)
     
-    flag <- rbinom(n,size=1,prob=cpct)
+    flag <- rbinom(n, size=1, prob=cpct)
     y <- y0*(1 - flag) + y1*flag 
 }
 
 bimodalData <- bimodalDistFunc(n=10000, cpct, mu1, mu2, sig1, sig2)
 
-nf <- layout(mat=matrix(c(1, 2), 2, 1, byrow=TRUE),  height=c(1, 1.5))
+nf <- layout(mat=matrix(c(1, 2), 2, 1, byrow=TRUE),  heights=c(1, 1.5))
 par(mar=c(3, 4, .2, .2))
 boxplot(log(bimodalData), horizontal=TRUE, outline=TRUE, ylim=c(-5,10), 
         col="lightblue", type=3)
@@ -549,41 +558,60 @@ Q_2-Q_1\approx Q_3-Q_2\quad(?)$$
 > $$\underbrace{Q_2-Q_1}_{131.5-119=12.5}=\underbrace{Q_3-Q_2}_{144-131.5=12.5}
 $$
 
+
 ## Exemplo: Taxa de desemprego na UE em 2003 {.build}
-```{r,echo=FALSE}
+
+<div class="column-left">
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
 desemprego <- c(8.3, 6, 9.2, 9.3, 11.2, 9.5, 6.7, 4.4, 3.9, 4.6, 8.5, 
                 8.9, 4.5, 6, 4.8)
-des <- data.frame(Taxa=desemprego, 
-                  Pais=c("Bélgica", "Dinamarca", "Alemanha", "Grécia",
+
+library(dplyr)
+library(knitr)
+library(kableExtra)
+
+des <- data_frame("País"=c("Bélgica", "Dinamarca", "Alemanha", "Grécia",
                          "Espanha", "França", "Portugal", "Holanda",
                          "Luxemburgo", "Irlanda", "Itália", "Finlândia",
-                         "Áustria", "Suécia", "Reino Unido"))
-des
+                         "Áustria", "Suécia", "Reino Unido"),
+                  Taxa=desemprego)
+des %>% kable() %>% kable_styling(bootstrap_options = c("striped"), full_width = FALSE, font_size = 22, position = "left")
 ```
-> Qual a amplitude?
-> $Q_1$, $Q_3$, mediana?
+</div>
 
-> Desenhe um boxplot.
+<div class="column-right">
+</br>
+</br>
+Qual a amplitude?
+
+Encontre os valores de $Q_1$, $Q_3$ e da mediana?
+
+Desenhe um boxplot.
+</div>
+
 
 ## Exemplo: Taxa de desemprego na UE em 2003 {.smaller .build}
 
 ```{r, echo=FALSE}
-Q1 <- quantile(desemprego,prob=.25,type=2)
-Q3 <- quantile(desemprego,prob=.75,type=2)
-IQ <- IQR(desemprego,type=2)
+Q1 <- quantile(desemprego, prob=.25, type=2)
+Q3 <- quantile(desemprego,prob=.75, type=2)
+IQ <- IQR(desemprego, type=2)
 LI <- Q1-1.5*IQ
 LS <- Q3+1.5*IQ
 ```
 
 > Ordenando os dados:
 
-$3.9,\; 4.4,\; 4.5,\; \mathbf{4.6},\; 4.8,\; 6.0,\; 6.0,\; \mathbf{6.7},\; 8.3,\; 8.5,\; 8.9,\; \mathbf{9.2},\; 9.3,\; 9.5,\; 11.2$
+$$3.9,\; 4.4,\; 4.5,\; \mathbf{4.6},\; 4.8,\; 6.0,\; 6.0,\; \mathbf{6.7},\; 8.3,\; 8.5,\; 8.9,\; \mathbf{9.2},\; 9.3,\; 9.5,\; 11.2$$
 
-> Qual a amplitude? 
+<div class="column-left">
+</br> 
 
-> $11.2 - 3.9 = 7.3$
+> Amplitude: $11.2 - 3.9 = 7.3$
 
-> $Q_1=4.6$, $Q_3=9.2$, mediana=6.7.
+> Mediana = $6.7$
+
+> $Q_1 = 4.6$, $Q_3 = 9.2$
 
 > $IQ=Q_3-Q_1=4.6$
 
@@ -592,17 +620,17 @@ $3.9,\; 4.4,\; 4.5,\; \mathbf{4.6},\; 4.8,\; 6.0,\; 6.0,\; \mathbf{6.7},\; 8.3,\
 > $Q_3+1.5\times IQ=16.1$
 
 O mínimo e o máximo pertencem ao intervalo $(-2.3, 16.1)$, portanto as linhas pontilhadas terminam no máximo (11.2) e no mínimo (3.9).
+</div>
 
-## Exemplo: Taxa de desemprego na UE em 2003
-
-$Q_1=4.6$, mediana ($Q_2$)=6.7, $Q_3=9.2$ e $IQ=4.6$
-
+<div class="column-right">
 <center>
-```{r, echo=FALSE, fig.height=4, fig.width=7}
-boxplot(desemprego, type=2, horizontal=TRUE, col="lightblue", 
-        xlab="Taxa de Desemprego")
+```{r, echo=FALSE, fig.height=4.7, fig.width=3.5}
+boxplot(desemprego, type=2, col="lightblue", 
+        ylab="Taxa de Desemprego", las = 1)
 ```
 </center>
+</div>
+
 
 ##
 
