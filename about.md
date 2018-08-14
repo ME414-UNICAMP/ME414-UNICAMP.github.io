@@ -47,10 +47,10 @@ permalink: /about/
 * Terça 12-13 - sala 323 IMECC - Francis
 * Terça 13-14 - sala 151 IMECC - Gabriel
 * Terça 18-19 - sala 222 IMECC  - Lisbeth
-* Quarta 12-13 - sala a ser definida - Tatiany
+* Quarta 12-13 - sala 124 IMECC - Tatiany
 * Quarta 13-14 - sala 322 IMECC - Nathalia
 * Quinta 12-13 - sala 222 IMECC  - Lisbeth
 * Quinta 18-19 - sala 222 IMECC  - Francis
-* Sexta 12-13 - sala a ser definida - Tatiany
+* Sexta 12-13 - sala 124 IMECC - Tatiany
 * Sexta 13-14 - sala 323 IMECC - Nathalia
 
