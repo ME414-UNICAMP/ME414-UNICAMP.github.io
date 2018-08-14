@@ -185,7 +185,7 @@ ggplotly(g)
 
 ## Exemplo: Marvel vs DC
 
-Existe dependência entre o gênero dos personagens ($X$) e a editora ($Y$)?
+Existe associação entre o gênero dos personagens ($X$) e a editora ($Y$)?
 
 <center><img src="figuras/marveldc.jpg" width=550></center>
 
