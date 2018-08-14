@@ -229,7 +229,7 @@ with(dens, polygon(x=c(x[c(x1, x1:x2, x2)]), y=c(0, y[x1:x2], 0),
 
 Notação:  $x_{(1)}$ = mínimo, $x_{(n)}$ = máximo, onde $x_{(k)}$ é a $k$-ésima observação depois de ordenar os dados.
 
-A fórmula da mediana ($Q_2$) pode ser escrita como:
+Lembrando que a fórmula da mediana ($Q_2$) é dada por:
 
 $$
 Q_2= \begin{cases}
