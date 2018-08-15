@@ -156,7 +156,7 @@ Média: `r round(mean(prop1), 3)`. Mediana: `r round(median(prop1), 3)`. Desvio-
 
 ## Simulação: lançamento de um dado 500 vezes {.smaller .build}
 
-> A cada simulação  (100 lançamentos e anotando o total de 1) obtemos um resultado diferente.
+> A cada simulação  (500 lançamentos e anotando o total de 1) obtemos um resultado diferente.
 
 > Se repetirmos as simulação 1000 vezes, temos uma idéia da distribuição de frequências da proporção de 1 em 500 lançamentos.
 
