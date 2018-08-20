@@ -604,6 +604,8 @@ stripchart(mulheres, method="stack", offset=1, at=0.1, ylim=c(0, 5), cex=1.7,
 
 * [Simulação mostrando o porque de usarmos $n-1$ no cálculo de $s^2$](https://www.youtube.com/watch?v=0QS4VHPV4JA)
 
+
+
 ##
 
 Slides produzidos pelos professores:
@@ -613,3 +615,6 @@ Slides produzidos pelos professores:
 * Tatiana Benaglia
 
 * Benilton Carvalho
+
+
+<center><img src="figuras/Stat.png" width=450></center>

@@ -634,10 +634,6 @@ boxplot(desemprego, type=2, col="lightblue",
 
 ##
 
-<center><img src="figuras/Stat.png" width=650></center>
-
-##
-
 Slides produzidos pelos professores:
 
 * Samara Kiihl
@@ -645,3 +641,5 @@ Slides produzidos pelos professores:
 * Tatiana Benaglia
 
 * Benilton Carvalho
+
+<center><img src="figuras/boyfriend.png" width=650></center>
