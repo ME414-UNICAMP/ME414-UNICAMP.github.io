@@ -1,6 +1,6 @@
 ---
 title: ME414 - Estatística para Experimentalistas
-subtitle: Atividade em Classe 2
+subtitle: 30 segundos
 output:
   ioslides_presentation:
     widescreen: yes

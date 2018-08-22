@@ -1,6 +1,6 @@
 ---
 title: ME414 - Estatística para Experimentalistas
-subtitle: Atividade em Classe 4
+subtitle: Jogo do relógio
 output:
   ioslides_presentation:
     widescreen: yes
@@ -46,11 +46,11 @@ Divida o grupo (no máximo 4 alunos) em dois times: A e B
 
 Em cada jogada:
 
-* O time A retira uma ficha ao acaso e coloca o ponteiro no número indicado na ficha.
+* O time A retira uma ficha ao acaso e coloca o ponteiro no número indicado na ficha. Não devolve a ficha para a sacola.
 
 * O time B retira uma ficha ao acaso e coloca o ponteiro no número indicado na ficha.
 
-* as fichas são devolvidas para a próxima jogada.
+* As fichas são então devolvidas para a próxima jogada.
 
 ## Apresentação do jogo
 
@@ -75,6 +75,13 @@ Como avaliar usando os dados?
 
 Que tipo de estatísticas sumárias/gráficos podem ser feitos?
 
+## Entregar
+
+* RAs do grupo
+
+* Tabela com as jogadas do grupo
+
+* Estatísticas e gráficos relevantes para embasar a resposta obtida
 
 
 
@@ -100,3 +107,4 @@ Slides produzidos por:
 
 * Samara Kiihl
 
+[Jogo do relógio - Profa. Laura Rifo](http://m3.ime.unicamp.br/recursos/1365)

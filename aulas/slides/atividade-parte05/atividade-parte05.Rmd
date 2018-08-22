@@ -1,6 +1,6 @@
 ---
 title: ME414 - Estatística para Experimentalistas
-subtitle: Atividade em Classe 3
+subtitle: Uma moedinha, por favor!
 output:
   ioslides_presentation:
     widescreen: yes
