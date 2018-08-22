@@ -7,13 +7,14 @@ output:
 logo: ../logo-imecc.png
 ---
 
-```{r, include=FALSE,message=FALSE,warning=FALSE}
+```{r, include=FALSE, message=FALSE, warning=FALSE}
 library(reshape2)
 library(ggplot2)
 library(plotly)
 
 # library(printr)
 library(knitr)
+# library(kableExtra)
 ```
 
 # Análise Bivariada
@@ -35,6 +36,7 @@ library(knitr)
 
 > * uma variável é quantitativa e a outra qualitativa
 
+
 # Associação entre duas variáveis qualitativas
 
 ## Exemplo: Grau de instrução X Procedência {.smaller .build}
@@ -46,8 +48,8 @@ x <- matrix(c(4, 5, 2, 3, 7, 2, 5, 6, 2), nrow=3, byrow=TRUE)
 rownames(x) <- c("Capital","Interior", "Outra")
 colnames(x) <- c("Ensino Fundamental", "Ensino Médio", "Ensino Superior")
 
-y <- rbind(x, c(12, 18, 6))
-y <- cbind(y, c(11, 12, 13, 36))
+y <- rbind(x, colSums(x))
+y <- cbind(y, rowSums(y))
 rownames(y) <- c("Capital", "Interior", "Outra", "Total")
 colnames(y) <- c("Ensino Fundamental", "Ensino Médio", "Ensino Superior", "Total")
 
@@ -72,6 +74,7 @@ Podemos considerar também proporções condicionais (frequências relativas):
 
 > A proporção condicional escolhida depende do estudo que pretendemos fazer.
 
+
 ## Frequências Relativas {.build}
 
 Distribuição das frequências relativas ao total da amostra.
@@ -82,10 +85,11 @@ Total da amostra é 36.
 kable(addmargins(prop.table(x)), digits=3)
 ```
 
+</br>
 11\% dos funcionários são da capital e possuem ensino fundamental.
 
 
-## Frequências relativas ao total das colunas  {.build .smaller}
+## Frequências relativas ao total das colunas  {.smaller .build}
 
 Distribuição das frequências relativas ao total de cada coluna.
 
@@ -93,12 +97,11 @@ Distribuição das frequências relativas ao total de cada coluna.
 kable(addmargins(prop.table(x, 2), 1), digits=3)
 ```
 
+</br>
 Entre os funcionários com ensino médio:
 
 * $28\%$ são da capital.
- 
 * $39\%$ são do interior.
-
 * $33\%$ são de outros locais.
 
 Permite comparar a distribuição de procedência ($Y$) conforme o grau de instrução ($X$).
@@ -147,12 +150,11 @@ Distribuição das frequências relativas ao total de cada linha.
 kable(addmargins(prop.table(x, 1), 2), digits=3)
 ```
 
+</br>
 Entre os funcionários do interior:
 
 * $25\%$ possuem Ensino Fundamental
- 
 * $58\%$ possuem Ensino Médio.
-
 * $17\%$ possuem Ensino Superior.
 
 Permite comparar a distribuição do grau de instrução ($X$) conforme a procedência ($Y$).
@@ -189,11 +191,12 @@ Existe associação entre o gênero dos personagens ($X$) e a editora ($Y$)?
 
 <center><img src="figuras/marveldc.jpg" width=550></center>
 
+</br>
+<font size=4>
 Banco de dados: https://www.kaggle.com/claudiodavi/superhero-set/home
+</font>
 
-## Exemplo: Marvel vs DC {.smaller}
-
-
+## Exemplo: Marvel vs DC
 
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 herois <- read.csv("heroes_information.csv")
@@ -215,6 +218,7 @@ herois_3%>%
 
 ```
 
+</br>
 A proporção de personagens femininos é similar em cada editora?
 
 Devemos avaliar: 
@@ -228,50 +232,51 @@ Devemos avaliar:
 
 Por coluna (100% em cada gênero):
 
-```{r,echo=FALSE,message=FALSE,warning=FALSE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 herois_3%>%
   group_by(Gender, Publisher)%>%
   summarize(n=n())%>%
-  mutate(prop=round(n/sum(n),3))%>%
-  subset(select=c(Gender,Publisher,prop))%>%   #drop the frequency value
+  mutate(prop=round(n/sum(n), 3))%>%
+  subset(select=c(Gender, Publisher, prop))%>%   #drop the frequency value
   spread(Gender, prop)%>%
   kable()
 ```
 
+</br></br>
 Dentre os personagens de gênero feminino, 65%  estão na Marvel.
 
 Dentre os personagens de gênero masculino, 62%  estão na Marvel.
+
 
 ## Exemplo: Marvel vs DC
 
 Por linha (100% em cada editora):
 
-```{r,echo=FALSE,message=FALSE,warning=FALSE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
 herois_3%>%
-  group_by(Publisher,Gender)%>%
+  group_by(Publisher, Gender)%>%
   summarize(n=n())%>%
-  mutate(prop=round(n/sum(n),3))%>%
-  subset(select=c(Gender,Publisher,prop))%>%   #drop the frequency value
+  mutate(prop=round(n/sum(n), 3))%>%
+  subset(select=c(Gender, Publisher, prop))%>%   #drop the frequency value
   spread(Gender, prop)%>%
   kable()
-
-
 ```
 
-
+</br></br>
 Dentre os personagens da Marvel, 30.8%  são do gênero feminino.
 
 Dentre os personagens da DC, 28.6%  são do gênero feminino.
 
 ## Exemplo: Marvel vs DC
 
+
 <center>
 ```{r, echo=FALSE, fig.width=8, fig.height=4.5,warning=FALSE,message=FALSE}
 herois_4 <- herois_3%>%
-  group_by(Publisher,Gender)%>%
+  group_by(Publisher, Gender)%>%
   summarize(n=n())%>%
-  mutate(prop=round(n/sum(n),3))
+  mutate(prop=round(n/sum(n), 3))
 
 
 g <- ggplot(as.data.frame(herois_4), aes(x=Publisher, y=prop, fill=Gender))+
@@ -283,6 +288,7 @@ ggplotly(g)
 </center>
 
 Observando o gráfico e a tabela de proporções condicionais  parece não haver evidências de associação entre gênero e editora.
+
 
 ## Exemplo: Escolha da carreira {.build}
 Existe dependência entre o sexo ($X$) e a carreira escolhida ($Y$) por 200 alunos de Economia e Administração?
@@ -309,6 +315,7 @@ kable(y)
 > * Queremos saber se o padrão das proporções dos cursos é parecido ou não entre os sexos.
 
 > * Usaremos a distribuição das frequências relativas ao total de cada coluna.
+
 
 ## Exemplo: Escolha da carreira {.smaller .build} 
 
@@ -355,6 +362,7 @@ ggplotly(g)
 
 Observando o gráfico e a tabela de proporções condicionais  parece não haver evidências de associação entre gênero e escolha da carreira.
 
+
 ## Exemplo: Pesticidas{.smaller .build}
 > Uma [pesquisa](http://www.tandfonline.com/doi/abs/10.1080/02652030110113799#.VbOlP-hVhBA) foi feita para investigar a presença de pesticidas em alimentos orgânicos e convencionais.
 
@@ -383,6 +391,7 @@ kable(y)
 
 > $19485/26571=`r round(19485/26571, 3)`$
 
+
 ## Proporção Condicional {.build}
 
 **Proporção condicional**: condicionalmente à informação de uma variável, observamos a proporção da outra variável.
@@ -396,10 +405,11 @@ a <- addmargins(round(prop.table(x, 1), 2), 2)
 #kable(a)
 ```
 
-|             | Pesticida Presente| Pesticida Ausente| Sum|
-|:------------|------------------:|-----------------:|---:|
-|Orgânico     |               0.23|              0.77|   1|
-|Convencional |               0.73|              0.27|   1|
+|             | Pesticida Presente| Pesticida Ausente| Total|
+|:------------|------------------:|-----------------:|-----:|
+|Orgânico     |               0.23|              0.77|     1|
+|Convencional |               0.73|              0.27|     1|
+
 
 ## Presença de pesticida por tipo de alimento
 <center>
@@ -463,11 +473,13 @@ colnames(y) <- c("Não muito feliz", "Feliz", "Muito feliz", "Total")
 kable(y)
 ```
 
+</br>
 No geral, qual a proporção de pessoas diz que está **Muito feliz**?
  
 > $$\frac{265}{852}=`r round(265/852, 2)`$$
  
 > Será que o nível de felicidade muda para cada tipo de renda? Como comparar?
+
 
 ## Exemplo: Renda e Felicidade
 
@@ -655,11 +667,12 @@ ggplotly(g)
 
 O gráfico indica uma possível dependência linear positiva entre as variáveis anos de serviço e número de clientes.
 
+
 ## Exemplo: Renda e gasto com assistência médica
 
-* Renda Mensal Bruta ($X$)
+Renda Mensal Bruta ($X$)
 
-* $\%$ da Renda gasta com Assistência Médica ($Y$)
+$\%$ da Renda gasta com Assistência Médica ($Y$)
 
 
 ```{r, echo=FALSE}
@@ -670,6 +683,7 @@ data <- data.frame(Familia=c("A","B","C","D","E","F","G","H","I","J"), X=x, Y=y)
 
 data
 ```
+
 
 ## Exemplo: Renda e gasto com assistência médica
 <center>
@@ -698,7 +712,7 @@ onde $s_x$ é o desvio padrão de $X$ e $s_y$ é o desvio padrão de $Y$.
 
 * Essa medida leva em consideração todos os desvios $(x_{i}-\bar{x})$ e $(y_{i}-\bar{y})$ padronizados da forma $z_{x_i}=\frac{x_{i}-\bar{x}}{s_x}$ e $z_{y_i}=\frac{y_{i}-\bar{y}}{s_y}$.
 
-> * Interpretação: $z_{x_i}$ indica o número de desvios-padrão que a observação $x_i$ está afastada da média de X.
+> * **Interpretação:** $z_{x_i}$ indica o número de desvios-padrão que a observação $x_i$ está afastada da média de X.
 
 
 ## Propriedades {.build}
@@ -734,8 +748,8 @@ Total | 25 | 300
 
 ## Exemplo: Tempo de serviço e total de clientes {.build}
 
-Agente | $X$ | $Y$ | $z_x=\frac{x_{i}-\bar{x}}{s_x}$ | $z_y=\frac{y_{i}-\bar{y}}{s_y}$ | $z_x\times z_y$
--------|-----|-----|----------------------|----------------------|-------------
+Agente | $X$ | $Y$ | $z_x=\frac{x_{i}-\bar{x}}{s_x}$ | $z_y=\frac{y_{i}-\bar{y}}{s_y}$ | $z_x\times z_y$ 
+-------|----:|----:|---------------------:|---------------------:|------------:
 A | 2 | 48 | -1.34 | -1.34 | 1.8
 B | 4 | 56 | -0.45 | -0.45 | 0.2 
 C | 5 | 64 | 0 | 0.45 | 0 
