@@ -21,9 +21,9 @@ Material:
 
 * Dois times: A e B
 
-* O time A ganha 1 ponto se o 0 estiver na região maior delimitada pelos dois ponteiros.
+* O time A ganha 1 ponto se o 0 estiver na maior região delimitada pelos dois ponteiros.
 
-* O time B ganha 1 ponto se o 0 estiver na região maior delimitada pelos dois ponteiros.
+* O time B ganha 1 ponto se o 0 estiver na menor região delimitada pelos dois ponteiros.
 
 * Se as duas regiões tiverem a mesma área, consideramos empate e um novo sorteio deve ser feito. Também será empate se a marca de 0min estiver na fronteira das regiões.
 
@@ -63,8 +63,6 @@ Façam uma tabela com as seguintes colunas:
 * Ficha retirada pelo time B
 
 * Time vencedor na jogada
-
-
 
 
 ## Quem tem mais chance de vencer?
