@@ -56,10 +56,13 @@ colnames(y) <- c("Ensino Fundamental", "Ensino Médio", "Ensino Superior", "Tota
 kable(y)
 ```
 
-> * 4 pessoas da capital com ensino fundamental.
-> * Na última coluna: frequência de cada nível da variável $Y$.
-> * Na última linha:  frequência de cada nível da variável $X$.
-> * Parte interna da tabela: frequências conjuntas entre $X$ e $Y$.
+</br>
+Nessa tabela temos:
+
+* 4 pessoas da capital com ensino fundamental.
+* Na última coluna: frequência de cada nível da variável $Y$.
+* Na última linha:  frequência de cada nível da variável $X$.
+* Parte interna da tabela: frequências conjuntas entre $X$ e $Y$.
 
 
 ## Frequências Relativas {.build}
@@ -195,6 +198,7 @@ Existe associação entre o gênero dos personagens ($X$) e a editora ($Y$)?
 <font size=4>
 Banco de dados: https://www.kaggle.com/claudiodavi/superhero-set/home
 </font>
+
 
 ## Exemplo: Marvel vs DC
 
@@ -555,12 +559,12 @@ colnames(y) <- c("Bebida em excesso - Sim", "Bebida em excesso - Não", "Total")
 |Feminino  |                    2854|                    4125|  6979|
 |Total     |                    4762|                    6142| 10904|
 
+</br>
 Qual o número de alunos:
 
 * do sexo masculino e que beberam em excesso?
 
 * do sexo feminino e que beberam em excesso?
-
 
 Usando diretamente a tabela, podemos responder à pergunta:
 **Há diferença entre homens e mulheres na proporção de ocorrência de bebida em excesso?**
@@ -569,16 +573,16 @@ Usando diretamente a tabela, podemos responder à pergunta:
 ## Exemplo: Bebidas alcoólicas
 
 Proporções condicionais de ocorrência de bebida em excesso por gênero:
-
-
 ```{r, echo=FALSE}
 a <- addmargins(round(prop.table(x, 1), 2), 2)
 kable(a)
 ```
 
-Proporção de ocorrência de bebida em excesso entre homens: $$\frac{1908}{3925}=`r round(1908/3925, 2)`$$
+Proporção de ocorrência de bebida em excesso entre homens: 
+$$\frac{1908}{3925}=`r round(1908/3925, 2)`$$
 
-Proporção de ocorrência de bebida em excesso entre mulheres: $$\frac{2854}{6979}=`r round(2854/6979, 2)`$$
+Proporção de ocorrência de bebida em excesso entre mulheres: 
+$$\frac{2854}{6979}=`r round(2854/6979, 2)`$$
 
 ## Ocorrência de bebida em excesso por gênero
 <center>
@@ -594,7 +598,7 @@ barplot(t(prop.table(x, 1)), xlab="", ylab="Proporção", main=" ",
 <center>
 ```{r, echo=FALSE, fig.width=8, fig.height=4.5,warning=FALSE,message=FALSE}
 colnames(x) <- c("Sim", "Não")
-x.long <- melt(prop.table(x, 1), varnames=c("Sexo", "Excesso_Bebida"),
+x.long <- melt(round(prop.table(x, 1), 2), varnames=c("Sexo", "Excesso_Bebida"),
                value.name="Proporção")
 
 g <- ggplot(x.long, aes(x=Sexo, y=Proporção, fill=Excesso_Bebida)) +
@@ -612,14 +616,17 @@ Observando o gráfico e a tabela de proporções condicionais parece haver evid�
 
 <center><img src="figuras/face_risada.png" width=550></center>
 
+<font size=4>
 **Fonte**: [https://research.facebook.com/blog/1605690073053884/the-not-so-universal-language-of-laughter/](https://research.facebook.com/blog/1605690073053884/the-not-so-universal-language-of-laughter/)
-
+</font>
 
 ## Exemplo: Tipo de risada e cidade
 
 <center><img src="figuras/face_risada2.png" width=550></center>
 
-[Fonte](https://research.facebook.com/blog/1605690073053884/the-not-so-universal-language-of-laughter/)
+<font size=4>
+**Fonte**: [https://research.facebook.com/blog/1605690073053884/the-not-so-universal-language-of-laughter/](https://research.facebook.com/blog/1605690073053884/the-not-so-universal-language-of-laughter/)
+</font>
 
 
 # Associação entre duas variáveis quantitativas
@@ -644,9 +651,10 @@ D | 6 | 60
 E | 8 | 72 
 Total | 25 | 300 
 
+
 ## Exemplo: Tempo de serviço e total de clientes
 <center>
-```{r, echo=FALSE, fig.height=4.5, fig.width=7,warning=FALSE,message=FALSE}
+```{r, echo=FALSE, fig.height=4.5, fig.width=7, warning=FALSE, message=FALSE}
 x <- c(2, 4, 5, 6, 8)
 y <- c(48, 56, 54, 60, 72)
 # par(mar=c(5.1, 4.1, 1.1, 2.1))
@@ -665,7 +673,7 @@ ggplotly(g)
 ```
 </center>
 
-O gráfico indica uma possível dependência linear positiva entre as variáveis anos de serviço e número de clientes.
+O gráfico indica uma possível relação linear positiva entre as variáveis anos de serviço e número de clientes.
 
 
 ## Exemplo: Renda e gasto com assistência médica
@@ -699,12 +707,12 @@ ggplotly(g)
 ```
 </center>
 
-Nesse caso, a dependência entre $X$ e $Y$ parece ser linear negativa.
+Nesse caso, a relação entre $X$ e $Y$ parece ser linear negativa.
 
 
 ## Coeficiente de Correlação {.build}
 
-> * **Objetivo:** obter uma medida que permita quantificar a dependência que pode existir entre duas variáveis (positiva, negativa, muita ou pouca).
+> * **Objetivo:** obter uma medida que permita quantificar a relação linear que pode existir entre duas variáveis (positiva, negativa, muita ou pouca).
 
 > * Dado $n$ pares de observações $(x_{1},y_{1}),(x_{2},y_{2}),...,(x_{n},y_{n})$: 
 $$Corr(X,Y)=\frac{1}{n-1}\sum_{i=1}^{n}\left(\frac{x_{i}-\bar{x}}{s_x}\right)\left(\frac{y_{i}-\bar{y}}{s_y}\right)$$
@@ -741,24 +749,8 @@ D | 6 | 60
 E | 8 | 72 
 Total | 25 | 300 
 
-> Anos de Serviço ($X$): $\quad \bar{x}=5 \quad \mbox{e} \quad s_x=2.24$
-
+> Anos de Serviço ($X$): $\quad \bar{x}=5 \quad \mbox{e} \quad s_x=2.24$ </br>
 > Nº de Clientes ($Y$): $\quad \bar{y}=60 \quad \mbox{e} \quad s_y=8.94$
-
-
-## Exemplo: Tempo de serviço e total de clientes
-
-```{r, echo=FALSE, fig.height=4.5, fig.width=7, fig.align="center"}
-x <- c(2, 4, 5, 6, 8)
-y <- c(48, 56, 64, 60, 72)
-dados <- data.frame(anos = x, clientes = y)
-
-ggplot(dados, aes(x=anos, y=clientes)) +
-    geom_point(col=mycol[1], size=3) +
-    labs(x="Anos de Serviço", y="Número de Clientes") + eixos
-```
-
-Qual a correlação entre anos de serviço de número de clientes?
 
 
 ## Exemplo: Tempo de serviço e total de clientes {.build}
