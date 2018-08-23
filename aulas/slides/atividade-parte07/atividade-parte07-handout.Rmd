@@ -1,7 +1,8 @@
 ---
 title: "Jogo do Relógio"
-output: pdf_document
 lang: pt
+fontsize: 12pt
+output: pdf_document
 ---
 
 
@@ -12,13 +13,11 @@ lang: pt
 
 * Dois times: A e B
 
-* O time A ganha 1 ponto se o 0 estiver na maior região delimitada pelos dois ponteiros.
+* O time A ganha se o 0 estiver na maior região delimitada pelos dois ponteiros.
 
-* O time B ganha 1 ponto se o 0 estiver na menor região delimitada pelos dois ponteiros.
+* O time B ganha se o 0 estiver na menor região delimitada pelos dois ponteiros.
 
 * Se as duas regiões tiverem a mesma área, consideramos empate e um novo sorteio deve ser feito. Também será empate se a marca de 0min estiver na fronteira das regiões.
-
-* Vence o jogo o time que acumular 10 pontos primeiro.
 
 Figura 1: Time A ganha 1 ponto
 
@@ -80,9 +79,9 @@ img <- readPNG("figuras/relogio.png")
 
 ###  Resultados
 
-* RAs dos membros do grupo
+* RAs, nomes e assinaturas dos membros do grupo
 * Tabela (descrita anteriormente)
-* Análise descritiva dos dados usadas para embasar a conclusão
+* Análise descritiva dos dados e cálculos necessários para embasar a conclusão
 * Conclusão
 
 

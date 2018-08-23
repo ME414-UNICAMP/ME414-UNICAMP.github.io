@@ -21,20 +21,18 @@ Material:
 
 * Dois times: A e B
 
-* O time A ganha 1 ponto se o 0 estiver na maior região delimitada pelos dois ponteiros.
+* O time A ganha se o 0 estiver na maior região delimitada pelos dois ponteiros.
 
-* O time B ganha 1 ponto se o 0 estiver na menor região delimitada pelos dois ponteiros.
+* O time B ganha se o 0 estiver na menor região delimitada pelos dois ponteiros.
 
 * Se as duas regiões tiverem a mesma área, consideramos empate e um novo sorteio deve ser feito. Também será empate se a marca de 0min estiver na fronteira das regiões.
-
-* Vence o jogo o time que acumular 10 pontos primeiro.
 
 
 ## Apresentação do jogo
 
-Figura 1: Time A ganha 1 ponto
+Figura 1: Time A ganha
 
-Figura 2: Time B ganha 1 ponto
+Figura 2: Time B ganha
 
 <center><img src="figuras/fig.png" width=650></center>
 
@@ -75,11 +73,12 @@ Que tipo de estatísticas sumárias/gráficos podem ser feitos?
 
 ## Entregar
 
-* RAs do grupo
+* RAs, nomes e assinatura dos membros do grupo
 
 * Tabela com as jogadas do grupo
 
-* Estatísticas e gráficos relevantes para embasar a resposta obtida
+* Estatísticas, gráficos e cálculos relevantes para embasar a resposta obtida
+
 
 
 
