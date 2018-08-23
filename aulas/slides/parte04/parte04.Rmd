@@ -746,6 +746,21 @@ Total | 25 | 300
 > Nº de Clientes ($Y$): $\quad \bar{y}=60 \quad \mbox{e} \quad s_y=8.94$
 
 
+## Exemplo: Tempo de serviço e total de clientes
+
+```{r, echo=FALSE, fig.height=4.5, fig.width=7, fig.align="center"}
+x <- c(2, 4, 5, 6, 8)
+y <- c(48, 56, 64, 60, 72)
+dados <- data.frame(anos = x, clientes = y)
+
+ggplot(dados, aes(x=anos, y=clientes)) +
+    geom_point(col=mycol[1], size=3) +
+    labs(x="Anos de Serviço", y="Número de Clientes") + eixos
+```
+
+Qual a correlação entre anos de serviço de número de clientes?
+
+
 ## Exemplo: Tempo de serviço e total de clientes {.build}
 
 Agente | $X$ | $Y$ | $z_x=\frac{x_{i}-\bar{x}}{s_x}$ | $z_y=\frac{y_{i}-\bar{y}}{s_y}$ | $z_x\times z_y$ 
@@ -798,7 +813,7 @@ abline(v=mean(fitbit$steps), col="red", lty=2, lwd=2)
 
 g <- ggplot(fitbit, aes(steps, minutesVeryActive)) + 
     geom_point(col=mycol[1], size=3, alpha=0.6) +
-    labs(x="Número de Passos", y="Tempo (min) de atividade intensa") + eixos
+    labs(x="Número de Passos", y="Atividade intensa (min)") + eixos
 ggplotly(g)
 ```
 </center>
@@ -821,7 +836,7 @@ ggplotly(g)
 fitbit2 <- subset(fitbit, minutesSedentary > 1000)
 g <- ggplot(fitbit2, aes(steps, minutesSedentary)) + 
     geom_point(col=mycol[1], size=3, alpha=0.6) +
-    labs(x="Número de Passos", y="Tempo (min) sedentário") + eixos
+    labs(x="Número de Passos", y="Tempo sedentário (min)") + eixos
 ggplotly(g)
 ```
 </center>
@@ -882,11 +897,13 @@ ggplotly(g)
 <center><img src="figuras/pearson-2.png" width=700></center>
 
 
-## Cuidado: correlação e *outliers* {.smaller}
+## Cuidado: correlação e *outliers*
 
 <center><img src="figuras/supp_figure_2.png" width=450></center>
 
+<font size=4>
 **Fonte**: [http://simplystatistics.org/2015/08/12/correlation-is-not-a-measure-of-reproducibility/](http://simplystatistics.org/2015/08/12/correlation-is-not-a-measure-of-reproducibility/)
+</font>
 
 
 ## Cuidado: correlação não implica causa!
@@ -894,18 +911,22 @@ ggplotly(g)
 <center><img src="figuras/pirata.png" width=600></center>
 
 
-## Consumo de Queijo e Morte com Lençol {.smaller}
+## Consumo de Queijo e Morte com Lençol
 
 <center><img src="figuras/correlationCheese.png" width=800></center>
 
+</br></br></br><font size=4>
 **Fonte:** [http://www.tylervigen.com/spurious-correlations](http://www.tylervigen.com/spurious-correlations)
+</font>
 
 
 ## Doutorado em Matemática e Suicídio {.smaller}
 
 <center><img src="figuras/correlationMathSuicide.jpg" width=700></center>
 
+</br><font size=4>
 **Fonte:** [http://twentytwowords.com/funny-graphs-show-correlation-between-completely-unrelated-stats-9-pictures/3/](http://twentytwowords.com/funny-graphs-show-correlation-between-completely-unrelated-stats-9-pictures/3/)
+</font>
 
 
 ## Taxa de analfabetismo e mortalidade infantil {.smaller}
@@ -943,23 +964,37 @@ Quais os termos de busca mais se correlacionam a outros?
 <center><img src="figuras/ny1.png" width=500></center> 
 
 
-## Histogramas dos acidentes de carro diários por região de NY
+## Acidentes de carro diários por região de NY
 
 <center><img src="figuras/ny2.png" width=1000></center> 
 
 
-## Boxplots dos acidentes de carro diários por região de NY {.smaller}
+## Acidentes de carro diários por região de NY
 
 <center><img src="figuras/ny3boxplot.png" width=800></center> 
 
+<font size=4>
 **Fonte:** [https://plot.ly/4916/~etpinard/](https://plot.ly/4916/~etpinard/)
+</font>
 
 
-## Exemplo: Tipo de risada e idade {.smaller}
+## Exemplo: Tipo de risada e idade
 
 <center><img src="figuras/face_risada3.png" width=550></center>
 
+</br><font size=4>
 **Fonte:** [https://research.facebook.com/blog/1605690073053884/the-not-so-universal-language-of-laughter/](https://research.facebook.com/blog/1605690073053884/the-not-so-universal-language-of-laughter/)
+</font>
+
+
+## Minimizar a Taxa Informação:Tinta
+
+<center><img src="figuras/GraficoMenosMais.gif" width=600></center>
+
+</br><font size=4>
+**Fonte:** [Online Dashboards: Eight Helpful Tips You Should Hear From Visualization Experts](https://blog.plot.ly/post/123617968702/online-dashboards-eight-helpful-tips-you-should)
+</font>
+
 
 
 ## Leituras
