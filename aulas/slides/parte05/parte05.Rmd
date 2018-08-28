@@ -41,25 +41,16 @@ Diariamente, tomamos decisões com relação a eventos incertos:
 
 **Experimento Determinístico:** é aquele que, dada uma ação controlada, sabemos exatamente qual será o resultado obtido
 
-Exemplo: lançamento de um dado com todas as faces iguais a 6 
-
-<div class="columns-2">
-
+<img src="figuras/dice-six-every-face.jpg" width="80" style="float: left;"> 
+Exemplo: lançamento de um dado com todas as faces iguais a 6 <br />
 Único resultado possível? 6 
 
-<img src="figuras/dice-six-every-face.jpg" width=80>
-</div>
-
+<br />
 **Experimento Aleatório:** é aquele em que não se tem certeza sobre seus resultados, a priori. Mútiplos resultados podem ser obtidos a partir de uma única ação. Cada vez que se repete o experimento, o resultado pode ser diferente. 
 
-Exemplo: lançamento de um dado de seis faces 
-
-<div class="columns-2">
-
+<img src="figuras/dicesixface0.jpeg" width="70" style="float:left;"> 
+Exemplo: lançamento de um dado de seis faces <br />
 Resultados possíveis: {1, 2, 3, 4, 5, 6} 
-
-<img src="figuras/dicesixface0.jpeg" width=70>
-</div>
 
 
 
@@ -90,7 +81,7 @@ Tais eventos, em geral, estão associados a **experimentos aleatórios**.
 > Em certo ponto do jogo, durante a sua vez, o 6 sai 3 vezes seguidas e você vence o jogo!
 
 
->  Dentre os de **100 lançamentos** do dado durante a sua vez, seu oponente no jogo comenta que o **6 saiu 23 vezes**.
+> Dentre os de **100 lançamentos** do dado durante a sua vez, seu oponente no jogo comenta que o **6 saiu 23 vezes**.
 
 
 > Seu oponente então reclama que o dado estava te favorecendo com tantos 6, portanto o dado não era "justo".
@@ -447,7 +438,7 @@ Para quantificar incerteza em fenômenos aleatórios usando probabilidades, prec
 
 1. Se o fenômeno considerado é observar o sexo de uma criança ao nascer:
 <center>
-$\Omega=\{F, M\}$ <img src="figuras/meninomenina.png" width=150>
+$\Omega=\{F, M\}$ <img src="figuras/meninomenina.png" width="150">
 </center>
 
  > 2. Se o experimento consiste em observar os resultados ao lançar uma moeda duas vezes:
@@ -561,8 +552,7 @@ Então $\omega_{1}=(C,C)$; $\omega_{2}=(C,X)$; $\omega_{3}=(X,C)$ e  $\omega_{4}
 
 
 > * Seja o evento $A=\{\omega_{1}, \omega_{4}\}=$ obter duas faces iguais:
-
-$P(A)=P(\{\omega_{1},\omega_{4}\})=P(\omega_{1})+P(\omega_{4})=\frac{1}{4}+\frac{1}{4}=\frac{2}{4}=\frac{1}{2}$
+$$P(A)=P(\{\omega_{1},\omega_{4}\})=P(\omega_{1})+P(\omega_{4})=\frac{1}{4}+\frac{1}{4}=\frac{2}{4}=\frac{1}{2}$$
 
 
 ## Equiprobabilidade {.build}
@@ -653,7 +643,8 @@ Propriedades:
   Computação (C)          |  20 | 10 |  30
   Total                   | 115 | 85 | 200
 
-> Escolhendo um aluno ao acaso:
+<br />
+Escolhendo um aluno ao acaso:
 
 $$P(MP)=\frac{110}{200}=0.550 \qquad \qquad P(E)=\frac{30}{200}=0.150$$
 
@@ -670,6 +661,7 @@ $$P(M)=\frac{115}{200}=0.575 \qquad \qquad P(F)=\frac{85}{200}=0.425$$
   Computação (C)          |  20 | 10 |  30
   Total                   | 115 | 85 | 200
 
+<br />
 Seja o evento $I$: escolher ao acaso um aluno e ele ser estudante de estatística e do sexo masculino.
 
 >  $I=E\cap M$, o evento $I$ é a interseção dos eventos $E$ e $M$.
@@ -683,7 +675,7 @@ A interseção de $A$ e $B$ consiste de elementos do espaço amostral que perten
 
 Denotamos $A\cap B$:
 
-<center><img src="figuras/AinterB.png" width=500></center> 
+<center><img src="figuras/AinterB.png" width=450></center> 
 
 
 ## União de Eventos {.build}
@@ -694,6 +686,7 @@ Denotamos $A\cup B$:
 
 <center><img src="figuras/union.png" width=400 height=270> ou <img src="figuras/disjuntos.png" width=400 height=270></center> 
 
+<br />
 Na figura da direita, $A$ e $B$ são denominados **disjuntos**, pois $A\cap B=\varnothing$.
 
 
@@ -829,52 +822,45 @@ No caso geral, sejam $A$ e $B$ subconjuntos de $\Omega$:
 
 > * se $\{A\cap B\}=\varnothing$, então $P(A\cup B)=P(A) + P(B)$.
 
-> * $A$ e $B$ são **complementares** se $A\cap B = \varnothing$ e $A\cup B=\Omega$.
+<br />
+Dois eventos $A$ e $B$ são **complementares** se $A\cap B = \varnothing$ e $A\cup B=\Omega$. 
+<img src="figuras/Acomp.png" width=300 style="float:right">
 
 >  * como $P(A) + P(B)=1$, então $P(B)=1-P(A)$
 
 >  * $B$ é denotado por $B=A^{C}$ (indicado na cor laranja).
 
-<center><img src="figuras/Acomp.png" width=200></center> 
 
 ## Exemplo: Cartões de Crédito {.build}
 
-<center><img src="figuras/cartoes.jpg" width=400></center> 
+<img src="figuras/cartoes.jpg" width=300 style="float:right"> 
+Um estabelecimento aceita Visa ou Mastercard. Dentre os clientes, 22\% possuem Mastercard, 58\% possuem Visa e 14\% possuem os dois. 
 
+Qual a probabilidade de que um cliente tenha pelo menos um destes cartões?
 
-Um estabelecimento aceita Visa ou Mastercard. Dentre os clientes, 22\% possuem Mastercard, 58\% possuem Visa e 14\% possuem os dois. Qual a probabilidade de que um cliente tenha pelo menos um destes cartões?
+Espaço amostral: $\Omega=\{V, M, VM, N\}$, onde V="tem só Visa", M="tem só Matercard", VM="tem Visa e Mastercard", N="não tem Visa nem Mastercard".
 
+**Evento A:** cliente possui Mastercard. $A=\{M, VM\}$ <br />
+**Evento B:** cliente possui Visa.  $B=\{V, VM\}$
 
-
-## Exemplo: Cartões de Crédito {.build}
-
-Um estabelecimento aceita Visa ou Mastercard. Dentre os clientes, 22\% possuem Mastercard, 58\% possuem Visa e 14\% possuem os dois. Qual a probabilidade de que um cliente tenha pelo menos um destes cartões?
-
-
-> Espaço amostral: $\Omega=\{V, M, VM, N\}$, onde V="tem só Visa", M="tem só Matercard", VM="tem Visa e Mastercard", N="não tem Visa nem Mastercard".
-
-> Evento A: cliente possui Mastercard. $A=\{M, VM\}$.
-
-> Evento B: cliente possui Visa.  $B=\{V, VM\}$.
-
-> $P(A)=0.22$
-
-> $P(B)=0.58$
-
-> $P(A\cap B)=0.14$
+$P(A)=0.22$ <br />
+$P(B)=0.58$ <br />
+$P(A\cap B)=0.14$
 
 
 ## Exemplo: Cartões de Crédito {.build}
 
->  $A\cup B$: cliente possui pelo menos um dos cartões. $A\cup B=\{ V,M,VM\}$.
+$A\cup B$: cliente possui pelo menos um dos cartões. $A\cup B=\{ V,M,VM\}$.
 
-> $P(A\cup B)=P(A)+P(B)-P(A\cap B)=0.22+0.58-0.14=0.66$.
+$P(A\cup B)=P(A)+P(B)-P(A\cap B)=0.22+0.58-0.14=0.66$.
 
-> Evento C: cliente não possui nenhum dos cartões. $C=\{ N\}$.
+<br />
+**Evento C:** cliente não possui nenhum dos cartões. $C=\{ N\}$
 
-> $C$ é complementar de $A\cup B$, pois: $C\cup (A\cup B)=\Omega$ e $C\cap (A\cup B)=\varnothing$. 
+<img src="figuras/cartoes.jpg" width=300 style="float:right">
+$C$ é complementar de $A\cup B$, pois: <br />$C\cup (A\cup B)=\Omega$ e $C\cap (A\cup B)=\varnothing$. 
 
-> Então $P(C)=1-P(A\cup B)=0.34$.
+Então $P(C)=1-P(A\cup B)=0.34$.
 
 
 ## Exemplo: Cinto de segurança e acidentes {.build}
