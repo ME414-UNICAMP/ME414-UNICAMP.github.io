@@ -24,7 +24,7 @@ logo: ../logo-imecc.png
 
 <center><img src="figuras/portadesesperados.jpg" width=250></center>
 
-> * Imagine-se em um [programa de auditório](https://www.youtube.com/watch?v=VCPBvKYqm5U) em que 3 portas são colocadas à sua frente. 
+> * Imagine-se em um [programa de auditório](https://www.youtube.com/watch?v=lcQ6Q1CdZnI) em que 3 portas são colocadas à sua frente. 
 
 > * Atrás de uma delas há um bom prêmio e atrás das outras duas não há nada. 
 
