@@ -25,6 +25,7 @@ logo: ../logo-imecc.png
 
 
 ## Experimento: Lançamento de 3 moedas {.build}
+
 > Qual a probabilidade de obtermos pelo menos 2 caras?
  
  > $B=\{(CCC),(CCX),(CXC),(XCC)\}$
@@ -33,95 +34,110 @@ logo: ../logo-imecc.png
 
 
 ## Jogo de dados {.build}
+
 Dois dados honestos são lançados simultaneamente
+<img src="figuras/dadosverderoxo.jpeg" width=150 style="float: right;">
 
- <center><img src="figuras/dadosverderoxo.jpeg" width=150></center> 
+O jogador deve escolher uma das duas opções antes do lançamento dos dados. Caso a opção escolhida ocorra, ele será o vencedor.
 
-> O jogador deve escolher uma das duas opções antes do lançamento dos dados. Caso a opção escolhida ocorra, ele será o vencedor.
+As duas opções são:
 
-> As duas opções são:
+* **Opção A:** Soma das duas faces é igual a 7;
 
-> + Soma das duas faces é igual a 7
+* **Opção B:** Maior valor obtido nos dois dados seja no máximo 3.
 
-> + Maior valor obtido nos dois dados seja no máximo 3
-
-> Qual das duas possibilidades ele deve escolher? 
+<br />
+Qual das duas possibilidades ele deve escolher? 
 
 
 ## Jogo de dados {.build}
+
+Dois dados honestos são lançados simultaneamente
+<img src="figuras/dadosverderoxo.jpeg" width=150 style="float: right;">
+
 Espaço amostral:
 
-> <center><img src="figuras/jogo1.png" width=400></center> 
+<img src="figuras/jogo1.png" width=450> 
 
-> Dados honestos, então cada elemento do espaço amostral tem igual probabilidade de ocorrer: 1/36
+<br />
+Dados honestos, então cada elemento do espaço amostral tem igual probabilidade de ocorrer: 1/36
 
 
 ## Jogo de dados {.build}
-$A=\{\mbox{conjunto dos pares  (i,j) tais que i+j=7}\}$
 
-> <center><img src="figuras/jogo2.png" width=450></center>
+**Opção A:** Soma das duas faces é igual a 7.
 
-> $A=\{(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)\}$
- 
-> $$P(A)=\frac{\mbox{número de elementos em A}}{\mbox{número de elementos em $\Omega$}}=\frac{6}{36}$$
+$A = \{\mbox{conjunto dos pares } (i,j) \mbox{ tais que } i + j = 7\}$
+
+<img src="figuras/jogo2.png" width=450>
+
+$A=\{(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)\}$
+
+$$P(A)=\frac{\mbox{número de elementos em A}}{\mbox{número de elementos em $\Omega$}}=\frac{6}{36} = \frac{1}{6}$$
  
  
 ## Jogo de dados {.build}
 
-$B=\{\mbox{conjunto dos pares (i,j) tais que } i \leq 3 \mbox{ e } j \leq 3 \}$
+**Opção B:** Maior valor obtido nos dois dados seja no máximo 3.
 
-> <center><img src="figuras/jogo3.png" width=450></center>
+$B=\{\mbox{conjunto dos pares } (i,j) \mbox{ tais que } i \leq 3 \mbox{ e } j \leq 3 \}$
 
-> $B=\{(1,1),(1,2),(1,3),(2,1),(2,2),(2,3),(3,1),(3,2),(3,3)\}$
+<img src="figuras/jogo3.png" width=450>
+
+$B=\{(1,1), (1,2), (1,3), (2,1), (2,2), (2,3), (3,1), (3,2), (3,3)\}$
  
-> $$P(B)=\frac{\mbox{número de elementos em B}}{\mbox{número de elementos em $\Omega$}}=\frac{9}{36}=\frac{1}{4}$$
+$$P(B) = \frac{\mbox{número de elementos em B}}{\mbox{número de elementos em $\Omega$}} = \frac{9}{36} = \frac{1}{4}$$
 
-> Como $P(A)<P(B)$ é mais vantajoso escolher a opção "maior valor seja no máximo 3"
+Como $P(A) < P(B)$ é mais vantajoso escolher a opção B.
  
  
 # Regras de Contagem
 
 ## Regras de contagem {.build}
-* Espaço amostral finito $\Omega=\{\omega_1,\ldots,\omega_n\}$ com elementos equiprováveis, então:
 
-> $$P(A)=\frac{\mbox{número de elementos no evento A}}{\mbox{número de elementos no espaço amostral}}.$$
+* Espaço amostral finito $\Omega=\{\omega_1, \ldots, \omega_n\}$ com elementos equiprováveis, então:
+
+$$P(A) = \frac{\mbox{número de elementos no evento A}}{\mbox{número de elementos no espaço amostral}}.$$
  
-> * Precisamos conhecer regras de contagem para calcular probabilidade de eventos.
+* Precisamos conhecer regras de contagem para calcular probabilidade de eventos.
 
-> **Exemplo:** Em um grupo de 100 pessoas, 2 são daltônicas. Dez pessoas são escolhidas ao acaso e sem reposição. Qual a probabilidade de escolhermos apenas uma pessoa daltônica?
+**Exemplo:** Em um grupo de 100 pessoas, 2 são daltônicas. Dez pessoas são escolhidas ao acaso e sem reposição. Qual a probabilidade de escolhermos apenas uma pessoa daltônica?
 
->  De quantas maneiras podemos selecionar 10 pessoas a partir de um grupo de 100 pessoas, sem reposição?
+De quantas maneiras podemos selecionar 10 pessoas a partir de um grupo de 100 pessoas, sem reposição?
+
+
+## Regra da adição {.build}
+
+**Regra da adição:**  suponha que temos dois procedimentos possíveis para executarmos uma tarefa, ou seja, basta executarmos um dos dois procedimentos para que a tarefa tenha sido executada.
+
+O procedimento $P_1$ tem $n_1$ formas de ser executado e o procedimento $P_2$ tem $n_2$  formas de ser executado. 
+
+O total de maneiras para executarmos a tarefa é então dado por $n_1+n_2$.
 
 
 ## Regra da adição {.build}
 
-* **Regra da adição:**  suponha que temos dois procedimentos possíveis para executarmos uma tarefa, ou seja, basta executarmos um dos dois procedimentos para que a tarefa tenha sido executada.
-
-> O procedimento $P_1$ tem $n_1$ formas de ser executado e o procedimento $P_2$ tem $n_2$  formas de ser executado. 
-
-> O total de maneiras para executarmos a tarefa é então dado por $n_1+n_2$.
-
-
-## Regra da adição {.build}
-* **Exemplo:** Entre as opções de sobremesa de um restaurante, você pode escolher entre sorvete e torta. Há dois sabores de torta: baunilha ou cereja.  Há três sabores de sorvete: morango, chocolate e creme.
-
+**Exemplo:** Entre as opções de sobremesa de um restaurante, você pode escolher entre sorvete e torta.
 <center>
-<img src="figuras/sobremesa.jpg" width=350>
-<img src="figuras/sorvete.jpg" width=350>
-</center> 
+<img src="figuras/sobremesa.jpg" width=300>
+<img src="figuras/sorvete.jpg" width=300>
+</center>
+<br />
+Há dois sabores de torta: baunilha ou cereja. <br />
+Há três sabores de sorvete: morango, chocolate e creme.
 
-> Quantas opções você tem no total?
+Quantas opções você tem no total?
 
-> Você pode escolher torta OU sorvete, então existem $2+3= `r 2+3`$ opções de sobremesa.
+Você pode escolher torta OU sorvete, então existem $2 + 3= 5$ opções.
 
 
 ## Regra da multiplicação {.build}
 
-* **Regra da multiplicação:**  suponha que para realizarmos uma tarefa temos que executar dois procedimentos, denotados por $P_1$ e $P_2$. 
+**Regra da multiplicação:**  suponha que para realizarmos uma tarefa temos que executar dois procedimentos, denotados por $P_1$ e $P_2$. 
 
-> O procedimento $P_1$ tem $n_1$ formas de ser executado e o procedimento $P_2$ tem $n_2$ formas de ser executado. 
+O procedimento $P_1$ tem $n_1$ formas de ser executado e o procedimento $P_2$ tem $n_2$ formas de ser executado. 
 
-> O total de maneiras para executarmos a tarefa é dado por $n_1 \times  n_2$.
+O total de maneiras para executarmos a tarefa é dado por $n_1 \times  n_2$.
 
 
 ## Regra da multiplicação {.build}
@@ -136,19 +152,20 @@ Fusili Integrale | Mamma | Funghi    |
 Penne         |          | 4 Queijos |
 Spaghetti     |          | Tomate    |
 
-> Quantas opções de pratos você têm no total?
+Quantas opções de pratos você têm no total?
 
-> Você pode criar $5 \times 3 \times 5 \times 2= `r 5*3*5*2`$ pratos diferentes.
+Você pode criar $5 \times 3 \times 5 \times 2= `r 5*3*5*2`$ pratos diferentes.
 
 
 ## Exemplo: Sobremesas {.build}
+
 Você volta no mesmo restaurante das tortas e sorvetes. Há dois sabores de torta (baunilha ou cereja) e três sabores de sorvete (morango, chocolate e creme).
 <center>
 <img src="figuras/sobremesa.jpg" width=280>
 <img src="figuras/sorvete.jpg" width=280>
 </center> 
 
-> Apenas aos sábados, o restaurante oferece a "Torta da Casa", que é uma torta com sorvete em cima. Aos sábados, quantas opções de sobremesa você?
+Apenas aos sábados, o restaurante oferece a "Torta da Casa", que é uma torta com sorvete em cima. Aos sábados, quantas opções de sobremesa você?
 
 > * $2+3= `r 2+3`$ opções caso não escolha "Torta da Casa".
 
@@ -163,34 +180,39 @@ De quantas formas diferentes podemos escolher a placa de um carro, tendo essa 3 
 
 <center><img src="figuras/placacarro.jpeg" width=300></center>
 
->	$$ 26 \times 26 \times 26 \times 10 \times 10 \times 10 \times 10 = 175.760.000$$ 
+> $$ 26 \times 26 \times 26 \times 10 \times 10 \times 10 \times 10 = 175.760.000$$ 
 
 > E se não pudesse haver repetição de letras e números?
-	$$ 26 × 25 × 24 × 10 × 9 × 8 × 7 = 78.624.000$$
+
+> $$ 26 × 25 × 24 × 10 × 9 × 8 × 7 = 78.624.000$$
 
 
 ## Permutação {.build}
-* Suponha que tenhamos uma coleção $O=\{w_1,w_2,...,w_n\}$ de $n$ objetos. De quantas maneiras podemos permutar (dispor) estes elementos? 
 
-> * O número de maneiras que podemos fazer isto é denominado **permutação**.
+Suponha que tenhamos uma coleção $O=\{w_1,w_2,...,w_n\}$ de $n$ objetos. De quantas maneiras podemos permutar (dispor) estes elementos? 
 
-> * Suponha que temos $n$ caixas e queremos dispor os $n$ objetos de $O$ nessas caixas. 
+O número de maneiras que podemos fazer isto é denominado **permutação**.
+
+Suponha que temos $n$ caixas e queremos dispor os $n$ objetos de $O$ nessas caixas. 
 
 > <center><img src="figuras/fatorial.png" width=350></center>
 
 > Aplicando a regra da multiplicação, temos que o número de maneiras de permutar $n$ elementos é:
->       $$n\times(n-1)\times\ldots\times1=n!$$
+>  $$n\times(n-1)\times\ldots\times1=n!$$
 
 
 ## Exemplos {.build}
-* **Exemplo 1**: Se tivermos três CD's ($a$, $b$ e $c$). De quantas formas diferentes posso distribuí-los para três amigos?
 
-<center><img src="figuras/cds.jpg" width=200></center>
-$$3! = 3 \times 2 \times 1 = 6 $$ 
+<img src="figuras/cds.jpg" width=200 style="float: right;">
+**Exemplo 1**: Se tivermos três CD's ($a$, $b$ e $c$). De quantas formas diferentes posso distribuí-los para três amigos?
 
->Ou seja, temos as seguintes permutações: $abc, acb, bac, bca, cab, cba$.
+> $$3! = 3 \times 2 \times 1 = 6 $$ 
 
-> * **Exemplo 2**: Quantos anagramas podemos formar com a palavra ERVILHAS, sendo que eles comecem com a letra E e terminem com vogal?
+> Ou seja, temos as seguintes permutações: 
+$$abc, acb, bac, bca, cab, cba$$
+
+<br />
+**Exemplo 2**: Quantos anagramas podemos formar com a palavra ERVILHAS, sendo que eles comecem com a letra E e terminem com vogal?
 
 > $$ 1 \times 6! \times 2 = `r factorial(6)*2`$$
 
@@ -213,56 +235,63 @@ $$\frac{6!}{3!2!} = `r factorial(6)/(factorial(3)*factorial(2))`$$
 
 
 ## Arranjo {.build}
-* Suponha que tenhamos uma coleção $O=\{w_1,w_2,...,w_n\}$ de $n$ objetos. 
+Suponha que tenhamos uma coleção $O=\{w_1,w_2,...,w_n\}$ de $n$ objetos. 
 
-> * De quantas maneiras podemos escolher $r$ destes elementos? 
+> De quantas maneiras podemos escolher $r$ destes elementos? 
 
-> * O número de maneiras que podemos fazer isto é denominado **arranjo**.
+> O número de maneiras que podemos fazer isto é denominado **arranjo**.
 
-> * Suponha que temos $r$ caixas e queremos dispor os $n$ objetos de $O$ nessas caixas. 
-> <center><img src="figuras/arranjo.png" width=450></center>
+> Suponha que temos $r$ caixas e queremos dispor os $n$ objetos de $O$ nessas caixas. 
+
+<center><img src="figuras/arranjo.png" width=450></center>
 
 
 ## Arranjo {.build}
 
 > Aplicando a regra da multiplicação, temos que o número de maneiras de arranjar $n$ elementos em $r$ caixas é: 
->       $$n \times(n-1) \times \ldots \times (n-r+1) = \frac{n!}{(n-r)!} = A(n,r)$$
-       
-> * **Exemplo:** Se tivermos os objetos $a$, $b$, $c$ e $d$, de quantas maneiras podemos escolher 2 elementos: 
+> $$n \times(n-1) \times \ldots \times (n-r+1) = \frac{n!}{(n-r)!} = A(n,r)$$
 
-> $$A(4, 2) = \frac{4!}{(4-2)!} = 12$$
+<br />       
+**Exemplo:** Se tivermos os objetos $a$, $b$, $c$ e $d$, de quantas maneiras podemos escolher 2 elementos: 
 
-> Que seriam o seguinte: $ab,ac,ad,ba,bc,bd,ca,cb,cd,da,db,dc$.
+> $$A(4, 2) = \frac{4!}{(4-2)!} = 12,$$
+
+> que seriam as seguintes: $ab,ac,ad,ba,bc,bd,ca,cb,cd,da,db,dc$.
 
 
 ## Combinação {.build}
-* Suponha que tenhamos uma coleção $O=\{w_1,w_2,...,w_n\}$ de $n$ objetos. 
 
-> * De quantas maneiras podemos escolher $r$ destes elementos sem considerarmos a ordem? 
+Suponha que tenhamos uma coleção $O=\{w_1,w_2,...,w_n\}$ de $n$ objetos. 
 
-> * O número de maneiras que podemos fazer isto é denominado **combinação**.
+> De quantas maneiras podemos escolher $r$ destes elementos sem considerarmos a ordem? 
+
+> O número de maneiras que podemos fazer isto é denominado **combinação**.
   
-> * O número de maneiras de alocarmos os $n$ objetos em $r$ caixas é:
-> $$\frac{n!}{(n-r)!}$$
+> O número de maneiras de alocarmos os $n$ objetos em $r$ caixas é:
+
+> $$A(n,r) = \frac{n!}{(n-r)!}$$
+
+> Como a ordem não importa, após alocarmos os $r$ objetos, temos $r!$ formas de permutá-los.
 
 
 ## Combinação {.build}
-* Após alocarmos os $r$ objetos, temos $r!$ formas de permutá-los, então o número de maneiras de escolhermos $r$ objetos sem importar a ordem dentre $n$ objetos é:
 
-> $$\frac{n!}{r!(n-r)!}=\binom{n}{r}=C(n,r)$$
-      
-> * **Exemplo:** Se tivermos os objetos $a$, $b$, $c$ e $d$, de quantas maneiras podemos escolher 2 elementos sem considerar a ordem?
+Então o número de maneiras de escolhermos $r$ objetos sem importar a ordem dentre $n$ objetos é:
+$$\frac{A(n,r)}{r!} = \frac{n!}{r!(n-r)!}=\binom{n}{r}=C(n,r)$$
 
-> $$ C(4, 2) = \binom{4}{2} = `r choose(4, 2)`$$
+<br />      
+**Exemplo:** Se tivermos os objetos $a$, $b$, $c$ e $d$, de quantas maneiras podemos escolher 2 elementos sem considerar a ordem?
 
-> Que seriam o seguinte: $ab,ac,ad,bc,bd,cd$.
+> $$ C(4, 2) = \binom{4}{2} = `r choose(4, 2)`,$$
+
+> que seriam as seguintes: $ab,ac,ad,bc,bd,cd$.
 
 
 ## Exemplo {.build}
+
 Sete atletas estão competindo nas olimpíadas. O pódium tem 3 lugares: ouro, prata e bronze. Quantos pódiuns podem ser feitos?
 
-<div class="columns-2">
-> <center><img src="figuras/podium.jpg" width=400></center>
+<img src="figuras/podium.jpg" width=400 style="float:left">
 
  - A ordem importa (ouro, prata e bronze):
 
@@ -273,40 +302,51 @@ Sete atletas estão competindo nas olimpíadas. O pódium tem 3 lugares: ouro, p
 - A ordem não importa:
 
 > $$C(7,3)=\frac{7!}{3!(7-3)!}= `r choose(7, 3)`$$
-</div>
 
 
-## Exemplo {.build .smaller}
 
-> <center><img src="figuras/daltonismo_daltonico.jpg" width=300></center> 
+## Exemplo {.build}
 
-Em um grupo de 100 pessoas, 2 são daltônicas. Dez pessoas são escolhidas ao acaso e sem reposição. Qual a probabilidade de escolhermos apenas uma pessoa daltônica?
+<img src="figuras/daltonismo_daltonico.jpg" width=300 style="float:right">
+
+Em um grupo de 100 pessoas, 2 são daltônicas. Dez pessoas são escolhidas ao acaso e sem reposição. <br />
+
+Qual a probabilidade de escolhermos apenas uma pessoa daltônica?
+
 
 > De quantas maneiras podemos selecionar 10 pessoas a partir de um grupo de 100 pessoas, sem reposição?
 
-> $$C(100,10)=\binom{100}{10}$$
+<font size=4>$$C(100,10)=\binom{100}{10}$$</font>
  
 > De quantas maneiras podemos selecionar 1 pessoa a partir de um grupo de 2 pessoas daltônicas?
   
-> $$C(2,1)=\binom{2}{1}$$
+<font size=4>$$C(2,1)=\binom{2}{1}$$</font>
   
 
 ## Exemplo {.build}
-Em um grupo de 100 pessoas, 2 são daltônicas. Dez pessoas são escolhidas ao acaso e sem reposição. Qual a probabilidade de escolhermos apenas uma pessoa daltônica?
+
+<img src="figuras/daltonismo_daltonico.jpg" width=300 style="float:right">
+
+Em um grupo de 100 pessoas, 2 são daltônicas. Dez pessoas são escolhidas ao acaso e sem reposição. <br />
+
+Qual a probabilidade de escolhermos apenas uma pessoa daltônica?
+
 
 > De quantas maneiras podemos selecionar 9 pessoas a partir de um grupo de 98 pessoas com visão normal?
   
-> $$C(98,9)=\binom{98}{9}$$  
+<font size=4>$$C(98,9)=\binom{98}{9}$$</font> 
 
 > Então, a probabilidade de escolhermos apenas uma pessoa daltônica:
 > $$\frac{\binom{2}{1}\binom{98}{9}}{\binom{100}{10}}$$
 
 
 ## Exemplo {.build}
+
 Uma caixa contém 2 bolas vermelhas, 3 verdes e 2 azuis. Duas bolas são selecionadas aleatoriamente. Qual a probabilidade de que nenhuma bola seja azul?
 
 > * Total de bolas: 7
 > * Maneiras de sortear 2 bolas dentre 7 bolas:  $C(7,2)=\binom{7}{2}=\frac{7!}{2!(7-2)!}=21$
+
 > * $A$=sortear 2 bolas, nenhuma sendo azul.
 
 > $$C(5,2)=\frac{5!}{2!(5-2)!}=`r choose(5, 2)`$$
@@ -330,7 +370,7 @@ chooset <- choose(nt, t)
 Em uma classe, há `r na` meninos e `r nb` meninas. Três alunos são selecionados ao acaso. Qual a probabilidade de sortear `r b` menina e `r a` meninos?
 
 > * Maneiras de sortear `r t` alunos dentre `r nt`:  
-> $C(`r nt`,`r t`)=\binom{`r nt`}{`r t`}=\frac{`r nt`!}{`r t`!(`r nt`-`r t`3)!}= `r chooset`$
+    $C(`r nt`,`r t`)=\binom{`r nt`}{`r t`}=\frac{`r nt`!}{`r t`!(`r nt`-`r t`3)!}= `r chooset`$
 
 > * $A$=sortear `r b` menina e `r a` meninos.
 
