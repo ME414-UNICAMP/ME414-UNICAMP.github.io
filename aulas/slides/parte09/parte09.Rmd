@@ -114,56 +114,62 @@ A altura de cada barra representa a probabilidade daquele valor.
 
 ## Exemplo: Vendedor {.build}
 
-<center><img src="figuras/vendedor.jpg" width=200></center>
+<img src="figuras/vendedor.jpg" width=250 style="float: right;">
 
 Um vendedor de enciclopédias visita cada casa duas vezes.   
 
 > Com anos de experiência, ele acredita que a probabilidade de uma venda logo na primeira visita é 0.3.   
 
-> Já na segunda visita, ele acredita que a probabilidade de venda seja 0.6.   Ele acredita também que o resultado em cada visita seja independente.   
+> Já na segunda visita, ele acredita que a probabilidade de venda seja 0.6.   Ele acredita também que o resultado em cada visita seja independente. 
+
+<br />
 
 > Qual é a distribuição de probabilidade da v.a. $X$: número de vendas feitas em uma casa?
 
 
 ## Exemplo: Vendedor {.build}
-Seja $V_1$: venda na primeira visita e $V_2$: venda na segunda visita.
 
-*  Espaço amostral do fenômeno aleatório: 
+<img src="figuras/vendedor.jpg" width=250 style="float: right;">
+Considere os eventos:
+
+> * $V_1$ = {venda na primeira visita}
+> * $V_2$ = {venda na segunda visita}
+
+Espaço amostral do fenômeno aleatório: 
 
 > $$\Omega=\{ (V_1^c \cap V_2^c), (V_1 \cap V_2^c), (V_1^c \cap V_2), (V_1 \cap V_2)\}$$
 
-> *  A v.a. $X$ pode assumir os valores  $0$, $1$ ou $2$. 
+> Então, a v.a. $X$ pode assumir os valores  $0$, $1$ ou $2$. 
 
-> *  Se nenhuma venda ocorrer nas duas visitas, $X= 0$. 
+> Temos $X= 0$ se nenhuma venda ocorrer nas duas visitas.
 
-> $$
-\begin{aligned}
-P(X=0) = & P(V_1^c \cap V_2^c) \\
-\overset{ind}{=} & P(V_1^c) P(V_2^c) \\ 
-= & [1-P(V_1)] [1-P(V_2)] \\  
-= & (1-0.3)(1-0.6)=0.28
-\end{aligned}
-$$
+$$\begin{aligned}
+P(X=0) = & P(V_1^c \cap V_2^c) \overset{ind}{=} P(V_1^c) P(V_2^c) \\ 
+= & [1-P(V_1)] [1-P(V_2)] = (1-0.3)(1-0.6)=0.28
+\end{aligned}$$
 
 
 ## Exemplo: Vendedor {.build}
 
-> * $X=1$ quando ocorre uma venda apenas na primeira visita **ou** uma venda apenas segunda visita. 
+<img src="figuras/vendedor.jpg" width=250 style="float: right;">
 
-$$
-\begin{aligned}
+* $X=1$ quando ocorre uma venda apenas na primeira visita **ou** uma venda apenas segunda visita. 
+
+Então,
+$$\begin{aligned}
 P(X=1) = & P[(V_1 \cap V_2^c) \cup (V_1^c \cap V_2)] \\
 = & P(V_1 \cap V_2^c) + P(V_1^c \cap V_2) \\
 \overset{ind}{=} & P(V_1)P(V_2^c) + P(V_1^c)P(V_2) \\
 = & (0.3)(1-0.6) + (1-0.3)(0.6) \\
 = & 0.54
-\end{aligned}
-$$
+\end{aligned}$$
 
 
 ## Exemplo: Vendedor {.build}
 
-> *  $X=2$ quando   ocorre uma venda nas duas visitas. 
+<img src="figuras/vendedor.jpg" width=250 style="float: right;">
+
+* $X=2$ quando   ocorre uma venda nas duas visitas. 
 
 $$
 \begin{aligned}
@@ -254,8 +260,9 @@ $P(X<6) =  P(X=5) + P(X=4) + P(X=3) + P(X=2) = \frac{10}{36}$
 
 $Y$: máximo resultado no lançamento de 2 dados.
 
-<center><img src="figuras/jogo1.png" width=600></center>
+<center><img src="figuras/DoisDados.png" width=400></center>
 
+<br />
 
 $Y$ | 1 | 2 | 3 | 4 | 5 | 6
 ----|:---:|:---:|:---:|:---:|:---:|:---:
@@ -266,7 +273,9 @@ $P(Y=y)$| 1/36 | 3/36 | 5/36 | 7/36 | 9/36 | 11/36
 
 $Z$: diferença entre os pontos do segundo e do primeiro lançamento.
 
-<center><img src="figuras/jogo1.png" width=600></center>
+<center><img src="figuras/DoisDados.png" width=400></center>
+
+<br />
 
 $Z$ | -5 | -4 | -3 | -1 | -1 | 0 | 1 | 2 | 3 | 4 | 5
 ----|:---:|:---:|:---:|:---:|:---:|:----:|:---:|:---:|:---:|:---:|:---:|:---:
@@ -335,30 +344,36 @@ $P(C=c)$ | 0.729 | 0.243 | 0.027 | 0.001
 
 ## Exemplo: Lançamento de uma moeda duas vezes {.build}
 
-> *  $\Omega=\{CC, CX, XC, XX\}$, em que $C=$ cara e $X=$ coroa.  
+<img src="figuras/MA_D6_T2_TP3_P1.jpg" width=300 style="float: left; margin-right: 15px;">
+Espaço amostral:
+$$\Omega=\{CC, C \bar C, \bar C C, \bar C \bar C\},$$ 
+em que $C=$ cara e $\bar C=$ coroa.  
 
-> *  Seja a v.a. $N=$ número de caras em dois lançamentos.
+> Seja a v.a. $X=$ número de caras em dois lançamentos.
 
+<br />
 
-$N$ | 0 | 1 | 2
+$X$ | 0 | 1 | 2
 --|:--:|:--:|:--:
-$P(N=n)$ | $\displaystyle P\left(XX\right)=\frac{1}{4}$ | $\displaystyle P\left(CX \cup XC\right)=\frac{2}{4}=\frac{1}{2}$ | $\displaystyle P\left(CC\right)=\frac{1}{4}$
+$P(X=x)$ | $\displaystyle P\left(\bar C \bar C\right)=\frac{1}{4}$ | $\displaystyle P\left(C \bar C \cup \bar C C\right)=\frac{2}{4}=\frac{1}{2}$ | $\displaystyle P\left(CC\right)=\frac{1}{4}$
 
 
 # Função de Distribuição Acumulada
 
 ## Exemplo: Vacina {.build}
 
-> *  Um grupo de 1000 crianças foi analisado para determinar a efetividade de uma vacina contra um tipo de alergia.   As crianças recebiam uma dose de vacina e após um mês passavam por um novo teste.   Caso ainda tivessem tido alguma reação alérgica, recebiam outra dose.  
+Um grupo de 1000 crianças foi analisado para determinar a efetividade de uma vacina contra um tipo de alergia.   As crianças recebiam uma dose de vacina e após um mês passavam por um novo teste.   Caso ainda tivessem tido alguma reação alérgica, recebiam outra dose.  
 
-> *  Variável de interesse: X = número de doses.  
+> Variável de interesse: X = número de doses.  
 
 Doses ($X$) | 1 | 2 | 3 | 4 | 5 
 --------- |:---:|:---:|:---:|:---:|:---:
 Frequência | 245 | 288 | 256 | 145 | 66 
 
- 
-> *  Uma criança é sorteada ao acaso, qual será a probabilidade dela ter recebido 2 doses?  
+
+<br />
+
+> Uma criança é sorteada ao acaso, qual será a probabilidade dela ter recebido 2 doses?  
 
 > $$P(X=2) = \frac{288}{1000}=0.288$$
 
