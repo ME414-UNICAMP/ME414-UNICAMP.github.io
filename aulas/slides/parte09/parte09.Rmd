@@ -373,7 +373,7 @@ Frequência | 245 | 288 | 256 | 145 | 66
 
 <br />
 
-> Uma criança é sorteada ao acaso, qual será a probabilidade dela ter recebido 2 doses?  
+> Uma criança é sorteada ao acaso, qual a probabilidade dela ter recebido 2 doses?  
 
 > $$P(X=2) = \frac{288}{1000}=0.288$$
 
@@ -386,8 +386,9 @@ Doses ($X$) | 1 | 2 | 3 | 4 | 5
 --------- |:---:|:---:|:---:|:---:|:---:
 $P(X=x)$ | 0.245 | 0.288 | 0.256 | 0.145 | 0.066 
 
+<br />
 
-> Qual a probabilidade da criança ter recebido até duas doses?  
+Qual a probabilidade da criança ter recebido até duas doses?  
 
 $$ \begin{aligned}
 P\left(X \leq 2\right) &= P\left(X=1\right)+P\left(X=2\right) \\
@@ -418,6 +419,7 @@ Doses ($X$) | 1 | 2 | 3 | 4 | 5
 --------- |:---:|:---:|:---:|:---:|:---:
 $P(X=x)$ | 0.245 | 0.288 | 0.256 | 0.145 | 0.066 
 
+<br />
 
 > Note que a f.d.a. de $X=$ número de doses é definida para qualquer valor real, logo: 
 
@@ -434,10 +436,11 @@ $$
 
 
 ## Exemplo: Vacina
+
 Função de distribuição acumulada (f.d.a.) do número de doses ($X$)
 
 <center>
-```{r, echo=FALSE, fig.height=5, fig.width=7}
+```{r, echo=FALSE, fig.height=4.5, fig.width=6}
 source("../functions/plotcdf.R")
 x <- 1:5
 p <- c(0.245, 0.288, 0.256, 0.145, 0.066)
@@ -467,8 +470,11 @@ F(x) = P(X \leq x) = \begin{cases}
 $$
 
 
-## Exemplo: Comissão {.build .smaller}
+## Exemplo: Comissão {.build}
 
+<div class="columns-2">
+
+Função de distribuição acumulada de $X$: número de mulheres na comissão.
 $$
 F(x) = \begin{cases} 
 0, & \mbox{se } x<0 \\ 
@@ -487,7 +493,7 @@ p <- c(0.203, 0.450, 0.291, 0.056)
 plotcdf(x, p, atcdf=TRUE)
 ```
 </center>
-
+</div>
 
 # Esperança
 
@@ -641,6 +647,10 @@ $X$  | $-5$ | $5$ | $10$ | $15$
 ---- |:----:|:----:|:----:|:----:
 $P(X=x)$ | 0.19 | 0.02 | 0.23 | 0.56
 
+<br />
+
+<div class="columns-2">
+
 Função de Distribuição Acumulada:
 
 $$
@@ -654,27 +664,15 @@ F(x) =
 \end{cases}
 $$
 
-
-## Exemplo: Montagem {.smaller}
-$$
-F(x) = 
-\begin{cases}
-0 & \mbox{se} & x < -5\\
-0.19 & \mbox{se} & -5 \leq x < 5\\
-0.21 & \mbox{se} & 5 \leq x < 10\\
-0.44 & \mbox{se} & 10 \leq x < 15\\
-1 & \mbox{se} & x \geq 15\\
-\end{cases}
-$$
-
 <center>
-```{r, echo=FALSE, fig.height=4, fig.width=5}
+```{r, echo=FALSE, fig.height=3.5, fig.width=4}
 source("../functions/plotcdf.R")
 x <- c(-5, 5, 10, 15)
 p <- c(.19, .02, .23, .56)
 plotcdf(x, p, atcdf=TRUE)
 ```
 </center>
+</div>
 
 
 ## Exemplo: Montagem {.build}
@@ -699,20 +697,27 @@ $$\mathbb E\left( X \right) = \sum_{i=1}^n x_i P(X=x_i)$$
 
 ## Exemplo: Pedágio
 
+<img src="figuras/semparar.png" width=350 style="float: right; margin-left: 20px">
+
 Você, cansado de esperar em filas de pedágio com frequência, está considerando assinar o serviço de pagamento eletrônico.
-Dentre as opções oferecidas, você se interessa pelas duas abaixo:
 
-<center><img src="figuras/semparar.png" width=250></center>
+Dentre as opções oferecidas, você se interessa pelas duas seguintes:
 
-
-## {.build}
-
-<center><img src="figuras/semparar-chat.png" width=430></center>
+* Plano 1: Clássico
+* Plano 2: BR Adesão Zero
 
 
-Plano Clássico: obrigatório fazer adesão novamente após 5 anos.  
 
-Plano Clássico: em caso de perda/roubo/troca é preciso pagar a taxa de substituição.
+## Exemplo: Pedágio {.build}
+
+<img src="figuras/semparar-chat.png" width=450 style="float: right; margin-left: 20px">
+
+No plano Clássico: 
+
+> * obrigatório fazer adesão novamente após 5 anos.
+> * em caso de perda/roubo/troca é preciso pagar a taxa de substituição.
+
+<br />
 
 > Assumindo que não há roubo/perda, mas apenas troca do veículo e que não há o desconto na adesão para renovar após 5 anos, como decidir?  
 
@@ -721,9 +726,11 @@ Plano Clássico: em caso de perda/roubo/troca é preciso pagar a taxa de substit
 
 ## Exemplo: Pedágio
 
-Seja a v.a. $T$: idade do veículo até a troca. 
+Seja a v.a. $T$: idade do veículo até a troca.
 
-E a função de distribuição acumulada dada por:
+<div class="columns-2">
+
+Função de distribuição acumulada é dada por:
 
 $$
 F(t) = 
@@ -738,18 +745,15 @@ F(t) =
 \end{cases}
 $$
 
-
-## Exemplo: Pedágio 
-$T$: idade do veículo até a troca. 
-
 <center>
-```{r, echo=FALSE, fig.height=5, fig.width=5}
+```{r, echo=FALSE, fig.height=4.5, fig.width=4.5}
 source("../functions/plotcdf.R")
 x <- 2:7
 p <- c(.1, .1, .3, .2, .2, .1)
 plotcdf(x, p, atcdf=TRUE)
 ```
 </center>
+</div>
 
 
 ## {.build}
@@ -788,8 +792,8 @@ Probabilidade de trocar de carro em até 6 anos: $0.9$
 > Portanto, $C_1$ assume os valores:
 
 $$ C_1 = \begin{cases}
-2\times73.16+13.05\times 12 \times 6 = 1085.92, & \mbox{com prob. 0.1} \\
-2\times73.16+13.05\times 12 \times 6+43.83=1129.75, & \mbox{com prob. 0.9}
+2\times73.16+13.05\times 12 \times 6 = 1085.92, & \mbox{com probabilidade 0.1} \\
+2\times73.16+13.05\times 12 \times 6+43.83=1129.75, & \mbox{com probabilidade 0.9}
 \end{cases}
 $$
 
