@@ -22,24 +22,18 @@ logo: ../logo-imecc.png
 
 ## Porta dos Desesperados {.build}
 
-<center><img src="figuras/portadesesperados.jpg" width=250></center>
+<img src="figuras/portadesesperados.jpg" width=300 style="float: right;">
+Imagine-se em um [programa de auditório](https://www.youtube.com/watch?v=lcQ6Q1CdZnI) em que 3 portas são colocadas à sua frente. 
 
-> * Imagine-se em um [programa de auditório](https://www.youtube.com/watch?v=lcQ6Q1CdZnI) em que 3 portas são colocadas à sua frente. 
+> Atrás de uma delas há um bom prêmio e atrás das outras duas não há nada. 
 
-> * Atrás de uma delas há um bom prêmio e atrás das outras duas não há nada. 
+> O apresentador pede que você escolha uma das 3 portas.
 
-> * O apresentador pede que você escolha uma das 3 portas.
+> Após a sua escolha, ele mostra uma porta que está vazia pra você. Então ele pergunta se você quer trocar a sua porta pela outra que restou.
 
-> *  Após a sua escolha, ele mostra uma porta que está vazia pra você. Então ele pergunta se você quer trocar a sua porta pela outra que restou.
+> Qual a melhor estratégia: (1) trocar ou (2) ficar com a primeira escolha? 
 
-
-## Porta dos Desesperados {.build}
-
-> Qual a melhor estratégia? 
-
-> Trocar ou ficar com a primeira escolha? 
-
-> Há alguma diferença?
+> Você acha que há alguma diferença?
 
 
 # Comparando as duas estratégias através da repetição do experimento aleatório
@@ -139,12 +133,12 @@ Portanto, a estratégia trocar de porta é a que tem maior chance de ganhar.
 # Comparando as duas estratégias através do Teorema de Bayes
 
 
-## Relembrando: partição do espaço amostral {.smaller}
+## Relembrando: partição do espaço amostral
 
 Dizemos que os eventos $B_1, B_2, \ldots, B_k$ formam um partição do espaço amostral $\Omega$ se 
  são mutuamente exclusivos e a união é $\Omega$.
 
-<center><img src="figuras/totalprobability.png" width=250></center>
+<img src="figuras/totalprobability.png" width=320 style="float: right;">
 
 **Teorema das probabilidades totais:**
    
@@ -155,7 +149,7 @@ Dizemos que os eventos $B_1, B_2, \ldots, B_k$ formam um partição do espaço a
    $$P(B_i\mid A)=\frac{P(A\mid B_i)P(B_i)}{\sum_{i=1}^kP(A\mid B_i)P(B_i)}$$
 
    
-## {.smaller}
+## Teorema de Bayes {.smaller}
 Para avaliar qual a melhor estratégia, temos também a opção de fazer os cálculos através do Teorema de Bayes.
 
 Suponha o seguinte cenário (sem perda de generalidade): o jogador escolhe a porta número 1. Considere os eventos:
@@ -184,7 +178,7 @@ A probabilidade do prêmio estar na porta 2 (ou seja, se o jogador trocasse do p
 
 $P(A_2 \mid O)=\frac{P(O\mid A_2)P(A_2)}{P(O\mid A_1)P(A_1)+P(O\mid A_2)P(A_2)+P(O\mid A_3)P(A_3)}=\frac{1\times \frac{1}{3}}{\frac{1}{2}\times\frac{1}{3}+1\times\frac{1}{3}+0\times\frac{2}{3}} = \frac{2}{3}$
 
-Portanto, se o jogador escolhe a porta 1 e: 
+Portanto, se o jogador escolhe a porta 1 e:
 
 * **não troca**: a probabilidade de vencer o prêmio é $1/3$
 * **troca**: a probabilidade de vencer o prêmio é $2/3$
