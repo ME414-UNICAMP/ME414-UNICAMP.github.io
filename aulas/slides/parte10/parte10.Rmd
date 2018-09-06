@@ -77,9 +77,11 @@ Encontre $Var(X)$, onde $X$ é uma v.a. tal que:
 > $$
 \begin{aligned}
 \mathbb E(X) &= 1\times p +0\times (1-p) = p \\
-Var(X) & =\mathbb E(X^2)-p^2
+Var(X) &= \mathbb E(X^2) - p^2
 \end{aligned} 
 $$
+
+Como calcular a $\mathbb E(X^2)$?
  
 > $$ X^2=  \begin{cases} 
 1^2, & \mbox{com probabilidade } p \\
@@ -89,8 +91,8 @@ $$
 
 > $$
 \begin{aligned}
-\mathbb E(X^2) &= 1\times p +0\times (1-p) = p \\
-Var(X) & = p-p^2=p(1-p)
+\mathbb E(X^2) &= 1\times p + 0\times (1-p) = p \\
+Var(X) & = p-p^2 = p(1-p)
 \end{aligned} 
 $$
 
@@ -159,13 +161,15 @@ $X$ | -5 | 10 | 15 | 20
 - | :--: | :--: | :--: | :--:
 $P(X=x)$ | 0.3 | 0.2 | 0.4 | 0.1 
 
-> * $\mu_{X}=\mathbb E(X)=(-5)\times 0.3 + 10 \times 0.2 + 15 \times 0.4 + 20 \times 0.1=8.5$
+<br />
 
-> * $Mo(X)=15$
+> $\mu_{X}=\mathbb E(X)=(-5)\times 0.3 + 10 \times 0.2 + 15 \times 0.4 + 20 \times 0.1=8.5$
 
-> * $P(X \leq 10)= P(X \geq 15)=0.5$, então a mediana é $Md(X)=\frac{10+15}{2}=12.5$
+> $Mo(X)=15$
 
-> * Obs: note que nem a média (8.5) nem a mediana (12.5) são valores assumidos pela variável $X$.
+> $P(X \leq 10)= P(X \geq 15)=0.5$, então a mediana é $Md(X)=\frac{10+15}{2}=12.5$
+
+> **Obs:** note que nem a média (8.5) nem a mediana (12.5) são valores assumidos pela variável $X$.
 
 
 ## Medidas de posição para v.a.'s discretas {.build}
@@ -330,8 +334,10 @@ Então, $$\mbox{Var} (S) = 7.975 - (2.75)^2 = 0.4125$$
 
 <center><img src="figuras/mega-sena.png" width=550></center>
 
+<font size=4>
+**Fonte:** [Veja, 24/06/2018](https://veja.abril.com.br/economia/apesar-de-resultado-improvavel-quatro-pessoas-levam-mega-sena-de-sabado/)
+</font>
 
-https://veja.abril.com.br/economia/apesar-de-resultado-improvavel-quatro-pessoas-levam-mega-sena-de-sabado/
 
 ## Uniforme Discreta {.build}
 
@@ -361,6 +367,7 @@ $p(x)$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{
 
 
 ## Uniforme Discreta {.build}
+
 A média e a variância são dadas por:
 
 $\mathbb E(X)=\displaystyle \sum_{i=1}^k x_iP(X=x_i)= \frac{1}{k}\sum_{i=1}^k x_i$
@@ -379,6 +386,8 @@ $Var(X) = \mathbb E(X^2) - [\mathbb E(X)]^2 = \displaystyle \frac{1}{k} \left[\s
 $X$ | 1 | 2 | 3 | 4 | 5 | 6 
 -- | :-: | :-: | :-: | :-: | :-: | :-: 
 $p(x)$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ 
+
+<br />
 
 Calculando a esperança e a variância de $X$:
 
@@ -628,16 +637,18 @@ $X_{1}=1$, $X_{2}=1$, $X_{3}=1$ | $(0.8)^{3}$ | 3
 
 
 ## Modelo Binomial {.build}
-* Assim, as probabilidades de cada valor possível de $X$ são:
+
+Assim, as probabilidades de cada valor possível de $X$ são:
 
 >
 $X$ | 0 | 1 | 2 | 3 
 --- | :-: | :-: | :-: | :-:
 $P(X=x)$ | $(0.2)^{3}$ | $3\times0.8\times(0.2)^{2}$ | $3\times(0.8)^{2}\times0.2$ | $(0.8)^{3}$ 
 
-> * E o comportamento de $X$ é completamente determinado pela função: 
+<br />
+O comportamento de $X$ é completamente determinado pela função: 
 
-> $$P(X=x)={3\choose x}(0.8)^{x}(0.2)^{3-x}, \qquad x=0,1,2,3$$
+> $$P(X=x)={3\choose x}(0.8)^{x}(0.2)^{3-x}, \qquad x=0,1,2,3.$$
 
 
 ## Binomial {.build}
