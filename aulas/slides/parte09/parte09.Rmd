@@ -362,7 +362,7 @@ $P(X=x)$ | $\displaystyle P\left(\bar C \bar C\right)=\frac{1}{4}$ | $\displayst
 
 ## Exemplo: Vacina {.build}
 
-Um grupo de 1000 crianças foi analisado para determinar a efetividade de uma vacina contra um tipo de alergia.   As crianças recebiam uma dose de vacina e após um mês passavam por um novo teste.   Caso ainda tivessem tido alguma reação alérgica, recebiam outra dose.  
+Um grupo de 1000 crianças foi analisado para determinar a efetividade de uma vacina contra um tipo de alergia. As crianças recebiam uma dose de vacina e após um mês passavam por um novo teste. Caso ainda tivessem tido alguma reação alérgica, recebiam outra dose.  
 
 > Variável de interesse: X = número de doses.  
 
@@ -439,14 +439,28 @@ $$
 
 Função de distribuição acumulada (f.d.a.) do número de doses ($X$)
 
+<div class="columns-2">
+
+$$ F(x) = 
+\begin{cases}
+0     & x < 1 \\
+0.245 & 1 \leq x < 2 \\
+0.533 & 2 \leq x < 3 \\
+0.789 & 3 \leq x < 4 \\
+0.934 & 4 \leq x < 5 \\
+1     & x \geq 5 \\
+\end{cases}
+$$
+
 <center>
-```{r, echo=FALSE, fig.height=4.5, fig.width=6}
+```{r, echo=FALSE, fig.height=4.5, fig.width=5}
 source("../functions/plotcdf.R")
 x <- 1:5
 p <- c(0.245, 0.288, 0.256, 0.145, 0.066)
 plotcdf(x, p, atcdf=TRUE)
 ```
 </center>
+</div>
 
 
 ## Exemplo: Comissão {.build}
@@ -494,6 +508,7 @@ plotcdf(x, p, atcdf=TRUE)
 ```
 </center>
 </div>
+
 
 # Esperança
 
@@ -543,7 +558,7 @@ $$P(X=0)=\frac{2}{3} \quad \mbox{e} \quad P(X=1)=\frac{1}{3}$$
 
 Uma companhia de seguros determina o [prêmio](http://pt.wikipedia.org/wiki/Prêmio_de_seguro) anual do seguro de vida de maneira a obter um lucro esperado de 1\% do valor que o segurado recebe em caso de morte.  
 
-Encontre o valor do prêmio anual para um seguro de vida no valor de 200 mil reais assumindo que a probabilidade do cliente morrer naquele ano é 0.02. 
+Encontre o valor do prêmio anual para um seguro de vida no valor de R\$200 mil assumindo que a probabilidade do cliente morrer naquele ano é 0.02. 
 
 *  $A$: prêmio anual
 
@@ -566,24 +581,23 @@ $$
 
 > $\mathbb E(X)=A-4000$  
 
-> Companhia quer lucro esperado de 1\% do valor recebido em caso de morte: 2000 reais. 
+> Companhia quer lucro esperado de 1\% do valor recebido em caso de morte: R\$2000. 
 
-> $\mathbb E(X)=2000=A-4000$
+> $\mathbb E(X) = 2000 = A - 4000$
 
-Portanto, $A=6000$ é o valor do prêmio anual.
+Portanto, $A = R\$6000$ é o valor do prêmio anual.
 
 
 ## Exemplo: Montagem {.build}
 
 Um empresário pretende estabelecer uma firma para montagem de um componente mecânico. Cada peça é composta de duas partes, $A$ e $B$,   cada uma com uma chance específica de ser defeituosa. Só é possível verificar a qualidade das peças depois que elas são montadas.  
 
-> Se ambas são defeituosas, a peça é descartada e dá um prejuízo de $\$5$.   
+> * Se ambas são defeituosas, a peça é descartada e dá um prejuízo de $\$5$.
+> * Se a peça $B$ é defeituosa, ainda é possível reparar a peça e obter um lucro de $\$5$.
+> * De maneira semelhante, se $A$ é defeituosa, o reparo permite vender a peça inteira com um lucro de $\$10$.   
+> * Se as duas peças são boas, o lucro é de $\$15$.
 
-> Se a peça $B$ é defeituosa, ainda é possível reparar a peça e obter um lucro de $\$5$.   
-
-> De maneira semelhante, se $A$ é defeituosa, o reparo permite vender a peça inteira com um lucro de $\$10$.   
-
-> Se as duas peças são boas, o lucro é de $\$15$.
+> **Pergunta:** Qual o lucro esperado por peça produzida?  
 
 
 ## Exemplo: Montagem {.build}
@@ -604,7 +618,6 @@ $$P(A \cap B^c)=0.02 \qquad P(A^c \cap B^c)=0.19$$
 
 > Como podemos descrever a distribuição do lucro por componente?   
 
-> Qual o lucro esperado por peça produzida?  
 
 
 ## Exemplo: Montagem {.build}
@@ -614,11 +627,8 @@ $P(A \cap B)=0.56 \quad P(A^c \cap B)=0.23 \quad P(A \cap B^c)=0.02 \quad P(A^c 
 Seja $X$ a variável indicando o lucro na produção de um componente.  
 
 > *  $X$ assume o valor 15 se as peças A e B estão ok, o que ocorre com probabilidade   0.56.  
-
 > *  $X$ assume o valor 10 se apenas A apresentar defeito, o que ocorre com probabilidade   0.23.  
-
 > *  $X$ assume o valor 5 se apenas B apresentar defeito, o que ocorre com probabilidade   0.02.  
-
 > *  $X$ assume o valor $-5$ se tanto A quanto B apresentarem defeito, o que ocorre com probabilidade   0.19.  
 
 
@@ -677,7 +687,7 @@ plotcdf(x, p, atcdf=TRUE)
 
 ## Exemplo: Montagem {.build}
 
-Suponha que o empresário faça a seguinte pergunta: *Qual o lucro médio por conjunto montado que espero conseguir?* 
+O empresário quer saber: *Qual o lucro médio por conjunto montado que espero conseguir?* 
 
 $X$  | $-5$ | $5$ | $10$ | $15$
 ---- |:----:|:----:|:----:|:----:
