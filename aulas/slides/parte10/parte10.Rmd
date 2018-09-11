@@ -235,16 +235,16 @@ Retirar 3 bolas, sem reposição, de uma urna com 3 bolas vermelhas e 5 pretas
 
 A partir do gráfico, podemos construir uma tabela com os eventos do espaço amostral:
 
-Extrações | Probabilidade 
-:---------: | -------------
-PPP | $5/8\times 4/7\times3/6 = 5/28$ 
-PPV | $5/8\times4/7\times3/6 = 5/28$ 
-PVP | $5/8\times3/7\times4/6 = 5/28$ 
-VPP | $3/8\times5/7\times4/6 = 5/28$ 
-PVV | $5/8\times3/7\times2/6 = 5/56$ 
-VPV | $3/8\times5/7\times2/6 = 5/56$ 
-VVP | $3/8\times2/7\times5/6 = 5/56$ 
-VVV | $3/8\times2/7\times1/6 = 1/56$
+Extrações   | Probabilidade | $X=x$ 
+:---------: | ------------- | :---------:
+PPP | $5/8\times 4/7\times3/6 = 5/28$ | 3
+PPV | $5/8\times4/7\times3/6 = 5/28$ | 2
+PVP | $5/8\times3/7\times4/6 = 5/28$ | 2
+VPP | $3/8\times5/7\times4/6 = 5/28$ | 2
+PVV | $5/8\times3/7\times2/6 = 5/56$ | 1
+VPV | $3/8\times5/7\times2/6 = 5/56$ | 1
+VVP | $3/8\times2/7\times5/6 = 5/56$ | 1
+VVV | $3/8\times2/7\times1/6 = 1/56$ | 0
 
 
 ## Exemplo (continuação) {.build}
@@ -266,16 +266,22 @@ $\{PPP\}$ | 3 | 0.18
 
 Podemos calcular a esperança e a variância de $X$ a partir de sua função de probabilidade:
 
-> $$ 
+<font size=4>
+$$ 
 \begin{aligned} 
 \mu &= \mathbb E (X ) =  \sum_{x=0}^3 xp_X (x) \\
     & = 0 \times 0.02 + 1 \times 0.27 + 2 \times 0.53 + 3 \times 0.18 = 1.87 \\
-\\ 
+    \\
 Var(X) & = \mathbb E[(X-\mu)^2] = \sum_{x=0}^3 (x-\mu)^2 p_X(x) \\
-  & = (0-1.87)^2 \times 0.02 + (1-1.87)^2 \times 0.27 + \\
-  & + (2-1.87)^2\times 0.53 + (3-1.87)^2 \times 0.18= 0.51 
+  & = (0-1.87)^2 \times 0.02 + (1-1.87)^2 \times 0.27  + (2-1.87)^2\times 0.53 + (3-1.87)^2 \times 0.18= 0.51 \\
+  \\
+\mbox{ou} \\
+\\
+Var(X) &=  \mathbb E(X^2) - [\mathbb E(X)]^2 \\
+&=  (0^2 \times 0.02 + 1^2 \times 0.27 + 2^2 \times 0.53 + 3^2 \times 0.18) - (1.87)^2 = 0.51
 \end{aligned} 
 $$
+</font>
 
 
 ## Exemplo {.build}
@@ -366,17 +372,19 @@ $X$ | 1 | 2 | 3 | 4 | 5 | 6
 $p(x)$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ 
 
 
-## Uniforme Discreta {.build}
+## Uniforme Discreta 
 
 A média e a variância são dadas por:
 
-$\mathbb E(X)=\displaystyle \sum_{i=1}^k x_iP(X=x_i)= \frac{1}{k}\sum_{i=1}^k x_i$
+<font size=4>
+$\displaystyle \mathbb E(X) = \sum_{i=1}^k x_iP(X=x_i)= \frac{1}{k}\sum_{i=1}^k x_i$
 
-$Var(X) = \displaystyle \sum_{i=1}^k (x_i - \mathbb E(X))^2 P(X=x_i) = \frac{1}{k} \sum_{i=1}^k (x_i - \mathbb E(X))^2$
+$\displaystyle Var(X) = \sum_{i=1}^k (x_i - \mathbb E(X))^2 P(X=x_i) = \frac{1}{k} \sum_{i=1}^k (x_i - \mathbb E(X))^2$
 
 ou
 
-$Var(X) = \mathbb E(X^2) - [\mathbb E(X)]^2 = \displaystyle \frac{1}{k} \left[\sum_{j=1}^{k}x_{j}^{2} - \frac{1}{k} \left ( \displaystyle\sum_{j=1}^{k}x_{j} \right)^{2} \right]$
+$\displaystyle Var(X) = \mathbb E(X^2) - [\mathbb E(X)]^2 = \frac{1}{k} \sum_{j=1}^{k} x_{j}^{2} - \left (\frac{1}{k} \sum_{j=1}^{k}x_{j} \right)^{2} = \frac{1}{k} \left[\sum_{j=1}^{k}x_{j}^{2} - \frac{1}{k} \left (\sum_{j=1}^{k}x_{j} \right)^{2} \right]$
+</font>
 
 
 ## Uniforme Discreta {.build}
@@ -393,7 +401,7 @@ Calculando a esperança e a variância de $X$:
 
 $\mathbb E(X) = \frac{1}{6} (1+2+3+4+5+6)= \frac{21}{6} = 3.5$
 
-$Var(X) = \displaystyle \frac{1}{6} \left[(1 + 4 + 9 + 16 + 25 + 36) - \frac{1}{6} (21)^{2} \right] = \frac{1}{6} \times \frac{35}{2} = 2.92$
+$Var(X) = \displaystyle \frac{1}{6} (1 + 4 + 9 + 16 + 25 + 36) - \left(\frac{21}{6} \right)^2 =  \frac{91}{6} - \frac{441}{36} = 2.92$
 
 
 ## Uniforme Discreta {.build}
@@ -519,15 +527,17 @@ Var(X) &= \mathbb E(X^{2})-[\mathbb E(X)]^{2}  \\
 $$
 
 
-## Bernoulli {.smaller}
+## Bernoulli
 
 A função de distribuição acumulada de uma v.a. Bernoulli é:
+<font size=5>
 $$ F(x) = \begin{cases}
 0, & x < 0 \\
 1-p, & 0 \leq x < 1 \\
 1, & x \geq 1
 \end{cases}
 $$
+</font>
 
 ```{r, echo=FALSE, fig.height=3.5, fig.width=4.5}
 p <- c(.3, .7)
