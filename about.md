@@ -32,7 +32,7 @@ permalink: /about/
 ## Monitorias
 
 ### PEDs
-* PED-C: Tatiany Mafra da Silva - RA 164354
+* PED-C: Heidi Mara Sousa - RA 108283
 
 * PED-C: Gabriel Franco de Souza - RA 081453
 
@@ -47,10 +47,10 @@ permalink: /about/
 * Terça 12-13 - sala 323 IMECC - Francis
 * Terça 13-14 - sala 151 IMECC - Gabriel
 * Terça 18-19 - sala 222 IMECC  - Lisbeth
-* Quarta 12-13 - sala 124 IMECC - Tatiany
+* Quarta 12-13 - sala 124 IMECC - Heidi
 * Quarta 13-14 - sala 322 IMECC - Nathalia
 * Quinta 12-13 - sala 222 IMECC  - Lisbeth
 * Quinta 18-19 - sala 222 IMECC  - Francis
-* Sexta 12-13 - sala 124 IMECC - Tatiany
+* Sexta 12-13 - sala 124 IMECC - Heidi
 * Sexta 13-14 - sala 323 IMECC - Nathalia
 
