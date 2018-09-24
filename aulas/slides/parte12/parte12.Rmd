@@ -211,22 +211,22 @@ A probabilidade é dada por: $$P(X>10) = \int_{10}^{\infty} 2e^{-2x} dx  = \lim_
 ## Esperança {.build}
 
 **Definição:** seja $X$ uma v.a. contínua com densidade $f_{X}$, a **esperança** de $X$ é dada por:
-$$E(X)= \int_{-\infty}^{\infty}x\,f_{X}(x)dx\,.$$
+$$\mathbb E(X) = \int_{-\infty}^{\infty}x \, f_{X}(x)dx \,.$$
 
   
 > **Definição:** seja $X$ uma v.a. contínua com densidade $f_{X}$, o **$k$-ésimo momento** de $X$ é dado por:
 
-$$E(X^k)= \int_{-\infty}^{\infty}x^k\,f_{X}(x)dx\,.$$
+$$\mathbb E(X^k) = \int_{-\infty}^{\infty}x^k \, f_{X}(x)dx \,.$$
 
 
 ## Variância {.build}
  
 **Definição:** seja $X$ v.a. com valor esperado $E(X)$, definimos por **variância**, a quantidade:
 
-$$Var(X)=  E([X-E(X)]^2)=  E(X^2)-[E(X)]^2\,.$$  
+$$Var(X) = \mathbb E([X - \mathbb E(X)]^2) = \mathbb E(X^2) - [\mathbb E(X)]^2\,.$$  
 
 > E definimos como **desvio padrão**:
-$$\sigma(X)=  \sqrt{Var(X)}$$  
+$$\sigma(X) = \sqrt{Var(X)}$$  
 
 > Note que assim como no caso discreto, ambas as quantidades oferecem medidas de dispersão da variável $X$ em relação ao valor esperado $E(X)$.
  
@@ -235,7 +235,7 @@ $$\sigma(X)=  \sqrt{Var(X)}$$
 
 Para a função $f_{X}$, calcular:
  
-* $E(X)$
+* $\mathbb E(X)$
 * $Var(X)$ 
 
 $$ f_{X}(x) = \left\{
@@ -258,9 +258,9 @@ x, & 0\leq x < 1 \\
 \right.$$
 
 
-$$E(X)= \int_{-\infty}^{\infty}xf_{X}(x)dx= \int_{0}^{1}x^{2}dx+ \int_{1}^{2}x(2-x)dx= 1$$
+$$\mathbb E(X) = \int_{-\infty}^{\infty}xf_{X}(x)dx = \int_{0}^{1}x^{2}dx+ \int_{1}^{2}x(2-x)dx = 1$$
 
-$$Var(X)= \int_{-\infty}^{\infty}[x-E(X)]^{2}f_{X}(x)dx= \int_{-\infty}^{\infty}[x-1]^{2}f_{X}(x)dx =\frac{1}{6}$$
+$$Var(X) = \int_{-\infty}^{\infty}[x - \mathbb E(X)]^{2}f_{X}(x)dx = \int_{-\infty}^{\infty}(x-1)^2f_{X}(x)dx = \frac{1}{6}$$
  
 
 ## Exemplo
@@ -372,7 +372,7 @@ Calcule a esperança, a variância e a f.d.a. da variável aleatória $X$ com a 
 
 $$
 \begin{aligned}
-E(X) &= \int_{-\infty}^{\infty} \!\! x f(x) dx =  \int_0^{1/2} \! 4x^2dx +  \int_{1/2}^{1} \! 4x(1-x)dx\\ 
+\mathbb E(X) &= \int_{-\infty}^{\infty} \!\! x f(x) dx =  \int_0^{1/2} \! 4x^2dx +  \int_{1/2}^{1} \! 4x(1-x)dx\\ 
 & = \left[ \frac{4x^3}{3} \right]_0^{1/2} +  \left[ \frac{2}{3} x^2(3-2x) \right]_{1/2}^{1} =  \frac{1}{2}
 \end{aligned}
 $$
@@ -382,7 +382,7 @@ $$
 
 $$
 \begin{aligned}
-\mbox{Var}(X)& = \int_{-\infty}^{\infty} \!\! (x-E(X))^2 f(x) dx \\
+\mbox{Var}(X)& = \int_{-\infty}^{\infty} \!\! (x - \mathbb E(X))^2 f(x) dx \\
 &=  \int_0^{1/2} \! 4 \left(x-\frac{1}{2}\right)^2 \! xdx +   \int_{1/2}^{1} \! 4 \left(x-\frac{1}{2}\right)^2 \! (1-x)dx\\
 &=  \left[ x^4-\frac{4}{3}x^3 +  \frac{1}{2}x^2 \right]_0^{1/2} +   \left[ -x^4+\frac{8}{3}^3-\frac{5}{2}x^2 +x \right]_{1/2}^{1}\\
 &=  \frac{1}{24}
@@ -439,17 +439,17 @@ Gráficos da função de densidade de probabilidade e da função de distribuiç
 <center><img src="figuras/graph1.png" width=700></center>
 
 
-## Esperança de Variância {.build}
+## Esperança e Variância {.build}
 
-*  Cálculo da $E(X)$:
+*  Cálculo da $\mathbb E(X)$:
 
-$$E(X)= \int_{a}^{b}x\frac{1}{(b-a)}dx=\frac{(b+a)}{2}$$
+$$\mathbb E(X) = \int_{a}^{b}x\frac{1}{(b-a)}dx=\frac{(b+a)}{2}$$
 
 > *  Cálculo da $Var(X)$: 
 
-$$E(X^{2})= \int_{a}^{b}x^{2}\frac{1}{(b-a)}dx= \frac{(a^{2}+ab+b^{2})}{3}$$ 
+$$\mathbb E(X^{2}) = \int_{a}^{b}x^{2}\frac{1}{(b-a)}dx = \frac{(a^{2}+ab+b^{2})}{3}$$ 
 
-$$Var(X)=E(X^{2})-[E(X)]^{2}= \frac{(a^{2}+ab+b^{2})}{3}-\frac{(b+a)^{2}}{4}= \frac{(b-a)^{2}}{12}$$
+$$Var(X) = \mathbb E(X^{2}) - [\mathbb E(X)]^{2}= \frac{(a^{2}+ab+b^{2})}{3}-\frac{(b+a)^{2}}{4}= \frac{(b-a)^{2}}{12}$$
 
 
 ## Exemplo: peça de aço
@@ -478,7 +478,7 @@ Seja $X$ uma variável aleatória distribuída uniformemente, com média 15 e va
 
 ## Exemplo {.build}
 
-Lembre-se que a esperança de uma v.a. uniforme em $[a,b]$ é dada por $$E(X) = \frac{a+b}{2}$$ e sua variância por $$\mbox{Var}(X) = \frac{(b-a)^2}{12}$$ 
+Lembre-se que a esperança de uma v.a. uniforme em $[a,b]$ é dada por $$\mathbb E(X) = \frac{a+b}{2}$$ e sua variância por $$\mbox{Var}(X) = \frac{(b-a)^2}{12}$$ 
 
 > Temos o seguinte sistema, portanto: 
 
@@ -573,17 +573,17 @@ curve(1-exp(-lambda*x), 0, maxi, xlab = "x", ylab = "F(x)", type = "l", bty="l",
 
 
 
-## Esperança de Variância {.build}
+## Esperança e Variância {.build}
 
-*  Cálculo da $E(X)$:
+*  Cálculo da $\mathbb E(X)$:
 
-$$E(X)=\int_{0}^{\infty}x\lambda e^{-\lambda x}dx=\frac{1}{\lambda}$$
+$$\mathbb E(X)=\int_{0}^{\infty}x\lambda e^{-\lambda x}dx=\frac{1}{\lambda}$$
 
 > *  Cálculo da $Var(X)$:
 
-$$E(X^{2})=\int_{0}^{\infty}x^{2}\lambda e^{-\lambda x}dx=\frac{2}{\lambda^{2}}$$
+$$\mathbb  E(X^{2})=\int_{0}^{\infty}x^{2}\lambda e^{-\lambda x}dx=\frac{2}{\lambda^{2}}$$
 
-> $$Var(X)=E(X^{2})-[E(X)]^{2}=\frac{2}{\lambda^{2}}-\frac{1}{\lambda^{2}}=\frac{1}{\lambda^{2}}$$
+> $$Var(X) = \mathbb E(X^{2}) - [\mathbb  E(X)]^{2} = \frac{2}{\lambda^{2}} - \frac{1}{\lambda^{2}} = \frac{1}{\lambda^{2}}$$
 
 
 
@@ -598,7 +598,7 @@ Qual é o tempo médio de vida do componente?
 
 Sabemos que se $X \sim exp(\lambda)$, então 
 $$F(x) = P(X \leq x) = 1-e^{-\lambda x}$$ 
-e $E(X) = \lambda^{-1}$.   
+e $\mathbb E(X) = \lambda^{-1}$.   
 
 > Basta então observarmos que 
 
