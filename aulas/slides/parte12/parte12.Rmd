@@ -225,10 +225,10 @@ $$\mathbb E(X^k) = \int_{-\infty}^{\infty}x^k \, f_{X}(x)dx \,.$$
 
 $$Var(X) = \mathbb E([X - \mathbb E(X)]^2) = \mathbb E(X^2) - [\mathbb E(X)]^2\,.$$  
 
-> E definimos como **desvio padrão**:
-$$\sigma(X) = \sqrt{Var(X)}$$  
+> E definimos como **desvio-padrão**:
+$$\sigma = \sqrt{Var(X)}$$  
 
-> Note que assim como no caso discreto, ambas as quantidades oferecem medidas de dispersão da variável $X$ em relação ao valor esperado $E(X)$.
+> Note que assim como no caso discreto, ambas as quantidades oferecem medidas de dispersão da variável $X$ em relação ao valor esperado $\mathbb E(X)$.
  
 
 ## Exemplo
@@ -604,7 +604,7 @@ e $\mathbb E(X) = \lambda^{-1}$.
 
 $$P(X \leq 1000) = 1 - e^{-\lambda 1000} = 0.75 \quad \Leftrightarrow \quad \lambda = \frac{\ln(4)}{1000} = 0.0013863$$   
 
-> Concluimos então que o tempo médio de vida, $E(X)$, é igual a $1/0.0013863 = 721.3475$ horas, e que $75\%$ dos componentes duram 1000 horas ou menos.
+> Concluimos então que o tempo médio de vida, $\mathbb E(X)$, é igual a $1/0.0013863 = 721.3475$ horas, e que $75\%$ dos componentes duram 1000 horas ou menos.
 
 
 ## Exemplo: tubos de TV {.build}
