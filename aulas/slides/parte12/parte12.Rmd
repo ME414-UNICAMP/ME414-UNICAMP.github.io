@@ -118,7 +118,7 @@ Obs: $P(a<X\leq b)=P(a\leq X\leq b)=P(a<X< b)=P(a\leq X <b)$ quando $X$ é v.a. 
  
 **Notação:** se $X$ v.a. contínua com função de densidade de probabilidade $f$, no lugar de $f$ denotaremos $f_{X}$.  
 
-> À probabilidade de que uma v.a. $X$ contínua pertença ao intervalo da reta ($-\infty,x$] daremos o nome de **função de distribuição acumulada** (f.d.a.), e a denotaremos por $F_{X}$
+> A probabilidade de que uma v.a. $X$ contínua pertença ao intervalo da reta ($-\infty,x$] daremos o nome de **função de distribuição acumulada** (f.d.a.), e a denotaremos por $F_{X}$
 $$F_{X}(x)=\int_{-\infty}^{x}f(u)du=P(X\leq x)$$
  
 
@@ -449,12 +449,17 @@ $$\mathbb E(X) = \int_{a}^{b}x\frac{1}{(b-a)}dx=\frac{(b+a)}{2}$$
 
 $$\mathbb E(X^{2}) = \int_{a}^{b}x^{2}\frac{1}{(b-a)}dx = \frac{(a^{2}+ab+b^{2})}{3}$$ 
 
-$$Var(X) = \mathbb E(X^{2}) - [\mathbb E(X)]^{2}= \frac{(a^{2}+ab+b^{2})}{3}-\frac{(b+a)^{2}}{4}= \frac{(b-a)^{2}}{12}$$
+$$\begin{aligned}
+Var(X) & = \mathbb E(X^{2}) - [\mathbb E(X)]^{2} \\
+&= \frac{(a^{2}+ab+b^{2})}{3}-\frac{(b+a)^{2}}{4}= \frac{(b-a)^{2}}{12}
+\end{aligned}$$
 
 
 ## Exemplo: peça de aço
 
 A dureza $H$ de uma peça de aço pode ser pensada como uma v.a. com distribuição uniforme no intervalo $[50,70]$ da escala de Rockwel. Calcule a probabilidade de que uma peça tenha dureza entre 55 e 60. 
+
+A densidade de uma $U[50, 70]$ é dada por:
 
 $$ f_{H}(h) = \left\{
 \begin{array}{ll}
@@ -463,7 +468,8 @@ $$ f_{H}(h) = \left\{
 \end{array}
 \right.$$
  
-$$P(55<H<60)= \int_{55}^{60}\frac{1}{20}dh= \frac{1}{20}(60-55)= \frac{1}{4}\,.$$
+Portanto, a probabilidade de uma peça ter dureza entre 55 e 60 é:
+$$P(55 < H < 60) = \int_{55}^{60}\frac{1}{20}dh = \frac{1}{20}(60-55) = \frac{1}{4}\,.$$
 
 
 ## Exemplo
@@ -478,9 +484,9 @@ Seja $X$ uma variável aleatória distribuída uniformemente, com média 15 e va
 
 ## Exemplo {.build}
 
-Lembre-se que a esperança de uma v.a. uniforme em $[a,b]$ é dada por $$\mathbb E(X) = \frac{a+b}{2}$$ e sua variância por $$\mbox{Var}(X) = \frac{(b-a)^2}{12}$$ 
+Lembre-se que a esperança de uma v.a. uniforme em $[a,b]$ é dada por $$\mathbb E(X) = \frac{a+b}{2},$$ e sua variância por $$\mbox{Var}(X) = \frac{(b-a)^2}{12}.$$ 
 
-> Temos o seguinte sistema, portanto: 
+> Temos, portanto, o seguinte sistema: 
 
 $$
 \left\{
@@ -489,12 +495,7 @@ $$
 \frac{(b-a)^2}{12} &=& \frac{25}{3} \\
 \end{array}
 \right.
-$$
-
-
-## Exemplo {.build}
-
-$$
+\qquad \Longrightarrow \qquad
 \left\{
 \begin{array}{lcr}
 a+b &=& 30 \\
@@ -503,7 +504,11 @@ a+b &=& 30 \\
 \right.
 $$
 
-> Ou simplesmente (você é capaz de dizer por que tomamos a raiz positiva apenas, neste sistema não-linear?) 
+
+
+## Exemplo {.build}
+
+Ou simplesmente (você é capaz de dizer por que tomamos a raiz positiva apenas, neste sistema não-linear?) 
 
 $$
 \left\{
@@ -524,10 +529,8 @@ $$ f_{X}(x) = \left\{
 \end{array}
 \right.$$  
 
-
-## Exemplo
-
-A probabilidade de que $X>14$ é dada por $$P(X>14) =   \int_{14}^{20}\frac{1}{10}dx =  \frac{(20-14)}{10} = 0.6$$
+Então, a probabilidade de $X>14$ é dada por 
+$$P(X>14) = \int_{14}^{20}\frac{1}{10}dx =  \frac{(20-14)}{10} = 0.6$$
 
 
 # Distribuição Exponencial
@@ -604,7 +607,7 @@ e $\mathbb E(X) = \lambda^{-1}$.
 
 $$P(X \leq 1000) = 1 - e^{-\lambda 1000} = 0.75 \quad \Leftrightarrow \quad \lambda = \frac{\ln(4)}{1000} = 0.0013863$$   
 
-> Concluimos então que o tempo médio de vida, $\mathbb E(X)$, é igual a $1/0.0013863 = 721.3475$ horas, e que $75\%$ dos componentes duram 1000 horas ou menos.
+> Concluimos então que o tempo médio de vida, $\mathbb E(X)$, é igual a $1/0.0013863 = 721.35$ horas, e que $75\%$ dos componentes duram 1000 horas ou menos.
 
 
 ## Exemplo: tubos de TV {.build}
@@ -613,11 +616,12 @@ Um antiga fábrica de tubos de TV determinou que a vida média dos tubos de sua 
 
 > Qual a probabilidade de que a fábrica tenha que substituir um tubo gratuitamente, se oferece uma garantia de $300$ horas de uso?  
 
+
 ## Exemplo: tubos de TV {.build .smaller}
 
 $X$: vida útil do tubo de TV.   
 
-> $E[X]=  800$. Como $X$ tem distribuição exponencial com parâmetro $\lambda$, $E[X]= \frac{1}{\lambda}=800$, portanto $\lambda= \frac{1}{800}$.  
+> $\mathbb E[X]=  800$. Como $X$ tem distribuição exponencial com parâmetro $\lambda$, $E[X]= \frac{1}{\lambda}=800$, portanto $\lambda= \frac{1}{800}$.  
 
 $$ f_{X}(x) = \left\{
 \begin{array}{ll}
@@ -635,9 +639,9 @@ $$ f_{X}(x) = \left\{
 \end{array}
 \right.$$  
 
-> Se $X<300$, a fábrica tem que substituir gratuitamente.
+> Se $X < 300$, a fábrica tem que substituir gratuitamente.
 
-$$P(X<300)= \int_0^{300}\frac{1}{800}e^{-\frac{x}{800}}dx =\left[-e^{-\frac{x}{800}} \right]_0^{300}= 0.3127\,.$$
+$$P(X<300) = \int_0^{300}\frac{1}{800}e^{-\frac{x}{800}}dx =\left[-e^{-\frac{x}{800}} \right]_0^{300}= 0.3127\,.$$
 
 
 ## Exemplo: produto alimentício {.build}
@@ -663,7 +667,7 @@ Produto liberado para consumo se: $P(X<2)= \int_0^22 e^{-2 x}dx= \left[-e^{-2x} 
 
 > $Y$: número de unidades impróprias para consumo na amostra de 30.  
 
-> $Y\sim \mbox{Bin}(30,0.02)$.
+> $Y\sim \mbox{Bin}(30, 0.02)$.
 
 Probabilidade de que pelo menos 10\% de uma amostra de 30 unidades seja imprópria:  
 
@@ -682,8 +686,7 @@ $$
 * [Ross](http://www.sciencedirect.com/science/article/pii/B9780123743886000065): seções 6.1 e 6.2.
 * Magalhães: capítulo 6.
 
-
-##
+<br /><br />
 
 Slides produzidos pelos professores:
 

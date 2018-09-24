@@ -193,7 +193,7 @@
 <p><strong>Notação:</strong> se \(X\) v.a. contínua com função de densidade de probabilidade \(f\), no lugar de \(f\) denotaremos \(f_{X}\).</p>
 
 <blockquote>
-<p>À probabilidade de que uma v.a. \(X\) contínua pertença ao intervalo da reta (\(-\infty,x\)] daremos o nome de <strong>função de distribuição acumulada</strong> (f.d.a.), e a denotaremos por \(F_{X}\) \[F_{X}(x)=\int_{-\infty}^{x}f(u)du=P(X\leq x)\]</p>
+<p>A probabilidade de que uma v.a. \(X\) contínua pertença ao intervalo da reta (\(-\infty,x\)] daremos o nome de <strong>função de distribuição acumulada</strong> (f.d.a.), e a denotaremos por \(F_{X}\) \[F_{X}(x)=\int_{-\infty}^{x}f(u)du=P(X\leq x)\]</p>
 </blockquote>
 
 </article></slide><slide class=""><hgroup><h2>Variáveis Aleatórias Contínuas</h2></hgroup><article  id="variaveis-aleatorias-continuas-5" class="build">
@@ -521,11 +521,16 @@ C(1-x) &amp; \mbox{se} &amp; 1/2 \leq x \leq 1 \\
 
 <p>\[\mathbb E(X^{2}) = \int_{a}^{b}x^{2}\frac{1}{(b-a)}dx = \frac{(a^{2}+ab+b^{2})}{3}\]</p>
 
-<p>\[Var(X) = \mathbb E(X^{2}) - [\mathbb E(X)]^{2}= \frac{(a^{2}+ab+b^{2})}{3}-\frac{(b+a)^{2}}{4}= \frac{(b-a)^{2}}{12}\]</p>
+<p>\[\begin{aligned}
+Var(X) &amp; = \mathbb E(X^{2}) - [\mathbb E(X)]^{2} \\
+&amp;= \frac{(a^{2}+ab+b^{2})}{3}-\frac{(b+a)^{2}}{4}= \frac{(b-a)^{2}}{12}
+\end{aligned}\]</p>
 
 </article></slide><slide class=""><hgroup><h2>Exemplo: peça de aço</h2></hgroup><article  id="exemplo-peca-de-aco">
 
 <p>A dureza \(H\) de uma peça de aço pode ser pensada como uma v.a. com distribuição uniforme no intervalo \([50,70]\) da escala de Rockwel. Calcule a probabilidade de que uma peça tenha dureza entre 55 e 60.</p>
+
+<p>A densidade de uma \(U[50, 70]\) é dada por:</p>
 
 <p>\[ f_{H}(h) = \left\{
 \begin{array}{ll}
@@ -534,7 +539,7 @@ C(1-x) &amp; \mbox{se} &amp; 1/2 \leq x \leq 1 \\
 \end{array}
 \right.\]</p>
 
-<p>\[P(55&lt;H&lt;60)= \int_{55}^{60}\frac{1}{20}dh= \frac{1}{20}(60-55)= \frac{1}{4}\,.\]</p>
+<p>Portanto, a probabilidade de uma peça ter dureza entre 55 e 60 é: \[P(55 &lt; H &lt; 60) = \int_{55}^{60}\frac{1}{20}dh = \frac{1}{20}(60-55) = \frac{1}{4}\,.\]</p>
 
 </article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-12">
 
@@ -547,10 +552,10 @@ C(1-x) &amp; \mbox{se} &amp; 1/2 \leq x \leq 1 \\
 
 </article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-13" class="build">
 
-<p>Lembre-se que a esperança de uma v.a. uniforme em \([a,b]\) é dada por \[\mathbb E(X) = \frac{a+b}{2}\] e sua variância por \[\mbox{Var}(X) = \frac{(b-a)^2}{12}\]</p>
+<p>Lembre-se que a esperança de uma v.a. uniforme em \([a,b]\) é dada por \[\mathbb E(X) = \frac{a+b}{2},\] e sua variância por \[\mbox{Var}(X) = \frac{(b-a)^2}{12}.\]</p>
 
 <blockquote>
-<p>Temos o seguinte sistema, portanto:</p>
+<p>Temos, portanto, o seguinte sistema:</p>
 </blockquote>
 
 <p>\[
@@ -560,11 +565,7 @@ C(1-x) &amp; \mbox{se} &amp; 1/2 \leq x \leq 1 \\
 \frac{(b-a)^2}{12} &amp;=&amp; \frac{25}{3} \\
 \end{array}
 \right.
-\]</p>
-
-</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-14" class="build">
-
-<p>\[
+\qquad \Longrightarrow \qquad
 \left\{
 \begin{array}{lcr}
 a+b &amp;=&amp; 30 \\
@@ -573,9 +574,9 @@ a+b &amp;=&amp; 30 \\
 \right.
 \]</p>
 
-<blockquote>
+</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-14" class="build">
+
 <p>Ou simplesmente (você é capaz de dizer por que tomamos a raiz positiva apenas, neste sistema não-linear?)</p>
-</blockquote>
 
 <p>\[
 \left\{
@@ -597,9 +598,7 @@ b  -  a &amp; = &amp; 10 \\
 \end{array}
 \right.\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-15">
-
-<p>A probabilidade de que \(X&gt;14\) é dada por \[P(X&gt;14) =   \int_{14}^{20}\frac{1}{10}dx =  \frac{(20-14)}{10} = 0.6\]</p>
+<p>Então, a probabilidade de \(X&gt;14\) é dada por \[P(X&gt;14) = \int_{14}^{20}\frac{1}{10}dx =  \frac{(20-14)}{10} = 0.6\]</p>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Distribuição Exponencial</h2></hgroup><article  id="distribuicao-exponencial">
 
@@ -676,7 +675,7 @@ b  -  a &amp; = &amp; 10 \\
 <p>\[P(X \leq 1000) = 1 - e^{-\lambda 1000} = 0.75 \quad \Leftrightarrow \quad \lambda = \frac{\ln(4)}{1000} = 0.0013863\]</p>
 
 <blockquote>
-<p>Concluimos então que o tempo médio de vida, \(\mathbb E(X)\), é igual a \(1/0.0013863 = 721.3475\) horas, e que \(75\%\) dos componentes duram 1000 horas ou menos.</p>
+<p>Concluimos então que o tempo médio de vida, \(\mathbb E(X)\), é igual a \(1/0.0013863 = 721.35\) horas, e que \(75\%\) dos componentes duram 1000 horas ou menos.</p>
 </blockquote>
 
 </article></slide><slide class=""><hgroup><h2>Exemplo: tubos de TV</h2></hgroup><article  id="exemplo-tubos-de-tv" class="build">
@@ -692,7 +691,7 @@ b  -  a &amp; = &amp; 10 \\
 <p>\(X\): vida útil do tubo de TV.</p>
 
 <blockquote>
-<p>\(E[X]= 800\). Como \(X\) tem distribuição exponencial com parâmetro \(\lambda\), \(E[X]= \frac{1}{\lambda}=800\), portanto \(\lambda= \frac{1}{800}\).</p>
+<p>\(\mathbb E[X]= 800\). Como \(X\) tem distribuição exponencial com parâmetro \(\lambda\), \(E[X]= \frac{1}{\lambda}=800\), portanto \(\lambda= \frac{1}{800}\).</p>
 </blockquote>
 
 <p>\[ f_{X}(x) = \left\{
@@ -714,10 +713,10 @@ b  -  a &amp; = &amp; 10 \\
 \right.\]</p>
 
 <blockquote>
-<p>Se \(X&lt;300\), a fábrica tem que substituir gratuitamente.</p>
+<p>Se \(X &lt; 300\), a fábrica tem que substituir gratuitamente.</p>
 </blockquote>
 
-<p>\[P(X&lt;300)= \int_0^{300}\frac{1}{800}e^{-\frac{x}{800}}dx =\left[-e^{-\frac{x}{800}} \right]_0^{300}= 0.3127\,.\]</p>
+<p>\[P(X&lt;300) = \int_0^{300}\frac{1}{800}e^{-\frac{x}{800}}dx =\left[-e^{-\frac{x}{800}} \right]_0^{300}= 0.3127\,.\]</p>
 
 </article></slide><slide class=""><hgroup><h2>Exemplo: produto alimentício</h2></hgroup><article  id="exemplo-produto-alimenticio" class="build">
 
@@ -751,7 +750,7 @@ b  -  a &amp; = &amp; 10 \\
 </blockquote>
 
 <blockquote>
-<p>\(Y\sim \mbox{Bin}(30,0.02)\).</p>
+<p>\(Y\sim \mbox{Bin}(30, 0.02)\).</p>
 </blockquote>
 
 <p>Probabilidade de que pelo menos 10% de uma amostra de 30 unidades seja imprópria:</p>
@@ -771,7 +770,7 @@ P(Y\geq3)&amp;= 1-P(Y&lt;3)=1-[P(Y=0)+P(Y=1)+P(Y=2)]\\
 <li>Magalhães: capítulo 6.</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section">
+<p><br /><br /></p>
 
 <p>Slides produzidos pelos professores:</p>
 
