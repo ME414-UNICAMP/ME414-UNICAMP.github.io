@@ -111,11 +111,11 @@
 </article></slide><slide class=""><hgroup><h2>Variáveis Aleatórias Contínuas</h2></hgroup><article  id="variaveis-aleatorias-continuas-1" class="build">
 
 <ul class = 'build'>
-<li>Variáveis aleatórias discretas: v.a. com valores possíveis enumeráveis. Soma das probabilidades de todos os valores possíveis igual a \(1\).</li>
+<li><strong>Variáveis aleatórias discretas:</strong> v.a. com valores possíveis enumeráveis. Soma das probabilidades de todos os valores possíveis igual a \(1\).</li>
 </ul>
 
 <ul class = 'build'>
-<li>Variáveis aleatórias contínuas: v.a. com valores possíveis em um intervalo no conjunto de números reais.</li>
+<li><strong>Variáveis aleatórias contínuas:</strong> v.a. com valores possíveis em um intervalo no conjunto de números reais.</li>
 </ul>
 
 <ul class = 'build'>
@@ -127,7 +127,7 @@
 </ul>
 
 <ul class = 'build'>
-<li>Surge então o conceito de &quot;função de densidade de probabilidade&quot; (f.d.p.).</li>
+<li>Surge então o conceito de <strong>&quot;função de densidade de probabilidade&quot;</strong> (f.d.p.).</li>
 </ul>
 
 <ul class = 'build'>
@@ -165,11 +165,11 @@
 <p><strong>Definição:</strong> a função de densidade de probabilidade de uma v.a. \(X\) é uma função \(f\) que verifica:</p>
 
 <ul class = 'build'>
-<li>\(f(x)\geq0 \quad \forall x\in \mathbb{R}\)</li>
+<li>\(f(x)\geq0, \quad \forall x\in \mathbb{R}\)</li>
 </ul>
 
 <ul class = 'build'>
-<li>\(\int_{-\infty}^{\infty}f(x)dx=1\) (\(f\) é integrável)</li>
+<li>\(\displaystyle \int_{-\infty}^{\infty}f(x)dx=1\) (\(f\) é integrável)</li>
 </ul>
 
 <blockquote>
@@ -178,7 +178,7 @@
 
 </article></slide><slide class=""><hgroup><h2>Variáveis Aleatórias Contínuas</h2></hgroup><article  id="variaveis-aleatorias-continuas-3" class="build smaller">
 
-<p>A probabilidade de que uma v.a. \(X\) contínua pertença a um intervalo da reta (a,b], \(a&lt;b\) é dada por:<br/>\[P(a&lt;X\leq b)=\int_{a}^{b}f(x)dx\]</p>
+<p>A probabilidade de que uma v.a. \(X\) contínua pertença a um intervalo da reta (a,b], \(a&lt;b\) é dada por:<br/>\[P(a&lt;X\leq b)=\int_{a}^{b}f(x)dx.\]</p>
 
 <center>
 
@@ -186,14 +186,14 @@
 
 </center>
 
-<p>Obs: \(P(a&lt;X\leq b)=P(a\leq X\leq b)=P(a&lt;X&lt; b)=P(a\leq X &lt;b)\) quando \(X\) é v.a. contínua.</p>
+<p>Obs: Quando \(X\) é v.a. contínua \(P(a&lt;X\leq b)=P(a\leq X\leq b)=P(a&lt;X&lt; b)=P(a\leq X &lt;b)\)</p>
 
 </article></slide><slide class=""><hgroup><h2>Variáveis Aleatórias Contínuas</h2></hgroup><article  id="variaveis-aleatorias-continuas-4" class="build">
 
 <p><strong>Notação:</strong> se \(X\) v.a. contínua com função de densidade de probabilidade \(f\), no lugar de \(f\) denotaremos \(f_{X}\).</p>
 
 <blockquote>
-<p>A probabilidade de que uma v.a. \(X\) contínua pertença ao intervalo da reta (\(-\infty,x\)] daremos o nome de <strong>função de distribuição acumulada</strong> (f.d.a.), e a denotaremos por \(F_{X}\) \[F_{X}(x)=\int_{-\infty}^{x}f(u)du=P(X\leq x)\]</p>
+<p>A probabilidade de que uma v.a. \(X\) contínua pertença ao intervalo da reta <br /> (\(-\infty,x\)] daremos o nome de <strong>função de distribuição acumulada</strong> (f.d.a.), e a denotaremos por \(F_{X}\) \[F_{X}(x) = \int_{-\infty}^{x}f(u)du = P(X\leq x).\]</p>
 </blockquote>
 
 </article></slide><slide class=""><hgroup><h2>Variáveis Aleatórias Contínuas</h2></hgroup><article  id="variaveis-aleatorias-continuas-5" class="build">
@@ -212,29 +212,27 @@ x, &amp; 0\leq x &lt; 1 \\
 <p>Pela definição de função de densidade:</p>
 </blockquote>
 
-<ul class = 'build'>
-<li>\(f(x)\geq0\quad \forall\, x\in \mathbb{R}\)</li>
-</ul>
+<blockquote>
+<p>\(f(x) \geq 0, \quad \forall \, x \in \mathbb R\)</p>
+</blockquote>
 
-<ul class = 'build'>
-<li>\(\displaystyle \int_{0}^{2}f(x)dx= \int_{0}^{1}xdx + \int_{1}^{2}(2-x)dx =1\)</li>
-</ul>
+<blockquote>
+<p>\(\displaystyle \int_{0}^{2}f(x)dx= \int_{0}^{1}xdx + \int_{1}^{2}(2-x)dx =1\)</p>
+</blockquote>
 
-<ul class = 'build'>
-<li>Podemos também calcular \(\displaystyle P(0&lt;X\leq 0.8) = \int_{0}^{0.8}xdx=0.32\)</li>
-</ul>
+<blockquote>
+<p>Podemos também calcular \(\displaystyle P(0&lt;X\leq 0.8) = \int_{0}^{0.8}xdx=0.32\)</p>
+</blockquote>
 
 </article></slide><slide class=""><hgroup><h2>Variáveis Aleatórias Contínuas</h2></hgroup><article  id="variaveis-aleatorias-continuas-6" class="build">
 
-<p><strong>Propriedade:</strong> toda v.a. \(X\) contínua (ou seja, que possui \(f_{X}\) como função de densidade) tem probabilidade pontual nula: \(P(X=x)=0\).</p>
+<p><strong>Propriedade:</strong> toda v.a. \(X\) contínua (ou seja, que possui \(f_{X}\) como função de densidade) tem probabilidade pontual nula: \(\, P(X=x)=0\).</p>
 
-<blockquote>
-<p>Resumindo: \(F(x)=P(X\leq x)\)</p>
-</blockquote>
+<p>A função de distribuição acumulada \(F(x)=P(X\leq x)\):</p>
 
 <ul>
-<li>caso discreto: \(\displaystyle F(x)=P(X \leq x)=\sum_{x_{i}\leq x}P(X=x_{i})\)<br/></li>
-<li>caso contínuo: \(\displaystyle F(x)=P(X \leq x)=\int_{-\infty}^{x}f_{X}(u)du\)</li>
+<li><p><strong>caso discreto:</strong> \[F(x)=P(X \leq x)=\sum_{x_{i}\leq x}P(X=x_{i})\]</p></li>
+<li><p><strong>caso contínuo:</strong> \[F(x)=P(X \leq x)=\int_{-\infty}^{x}f_{X}(u)du\]</p></li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo">
@@ -254,6 +252,8 @@ f(x) = \left\{
 <li><p>Mostre que esta é uma função de densidade de probabilidade.</p></li>
 <li><p>Calcule a probabilidade de \(X&gt;10\).</p></li>
 </ol>
+
+<p><br /></p>
 
 <p><em>Fonte: Morettin &amp; Bussab</em>, Estatística Básica \(5^a\) edição, pág 166.</p>
 
@@ -276,23 +276,24 @@ f(x) = \left\{
 
 <p>\[ \int 2e^{-2x} dx   = -e^{-2x}\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo (solução - item 1)</h2></hgroup><article  id="exemplo-solucao---item-1-1" class="build">
+</article></slide><slide class=""><hgroup><h2>Exemplo (solução)</h2></hgroup><article  id="exemplo-solucao" class="build">
 
-<p>Note que a função está definida nesta forma para \(x \geq 0\); para \(x&lt;0\), ela é 0.</p>
+<ol>
+<li><p>Note que a função está definida nesta forma para \(x \geq 0\); para \(x&lt;0\), ela é 0.</p>
 
 <p>Então a integral é:</p>
 
-<p>\[ \int_{-\infty}^{\infty} f(x) dx =   \int_{-\infty}^0 0 dx +   \int_0^{\infty} 2e^{-2x} dx = \]</p>
-
-<p>\[ = \left [  -e^{-2x} \right ] _{0}^{\infty}   = \lim_{x\rightarrow \infty} -e^{-2x} - \left ( -e^{-0} \right) = 1 \]</p>
-
-</article></slide><slide class=""><hgroup><h2>Exemplo (solução - item 2)</h2></hgroup><article  id="exemplo-solucao---item-2" class="build">
-
-<p>A probabilidade é dada por: \[P(X&gt;10) = \int_{10}^{\infty} 2e^{-2x} dx  = \lim_{x\rightarrow \infty} -e^{-2x} - \left ( -e^{-2 \times 10} \right) = \frac{1}{e^{20}}\]</p>
+<p>\[\begin{aligned}
+\int_{-\infty}^{\infty} f(x) dx &amp;= \int_{-\infty}^0 0 dx +   \int_0^{\infty} 2e^{-2x} dx \\  
+&amp;= \left [  -e^{-2x} \right ] _{0}^{\infty} \\
+&amp;= \lim_{x\rightarrow \infty} -e^{-2x} - \left ( -e^{-0} \right) = 1 
+\end{aligned}\]</p></li>
+<li><p>A probabilidade é dada por: \[P(X&gt;10) = \int_{10}^{\infty} 2e^{-2x} dx  = \lim_{x\rightarrow \infty} -e^{-2x} - \left ( -e^{-2 \times 10} \right) = \frac{1}{e^{20}}\]</p></li>
+</ol>
 
 </article></slide><slide class=""><hgroup><h2>Esperança</h2></hgroup><article  id="esperanca" class="build">
 
-<p><strong>Definição:</strong> seja \(X\) uma v.a. contínua com densidade \(f_{X}\), a <strong>esperança</strong> de \(X\) é dada por: \[\mathbb E(X) = \int_{-\infty}^{\infty}x \, f_{X}(x)dx \,.\]</p>
+<p><strong>Definição:</strong> seja \(X\) uma v.a. contínua com densidade \(f_{X}\), a <strong>esperança</strong> de \(X\) é dada por: \[\mathbb E(X) = \int_{-\infty}^{\infty}x \, f_{X}(x)dx \,.\] <br /></p>
 
 <blockquote>
 <p><strong>Definição:</strong> seja \(X\) uma v.a. contínua com densidade \(f_{X}\), o <strong>\(k\)-ésimo momento</strong> de \(X\) é dado por:</p>
@@ -302,7 +303,7 @@ f(x) = \left\{
 
 </article></slide><slide class=""><hgroup><h2>Variância</h2></hgroup><article  id="variancia" class="build">
 
-<p><strong>Definição:</strong> seja \(X\) v.a. com valor esperado \(E(X)\), definimos por <strong>variância</strong>, a quantidade:</p>
+<p><strong>Definição:</strong> seja \(X\) v.a. com valor esperado \(\mathbb E(X)\), definimos por <strong>variância</strong>, a quantidade:</p>
 
 <p>\[Var(X) = \mathbb E([X - \mathbb E(X)]^2) = \mathbb E(X^2) - [\mathbb E(X)]^2\,.\]</p>
 
@@ -314,38 +315,25 @@ f(x) = \left\{
 <p>Note que assim como no caso discreto, ambas as quantidades oferecem medidas de dispersão da variável \(X\) em relação ao valor esperado \(\mathbb E(X)\).</p>
 </blockquote>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-1">
+</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-1" class="build">
 
-<p>Para a função \(f_{X}\), calcular:</p>
+<p>Para a função \(f_{X}\) seguinte, calcular \(\mathbb E(X)\) e \(Var(X)\):</p>
 
-<ul>
-<li>\(\mathbb E(X)\)</li>
-<li>\(Var(X)\)</li>
-</ul>
-
-<p>\[ f_{X}(x) = \left\{
+<p>\[f_{X}(x) = \left\{
 \begin{array}{ll}
 x, &amp; 0\leq x &lt; 1 \\
 2-x, &amp; 1 \leq x \leq 2 \\
 0, &amp; \mbox{caso contrário} \\
 \end{array}
 \right.\]</p>
+
+<p><strong>Solução:</strong></p>
+
+<p>\(\displaystyle \mathbb E(X) = \int_{-\infty}^{\infty}xf_{X}(x)dx = \int_{0}^{1}x^{2}dx+ \int_{1}^{2}x(2-x)dx = 1\)</p>
+
+<p>\(\displaystyle Var(X) = \int_{-\infty}^{\infty}[x - \mathbb E(X)]^{2}f_{X}(x)dx = \int_{-\infty}^{\infty}(x-1)^2f_{X}(x)dx = \frac{1}{6}\)</p>
 
 </article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-2">
-
-<p>\[ f_{X}(x) = \left\{
-\begin{array}{ll}
-x, &amp; 0\leq x &lt; 1 \\
-2-x, &amp; 1 \leq x \leq 2 \\
-0, &amp; \mbox{caso contrário} \\
-\end{array}
-\right.\]</p>
-
-<p>\[\mathbb E(X) = \int_{-\infty}^{\infty}xf_{X}(x)dx = \int_{0}^{1}x^{2}dx+ \int_{1}^{2}x(2-x)dx = 1\]</p>
-
-<p>\[Var(X) = \int_{-\infty}^{\infty}[x - \mathbb E(X)]^{2}f_{X}(x)dx = \int_{-\infty}^{\infty}(x-1)^2f_{X}(x)dx = \frac{1}{6}\]</p>
-
-</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-3">
 
 <p>Uma variável aleatória \(X\) tem distribuição triangular no intervalo \([0,1]\) se sua f.d.p. for dada por</p>
 
@@ -368,7 +356,7 @@ C(1-x) &amp; \mbox{se} &amp; 1/2 \leq x \leq 1 \\
 
 <p><em>Fonte:</em> Morettin &amp; Bussab, Estatística Básica \(5^a\) edição, pág 166.</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-4" class="smaller build">
+</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-3" class="smaller build">
 
 <p>Item 1 - Devemos escolher \(C\) de modo que \(f(x)\) satisfaça:</p>
 
@@ -389,7 +377,7 @@ C(1-x) &amp; \mbox{se} &amp; 1/2 \leq x \leq 1 \\
 \end{aligned}
 \]</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-5">
+</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-4">
 
 <p>Item 2 - Função de densidade \(f(x)\)</p>
 
@@ -399,7 +387,7 @@ C(1-x) &amp; \mbox{se} &amp; 1/2 \leq x \leq 1 \\
 
 </center>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-6" class="smaller build">
+</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-5" class="smaller build">
 
 <p>Item 3 - Para encontrarmos as probabilidades dos eventos, basta integrar nas regiões correspondentes: \[P(X\leq 1/2) =   \int_0 ^{1/2} f(x)dx = \int_0 ^{1/2} 4x dx =   1/2 \,. \]</p>
 
@@ -413,7 +401,7 @@ C(1-x) &amp; \mbox{se} &amp; 1/2 \leq x \leq 1 \\
 <p>Note que \(P(X&gt;1/2) = 1-P(X\leq 1/2) = 1-1/2 = 1/2\).</p>
 </blockquote>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-7">
+</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-6">
 
 <p>\[P(1/4 \leq X \leq 3/4) =   \int_{1/4} ^{3/4} f(x)dx = \int_{1/4} ^{1/2} 4xdx +   \int_{1/2} ^{3/4} 4(1-x)dx =   \frac{3}{4}\,.\]</p>
 
@@ -423,7 +411,7 @@ C(1-x) &amp; \mbox{se} &amp; 1/2 \leq x \leq 1 \\
 
 </center>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-8" class="build">
+</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-7" class="build">
 
 <p>Calcule a esperança, a variância e a f.d.a. da variável aleatória \(X\) com a densidade triangular em \([0,1]\).</p>
 
@@ -436,7 +424,7 @@ C(1-x) &amp; \mbox{se} &amp; 1/2 \leq x \leq 1 \\
 \end{aligned}
 \]</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-9">
+</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-8">
 
 <p>\[
 \begin{aligned}
@@ -447,7 +435,7 @@ C(1-x) &amp; \mbox{se} &amp; 1/2 \leq x \leq 1 \\
 \end{aligned}
 \]</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-10" class="build">
+</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-9" class="build">
 
 <p>A função de distribuição acumulada de uma variável aleatória contínua é dada por \[F(x) = \int_{-\infty}^x f(t) dt\]</p>
 
@@ -459,7 +447,7 @@ C(1-x) &amp; \mbox{se} &amp; 1/2 \leq x \leq 1 \\
 <p>Para \(x \in [1/2,1]\), a acumulada é dada por \[F(x) = \int_0^{1/2} 4t dt + \int_{1/2}^x 4(1-t)dt = -2x^2 + 4x -1\]</p>
 </blockquote>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-11">
+</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-10">
 
 <p>Para valores de \(x \geq 1\), a acumulada assume valor 1. O gráfico de \(F(x)\) é dado por:</p>
 
@@ -541,7 +529,7 @@ Var(X) &amp; = \mathbb E(X^{2}) - [\mathbb E(X)]^{2} \\
 
 <p>Portanto, a probabilidade de uma peça ter dureza entre 55 e 60 é: \[P(55 &lt; H &lt; 60) = \int_{55}^{60}\frac{1}{20}dh = \frac{1}{20}(60-55) = \frac{1}{4}\,.\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-12">
+</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-11">
 
 <p>Seja \(X\) uma variável aleatória distribuída uniformemente, com média 15 e variância 25/3.</p>
 
@@ -550,7 +538,7 @@ Var(X) &amp; = \mathbb E(X^{2}) - [\mathbb E(X)]^{2} \\
 <li><p>Qual é a probabilidade que \(X &gt; 14\)?</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-13" class="build">
+</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-12" class="build">
 
 <p>Lembre-se que a esperança de uma v.a. uniforme em \([a,b]\) é dada por \[\mathbb E(X) = \frac{a+b}{2},\] e sua variância por \[\mbox{Var}(X) = \frac{(b-a)^2}{12}.\]</p>
 
@@ -574,7 +562,7 @@ a+b &amp;=&amp; 30 \\
 \right.
 \]</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-14" class="build">
+</article></slide><slide class=""><hgroup><h2>Exemplo</h2></hgroup><article  id="exemplo-13" class="build">
 
 <p>Ou simplesmente (você é capaz de dizer por que tomamos a raiz positiva apenas, neste sistema não-linear?)</p>
 
@@ -686,31 +674,15 @@ b  -  a &amp; = &amp; 10 \\
 <p>Qual a probabilidade de que a fábrica tenha que substituir um tubo gratuitamente, se oferece uma garantia de \(300\) horas de uso?</p>
 </blockquote>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: tubos de TV</h2></hgroup><article  id="exemplo-tubos-de-tv-1" class="build smaller">
+</article></slide><slide class=""><hgroup><h2>Exemplo: tubos de TV</h2></hgroup><article  id="exemplo-tubos-de-tv-1" class="build">
 
 <p>\(X\): vida útil do tubo de TV.</p>
 
 <blockquote>
-<p>\(\mathbb E[X]= 800\). Como \(X\) tem distribuição exponencial com parâmetro \(\lambda\), \(E[X]= \frac{1}{\lambda}=800\), portanto \(\lambda= \frac{1}{800}\).</p>
+<p>Como \(X\) tem distribuição exponencial com parâmetro \(\lambda\) e \(\mathbb E[X] = 800\), temos: \[\mathbb E[X] = \frac{1}{\lambda}=800 \qquad \Longrightarrow \qquad \lambda = \frac{1}{800}.\]</p>
 </blockquote>
 
-<p>\[ f_{X}(x) = \left\{
-\begin{array}{ll}
-\lambda e^{-\lambda x}, &amp; x \geq 0 \\
-0, &amp; \mbox{caso contrário} \\
-\end{array}
-\right.\]</p>
-
-<blockquote>
-
-</blockquote>
-
-<p>\[ f_{X}(x) = \left\{
-\begin{array}{ll}
-\frac{1}{800} e^{-\frac{x}{800}}, &amp; x \geq 0 \\
-0, &amp; \mbox{caso contrário} \\
-\end{array}
-\right.\]</p>
+<p>Então, a f.d.p. é dada por \(\displaystyle \qquad f_{X}(x) = \left\{ \begin{array}{ll} \frac{1}{800} e^{-\frac{x}{800}}, &amp; x \geq 0 \\ 0, &amp; \mbox{caso contrário} \\ \end{array} \right.\)</p>
 
 <blockquote>
 <p>Se \(X &lt; 300\), a fábrica tem que substituir gratuitamente.</p>
@@ -737,12 +709,14 @@ b  -  a &amp; = &amp; 10 \\
 <p>O setor de fiscalização apreendeu \(30\) unidades do produto. Qual a probabilidade de que pelo menos \(10\%\) da amostra seja imprópria para consumo?</p>
 </blockquote>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: produto alimentício</h2></hgroup><article  id="exemplo-produto-alimenticio-1" class="build smaller">
+</article></slide><slide class=""><hgroup><h2>Exemplo: produto alimentício</h2></hgroup><article  id="exemplo-produto-alimenticio-1" class="build">
 
-<p>Produto liberado para consumo se: \(P(X&lt;2)= \int_0^22 e^{-2 x}dx= \left[-e^{-2x} \right]_0^{2}=0.98\).</p>
+<p><font size=5></p>
+
+<p>Produto liberado para consumo se: \(P(X&lt;2) = \int_0^22 e^{-2 x}dx= \left[-e^{-2x} \right]_0^{2}=0.98\).</p>
 
 <blockquote>
-<p>Produto não consumível com probabilidade \(1-P(X&lt;2)= 0.02= p\).</p>
+<p>Produto não consumível com probabilidade \(1 - P(X&lt;2) = 0.02 = p\).</p>
 </blockquote>
 
 <blockquote>
@@ -753,15 +727,16 @@ b  -  a &amp; = &amp; 10 \\
 <p>\(Y\sim \mbox{Bin}(30, 0.02)\).</p>
 </blockquote>
 
-<p>Probabilidade de que pelo menos 10% de uma amostra de 30 unidades seja imprópria:</p>
-
-<p>\[
+<p>Probabilidade de que pelo menos 10% de uma amostra de 30 unidades seja imprópria: </font><font size=4> \[
 \begin{aligned}
-P(Y\geq3)&amp;= 1-P(Y&lt;3)=1-[P(Y=0)+P(Y=1)+P(Y=2)]\\
-&amp;= 1-\left[\binom{30}{0}(0.02)^0(0.98)^{30} + \binom{30}{1}(0.02)^1(0.98)^{29}+\binom{30}{2}(0.02)^2(0.98)^{28} \right]\\
-&amp;= 0.022\,.
+P(Y \geq 3) &amp;= 1- P(Y&lt;3) \\
+&amp;= 1 - [P(Y=0) + P(Y=1) + P(Y=2)] \\
+&amp;= 1 - \left[\binom{30}{0}(0.02)^0(0.98)^{30} + \binom{30}{1}(0.02)^1(0.98)^{29}+\binom{30}{2}(0.02)^2(0.98)^{28} \right]\\
+&amp;= 0.022
 \end{aligned}
 \]</p>
+
+<p></font></p>
 
 </article></slide><slide class=""><hgroup><h2>Leituras</h2></hgroup><article  id="leituras">
 

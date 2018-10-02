@@ -11,15 +11,15 @@ logo: ../logo-imecc.png
 
 ## Variáveis Aleatórias Contínuas {.build}
  
-> * Variáveis aleatórias discretas: v.a. com valores possíveis enumeráveis.   Soma das probabilidades de todos os valores possíveis igual a $1$.  
+>- **Variáveis aleatórias discretas:** v.a. com valores possíveis enumeráveis.   Soma das probabilidades de todos os valores possíveis igual a $1$.  
 
-> * Variáveis aleatórias contínuas:   v.a. com valores possíveis em um intervalo no conjunto de números reais.  
+>- **Variáveis aleatórias contínuas:** v.a. com valores possíveis em um intervalo no conjunto de números reais.  
 
-> * Exemplo: tempo para finalizar um experimento,   peso de uma pessoa,   duração de uma chamada telefônica,   tempo de vida de uma lâmpada, etc...  
+>- Exemplo: tempo para finalizar um experimento,   peso de uma pessoa,   duração de uma chamada telefônica,   tempo de vida de uma lâmpada, etc...  
 
-> * Para esses tipos de quantidades, não é possível associar frequências pontuais tais que a soma de todas seja igual a 1.  
+>- Para esses tipos de quantidades, não é possível associar frequências pontuais tais que a soma de todas seja igual a 1.  
 
-> * Surge então o conceito de "função de densidade de probabilidade" (f.d.p.).  
+> * Surge então o conceito de **"função de densidade de probabilidade"** (f.d.p.).  
 
 > * Para cada v.a. contínua, associamos uma função de densidade de probabilidade.
  
@@ -71,7 +71,7 @@ box(bty="l", lwd=2)
 <center>
 ```{r,echo=FALSE, fig.height=5, fig.width=10}
 # http://rgraphgallery.blogspot.com.br/2013/04/shaded-normal-curve.html
-par(mfrow=c(1, 2))
+par(mfrow = c(1, 2))
  curve(dnorm(x, mean=2, sd=2), xlim=c(-9, 13), ylim=c(0,.2), 
        main="Média=2, DP=2", ylab=" ", lwd=3, col="blue", las=1, bty="l")
  
@@ -85,9 +85,9 @@ par(mfrow=c(1, 2))
  
 **Definição:** a função de densidade de probabilidade de uma v.a. $X$ é uma função $f$ que verifica:  
  
-> * $f(x)\geq0 \quad \forall x\in \mathbb{R}$  
+> * $f(x)\geq0, \quad \forall x\in \mathbb{R}$  
 
-> * $\int_{-\infty}^{\infty}f(x)dx=1$ ($f$ é integrável)  
+> * $\displaystyle \int_{-\infty}^{\infty}f(x)dx=1$ ($f$ é integrável)  
  
 > Toda v.a. $X$ à qual seja possível associar uma função de densidade de probabilidade será chamada de v.a. contínua.  
  
@@ -95,10 +95,10 @@ par(mfrow=c(1, 2))
 ## Variáveis Aleatórias Contínuas {.build .smaller}
  
 A probabilidade de que uma v.a. $X$ contínua pertença a um intervalo da reta (a,b], $a<b$ é dada por:  
-$$P(a<X\leq b)=\int_{a}^{b}f(x)dx$$  
+$$P(a<X\leq b)=\int_{a}^{b}f(x)dx.$$  
  
 <center> 
-```{r,echo=FALSE, fig.height=3.5, fig.width=4}
+```{r, echo=FALSE, fig.height=3.5, fig.width=4}
 a=1
 b=4
 codx <- c(a,seq(a, b, 0.01), b)
@@ -111,15 +111,15 @@ polygon(codx, cody, col='lightblue')
 ```
 </center>
 
-Obs: $P(a<X\leq b)=P(a\leq X\leq b)=P(a<X< b)=P(a\leq X <b)$ quando $X$ é v.a. contínua.
+Obs: Quando $X$ é v.a. contínua $P(a<X\leq b)=P(a\leq X\leq b)=P(a<X< b)=P(a\leq X <b)$ 
 
 
 ## Variáveis Aleatórias Contínuas{.build}
  
 **Notação:** se $X$ v.a. contínua com função de densidade de probabilidade $f$, no lugar de $f$ denotaremos $f_{X}$.  
 
-> A probabilidade de que uma v.a. $X$ contínua pertença ao intervalo da reta ($-\infty,x$] daremos o nome de **função de distribuição acumulada** (f.d.a.), e a denotaremos por $F_{X}$
-$$F_{X}(x)=\int_{-\infty}^{x}f(u)du=P(X\leq x)$$
+> A probabilidade de que uma v.a. $X$ contínua pertença ao intervalo da reta <br /> ($-\infty,x$] daremos o nome de **função de distribuição acumulada** (f.d.a.), e a denotaremos por $F_{X}$
+$$F_{X}(x) = \int_{-\infty}^{x}f(u)du = P(X\leq x).$$
  
 
 
@@ -137,22 +137,24 @@ x, & 0\leq x < 1 \\
 
 > Pela definição de função de densidade:  
  
-> * $f(x)\geq0\quad \forall\, x\in \mathbb{R}$  
+> $f(x) \geq 0, \quad \forall \, x \in \mathbb R$  
 
-> * $\displaystyle \int_{0}^{2}f(x)dx=  \int_{0}^{1}xdx + \int_{1}^{2}(2-x)dx =1$  
+> $\displaystyle \int_{0}^{2}f(x)dx=  \int_{0}^{1}xdx + \int_{1}^{2}(2-x)dx =1$  
  
-> * Podemos também calcular $\displaystyle P(0<X\leq 0.8) = \int_{0}^{0.8}xdx=0.32$
+> Podemos também calcular $\displaystyle P(0<X\leq 0.8) = \int_{0}^{0.8}xdx=0.32$
  
 
 
 ## Variáveis Aleatórias Contínuas {.build}
  
-**Propriedade:** toda v.a. $X$ contínua (ou seja, que possui $f_{X}$ como função de densidade) tem probabilidade pontual nula: $P(X=x)=0$.  
+**Propriedade:** toda v.a. $X$ contínua (ou seja, que possui $f_{X}$ como função de densidade) tem probabilidade pontual nula: $\, P(X=x)=0$.  
 
-> Resumindo: $F(x)=P(X\leq x)$  
+
+A função de distribuição acumulada $F(x)=P(X\leq x)$: 
  
-* caso discreto: $\displaystyle F(x)=P(X \leq x)=\sum_{x_{i}\leq x}P(X=x_{i})$  
-* caso contínuo: $\displaystyle F(x)=P(X \leq x)=\int_{-\infty}^{x}f_{X}(u)du$
+* **caso discreto:** $$F(x)=P(X \leq x)=\sum_{x_{i}\leq x}P(X=x_{i})$$ 
+
+* **caso contínuo:** $$F(x)=P(X \leq x)=\int_{-\infty}^{x}f_{X}(u)du$$
  
  
 ## Exemplo
@@ -172,6 +174,7 @@ a. Mostre que esta é uma função de densidade de probabilidade.
 
 b. Calcule a probabilidade de $X>10$.  
  
+<br />
 
 *Fonte: Morettin \& Bussab*, Estatística Básica $5^a$ edição, pág 166.
 
@@ -192,27 +195,28 @@ Uma função de densidade de probabilidade deve satisfazer as seguintes propried
 $$ \int 2e^{-2x} dx   = -e^{-2x}$$
 
 
-## Exemplo (solução - item 1) {.build}
+## Exemplo (solução) {.build}
 
-Note que a função está definida nesta forma para $x \geq 0$; para $x<0$, ela é 0. 
+1. Note que a função está definida nesta forma para $x \geq 0$; para $x<0$, ela é 0. 
 
-Então a integral é:
+    Então a integral é:
 
-$$ \int_{-\infty}^{\infty} f(x) dx =   \int_{-\infty}^0 0 dx +   \int_0^{\infty} 2e^{-2x} dx = $$  
+    $$\begin{aligned}
+    \int_{-\infty}^{\infty} f(x) dx &= \int_{-\infty}^0 0 dx +   \int_0^{\infty} 2e^{-2x} dx \\  
+    &= \left [  -e^{-2x} \right ] _{0}^{\infty} \\
+    &= \lim_{x\rightarrow \infty} -e^{-2x} - \left ( -e^{-0} \right) = 1 
+    \end{aligned}$$ 
 
-$$ = \left [  -e^{-2x} \right ] _{0}^{\infty}   = \lim_{x\rightarrow \infty} -e^{-2x} - \left ( -e^{-0} \right) = 1 $$ 
 
-
-## Exemplo (solução - item 2) {.build}
-
-A probabilidade é dada por: $$P(X>10) = \int_{10}^{\infty} 2e^{-2x} dx  = \lim_{x\rightarrow \infty} -e^{-2x} - \left ( -e^{-2 \times 10} \right) = \frac{1}{e^{20}}$$
+2. A probabilidade é dada por: 
+$$P(X>10) = \int_{10}^{\infty} 2e^{-2x} dx  = \lim_{x\rightarrow \infty} -e^{-2x} - \left ( -e^{-2 \times 10} \right) = \frac{1}{e^{20}}$$
  
 
 ## Esperança {.build}
 
 **Definição:** seja $X$ uma v.a. contínua com densidade $f_{X}$, a **esperança** de $X$ é dada por:
 $$\mathbb E(X) = \int_{-\infty}^{\infty}x \, f_{X}(x)dx \,.$$
-
+<br />
   
 > **Definição:** seja $X$ uma v.a. contínua com densidade $f_{X}$, o **$k$-ésimo momento** de $X$ é dado por:
 
@@ -221,7 +225,7 @@ $$\mathbb E(X^k) = \int_{-\infty}^{\infty}x^k \, f_{X}(x)dx \,.$$
 
 ## Variância {.build}
  
-**Definição:** seja $X$ v.a. com valor esperado $E(X)$, definimos por **variância**, a quantidade:
+**Definição:** seja $X$ v.a. com valor esperado $\mathbb E(X)$, definimos por **variância**, a quantidade:
 
 $$Var(X) = \mathbb E([X - \mathbb E(X)]^2) = \mathbb E(X^2) - [\mathbb E(X)]^2\,.$$  
 
@@ -231,25 +235,11 @@ $$\sigma = \sqrt{Var(X)}$$
 > Note que assim como no caso discreto, ambas as quantidades oferecem medidas de dispersão da variável $X$ em relação ao valor esperado $\mathbb E(X)$.
  
 
-## Exemplo
+## Exemplo {.build}
 
-Para a função $f_{X}$, calcular:
- 
-* $\mathbb E(X)$
-* $Var(X)$ 
+Para a função $f_{X}$ seguinte, calcular $\mathbb E(X)$ e $Var(X)$:
 
-$$ f_{X}(x) = \left\{
-\begin{array}{ll}
-x, & 0\leq x < 1 \\
-2-x, & 1 \leq x \leq 2 \\
-0, & \mbox{caso contrário} \\
-\end{array}
-\right.$$
- 
-
-## Exemplo 
-
-$$ f_{X}(x) = \left\{
+$$f_{X}(x) = \left\{
 \begin{array}{ll}
 x, & 0\leq x < 1 \\
 2-x, & 1 \leq x \leq 2 \\
@@ -258,9 +248,11 @@ x, & 0\leq x < 1 \\
 \right.$$
 
 
-$$\mathbb E(X) = \int_{-\infty}^{\infty}xf_{X}(x)dx = \int_{0}^{1}x^{2}dx+ \int_{1}^{2}x(2-x)dx = 1$$
+**Solução:**
 
-$$Var(X) = \int_{-\infty}^{\infty}[x - \mathbb E(X)]^{2}f_{X}(x)dx = \int_{-\infty}^{\infty}(x-1)^2f_{X}(x)dx = \frac{1}{6}$$
+$\displaystyle \mathbb E(X) = \int_{-\infty}^{\infty}xf_{X}(x)dx = \int_{0}^{1}x^{2}dx+ \int_{1}^{2}x(2-x)dx = 1$
+
+$\displaystyle Var(X) = \int_{-\infty}^{\infty}[x - \mathbb E(X)]^{2}f_{X}(x)dx = \int_{-\infty}^{\infty}(x-1)^2f_{X}(x)dx = \frac{1}{6}$
  
 
 ## Exemplo
@@ -281,6 +273,7 @@ $$
 a. Qual valor deve ter a constante C?  
 b. Faça o gráfico de $f(x)$.  
 c. Determine $P(X \leq 1/2)$, $P(X > 1/2)$ e $P(1/4 \leq X \leq 3/4)$.
+
 
 *Fonte:* Morettin \& Bussab, Estatística Básica $5^a$ edição, pág 166.
 
@@ -617,27 +610,18 @@ Um antiga fábrica de tubos de TV determinou que a vida média dos tubos de sua 
 > Qual a probabilidade de que a fábrica tenha que substituir um tubo gratuitamente, se oferece uma garantia de $300$ horas de uso?  
 
 
-## Exemplo: tubos de TV {.build .smaller}
+## Exemplo: tubos de TV {.build}
 
 $X$: vida útil do tubo de TV.   
 
-> $\mathbb E[X]=  800$. Como $X$ tem distribuição exponencial com parâmetro $\lambda$, $E[X]= \frac{1}{\lambda}=800$, portanto $\lambda= \frac{1}{800}$.  
+> Como $X$ tem distribuição exponencial com parâmetro $\lambda$ e $\mathbb E[X] = 800$, temos: $$\mathbb E[X] = \frac{1}{\lambda}=800 \qquad \Longrightarrow \qquad \lambda = \frac{1}{800}.$$  
 
-$$ f_{X}(x) = \left\{
-\begin{array}{ll}
-\lambda e^{-\lambda x}, & x \geq 0 \\
-0, & \mbox{caso contrário} \\
-\end{array}
-\right.$$
- 
-> 
-
-$$ f_{X}(x) = \left\{
+Então, a f.d.p. é dada por $\displaystyle \qquad f_{X}(x) = \left\{
 \begin{array}{ll}
 \frac{1}{800} e^{-\frac{x}{800}}, & x \geq 0 \\
 0, & \mbox{caso contrário} \\
 \end{array}
-\right.$$  
+\right.$ 
 
 > Se $X < 300$, a fábrica tem que substituir gratuitamente.
 
@@ -659,26 +643,31 @@ representa a distribuição do índice de acidez ($X$) de um determinado produto
 
 > O setor de fiscalização apreendeu $30$ unidades do produto.   Qual a probabilidade de que pelo menos $10\%$ da amostra seja imprópria para consumo?
 
-## Exemplo: produto alimentício {.build .smaller}
 
-Produto liberado para consumo se: $P(X<2)= \int_0^22 e^{-2 x}dx= \left[-e^{-2x} \right]_0^{2}=0.98$.  
+## Exemplo: produto alimentício {.build}
 
-> Produto não consumível com probabilidade   $1-P(X<2)= 0.02=  p$.  
+<font size=5>
 
-> $Y$: número de unidades impróprias para consumo na amostra de 30.  
+Produto liberado para consumo se: $P(X<2) = \int_0^22 e^{-2 x}dx= \left[-e^{-2x} \right]_0^{2}=0.98$.  
+
+> Produto não consumível com probabilidade  $1 - P(X<2) = 0.02 = p$.  
+
+> $Y$: número de unidades impróprias para consumo na amostra de 30. 
 
 > $Y\sim \mbox{Bin}(30, 0.02)$.
 
-Probabilidade de que pelo menos 10\% de uma amostra de 30 unidades seja imprópria:  
-
-
+Probabilidade de que pelo menos 10\% de uma amostra de 30 unidades seja imprópria:
+</font><font size=4>
 $$
 \begin{aligned}
-P(Y\geq3)&= 1-P(Y<3)=1-[P(Y=0)+P(Y=1)+P(Y=2)]\\
-&= 1-\left[\binom{30}{0}(0.02)^0(0.98)^{30} + \binom{30}{1}(0.02)^1(0.98)^{29}+\binom{30}{2}(0.02)^2(0.98)^{28} \right]\\
-&= 0.022\,.
+P(Y \geq 3) &= 1- P(Y<3) \\
+&= 1 - [P(Y=0) + P(Y=1) + P(Y=2)] \\
+&= 1 - \left[\binom{30}{0}(0.02)^0(0.98)^{30} + \binom{30}{1}(0.02)^1(0.98)^{29}+\binom{30}{2}(0.02)^2(0.98)^{28} \right]\\
+&= 0.022
 \end{aligned}
 $$
+
+</font>
 
 
 ## Leituras
