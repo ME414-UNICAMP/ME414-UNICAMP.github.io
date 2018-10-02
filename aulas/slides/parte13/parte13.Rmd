@@ -14,13 +14,13 @@ logo: ../logo-imecc.png
 
 Dizemos que uma v.a. $X$ possui distribuição normal com parâmetros $\mu$ e $\sigma^{2}$, $\mu \in \mathbb{R}$ e $\sigma^{2}>0$, se a f.d.p. $f_{X}$ é dada por: 
 
-$$f_{X}(x)=\frac{1}{\sqrt{2\pi\sigma^{2}}}exp\left[-\frac{(x-\mu)^{2}}{2\sigma^{2}}\right],  \qquad  -\infty < x < \infty$$ 
+$$f_{X}(x) = \frac{1}{\sqrt{2\pi\sigma^{2}}} \exp \left[-\frac{(x-\mu)^{2}}{2\sigma^{2}}\right], \qquad -\infty < x < \infty$$ 
 
 **Notação:** $X\sim N(\mu,\sigma^{2})$
 
 Distribuição mais importante da Estatística. Também conhecida como distribuição Gaussiana.
 
-A esperança e variância de uma v.a. $X\sim N(\mu,\sigma^{2})$ são:
+A esperança e variância de uma v.a. $X \sim N(\mu,\sigma^{2})$ são:
 
 $$\mathbb E(X)=\mu \qquad \mbox{e} \qquad Var(X)=\sigma^2$$
 
@@ -28,13 +28,13 @@ $$\mathbb E(X)=\mu \qquad \mbox{e} \qquad Var(X)=\sigma^2$$
 ## Distribuição Normal - Esperança e Variância  {.build}
 
 **Esperança:**
-$$\mathbb E(X)=\int_{-\infty}^{\infty}x\frac{1}{\sqrt{2\pi\sigma^{2}}}exp\left[-\frac{(x-\mu)^{2}}{2\sigma^{2}}\right]dx=\mu$$
+$$\mathbb E(X) = \int_{-\infty}^{\infty} x \frac{1}{\sqrt{2\pi\sigma^{2}}} \exp\left[-\frac{(x-\mu)^{2}}{2\sigma^{2}}\right]dx=\mu$$
 
 **Variância**
 $$
 \begin{aligned}
-Var(X) & = \mathbb E([X-\mathbb E(X)]^{2}) \\
-& = \int_{-\infty}^{\infty}(x-\mu)^{2}\frac{1}{\sqrt{2\pi\sigma^{2}}}exp\left[-\frac{(x-\mu)^{2}}{2\sigma^{2}}\right]dx \\
+Var(X) & = \mathbb E([X - \mathbb E(X)]^{2}) \\
+& = \int_{-\infty}^{\infty}(x-\mu)^{2}\frac{1}{\sqrt{2\pi\sigma^{2}}} \exp\left[-\frac{(x-\mu)^{2}}{2\sigma^{2}}\right]dx \\
 &=\sigma^{2} 
 \end{aligned}
 $$
@@ -81,27 +81,21 @@ legend("topright", legend=expression(mu==0 ~~ sigma == 1, mu==0 ~~ sigma == 0.5,
 
 Comparação da distribuição das alturas da população adulta norte-americana e a distribuição das alturas dos usuários do site:
 
-<center><img src="figuras/MaleHeightDistributionYoink.png" width=400></center>
+<img src="figuras/MaleHeightDistributionYoink.png" width=400>
+<img src="figuras/FemaleHeightDistributionImplied.png" width=400>
 
-
+<font size=4>
 *Fonte: [http://blog.okcupid.com/index.php/the-biggest-lies-in-online-dating/](http://blog.okcupid.com/index.php/the-biggest-lies-in-online-dating/)*
-
-
-## Exemplo: OkCupid
-
-Comparação da distribuição das alturas da população adulta norte-americana e a distribuição das alturas dos usuários do site:
-
-<center><img src="figuras/FemaleHeightDistributionImplied.png" width=400></center>
-
-
-*Fonte: [http://blog.okcupid.com/index.php/the-biggest-lies-in-online-dating/](http://blog.okcupid.com/index.php/the-biggest-lies-in-online-dating/)*
+</font>
 
 
 ## Exemplo: OkCupid
 
 <center><img src="figuras/SexPartnersByHeight.png" width=500></center>
 
+<font size=4>
 *Fonte: [http://blog.okcupid.com/index.php/the-biggest-lies-in-online-dating/](http://blog.okcupid.com/index.php/the-biggest-lies-in-online-dating/)*
+</font>
 
 
 ## Distribuição Normal Padrão {.build}
@@ -132,7 +126,7 @@ curve(pnorm(x, mean=0, sd=1), -3, 3, bty="l", ylim=c(0, 1.05), yaxs = "i", xaxs=
 
 ## Exemplo: SAT e ACT {.build}
 
-<center><img src="figuras/act_sat_l.jpg" width=250></center>
+<img src="figuras/act_sat_l.jpg" width=300 style="float: right; margin-left:30px">
 
 Uma universidade americana recebeu inscrição de dois alunos (Pam e Jim) com os respectivos históricos escolares. No entanto, Pam realizou o [SAT](https://pt.wikipedia.org/wiki/SAT) e tirou 1800, enquanto que o Jim fez o [ACT](https://en.wikipedia.org/wiki/ACT_(test)) e tirou 24. Como a universidade pode comparar os dois alunos, baseando-se nesses testes?
 
@@ -142,6 +136,8 @@ Uma universidade americana recebeu inscrição de dois alunos (Pam e Jim) com os
 
 
 ## Exemplo: SAT e ACT {.build}
+
+<img src="figuras/act_sat_l.jpg" width=300 style="float: right; margin-left:30px">
 
 > A universidade tem acesso à média (1500) e ao desvio-padrão (300) das notas de todos os alunos que realizaram o SAT juntamente com a Pam.
 
@@ -180,24 +176,24 @@ Seja $X$ uma v.a. representando a nota no SAT: $X\sim N(\mu=1500,\sigma=300)$.
 > Padronizando a v.a. das notas do SAT:
 $Z_1=\frac{X-1500}{300}\sim N(0,1)$.
 
-> Padronizando a nota da Pam:
+> Padronizando a nota da Pam: $\frac{1800-1500}{300}=1$
 
-$\frac{1800-1500}{300}=1$
+<br />
 
 > Seja $Y$ uma v.a. representando a nota no ACT: $Y \sim N(\mu=21,\sigma=5)$.
 
 > Padronizando a v.a. das notas do ACT:
 $Z_2=\frac{Y-21}{5}\sim N(0,1)$.
 
-> Padronizando a nota do Jim:
-
-$\frac{24-21}{5}=0.6$
+> Padronizando a nota do Jim: $\frac{24-21}{5}=0.6$
 
 
 ## Exemplo: SAT e ACT
 
+Com as notas padrozinadas, podemos compará-las:
+
 <center>
-```{r, echo=FALSE, fig.height=4.5, fig.width=5}
+```{r, echo=FALSE, fig.height=4.5, fig.width=5.5}
 curve(dnorm(x, mean=0, sd=1), -3, 3, bty="l", yaxs = "i", xaxs="i", 
       main="Notas Padronizadas", ylab=expression(phi(z)), xlab="z", cex.lab=1.2, cex.axis=1.2,
       cex.main=1.2, lwd=3, las=1, ylim=c(0, 0.5))
@@ -210,14 +206,14 @@ abline(v=.6, col="blue", lwd=3)
 
 ## Distribuição Normal {.build}
 
-* Para calcular as probabilidades, precisamos usar a f.d.a. de $Z \sim N(0,1)$ 
+Para calcular as probabilidades, precisamos usar a f.d.a. de $Z \sim N(0,1)$ 
 
 $$\Phi(t)=P(Z\leq t)=\int_{-\infty}^{t}\frac{1}{\sqrt{2\pi}}e^{-z^2/2}dz,$$
 que não tem forma fechada, pois $e^{-z^2}$ não tem antiderivada.  
 
-> * Contudo, os valores para $Z \sim N(0,1)$ e $\phi(z)$ encontram-se tabelados.
+> Contudo, os valores para $Z \sim N(0,1)$ e $\phi(z)$ encontram-se tabelados.
 
-> * Tudo o que precisamos fazer é transformar a variável em $N(0,1)$ e usar os valores tabelados. Ou seja, para $X \sim N(\mu, \sigma^{2})$, temos:
+> Tudo o que precisamos fazer é transformar a variável em $N(0,1)$ e usar os valores tabelados. Ou seja, para $X \sim N(\mu, \sigma^{2})$, temos:
 > $$F_X(a)=P(X \leq a)= P\left(\underbrace{\frac{X-\mu}{\sigma}}_{Z} \leq \frac{a-\mu}{\sigma}\right) = \Phi\left(\frac{a-\mu}{\sigma}\right)$$
 
 
@@ -249,7 +245,7 @@ $$P(Z<-z)=P(Z>z)$$
 
 ## Distribuição Normal {.build}
 
-* $Z\sim\mbox{Normal}(0,1)$, com f.d.a. $\Phi$:
+Seja $Z\sim\mbox{Normal}(0,1)$, com f.d.a. $\Phi$:
 $$\Phi(t)=P(Z\leq t)=\int_{-\infty}^{t}\frac{1}{\sqrt{2\pi}}e^{-z^2/2}dz$$ 
 
 > * $\Phi(0)=0.5$ 
@@ -285,15 +281,17 @@ $$
 
 ## Distribuição Normal {.build}
 
+<img src="figuras/TabelaNormalPadrao.png" width=500 style="float: right">
+
 Exercitando com a tabela da Normal:
 
-> * $\Phi(0.2)=0.5793$ 
+> $\Phi(0.2)=0.5793$ 
 
-> * $\Phi(0.45)=0.6736$ 
+> $\Phi(0.45)=0.6736$ 
 
-> * $\Phi(1.28)= 0.8997$ 
+> $\Phi(1.28)= 0.8997$ 
 
-> * $\Phi(-0.45)= 1-\Phi(0.45) =0.3264$
+> $\begin{aligned} \Phi(-0.45) &= 1-\Phi(0.45) \\ & = 0.3264 \end{aligned}$
 
 
 ## Distribuição Normal
@@ -308,7 +306,11 @@ Exercitando com a tabela da Normal:
 
 4. $P(X<8 \mbox{ ou } X>11)$
 
+<br />
+
+<font size=5>
 *Fonte: Morettin \& Bussab*, Estatística Básica $5^a$ edição, pág 182.
+</font>
 
 
 ## Distribuição Normal {.build}
@@ -329,7 +331,8 @@ $$
 
 
 ## Distribuição Normal {.build}
-Então, $P(8<X<10) = P(-1 < Z < 0)$
+
+Então, $P(8 < X < 10) = P(-1 < Z < 0)$
 
 O valor $\varPhi(0)$ está disponível na tabela e é igual a $0.5$. 
 
@@ -349,17 +352,17 @@ Concluimos portanto que
 
 ## Distribuição Normal
 
-Esta é a tabela da normal, com os valores de $\varPhi(1)$ e $\varPhi(0)$ destacados:
+Veja a tabela da normal com os valores de $\varPhi(1)$ e $\varPhi(0)$ destacados:
 
 <center><img src="figuras/TabelaNormalPadrao2.png" width=600></center>
 
 
 ## Distribuição Normal
 
-Este é o gráfico da curva $N(10,4)$, com a região $[8,10]$ correspondente ao item 1. em destaque:
+Gráfico da curva $N(10,4)$ com a região $[8,10]$ correspondente ao item 1 em destaque:
 
 <center> 
-```{r, echo=FALSE, fig.height=4.5, fig.width=6}
+```{r, echo=FALSE, fig.height=4, fig.width=5.5}
 a <- 8
 b <- 10
 codx <- c(a, seq(a, b, 0.01), b)
@@ -376,45 +379,43 @@ curve(dnorm(x, mean=10, sd=2), add = TRUE, col="blue", lwd=3)
 
 ## Distribuição Normal {.build}
 
-$$
-\begin{aligned}
-P(9 \leq X \leq 12) &= P\left(\frac{9-10}{2} \leq \frac{X-10}{2} \leq \frac{12-10}{2}\right) \\
-&= P(-1/2 \leq Z \leq 1) = 0.5328
-\end{aligned}
-$$
+$\begin{aligned}
+(2) \; P(9 \leq X \leq 12) & = P\left(\frac{9-10}{2} \leq \frac{X-10}{2} \leq \frac{12-10}{2}\right) \\
+& = P(-1/2 \leq Z \leq 1) = 0.5328
+\end{aligned}$
 
-$$P(X>10) = P\left(\frac{X-10}{2} > \frac{10-10}{2}\right) = P(Z>0) = 0.5$$
+<br />
+$\displaystyle (3) \;  P(X>10) = P\left(\frac{X-10}{2} > \frac{10-10}{2}\right) = P(Z>0) = 0.5$
 
-$$
-\begin{aligned}
-P(X<8 \mbox{ ou } X>11) &= P(X<8) + P(X>11) \\
+<br /> 
+$\begin{aligned}
+(4) \; P(X < 8 \mbox{ ou } X > 11) & = P(X < 8) + P(X > 11) \\
 &= P\left(\frac{X-10}{2} < \frac{8-10}{2}\right) + P\left(\frac{X-10}{2} > \frac{11-10}{2}\right) \\
 &= P(Z<-1) + P(Z>1/2) \\
 &= 0.1586 + 0.3085 = 0.4671
-\end{aligned}
-$$
+\end{aligned}$
 
 
 ## Distribuição Normal {.build}
 **Exemplo**: Se $X \sim N(4,3^{2})$, calcule $P(X \leq 7)$ e $P(1 < X \leq 7)$. 
 
-$$\begin{aligned}
+$\begin{aligned}
 F_X(7)= P(X \leq 7) &= P\left(\frac{X-4}{3} \leq \frac{7-4}{3}\right) \\
 &= P(Z\leq 1)= \Phi(1)=0.8413
-\end{aligned}$$
+\end{aligned}$
 
-$$
-\begin{aligned}
+<br />
+$\begin{aligned}
 P(1 < X \leq 7) &= P\left(\frac{1-4}{3}<\frac{X-4}{3}\leq \frac{7-4}{3}\right) \\
 &=P(-1<Z\leq 1) \\
 &=\Phi(1)-\Phi(-1) \\
 &=\Phi(1)-[1-\Phi(1)] \\
 &=2\Phi(1)-1=2\times0.8413-1=0.6826
-\end{aligned}
-$$
+\end{aligned}$
 
 
 ## Distribuição Normal
+
 **Exemplo**: $X \sim N(4,3^{2})$ e a região correspondente a $P(1 < X \leq 7)$ em destaque no gráfico
 
 <center> 
@@ -439,6 +440,7 @@ text(2.5, 0.07, expression(sigma == 3), cex=1.3, col="red")
 
 
 ## Regra Empírica 
+
 Em uma distribuição normal $X \sim N(\mu, \sigma^{2})$, temos o seguinte:
 
 <center><img src="figuras/regraempirica.png" width=700></center>
@@ -446,18 +448,19 @@ Em uma distribuição normal $X \sim N(\mu, \sigma^{2})$, temos o seguinte:
 
 ## Regra Empírica
 
+<img src="figuras/EinsteinIQ.jpg" width=350 style="float: right; margin-left: 30px">
+
 **Exemplo:** Suponha que o $QI$ da população mundial segue uma distribuição normal com média $100$ e desvio padrão de $15$
 
 Encontre um intervalo que englobe os $QI$’s de $68.3\%$ da população?
 
 E se quisermos $95\%$? E $99.7\%$?
 
-<center><img src="figuras/EinsteinIQ.jpg" width=400></center>
 
 
-## Regra Empírica {.build .smaller}
+## Regra Empírica {.build}
 
-<center><img src="figuras/IQtest.gif" width=500></center>
+<img src="figuras/IQtest.gif" width=480 style="float: left; margin-right: 20px">
 
 Como $QI \sim N(100, 15)$, pela regra empírica:
 
@@ -499,8 +502,7 @@ Seja $X \sim Bin(n, p)$. Se $n$ é suficientemente grande, a distribuição de $
 
 > **Exemplo:** Se $X \sim Bin(100, 0.7)$, podemos usar a aproximação $X \sim N(70, 21)$
 
-<center>
-```{r, echo=FALSE, fig.height=3.5, fig.width=4}
+```{r, echo=FALSE, fig.height=3.2, fig.width=4.5, fig.align='center'}
 n <- 100
 p <- 0.7
 mu <- n*p
@@ -515,7 +517,6 @@ barplot(px, names.arg=a:b, space=0, col=mycol[1],
 xx <- seq(a, b+1, length.out = 1000) -.5
 lines(xx - a + 0.5, dnorm(xx, mean=mu, sd=sigma), lwd=3, col="red")
 ```
-</center>
 
 
 ## Aproximação Normal para uma Binomial {.build}
@@ -523,7 +524,7 @@ lines(xx - a + 0.5, dnorm(xx, mean=mu, sd=sigma), lwd=3, col="red")
 **Exemplo:** Seja $X$ o número de vezes que uma moeda honesta resulta em cara quando é lançada $40$ vezes. Então
 $$X \sim Bin(40, 0.5)$$
 
-Encontre $P(X=20)$ usando a fórmula exata e a aproximação normal
+Encontre $P(X=20)$ usando a fórmula exata e a aproximação normal.
 
 * Binomial
 
@@ -596,27 +597,27 @@ $$ Var \left(\sum_{i=1}^n X_i \right) = \sum_{i=1}^n Var(X_i)$$
 
 ## Propriedades da Normal {.build}
 
-> * Se adicionarmos ou multiplicarmos uma constante a uma v.a. com distribuição Normal, a v.a. resultante continua tendo distribuição normal.
+Se adicionarmos ou multiplicarmos uma constante a uma v.a. com distribuição Normal, a v.a. resultante continua tendo distribuição normal. Ou seja, 
 
-> * Ou seja, se $X\sim N(\mu,\sigma^2)$, então $aX + b \sim N(a\mu + b, a^2\sigma^2).$
+$$X \sim N(\mu,\sigma^2) \qquad \Longrightarrow \qquad aX + b \sim N(a\mu + b, a^2\sigma^2).$$
 
-> * Isso explica 
+Isso explica que:
 $$X \sim N(\mu,\sigma^2) \qquad \Longleftrightarrow  \qquad Z=\frac{X-\mu}{\sigma}\sim N(0,1).$$
 
-> * Se $X$ e $Y$ são v.a.'s independentes, tal que $X \sim N(\mu_x,\sigma_x^2)$ e $Y\sim N(\mu_y,\sigma_y^2),$ então
+<br />
+Se $X$ e $Y$ são v.a.'s independentes, tal que $X \sim N(\mu_x,\sigma_x^2)$ e $Y\sim N(\mu_y,\sigma_y^2),$ então
 $$X+Y\sim N(\mu_x+\mu_y,\sigma_x^2+\sigma_y^2)$$
 
 
 ## Leituras
 
-<center><img src="figuras/paranormal.jpg" width=250></center>
-
+<img src="figuras/paranormal.jpg" width=300 style="float: right">
 
 * [Ross](http://www.sciencedirect.com/science/article/pii/B9780123743886000065): seções 6.3 a 6.7.
 * [OpenIntro](https://www.openintro.org/stat/textbook.php): seções 3.1, 3.2, 3.4.2
 * Magalhães: capítulo 6.
 
-##
+<br /><br />
 
 Slides produzidos pelos professores:
 
