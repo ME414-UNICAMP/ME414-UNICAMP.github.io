@@ -12,6 +12,8 @@ logo: ../logo-imecc.png
 
 ## Introdução {.build}
 
+<img src="figuras/population-vs-sample.jpg" width=270 style="float: right; margin-left: 30px">
+
 > Um dos principais objetivos da Estatística é tirar conclusões a partir dos dados.
 
 > Dados em geral consistem de uma amostra de elementos de uma população de interesse.
@@ -21,20 +23,23 @@ logo: ../logo-imecc.png
 > Quão confiável será utilizar a informação obtida apenas de uma amostra para concluir algo sobre a população?
 
 
-## Inferência Estatística {.build}
+## Introdução {.build}
 
-<center><img src="figuras/inferencia.PNG" width=600></center>
+<img src="figuras/population-vs-sample.jpg" width=270 style="float: right; margin-left: 30px">
 
-**Variável Aleatória**: Característica numérica do resultado de um experimento.
+<br />
 
 **População**: todos os elementos ou resultados de um problema que está sendo estudado.
 
+<br />
 **Amostra:** qualquer subconjunto da população que contém os elementos que podem ser observados e é onde as quantidades de interesse podem ser medidas. 
 
 
 ## Inferência Estatística {.build}
 
-<center><img src="figuras/inferencia.PNG" width=600></center>
+<img src="figuras/inferencia.PNG" width=550 style="float: right; margin-left: 30px">
+
+**Variável Aleatória**: Característica numérica do resultado de um experimento.
 
 **Parâmetros**: Característica numérica (desconhecida) da distribuição dos elementos da população.
 
@@ -42,68 +47,82 @@ logo: ../logo-imecc.png
 
 **Estimativa**: Valor numérico que um estimador assume para uma dada amostra.
 
+**Erro amostral:** é a diferença entre um estimador e o parâmetro que se quer estimar.
 
-## Estatística {.build}
 
-> * Seja $X_{1},...,X_{n}$ uma amostra, $T=f(X_{1},...,X_{n})$ é uma estatística.
+## Inferência Estatística 
 
-> * $\bar{X}_{n}=\frac{1}{n}\sum_{i=1}^{n}X_{i}=\frac{1}{n}(X_{1}+...+X_{n})$: a média amostral é uma estatística. 
-
-> * $X_{(1)}=min\{X_{1},...,X_{n}\}$.
-
-> * $X_{(n)}=max\{X_{1},...,X_{n}\}$.
-
-> * $X_{(i)}$ é o i-ésimo valor da amostra ordenada. 
-
-> * Note que uma estatística é uma função que em uma determinada amostra assume um valor específico (estimativa).
+<center><img src="figuras/IntencaoVoto.jpeg" width=650></center>
 
 
 ## Estatística {.build}
 
-*  Para que serve uma estatística?  Para "estimar" os valores de uma distribuição, ou características de uma população. 
+<img src="figuras/inferencia.PNG" width=500 style="float: right; margin-left: 30px">
 
-*  **População:**
+> Seja $X_{1},...,X_{n}$ uma amostra e $$T = f(X_{1}, \ldots, X_{n})$$ é uma estatística.
 
-    *  $\mbox{média}_{P}$.
-    *  $\mbox{variância}_{P}$.
+**Exemplos:**
 
-*  **Amostra:** 
+> * $\bar{X}_{n}=\frac{1}{n}\sum_{i=1}^{n}X_{i}=\frac{1}{n}(X_{1}+...+X_{n})$
 
-    *  $\mbox{média}_{A} = \sum_{i=1}^{n}\frac{X_{i}}{n}$ "estima" a $\mbox{média}_{P}$. 
-    *  $\mbox{variância}_{A} = \sum_{i=1}^{n}\frac{(X_{i}-\mbox{média}_{A})^{2}}{n}$ "estima" a $\mbox{variância}_{P}$
+> * $X_{(1)}=min\{X_{1},...,X_{n}\}$ ou $X_{(n)}=max\{X_{1},...,X_{n}\}$
+
+> * $X_{(i)}$ é o i-ésimo valor da amostra ordenada 
+
+> Note que uma estatística é uma função que em uma determinada amostra assume um valor específico (estimativa).
+
+
+## Estatística {.build}
+
+<img src="figuras/Parametros.jpg" width=550 style="float: right; margin-left: 30px">
+
+Para que serve uma estatística? 
+
+Para "estimar" características de uma população. 
+
+> **População:**
+
+* Média $\mu$
+* Variância $\sigma^2$
+
+> **Amostra:**
+
+* Média Amostral $\bar X = \frac{1}{n} \sum_{i=1}^{n} X_i$
+* Variância Amostral $S^2 = \frac{1}{n} \sum_{i=1}^n(X_i - \bar X)^2$ 
 
 
 ## Exemplo {.build}
 
 Temos interesse em conhecer a média e variância das alturas dos brasileiros adultos. Sabemos que a distribuição das alturas pode ser representada por um modelo normal. 
 
-> Solução 1: Medir a altura de todos os brasileiros adultos.
+<img src="figuras/inferencia2.PNG" width=550>
 
-> Solução 2: Selecionar de forma aleatória algumas pessoas (amostra), analisá-las e inferir propriedades para toda a população.
+> **Solução 1:** Medir a altura de todos os brasileiros adultos (censo).
 
-<center><img src="figuras/inferencia2.PNG" width=550></center>
+> **Solução 2:** Selecionar de forma aleatória algumas pessoas (amostra), analisá-las e inferir propriedades para toda a população.
+
 
 
 ## Exemplo {.build}
 
 Seja $\theta$ a proporção de alunos na Unicamp que concorda com a presença da PM no campus.
 
-> *  Inviável perguntar para todos os estudantes: coleta-se uma amostra. 
+> * Inviável perguntar para todos os estudantes: coleta-se uma amostra. 
 
-> *  Planejamento amostral:  obter uma amostra aleatória simples de tamanho $n=100$ alunos, sem reposição. 
+> * Planejamento amostral:  obter uma amostra aleatória simples de tamanho $n=100$ alunos, sem reposição. 
 
-> *  cada $X_{i}$, $i=1,...,100$, vai assumir o valor 1 se o aluno $i$ concorda com presença da PM, e 0 se não. 
+> * Cada $X_{i}$, $i=1,...,100$, vai assumir o valor 1 se o aluno $i$ concorda com presença da PM, e 0 se não. 
 
-> *  estatística: $T=\frac{X_{1}+...+X_{100}}{100}$. 
+> * Estatística: $T = \frac{X_{1} + \ldots + X_{100}}{100}$ (proporção amostral) 
 
-> *  uma vez que a coleta foi implementada, $T$ assume um valor, por exemplo, 0.63, que será usado para estimar $\theta$, ou seja, $\hat\theta=0.63$.
+> * Uma vez que a coleta foi implementada, $T$ assume um valor, por exemplo, 0.63, que será usado para estimar $\theta$, ou seja, $\widehat \theta = 0.63$.
 
 
 ## Parâmetro {.build}
 
 > *  Cada quantidade de interesse (como $\theta$ no exemplo anterior) é chamada de parâmetro da população. 
 
-> *  Para apresentar uma estimativa de um parâmetro ($\hat\theta$), devemos escolher uma estatística ($T$). 
+> *  Para apresentar uma estimativa de um parâmetro ($\widehat \theta$), devemos escolher uma estatística ($T$). 
 
 > *  Note que da maneira que o plano amostral foi executado (amostra aleatória simples), a estatística $T$ é uma variável aleatória, visto que cada vez que executarmos o plano amostral poderemos obter resultados diversos.
 
@@ -474,8 +493,7 @@ $$ X_{i} = \left\{
 * [OpenIntro](https://www.openintro.org/stat/textbook.php): seção 4.1.
 * Magalhães: capítulo 7.
 
-
-##
+<br /><br />
 
 Slides produzidos pelos professores:
 
