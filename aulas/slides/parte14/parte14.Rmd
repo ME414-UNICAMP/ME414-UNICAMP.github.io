@@ -63,7 +63,7 @@ logo: ../logo-imecc.png
 
 **Exemplos:**
 
-> * $\bar{X}_{n}=\frac{1}{n}\sum_{i=1}^{n}X_{i}=\frac{1}{n}(X_{1}+...+X_{n})$
+> * $\bar X_{n}=\frac{1}{n}\sum_{i=1}^{n}X_{i}=\frac{1}{n}(X_{1}+...+X_{n})$
 
 > * $X_{(1)}=min\{X_{1},...,X_{n}\}$ ou $X_{(n)}=max\{X_{1},...,X_{n}\}$
 
@@ -135,21 +135,17 @@ Seja $\theta$ a proporção de alunos na Unicamp que concorda com a presença da
 
 Imagine um fenômeno de interesse que possa ser representado por uma v.a. $X$ que assume os valores $1$ ou $2$ com igual probabilidade.
 
-> $$
-\begin{aligned}
-\mu=E(X) &= 1 \times P(X=1) +2 \times P(X=2) \\ 
-&= 1\times \frac{1}{2} + 2\times \frac{1}{2}=\frac{3}{2}
-\end{aligned}
-$$
+$\begin{aligned}
+\mu = \mathbb E(X) &= 1 \times P(X=1) + 2 \times P(X=2) \\ 
+&= 1\times \frac{1}{2} + 2\times \frac{1}{2} = \frac{3}{2}
+\end{aligned}$
 
-> 
-\[
-\begin{aligned}
-\sigma^2& =Var(X)= E[(X-\mu)^2]\\
-&= (1-1.5)^2 \times P(X=1) + (2-1.5)^2 \times P(X=2)\\
-& =\frac{1}{4}
-\end{aligned}
-\]
+<br /> 
+$\begin{aligned}
+\sigma^2 &= Var(X) = \mathbb E[(X - \mu)^2] \\
+&= (1-1.5)^2 \times P(X=1) + (2 - 1.5)^2 \times P(X=2) \\
+&= \frac{1}{4}
+\end{aligned}$
 
 
 ## Exemplo {.build}
@@ -176,9 +172,9 @@ Vamos coletar uma amostra aleatória simples com reposição ($AAS_c$) de tamanh
 
 ## Exemplo {.build }
 
-> Imagine que o aluno $A$ coleta uma $AAS_c$ com $n=2$ a partir da população, obtém os dados e calcula $\bar{x}$.
+> Imagine que o aluno $A$ coleta uma $AAS_c$ com $n=2$ a partir da população, obtém os dados e calcula $\bar X$.
 
-> O aluno $B$ coleta uma $AAS_c$ com $n=2$ a partir da população, obtém os dados e calcula $\bar{x}$.
+> O aluno $B$ coleta uma $AAS_c$ com $n=2$ a partir da população, obtém os dados e calcula $\bar X$.
 
 > As duas médias amostrais serão necessariamente iguais?
 
@@ -189,71 +185,65 @@ Vamos coletar uma amostra aleatória simples com reposição ($AAS_c$) de tamanh
 
 > Todas as combinações possíveis de valores para o primeiro e para o segundo elemento amostrados segundo o plano $AAS_c$ com $n=2$ são:
 
-Possibilidades   |$(X_1=1,X_2=1)$|$(X_1=1,X_2=2)$|$(X_1=2,X_2=1)$|$(X_1=2,X_2=2)$
------------------|-----------------|-----------------|-----------------|-----------------
-$\bar{x}$        | 1               | 1.5             | 1.5             |   2
-$P(X_1=i,X_2=j)$ | 0.25            | 0.25            | 0.25            | 0.25
+Possibilidades        | $(X_1 = 1, X_2 = 1)$ | $(X_1 = 1, X_2 = 2)$ | $(X_1 = 2, X_2 = 1)$ | $(X_1=2,X_2=2)$
+----------------------|----------------------|----------------------|----------------------|-----------------
+$\bar X$              | 1                    | 1.5                  | 1.5                  |   2
+$P(X_1 = i, X_2 = j)$ | 0.25                 | 0.25                 | 0.25                 | 0.25
 
-> $$E(\bar{X})=1\times \frac{1}{4} + 1.5 \times \frac{1}{2} + 2\times \frac{1}{4}=\frac{3}{2}$$
+<br />
 
+> $\displaystyle \mathbb E(\bar X) = 1 \times \frac{1}{4} + 1.5 \times \frac{1}{2} + 2 \times \frac{1}{4} = \frac{3}{2}$
 
-> \[
-\begin{aligned}
-Var(\bar{X})&= E\left[(\bar{X}-E(\bar{X}))^2\right]\\
-&=(1-1.5)^2\times \frac{1}{4} + (1.5-1.5)^2\frac{1}{2} + (2-1.5)^2\frac{1}{4}=\frac{1}{8}
-\end{aligned}
-\]
+> $\begin{aligned}
+Var(\bar X) &= \mathbb E[(\bar X - \mathbb E(\bar X))^2 ] \\
+&= (1 - 1.5)^2 \times \frac{1}{4} + (1.5 - 1.5)^2 \frac{1}{2} + (2 - 1.5)^2 \frac{1}{4} = \frac{1}{8}
+\end{aligned}$
 
-> Repare que: $E(\bar{X})=\mu=E(X)$ e $Var(\bar{X})=\frac{\sigma^2}{n}=\frac{Var(X)}{n}$.
+> Repare que: $\mathbb E(\bar X) = \mu = \mathbb E(X)$ e $Var(\bar X) = \frac{\sigma^2}{n} = \frac{Var(X)}{n}$.
 
 
 ## Exemplo
 
-Distribuição de probabilidade de $X$ (esquerda) e de $\bar{X}$ (direita):
+Distribuição de probabilidade de $X$ (esquerda) e de $\bar X$ (direita):
 
 <center><img src="figuras/X_Xbar.png" width=500></center>
 
 
-
 ## Distribuição Amostral {.build}
 
-**Resultado:** 
+**Resultado:** Seja $X$ uma v.a. com média $\mu$ e variância $\sigma^{2}$ e $X_{1}, \ldots, X_{n}$ uma amostra aleatória simples de $X$. A média amostral
+$$\bar X_n = \frac{X_1 + \ldots + X_n}{n}$$ 
+tem as seguintes propriedades:
 
-> * Seja $X$ uma v.a. com média $\mu$ e variância $\sigma^{2}$. 
+> $$\mathbb E (\bar X_n) = \mu \qquad \mbox{e} \qquad Var(\bar X_n) = \frac{\sigma^2}{n}.$$ 
 
-> * Seja $X_{1},...,X_{n}$ uma amostra aleatória simples de $X$. 
+Ou seja, embora $\mu$ seja desconhecido, sabemos que o valor esperado da média amostral é $\mu$. 
 
-> *  $\bar{X}_{n}=\frac{X_{1}+...+X_{n}}{n}$. 
-
-> *  $E\left(\bar{X}_{n}\right)=\mu$. 
-
-> *  $Var\left(\bar{X}_{n}\right)=\frac{\sigma^{2}}{n}$. 
-
-> Ou seja, embora $\mu$ seja desconhecido, sabemos que o valor esperado da média amostral é $\mu$. Além disso, conforme o tamanho amostral aumenta, a imprecisão da média amostral para estimar $\mu$ fica cada vez menor, pois $Var(\bar{X})=\sigma^2/n$.
+Além disso, conforme o tamanho amostral aumenta, a imprecisão da média amostral para estimar $\mu$ fica cada vez menor, pois $Var(\bar X) = \sigma^2/n$.
 
 
 ## Exemplo
 
-> *  Exemplo: $X_{1},X_{2},X_{3}$ ensaios de Bernoulli(p) independentes. 
+> **Exemplo:** $X_1, X_2, X_3$ ensaios de Bernoulli(p) independentes. 
 
-> *  $\mu=E\left(X_{i}\right)=0.3 \hspace{0.2cm} \Rightarrow \hspace{0.2cm} E\left(\bar{X}_{3}\right)=0.3$. 
+> * $\mu = \mathbb E(X_i) = 0.3 \qquad \Rightarrow \qquad \mathbb E (\bar X_3) = 0.3.$ 
 
-> * $\sigma^2=Var\left(X_{i}\right)=p(1-p)=0.3(0.7)=0.21 \hspace{0.2cm} \Rightarrow \hspace{0.2cm} Var\left(\bar{X}_{3}\right)=\frac{0.21}{3}=0.07$
+> * $\sigma^2 = Var(X_i) = p(1 - p) = 0.3(0.7) = 0.21 \;\; \Rightarrow \;\; Var(\bar X_3) = \frac{0.21}{3} = 0.07$
 
 
 # Teorema do Limite Central
 
 ## Teorema do Limite Central {.build}
 
-Usando o resultado enunciado anteriormente, temos a esperança e a variância da média amostral $\bar{X}$: $E(\bar{X})=\mu$ e $Var(\bar{X})=\frac{\sigma^2}{n}$.
+Usando o resultado enunciado anteriormente, temos a esperança e a variância da média amostral $\bar X$: $E(\bar X)=\mu$ e $Var(\bar X)=\frac{\sigma^2}{n}$.
 
-> No entanto, para conhecermos a distribuição de probabilidade de $\bar{X}$, como foi feito no exemplo anterior, é preciso conhecer todos os valores possíveis de $X$ e suas respectivas probabilidades. 
+> No entanto, para conhecermos a distribuição de probabilidade de $\bar X$, como foi feito no exemplo anterior, é preciso conhecer todos os valores possíveis de $X$ e suas respectivas probabilidades. 
 
 > Mas, se conhecermos tudo isso, não precisamos fazer amostragem nem inferência: saberemos tudo o que desejarmos daquela população!
 
-> O exemplo anterior foi um caso hipotético apenas para demonstrar como a média amostral $\bar{X}$ se comporta quando realizamos a amostragem.
+> O exemplo anterior foi um caso hipotético apenas para demonstrar como a média amostral $\bar X$ se comporta quando realizamos a amostragem.
 
-> Na prática, não teremos informações suficientes para de fato descrevermos a distribuição exata de $\bar{X}$.
+> Na prática, não teremos informações suficientes para de fato descrevermos a distribuição exata de $\bar X$.
 
 
 
@@ -261,13 +251,13 @@ Usando o resultado enunciado anteriormente, temos a esperança e a variância da
 
 **Resultado** 
 
-Para uma amostra aleatória simples $X_{1},...,X_{n}$ coletada de uma população com média $\mu$ e variância $\sigma^{2}$, a distribuição amostral de $\bar{X}_{n}$ aproxima-se de uma **distribuição Normal** de média $\mu$ e variância $\frac{\sigma^{2}}{n}$, quando $n$ for suficientemente grande.
+Para uma amostra aleatória simples $X_{1},...,X_{n}$ coletada de uma população com média $\mu$ e variância $\sigma^{2}$, a distribuição amostral de $\bar X_{n}$ aproxima-se de uma **distribuição Normal** de média $\mu$ e variância $\frac{\sigma^{2}}{n}$, quando $n$ for suficientemente grande.
 
 >
 
 Definimos também: 
 
-$$Z=\frac{\bar{X}_{n}-\mu}{\sigma / \sqrt{n}} \sim N(0,1)$$ 
+$$Z=\frac{\bar X_{n}-\mu}{\sigma / \sqrt{n}} \sim N(0,1)$$ 
 
 
 ## Teorema do Limite Central
@@ -282,17 +272,17 @@ $$f_{X_{i}}(x)=2e^{-2x}, \qquad \mbox{para } x \geq 0$$
 
 Então $E\left(X_{i}\right)=\frac{1}{2}$ e $Var\left(X_{i}\right)=\frac{1}{4}$.
 
-Suponha que $X_{i}$ modela o tempo de vida de um transistor em horas.  Os tempos de vida de 100 transistores são coletados.  Desejamos estudar a variável aleatória $\bar{X}_{100}$ (média amostral de uma amostra de tamanho 100). Sabemos:
-$$E\left(\bar{X}_{100}\right)=\frac{1}{2} \qquad \mbox{e} \qquad Var\left(\bar{X}_{100}\right)=\frac{1/4}{100}=\frac{1}{400}.$$
+Suponha que $X_{i}$ modela o tempo de vida de um transistor em horas.  Os tempos de vida de 100 transistores são coletados.  Desejamos estudar a variável aleatória $\bar X_{100}$ (média amostral de uma amostra de tamanho 100). Sabemos:
+$$E\left(\bar X_{100}\right)=\frac{1}{2} \qquad \mbox{e} \qquad Var\left(\bar X_{100}\right)=\frac{1/4}{100}=\frac{1}{400}.$$
 
-Pelo TLC, temos que: $\displaystyle \bar{X}_{n}\sim N\left(\frac{1}{2},\frac{1}{400}\right)$
+Pelo TLC, temos que: $\displaystyle \bar X_{n}\sim N\left(\frac{1}{2},\frac{1}{400}\right)$
 
 
 ## Exemplo
 
 \[
 \begin{aligned}
-F_{\bar X_{100}}(x) = P\left(\bar{X}_{100} \leq x\right) & = P\left(\frac{\bar{X}_{100}-(1/2)}{(1/2)/\sqrt{100}} \leq \frac{x-(1/2)}{(1/2)/\sqrt{100}}\right)  \\
+F_{\bar X_{100}}(x) = P\left(\bar X_{100} \leq x\right) & = P\left(\frac{\bar X_{100}-(1/2)}{(1/2)/\sqrt{100}} \leq \frac{x-(1/2)}{(1/2)/\sqrt{100}}\right)  \\
 & = P\left(Z \leq 10(2x-1) \right) 
 \end{aligned}
 \]
@@ -301,8 +291,8 @@ e
 
 \[
 \begin{aligned}
-P\left(\bar{X}_{100} \geq x\right) & = 1 - P\left(\bar{X}_{100} < x\right)  \\
- & = 1 - P\left(\frac{\bar{X}_{100}-(1/2)}{(1/2)/\sqrt{100}} \leq \frac{x-(1/2)}{(1/2)/\sqrt{100}}\right)  \\
+P\left(\bar X_{100} \geq x\right) & = 1 - P\left(\bar X_{100} < x\right)  \\
+ & = 1 - P\left(\frac{\bar X_{100}-(1/2)}{(1/2)/\sqrt{100}} \leq \frac{x-(1/2)}{(1/2)/\sqrt{100}}\right)  \\
 & = 1 - P\left(Z \leq 10(2x-1) \right) 
 \end{aligned}
 \]
@@ -335,7 +325,7 @@ $p(x)=P(X=x)$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | 
 
 ## Exemplo {.build .smaller}
 
-> Se temos uma amostra aleatória simples de tamanho $n$: $X_1,X_2,\ldots, X_n$, pelo TLC sabemos que a distribuição amostral de $\bar{X}_n$ é aproximadamente Normal$\left( 3.5, \frac{17.5}{n} \right)$.
+> Se temos uma amostra aleatória simples de tamanho $n$: $X_1,X_2,\ldots, X_n$, pelo TLC sabemos que a distribuição amostral de $\bar X_n$ é aproximadamente Normal$\left( 3.5, \frac{17.5}{n} \right)$.
 
 
 >  O primeiro histograma a seguir mostra o resultado de 10000 repetições do seguinte experimento: observar o resultado do lançamento de 1 dado. Repare que é muito próximo de uma distribuição uniforme discreta (chance 1/6 para cada resultado).
@@ -398,7 +388,7 @@ hist(nn, xlim=c(1, 6), main="Média de 100 dados", col="blue", xlab=" ", ylab=""
 
 ## Teorema do Limite Central (TLC)
 
-Você pode verificar o comportamento de $\bar{X}$ para vários tipos de distribuição de $X$:
+Você pode verificar o comportamento de $\bar X$ para vários tipos de distribuição de $X$:
 
 https://nishantsbi.shinyapps.io/CLT_Shiny
 
