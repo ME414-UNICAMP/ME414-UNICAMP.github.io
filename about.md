@@ -51,6 +51,6 @@ permalink: /about/
 * Quarta 13-14 - sala 322 IMECC - Nathalia
 * Quinta 12-13 - sala 222 IMECC  - Lisbeth
 * Quinta 18-19 - sala 222 IMECC  - Francis
-* Sexta 12-13 - sala 124 IMECC - Heidi
+* Sexta 12-13 - sala 224 IMECC - Heidi
 * Sexta 13-14 - sala 323 IMECC - Nathalia
 
