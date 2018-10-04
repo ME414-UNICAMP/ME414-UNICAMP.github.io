@@ -135,6 +135,8 @@ Seja $\theta$ a proporção de alunos na Unicamp que concorda com a presença da
 
 Imagine um fenômeno de interesse que possa ser representado por uma v.a. $X$ que assume os valores $1$ ou $2$ com igual probabilidade.
 
+Nesse caso,
+
 $\begin{aligned}
 \mu = \mathbb E(X) &= 1 \times P(X=1) + 2 \times P(X=2) \\ 
 &= 1\times \frac{1}{2} + 2\times \frac{1}{2} = \frac{3}{2}
@@ -192,14 +194,14 @@ $P(X_1 = i, X_2 = j)$ | 0.25                 | 0.25                 | 0.25      
 
 <br />
 
-> $\displaystyle \mathbb E(\bar X) = 1 \times \frac{1}{4} + 1.5 \times \frac{1}{2} + 2 \times \frac{1}{4} = \frac{3}{2}$
+> $\displaystyle \mathbb E(\bar X) = 1 \times \frac{1}{4} + 1.5 \times \frac{1}{2} + 2 \times \frac{1}{4} = \frac{3}{2} = 1.5$
 
 > $\begin{aligned}
 Var(\bar X) &= \mathbb E[(\bar X - \mathbb E(\bar X))^2 ] \\
 &= (1 - 1.5)^2 \times \frac{1}{4} + (1.5 - 1.5)^2 \frac{1}{2} + (2 - 1.5)^2 \frac{1}{4} = \frac{1}{8}
 \end{aligned}$
 
-> Repare que: $\mathbb E(\bar X) = \mu = \mathbb E(X)$ e $Var(\bar X) = \frac{\sigma^2}{n} = \frac{Var(X)}{n}$.
+> Note que: $\displaystyle \mathbb E(\bar X) = \mu = \mathbb E(X)$ e $\displaystyle Var(\bar X) = \frac{\sigma^2}{n} = \frac{Var(X)}{n}$.
 
 
 ## Exemplo
@@ -235,7 +237,7 @@ Além disso, conforme o tamanho amostral aumenta, a imprecisão da média amostr
 
 ## Teorema do Limite Central {.build}
 
-Usando o resultado enunciado anteriormente, temos a esperança e a variância da média amostral $\bar X$: $E(\bar X)=\mu$ e $Var(\bar X)=\frac{\sigma^2}{n}$.
+Usando o resultado enunciado anteriormente, temos a esperança e a variância da média amostral $\bar X$: $\mathbb E(\bar X) = \mu$ e $Var(\bar X) = \frac{\sigma^2}{n}$.
 
 > No entanto, para conhecermos a distribuição de probabilidade de $\bar X$, como foi feito no exemplo anterior, é preciso conhecer todos os valores possíveis de $X$ e suas respectivas probabilidades. 
 
@@ -251,13 +253,13 @@ Usando o resultado enunciado anteriormente, temos a esperança e a variância da
 
 **Resultado** 
 
-Para uma amostra aleatória simples $X_{1},...,X_{n}$ coletada de uma população com média $\mu$ e variância $\sigma^{2}$, a distribuição amostral de $\bar X_{n}$ aproxima-se de uma **distribuição Normal** de média $\mu$ e variância $\frac{\sigma^{2}}{n}$, quando $n$ for suficientemente grande.
+Para uma amostra aleatória simples $X_1, \ldots ,X_n$ coletada de uma população com média $\mu$ e variância $\sigma^{2}$, a distribuição amostral de $\bar X_{n}$ aproxima-se de uma **distribuição Normal** de média $\mu$ e variância $\frac{\sigma^{2}}{n}$, quando $n$ for suficientemente grande.
 
 >
 
 Definimos também: 
 
-$$Z=\frac{\bar X_{n}-\mu}{\sigma / \sqrt{n}} \sim N(0,1)$$ 
+$$Z = \frac{\bar X_{n} - \mu}{\sigma / \sqrt{n}} \sim N(0,1)$$ 
 
 
 ## Teorema do Limite Central
@@ -267,38 +269,31 @@ $$Z=\frac{\bar X_{n}-\mu}{\sigma / \sqrt{n}} \sim N(0,1)$$
 
 ## Exemplo {.build}
 
-Seja $X_{1},...,X_{n}$ uma amostra aleatória de tamanho $n$ tal que $X\sim Exp(2)$: 
-$$f_{X_{i}}(x)=2e^{-2x}, \qquad \mbox{para } x \geq 0$$
+Seja $X_{1}, \ldots ,X_{n}$ uma amostra aleatória de tamanho $n$ tal que $X \sim Exp(2)$: 
+$$f_{X_i}(x) = 2e^{-2x}, \qquad \mbox{para } x \geq 0$$
 
-Então $E\left(X_{i}\right)=\frac{1}{2}$ e $Var\left(X_{i}\right)=\frac{1}{4}$.
+Então $\mathbb E(X_i) = \frac{1}{2}$ e $Var(X_i) = \frac{1}{4}$.
 
-Suponha que $X_{i}$ modela o tempo de vida de um transistor em horas.  Os tempos de vida de 100 transistores são coletados.  Desejamos estudar a variável aleatória $\bar X_{100}$ (média amostral de uma amostra de tamanho 100). Sabemos:
-$$E\left(\bar X_{100}\right)=\frac{1}{2} \qquad \mbox{e} \qquad Var\left(\bar X_{100}\right)=\frac{1/4}{100}=\frac{1}{400}.$$
+Suponha que $X_{i}$ modela o tempo de vida de um transistor em horas. Os tempos de vida de 100 transistores são coletados. Desejamos estudar a variável aleatória $\bar X_{100}$ (média amostral de uma amostra de tamanho 100). Sabemos:
+$$\mathbb E(\bar X_{100}) = \frac{1}{2} \qquad \mbox{e} \qquad Var(\bar X_{100}) = \frac{1/4}{100} = \frac{1}{400}.$$
 
-Pelo TLC, temos que: $\displaystyle \bar X_{n}\sim N\left(\frac{1}{2},\frac{1}{400}\right)$
+Pelo TLC, temos que: $\displaystyle \bar X_{n}\sim N \left(\frac{1}{2},\frac{1}{400}\right)$
 
 
 ## Exemplo
 
-\[
-\begin{aligned}
+$\begin{aligned}
 F_{\bar X_{100}}(x) = P\left(\bar X_{100} \leq x\right) & = P\left(\frac{\bar X_{100}-(1/2)}{(1/2)/\sqrt{100}} \leq \frac{x-(1/2)}{(1/2)/\sqrt{100}}\right)  \\
 & = P\left(Z \leq 10(2x-1) \right) 
-\end{aligned}
-\]
+\end{aligned}$
 
 e
 
-\[
-\begin{aligned}
+$\begin{aligned}
 P\left(\bar X_{100} \geq x\right) & = 1 - P\left(\bar X_{100} < x\right)  \\
  & = 1 - P\left(\frac{\bar X_{100}-(1/2)}{(1/2)/\sqrt{100}} \leq \frac{x-(1/2)}{(1/2)/\sqrt{100}}\right)  \\
 & = 1 - P\left(Z \leq 10(2x-1) \right) 
-\end{aligned}
-\]
-
-
-
+\end{aligned}$
 
 
 
@@ -306,21 +301,20 @@ P\left(\bar X_{100} \geq x\right) & = 1 - P\left(\bar X_{100} < x\right)  \\
 
 $X=$ resultado obtido no lançamento de um dado honesto.
 
-
 $x$ | 1 | 2 | 3 | 4 | 5 | 6
 ----|---|---|---|---|---|----
 $p(x)=P(X=x)$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$
 
 
-> $E(X)=\frac{1}{6}\times(1+2+3+4+5+6)=\frac{21}{6}=3.5$
+> $\mathbb E(X) = \frac{1}{6}\times(1+2+3+4+5+6) = \frac{21}{6} = 3.5$
 
-> $Var(X)=\frac{1}{6}[(1+4+9+16+25+36)-\frac{1}{6}\times(21)^{2}]=\frac{35}{2}=17.5$
+> $Var(X) = \frac{1}{6}[(1+4+9+16+25+36)-\frac{1}{6}\times(21)^{2}] = \frac{35}{2} = 17.5$
 
-> *  $X_i$: resultado do $i$-ésimo lançamento de um dado honesto.
+> * $X_i$: resultado do $i$-ésimo lançamento de um dado honesto.
 
-> *  $X_i$ tem distribuição uniforme discreta $\forall i$.
+> * $X_i$ tem distribuição uniforme discreta $\forall i$.
 
-> *  $\mu=E(X_i)=3.5 \qquad$ e $\qquad \sigma^2=Var(X_i)=17.5$, $\forall i$.
+> * $\mu = \mathbb E(X_i) = 3.5 \qquad$ e $\qquad \sigma^2 = Var(X_i) = 17.5$, $\forall i$.
 
 
 ## Exemplo {.build .smaller}
@@ -328,14 +322,14 @@ $p(x)=P(X=x)$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | 
 > Se temos uma amostra aleatória simples de tamanho $n$: $X_1,X_2,\ldots, X_n$, pelo TLC sabemos que a distribuição amostral de $\bar X_n$ é aproximadamente Normal$\left( 3.5, \frac{17.5}{n} \right)$.
 
 
->  O primeiro histograma a seguir mostra o resultado de 10000 repetições do seguinte experimento: observar o resultado do lançamento de 1 dado. Repare que é muito próximo de uma distribuição uniforme discreta (chance 1/6 para cada resultado).
+> O primeiro histograma a seguir mostra o resultado de 10000 repetições do seguinte experimento: observar o resultado do lançamento de 1 dado. Repare que é muito próximo de uma distribuição uniforme discreta (chance 1/6 para cada resultado).
 
->  O segundo histograma mostra o resultado de 10000 repetições do seguinte experimento: observar a média do lançamento de 2 dados  (equivalente a observar a média de 2 lançamentos de um dado). 
+> O segundo histograma mostra o resultado de 10000 repetições do seguinte experimento: observar a média do lançamento de 2 dados  (equivalente a observar a média de 2 lançamentos de um dado). 
 
 
->  O último histograma mostra o resultado de 10000 repetições do seguinte experimento: observar a média do lançamento de 100 dados (equivalente a observar a média de 100 lançamentos de um dado). 
+> O último histograma mostra o resultado de 10000 repetições do seguinte experimento: observar a média do lançamento de 100 dados (equivalente a observar a média de 100 lançamentos de um dado). 
 
->   Repare que conforme o número de dados (tamanho amostral) aumenta, a distribuição da média amostral se aproxima da distribuição normal com média 3.5 e variância cada vez menor (17.5/n).
+> Repare que conforme o número de dados (tamanho amostral) aumenta, a distribuição da média amostral se aproxima da distribuição normal com média 3.5 e variância cada vez menor (17.5/n).
 
 
 ## Exemplo
@@ -388,7 +382,7 @@ hist(nn, xlim=c(1, 6), main="Média de 100 dados", col="blue", xlab=" ", ylab=""
 
 ## Teorema do Limite Central (TLC)
 
-Você pode verificar o comportamento de $\bar X$ para vários tipos de distribuição de $X$:
+Você pode verificar o comportamento de $\bar X$ para várias distribuições de $X$:
 
 https://nishantsbi.shinyapps.io/CLT_Shiny
 
@@ -407,27 +401,24 @@ $$ X_{i} = \left\{
 \end{array}
 \right.$$ 
 
-> *  $\Rightarrow$ $X_{i}\sim Bernoulli(p)$; $i=1,2,...,n$. 
+> * $\Rightarrow$ $X_{i}\sim Bernoulli(p)$; $i=1,2,...,n$. 
 
-> *  Se as observações são independentes: $S_{n}=X_{1}+...+X_{n}\sim  Bin(n,p)$. 
+> * Se as observações são independentes: $S_{n}=X_{1}+...+X_{n}\sim  Bin(n,p)$. 
 
-> *  Após a coleta de uma amostra aleatória simples de $n$ indivíduos, podemos considerar: 
+> * Após a coleta de uma amostra aleatória simples de $n$ indivíduos, podemos considerar: 
 
-> *  $\hat{p}=\frac{S_{n}}{n}$  (média amostral como estimador da média populacional).
+> * $\widehat{p} = \frac{S_{n}}{n}$ (média amostral como estimador da média populacional).
 
 
 ## Aproximação da Binomial pela Normal {.build}
 
 Utilizando a distribuição exata (n pequeno):
-$$P\left(\hat{p}=\frac{k}{n}\right)=P\left(\frac{S_{n}}{n}=\frac{k}{n}\right)=P\left(S_{n}=k\right)=\left(\begin{array}{l}
-n \\
-k \\
-\end{array}\right)p^{k}\left(1-p\right)^{n-k},$$  
+$$P\left(\widehat p = \frac{k}{n}\right) = P\left(\frac{S_{n}}{n} = \frac{k}{n}\right) = P\left(S_{n} = k\right) = {n \choose k} p^{k} \left(1-p\right)^{n-k},$$  
 para $k=0,1,...,n$. 
 
 
 > Utilizando a aproximação para a Normal (n grande): 
-$$\hat{p}\sim N\left(p,\frac{p(1-p)}{n}\right)$$
+$$\widehat p \sim N\left(p, \frac{p(1-p)}{n} \right)$$
 
 
 ## Exemplo {.build}
@@ -440,41 +431,41 @@ $$ X_{i} = \left\{
 \end{array}
 \right.$$
 
-> *  $\hat{p}=\frac{\sum_{i=1}^{500}X_{i}}{500}$. 
+> *  $\widehat p = \frac{1}{500} \sum_{i=1}^{500} X_i$. 
 
-> *  $\hat{p}\sim N\left(0.2,\frac{0.2\times0.8}{500}\right)=N\left(0.2,0.00032\right)$ 
+> *  $\widehat p \sim N\left(0.2, \frac{0.2\times0.8}{500}\right) = N \left(0.2, 0.00032 \right)$ 
 
-> *  $P\left(\hat{p}\leq 0.25\right)= P\left(Z\leq 2.795\right)=\Phi\left(2.795\right)=0.9974$
+> *  $P\left( \widehat p \leq 0.25 \right) = P \left(Z\leq 2.795 \right) = \Phi\left(2.795 \right) = 0.9974$
 
 
 ## Aproximação da Binomial pela Normal {.build}
 
-> *  $\hat{p}=\frac{S_{n}}{n}$  $\Rightarrow$ $S_{n}=n\hat{p}$. 
+> * $\widehat p = \frac{S_n}{n} \qquad \Rightarrow \qquad S_n = n\widehat p$. 
 
-> *  Quando $n$ é grande o suficiente $\hat{p}\sim N\left(p,\frac{p(1-p)}{n}\right)$. 
+> * Quando $n$ é grande o suficiente $\widehat p \sim N \left(p, \frac{p(1-p)}{n}\right)$. 
 
-> *  Qual a distribuição de $S_{n}$ quando n é grande o suficiente?
+> * Qual a distribuição de $S_n$ quando n é grande o suficiente?
 
-> *  $S_{n}=X_{1}+...+X_{n}$ 
+> * $S_n = X_1 + \ldots + X_n$ 
 
-> *  $\hat{p}=\frac{S_{n}}{n} \sim N\left(p,\frac{p(1-p)}{n}\right)$ 
+> * $\widehat p = \frac{S_n}{n} \sim N\left(p, \frac{p(1-p)}{n} \right)$ 
 
-> *  $S_{n}=n\hat{p}\sim N\left(np,np(1-p)\right)$ 
+> * $S_n = n \widehat p \sim N \left(np, np(1-p) \right)$ 
 
-> *  Portanto: $Bin(n,p)\approx N\left(np,np(1-p)\right)$ quando $n$ é grande
+> * Portanto: $Bin(n, p) \approx N \left(np, np(1-p) \right)$ quando $n$ é grande
 
 
 ## Exemplo {.build}
 
- $X\sim Bin(100,0.4)$ 
+ $X \sim Bin(100, 0.4)$ 
 
-> *  $E(X)=100\times0.4=40$ 
+> * $\mathbb E(X) = 100 \times0.4 = 40$ 
 
-> *  $Var(X)=100\times0.4\times0.6=24$ 
+> * $Var(X) = 100 \times 0.4 \times0.6 = 24$ 
 
-> *  $X \approx N(40,24)$ 
+> * $X \approx N(40,24)$ 
 
-> *  $P\left(X\leq 50\right)= P\left(Z\leq \frac{50-40}{\sqrt{24}}\right)\approx \Phi\left(\frac{10}{\sqrt{24}}\right)=\Phi\left(2.04\right)\approx0.9793$
+> * $P\left( X \leq 50 \right) = P\left(Z \leq \frac{50-40}{\sqrt{24}}\right) \approx \Phi \left( \frac{10}{\sqrt{24}} \right) = \Phi \left(2.04 \right) \approx 0.9793$
 
 
 ## Leituras
