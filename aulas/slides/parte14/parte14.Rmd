@@ -393,7 +393,7 @@ https://gallery.shinyapps.io/CLT_mean/
 
 ## Aproximação da Binomial pela Normal {.build}
 
-> *  Consideremos uma população em que a proporção de indivíduos portadores de uma certa característica seja $p$. 
+> Consideremos uma população em que a proporção de indivíduos portadores de uma certa característica seja $p$. 
 $$ X_{i} = \left\{
 \begin{array}{ll}
 1, & \mbox{se o indivíduo i possui a característica} \\
@@ -401,13 +401,13 @@ $$ X_{i} = \left\{
 \end{array}
 \right.$$ 
 
-> * $\Rightarrow$ $X_{i}\sim Bernoulli(p)$; $i=1,2,...,n$. 
+> Veja que $X_{i}\sim Bernoulli(p)$; $i = 1, 2, \ldots, n$. 
 
-> * Se as observações são independentes: $S_{n}=X_{1}+...+X_{n}\sim  Bin(n,p)$. 
+> Se as observações são independentes: $S_{n} = X_{1} + \ldots + X_{n} \sim  Bin(n,p)$. 
 
-> * Após a coleta de uma amostra aleatória simples de $n$ indivíduos, podemos considerar: 
+> Após a coleta de uma amostra aleatória simples de $n$ indivíduos, podemos considerar que um estimador de $p$ é dado por: 
 
-> * $\widehat{p} = \frac{S_{n}}{n}$ (média amostral como estimador da média populacional).
+> $$\widehat{p} = \frac{S_{n}}{n} \quad \mbox{(média amostral)}.$$
 
 
 ## Aproximação da Binomial pela Normal {.build}
@@ -423,7 +423,7 @@ $$\widehat p \sim N\left(p, \frac{p(1-p)}{n} \right)$$
 
 ## Exemplo {.build}
 
-Se $p$ for a proporção de fumantes no estado de SP, $p=0.2$ e tivermos coletado uma amostra aleatória simples de 500 indivíduos:
+Se $p$ for a proporção de fumantes no estado de SP ($p=0.2$) e tivermos coletado uma amostra aleatória simples de 500 indivíduos:
 $$ X_{i} = \left\{
 \begin{array}{ll}
 1, & \mbox{se o indivíduo i é fumante} \\
@@ -431,41 +431,46 @@ $$ X_{i} = \left\{
 \end{array}
 \right.$$
 
-> *  $\widehat p = \frac{1}{500} \sum_{i=1}^{500} X_i$. 
+Qual a probabilidade de que termos observado não mais que 25% de fumantes na amostra?
 
-> *  $\widehat p \sim N\left(0.2, \frac{0.2\times0.8}{500}\right) = N \left(0.2, 0.00032 \right)$ 
+> O estimador de $p$ é: $\widehat p = \frac{1}{500} \sum_{i=1}^{500} X_i$. 
 
-> *  $P\left( \widehat p \leq 0.25 \right) = P \left(Z\leq 2.795 \right) = \Phi\left(2.795 \right) = 0.9974$
+> Pela aproximação Normal, $\widehat p \sim N\left(0.2, \frac{0.2\times0.8}{500}\right) = N \left(0.2, 0.00032 \right)$ 
+
+> $$P\left( \widehat p \leq 0.25 \right) = P \left(Z\leq 2.795 \right) = \Phi\left(2.795 \right) = 0.9974$$
 
 
 ## Aproximação da Binomial pela Normal {.build}
 
-> * $\widehat p = \frac{S_n}{n} \qquad \Rightarrow \qquad S_n = n\widehat p$. 
+> Se $\quad \widehat p = \frac{S_n}{n} \quad \Longrightarrow \quad S_n = n\widehat p$. 
 
-> * Quando $n$ é grande o suficiente $\widehat p \sim N \left(p, \frac{p(1-p)}{n}\right)$. 
+> Quando $n$ é grande o suficiente: $\quad \widehat p \sim N \left(p, \frac{p(1-p)}{n}\right)$ 
 
-> * Qual a distribuição de $S_n$ quando n é grande o suficiente?
+> Nesse caso, qual a distribuição de $S_n$?
 
-> * $S_n = X_1 + \ldots + X_n$ 
+> Vimos que $S_n = X_1 + \ldots + X_n \sim Bin(n, p)$
 
-> * $\widehat p = \frac{S_n}{n} \sim N\left(p, \frac{p(1-p)}{n} \right)$ 
+> Pelas propriedades da distribuição Normal:
+$$S_n = n \widehat p \sim N \left(np, np(1-p) \right)$$
 
-> * $S_n = n \widehat p \sim N \left(np, np(1-p) \right)$ 
-
-> * Portanto: $Bin(n, p) \approx N \left(np, np(1-p) \right)$ quando $n$ é grande
+> Portanto, quando $n$ é grande, $Bin(n, p) \approx N \left(np, np(1-p) \right)$ 
 
 
 ## Exemplo {.build}
 
- $X \sim Bin(100, 0.4)$ 
+Seja $X \sim Bin(100, 0.4)$. 
 
-> * $\mathbb E(X) = 100 \times0.4 = 40$ 
+Qual a probabilidade de $X$ ser menor ou igual a $50$?
 
-> * $Var(X) = 100 \times 0.4 \times0.6 = 24$ 
+Sabemos que:
 
-> * $X \approx N(40,24)$ 
+* $\mathbb E(X) = 100 \times0.4 = 40$ 
 
-> * $P\left( X \leq 50 \right) = P\left(Z \leq \frac{50-40}{\sqrt{24}}\right) \approx \Phi \left( \frac{10}{\sqrt{24}} \right) = \Phi \left(2.04 \right) \approx 0.9793$
+* $Var(X) = 100 \times 0.4 \times0.6 = 24$ 
+
+Como $n$ é grande, podemos usar a aproximação $X \approx N(40,24)$. Portanto, 
+
+$$P\left( X \leq 50 \right) = P\left(Z \leq \frac{50-40}{\sqrt{24}}\right) \approx \Phi \left( \frac{10}{\sqrt{24}} \right) = \Phi \left(2.04 \right) \approx 0.9793$$
 
 
 ## Leituras
