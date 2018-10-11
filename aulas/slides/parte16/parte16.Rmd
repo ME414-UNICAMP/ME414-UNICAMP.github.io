@@ -38,14 +38,14 @@ A média amostral, $\bar{X}_n$, tem em geral valores diferentes para diferentes 
 
 ## Teorema Central do Limite
 
-<center><img src="figuras/TCL.png" width=750></center>
+<center><img src="figuras/TCL.png" width=700></center>
 
 
 ## Teorema Central do Limite {.build}
 
-* Na prática: iremos coletar somente uma amostra de tamanho $n$, não faremos inúmeras vezes esse processo. Teremos apenas 1 valor: $\bar{x}$.
+Na prática: iremos coletar somente **uma amostra** de tamanho $n$, não faremos inúmeras vezes esse processo. Teremos apenas um valor: $\bar{x}$.
 
-> * Então como saberemos as propriedades deste estimador? Quão útil ele é?
+> Então como saberemos as propriedades deste estimador? Quão útil ele é?
 
 > **Resultado (TCL):**
 
@@ -58,7 +58,7 @@ $$ \bar{X}_{n} \sim N\left(\mu, \frac{\sigma^{2}}{n} \right)$$
 
 
 <center>
-```{r, echo=FALSE, fig.height=5.5, fig.width=6}
+```{r, echo=FALSE, fig.height=5, fig.width=6}
 library(RColorBrewer)
 mycol <- brewer.pal(8,"Dark2")
 
@@ -91,9 +91,10 @@ legend("topright", legend=c("Distribuição População","Distribuição Média 
 
 * Imagine que seja possível coletar uma amostra de tamanho $n$ da população várias vezes.  Para cada vez, você calcula $\bar{x}$ é constrói um IC de 95\% para $\mu$.  Imagine também que você conhece $\mu$  e conte quantos dos intervalos contêm $\mu$.  A proporção de intervalos que contem $\mu$ será próxima a 0.95.
 
+
 ## Interpretação do Intervalo de Confiança para $\mu$ {.build}
 
-<center><img src="figuras/ICmean.png" width=800></center>
+<center><img src="figuras/ICmean.png" width=750></center>
 
 
 ## Exemplo
@@ -102,15 +103,16 @@ Uma variável aleatória $X$ tem distribução normal, com média 100 e desvio p
 
 * Qual a $P(90 < X < 110)$? 
 
-* Se $\bar{X}$ for a média de uma amostra de 16 elementos retirados dessa popula\c cão, calcule $P(90 < \bar{X} < 110)$. 
+* Se $\bar{X}$ for a média de uma amostra de 16 elementos retirados dessa população, calcule $P(90 < \bar{X} < 110)$. 
 
 * Represente, num único gráfico, as distribuições de $X$ e $\bar{X}$. 
 
 * Que tamanho deveria ter a amostra para que $P(90 < \bar{X} < 110) = 0.95$? 
 
-
-
+<br />
+<font size=5>
 *Fonte: Morettin \& Bussab*, Estatística Básica $5^a$ edição, pág 274.
+</font>
 
 
 ## Exemplo {.build}
@@ -183,9 +185,7 @@ $$ \frac{110-100}{10/\sqrt{n}} = 1.96   \quad \Leftrightarrow  \quad \sqrt{n}\fr
 > Portanto, $n=4$ é suficiente para obtermos a confiança desejada.
 
 
-
-
-##Intervalo de Confiança para $\mu$ {.build}
+## Intervalo de Confiança para $\mu$ {.build}
 
 > * Coletamos uma amostra aleatória $X_1,X_2,\ldots,X_n$ de uma população com média $\mu$ e a variância $\sigma^2$ e usamos $\bar{X}_n$ para estimar $\mu$.
 
@@ -199,7 +199,7 @@ $$P(-z_{\alpha/2}<Z<z_{\alpha/2})=1-\alpha$$
 
 $$P(|Z|\leq z_{\alpha/2})=P(-z_{\alpha/2}\leq Z \leq z_{\alpha/2})=1-\alpha$$
 <center>
-```{r, echo=FALSE, fig.height=5, fig.width=7, message=FALSE, results='hide'}
+```{r, echo=FALSE, fig.height=4.5, fig.width=6.5, message=FALSE, results='hide'}
 library(openintro, verbose=FALSE)
 data(COL)
 par(mar=c(5, 4, 1, 1) + 0.1)
@@ -277,13 +277,15 @@ text(-2.5, yMax / 2, labels= expression('área '* alpha/2),
 
 Procure na tabela o valor de $z$ tal que a probabilidade acumulada até o valor de $z$, isto é $P(Z\leq z)=\Phi(z)$, seja $1-\alpha/2$.
 
+
 ## Exemplo {.build}
 
 Encontrar $z_{0.05}$ tal que $0.90 = P\left(-z_{0.05}\leq Z\leq z_{0.05}\right)$.
 
-<center><img src="figuras/NormalPadrao90.png" width=450></center>
+<img src="figuras/NormalPadrao90.png" width=500 style="float: left; margin-right:80px">
 
-<center>Pela tabela, $z_{0.05} = 1.64$</center>
+<br /><br /><br /><br /><br /><br />
+Pela tabela, $z_{0.05} = 1.64.$
 
 
 ## Intervalo de Confiança para $\mu$: $\sigma$ conhecido {.build}
@@ -298,24 +300,27 @@ Um Intervalo de $100(1-\alpha)\%$ de confiança para $\mu$ é dado por:
 $$IC(\mu, 1-\alpha) = \left[ \bar{x} - z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\,;\,\bar{x} +z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right]$$
 
 ## Exemplo: Café {.build}
+
 Uma máquina enche pacotes de café com variância igual a 100$g^2$. Ela estava regulada para encher os pacotes com uma média de 500g. Mas o fabricante desconfia que a máquina está desregulada e quer então estimar a nova média $\mu$.
 
 Uma amostra de 25 pacotes apresentou uma média de 485g. Encontre um $IC$ de $95\%$ para a verdadeira média $\mu$.
 
 $\bar x = 485, n=25, \sigma=10, \alpha=0.05, z_{0.025}=1.96$
 
+<font size=5>
 $$
 \begin{aligned}
 IC(\mu, 0.95) &= \left[ \bar{x} - z_{0.025} \frac{\sigma}{\sqrt{n}};\,\bar{x} +z_{0.025}\frac{\sigma}{\sqrt{n}}\right] \\
 &= \left[485 - 1.96 \frac{10}{5}; 485 + 1.96 \frac{10}{5} \right] \\
-&=[481.08; 488.92]
+&= [485 - 3.92; 485 + 3.92] \\
+&= [481.08; 488.92]
 \end{aligned}
 $$
-
+</font>
 
 ## Tamanho da Amostra {.build}
 
-**Exemplo:** Por experiência, sabe-se que o peso de um salmão de certo criatório segue uma distribuição normal com uma média que varia a cada estação, mas com desvio padrão sempre igual a 0.3 libras.  
+**Exemplo:** Por experiência, sabe-se que o peso de um salmão de certo criatório segue uma distribuição normal com uma média que varia a cada estação, mas com desvio-padrão sempre igual a 0.3 libras.  
 
 > Se quisermos estimar o peso médio dos peixes de maneira que nossa estimativa seja diferente da verdadeira média em no máximo 0.1 libras para mais ou para menos com probabilidade igual a 0.9, qual o tamanho amostral necessário?
 
@@ -323,6 +328,7 @@ $$
 $$IC(\mu, 1-\alpha) = \left[ \bar{x} -z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\,;\,  \bar{x} +z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right]$$
 
 Margem de erro: $z_{\alpha/2}\frac{\sigma}{\sqrt{n}}$
+
 
 ## Tamanho da Amostra {.build}
 
@@ -401,6 +407,7 @@ text(-2.5, yMax / 2, labels= expression('área '* alpha/2),
 
 Os valores da distribuição $t$-student também encontram-se tabelados.
 
+
 ## Distribuição $t$-student e Normal Padrão
 
 Para $n$ grande a distribuição $t$-student se aproxima da normal padrão $N(0,1)$.
@@ -434,14 +441,15 @@ $$
 \begin{aligned}
 IC(\mu, 0.95) &= \left[ \bar{x} - t_{24, 0.025} \frac{s}{\sqrt{n}};\,\bar{x} +t_{24, 0.025}\frac{s}{\sqrt{n}}\right] \\
 &= \left [485 - 2.06 \frac{7.1}{5}; 485 + 2.06 \frac{7.1}{5} \right] \\
+&= [485 - 2.93; 485 + 2.93] \\ 
 &=[482.07; 487.93]
 \end{aligned}
 $$
 
 
-## Exemplo: Quantas horas de TV você assiste por dia?
+## Exemplo: Quantas horas de TV por dia?
 
-O histograma a seguir apresenta a distribuição do número de horas de TV por dia entre os participantes de um estudo em que se coletou uma amostra aleatória.
+O histograma a seguir apresenta a distribuição do número de horas de TV assistidas por dia entre os participantes de um estudo em que se coletou uma amostra aleatória.
 
 <center>
 ```{r, echo=FALSE, fig.height=3.5, fig.width=6}
@@ -451,15 +459,17 @@ alpha=0.05
 horas <- rexp(905,rate=1)+.5
 par(mar=c(5, 4, 1, 1) + 0.1)
 hist(horas, breaks=50, col="lightblue", freq=FALSE, main=" ", xlab="Horas assistindo TV por dia", ylab="probabilidade", las=1)
-xbar <- round(mean(horas),2)
-s <- round(sd(horas),2)
-erropadrao <- round(s/sqrt(n),2)
-zalpha <- round(qnorm(1-alpha/2),2)
-LI <- round(xbar-zalpha*erropadrao,2)
-LS <- round(xbar+zalpha*erropadrao,2)
 
+xbar <- round(mean(horas), 2)
+s <- round(sd(horas), 2)
+erropadrao <- round(s/sqrt(n), 2)
+zalpha <- round(qnorm(1-alpha/2), 2)
+margem <- round(zalpha*erropadrao, 2)
+LI <- xbar - margem
+LS <- xbar + margem
 ```
 </center>
+
 
 ## Exemplo: horas de TV por dia {.build}
 
@@ -473,15 +483,20 @@ Encontre um IC de $95\%$ para a média de horas que uma pessoa assiste por dia.
 
 > * Erro padrão da média amostral: $s/\sqrt{n}=`r erropadrao`$ 
 
+
 ## Exemplo: horas de TV por dia {.build}
 
 > Utilizamos a distribuição Normal e não a distribuição t, pois $n$ é grande.
 
 > * Pelo TCL: $\bar{X}_n \sim N(\mu,\sigma^2/n)$
 
-> *  O IC `r (1-alpha)*100`\% para $\mu$ fica:
+> * O IC de `r (1-alpha)*100`\% para $\mu$ é dado por:
 
-> $$IC(\mu, 0.95) = \left[\bar{x}-1.96 \frac{s}{\sqrt{n}};\,\bar{x}+1.96\frac{s}{\sqrt{n}} \right]= [`r LI`\,;\,`r LS`]$$ 
+> $$\begin{aligned}
+IC(\mu, 0.95) &= \left[\bar{x}-1.96 \frac{s}{\sqrt{n}};\,\bar{x}+1.96\frac{s}{\sqrt{n}} \right] \\
+&= [`r xbar` - `r margem`; `r xbar` + `r margem`] \\
+&= [`r LI`\,;\,`r LS`]
+\end{aligned}$$ 
 
 > Com grau de confiança igual a `r (1-alpha)*100`\%, estimamos que a média populacional de horas de TV está entre `r LI` e `r LS` horas. 
 
@@ -504,35 +519,35 @@ zalpha <- round(qnorm(1-alpha/2),2)
 LI <- round(xbar-zalpha*erropadrao,2)
 LS <- round(xbar+zalpha*erropadrao,2)
 talpha <- round(qt(1-alpha/2,df=n-1),3)
-LI <- round(xbar-talpha*erropadrao,2)
-LS <- round(xbar+talpha*erropadrao,2)
+margem <- round(talpha*erropadrao, 2)
+LI <- xbar - margem
+LS <- xbar + margem
 ```
 
 
 Obtenha um intervalo de confiança de `r (1-alpha)*100`\% para a quantidade média do componente  no leite materno.
 
 
-##
-##Exemplo - Solução {.build}
-$\bar{x}=`r xbar`$
+## Exemplo - Leite Materno {.build}
 
-$s=`r s`$
+Média e desvio-padrão da amostra ($n=`r n`$): $\bar{x}=`r xbar`$ e $s=`r s`$. 
 
-$n=`r n`$
+Pela distribuição t, para $\alpha= `r alpha`$: $t_{`r n-1`,`r alpha/2`}= `r talpha`$
 
-$t_{`r n-1`,`r alpha/2`}= `r talpha`$
-
-
+Portanto, o IC de `r (1-alpha)*100`\% é dado por:
 $$IC(\mu, 0.95) = \left[ \bar{x} -t_{n-1,\alpha/2}\frac{s}{\sqrt{n}}\,;\,  \bar{x} +t_{n-1,\alpha/2}\frac{s}{\sqrt{n}}\right]$$
 
-$$=\left[`r LI`,;\, `r LS`\right]$$
+$$\begin{aligned}
+&= [`r xbar` - `r margem`; `r xbar` + `r margem`] \\
+&= [`r LI`\,;\,`r LS`]
+\end{aligned}$$ 
 
 Com grau de confiança igual a `r (1-alpha)*100`\%, estimamos que a média da quantidade do componente entre  as mulheres está entre  `r LI` e `r LS`.
 
 
 ## Exemplo - Exame {.build}
 
-O desvio padrão da pontuação em um certo exame é 11.3. Uma amostra aleatória de 81 estudantes que fizeram o exame foi coletada e a nota de cada estudantes foi anotada. A pontuação média entre os estudantes amostrados foi 74.6. 
+O desvio-padrão da pontuação em um certo exame é 11.3. Uma amostra aleatória de 81 estudantes que fizeram o exame foi coletada e a nota de cada estudantes foi anotada. A pontuação média entre os estudantes amostrados foi 74.6. 
 
 Encontre um intervalo de 90\% de confiança para a pontuação média entre todos os estudantes que fizeram o exame.
 
@@ -541,7 +556,7 @@ Encontre um intervalo de 90\% de confiança para a pontuação média entre todo
 > $$
 \begin{aligned}
 IC(\mu, 0.90) &= \left[ 74.6 - 1.645 \frac{11.3}{9};\,  74.6 + 1.645\frac{11.3}{9}\right] \\
-&= [72.53;\, 76.67]
+&=  [74.6 - 2.07;\, 74.6 + 2.07] = [72.53;\, 76.67]
 \end{aligned}
 $$
 
@@ -589,7 +604,7 @@ $$n=\left(\frac{z_{\alpha/2}}{m}\right)^2 \sigma^2$$
 ## Leituras
 
 <center>
-<img src="figuras/ga990312.gif" width=650>
+<img src="figuras/ga990312.gif" width=630 style="float: right; margin-left:10px">
 </center>
 
 
@@ -597,7 +612,7 @@ $$n=\left(\frac{z_{\alpha/2}}{m}\right)^2 \sigma^2$$
 * [OpenIntro](https://www.openintro.org/stat/textbook.php): seção 4.2.
 * Magalhães: capítulo 7.
 
-##
+<br /><br />
 
 Slides produzidos pelos professores:
 
