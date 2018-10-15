@@ -237,7 +237,11 @@ $$P(X=3)+P(X=4)=`r as.character(p3)` + `r as.character(p4)` = `r as.character(pv
 
 
  
- 
+## Leituras:
+
+* David Salsburg - Uma senhora toma chá: Como a estatística revolucionou a ciência no século XX
+
+* [Dama apreciadora de chá](https://pt.wikipedia.org/wiki/Dama_apreciadora_de_chá)
 
 
 ##
