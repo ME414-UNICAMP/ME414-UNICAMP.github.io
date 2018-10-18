@@ -8,7 +8,6 @@ logo: ../logo-imecc.png
 ---
 
 
-
 # Teste de Hipóteses
 
 ## Relembrando: Teste de Hipóteses Passo-a-Passo {.build}
@@ -22,6 +21,7 @@ logo: ../logo-imecc.png
 > * **Passo 4**: Valor-de-p
 
 > * **Passo 5**: Conclusões
+
 
 ## Teste de Hipótese para uma proporção {.build}
 
@@ -45,22 +45,24 @@ $$Z=\frac{\hat{p}-p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}} \overset{H_0}{\sim} N(0,1)$$
 
 **valor-de-p** 
 
-* $H_a: p \neq p_0$  (bilateral): valor-de-p=$P(|Z| ≥|z_{obs}|)$
+* $H_a: p \neq p_0$  (bilateral): valor-de-p=$P(|Z| ≥|z_{obs}|)$ <br />
+* $H_a: p < p_0$ (unilateral à esquerda): valor-de-p=$P(Z \leq z_{obs})$ <br />
+* $H_a: p > p_0$ (unilateral à direita): valor-de-p=$P(Z \geq z_{obs})$
 
-> * $H_a: p < p_0$ (unilateral à esquerda): valor-de-p=$P(Z \leq z_{obs})$
-
-> * $H_a: p > p_0$ (unilateral à direita): valor-de-p=$P(Z \geq z_{obs})$
+<br />
 
 **Conclusão**: Para um nível de significância $\alpha$
 
-> * Se valor-de-p $\leq \alpha$: rejeitamos $H_0$
+* Se valor-de-p $\leq \alpha$: rejeitamos $H_0$ <br />
+* Se valor-de-p > $\alpha$: não rejeitamos $H_0$
 
-> * Se valor-de-p > $\alpha$: não rejeitamos $H_0$
 
 ## Valor-de-p Teste Bilateral
+
 $H_a: p \neq p_0$  (bilateral) $\quad \Rightarrow \quad$ valor-de-p=$P(|Z| ≥|z_{obs}|)$
 
 <center><img src="figuras/pvalor_bilateral.png" width=900 height=350></center>
+
 
 ## Valor-de-p Teste Unilateral
 
@@ -68,12 +70,12 @@ $H_a: p > p_0$ (unilateral à direita) $\quad \Rightarrow \quad$ valor-de-p=$P(Z
 
 <center><img src="figuras/pvalor_unilateral.png" width=900 height=350></center>
 
-## Coca vs Coca Zero - você consegue distinguir?
-
-<center><img src="figuras/poster.jpg" width=300></center>
 
 ## Experimento da Coca vs Coca Zero {.build}
-```{r,echo=FALSE}
+
+<img src="figuras/CokevsCokeZero.jpg" width=200 style="float: right; margin-left:50px">
+
+```{r, echo=FALSE}
 n <- 20
 alpha <- 0.05
 p0 <- 0.5
@@ -96,13 +98,13 @@ Em sala de aula, vários alunos disseram que conseguem distinguir entre Coca-Col
 
 Fizemos então o teste para comprovar se a afirmação é verdadeira.
 
-Um dos alunos experimentou, em ordem aleatória, 20 amostras (ao acaso era Coca-cola normal ou zero) e anotamos a quantidade de acertos.
+Um dos alunos experimentou, em ordem aleatória, 20 amostras (ao acaso era Coca normal ou zero) e anotamos a quantidade de acertos.
 
 > Cada tentativa, $X_i$, é uma Bernoulli$(p)$, em que $p$ é a probabilidade de acerto.
 
 Veja que $T=\sum_{i=1}^{20}X_i \sim Bin(20, p)$, onde $T$ é o número de acertos.
 
-Do total de 20 testes, o aluno acertou `r acertos`! Temos então uma proporção amostral de acertos $\hat p = `r acertos`/`r n`=`r phat`$. Isso mostra que o aluno realmente sabe a diferença?
+Dos 20 testes, o aluno acertou `r acertos`! Temos então uma proporção amostral de acertos $\hat p = `r acertos`/`r n`=`r phat`$. Isso mostra que o aluno realmente sabe a diferença?
 
 
 
@@ -213,11 +215,13 @@ binomshade(n, p0, acertos, n)
 
 Quando realizamos um teste de hipóteses, podemos cometer 2 tipos de erros:
 
-> 1). Erro Tipo I: Rejeitar a hipótese $H_0$, quando tal hipótese é verdadeira
+> 1). **Erro Tipo I:** Rejeitar a hipótese $H_0$, quando tal hipótese é verdadeira
 
-> 2). Erro Tipo II: Não rejeitar a hipótese $H_0$, quando tal hipótese é falsa
+> 2). **Erro Tipo II:** Não rejeitar a hipótese $H_0$, quando tal hipótese é falsa
 
 <center><img src="figuras/TiposErro.png" width=500></center>
+
+<br />
 
 **Erro Tipo I:** erro mais grave
 
@@ -225,12 +229,12 @@ Quando realizamos um teste de hipóteses, podemos cometer 2 tipos de erros:
 ## Tipos de Erro 
 $H_0: \mbox{você não está grávida(o)} \quad \mbox{vs} \quad H_a: \mbox{você está grávida(o)}$
 
-<center><img src="figuras/errosTipos.jpg" width=600></center>
+<center><img src="figuras/errosTipos.jpg" width=600 style="float: left; margin-right:50px"></center>
 
 
 ## Tipos de Erro {.build}
 
-Podemos calcular a probabilidade dos dois tipos de erro, que chamamos de $\alpha$ e $\beta$:
+Podemos calcular as probabilidades dos dois tipos de erro, chamadas de $\alpha$ e $\beta$:
 
 $\alpha = P(\mbox{Erro Tipo I}) = P(\mbox{Rejeitar } H_0| H_0 \mbox{ verdadeira})$
 
@@ -255,6 +259,7 @@ Esse valor é chamado de **valor crítico** e vamos denotá-lo por $t_c$.
 
 
 ## Tipos de Erro {.build}
+
 No experimento da Coca-Cola:
 $H_{0}: p=0.5 \quad  \mbox{vs} \quad  H_a: p>0.5$ 
 
@@ -304,7 +309,7 @@ Então, optamos por controlar $\alpha=$P(Erro Tipo I), que é considerado o erro
 
 # Teste de hipóteses para média ($\sigma$ conhecido)
 
-## Exemplo {.build}
+## Exemplo: Café {.build}
 
 Vamos voltar no problema da máquina que enche pacotes de café. Digamos que o peso nominal do pacote de café seja de 500g. Assume-se que o desvio-padrão é conhecido ($\sigma = 10$).
 
@@ -319,7 +324,7 @@ Vamos voltar no problema da máquina que enche pacotes de café. Digamos que o p
 			$$H_0: \mu = 500 \quad \mbox{vs} \quad H_a: \mu \neq 500$$
 
 
-## Exemplo {.build}
+## Exemplo: Café {.build}
 
 **Suposições:** Seja $X_i$ o peso do $i$-ésimo pacote de café. Sabemos que $\mathbb E(X_i)=\mu$ e $Var(X_i)=\sigma^2$. Coletou-se uma amostra de tamanho $n=25$. Pelo TCL: $$\bar{X}\sim N(\mu,\sigma^2/n)$$ 
 
@@ -340,6 +345,7 @@ O teste é bilateral, portanto o valor-de-p é calculado como:
 
 **Valor-de-p**: $P(|Z| \geq 7.5) = 2P(Z \geq 7.5) \approx 0$
 
+<br />
 
 **Conclusão:** Como o valor-de-p é praticamente zero, rejeitamos $H_0$, ou seja, rejeitamos a hipótese de que a média é 500g.
 
@@ -415,8 +421,7 @@ text(c(-6, 0, 0), c(0.07, 0.09, 0.05),
 </center>
 
 
-
-## Região Crítica: Teste Bilateral {.build}
+## Região Crítica: teste bilateral {.build}
 
 Quando o teste for bilateral: $H_0: \mu = 500 \quad \mbox{vs} \quad H_a: \mu \neq 500$
 
@@ -456,11 +461,11 @@ text(-2.3, yMax / 2, labels= expression('área '* 0.025),
 ```
 </center>
 
-**Decisão:** Rejeitamos $H_0$ se $z_{obs} < -1.96$ ou $z_{obs} > 1.96$.
-
+**Decisão:** Rejeitamos $H_0$ se $z_{obs} < -1.96$ ou $z_{obs} > 1.96$. <br />
 No nosso exemplo, $z_{obs}=-7.5$. Portanto, rejeitamos $H_0$.
 
-## Região Crítica: Teste Unilateral à esquerda {.build}
+
+## Região Crítica: teste unilateral à esquerda {.build}
 Quando o teste for unilateral à esquerda: $H_0: \mu = \mu_0 \quad \mbox{vs} \quad H_a: \mu < \mu_0$
 
 A região critíca, para $\alpha=0.05$, é a área em azul na figura:
@@ -493,7 +498,7 @@ text(-2.5, yMax / 2, labels= expression('área '* 0.05),
 **Decisão:** Rejeitamos $H_0$ se $z_{obs} < -1.645$.
 
 
-## Região Crítica: Teste Unilateral à direita {.build}
+## Região Crítica: teste unilateral à direita {.build}
 Quando o teste for unilateral à direita: $H_0: \mu = \mu_0 \quad \mbox{vs} \quad H_a: \mu > \mu_0$
 
 A região critíca, para $\alpha=0.05$, é a área em azul na figura:
@@ -525,8 +530,8 @@ text(2.5, yMax / 2, labels= expression('área '* 0.05),
 
 **Decisão:** Rejeitamos $H_0$ se $z_{obs} > 1.645$.
 
-# Teste de hipóteses para média ($\sigma$ desconhecido)
 
+# Teste de hipóteses para média ($\sigma$ desconhecido)
 
 ## Teste de hipóteses para média ($\sigma$ desconhecido) {.build}
 No caso de testar $$H_0: \mu = \mu_0 \quad \mbox{vs} \quad H_a: \mu \neq \mu_0$$
@@ -555,7 +560,7 @@ $$t_{obs} = \frac{\bar{X}-\mu_0}{s/\sqrt{n}} = \frac{485-500}{7.1/5} = -10.56$$
 **valor crítico:** para nível de significância $\alpha=0.05$ e teste bilateral, $t_{crit}$ é tal que $P(t_{24}>t_{crit})=P(t_{24}<-t_{crit})=0.025$. De maneira que $t_{crit}=`r round(qt(.975,24),2)`$. Portanto, se $|t_{obs}|>t_{crit}$, rejeita-se $H_0$.
 
 
-## Exemplo: Dieta com poucos carboidratos {.build}
+## Exemplo: Dieta LowCarb {.build}
 
 > * 41 pacientes obesos, selecionados aleatoriamente, foram submetidos a uma dieta com baixa quantidade de carboidratos.
 
@@ -565,25 +570,33 @@ $$t_{obs} = \frac{\bar{X}-\mu_0}{s/\sqrt{n}} = \frac{485-500}{7.1/5} = -10.56$$
 
 > * O que podemos concluir deste estudo? 
 
+<br />
+
 > Detalhes do estudo podem ser encontrados no artigo: [Effect of 6-month adherence to a very low carbohydrate diet program](http://www.amjmed.com/article/S0002-9343(02)01129-4/abstract).
 
 
-## Teste de hipóteses para média {.build}
+## Exemplo: Dieta LowCarb {.build}
 
 **Suposições**: $X_i$ é a diferença entre peso inicial e final do $i$-ésimo obeso.  Sabemos que $\mathbb E(X_i)=\mu$ e $Var(X_i)=\sigma^2$. Coletou-se uma amostra de tamanho $n=41$. Pelo TCL: $$\bar{X}\sim N(\mu,\sigma^2/n)$$ 
+
+<br />
 
 **Hipóteses**: $H_0: \mu= 0 \quad \mbox{vs} \quad H_a:\mu <  0$
 
 Ou seja, estamos testando se não há diferença no peso após a dieta versus a hipótese que há redução no peso após a dieta. 
 
-**Estatística do teste**: Como $n=41$, podemos usar a aproximação normal $$z_{obs}=\frac{\bar{X}-\mu_0}{s/\sqrt{n}}=\frac{-9.7-0}{3.4/\sqrt{41}}=-18.3$$
 
-## Teste de hipóteses para média {.build}
+## Exemplo: Dieta LowCarb {.build}
+
+**Estatística do teste**: Como $n=41$, podemos usar a aproximação normal $$z_{obs}=\frac{\bar{X}-\mu_0}{s/\sqrt{n}}=\frac{-9.7-0}{3.4/\sqrt{41}}=-18.3$$
 
 **Valor-de-p**: Como o teste é unilateral à esquerda
 $$\mbox{valor-de-p}=P(Z<-18.3) \approx 0$$
 
+<br />
+
 **Conclusão:** Como o valor-de-p é bem pequeno (<0.05) rejeitamos $H_0$, ou seja, rejeitamos a hipótese de que a dieta não produz diferença no peso.
+
 
 ## Exemplo: Acidentes de trabalho {.build}
 
@@ -607,6 +620,7 @@ $$z_{obs} = \frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}} = \frac{50-60}{20/3} = -1.5 $$
 **valor-de-p:** $P(Z \leq -1.5) = 0.067$
 
 **Conclusão:** Como o valor-de-p é maior que 0.05, não rejeitamos a hipótese de que a média é 60. Ou seja, não há evidência contra da hipótese de que o número médio de horas perdidas tenha se mantido o mesmo.
+
 
 ## Exemplo: Acidentes de trabalho {.build}
 
@@ -665,9 +679,7 @@ Como $z_{obs}=-1.5 > -1.645$, então não rejeitamos $H_0$.
 * [OpenIntro](https://www.openintro.org/stat/textbook.php): seção 5.1.
 * Magalhães: capítulo 8.
 
-
-
-##
+<br /><br />
 
 Slides produzidos pelos professores:
 
