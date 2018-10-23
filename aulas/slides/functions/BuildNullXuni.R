@@ -1,5 +1,5 @@
-BuildNullXuni <- function(xlim = c(-10, 10)) {
-  normTail(0, 1.70, L = -1000, U = 1000,
+BuildNullXuni <- function(xlim = c(-4, 4)) {
+  normTail(0, 1, L = -1000, U = 1000,
            df = 50, lwd = 2.5, axes = FALSE,
            curveColor = COL[1],
            xlim = xlim)
