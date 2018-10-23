@@ -107,7 +107,6 @@ Veja que $T=\sum_{i=1}^{20}X_i \sim Bin(20, p)$, onde $T$ é o número de acerto
 Dos 20 testes, o aluno acertou `r acertos`! Temos então uma proporção amostral de acertos $\hat p = `r acertos`/`r n`=`r phat`$. Isso mostra que o aluno realmente sabe a diferença?
 
 
-
 ## Experimento da Coca vs Coca Zero {.build}
 Vamos testar o seguinte:
 $$H_0: p = 0.50	\quad \mbox{vs} \quad H_a: p > 0.50$$
@@ -145,7 +144,7 @@ library(openintro)
 xmax <- qnorm(.999999,mean=0,sd=1)
 
 par(mar=c(2, 4, 1, 1) + 0.1)
-normTail(m=0,s=1, U=zobs,
+normTail(m=0, s=1, U=zobs,
          col = COL[1],
          axes  =  FALSE,
          lwd  =  2,xlim=c(-xmax,xmax))
@@ -182,6 +181,7 @@ O valor observado da estatística do teste é $t_{obs}=`r acertos`$, ou seja, o 
 
 **Conclusão:** Fixando $\alpha=0.05$, `r dec` a hipótese de que $p=0.5$ e, portanto, acreditamos que a probabilidade de acertos é maior que 50%.
 
+
 ## Experimento da Coca vs Coca Zero {.build .smaller}
 
 <center>
@@ -215,9 +215,9 @@ binomshade(n, p0, acertos, n)
 
 Quando realizamos um teste de hipóteses, podemos cometer 2 tipos de erros:
 
-> 1). **Erro Tipo I:** Rejeitar a hipótese $H_0$, quando tal hipótese é verdadeira
+> 1- **Erro Tipo I:** Rejeitar a hipótese $H_0$, quando tal hipótese é verdadeira
 
-> 2). **Erro Tipo II:** Não rejeitar a hipótese $H_0$, quando tal hipótese é falsa
+> 2- **Erro Tipo II:** Não rejeitar a hipótese $H_0$, quando tal hipótese é falsa
 
 <center><img src="figuras/TiposErro.png" width=500></center>
 
@@ -226,10 +226,14 @@ Quando realizamos um teste de hipóteses, podemos cometer 2 tipos de erros:
 **Erro Tipo I:** erro mais grave
 
 
-## Tipos de Erro 
-$H_0: \mbox{você não está grávida(o)} \quad \mbox{vs} \quad H_a: \mbox{você está grávida(o)}$
+## Tipos de Erro {.smaller}
 
-<center><img src="figuras/errosTipos.jpg" width=600 style="float: left; margin-right:50px"></center>
+<img src="figuras/errosTipos.jpg" width=600 style="float: left; margin-right:30px">
+
+<br /><br /><br /><br />
+$H_0: \mbox{você não está grávida(o)}$
+
+$H_A: \mbox{você está grávida(o)}$
 
 
 ## Tipos de Erro {.build}
@@ -292,17 +296,16 @@ $$
 
 ## Tipos de Erro {.build}
 
-Observando a relação entre os erros tipo I e II, e $t_c$: 
-$H_{0}: p=0.5 \quad \mbox{vs} \quad H_a: p=0.7$
-
+Observando a relação entre os erros tipo I e II, e $t_c$: <font size=4>$H_{0}: p=0.5 \; \mbox{vs} \; H_a: p=0.7$</font>
 
 $t_c$ | P(Erro Tipo I) | P(Erro Tipo II)  
 ----- | -------------- | --------------
 $12$ | 0.25 | 0.11  
 $13$ | 0.13 | 0.23  
 $14$ | 0.06 | 0.39  
+$15$ | 0.02 | 0.58
 
-Veja que à medida que tentamos diminuir $\alpha=$P(Erro Tipo I) diminui, $\beta=$P(Erro Tipo II) aumenta.
+Veja que à medida que $\alpha=$P(Erro Tipo I) diminui, $\beta=$P(Erro Tipo II) aumenta. 
 
 Então, optamos por controlar $\alpha=$P(Erro Tipo I), que é considerado o erro mais grave. Geralmente fixamos $\alpha=0.05$ e rejeitamos $H_0$ se valor-de-p $<\alpha$.
 
@@ -359,8 +362,7 @@ Outra forma de decidirmos se a evidência encontrada nos dados é forte o sufici
 
 $H_0: \mu=\mu_0$ vs $H_a: \mu \neq \mu_0$ e um nível de significância $\alpha$, definimos a região crítica do teste:
 
-<center>
-```{r,echo=FALSE,fig.height=4,fig.width=7,results='hide'}
+```{r, echo=FALSE, fig.align = 'center', fig.height=4, fig.width=7, results='hide'}
 source("../functions/BuildNullX.R")
 
 BuildNullX()
@@ -368,22 +370,20 @@ segments(2 * c(-1, 1), rep(0, 2), y1 = rep(0.15, 2),
          col = COL[4], lty = 3, lwd = 3)
 segments(2 * c(-1, 1), rep(0, 2), y1 = rep(0.15, 2),
          col = COL[4], lty = 3, lwd = 1.5)
-text(c(-6, 0, 0, 6), c(0.07, 0.09, 0.05, 0.07),
+text(c(-3, 0, 0, 3), c(0.07, 0.09, 0.05, 0.07),
      c(expression("Rejeita " * H[0]),
        "Não",
        expression("rejeita " * H[0]),
        expression("Rejeita " * H[0])),
      col = COL[4])
 ```
-</center>
 
 
 ## Região crítica: teste unilateral à direita
 
 $H_0: \mu=\mu_0$ vs $H_a: \mu > \mu_0$ e um nível de significância $\alpha$, definimos a região crítica do teste:
 
-<center>
-```{r,echo=FALSE,fig.height=4,fig.width=7,results='hide'}
+```{r, echo=FALSE, fig.align = 'center', fig.height=4, fig.width=7, results='hide'}
 source("../functions/BuildNullXuni.R")
 
 BuildNullXuni()
@@ -391,34 +391,30 @@ segments(2 , rep(0, 2), y1 = rep(0.15, 2),
          col = COL[4], lty = 3, lwd = 3)
 segments(2 , rep(0, 2), y1 = rep(0.15, 2),
          col = COL[4], lty = 3, lwd = 1.5)
-text(c(0, 0, 6), c( 0.09, 0.05, 0.07),
+text(c(0, 0, 3), c( 0.09, 0.05, 0.07),
      c("Não",
        expression("rejeita " * H[0]),
        expression("Rejeita " * H[0])),
      col = COL[4])
 ```
-</center>
 
 
 ## Região crítica: teste unilateral à esquerda
 
 $H_0: \mu=\mu_0$ vs $H_a: \mu < \mu_0$ e um nível de significância $\alpha$, definimos a região crítica do teste:
 
-<center>
-```{r,echo=FALSE,fig.height=4,fig.width=7,results='hide'}
-
+```{r, echo=FALSE, fig.align = 'center', fig.height=4, fig.width=7, results='hide'}
 BuildNullXuni()
 segments(-2 , rep(0, 2), y1 = rep(0.15, 2),
          col = COL[4], lty = 3, lwd = 3)
 segments(-2 , rep(0, 2), y1 = rep(0.15, 2),
          col = COL[4], lty = 3, lwd = 1.5)
-text(c(-6, 0, 0), c(0.07, 0.09, 0.05),
+text(c(-3, 0, 0), c(0.07, 0.09, 0.05),
      c(expression("Rejeita " * H[0]),
        "Não",
        expression("rejeita " * H[0])),
      col = COL[4])
 ```
-</center>
 
 
 ## Região Crítica: teste bilateral {.build}
@@ -663,10 +659,6 @@ text(-1.5, .3, labels= expression('zobs= '* -1.5),
 </center>
 
 Como $z_{obs}=-1.5 > -1.645$, então não rejeitamos $H_0$.
-
-
-
-
 
 
 ## Resumo: Teste de hipóteses para média {.build}
