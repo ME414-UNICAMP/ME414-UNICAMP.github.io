@@ -126,9 +126,7 @@ sendo $S_i^2$ é a variância amostral da população $i$.
 Então temos:$\displaystyle \quad T= \frac{(\bar{X} - \bar{Y}) - (\mu_1 - \mu_2)}{\displaystyle \sqrt{S_p^2 \left(\frac{1}{n} + \frac{1}{m}\right) }} \sim t_{n+m-2}$
 
 E um IC de $100(1-\alpha)\%$ para $\mu_1 - \mu_2$ é dado por:
-$$IC(\mu_1 - \mu_2, 1-\alpha) = (\bar{x} - \bar{y}) \pm t_{n+m-2, \alpha/2} \sqrt{s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$$
-
-em que $s_p^2$ é o valor de $S_p^2$ obtido na amostra coletada.
+$$IC(\mu_1 - \mu_2, 1-\alpha) = (\bar X - \bar Y) \pm t_{n+m-2, \alpha/2} \sqrt{S_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$$
 
 **Observação:** Se $n$ e $m$ são pequenos, as duas amostras devem vir de populações aproximadamente normais. Se $n$ e $m$ são grandes, então a distribuição $t$ com $n+m-2$ graus de liberdade aproxima-se de uma normal.
 
@@ -181,11 +179,11 @@ Nesse caso, $\nu=n+m-2$ e os valores da distribuição $t$ encontram-se tabelado
 
 Resumindo:
 
-Variâncias | $IC(\mu_1 - \mu_2, 1-\alpha)$
----------- | -----------------------------
-Diferentes e conhecidas ($\sigma_1^2 \neq \sigma_2^2$) | $(\bar{x} - \bar{y}) \pm z_{\alpha/2} \sqrt{\displaystyle \frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}$
-Iguais e conhecidas ($\sigma_1^2 = \sigma_2^2 =\sigma^2$) | $(\bar{x} - \bar{y}) \pm z_{\alpha/2} \sqrt{\displaystyle \sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$
-Iguais e desconhecidas ($\sigma_1^2 = \sigma_2^2 =\sigma^2$) | $(\bar{x} - \bar{y}) \pm t_{n+m-2, \alpha/2} \sqrt{\displaystyle s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$
+Variâncias                             | Margem de Erro  | $IC(\mu_1 - \mu_2, 1-\alpha)$
+-------------------------------------- | --------------- | --------------
+Diferentes e conhecidas ($\sigma_1^2 \neq \sigma_2^2$) | $z_{\alpha/2} \sqrt{\displaystyle \frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}$ | $(\bar{x} - \bar{y}) \pm z_{\alpha/2} \sqrt{\displaystyle \frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}$
+Iguais e conhecidas ($\sigma_1^2 = \sigma_2^2 =\sigma^2$) | $\pm z_{\alpha/2} \sqrt{\displaystyle \sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$ | $(\bar{x} - \bar{y}) \pm z_{\alpha/2} \sqrt{\displaystyle \sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$
+Iguais e desconhecidas ($\sigma_1^2 = \sigma_2^2 =\sigma^2$) | $t_{n+m-2, \alpha/2} \sqrt{\displaystyle s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$ | $(\bar{x} - \bar{y}) \pm t_{n+m-2, \alpha/2} \sqrt{\displaystyle s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$
 
 
 ## Exemplo: Tempos de Incubação {.build}
@@ -272,7 +270,7 @@ ggplot(df, aes(y = tempo, x = virus, fill = virus)) +
 
 Portanto, um Intervalo de $95\%$ de confiança para $\mu_1-\mu_2$ é dado por:
 $$\begin{aligned}
-IC(\mu_1-\mu_2, 0.95)&= (\bar{x} - \bar{y}) \pm z_{0.025} \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}} \\
+IC(\mu_1-\mu_2, 0.95)&= (\bar X - \bar Y) \pm z_{0.025} \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}} \\
 &= (`r xbar` - `r ybar`) \pm `r z.alfa2` \sqrt{\frac{`r sigma21`}{`r n`} + \frac{`r sigma22`}{`r m`}} \\
 &= `r est` \pm `r z.alfa2` \times `r round(se.est, 2)` \\
 &= `r est` \pm `r me` \\
@@ -341,14 +339,14 @@ A variância populacional é igual a `r sigma2`, enquanto as variâncias amostra
 
 Assumindo que as variâncias são iguais e **conhecidas** ($\sigma_1^2=\sigma_2^2=`r sigma2`$), um IC de 95% para $\mu_A - \mu_B$ é dado por:
 $$\begin{aligned}
-IC(\mu_A - \mu_B, 0.95) &= (\bar{x}_A - \bar{x}_B) \pm z_{0.025} \sqrt{\sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
+IC(\mu_A - \mu_B, 0.95) &= (\bar X_A - \bar X_B) \pm z_{0.025} \sqrt{\sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
 &= (`r xbar` - `r ybar`) \pm `r z.alfa2` \sqrt{`r sigma2` \left(\frac{1}{`r n`} + \frac{1}{`r m`}\right)} \\
 &= `r est` \pm `r z.alfa2` \times `r round(se.est1, 2)` \\
 &= `r est` \pm `r me1` \\
 &= [`r ic1[1]`; `r ic1[2]`]
 \end{aligned}$$
 
-Portanto, com um grau de confiança de `r (1-alpha)*100`\%, estimamos que a diferença entre os pesos médios dos tecidos do tipo A e tipo B está entre $`r ic1[1]`$ e $`r ic1[2]`$ mg. 
+Portanto, com um grau de confiança de `r (1-alpha)*100`\%, estimamos que a diferença entre os pesos médios dos tecidos do tipo A e tipo B está entre `r ic1[1]` e `r ic1[2]`mg. 
 
 
 ## Exemplo: Tecidos {.build}
@@ -369,14 +367,14 @@ s_p^2 &= \frac{(n-1)s_1^2 + (m-1)s_2^2}{n+m-2}\\
 
 Nesse caso, um IC de 95% para $\mu_A - \mu_B$ é dado por:
 $$\begin{aligned}
-IC(\mu_A - \mu_B, 0.95) &= (\bar{x}_A - \bar{x}_B) \pm t_{n+m-2, 0.025} \sqrt{s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
+IC(\mu_A - \mu_B, 0.95) &= (\bar X_A - \bar X_B) \pm t_{n+m-2, 0.025} \sqrt{s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
 &= (`r xbar` - `r ybar`) \pm `r t.alfa2` \sqrt{`r s2p` \left(\frac{1}{`r n`} + \frac{1}{`r m`}\right)} \\
 &= `r est` \pm `r t.alfa2` \times `r round(se.est2, 2)` \\
 &= `r est` \pm `r me2` \\
 &= [`r ic2[1]`; `r ic2[2]`]
 \end{aligned}$$
 
-Portanto, com um grau de confiança de `r (1-alpha)*100`\%, estimamos que a diferença entre os pesos médios dos tecidos do tipo A e tipo B está entre $`r ic2[1]`$ e $`r ic2[2]`$ mg. 
+Portanto, com um grau de confiança de `r (1-alpha)*100`\%, estimamos que a diferença entre os pesos médios dos tecidos do tipo A e tipo B está entre `r ic2[1]` e `r ic2[2]`mg. 
 
 Note que a margem de erro desse IC é maior que o caso anterior.
 
@@ -423,9 +421,9 @@ Veja que não sabemos a variância populacional, mas temos os desvios-padrão am
 
 Nesse caso, vamos então estimar a variância amostral combinada.
 
-Sabendo que $s_1=`r sigma1`$, $s_2=`r sigma2`$ e $n=m=`r n`$ temos:
+Sabendo que $s_H=`r sigma1`$, $s_M=`r sigma2`$ e $n=m=`r n`$ temos:
 $$\begin{aligned}
-s_p^2 &= \frac{(n-1)s_1^2 + (m-1)s_2^2}{n+m-2}\\
+s_p^2 &= \frac{(n-1)s_H^2 + (m-1)s_M^2}{n+m-2}\\
 &= \frac{(`r n`-1) (`r sigma1`)^2 + (`r m`-1)(`r sigma2`)^2}{`r n` + `r m` - 2} \\
 &= `r s2p`
 \end{aligned}$$
@@ -435,14 +433,14 @@ s_p^2 &= \frac{(n-1)s_1^2 + (m-1)s_2^2}{n+m-2}\\
 
 Nesse caso, um IC de 95% para $\mu_H - \mu_M$ é dado por:
 $$\begin{aligned}
-IC(\mu_H - \mu_M, 0.95) &= (\bar{x}_H - \bar{x}_M) \pm t_{n+m-2, 0.025} \sqrt{s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
+IC(\mu_H - \mu_M, 0.95) &= (\bar X_H - \bar X_M) \pm t_{n+m-2, 0.025} \sqrt{s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
 &= (`r xbar` - `r ybar`) \pm `r t.alfa2` \sqrt{`r s2p` \left(\frac{1}{`r n`} + \frac{1}{`r m`}\right)} \\
 &= `r est` \pm `r t.alfa2` \times `r round(se.est, 2)` \\
 &= `r est` \pm `r me` \\
 &= [`r ic[1]`; `r ic[2]`]
 \end{aligned}$$
 
-Com um grau de confiança de `r (1-alpha)*100`\%, estimamos que a diferença entre os tempos médios de adaptação entre homens e mulheres está entre $`r ic[1]`$ e $`r ic[2]`$ anos. 
+Com um grau de confiança de `r (1-alpha)*100`\%, estimamos que a diferença entre os tempos médios de adaptação entre homens e mulheres está entre `r ic[1]` e `r ic[2]` anos, ou seja, aproximadamente entre `r round(abs(12*ic[2]))` e `r round(abs(12*ic[1]))` meses a mais para as mulheres. 
 
 
 ## Intervalo de Confiança para Duas Proporções {.build}
@@ -541,14 +539,17 @@ IC(p_A - p_B, `r 1-alpha`) &= (\hat p_1 - \hat p_2) \pm z_{0.025} \sqrt{\frac{\h
 &= [`r ic[1]`; `r ic[2]`]
 \end{aligned}$$
 
-Portanto, com um grau de confiança de `r (1-alpha)*100`\%, estimamos que a diferença entre as  proporções $p_A$ e $p_B$ está entre $`r ic[1]`$ e $`r ic[2]`$. 
+Portanto, com um grau de confiança de `r (1-alpha)*100`\%, estimamos que a diferença entre as  proporções $p_A$ e $p_B$ está entre `r ic[1]` e `r ic[2]`. 
 
 
 ## Exemplo: Ensaio Clínico {.build}
 
+<img src="figuras/remedios.jpg" width=350 style="float: right; margin-left:30px">
+
 Um ensaio clínico é realizado para avaliar um novo tipo de tratamento contra uma doença e comparar os resultados com aqueles obtidos usando o tratamento tradicional. 
 
-Dos 50 pacientes tratados com o tratamento novo, 36 se curaram e dos 45 tratados com o antigo 29 se curaram. 
+* Dos 50 pacientes tratados com o tratamento novo, 36 se curaram. <br />
+* Dos 45 pacientes tratados com o tratamento antigo, 29 se curaram. 
 
 Seja $p_1$ a proporção de curados com o tratamento novo e $p_2$ a proporção de curados com o tratamento antigo.
 
@@ -561,31 +562,36 @@ x1 <- 36
 n1 <- 50
 p1 <- x1/n1
 
-x2 <- 36
+x2 <- 29
 n2 <- 45
-p2 <- x2/n2
+p2 <- round(x2/n2, 2)
 
 alpha <- .01
 z.alfa2 <- round(qnorm(1-alpha/2), 2)
 
-est <- p1-p2
+est <- p1 - p2
 se.est <- sqrt(p1*(1-p1)/n1 + p2*(1-p2)/n2)
 me <- round(z.alfa2*se.est, 2)
 ic <- round(est + c(-1, 1)*me, 3)
 ```
 
+<img src="figuras/remedios.jpg" width=300 style="float: right; margin-left:30px">
+
 A proporção de curados pelos tratamentos novo e antigo são, respectivamente:
-$$\hat p_1 = \frac{36}{50}=`r p1` \quad \mbox{e} \quad \hat p_2 = \frac{29}{45}=`r p2` $$
+$$\hat p_1 = \frac{36}{50}=`r p1` \quad \mbox{e} \quad \hat p_2 = \frac{29}{45}=`r p2`$$
+
 
 Então um IC de 99% para $p_1 - p_2$ é dado por:
+<font size=4>
 $$\begin{aligned}
 IC(p_1 - p_2, `r 1-alpha`) &= (`r p1` - `r p2`) \pm z_{0.005} \sqrt{\frac{`r p1` (`r 1-p1`)}{`r n1`} + \frac{`r p2` (`r 1-p2`)}{`r n2`}} \\
 &= `r est` \pm `r z.alfa2` \times `r round(se.est, 3)` \\
 &= `r est` \pm `r me` \\
 &= [`r ic[1]`; `r ic[2]`]
 \end{aligned}$$
+</font>
 
-Portanto, com um grau de confiança de `r (1-alpha)*100`\%, estimamos que a diferença entre as  proporções de curados pelos tratamentos novo e antigo está entre $`r ic[1]`$ e $`r ic[2]`$. 
+Portanto, com um grau de confiança de `r (1-alpha)*100`\%, estimamos que a diferença entre as  proporções de curados pelos tratamentos novo e antigo está entre `r ic[1]` e `r ic[2]`. 
 
 
 ## Leituras
