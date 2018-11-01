@@ -20,8 +20,7 @@ Esse tipo de dados ocorre com frequência nas áreas sociais e biomédicas.
 
 O objetivo aqui é estudar dados agrupados em categorias múltiplas e veremos isso através de dois tipos de testes: 
 
-* Teste de Aderência (ou Bondade de Ajuste)
-
+* Teste de Aderência (ou Bondade de Ajuste) <br />
 * Teste de Independência
 
 
@@ -33,7 +32,7 @@ O objetivo aqui é estudar dados agrupados em categorias múltiplas e veremos is
 
 Duas características serão independentes se a classificação de um membro da população de acordo com uma característica não interfere na probabilidade de classificação em relação à segunda característica desse mesmo membro.
 
-Na aula de hoje iremos focar em Testes de Aderência.
+Na aula de hoje iremos focar em **Testes de Aderência**.
 
 
 ## Exemplo: Cores de Geladeira {.build}
@@ -42,13 +41,16 @@ Uma determinada marca de geladeira é vendida em cinco cores diferentes e uma pe
 
 As frequências abaixo são observadas para uma amostra de 300 vendas feitas num semestre.  
 
-Suponha que seja de interesse testar a hipótese das cinco cores serem igualmente populares. 
-
 <center>Vendas das cinco cores das geladeiras da marca W</center>
 
 Cor | marrom | creme | vermelho | azul | branco | total
 ---:|:------:|:-----:|:--------:|:----:|:------:|:-----
 Frequência  | 88 | 65 | 52 | 40 | 55 | 300 
+
+<br />
+
+Suponha que seja de interesse testar a hipótese das cinco cores serem igualmente populares. 
+
 
 
 # Modelo Multinomial
@@ -66,6 +68,7 @@ c) As observações são independentes.
 
 
 ## Distribuição Multinomial {.build}
+
 Considere uma amostra de uma população que consiste de elementos em diversas categorias, por exemplo, $k$ valores possíveis.  
 
 Denotaremos por $n_1, n_2, \ldots , n_k$, com $\sum_{i=1}^{k}n_{i}=n$ as frequências e $p_1, p_2, \ldots , p_k$ as probabilidades.  
@@ -78,12 +81,13 @@ em que $\displaystyle \sum_{i=1}^{k}n_{i}=n$ e com $\displaystyle \sum_{i=1}^{k}
 
 
 ## Distribuição Multinomial {.build}
+
 Se designarmos a componente $n_1$ como "sucesso" e juntarmos as demais numa mesma que designamos "fracasso", a variável aleatória $n_1$ é o número de sucessos em $n$ ensaios de Bernoulli, ou seja,  $n_1 \sim Bin(n,p_1)$.  
 
-Portanto, $\mathbb E(n_1)=np_1$, $Var(n_1)=np_1(1-p_1)$. 
+Portanto: $\qquad \mathbb E(n_1)=np_1 \qquad$ e  $\qquad Var(n_1)=np_1(1-p_1)$. 
 
 Analogamente aplicando o mesmo argumento a cada $n_i$ temos: 
-$$\mathbb E(n_i)=np_i \quad \mbox{e} \quad Var(n_i)=np_i(1-p_i)$$
+$$\mathbb E(n_i)=np_i \qquad \mbox{e} \qquad Var(n_i)=np_i(1-p_i)$$
 
 Iremos usar o valor esperado de $n_i$ nos testes que veremos a seguir.
 
@@ -123,10 +127,10 @@ Genótipo | AA | Aa | aa | Total
 -------- | -- | -- | -- | -----
 Frequência Observada | `r obs[1]` | `r obs[2]` | `r obs[3]` | `r n`
 
-
-$$ $$ 
+<br />
 
 **Objetivo:** Verificar se o modelo genético proposto (Equilíbrio de Hardy-Weinberg) é adequado para essa população.
+
 
 ## Teste de Aderência {.build}
 
@@ -149,32 +153,31 @@ Genótipo | AA | Aa | aa | Total
 Frequência Observada | `r obs[1]` | `r obs[2]` | `r obs[3]` | `r n`
 Frequência Esperada  | `r esp[1]` | `r esp[2]` | `r esp[3]` | `r n` 
 
-
-**Pergunta:** Podemos afirmar que os valores observados estão suficientemente próximos dos
-valores esperados, de tal forma que o modelo genético teórico é adequado a esta população?
+<br />
+**Pergunta:** Podemos afirmar que os valores observados estão suficientemente próximos dos valores esperados, de tal forma que o modelo genético teórico é adequado a esta população?
 
 O procedimento que responde esse tipo de pergunta é chamado de **teste de bondade de ajuste** ou **teste de aderência**.
+
 
 ## Teste de Aderência - Procedimento {.build}
 
 Considere uma tabela de freqüências, com $k \geq 2$ categorias de resultados: 
 
-Categorias | 1 | 2 | ... | k | Total
----------- | - | - | --- | - | -----
+Categorias | 1   |   2 | ... |  k  | Total
+---------- | --- | --- | --- | --- | -----
 Frequência Observada | $O_1$ | $O_2$ | ... | $O_k$ | $n$
 
-Sendo $O_i$ o total de indivíduos observados na categoria $i$, $i=1,2, \ldots, k$.
+<br />
+Sendo $O_i$ o total de indivíduos observados na categoria $i$, $i=1,2, \ldots, k$. 
 
-Seja $p_i$ a probabilidade associada à categoria $i$, $i=1,2, \ldots, k$.
-
+Seja $p_i$ a probabilidade associada à categoria $i$, $i=1,2, \ldots, k$. <br />
 O objetivo do teste de aderência é testar as hipóteses
-
 $$\begin{aligned}
-H_0: & p_1=p_{01}, \ldots , p_k= p_{0k} \\
-H_a: & \mbox{existe pelo menos uma diferença}
-\end{aligned}
-$$
-sendo $p_{0i}$ a probabilidade da categoria $i$ sob o modelo teórico e $\sum_{i=1}^k p_{0i} =1$
+& H_0: p_1=p_{01}, \; \ldots, \; p_k= p_{0k} \\
+& H_A: \mbox{existe pelo menos uma diferença}
+\end{aligned}$$
+sendo $p_{0i}$ a probabilidade da categoria $i$ sob o modelo teórico e $\sum_{i=1}^k p_{0i} =1.$
+
 
 ## Teste de Aderência - Procedimento {.build}
 
@@ -274,8 +277,7 @@ text(xcrit + 5, 0.02, labels= expression('área = P('* chi[k-1]^2 >= chi[crit]^2
 ```
 </center>
 
-**Conclusão**: Rejeitamos $H_0$ se
-
+**Conclusão**: Rejeitamos $H_0$ se <br />
 $$\mbox{valor-de-p} \leq \alpha \quad \mbox{ou} \quad \chi_{obs}^2 \geq \chi^2_{crit}$$
 
 
@@ -290,20 +292,21 @@ Voltando no exemplo da Genética
 
 **Hipóteses:**
 $$\begin{aligned}
-H_0: & \mbox{o modelo proposto é adequado} \\
-H_a: & \mbox{o modelo proposto não é adequado}
-\end{aligned}
-$$
+& H_0: \; \mbox{o modelo proposto é adequado} \\
+& H_A: \; \mbox{o modelo proposto não é adequado}
+\end{aligned}$$
 
-Que de forma equivalente, podem ser escritas como:
+<br />
+De forma equivalente, podem ser escritas como:
 $$\begin{aligned}
-H_0: & p_1=1/4, p_2=1/2 , p_3= 1/4 \\
-H_a: & \mbox{ao menos umas das desigualdades não verifica}
-\end{aligned}
-$$
+& H_0: \; p_1=1/4, \; p_2=1/2, \; p_3= 1/4 \\
+& H_A: \; \mbox{ao menos umas das desigualdades não verifica}
+\end{aligned}$$
 sendo $p_1=P(AA), p_2=P(Aa)$ e $p_3=P(aa)$.
 
+
 ## Exemplo: Genética  {.build}
+
 ```{r genetica, echo=FALSE}
 ```
 
@@ -314,17 +317,16 @@ Genótipo | AA | Aa | aa | Total
 Frequência Observada | `r obs[1]` | `r obs[2]` | `r obs[3]` | `r n`
 Frequência Esperada  | `r esp[1]` | `r esp[2]` | `r esp[3]` | `r n`
 
-
+<br />
 **Estatística do Teste**:
-$$
-\begin{aligned}
+$$\begin{aligned}
 \chi^2_{obs} &= \sum_{i=1}^3 \frac{(O_i-E_i)^2}{E_i} = \frac{(26-25)^2}{25} + \frac{(45-50)^2}{50} + \frac{(29-25)^2}{25} \\
 &= `r res[1]` + `r res[2]` + `r res[3]` = `r stat` 
-\end{aligned}
-$$
+\end{aligned}$$
 
 
 ## Exemplo: Genética {.build}
+
 Sob $H_0$, a estatística $\chi^2 \sim \chi^2_2$. Veja que os graus de liberdade é o número de categorias menos 1. Então o valor-de-p é dado por:
 
 $$\mbox{valor-de-p} = P(\chi^2_2 \geq \chi^2_{obs}) = P(\chi^2_2 \geq `r stat`) = `r round(xsq$p.value, 3)`$$
@@ -336,6 +338,7 @@ $\chi^2_{crit} = `r xcrit`$
 $H_0$, isto é, essa população segue o modelo genético proposto.
 
 Ou como $\chi^2_{obs}=`r stat` < `r xcrit` = \chi^2_{crit},$ não rejeitamos a hipótese $H_0$.
+
 
 ## Exemplo: Genética
 <center>
@@ -363,6 +366,7 @@ axis(1, at=xobs, label= bquote(chi[obs]^2 == .(xobs)))
 
 
 ## Exemplo: Cores de Geladeira {.build}
+
 ```{r geladeira, echo=FALSE}
 obs <- c(G1=88, G2=65, G3=52, G4=40, G5=55)
 n <- sum(obs)
@@ -380,10 +384,9 @@ xcrit <- round(qchisq(1-alpha, df), 3)
 
 Voltando aos dados do exemplo das cores da geladeira, cujas componentes têm frequências multinomiais, a hipótese nula especifica que as cinco cores são igualmente populares. Ou seja,  
 $$\begin{aligned}
-H_0: & p_1=p_2= \ldots = p_k= 1/5 \\
-H_a: & \mbox{existe pelo menos uma diferença}
-\end{aligned}
-$$
+& H_0: \; p_1 = p_2 = \ldots = p_k= 1/5 \\
+& H_A: \; \mbox{existe pelo menos uma diferença}
+\end{aligned}$$
 
 Componente | marrom | creme | vermelho | azul | branco | total
 ----------:|:------:|:-----:|:--------:|:----:|:------:|:-----
@@ -391,6 +394,7 @@ Frequência Observada | `r obs[1]` | `r obs[2]` | `r obs[3]` | `r obs[4]` | `r o
 
 Como as probabilidades das componentes na hipótese nula são todas iguais, as frequências esperadas também serão todas iguais, ou seja,
 $$E_i = n\times \frac{1}{5} = `r n`\times \frac{1}{5} = `r esp[1]`, \quad i=1,2,3,4,5.$$
+
 
 ## Exemplo: Cores de Geladeira  {.build}
 
@@ -400,15 +404,16 @@ Frequência Observada | `r obs[1]` | `r obs[2]` | `r obs[3]` | `r obs[4]` | `r o
 Frequência Esperada  | `r esp[1]` | `r esp[2]` | `r esp[3]` | `r esp[4]` | `r esp[5]` | `r n` 
 $\displaystyle \frac{(O-E)^2}{E}$ | `r res[1]` | `r res[2]` | `r res[3]` | `r res[4]` | `r res[5]` | `r stat`
 
+<br />
 **Estatística do Teste:**
 $$\begin{aligned}
 \chi^2=\sum_{i=1}^5 \frac{(O_i-E_i)^2}{E_i} &= `r res[1]` + `r res[2]` + `r res[3]` + `r res[4]` + `r res[5]` \\ 
 &= `r stat`
-\end{aligned}
-$$
+\end{aligned}$$
 
 
 ## Exemplo: Cores de Geladeira {.build}
+
 Olhando na tabela Qui-quadrado com `r df` graus de liberdade, para $\alpha=`r alpha`$, o valor crítico é $\chi^2_{crit} = \chi^2_{`r df`, `r alpha`} = `r xcrit`$.
 
 <center>
@@ -433,6 +438,7 @@ text(xcrit + 3, 0.01, labels= bquote("área = "* .(alpha)), pos = 3, cex = 1.2, 
 
 
 ## Exemplo: Tipo Sanguíneo {.build}
+
 ```{r tiposangue, echo=FALSE}
 obs <- c(A=92, B=20, AB=4, O=84)
 n <- sum(obs)
@@ -456,25 +462,26 @@ Tipo | A | B | AB | O | total
 ---- | - | - | -- | - | ----
 Frequência Observada | `r obs[1]` | `r obs[2]` | `r obs[3]` | `r obs[4]` | `r n` 
 
+<br />
 Essas frequências observadas trazem evidência contra a hipótese de que a distribuição do tipo sanguíneo dos pacientes é igual à distribuição dos tipos sanguíneos na população geral americana?  Use nível de significância $\alpha=`r alpha`$.
 
 
 ## Exemplo: Tipo Sanguíneo {.build}
 
 $$\begin{aligned}
-H_0: & p_1=`r p0[1]`, p_2=`r p0[2]`, p_3=`r p0[3]` , p_4=`r p0[4]` \\
-H_a: & \mbox{existe pelo menos uma diferença}
-\end{aligned}
-$$
+& H_0: \; p_1=`r p0[1]`, p_2=`r p0[2]`, p_3=`r p0[3]` , p_4=`r p0[4]` \\
+& H_A: \; \mbox{existe pelo menos uma diferença}
+\end{aligned}$$
 
 
 Tipo | A | B | AB | O | total
----- | - | - | -- | - | ----
+---- | ---- | ---- | ---- | ---- | ----
 Frequência Observada | `r obs[1]` | `r obs[2]` | `r obs[3]` | `r obs[4]` | `r n`
 Frequência Esperada  | `r esp[1]` | `r esp[2]` | `r esp[3]` | `r esp[4]` | `r n` 
 $\displaystyle \frac{(O-E)^2}{E}$ | `r res[1]` | `r res[2]` | `r res[3]` | `r res[4]` | `r stat`
 
-**Estatística do Teste:** $\displaystyle \chi^2=\sum_{i=1}^4 \frac{(O_i-E_i)^2}{E_i} = `r stat`$
+<br />
+**Estatística do Teste:** $\displaystyle \qquad \chi^2=\sum_{i=1}^4 \frac{(O_i-E_i)^2}{E_i} = `r stat`$
 
 
 ## Exemplo: Tipo Sanguíneo {.build}
@@ -502,14 +509,19 @@ Portanto, concluímos que não há discrepância significativa entre o que foi o
 
 
 ## Exemplo: Ervilhas de Mendel
+
 <center><img src="figuras/mendel.jpg" width=500></center>
 
 
-## Exemplo: Ervilhas de Mendel
-<center><img src="figuras/mendel1.png" width=300><img src="figuras/mendel2.png" width=500></center>
-*Figura: (Esquerda) Cruzamento de ervilhas puramente amarelas e puramente verdes e (Direta) cruzamento de ervilhas híbridas (Direita)*
+## Exemplo: Ervilhas de Mendel {.smaller}
+
+<center><img src="figuras/mendel1.png" width=300><img src="figuras/mendel2.png" width=500>
+
+Figura: (Esquerda) Cruzamento de ervilhas puramente amarelas e puramente verdes e (Direta) cruzamento de ervilhas híbridas</center>
+
 
 ## Exemplo: Ervilhas de Mendel {.build}
+
 ```{r mendel, echo=FALSE}
 obs <- c(Amarelas=6022, Verdes=2001)
 n <- sum(obs)
@@ -525,23 +537,22 @@ df <- xsq$parameter
 xcrit <- round(qchisq(1-alpha, df), 3)
 ```
 
-Mendel fez o cruzamento de `r n` ervilhas híbridas e o resultado foram `r obs[1]` ervilhas amarelas e `r obs[2]` ervilhas verdes.  Teoricamente, cada cruzamento deve resultar em ervilha amarela com probabilidade $3/4$ e verde com probabilidade $1/4$. 
-
+Mendel fez o cruzamento de `r n` ervilhas híbridas e o resultado foram `r obs[1]` ervilhas amarelas e `r obs[2]` ervilhas verdes.  Teoricamente, cada cruzamento deve resultar em ervilha amarela com probabilidade $3/4$ e verde com probabilidade $1/4$.
 $$\begin{aligned}
-H_0: & p_1=3/4 \; \mbox{ e } \; p_2=1/4 \\
-H_a: & \mbox{existe pelo menos uma diferença}
-\end{aligned}
-$$
+& H_0: \; p_1=3/4 \; \mbox{ e } \; p_2=1/4 \\
+& H_A: \; \mbox{existe pelo menos uma diferença}
+\end{aligned}$$
 
-Tipo | Amarela | Verde | total
----- | - | - | -- | - | ----
+Tipo | Amarela | Verde | Total
+---- | ---- | ---- | ---- 
 Frequência Observada | `r obs[1]` | `r obs[2]` | `r n`
 Frequência Esperada  | `r esp[1]` | `r esp[2]` | `r n` 
 $\displaystyle \frac{(O-E)^2}{E}$ | `r res[1]` | `r res[2]` | `r stat`
 
 
 ## Exemplo: Ervilhas de Mendel {.build}
-**Estatística do Teste:** $\displaystyle \chi^2=\sum_{i=1}^2 \frac{(O_i-E_i)^2}{E_i} = `r stat`$
+
+**Estatística do Teste:** $\displaystyle \;\; \chi^2=\sum_{i=1}^2 \frac{(O_i-E_i)^2}{E_i} = `r stat`$
 
 <center>
 ```{r, echo=FALSE, fig.width=5, fig.height=3}
@@ -560,12 +571,13 @@ text(xcrit, ymax, labels= bquote(chi[.(paste0(df, ",", alpha))]^2 == .(xcrit)), 
 
 ## Leituras
 
+<img src="figuras/book.jpg" width=400 style="float: right; margin-left:30px">
+
 * [Ross](http://www.sciencedirect.com/science/article/pii/B9780123743886000132): capítulo 13. 
 * [OpenIntro](https://www.openintro.org/stat/textbook.php): seção 6.3
 
-<center><img src="figuras/book.jpg" width=400></center>
 
-##
+<br /><br /><br />
 
 Slides produzidos pelos professores:
 
