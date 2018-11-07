@@ -10,7 +10,7 @@ logo: ../logo-imecc.png
 
 # Testes de Independência e Homogeneidade
 
-## Tabela de contingência {.build}
+## Tabela de Contingência {.build}
 
 Quando dois ou mais atributos são observados para cada elemento amostrado, os dados podem ser simultaneamente classificados com respeito aos níveis de ocorrência para cada um dos atributos.  
 
@@ -39,38 +39,39 @@ Uma amostra aleatória de `r n` pessoas responde um questionário sobre filiaç�
 kable(x)
 ```
 
+<br />
 Os dados indicam que a opinião sobre racionamento de energia é independente da filiação partidária?
 
-Podemos medir quantitativamente a associaçãoo entre as duas características?
+Podemos medir quantitativamente a associação entre as duas características?
 
 
-## Exemplo: Racionamento de energia {.build}
+## Exemplo: Racionamento de Energia {.build}
 
 Primeiramente, consideremos a tabela de um ponto de vista descritivo, transformando as contagens em proporcões.
 
 * Proporções por caselas
 
-|   | Favorável                    | Indiferente                  | Contrário                     | Total
-|:--|-----------------------------:|-----------------------------:|------------------------------:|-----:
+|   | Favorável            | Indiferente          | Contrário            | Total
+|:--|---------------------:|---------------------:|---------------------:|---------------------:
 |A  |`r round(x[1,1]/sum(x),2)`|`r round(x[1,2]/sum(x),2)`|`r round(x[1,3]/sum(x),2)` | `r round(sum(x[1,])/sum(x), 2)`
 |B  |`r round(x[2,1]/sum(x),2)`|`r round(x[2,2]/sum(x),2)`|`r round(x[2,3]/sum(x),2)` | `r round(sum(x[2,])/sum(x), 2)`
 |Total | `r round(sum(x[,1])/sum(x), 2)` | `r round(sum(x[,2])/sum(x), 2)` | `r round(sum(x[,3])/sum(x), 2)`| 1.00
 
 
-## Exemplo: Racionamento de energia
+## Exemplo: Racionamento de Energia
 
 Primeiramente, consideremos a tabela de um ponto de vista descritivo, transformando as contagens em proporcões.
 
 * Proporções por linhas
 
-|   | Favorável                    | Indiferente                  | Contrário                     | Total
-|:--|-----------------------------:|-----------------------------:|------------------------------:|-----:
+|   | Favorável            | Indiferente          | Contrário             | Total
+|:--|---------------------:|---------------------:|----------------------:|---------------------:
 |A  |`r round(x[1,1]/sum(x[1,]),2)`|`r round(x[1,2]/sum(x[1,]),2)`|`r round(x[1,3]/sum(x[1,]),2)` |1.00
 |B  |`r round(x[2,1]/sum(x[2,]),2)`|`r round(x[2,2]/sum(x[2,]),2)`|`r round(x[2,3]/sum(x[2,]),2)` |1.00
 
 
 
-## Exemplo: Racionamento de energia
+## Exemplo: Racionamento de Energia
 
 Primeiramente, consideremos a tabela de um ponto de vista descritivo, transformando as contagens em proporcões.
 
@@ -85,26 +86,32 @@ Primeiramente, consideremos a tabela de um ponto de vista descritivo, transforma
 
 ## Exemplo: Racionamento de energia
 
-*  Gráficos de barras: Frequências relativas (caselas, linhas e colunas)
+**Gráficos de Barras:** Frequências relativas (caselas, linhas e colunas)
 
 <center>
-```{r,echo=FALSE, fig.height=4.5, fig.width=10}
-par(mfrow=c(1,3))
-barplot(prop.table(x), xlab="Opinião sobre racionamento", main="Proporção por Caselas", beside=TRUE, legend.text=TRUE, ylim=c(0,1), las=1, cex.lab=1.3, cex.main=1.3, cex.axis=1.3, cex.names=1.3)
-barplot(prop.table(x,1),xlab="Opinião sobre racionamento", main="Proporção por Linhas", beside=TRUE,legend.text=TRUE,ylim=c(0,1), las=1, cex.lab=1.3, cex.main=1.3, cex.axis=1.3, cex.names=1.3)
-barplot(prop.table(x,2),xlab="Opinião sobre racionamento", main="Proporção por Colunas", beside=TRUE,legend.text=TRUE,ylim=c(0,1), las=1, cex.lab=1.3, cex.main=1.3, cex.axis=1.3, cex.names=1.3)
+```{r, echo=FALSE, fig.height=4.5, fig.width=10}
+par(mfrow=c(1, 3))
+barplot(prop.table(x), xlab="Opinião sobre racionamento", main="Proporção por Caselas", 
+        beside=TRUE, legend.text=TRUE, ylim=c(0, 1), las=1, cex.lab=1.3, cex.main=1.3, 
+        cex.axis=1.3, cex.names=1.3)
+barplot(prop.table(x, 1), xlab="Opinião sobre racionamento", main="Proporção por Linhas",
+        beside=TRUE, legend.text=TRUE, ylim=c(0, 1), las=1, cex.lab=1.3, cex.main=1.3, 
+        cex.axis=1.3, cex.names=1.3)
+barplot(prop.table(x, 2), xlab="Opinião sobre racionamento", main="Proporção por Colunas",
+        beside=TRUE, legend.text=TRUE, ylim=c(0, 1), las=1, cex.lab=1.3, cex.main=1.3, 
+        cex.axis=1.3, cex.names=1.3)
 ```
 </center>
 
 
-
-## Exemplo: Racionamento de energia {.build}
+## Exemplo: Racionamento de Energia {.build}
 
 Através das tabelas de proporções e gráficos de barras, observam-se diferenças aparentes nas distribuições ao longo das linhas, colunas ou das proporções totais das respostas. 
 
 Por exemplo, com relação às proporções por linha, observa-se que as proporções diminuem ao longo da primeira linha e aumentam ao longo da segunda.
 
 Podemos usar um teste estatístico para avaliar possível associação entre filiação partidária e opinião com relação ao programa de racionamento de energia.
+
 
 ## Teste de Independência {.build}
 
@@ -121,8 +128,8 @@ $n_{0j}=$ total da $j$-ésima coluna, ou frequência de $B_j$.
 
 ## Teste de Independência
 
-|   | $B_1$| $B_2$|  $\ldots$ | $B_c$ | Total da linha |
-|:--|-----:|-----:|----------:|------:|---------------:|
+|      |    $B_1$ |     $B_2$| $\ldots$ |    $B_c$ | Total da linha |
+|:-----|---------:|---------:|---------:|---------:|----------:|
 |$A_1$  |$n_{11}$ | $n_{12}$  | $\ldots$ | $n_{1c}$ | $n_{10}$ |
 |$A_2$  |$n_{21}$ | $n_{22}$  | $\ldots$ | $n_{2c}$ | $n_{20}$ |
 |$\vdots$| $\vdots$ | $\vdots$|  $\vdots$ |  $\vdots$ | $\vdots$|
@@ -154,43 +161,45 @@ $p_{0j}=P(B_{j})$ é a probabilidade total da $j$-ésima coluna.
 
 **Teste de independência:** interesse é testar se as classificações nas categorias de $A$ e $B$ são independentes, ou seja, pretende-se avaliar se 
 $$P(A_i\cap B_j)=P(A_i)P(B_j)$$
-para todo $i=1,2, \ldots , r$ e $j=1,2, \ldots , c$
+para todo $i = 1, 2, \ldots, r$ e $j = 1, 2, \ldots, c$.
 
-## Teste de Independência {.build}
+<br />
 
 **Hipóteses:**
 
- $H_0: p_{ij}=p_{i0}p_{0j}$ para todas as componentes $(i,j)$ (**independência**)
+ $H_0: p_{ij} = p_{i0} \, p_{0j}$ para todas as componentes $(i,j)$ (**independência**)
 
-> $H_a: p_{ij} \neq p_{i0}p_{0j}$ para pelo menos um par $(i,j)$
-
-> O modelo de independência especifica as probabilidades das componentes em termo das probabilidades marginais. **Problema:** as probabilidades marginais são parâmetros desconhecidos. 
-
-> Como $p_{i0}=P(A_i)$, um estimador natural é a frequência relativa amostra de $A_i$,
-<center>$\displaystyle \hat{p}_{i0}=\frac{n_{i0}}{n}$</center>
-
-> Da mesma forma, $p_{0j}=P(B_j)$ é estimado por
-<center>$\displaystyle \hat{p}_{0j}=\frac{n_{0j}}{n}$</center> 
+ $H_A: p_{ij} \neq p_{i0} \, p_{0j}$ para pelo menos um par $(i,j)$
 
 
 ## Teste de Independência {.build}
 
+> O modelo de independência especifica as probabilidades das componentes em termo das probabilidades marginais. 
 
-Usando essas estimativas a probabilidade da componente $(i,j)$ é estimada por
+> **Problema:** as probabilidades marginais são parâmetros desconhecidos. 
+
+> Como $p_{i0}=P(A_i)$, um estimador natural é a frequência relativa amostral de $A_i$,
+$$\hat{p}_{i0}=\frac{n_{i0}}{n}$$
+
+> Da mesma forma, $p_{0j}=P(B_j)$ é estimado por
+$$\hat{p}_{0j}=\frac{n_{0j}}{n}$$
+
+
+## Teste de Independência {.build}
+
+Usando essas estimativas, a probabilidade da componente $(i,j)$ é estimada por
 $$\hat{p}_{ij}=\hat{p}_{i0}\hat{p}_{0j}=\frac{n_{i0}n_{0j}}{n^2}$$ 
 
 Logo, a frequência relativa esperada sob o modelo de independência é
-
 $$E_{ij}=n \hat{p}_{ij} = \frac{n_{i0}n_{0j}}{n}$$ 
 
 Portanto, a **estatística do teste** é dada por:
-
-$$\chi^2= \sum_{r\times c \text{ componentes }}\frac{(O_{ij}-E_{ij})^2}{E_{ij}} = \sum_{r\times c \text{ componentes }}\frac{(n_{ij}-E_{ij})^2}{E_{ij}}$$
-
+$$\chi^2= \sum_{i=1}^r \sum_{j=1}^c \frac{(O_{ij}-E_{ij})^2}{E_{ij}} = \sum_{i=1}^r \sum_{j=1}^c \frac{(n_{ij}-E_{ij})^2}{E_{ij}},$$
 que sob $H_0$ tem distribuição aproximadamente $\chi^2$ com $(r-1)\times(c-1)$ graus de liberdade, para $n$ grande.
 
 
 ## Teste de Independência {.build}
+
 **Valor Crítico**: Para um nível de significância $\alpha$, encontrar o valor crítico $\chi^2_{crit}$ na tabela Chi-quadrado tal que $P(\chi^2_{(r-1)(c-1)} \geq \chi^2_{crit}) = \alpha.$
 
 <center>
@@ -226,29 +235,29 @@ text(chi_crit + 5, 0.02, labels= expression('área = P('* chi[(r-1)(c-1)]^2 >= c
 **Conclusão**: Rejeitamos $H_0$ se $\chi_{obs}^2 \geq \chi^2_{crit}.$
 
 
-## Exemplo: Racionamento de energia
+## Exemplo: Racionamento de Energia
 ```{r racionamento, echo=FALSE}
 ```
 
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 a <- chisq.test(x, correct=FALSE)
 alpha <- 0.05
-chi_crit <- round(qchisq(1-alpha,df=a$parameter),2)
+chi_crit <- round(qchisq(1 - alpha, df=a$parameter), 2)
 ```
 
 Frequências observadas ($n_{ij}$):
-
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 kable(a$observed)
 ```
 
+<br />
 Frequências esperadas ($E_{ij}$), segundo hipótese de independência:
-
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 kable(a$expected)
 ```
 
-## Exemplo: Racionamento de energia {.build}
+
+## Exemplo: Racionamento de Energia {.build}
 
 A estatística $\chi^2$ tem o valor observado de 
 
@@ -274,12 +283,16 @@ text(chi_crit + 3, 0.01, labels= bquote("área = "* .(alpha)), pos = 3, cex = 1.
 ```
 </center>
 
-## Exemplo: Racionamento de energia {.build}
+
+## Exemplo: Racionamento de Energia {.build}
 
 Como $\chi^2_{obs}= `r round(a$statistic,2)` > `r chi_crit` = \chi^2_{crit}$, rejeitamos a hipótese nula de indepêndencia.
 
-
 Concluímos que os dados trazem evidências de **associação** entre as duas características (filiação e opinião). 
+
+<img src="figuras/AssociationCausation.png" width=300 style="float: right; margin-left:30px">
+
+<br />
 
 **CUIDADO!!!** Associação não implica CAUSA.
 
@@ -295,31 +308,30 @@ colnames(x) <- c("Masculino","Feminino")
 rownames(x) <- c("Economia","Administração")
 n <- sum(x)
 
-a <- chisq.test(x,correct=FALSE)
+a <- chisq.test(x, correct=FALSE)
 alpha <- 0.05
-chi_crit <- round(qchisq(1-alpha,df=a$parameter),2)
+chi_crit <- round(qchisq(1 - alpha, df=a$parameter), 2)
 ```
 
 Existe associação entre sexo e a carreira escolhida por `r n` alunos de Economia e Administração?
 
 Frequências observadas ($n_{ij}$):
-
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 kable(a$observed)
 ```
 
+<br />
 Frequências esperadas ($E_{ij}$), segundo hipótese de independência:
-
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 kable(a$expected)
 ```
   
+  
 ## Exemplo: Gênero e escolha da carreira {.build}
   
-  
 A estatística $\chi^2$ tem o valor observado de 
-
-$$\chi^2_{obs}=\frac{(85-84)^2}{84}+\frac{(35-36)^2}{36}+\frac{(55-56)^2}{56}+\frac{(25-24)^2}{24}=`r round(a$statistic,3)` \stackrel{H_0}{\sim} \chi^2_{`r a$parameter`}$$
+<font size=4>
+$$\chi^2_{obs}=\frac{(85-84)^2}{84}+\frac{(35-36)^2}{36}+\frac{(55-56)^2}{56}+\frac{(25-24)^2}{24}=`r round(a$statistic,3)` \stackrel{H_0}{\sim} \chi^2_{`r a$parameter`}$$</font>
  
 Usando o nível de significância $\alpha=`r alpha`$, o valor crítico é $\chi^2_{crit} = \chi^2_{`r a$parameter`, `r alpha`} = `r chi_crit`$.
 
@@ -340,8 +352,8 @@ text(chi_crit, ymax, labels= bquote(chi[.(paste0(df, ",", alpha))]^2 == .(chi_cr
 
 Como $\chi^2_{obs}= `r round(a$statistic,3)` < `r chi_crit` = \chi^2_{crit}$, não rejeitamos a hipótese nula de indepêndencia. 
   
+  
 ## Exemplo: Exercícios do Moodle e nota da Prova 1 {.build}
-
 
 ```{r,echo=FALSE}
 dados <- read.csv("./dados/notas.csv", na.strings = "-", header=TRUE)
@@ -368,21 +380,22 @@ rownames(y) <- c("< 5 no Moodle",">= 5 no Moodle", "Total")
 kable(y)
 ```
 
+
 ## Exemplo: Exercícios do Moodle e nota da Prova 1 {.smaller .build}
 
 Tabela de frequências esperadas, segundo a hipótese nula de independência:
-
 $$E_{ij}=n\hat{p}_{ij}=\frac{n_{i0}n_{0j}}{n}$$
 
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 e <- round(a$expected, 2)
 kable(e)
 ```
 
+<br />
 A estatística $\chi^2$ tem o valor observado de 
-
 $$\chi^2_{obs}=\frac{(`r x[1,1]`-`r e[1,1]`)^2}{`r e[1,1]`}+\frac{(`r x[1,2]`-`r e[1,2]`)^2}{`r e[1,2]`}+\frac{(`r x[2,1]`-`r e[2,1]`)^2}{`r e[2,1]`}+\frac{(`r x[2,2]`-`r e[2,2]`)^2}{`r e[2,2]`}=`r round(a$statistic,2)` \stackrel{H_0}{\sim} \chi^2_{`r a$parameter`}$$
 
+<br />
 Usando o nível de significância $\alpha=`r alpha`$, o valor crítico é $\chi^2_{crit} = \chi^2_{`r a$parameter`, `r alpha`} = `r chi_crit`$.
 
 Como $\chi^2_{obs}= `r round(a$statistic,2)` > `r chi_crit` = \chi^2_{crit}$, rejeitamos a hipótese nula de indepêndencia.
@@ -392,20 +405,21 @@ Como $\chi^2_{obs}= `r round(a$statistic,2)` > `r chi_crit` = \chi^2_{crit}$, re
 
 ## Teste de Homogeneidade {.build}
 
-Nas situações em que utilizamos os testes de independência, o esquema de amostragem utizado foi baseado numa amostra aleatória de tamanho $n$ que é classificada com respeito a duas características simultaneamente. 
+Nas situações em que utilizamos os testes de independência, o esquema de amostragem utilizado foi baseado numa amostra aleatória de tamanho $n$ que é classificada com respeito a duas características simultaneamente. 
 
 Nesse caso, as frequências marginais totais (totais por linhas e totais por colunas) são variáveis aleatórias, pois a cada nova amostragem, não temos como saber de antemão quais serão os valores dos totais por linhas/colunas.
 
 Se o esquema de amostragem for de dividir a população em duas subpopulações de acordo com as categorias de uma característica e selecionar uma amostra de um tamanho pré-determinado para cada subpopulação, então esta será uma situação de tabela de contingência com margens fixas. 
 
+
 ## Teste de Homogeneidade {.build}
+
 Por exemplo, no caso do problema de filiação partidária, poderíamos selecionar amostras aleatórias de tamanho $200$ entre afiliados do partido $A$ e $300$ dentre os afiliados do partido $B$ e se classificaria essas amostras de acordo com a atitude (favorável, indiferente ou contrário).
 
 O interesse então é estudar as proporções nessas categorias para determinar se elas são aproximadamente iguais para as diferentes subpopulações. Ou seja, queremos testar se as subpopulações são homogêneas.
 
 
 ## Teste de Homogeneidade {.build .smaller}
-
 
 Suponha que amostras aleatórias independentes de tamanho $n_{10}, \ldots, n_{r0}$ são selecionadas de $r$ subpopulações $A_1, \ldots, A_r$ respectivamente.  Classificando cada amostra em uma das categorias $B_1, \ldots, B_c$, obtemos uma tabela de contigência $r \times c$ onde os totais das linhas são tamanhos de amostras fixos. 
 
@@ -419,8 +433,8 @@ Tabelas de contingência $r \times c$ com totais das linhas fixos:
 |$A_r$  |$n_{r1}$ | $n_{r2}$  | $\ldots$ | $n_{rc}$ | $n_{r0}$ |
 | Total da coluna | $n_{01}$ | $n_{02}$ | $\ldots$ | $n_{0c}$ | $n$|
 
-## Teste de Homogeneidade {.build .smaller}
 
+## Teste de Homogeneidade {.build .smaller}
 
 As probabilidades das várias categorias de $B$ dentro de cada subpopulação de $A$ também são apresentadas a seguir, onde cada $w$ representa uma probabilidade condicional,
 
@@ -438,7 +452,6 @@ Probabilidades das categorias de $B$ dentro de cada subpopulação:
 
 ## Teste de Homogeneidade {.build}
 
-
 A hipótese nula de iqualdade das categorias $B$ para as $r$ subpopulações é:
 
 $$H_0: w_{1j}=w_{2j}= \cdots = w_{rj}, \mbox{ para todo } j=1,2, \ldots c.$$
@@ -454,15 +467,14 @@ A frequência esperada estimada na componente $(i,j)$ sob $H_0$ é:
 $$\begin{aligned}
 E_{ij} &= (\mbox{Número de $A_i$ amostrados}) \times (\mbox{Probabilidade de $B_j$ dentro de $A_i$}) \\
 &=n_{i0} \hat{w}_{ij}=\frac{n_{i0}n_{0j}}{n}
-\end{aligned}
-$$
+\end{aligned}$$
 
 
 ## Teste de Homogeneidade {.build}
 
 A **estatística do teste** é dada por:
 
-$$\chi^2= \sum_{r \times c \text{ componentes }} \frac{(n_{ij}-E_{ij})^2}{E_{ij}}$$
+$$\chi^2= \sum_{i=1}^r \sum_{j=1}^c \frac{(n_{ij}-E_{ij})^2}{E_{ij}}$$
 que sob $H_0$ segue uma distribuição $\chi^2$ com $(r-1)\times(c-1)$ graus de liberdade.
 
 Pode-se observar que as fórmulas e os graus de liberdade dessa seção são iguais ao da seção anterior, somente o método de amostragem e a formalização da hipótese nula são diferentes.
@@ -472,7 +484,7 @@ Pode-se observar que as fórmulas e os graus de liberdade dessa seção são igu
 **Conclusão**: Rejeitamos $H_0$ se $\chi_{obs}^2 \geq \chi^2_{crit}.$
 
 
-## Exemplo: Alcoolismo e profissões {.build}
+## Exemplo: Alcoolismo e Profissões {.build}
 
 Foi feita uma pesquisa para determinar a incidência de alcoolismo em diferentes grupos profissionais.   
 
@@ -480,8 +492,6 @@ Separadamente, um amostra aleatória entre religiosos, educadores, executivos e 
 Os dados são apresentados na tabela:
 
 ```{r,echo=FALSE}
-
-
 x = matrix(c(32,268,51,199,67,233,83,267),nrow=4,byrow=TRUE)
  rownames(x) = c("Religiosos","Educadores","Executivos","Comerciantes")
  colnames(x) = c("Alcoólatras","Não Alcoólatras") 
@@ -497,8 +507,8 @@ chi_crit <- round(qchisq(1-alpha,df=a$parameter),2)
 kable(x)
 ```
 
-## Exemplo: Alcoolismo e profissões {.build}
 
+## Exemplo: Alcoolismo e Profissões {.build}
 
 $$w_{ij}=P(B_j| A_i)= \text{ probabilidade de } B_j \text{ dentro da subpopulação } A_i.$$
 
@@ -510,104 +520,121 @@ Tabela de contingência de alcoolismo vs profissão: frequência relativa por li
 kable(round(prop.table(x,1),2))
 ```
 
-## Exemplo: Alcoolismo e profissões {.build}
+
+## Exemplo: Alcoolismo e Profissões {.build}
 
 Gráfico de barras de alcoolismo vs profissão: frequência relativa por linha.
 
-<center>
-```{r,echo=FALSE,fig.height=4.5,fig.width=6}
+```{r, echo=FALSE, fig.height=4.5, fig.width=6, fig.align='center'}
 par(mar=c(3, 3, 1, 1))
-barplot(t(prop.table(x,1)),xlab="Ocupação", main=" ", beside=TRUE,legend.text=TRUE,ylim=c(0,1.1),col=c("lightpink","lightblue"), las=1, cex.axis=1.3,cex.lab=1.3) 
+barplot(t(prop.table(x,1)), xlab="Ocupação", main=" ",
+        beside=TRUE, legend.text=TRUE, ylim=c(0, 1.1), col=c("lightpink","lightblue"), 
+        las=1, cex.axis=1.3, cex.lab=1.3) 
 ```
-</center>
 
 
-## Exemplo: Alcoolismo e profissões {.build}
+## Exemplo: Alcoolismo e Profissões {.build}
 
 A frequência esperada estimada na componente $(i,j)$ sob $H_0$ é
-
 $$E_{ij}=\frac{n_{i0}n_{0j}}{n}$$
 
 Tabela de frequências esperadas, segundo a hipótese nula de homogeneidade:
 
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 e <- round(a$expected,2)
 kable(e)
 ```
 
 
-## Exemplo: Alcoolismo e profissões {.build}
-
+## Exemplo: Alcoolismo e Profissões {.build}
 
 Representando por $p_1, p_2, p_3$ e $p_4$ as proporções de alcoólatras na subpopulação de religiosos, educadores, executivos e comerciantes, respectivamente, queremos testar a hipótese:
-
-$$H_0:  p_1= p_2 = p_3 = p_4 \quad \mbox{vs} \quad H_a: \mbox{pelo menos uma proporção é diferente}$$ 
+<font size=5>
+$$H_0: p_1= p_2 = p_3 = p_4 \quad \mbox{vs} \quad H_A: \mbox{pelo menos uma proporção é diferente}$$ 
+</font>
 
 A estatística observada é:
-
+<font size=4>
 $$\chi^2_{obs}= \frac{(32-58.25)^2}{58.25}+ \cdots + \frac{(267-282.04)^2}{282.04}=`r round(a$statistic,2)` \stackrel{H_0}{\sim} \chi^2_{`r a$parameter`}$$
+</font>
 
-Usando o nível de significância $\alpha=`r alpha`$, o valor crítico é $\chi^2_{crit} = \chi^2_{`r a$parameter`, `r alpha`} = `r chi_crit`$.  Como $\chi^2_{obs}= `r round(a$statistic,2)` > `r chi_crit` = \chi^2_{crit}$, rejeitamos a hipótese nula de homogeneidade.
+Usando o nível de significância $\alpha=`r alpha`$, o valor crítico é $\chi^2_{crit} = \chi^2_{`r a$parameter`, `r alpha`} = `r chi_crit`$. <br />
+Como $\chi^2_{obs} > \chi^2_{crit}$, rejeitamos a hipótese nula de homogeneidade.
 
 Como a hipótese nula foi rejeitada verificamos que há indícios de que a proporção de alcoólatras nas classes profissionais não é homogênea. 
 
 
 ## Exemplo: Google {.build}
 
-
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 # openintro 3rd edition ex 6.34 adaptado para homogeneidade
-x <- matrix(c(3511,1749,1818,
-              1489,751,682),byrow=TRUE,ncol=3)
-colnames(x) <- c("Atual","Teste 1", "Teste 2")
-rownames(x) <- c("Sem nova busca","nova busca")
+x <- matrix(c(3511, 1749, 1818, 1489, 751, 682), byrow=TRUE, ncol=3)
+colnames(x) <- c("Atual", "Teste 1", "Teste 2")
+rownames(x) <- c("Sem nova busca","Com nova busca")
 n <- sum(x)
 
 a <- chisq.test(x,correct=FALSE)
 alpha <- 0.01
-chi_crit <- round(qchisq(1-alpha,df=a$parameter),2)
+chi_crit <- round(qchisq(1-alpha, df=a$parameter), 2)
 ```
 
-O Google está constantemente elaborando experimentos para testar novos algoritmos de busca. Por exemplo, o Google pode estar interessado em testar 3 algoritmos usando uma amostra aleatória para cada um: `r sum(x[,1])` buscas feitas com o algoritmo atual foram selecionadas ao acaso, `r sum(x[,2])` buscas feitas com o algoritmo teste 1 foram selecionadas ao acaso e `r sum(x[,3])` buscas feitas com o algoritmo teste 2 foram selecionadas ao acaso.
+<img src="figuras/GoogleSearch.png" width=300 style="float: right; margin-left:30px">
+
+O Google está constantemente elaborando experimentos para testar novos algoritmos de busca. 
+
+Exemplo: o Google está interessado em testar 3 algoritmos usando uma amostra aleatória. Para isso, foram selecionadas ao acaso: <br />
+- `r sum(x[,1])` buscas feitas com o algoritmo atual; <br />
+- `r sum(x[,2])` buscas feitas com o algoritmo teste 1; e <br />
+- `r sum(x[,3])` buscas feitas com o algoritmo teste 2.
 
 Como avaliar qual o melhor algoritmo? É preciso definir alguma medida. 
 
-No caso, o Google irá avaliar se o usuário clicou em um dos links da busca e depois não realizou uma nova tentativa de busca ou se ele depois realizou nova tentativa (indicando que a primeira busca não foi bem sucedida).
+O Google irá avaliar se o usuário clicou em um dos links da busca e depois realizou ou não uma nova tentativa de busca. 
 
-Objetivo: 3 algoritmos têm a mesma performance, isto é, a proporção de buscas que não são refeitas é a mesma para os três algoritmos?
+Realizar uma nova tentativa indica que a primeira busca não foi bem sucedida.
+
 
 ## Exemplo: Google
 
-Suponha que o Google tenha obtido os seguintes resultados:
+<img src="figuras/GoogleSearch.png" width=300 style="float: right; margin-left:30px">
 
-```{r,echo=FALSE}
+**Objetivo:** testar se os 3 algoritmos têm a mesma performance.
+
+Em outras palavras, testar se a proporção de buscas que não são refeitas é a mesma para os três algoritmos.
+
+Suponha que o Google tenha obtido os seguintes resultados:
+```{r, echo=FALSE}
 kable(x)
 ```
+
 
 ## Exemplo: Google
 
 Tabela de frequências esperadas, segundo a hipótese nula de homogeneidade:
-
-```{r,echo=FALSE}
-e <- round(a$expected,2)
+```{r, echo=FALSE}
+e <- round(a$expected, 2)
 kable(e)
 ```
 
+<br />
 A estatística $\chi^2$ tem o valor observado de 
+<font size=4>
+$$\chi^2_{obs}=\frac{(`r x[1,1]`-`r e[1,1]`)^2}{`r e[1,1]`}+\frac{(`r x[1,2]`-`r e[1,2]`)^2}{`r e[1,2]`}+\frac{(`r x[2,1]`-`r e[2,1]`)^2}{`r e[2,1]`}+\frac{(`r x[2,2]`-`r e[2,2]`)^2}{`r e[2,2]`}=`r round(a$statistic,2)` \stackrel{H_0}{\sim} \chi^2_{`r a$parameter`}$$
+</font>
 
-$\chi^2_{obs}=\frac{(`r x[1,1]`-`r e[1,1]`)^2}{`r e[1,1]`}+\frac{(`r x[1,2]`-`r e[1,2]`)^2}{`r e[1,2]`}+\frac{(`r x[2,1]`-`r e[2,1]`)^2}{`r e[2,1]`}+\frac{(`r x[2,2]`-`r e[2,2]`)^2}{`r e[2,2]`}=`r round(a$statistic,2)` \stackrel{H_0}{\sim} \chi^2_{`r a$parameter`}$
+Usando o nível de significância $\alpha=`r alpha`$, o valor crítico é $\chi^2_{crit} = \chi^2_{`r a$parameter`, `r alpha`} = `r chi_crit`$. <br />
+Como $\chi^2_{obs} < \chi^2_{crit}$, não rejeitamos a hipótese nula de homogeneidade.
 
-Usando o nível de significância $\alpha=`r alpha`$, o valor crítico é $\chi^2_{crit} = \chi^2_{`r a$parameter`, `r alpha`} = `r chi_crit`$.  Como $\chi^2_{obs}= `r round(a$statistic,2)` < `r chi_crit` = \chi^2_{crit}$, não rejeitamos a hipótese nula de homogeneidade.
 
+## Exemplo: Google {.build}
 
-## Exemplo: Google
-
-<center>
-```{r,echo=FALSE,fig.height=5,fig.width=6}
-barplot(prop.table(x,2),xlab="Algoritmo", main=" ", beside=TRUE,legend.text=TRUE,ylim=c(0,1),col=c("lightblue","lightpink"), las=1, cex.axis=1.3, cex.lab=1.3, cex.names=1.3)
+```{r, echo=FALSE, fig.height=4.3, fig.width=7, fig.align='center'}
+par(mar = c(4, 3, 1, 1))
+barplot(prop.table(x, 2), xlab="Algoritmo", main=" ", beside=TRUE, legend.text=TRUE, ylim=c(0, 1), 
+        col=c("lightblue","lightpink"), las=1, cex.axis=1.3, cex.lab=1.3, cex.names=1.3)
 ```
-</center>
 
+Veja como o gráfico confirma a hipótese de homogeneidade: proporção de buscas não refeitas é a mesma para os três algoritmos.
 
 
 ## Leituras
@@ -616,7 +643,7 @@ barplot(prop.table(x,2),xlab="Algoritmo", main=" ", beside=TRUE,legend.text=TRUE
 * [OpenIntro](https://www.openintro.org/stat/textbook.php): seção 6.4
 
 
-##
+<br /><br />
 
 Slides produzidos pelos professores:
 
