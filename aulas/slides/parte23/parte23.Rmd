@@ -34,40 +34,48 @@ Hoje, focaremos nas observações referentes a `r nrow(notas)` alunos que obtive
 
 Nosso objetivo é inferir a respeito da associação das notas (absolutas) das atividades disponibilizadas no Moodle com aquelas da Prova P1.
 
+
 ## Moodle ($\leq 6.25$) e Notas da Prova P1
 
 ```{r show_data, echo=FALSE}
 kable(head(notas)) 
 ```
 
-## Como Explicar essa Associação?
 
-```{r scatter_plot, echo=FALSE, fig.align='center', fig.width=5, fig.height=5}
-sc1 = ggplot(notas, aes(Moodle, P1)) + geom_point(alpha=.7) + theme_bw()
-sc2 = sc1 + geom_smooth(method='lm', se=FALSE)
+## Como explicar essa associação?
+
+```{r scatter_plot, echo=FALSE, fig.align='center', fig.width=7, fig.height=4.5}
+sc1 = ggplot(notas, aes(Moodle, P1)) + geom_point(alpha=.7, size=2.5, color="blue") + 
+  theme(text = element_text(size=14), axis.text = element_text(size=14))
+sc2 = sc1 + geom_smooth(method='lm', se=FALSE, color="red")
 sc2
 ```
 
+
 ## Explicando Associação Linear {.build}
 
-- **Coeficiente de correlação**
-    + Quantidade no intervalo $(-1, 1)$;
-    + Mede a força da associação linear em função da dispersão dos dados;
+- **Coeficiente de Correlação**
+    + Quantidade no intervalo $(-1, 1)$
+    + Mede a força da associação linear em função da dispersão dos dados
+    
+<br />
+
 - **Modelo de regressão linear simples**
     + Estima a forma $Y = \hat{\alpha} + \hat{\beta}X$;
     + O modelo é linear **nos parâmetros**
   
 
-# Correlação Linear  
+# Coeficiente de Correlação
   
-## Introdução à Correlação Linear {.build}
+## Introdução ao Coeficiente de Correlação {.build}
 
-- Denotamos a correlação por $R$;
-- $R = -1$, associação linear negativa entre X e Y;
-- $R = 0$, ausência de associação linear entre X e Y;
-- $R = +1$, associação linear positiva entre X e Y;
+Denotamos a correlação por $R$.
 
-```{r scatter_plot2, echo=FALSE, fig.height=3, fig.width=4, fig.align='center'}
+- $R = -1$: associação linear negativa entre X e Y;
+- $R = 0$: ausência de associação linear entre X e Y;
+- $R = +1$: associação linear positiva entre X e Y;
+
+```{r scatter_plot2, echo=FALSE, fig.height=3, fig.width=5, fig.align='center'}
 sc2
 ```
 
@@ -111,8 +119,6 @@ myplot(y2)
 myplot(y3)
 myplot(y4)
 myplot(y5)
-
-
 ```
 
 ## Determinação do Coeficiente de Correlação {.build}
@@ -122,16 +128,17 @@ Hipóteses:
 - Duas variáveis contínuas: $X$ e $Y$;
 - $n$ pares de observações: ($X_i, Y_i$);
 
+
 ## Fórmula 1 {.build}
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 R & = \frac{\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})}{\sqrt{\sum_{i=1}^n (X_i-\bar{X})^2}\sqrt{\sum_{i=1}^n (Y_i-\bar{Y})^2}} \\
   & = \frac{S_{XY}}{\sqrt{S_{XX}^2 S_{YY}^2}} = \frac{S_{XY}}{S_{XX}S_{YY}} 
-\end{aligned}
-$$
+\end{aligned}$$
 
 Notem que $S_{XX}^2$ e $S_{YY}^2$ são as somas de quadrados de $X$ e $Y$ corrigida por suas respectivas médias.
+
+No exemplo das notas da P1 e Moodle:
 
 ```{r calc_cor1, echo=FALSE}
 SXY = with(notas, sum((Moodle-mean(Moodle))*(P1-mean(P1))))
@@ -139,48 +146,40 @@ SXX = with(notas, sqrt(sum((Moodle-mean(Moodle))^2)))
 SYY = with(notas, sqrt(sum((P1-mean(P1))^2)))
 ```
 
-$$
-\begin{aligned}
-S_{XY} & = `r round(SXY, 2)` \\
-S_{XX} & = `r round(SXX, 2)` \\
-S_{XY} & = `r round(SYY, 2)` \\
-R & = `r round(SXY/(SXX*SYY), 4)`
-\end{aligned}
-$$
+$$S_{XY} = `r round(SXY, 2)`, \qquad S_{XX} = `r round(SXX, 2)`, \qquad S_{XY} = `r round(SYY, 2)`$$
+
+$$R = `r round(SXY/(SXX*SYY), 4)`$$
+
 
 ## Fórmula 2 {.build}
 
 $$
 \begin{aligned}
 R & = \frac{\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})}{\sqrt{\sum_{i=1}^n (X_i-\bar{X})^2}\sqrt{\sum_{i=1}^n (Y_i-\bar{Y})^2}} \\
-  & = \frac{1}{n-1} \sum_{i=1}^n \frac{(X_i - \bar{X})}{s_X} \frac{(Y_i - \bar{Y})}{s_Y}
+  & = \frac{1}{n-1} \sum_{i=1}^n \left(\frac{X_i - \bar{X}}{s_X} \right) \left(\frac{Y_i - \bar{Y}}{s_Y} \right) = \frac{1}{n-1} \sum_{i=1}^n z_{x_i} z_{y_i}
 \end{aligned}
 $$
 
 Notem que $s_X$ e $s_Y$ representam os desvios-padrão amostrais de $X$ e $Y$, respectivamente.
+
 
 ```{r calc_cor2, echo=FALSE}
 SXYP = with(notas, sum(((Moodle-mean(Moodle))/sd(Moodle))*((P1-mean(P1))/sd(P1))))
 Nm1 = nrow(notas)-1
 ```
 
-$$
-\begin{aligned}
-\sum_{i=1}^n \frac{(X_i - \bar{X})}{s_X} \frac{(Y_i - \bar{Y})}{s_Y} & = `r round(SXYP, 2)` \\
-n-1 & = `r Nm1` \\
+$$\begin{aligned}
+\sum_{i=1}^n \left(\frac{X_i - \bar{X}}{s_X} \right) \left(\frac{Y_i - \bar{Y}}{s_Y} \right)& = `r round(SXYP, 2)` \qquad \qquad n-1 = `r Nm1` \\
 R & = `r round(SXYP/Nm1, 4)`
-\end{aligned}
-$$
+\end{aligned}$$
 
 
 ## Fórmula 3 {.build}
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 R & = \frac{\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})}{\sqrt{\sum_{i=1}^n (X_i-\bar{X})^2}\sqrt{\sum_{i=1}^n (Y_i-\bar{Y})^2}} \\
   & = \frac{1}{n-1} \frac{\sum_{i=1}^n X_i Y_i -n \bar{X}\bar{Y}}{s_X s_Y}
-\end{aligned}
-$$
+\end{aligned}$$
 
 Observem que $\bar{X}$ e $\bar{Y}$ representam as médias amostrais de cada uma das variáveis;
 e $s_X$ e $s_Y$ são os desvios-padrão amostrais de cada uma das variáveis.
@@ -194,51 +193,64 @@ SXYU = SXYU-Nm0*aveX*aveY
 SXYU = SXYU/(sd(notas$Moodle)*sd(notas$P1))
 ```
 
-$$
-\begin{aligned}
-\bar{X} = `r round(aveX, 2)` \quad
-\bar{Y} = `r round(aveY, 2)` \quad
+$$\begin{aligned}
+\bar{X} = `r round(aveX, 2)` \qquad
+\bar{Y} = `r round(aveY, 2)` \qquad
 n-1 & = `r Nm1` \\
 \frac{\sum_{i=1}^n X_i Y_i -n \bar{X}\bar{Y}}{s_X s_Y} & = `r round(SXYU, 2)` \\
 R & = `r round((SXYU/Nm1), 4)`
-\end{aligned}
-$$
+\end{aligned}$$
 
 
 # Regressão Linear Simples
 
 ## Terminologia em Regressão Linear Simples {.build}
 
-- Um modelo de regressão possui, pelo menos, duas variáveis:
-    + Variável independente, variável exploratória, variável preditora, covariável: $x$;
-    + Variável dependente, variável resposta: $y$;
-- Para alunos com notas de atividades de no máximo 6.25, como as notas das atividades se associam com a nota da prova P1?
-    + Variável dependente (resposta): nota da prova P1;
-    + Variável independente: nota das atividades do Moodle;
+Um modelo de regressão possui, pelo menos, duas variáveis:
+
+  - $X$: variável independente, variável exploratória, variável preditora, covariável.
+  - $Y$: variável dependente, variável resposta.
+    
+<br />
+Para alunos com notas de atividades de no máximo 6.25, como as notas das atividades se associam com a nota da prova P1?
+
+- Variável dependente (resposta) $Y$: nota da prova P1
+- Variável independente $X$: nota das atividades do Moodle
+    
 
 ## Forma do Modelo {.build}
 
-- O modelo de regressão usual descreve associação linear: $$ Y= \alpha + \beta X + \epsilon. $$
-- Neste modelo, os termos adicionais são:
-    + $\alpha$: intercepto;
-    + $\beta$: coeficiente angular;
-    + $\epsilon$: erro observacional;
-- Considerar o erro é necessário, pois associações perfeitas são improváveis;
+O modelo de regressão usual descreve associação linear: 
+$$Y= \alpha + \beta X + \varepsilon.$$
+
+Neste modelo, os termos adicionais são:
+
+- $\alpha$: intercepto
+- $\beta$: coeficiente angular
+- $\varepsilon$: erro observacional
+
+Considerar o erro é necessário, pois associações perfeitas são improváveis.
+
 
 ## Forma do Modelo {.build}
 
 <center><img src="figuras/regressao.png" width=500></center>
 
+
 ## Hipóteses do Modelo de Regressão Linear
 
-- Modelo de regressão linear assume:
-    + Linearidade entre variáveis;
-    + Erros aleatórios nas observações;
-    + Erro tem média zero;
-    + Variância constante do erro $\sigma^2$;
-- Desta forma, a variável aleatória Y, $$Y = \alpha + \beta X + \epsilon, $$ possui as seguintes características:
-    + $E(Y) = E( \alpha + \beta X + \epsilon) = \alpha + \beta X$
-    + $\mbox{Var}(Y) = Var( \alpha + \beta X + \epsilon) = Var(\epsilon)  = \sigma^2$
+Modelo de regressão linear assume:
+
+- Linearidade entre variáveis;
+- Erros aleatórios nas observações;
+- Erro tem média zero;
+- Variância constante do erro $\sigma^2$;
+
+Desta forma, a variável aleatória $Y$, $$Y = \alpha + \beta X + \varepsilon, $$ possui as seguintes características:
+
+- $E(Y) = E( \alpha + \beta X + \varepsilon) = \alpha + \beta X$
+- $\mbox{Var}(Y) = Var( \alpha + \beta X + \varepsilon) = Var(\varepsilon)  = \sigma^2$
+  
     
 ## Como saber se a Regressão Linear é adequada? {.build}
 
@@ -248,6 +260,7 @@ $$
 - Aferir a homogeneidade da variância;
 - Buscar informação sobre independência das observações.
 
+
 ## Exemplo: Notas no Moodle e P1 
 
 Na última aula, trabalhamos com o conjunto de dados refere às notas do Moodle e da Prova P1 de `r n0` alunos matriculados em ME414 no 2S2015.
@@ -256,17 +269,20 @@ Hoje, focaremos nas observações referentes a `r nrow(notas)` alunos que obtive
 
 Nosso objetivo é inferir a respeito da associação das notas (absolutas) das atividades disponibilizadas no Moodle com aquelas da Prova P1.
 
+
 ## Exemplo: Notas no Moodle e P1
 
 ```{r show_moodle_p1, echo=FALSE}
 kable(head(notas))
 ```
 
+
 ## Exemplo: Notas no Moodle e P1
 
 ```{r dados_nota_rl, echo=FALSE, fig.align='center'}
 sc2
 ```
+
 
 ## Escolha da Melhor Reta {.build}
 
@@ -275,31 +291,34 @@ Um modo de determinar a melhor reta é pelo meio da minimização da soma dos er
 - Determinar a função a ser minimizada;
 - Determinar a primeira derivada com respeito aos parâmetros de interesse;
 - Igualar estas derivadas a zero;
-- Verificar segundas derivadas;
+- Verificar segundas derivadas.
+
 
 ## Escolha da Melhor Reta {.build}
 
-$$
-\begin{aligned}
-Y_i & = \alpha + \beta X_i + \epsilon_i \\
-f(\alpha, \beta) = \sum_{i=1}^n \epsilon_i^2 & = \sum_{i=1}^n (Y_i - \alpha - \beta X_i)^2 \\
-\frac{\partial f(\alpha, \beta)}{\partial \alpha} & = -2 \sum_{i=1}^n (Y_i - \alpha - \beta X_i) \\
-\frac{\partial f(\alpha, \beta)}{\partial \beta} & = -2 \sum_{i=1}^n X_i (Y_i - \alpha - \beta X_i) \\
-\hat{\alpha} & = \bar{Y} - \hat{\beta} \bar{X} \\
-\hat{\beta} & = \frac{\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})}{\sum_{i=1}^n (X_i-\bar{X})^2} = \frac{S_{XY}}{S_{XX}}
-\end{aligned}
-$$
+$$Y_i = \alpha + \beta X_i + \varepsilon_i$$
+
+A função a ser minimizada é a soma de quadrados dos erros:
+$$f(\alpha, \beta) = \sum_{i=1}^n \varepsilon_i^2 = \sum_{i=1}^n (Y_i - \alpha - \beta X_i)^2$$
+
+Tomando as derivadas em relação a $\alpha$ e $\beta$ e igualando-as a zero temos:
+$$\frac{\partial f(\alpha, \beta)}{\partial \alpha} = -2 \sum_{i=1}^n (Y_i - \alpha - \beta X_i) \qquad
+\frac{\partial f(\alpha, \beta)}{\partial \beta} = -2 \sum_{i=1}^n X_i (Y_i - \alpha - \beta X_i)$$
+$$\hat{\alpha} = \bar{Y} - \hat{\beta} \bar{X} \qquad \mbox{e} \qquad 
+\hat{\beta} = \frac{\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})}{\sum_{i=1}^n (X_i-\bar{X})^2} = \frac{S_{XY}}{S_{XX}}$$
 
 ```{r reg_formulas, echo=FALSE}
 sxx = function(x) sum((x-mean(x))^2)
 sxy = function(x, y) sum((x-mean(x))*(y-mean(y)))
 ```
 
+
 ## A Escolha da Melhor Reta
 
 ```{r diagpontos_notas, echo=FALSE, fig.align='center'}
 sc2
 ```
+
 
 ## Exemplo: Moodle x P1 {.build}
 ```{r reta_notas, echo=FALSE}
@@ -311,41 +330,37 @@ ymean = round(mean(notas$P1), 2)
 hata = mean(notas$P1) - sxymark/sxxmark*mean(notas$Moodle)
 ```
 
-$$
-\begin{aligned}
-\hat{\beta} = \frac{S_{XY}}{S_{XX}} & = `r ifelse(sxymark < 0, '-', '')` \frac{`r abs(sxymark)`}{`r format(sxxmark, digits=3)`} = `r hatb` \\
-\hat{\alpha} = \bar{Y} - \hat{\beta} \bar{X} & = `r ymean` `r ifelse(hatb < 0, '+', '-')` `r abs(hatb)` \times `r xmean` = `r round(hata, 2)` \\
+$$\begin{aligned}
+\hat{\beta} & = \frac{S_{XY}}{S_{XX}} = `r ifelse(sxymark < 0, '-', '')` \frac{`r abs(round(sxymark, 2))`}{`r round(sxxmark, 2)`} = `r hatb` \\
+\hat{\alpha} & = \bar{Y} - \hat{\beta} \bar{X} = `r ymean` `r ifelse(hatb < 0, '+', '-')` `r abs(hatb)` \times `r xmean` = `r round(hata, 2)` \\
 \mbox{P1} &= `r round(hata, 2)` `r ifelse( hatb < 0, '-', '+')` `r abs(hatb)` \times \mbox{Moodle}
-\end{aligned}
-$$
+\end{aligned}$$
 
-```{r reg1, echo=FALSE, fig.align='center', fig.height=3, fig.width=4}
+```{r reg1, echo=FALSE, fig.align='center', fig.height=3, fig.width=5}
 sc2
 ```
+
 
 ## Interpretação dos Parâmetros {.build}
 
-$$
-\begin{aligned}
-\hat{\alpha} & = `r round(hata, 2)` \\
-\hat{\beta} & = `r round(hatb, 2)`
-\end{aligned}
-$$
+$$\mbox{P1} = `r round(hata, 2)` `r ifelse( hatb < 0, '-', '+')` `r abs(hatb)` \times \mbox{Moodle}$$
 
-- $\hat{\alpha}$ é a nota média na P1 para alunos com nota 0 no Moodle;
-- $\hat{\beta}$ é o aumento médio na nota da P1 para cada ponto extra no Moodle.
+- $\hat{\alpha} = `r round(hata, 2)`$ é a nota média na P1 para alunos com nota 0 no Moodle;
+- $\hat{\beta} = `r abs(hatb)`$ é o aumento médio na nota da P1 para cada ponto extra no Moodle.
 
-```{r reg1_interpretacao, echo=FALSE, fig.align='center', fig.height=3, fig.width=4}
+```{r reg1_interpretacao, echo=FALSE, fig.align='center', fig.height=3, fig.width=5}
 sc2
 ```
 
-# Observações
 
 ## Erros na Interpretação de Correlação e Regressão {.build}
 
-- Correlação e regressão apresentam **associação**;
-- Associação não indica causalidade;
-- Extrapolações não devem ser feitas;
+- Correlação e regressão apresentam **associação**!
+- Associação não indica causalidade!!!
+- Extrapolações não devem ser feitas.
+
+<img src="figuras/AssociationCausation.png" width=300 style="float: right; margin-left:30px">
+
 
 ## Associações
 
@@ -367,6 +382,7 @@ assoc_graph
 #legend('topright', c('Margarina', 'Divorcios'), lwd=3, col=1:2)
 ```
 
+
 ## Associações {.build}
 
 A correlação entre estas duas variáveis (número de divórcios e consumo de margarina) é `r round(cor(assoc$margarina, assoc$divorcios), 4)`.
@@ -382,6 +398,7 @@ kable(summary(lm(divorcios~margarina, data=assoc))$coef, col.names = c("Estimati
 Ou seja,
 $$\mbox{divórcios} = 3.30 + 0.20 \times \mbox{margarina}$$
 
+
 ## Associações
 
 Importante lembrar que modelos de regressão descrevem associação, não causalidade.
@@ -389,6 +406,7 @@ Importante lembrar que modelos de regressão descrevem associação, não causal
 ```{r graf_reg_assoc, echo=FALSE, fig.align='center'}
 ggplot(assoc, aes(margarina, divorcios)) + geom_point() + geom_smooth(method='lm', se=FALSE) + theme_bw()
 ```
+
 
 ## Extrapolações
 
@@ -398,16 +416,16 @@ Qual o consumo esperado de margarina em 2016?
 assoc_graph
 ```
 
+
 ## Leituras
+
+<img src="figuras/bacon.png" width=450 style="float: right; margin-left:30px">
 
 * [Ross](http://www.sciencedirect.com/science/article/pii/B9780123743886000132): capítulo 12 
 * [OpenIntro](https://www.openintro.org/stat/textbook.php): seções 7.1 e 7.2
 * Magalhães: seção 9.5
 
-<center><img src="figuras/bacon.png" width=400></center>
-
-
-##
+<br /><br />
 
 Slides produzidos pelos professores:
 
