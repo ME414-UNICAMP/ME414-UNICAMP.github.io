@@ -867,25 +867,25 @@ Então $P(C)=1-P(A\cup B)=0.34$.
 
 Usava cinto  | Sobreviveu ($S$) | Não sobreviveu ($\bar{S}$) | Total
 ------------- | ----------------| ---------------------------| ------
-Sim ($C$)      | 414368 | 510 | 412878
+Sim ($C$)      | 414368 | 510 | 414878
 Não ($\bar{C}$) | 162527 | 1601 | 164128
-Total | 574895 | 2111 | 577006
+Total | 576895 | 2111 | 579006
 
 
 $$\Omega=\{(C,S),(C,\bar{S}),(\bar{C},S),(\bar{C},\bar{S}) \} $$ 
 
 Se selecionarmos um registro ao acaso, qual a probabilidade dele conter uma morte registrada?
 
-$$P(\bar{S})=\frac{2111}{577006}=0.004$$
+$$P(\bar{S})=\frac{2111}{579006}=0.0034$$
 
 
 ## Exemplo: Cinto de segurança e acidentes {.build}
 
 Usava cinto  | Sobreviveu ($S$) | Não sobreviveu ($\bar{S}$) | Total
 ------------- | ----------------| ---------------------------| ------
-Sim ($C$)      | 414368 | 510 | 412878
+Sim ($C$)      | 414368 | 510 | 414878
 Não ($\bar{C}$) | 162527 | 1601 | 164128
-Total | 574895 | 2111 | 577006
+Total | 576895 | 2111 | 579006
 
 
 $$\Omega=\{(C,S),(C,\bar{S}),(\bar{C},S),(\bar{C},\bar{S}) \} $$ 
@@ -893,7 +893,7 @@ $$\Omega=\{(C,S),(C,\bar{S}),(\bar{C},S),(\bar{C},\bar{S}) \} $$
 
  Se selecionarmos um registro ao acaso, qual a probabilidade de constar que o cinto não foi usado?
 
-$$P(\bar{C})=\frac{164128}{577006}=0.284$$
+$$P(\bar{C})=\frac{164128}{579006}=0.283$$
 
 
 ## Leituras
