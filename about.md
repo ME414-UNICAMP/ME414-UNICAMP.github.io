@@ -8,49 +8,35 @@ permalink: /about/
 ## Turmas Segundo Semestre 2018
 
 
-
-
 ### ME414 - D
 
-* Professor: [Samara Flamini Kiihl](http://www.ime.unicamp.br/~samara/)
-* Horário das aulas: Terças e Quintas 8 às 10 - CB06
-* [Informações da disciplina]()
+* Professor: Tatiana Benaglia
+* Horário das aulas: Terças e Quintas 8 às 10h - CB06
+* [Informações da disciplina](http://www.ggte.unicamp.br/eam/enrol/index.php?id=13791)
+
+
 
 ### ME414 - F
 
-* Professor: Tatiana Benaglia
-* Horário das aulas: Terças e Quintas 8 às 10h - CB01
-* [Informações da disciplina](http://www.ggte.unicamp.br/eam/course/view.php?id=8323)
+* Professor: [Samara Flamini Kiihl](http://www.ime.unicamp.br/~samara/)
+* Horário das aulas: Terças e Quintas 8 às 10 - CB01
+* [Informações da disciplina](http://www.ggte.unicamp.br/eam/course/view.php?id=13593)
 
-## ME414 - H
 
-* Professor: [Rafael Pimentel Maia](http://www.ime.unicamp.br/~rafaelmaia/)
-* Horário das aulas: Quartas 10 às 12 -  e Sextas 10 às 12 - 
-* [Informações da disciplina]()
+
 
 
 ## Monitorias
 
 ### PEDs
-* PED-C: Heidi Mara Sousa - RA 108283
 
-* PED-C: Gabriel Franco de Souza - RA 081453
-
-* PED-C: Nathalia Lima Chaves - RA 149075
+* Hugo Calegari - RA: 155738
+* José Alejandro Ordoñez Cuastumal - RA: 162509
 
 ### PAD
 
-* Francis Akio Ishizaka - RA 171752
 
 ### Horário de atendimento
 
-* Terça 12-13 - sala 323 IMECC - Francis
-* Terça 13-14 - sala 151 IMECC - Gabriel
-* Terça 18-19 - sala 222 IMECC  - Lisbeth
-* Quarta 12-13 - sala 124 IMECC - Heidi
-* Quarta 13-14 - sala 322 IMECC - Nathalia
-* Quinta 12-13 - sala 222 IMECC  - Lisbeth
-* Quinta 18-19 - sala 222 IMECC  - Francis
-* Sexta 12-13 - sala 224 IMECC - Heidi
-* Sexta 13-14 - sala 323 IMECC - Nathalia
+
 
