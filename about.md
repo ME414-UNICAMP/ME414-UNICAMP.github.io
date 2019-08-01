@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 
-## Turmas Segundo Semestre 2018
+## Turmas Segundo Semestre 2019
 
 
 ### ME414 - D
@@ -21,6 +21,13 @@ permalink: /about/
 * Professor: [Samara Flamini Kiihl](http://www.ime.unicamp.br/~samara/)
 * Horário das aulas: Terças e Quintas 8 às 10 - CB01
 * [Informações da disciplina](http://www.ggte.unicamp.br/eam/course/view.php?id=13593)
+
+
+### ME414 - I
+
+* Professor: [Filidor E. Vilca Labra](http://www.ime.unicamp.br/~fily/)
+* Horário das aulas: Terças e Quintas 16 às 18 - PB15
+* [Informações da disciplina](http://www.ggte.unicamp.br/eam/enrol/index.php?id=14475)
 
 
 
