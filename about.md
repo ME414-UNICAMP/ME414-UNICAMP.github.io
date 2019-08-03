@@ -19,7 +19,7 @@ permalink: /about/
 
 * Professor: Marina Vachkovskaia
 * Horário das aulas: Segundas e Quartas 14 às 16h - CB04
-* [Informações da disciplina]()
+* [Informações da disciplina](http://www.ggte.unicamp.br/eam/course/view.php?id=14699)
 
 
 ### ME414 - F
