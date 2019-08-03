@@ -10,7 +10,7 @@ permalink: /about/
 
 ### ME414 - D
 
-* Professora: Tatiana Benaglia
+* Professora: [Tatiana Benaglia](http://www.ime.unicamp.br/~tatiana/)
 * Horário das aulas: Terças e Quintas 8 às 10h - CB06
 * [Informações da disciplina](http://www.ggte.unicamp.br/eam/enrol/index.php?id=13791)
 
