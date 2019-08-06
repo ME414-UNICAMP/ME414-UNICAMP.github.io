@@ -51,7 +51,7 @@ permalink: /about/
 ### Horários de atendimento
 
 | Dia da Semana 	| Horário 	| Sala      	| Monitor   	|
-|---------------	|---------	|-----------	|-----------	|
+|:---------------:	|:---------	:|:-----------:	|-----------	|
 | 2as-feiras    	| 13-14h  	| IMECC 125 	| Katherine 	|
 | 3as-feiras    	| 13-14h  	| IMECC 225 	| Sara      	|
 | 4as-feiras    	| 13-14h  	| IMECC 225 	| Sara      	|
