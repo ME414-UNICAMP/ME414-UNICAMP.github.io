@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 
-## Turmas Segundo Semestre 2019
+## Turmas 2o Semestre 2019
 
 
 ### ME414 - D
@@ -52,5 +52,11 @@ permalink: /about/
 
 ### Horário de atendimento
 
+| Dia da Semana | Horário | Sala      | Monitor   | 
+|----------------------|------------|------------|-------------|
+| 2as-feiras    | 13-14h  | IMECC 125 | Katherine | 
+| 3as-feiras    | 13-14h  | IMECC 225 | Sara      | 
+| 4as-feiras    | 13-14h  | IMECC 225 | Sara      | 
+| 5as-feiras    | 13-14h  | IMECC 123 | Katherine | 
 
 
