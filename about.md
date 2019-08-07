@@ -43,10 +43,13 @@ permalink: /about/
 
 * Hugo Calegari - RA: 155738
 * José Alejandro Ordoñez Cuastumal - RA: 162509
+* Katherine Andreida Loor Valeriano - RA: 192629
+
 
 ### PAD
 
 * Sara Sousa De Oliveira - RA: 205733
+
 
 ### Horários de atendimento
 
