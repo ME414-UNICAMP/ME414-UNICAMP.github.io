@@ -126,14 +126,15 @@ idade=48
 
 Formam-se 10 grupos.
 
-Grupo X fica responsável por coletar os dados (tiras de papel referentes à Pessoa X) dos chutes referentes à Pessoa X. O grupo deverá **apresentar** medidas resumo e gráficos e que julgar necessários **no quadro** e um número como o "chute" final da classe para a Pessoa X.
+Grupo X fica responsável por coletar os dados (tiras de papel referentes à Pessoa X) dos chutes referentes à Pessoa X. 
 
 Cada grupo deve entregar uma folha com:
 
 * Título: Pessoa X
 * RA e nome de cada membro do grupo X
-* estatísticas sumárias (mínimo, máximo, média, mediana, moda, desvio padrão)
-* histograma, boxplot, ramo-e-folhas
+* estatísticas sumárias (mínimo, máximo, média)
+* histograma 
+* ramo-e-folhas
 * uma estimativa para a idade da Pessoa X, baseando-se na análise descritiva realizada
 
 
