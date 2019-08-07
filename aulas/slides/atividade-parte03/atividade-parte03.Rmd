@@ -13,9 +13,11 @@ logo: ../logo-imecc.png
 
 Cada aluno pega uma folha e recorta 10 tiras de papel. 
 
-Cada tira deverá estar indicada por um número (que representa a Pessoa na foto que será apresentada). Ao lado da indicação do número da Pessoa, coloque um "chute" para a idade da pessoa.
+Cada tira deverá estar indicada por um número (que representa a Pessoa na foto que será apresentada).
 
-Não consulte seus colegas, coloque o seu "chute" sobra a idade.
+Ao lado da indicação do número da Pessoa, coloque um "chute" para a idade da pessoa.
+
+Não consulte seus colegas, coloque o seu "chute" sobre a idade.
 
 
 
