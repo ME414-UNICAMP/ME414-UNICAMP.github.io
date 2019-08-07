@@ -11,13 +11,13 @@ logo: ../logo-imecc.png
 
 ## Coleta de dados
 
-Cada aluno pega uma folha faz uma tabela com 10 linhas e 2 colunas:
+Cada aluno pega uma folha e recorta 10 tiras de papel. 
 
-Coluna 1: Pessoa
+Cada tira deverá estar indicada por um número (que representa a Pessoa na foto que será apresentada). Ao lado da indicação do número da Pessoa, coloque um "chute" para a idade da pessoa.
 
-Coluna 2: Chute da idade
+Não consulte seus colegas, coloque o seu "chute" sobra a idade.
 
-Faça com letras grandes e linhas bem espaçadas para depois cortar em tiras (1 tira para cada linha).
+
 
 
 ## Pessoa 1
@@ -122,7 +122,7 @@ idade=48
 ```
 
 
-## Grupos {.msaller}
+## Grupos {.smaller}
 
 Formam-se 10 grupos.
 
@@ -136,6 +136,8 @@ Cada grupo deve entregar uma folha com:
 * histograma 
 * ramo-e-folhas
 * uma estimativa para a idade da Pessoa X, baseando-se na análise descritiva realizada
+
+A presença será contabilizada pela entrega dessa atividade ao final da aula.
 
 
 ##
