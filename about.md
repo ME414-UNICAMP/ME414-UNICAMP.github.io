@@ -52,7 +52,9 @@ permalink: /about/
 
 | Dia da Semana 	| Horário 	| Sala      	| Monitor   	|
 |:---------------:	|:---------	:|:-----------:	|-----------	|
-| 2as-feiras    	| 13-14h  	| IMECC 125 	| Katherine 	|
+| 2as-feiras    	| 13-14h  	| IMECC 125 	| Katherine |
+| 3as-feiras    	| 13-14h  	| IMECC 124 	| Hugo     	|
 | 3as-feiras    	| 13-14h  	| IMECC 225 	| Sara      	|
 | 4as-feiras    	| 13-14h  	| IMECC 225 	| Sara      	|
-| 5as-feiras    	| 13-14h  	| IMECC 123 	| Katherine 	|
+| 5as-feiras    	| 13-14h  	| IMECC 123 	| Katherine |
+| 5as-feiras    	| 13-14h  	| IMECC 124 	| Hugo	|
