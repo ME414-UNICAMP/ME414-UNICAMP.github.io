@@ -642,4 +642,6 @@ Slides produzidos pelos professores:
 
 * Benilton Carvalho
 
-<center><img src="figuras/boyfriend.png" width=650></center>
+<br />
+
+<center><img src="figuras/boyfriend.png" width=700></center>
