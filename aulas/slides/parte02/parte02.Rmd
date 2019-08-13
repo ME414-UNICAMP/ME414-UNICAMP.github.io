@@ -9,7 +9,7 @@ logo: ../logo-imecc.png
 
 # Estatísticas Sumárias: resumindo dados
 
-## Introdução{.build}
+## Introdução {.build}
 
 > Vimos na aula anterior como usar gráficos e tabelas para resumir os dados.
 
@@ -503,7 +503,7 @@ $A=\{1, 2, 5, 6, 6\}$ e $B=\{-40, 0, 5, 20, 35\}$
 Ambas alternativas evitam que desvios iguais em módulo, mas com sinais opostos, se anulem.
 
 
-## Variância e Desvio-padrão {.build}
+## Variância e Desvio padrão {.build}
 
 > A média dos desvios ao quadrado é denominada **variância**:
 $$s^2 = \frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})^2$$
@@ -580,9 +580,9 @@ stripchart(mulheres, method="stack", offset=1, at=0.1, ylim=c(0, 5), cex=1.7,
  
 > Para mulheres: desvio típico da média é menor do que o dos homens, pois a grande maioria das observações coincide com a própria média.
 
-> Desvio-padrão entre homens: $s=\sqrt{\frac{1}{n-1} \sum_{i=1}^n(x_i-\bar{x})^2}=`r round(sd(homens),2)`$
+> Desvio padrão entre homens: $s=\sqrt{\frac{1}{n-1} \sum_{i=1}^n(x_i-\bar{x})^2}=`r round(sd(homens),2)`$
 
-> Desvio-padrão entre mulheres: $s=`r round(sd(mulheres),2)`$
+> Desvio padrão entre mulheres: $s=`r round(sd(mulheres),2)`$
 
 
 ## Exemplo: P1 de ME414 {.build}
