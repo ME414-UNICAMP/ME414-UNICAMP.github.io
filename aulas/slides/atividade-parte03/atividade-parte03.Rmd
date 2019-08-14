@@ -17,7 +17,7 @@ Para isso, os alunos devem fazer o seguinte:
 
 1) Cada aluno deverá pegar uma folha de papel e recortá-la em 10 tiras. 
 
-2) Cada tira deverá ser identificada com Pessoa 1, Pessoa 2, ..., Pessoa 10, que representará a pessoa será exibida na foto.
+2) Cada tira deverá ser identificada com Pessoa 1, Pessoa 2, ..., Pessoa 10, que representará a pessoa apresentada na foto.
 
 3) Ao lado da identificação da Pessoa, colocar um "chute" para a idade da pessoa.
 
