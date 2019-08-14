@@ -11,20 +11,24 @@ logo: ../logo-imecc.png
 
 ## Coleta de dados
 
-Cada aluno pega uma folha e recorta 10 tiras de papel. 
+Nessa atividade iremos apresentar a foto de dez (10) pessoas e cada aluno deverá tentar adivinhar a idade de cada uma dessas pessoas.
 
-Cada tira deverá estar indicada por um número (que representa a Pessoa na foto que será apresentada).
+Para isso, os alunos devem fazer o seguinte:
 
-Ao lado da indicação do número da Pessoa, coloque um "chute" para a idade da pessoa.
+1) Cada aluno deverá pegar uma folha de papel e recortá-la em 10 tiras. 
 
-Não consulte seus colegas, coloque o seu "chute" sobre a idade.
+2) Cada tira deverá ser identificada com Pessoa 1, Pessoa 2, ..., Pessoa 10, que representará a pessoa será exibida na foto.
+
+3) Ao lado da identificação da Pessoa, colocar um "chute" para a idade da pessoa.
+
+**IMPORTANTE**: Não consulte seus colegas, coloque o seu "chute" sobre a idade.
 
 
 
 
 ## Pessoa 1
 
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 # http://www.aceshowbiz.com/events/Daryl%20Hannah/daryl-hannah-stars-2012-benefit-gala-01.html
 
 # foto de 2012
@@ -36,7 +40,7 @@ idade=52
 
 ## Pessoa 2
 
-```{r,echo=FALSE}
+```{r, echo=FALSE}
 # https://pt.wikipedia.org/wiki/Jodie_Foster
 # foto de 1989
 
@@ -126,18 +130,23 @@ idade=48
 
 ## Grupos {.smaller}
 
-Formam-se 10 grupos.
+Formam-se 10 grupos (número de membros em cada grupo depende do número de alunos na sala).
 
-Grupo X fica responsável por coletar os dados (tiras de papel referentes à Pessoa X) dos chutes referentes à Pessoa X. 
+Grupo X fica responsável por coletar os dados da Pessoa X, ou seja, as tiras de papel com os chutes da idade referentes à Pessoa X. 
 
 Cada grupo deve entregar uma folha com:
 
 * Título: Pessoa X
 * RA e nome de cada membro do grupo X
-* estatísticas sumárias (mínimo, máximo, média)
-* histograma 
-* ramo-e-folhas
-* uma estimativa para a idade da Pessoa X, baseando-se na análise descritiva realizada
+
+Depois de organizar os dados no papel, apresentar o seguinte:
+
+1. estatísticas sumárias (mínimo, Q1, mediana, Q3, máximo, média, desvio padrão)
+2. gráfico de ramo-e-folhas 
+3. histograma 
+4. boxplot
+
+Baseando-se na análise descritiva realizada, apresente uma **estimativa para a idade da Pessoa X**.
 
 A presença será contabilizada pela entrega dessa atividade ao final da aula.
 
