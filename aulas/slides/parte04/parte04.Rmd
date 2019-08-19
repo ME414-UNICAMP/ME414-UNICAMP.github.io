@@ -996,10 +996,9 @@ Quais os termos de busca mais se correlacionam a outros?
 
 Leitura complementar: [Online Dashboards: Eight Helpful Tips You Should Hear From Visualization Experts](http://blog.plot.ly/post/123617968702/online-dashboards-eight-helpful-tips-you-should)
 
-<center><img src="figuras/raquete.jpg" width=250></center>
+<img src="figuras/raquete.jpg" width=250 style="float: right;">
 
-
-##
+<br />
 
 Slides produzidos pelos professores:
 
