@@ -1,0 +1,85 @@
+---
+title: "ME414D - Estatística para Experimentalistas"
+author: "Atividade 1 - Qual é a idade?"
+date: "2S2019"
+output: 
+  ioslides_presentation:
+    widescreen: yes
+logo: ../logo-imecc.png
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Pessoa 1
+
+```{r, echo=FALSE}
+# http://www.aceshowbiz.com/events/Daryl%20Hannah/daryl-hannah-stars-2012-benefit-gala-01.html
+
+# foto de 2012
+
+idade=52
+```
+<center><img src="figuras/daryl-hannah-stars-2012-benefit-gala-01.jpg" width=400></center>
+
+
+## Pessoa 1 - Ramo e Folhas
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+pessoa1 <- read.csv2("Pessoa1.csv")
+idade <- pessoa1$Idade
+
+stem(idade, scale = 0.5)
+```
+
+
+**Estatística Sumárias**
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+options(digits = 2)
+c(summary(idade), SD = round(sd(idade), 2))
+```
+
+
+## Pessoa 1 - Histograma
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+library(ggplot2)
+ggplot(pessoa1, aes(x = Idade)) +
+    geom_histogram(breaks = seq(30, 75, by=5), closed = "left", fill = "#1B9E77", col = "dimgrey") +
+    labs(y = "Frequência", x = "Chutes da Idade")
+```
+
+
+## Pessoa 1 - Boxplot
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+ggplot(pessoa1, aes(y = Idade, x = "")) +
+    geom_boxplot(fill = "#1B9E77", col = "dimgrey") +
+    labs(x = "", y = "Chutes da Idade") + coord_flip()
+```
+
+
+## Respostas Corretas e Estimativas {.smaller}
+
+<!-- * Pessoa 1 - idade 52  -->
+<!-- * Pessoa 2 - idade 27 -->
+<!-- * Pessoa 3 - idade 29 -->
+<!-- * Pessoa 4 - idade 45 -->
+<!-- * Pessoa 5 - idade 21 -->
+<!-- * Pessoa 6 - idade 33 -->
+<!-- * Pessoa 7 - idade 54 -->
+<!-- * Pessoa 8 - idade 47 -->
+<!-- * Pessoa 9 - idade 35 -->
+<!-- * Pessoa 10 - idade 48 -->
+
+
+| Pessoa 	| Idade Correta 	| n   	| Média 	| Desvio Padrão 	|
+|--------	|---------------	|-----	|-------	|---------------	|
+| 1      	| 52            	| 102 	| 48,89   | 8,6      	    	|
+| 2      	| 27            	| 100 	| 31,86 	| 7,28           	|
+| 3      	| 29              | 101 	| 28,56 	| 5,08          	|
+| 4      	| 45              | 100 	| 38,8    | 6,17           	|
+| 5     	| 21            	| 101 	| 29,95   | 7,77          	|
+| 6      	| 33            	| 100 	| 32,48   | 5,41          	|
+| 7      	| 54              | 101  	| 43,22   | 7,91          	|
+| 8      	| 47              | 101  	| 48,30   | 5,49          	|
+| 9      	| 35            	| 101 	| 37,64   | 4,92          	|
+| 10      | 48            	| 101 	| 57,37   | 5,94      	  	|
