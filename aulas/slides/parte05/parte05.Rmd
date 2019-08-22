@@ -622,6 +622,7 @@ $$P(A)=P(\{2\},\{4\},\{6\})=P(2)+P(4)+P(6)=\frac{3}{6}=\frac{1}{2}$$
 
 >    + $\varnothing$ é um conjunto vazio ou evento impossível.
 
+
 Propriedades:
 
 >   * $0\leq P(A) \leq 1$, $\forall$ evento $A$ em $\Omega$.
@@ -783,15 +784,12 @@ Total | 310 |79890 | 80200
 
 Se escolhermos uma declaração de 2002 aleatoriamente, qual a probabilidade dela ter caído na malha fina (evento $Z$)? 
 
-> $$Z=\{\mbox{(A, sim), (B,sim),(C, sim),(D,sim)}\}$$
-
-> $$P(Z)=\frac{310}{80200}=0.004$$
+> $$Z=\{\mbox{(A, sim), (B,sim),(C, sim),(D,sim)}\} \qquad \Longrightarrow \qquad P(Z)=\frac{310}{80200}=0.004$$
 
 > Qual a probabilidade dela ter renda acima de 100.000 (evento $Y$)?
 
-> $$Y=\{\mbox{(A, sim), (A,não)}\}$$
+> $$Y=\{\mbox{(A, sim), (A,não)}\} \qquad \Longrightarrow \qquad P(Y)=\frac{10700}{80200}=0.133$$
 
-> $$P(Y)=\frac{10700}{80200}=0.133$$
 
 ## Exemplo: Qual a chance de cair na malha fina? {.smaller .build}
 
@@ -901,7 +899,7 @@ $$P(\bar{C})=\frac{164128}{579006}=0.283$$
 * [OpenIntro](https://www.openintro.org/stat/textbook.php): seção 2.1.
 * [Ross](http://www.sciencedirect.com/science/book/9780123743886): seções 4.1, 4.2, 4.3, 4.4.
 
-##
+<br /><br />
 
 Slides produzidos pelos professores:
 
