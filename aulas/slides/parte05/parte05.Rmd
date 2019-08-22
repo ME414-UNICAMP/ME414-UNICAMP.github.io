@@ -740,11 +740,11 @@ No caso de eventos mutuamente exclusivos ou disjuntos, a interseção é vazia (
 
 > Probabilidade de escolher um aluno ao acaso e ele ser estudante da matemática pura **e** da computação:
  
- $$P(MP \cap C)=P(\varnothing)=0$$
+ $$P(MP \cap C) = P(\varnothing) = 0$$
 
 > Probabilidade de escolher um aluno ao acaso e ele ser estudante da matemática pura **ou** da computação:
 
-$$P(MP\cup C)=P(MP)+P(C)-P(M\cap C)=P(MP)+P(C)=\frac{140}{200}=0.700$$
+$$P(MP\cup C)=P(MP)+P(C)-P(MP \cap C)=P(MP)+P(C)=\frac{140}{200}=0.700$$
 
 
 
