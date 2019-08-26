@@ -241,7 +241,7 @@ ggplot(pessoa5, aes(x = Idade)) +
 
 ## Pessoa 5 - Boxplot
 ```{r, echo = FALSE, message=FALSE, warning=FALSE}
-ggplot(pessoa4, aes(y = Idade, x = "")) +
+ggplot(pessoa5, aes(y = Idade, x = "")) +
     geom_boxplot(fill = "#1B9E77", col = "dimgrey") +
     labs(x = "", y = "Chutes da Idade") + coord_flip()
 ```
@@ -259,6 +259,44 @@ ggplot(pessoa4, aes(y = Idade, x = "")) +
 idade=33
 ```
 
+
+
+## Pessoa 6 - Ramo e Folhas
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+pessoa <- read.csv("Pessoa6a.csv")
+pessoa6 <- pessoa[pessoa$Pessoa==6,]
+idade <- pessoa6$Idade
+
+stem(idade, scale = 0.5)
+```
+
+
+**Estatística Sumárias**
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+options(digits = 2)
+c(summary(idade), SD = round(sd(idade), 2))
+```
+
+
+## Pessoa 6 - Histograma
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+library(ggplot2)
+ggplot(pessoa6, aes(x = Idade)) +
+    geom_histogram(breaks = seq(25, 60, by=5), closed = "left", fill = "#1B9E77", col = "dimgrey") +
+    labs(y = "Frequência", x = "Chutes da Idade")
+```
+
+
+## Pessoa 6 - Boxplot
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+ggplot(pessoa6, aes(y = Idade, x = "")) +
+    geom_boxplot(fill = "#1B9E77", col = "dimgrey") +
+    labs(x = "", y = "Chutes da Idade") + coord_flip()
+```
+
+
+
+
 ## Pessoa 7 - 54 anos
 
 
@@ -267,6 +305,47 @@ idade=33
 ```{r,echo=FALSE}
 idade=54
 ```
+
+
+
+## Pessoa 7 - Ramo e Folhas
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+pessoa <- read.csv("Pessoa7a.csv")
+pessoa7 <- pessoa[pessoa$Pessoa==7,]
+idade <- pessoa7$Idade
+
+stem(idade, scale = 0.5)
+```
+
+
+**Estatística Sumárias**
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+options(digits = 2)
+c(summary(idade), SD = round(sd(idade), 2))
+```
+
+
+## Pessoa 7 - Histograma
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+library(ggplot2)
+ggplot(pessoa7, aes(x = Idade)) +
+    geom_histogram(breaks = seq(31, 60, by=5), closed = "left", fill = "#1B9E77", col = "dimgrey") +
+    labs(y = "Frequência", x = "Chutes da Idade")
+```
+
+
+## Pessoa 7 - Boxplot
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+ggplot(pessoa7, aes(y = Idade, x = "")) +
+    geom_boxplot(fill = "#1B9E77", col = "dimgrey") +
+    labs(x = "", y = "Chutes da Idade") + coord_flip()
+```
+
+
+
+
+
+
 
 ## Pessoa 8 - 47 anos
 
@@ -277,6 +356,43 @@ idade=54
 idade=47
 ```
 
+
+
+## Pessoa 8 - Ramo e Folhas
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+pessoa <- read.csv("Pessoa8a.csv")
+pessoa8 <- pessoa[pessoa$Pessoa==8,]
+idade <- pessoa8$Idade
+
+stem(idade, scale = 0.5)
+```
+
+
+**Estatística Sumárias**
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+options(digits = 2)
+c(summary(idade), SD = round(sd(idade), 2))
+```
+
+
+## Pessoa 8 - Histograma
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+library(ggplot2)
+ggplot(pessoa8, aes(x = Idade)) +
+    geom_histogram(breaks = seq(25, 65, by=5), closed = "left", fill = "#1B9E77", col = "dimgrey") +
+    labs(y = "Frequência", x = "Chutes da Idade")
+```
+
+
+## Pessoa 8 - Boxplot
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+ggplot(pessoa8, aes(y = Idade, x = "")) +
+    geom_boxplot(fill = "#1B9E77", col = "dimgrey") +
+    labs(x = "", y = "Chutes da Idade") + coord_flip()
+```
+
+
+
 ## Pessoa 9 - 35 anos
 
 <center><img src="figuras/13465976_10154674692372923_8617974188435350826_n.jpg" width=500></center>
@@ -284,6 +400,43 @@ idade=47
 ```{r,echo=FALSE}
 idade=35
 ```
+
+
+
+## Pessoa 9 - Ramo e Folhas
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+pessoa <- read.csv("Pessoa9a.csv")
+pessoa9 <- pessoa[pessoa$Pessoa==9,]
+idade <- pessoa9$Idade
+
+stem(idade, scale = 0.5)
+```
+
+
+**Estatística Sumárias**
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+options(digits = 2)
+c(summary(idade), SD = round(sd(idade), 2))
+```
+
+
+## Pessoa 9 - Histograma
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+library(ggplot2)
+ggplot(pessoa9, aes(x = Idade)) +
+    geom_histogram(breaks = seq(25, 55, by=5), closed = "left", fill = "#1B9E77", col = "dimgrey") +
+    labs(y = "Frequência", x = "Chutes da Idade")
+```
+
+
+## Pessoa 9 - Boxplot
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+ggplot(pessoa9, aes(y = Idade, x = "")) +
+    geom_boxplot(fill = "#1B9E77", col = "dimgrey") +
+    labs(x = "", y = "Chutes da Idade") + coord_flip()
+```
+
+
 
 ## Pessoa 10 - 48 anos
 
@@ -293,6 +446,40 @@ idade=35
 idade=48
 ```
 
+
+
+## Pessoa 10 - Ramo e Folhas
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+pessoa <- read.csv("Pessoa10a.csv")
+pessoa10 <- pessoa[pessoa$Pessoa==10,]
+idade <- pessoa10$Idade
+
+stem(idade, scale = 0.5)
+```
+
+
+**Estatística Sumárias**
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+options(digits = 2)
+c(summary(idade), SD = round(sd(idade), 2))
+```
+
+
+## Pessoa 9 - Histograma
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+library(ggplot2)
+ggplot(pessoa10, aes(x = Idade)) +
+    geom_histogram(breaks = seq(44, 65, by=4), closed = "left", fill = "#1B9E77", col = "dimgrey") +
+    labs(y = "Frequência", x = "Chutes da Idade")
+```
+
+
+## Pessoa 10 - Boxplot
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+ggplot(pessoa10, aes(y = Idade, x = "")) +
+    geom_boxplot(fill = "#1B9E77", col = "dimgrey") +
+    labs(x = "", y = "Chutes da Idade") + coord_flip()
+```
 
 
 
@@ -310,15 +497,15 @@ idade=48
 <!-- * Pessoa 10 - idade 48 -->
 
 
-| Pessoa 	| Idade Correta 	| n   	| Média 	| Desvio Padrão 	|
-|--------	|---------------	|-----	|-------	|---------------	|
-| 1      	| 52            	| 102 	| 48,89   | 8,6      	    	|
-| 2      	| 27            	| 100 	| 31,86 	| 7,28           	|
-| 3      	| 29              | 101 	| 28,56 	| 5,08          	|
-| 4      	| 45              | 100 	| 38,8    | 6,17           	|
-| 5     	| 21            	| 101 	| 29,95   | 7,77          	|
-| 6      	| 33            	| 100 	| 32,48   | 5,41          	|
-| 7      	| 54              | 101  	| 43,22   | 7,91          	|
-| 8      	| 47              | 101  	| 48,30   | 5,49          	|
-| 9      	| 35            	| 101 	| 37,64   | 4,92          	|
-| 10      | 48            	| 101 	| 57,37   | 5,94      	  	|
+| Pessoa 	| Idade Correta 	| n   	| Média 	|
+|--------	|---------------	|-----	|-------	|
+| 1      	| 52            	| `r dim(pessoa1)[1]` 	| `r round(mean(pessoa1$Idade),2)`   | 
+| 2      	| 27            	| `r dim(pessoa2)[1]` 	| `r round(mean(pessoa2$Idade),2)`  	| 
+| 3      	| 29              | `r dim(pessoa3)[1]` 	| `r round(mean(pessoa3$Idade),2)`  	| 
+| 4      	| 45              | `r dim(pessoa4)[1]` 	| `r round(mean(pessoa4$Idade),2)`     | 
+| 5     	| 21            	| `r dim(pessoa5)[1]` 	| `r round(mean(pessoa5$Idade),2)`    | 
+| 6      	| 33            	| `r dim(pessoa6)[1]` 	| `r round(mean(pessoa6$Idade),2)`    | 
+| 7      	| 54              | `r dim(pessoa7)[1]`  	| `r round(mean(pessoa7$Idade),2)`   | 
+| 8      	| 47              | `r dim(pessoa8)[1]`  	| `r round(mean(pessoa8$Idade),2)`    | 
+| 9      	| 35            	| `r dim(pessoa9)[1]` 	| `r round(mean(pessoa9$Idade),2)`    | 
+| 10      | 48            	| `r dim(pessoa10)[1]` 	| `r round(mean(pessoa10$Idade),2)`    | 
