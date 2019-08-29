@@ -15,7 +15,7 @@ logo: ../logo-imecc.png
 
 * Considere o lançamento de dois dados. Espaço amostral na figura abaixo.
 
-<img src="figuras/DoisDados.png" width=400 style="float: right;">
+<img src="figuras/DoisDados.png" width=400 style="float: right">
 
 > * Considere que cada resultado tenha a mesma chance de ocorrer: 1/36.
 
@@ -27,7 +27,7 @@ logo: ../logo-imecc.png
 ## Probabilidade Condicional {.build}
 
 Como saiu 4 no primeiro dado, há 6 resultados possíveis:
-<img src="figuras/DoisDados.png" width=350 style="float: right;">
+<img src="figuras/DoisDados.png" width=350 style="float: right; margin-left: 1cm">
 $$\Omega_1 = \{(4,1), (4,2), (4,3), (4,4), (4,5), (4,6)\}$$
 
 > Cada resultado tem a mesma probabilidade de ocorrer: 1/6.
@@ -45,13 +45,13 @@ $$\Omega_1 = \{(4,1), (4,2), (4,3), (4,4), (4,5), (4,6)\}$$
 
 Suponha que o resultado do experimento esteja contido no evento $A$.
 
-<img src="figuras/BdadoA.png" width=300 style="float: right;">
+<img src="figuras/BdadoA.png" width=300 style="float: right; margin-left: 2cm">
 
 > Para que o resultado esteja também no evento $B$, ele precisa necessariamente estar tanto em $A$ quanto em $B$, ou seja, precisa estar em $A\cap B$.
 
 > Mas, como sabíamos desde o início que o resultado estava em $A$, nosso espaço amostral agora é reduzido para somente os elementos de $A$ e então:
 
-$$P(B\mid A)=\frac{P(A\cap B)}{P(A)}$$
+$$P(B\mid A) = \frac{P(A\cap B)}{P(A)}$$
 
 
 
@@ -149,6 +149,7 @@ $$P(B\mid A)=\frac{P(A\cap B)}{P(A)}$$
 
 $$P(A\cap B)=P(A)P(B\mid A)$$ 
 
+<br />
 Quando $P(B\mid A)=P(B)$ (informação sobre $A$ não altera a probabilidade do evento $B$), dizemos que $B$ e $A$ são **independentes**. Neste caso:
 
 $$P(A\cap B)=P(A)P(B) $$
@@ -158,7 +159,7 @@ $$P(A\cap B)=P(A)P(B) $$
 
 Considere o lançamento de dois dados "justos" (36 resultados possíveis têm a mesma probabilidade de ocorrer). 
 
-<img src="figuras/DoisDados.png" width=400 style="float: right;">
+<img src="figuras/DoisDados.png" width=400 style="float: right">
 
 Considere os eventos:
 
@@ -184,6 +185,7 @@ $P(B)= P(\{ (2,6),(3,5),(4,4),(5,3),(6,2)\})=\frac{5}{36}$
 
 $$P(A\cap B)=\frac{1}{36}\neq P(A)\times P(B)=\frac{6}{36}\times\frac{5}{36}$$
 
+<br />
 Portanto, $A$ e $B$ **não são** eventos independentes.
 
 
@@ -199,6 +201,7 @@ $P(C)= P(\{ (1,6),(2,5),(3,4),(4,3),(5,2),(6,1)\})=\frac{6}{36}$
 
 $$P(A\cap C)=\frac{1}{36}= P(A)\times P(C)=\frac{6}{36}\times\frac{6}{36}$$
 
+<br />
 Portanto, $A$ e $C$ **são** eventos independentes.
 
 
@@ -261,9 +264,9 @@ $$P(A)P(B) =\frac{1}{2}\times\frac{1}{4}=\frac{1}{8} \neq P(B\cap A) $$
 
 ## *Chutar* as respostas e ainda passar na prova {.build}
 
-**Chutar**: escolher as respostas ao acaso
+<img src="figuras/popquiz.jpg" width=300 style="float: right; margin-left: 1cm">
 
-<img src="figuras/popquiz.jpg" width=300 style="float: right;">
+**Chutar**: escolher as respostas ao acaso
 
 Temos uma prova com três questões de múltipla escolha.
 
@@ -271,6 +274,7 @@ Em cada questão há 5 alternativas, apenas 1 é correta.
 
 Experimento: anotar o resultado do aluno na prova. 
 
+<br />
 Espaço amostral:
 $$\Omega=\{CCC, CCI, CIC, CII, ICC, ICI, IIC, III\}$$
 
@@ -279,17 +283,16 @@ $$\Omega=\{CCC, CCI, CIC, CII, ICC, ICI, IIC, III\}$$
 
 Quais as probabilidades dos eventos do espaço amostral?
 
-Para cada questão: $P(C)=0.2 \quad \mbox{e} \quad P(I)=0.8$
-
 <img src="figuras/quiz2.jpg" width=400 style="float: right;">
 
+Para cada questão: 
+$$P(C)=0.2 \quad \mbox{e} \quad P(I)=0.8$$
+Então, a probabilidade de acertar as três questões é:
 $$\begin{aligned}
 P(CCC) &= P(C)\times P(C)\times P(C) \\
 & = (0.2)(0.2)(0.2) \\
 &= (0.2)^3 =0.008
 \end{aligned}$$
-
-<br /><br />
 
 Qual a probabilidade do aluno acertar pelo menos duas questões?
 
@@ -314,7 +317,7 @@ $$P(\bar{S})=\frac{2111}{577006} = 0.004$$
 
 > Qual a probabilidade de que a pessoa morreu dado que ela usava o cinto de segurança?  
 
-$$P(\bar{S} \mid C)=P(\bar{S} \cap C)/P(C) = \frac{510}{412878} = 0.001$$
+$$P(\bar{S} \mid C)=\frac{P(\bar{S} \cap C)}{P(C)} = \frac{510}{412878} = 0.001$$
 
 
 ## Cinto de segurança e acidentes {.build .smaller}
@@ -333,9 +336,9 @@ $$P(\bar{S} \mid \bar{C})=\frac{P(\bar{S} \cap \bar{C})}{P(\bar{C})} = \frac{160
 
 > Morte e uso de cinto são eventos independentes? 
 
-$$P(\bar{S} \mid \bar{C})\neq P(\bar{S}) = \frac{2111}{577006} = 0.004$$
+$$P(\bar{S}) = \frac{2111}{577006} = 0.004$$
 
-$$P(\bar{S} \mid C)\neq P(\bar{S})$$
+Como $P(\bar{S} \mid C)\neq P(\bar{S})$, os eventos não são independentes.
 
 
 ## Exemplo {.build}
@@ -391,11 +394,13 @@ E sabemos que:
 
 ## Teorema das Probabilidades Totais {.build}
 
-Dizemos que os eventos $\{B_1, B_2, \ldots, B_k\}$ formam um partição do espaço amostral $\Omega$ se 
- são mutuamente exclusivos e a união desses eventos é $\Omega$.
- 
- <center><img src="figuras/totalprobability.png" width=350></center>
+Seja $\{B_1, \ldots, B_n\}$ uma partição de eventos de $\Omega$ e $A$ um evento em $\Omega$.
 
+Dizemos que os eventos $\{B_1, B_2, \ldots, B_n\}$ formam um partição do espaço amostral $\Omega$ se são mutuamente exclusivos e a união desses eventos é $\Omega$.
+ 
+<img src="figuras/totalprobability.png" width=400 style="float: left; margin-right: 2cm">
+
+<br />
 Então,
 
 $$P(A) = \sum_{i=1}^n P(A \mid B_i) P(B_i)$$
@@ -408,7 +413,7 @@ Se considerarmos a partição $B$ e $B^c$ do espaço amostral $\Omega$ e $A$ um 
 $$P(B\mid A) = \frac{P(B\cap A)}{P(A)} = \frac{P(A\mid B)P(B)}{P(A\mid B)P(B) + P(A\mid B^c)P(B^c)}$$
 
 <br />
-<img src="figuras/totalprobability.png" width=300 style="float: right;">
+<img src="figuras/totalprobability.png" width=300 style="float: right">
 No caso geral, seja $\{B_1, \ldots, B_n\}$ uma partição de eventos de $\Omega$ e $A$ um evento em $\Omega$:
 
 $$ P(B_i \mid A) = \frac{P(A\mid B_i)P(B_i)}{\sum_{i=1}^n P(A \mid B_i) P(B_i)}$$
@@ -432,19 +437,25 @@ P(D \mid TP) & = \frac{P(TP \mid D)P(D)}{P(TP \mid D)P(D) + P(TP \mid D^c)P(D^c)
 
 ## Câncer de Mama {.build}
 
-<img src="figuras/cancer_mama.jpg" width=380 style="float: right;">
+<img src="figuras/cancer_mama.jpg" width=370 style="float: right; margin-left:2cm; margin-bottom:0.5cm">
+
 Câncer de mama afeta 1% das mulheres. 
 
 Mamografia é o teste padrão para detectar câncer de mama. Mas sabe-se que não é um teste perfeito.
 
-Estatísticas mostram que a mamografia é 80% efetiva em detectar o câncer quando este realmente existe. E 9.6% das mamografias resultam em falsos positivos (teste positivo quando o câncer não existe). 
+Estatísticas mostram que:
+
+* a mamografia é 80% efetiva em detectar o câncer quando este realmente existe. 
+
+* 9.6% das mamografias resultam em falsos positivos (teste positivo quando o câncer não existe). 
 
 Suponha que sua mãe faz uma mamografia e o resultado é positivo. Qual é a probabilidade dela realmente estar com câncer de mama? 
 
 
 ## Exemplo: Companhia de Seguros {.build}
 
-<img src="figuras/seguro_carro.jpg" width=300 style="float: right;">
+<img src="figuras/seguro_carro.jpg" width=280 style="float: right">
+
 Uma companhia de seguros acredita que as pessoas podem ser divididas em duas categorias: 
 
 > 1. aquelas que estão mais sujeitas a acidentes. 
@@ -459,13 +470,15 @@ Uma companhia de seguros acredita que as pessoas podem ser divididas em duas cat
  
 ## Exemplo: Companhia de Seguros {.build}
 
+<img src="figuras/seguro_carro.jpg" width=280 style="float: right">
+
 **Pergunta**: Qual a probabilidade de que o novo cliente tenha um acidente durante o primeiro ano?
 
 Considere os eventos:
 
- > * $A$ = {o novo cliente tem um acidente durante o primeiro ano}
- > * $B$ = {o novo cliente pertence à categoria 1}
- > * $B^c$ = {o novo cliente pertence à categoria 2}
+> $A$ = {o novo cliente tem um acidente durante o primeiro ano} <br />
+> $B$ = {o novo cliente pertence à categoria 1} <br />
+> $B^c$ = {o novo cliente pertence à categoria 2}
 
 > Pelo Teorema das Probabilidades Totais:
 
@@ -478,24 +491,24 @@ $$
 
 ## Exemplo: Companhia de Seguros {.build}
 
+<img src="figuras/seguro_carro.jpg" width=280 style="float: right; margin-left: 1.5cm">
+
 **Pergunta**: Se um novo cliente tem um acidente durante o primeiro ano, qual é a probabilidade de que ele pertença à categoria 1?
  
- $A$ = {o novo cliente tem um acidente durante o primeiro ano} <br />
- $B$ = {o novo cliente pertence à categoria 1}
+$A$ = {o novo cliente tem um acidente durante o primeiro ano} <br />
+$B$ = {o novo cliente pertence à categoria 1}
 
-Pelo Teorema de Bayes
+Pelo Teorema de Bayes:
 
-$$ 
-\begin{aligned}
+$$ \begin{aligned}
 P(B\mid A) & = \frac{P(B\cap A)}{P(A)} = \frac{P(A\mid B)P(B)}{P(A)} \\
 & = \frac{0.1 \times 0.2}{0.06}=\frac{1}{3} 
-\end{aligned}
-$$
+\end{aligned} $$
 
 
 ## Exemplo: DNA e crime {.build}
 
-<img src="figuras/dna_crime.jpg" width=260 style="float: right;">
+<img src="figuras/dna_crime.jpg" width=260 style="float: right; margin-left: 1cm">
 
 > Dado que o réu é inocente ($I$), suponha que a probabilidade do DNA dele ser compatível ($C$) com o DNA encontrado na cena do crime seja 1 em um milhão.  
 
@@ -512,51 +525,48 @@ $$P(C \mid \bar{I})=0.99$$
 
 ## Exemplo: DNA e crime {.build}
 
-<img src="figuras/dna_crime.jpg" width=260 style="float: right;">
+<img src="figuras/dna_crime.jpg" width=260 style="float: right; margin-left: 1cm">
+
 Queremos $P(I \mid C)$, sendo que $P(I)=P(\bar{I})=0.5$
 
 Pelo Teorema de Bayes:
-$$
-\begin{aligned}
+
+$$\begin{aligned}
 P(I \mid C) &= \frac{P(I \cap C)}{P(C)} = \frac{P(C \mid I)P(I)}{P(C)} \\
 & = \frac{P(C \mid I)P(I)}{P(C \mid I)P(I) + P(C \mid \bar{I})P(\bar{I})} \\
 & = \frac{0.000001 \times 0.50}{0.000001 \times 0.5 + 0.99 \times 0.5} \\
 & = 0.000001 
-\end{aligned} 
-$$
+\end{aligned}$$
 
 > A chance de ser inocente dado que houve compatibilidade de DNA é 1 em 1 milhão.
 
 
 ## Exemplo: DNA e crime {.build}
 
-<img src="figuras/dna_crime.jpg" width=260 style="float: right;">
+<img src="figuras/dna_crime.jpg" width=260 style="float: right; margin-left: 1cm">
+
 Encontre a probabilidade do réu ser inocente dado que o DNA é compatível, sendo que a probabilidade incondicional dele ser inocente, $P(I)$, é 0.99.
 
-$$ 
-\begin{aligned}
+$$\begin{aligned}
 P(I\mid C) & = \frac{P(I \cap C)}{P(C)} = \frac{P(C\mid I)P(I)}{P(C)} \\
 & = \frac{P(C\mid I)P(I)}{P(C\mid I)P(I)+P(C\mid \bar{I})P(\bar{I})} \\
 & = \frac{0.000001\times 0.99}{0.000001\times 0.99 + 0.99\times 0.01} \\
 &= 0.00001 
-\end{aligned}
-$$
+\end{aligned}$$
 
 > A chance de ser inocente dado que houve compatibilidade de DNA é 1 em 100 mil.
 
 
 ## Leituras
 
+<img src="figuras/bears.png" width=480 style="float: right">
+
 * [OpenIntro](https://www.openintro.org/stat/textbook.php): seção 2.2.
 * [Ross](http://www.sciencedirect.com/science/book/9780123743886): seções 4.5, 4.6
 * Magalhães: capítulo 2
 
-## 
 
-<center><img src="figuras/bears.png" width=500></center>
-
-##
-
+<br /><br />
 Slides produzidos pelos professores:
 
 * Samara Kiihl
