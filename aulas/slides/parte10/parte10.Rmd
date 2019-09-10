@@ -450,18 +450,26 @@ plotcdf(x, p)
 
 
 ## Bernoulli {.build}
+
 Em muitas aplicações, cada observação de um experimento aleatório é **binária**: tem apenas dois resultados possíveis.  
 
 > Por exemplo, uma pessoa pode:
 
 >  + aceitar ou recusar uma oferta de cartão de crédito de seu banco.
    
->  + votar sim ou não em uma assembléia.
+>  + votar sim ou não em uma assembleia.
+
+>  + ir ou não almoçar no bandejão.
+
+>  + levar ou não um guarda-chuva num dia nublado. 
+
 
 
 ## Modelo Bernoulli {.build}
 
 > * Considere um experimento aleatório com dois resultados possíveis: **sucesso** e **fracasso**.
+
+> * Os termos "sucesso" e "fracasso" são apenas rótulos para os dois resultados possíveis.
 
 > * Seja $p$ a probabilidade de sucesso.
 
@@ -832,8 +840,8 @@ Portanto, é mais interessante ao industrial que o comprador A examine mais peç
 * [Ross](http://www.sciencedirect.com/science/book/9780123743886): capítulo 5
 * Magalhães: capítulo 3
 
-##
 
+<br /><br />
 Slides produzidos pelos professores:
 
 * Samara Kiihl
