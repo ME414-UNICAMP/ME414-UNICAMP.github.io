@@ -344,7 +344,7 @@ $$P(X=x)=\frac{\binom{r}{x}\binom{N-r}{n-x}}{\binom{N}{n}}, \qquad 0\leq x \leq 
 
 > A esperança e variância são, respectivamente:
 
-$$E(X)=\frac{nr}{N} \qquad \mbox{e} \qquad Var(X)=\frac{nr}{N}\left(1-\frac{r}{N}\right)\frac{(N-n)}{(N-1)}$$
+$$\mathbb E(X)=\frac{nr}{N} \qquad \mbox{e} \qquad Var(X)=\frac{nr}{N}\left(1-\frac{r}{N}\right)\frac{(N-n)}{(N-1)}$$
 
 
 ## Exemplo: Urna {.build}
@@ -631,10 +631,9 @@ $$
 
 ## Exemplo: SAC {.build}
 
-<center><img src="figuras/atendimento.png" width=130></center>
+<img src="figuras/atendimento.png" width=150 style="float:right; margin-left:2cm">
 
-
-Numa central de SAC (serviço de atendimento ao consumidor) chegam $300$ telefonemas por hora.   Qual a probabilidade de que:
+Numa central de SAC (serviço de atendimento ao consumidor) chegam 300 telefonemas por hora.   Qual a probabilidade de que:
  
 * num minuto não haja nenhuma chamada?  
 
@@ -644,6 +643,8 @@ Numa central de SAC (serviço de atendimento ao consumidor) chegam $300$ telefon
  
 
 ## Exemplo: SAC {.build .smaller}
+
+<img src="figuras/atendimento.png" width=150 style="float:right; margin-left:2cm">
  
 $X=$ número de chamadas por minuto.
 
@@ -704,7 +705,7 @@ $X=$ número de lâmpadas que se queimam numa instalação de 900 lâmpadas.
  
 ## Exemplo: Twitter {.build}
 
-<center><img src="figuras/twitter-117595_640.png" width=150></center>
+<img src="figuras/twitter-117595_640.png" width=150 style="float:right; margin-left:2cm">
 
 O número citações de uma certa conta do Twitter ocorre segundo uma  distribuição de Poisson, com a média de oito citações por minuto.
 
@@ -756,11 +757,10 @@ $$
 * Magalhães: capítulo 3
 * [OpenIntro](https://www.openintro.org/stat/textbook.php): seções 3.3, 3.4, 3.5.2
 
-<center><img src="figuras/fishy.jpg" width=350></center>
+<img src="figuras/fishy.jpg" width=360 style="float:right">
 
 
-##
-
+<br /><br />
 Slides produzidos pelos professores:
 
 * Samara Kiihl
