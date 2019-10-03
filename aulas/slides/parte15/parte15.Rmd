@@ -19,7 +19,7 @@ logo: ../logo-imecc.png
 
 > * O ideal é que se reporte não só a estimativa, mas também a sua imprecisão.
 
-> * Duas maneiras: fornecer a estimativa juntamente com o seu **erro-padrão** ou fornecer um intervalo de valores plausíveis para o parâmetro de interesse (**intervalo de confiança**).
+> * Duas maneiras: fornecer a estimativa juntamente com o seu **erro padrão** ou fornecer um intervalo de valores plausíveis para o parâmetro de interesse (**intervalo de confiança**).
 
 ## Introdução {.build}
 
@@ -81,7 +81,7 @@ A função $p(1-p)$ atinge o valor máximo quando $p=1/2$, ou seja, $p(1-p) \leq
 
 ## Intervalo de Confiança como Estimativa de p {.build}
 
-Vimos que $p(1-p)\leq \frac{1}{4}$, então erro-padrão é maximizado por: 
+Vimos que $p(1-p)\leq \frac{1}{4}$, então erro padrão é maximizado por: 
 
 $$\sqrt{\frac{p(1-p)}{n}}\leq \sqrt{\frac{1}{4n}} \quad \Longleftrightarrow \quad -\sqrt{\frac{p(1-p)}{n}}\geq -\sqrt{\frac{1}{4n}}$$ 
 
@@ -246,7 +246,7 @@ $$
 
 ## Exemplo {.build}
 
-E se usarmos a estimativa $\widehat p$ para também estimar o erro-padrão $\sqrt{\frac{p(1-p)}{n}}$?
+E se usarmos a estimativa $\widehat p$ para também estimar o erro padrão $\sqrt{\frac{p(1-p)}{n}}$?
 
 > Podemos construir o seguinte $IC$ de  $100(1-\alpha)\%$
 
@@ -263,7 +263,7 @@ IC_2(p, 0.90) &= \left[0.2 - 1.64\sqrt{\frac{(0.2)(0.8)}{400}}; 0.2 + 1.64 \sqrt
 $$ 
 
 ## Exemplo {.build}
-O intervalo que utiliza $\widehat p$ também para estimar o erro-padrão tem menor margem de erro e, portanto, menor amplitude do que o intervalo que utiliza o fato de $p(1-p) \leq \frac{1}{4}$. Por isso esse último é chamado de **conservador**. 
+O intervalo que utiliza $\widehat p$ também para estimar o erro padrão tem menor margem de erro e, portanto, menor amplitude do que o intervalo que utiliza o fato de $p(1-p) \leq \frac{1}{4}$. Por isso esse último é chamado de **conservador**. 
 
 Veja as amplitudes dos $IC$'s que encontramos no exemplo anterior:
 
@@ -282,7 +282,7 @@ Em resumo, os intervalos de $100 (1-\alpha)\%$ de confiança para $p$ podem ent�
 1) Método Conservador
 $$IC_1(p, 1-\alpha)=\left[\widehat p -z_{\alpha/2}\sqrt{\frac{1}{4n}};\widehat p +z_{\alpha/2}\sqrt{\frac{1}{4n}}\right]$$ 
 
-2) Usando $\hat p$ para estimar o erro-padrão
+2) Usando $\hat p$ para estimar o erro padrão
 $$IC_2(p, 1-\alpha)=\left[\widehat p -z_{\alpha/2}\sqrt{\frac{\widehat p (1-\widehat p )}{n}};\widehat p +z_{\alpha/2}\sqrt{\frac{\widehat p (1-\widehat p )}{n}}\right]$$
 
 Veja que nos dois casos, os $IC$'s são da forma $\widehat p \pm \mbox{margem de erro}$
@@ -431,7 +431,7 @@ Entre $n=1154$ participantes, 518 responderam que sim.
 
 Estimativa: $\widehat p =518/1154=0.45$
 
-Erro-padrão (desvio-padrão da estimativa): $EP(\widehat p) = \sqrt{\frac{(0.45)(1-0.45)}{1154}}=0.015$ 
+erro padrão (desvio padrão da estimativa): $EP(\widehat p) = \sqrt{\frac{(0.45)(1-0.45)}{1154}}=0.015$ 
 
 Margem de erro: $1.96 EP(\widehat p) = 0.03$
 
@@ -451,7 +451,7 @@ E se estivéssemos interessados na proporção que não pagaria mais?
 
 Estimativa: $\widehat p = 1-518/1154 = 0.55$ 
 
-Erro-padrão (desvio-padrão da estimativa: $EP(\widehat p) = \sqrt{\frac{(0.55)(1-0.55)}{1154}}=0.015$
+erro padrão (desvio padrão da estimativa: $EP(\widehat p) = \sqrt{\frac{(0.55)(1-0.55)}{1154}}=0.015$
 
 Margem de erro: $1.96 EP(\widehat p) = 0.03$
 
@@ -475,7 +475,7 @@ GSS: 598 responderam, 366 acham justo. Encontre um $IC$ de 99\%.
 
 Estimativa: $\widehat p = 366/598 = 0.61$
 
-Erro-padrão (desvio-padrão da estimativa): $EP(\widehat p) = \sqrt{\frac{\widehat p (1-\widehat p )}{n}} = 0.02$ 
+erro padrão (desvio padrão da estimativa): $EP(\widehat p) = \sqrt{\frac{\widehat p (1-\widehat p )}{n}} = 0.02$ 
 
 Margem de erro: $2.58 EP(\widehat p) = 0.05$
 
@@ -675,7 +675,7 @@ Suponha que estejamos interessados em estimar a porcentagem de consumidores de u
 
 ## Intervalo de Confiança para proporções
 
-1) O intervalo de confiança de $95\%$ é dado por: $$ \mbox{IC}(p;0.95) = 0.333 \pm 1.96 \sqrt{\frac{0.333 \cdot 0.667}{300}} = 0.333 \pm 0.053$$ Ou simplesmente $(0.280 ; 0.387)$. 
+1) O intervalo de confiança de $95\%$ é dado por: $$ \mbox{IC}(p;0.95) = 0.333 \pm 1.96 \sqrt{\frac{0.333 \times 0.667}{300}} = 0.333 \pm 0.053$$ Ou simplesmente $(0.280 ; 0.387)$. 
 
 **Interpretação:** Se pudéssemos construir um grande número de intervalos aleatórios para $p$, todos baseados em amostras de tamanho n, $95\%$ deles conteriam o parâmetro $p$.
 
@@ -718,5 +718,3 @@ Slides produzidos pelos professores:
 * Tatiana Benaglia
 
 * Benilton Carvalho
-
-
