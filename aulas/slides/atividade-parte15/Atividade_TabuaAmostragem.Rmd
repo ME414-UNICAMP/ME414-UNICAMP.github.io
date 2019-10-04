@@ -1,0 +1,141 @@
+---
+title: "ME414 - Atividade Tábua de Amostragem"
+author: "Tatiana Benaglia / Samara Kiihl"
+date: "2019S2"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+
+```{r}
+votos10 = c(7, 4, 2, 1, 3, 5, 2, 2, 3, 3, 
+            6, 6, 5, 5, 6, 3, 5, 1, 1, 6, 
+            4, 2, 3, 0, 2, 3, 3, 3, 3, 1) 
+p10 = votos10/10
+
+votos50 = c(16, 9, 14, 12, 17, 18, 17, 17, 10, 15, 
+            14, 17, 20, 21, 19, 11, 16, 15, 17, 11,
+            8, 12, 24, 18, 9, 13, 11, 14, 17, 16)
+p50 = votos50/50
+
+library(dplyr)
+votos <- tibble(id=1:length(votos10), votos10, votos50, p10, p50)
+```
+
+Resultados obtidos no experimento feito em sala de aula na turma de ME414D:
+
+```{r, fig.width=10, fig.height=4, eval=FALSE}
+par(mfrow = c(1, 2))
+plot(votos$p10, las=1, pch=19, col="red", xlab = "Pessoas", ylab = "Proporção", 
+     main = "Proporção de Votos Vermelho (n=10)", ylim=c(0, 0.7))
+abline(h=0.3, col="blue", lty=2)
+
+
+plot(votos$p50, las=1, pch=19, col="red", xlab = "Pessoas", ylab = "Proporção", 
+     main = "Proporção de Votos Vermelho (n=50)", ylim=c(0, 0.7))
+abline(h=0.3, col="blue", lty=2)
+```
+
+```{r, fig.width=12, fig.height=4}
+library(ggplot2)
+g10 = ggplot(votos, aes(x = id, y = p10)) +
+    geom_hline(yintercept = 0.3, col = 4, lty = 2) + 
+    geom_point(size = 3, col = 2) +
+    ylim(c(0, 0.7)) + 
+    labs(title = "Proporção de Votos (n=10)", x = "Pessoas", y = "Proporção") +
+    theme(text=element_text(size=14)) 
+
+
+g50 = ggplot(votos, aes(x = id, y = p50)) +
+    geom_hline(yintercept = 0.3, col = 4, lty = 2) + 
+    geom_point(size = 3, col = 2) +
+    ylim(c(0, 0.7)) + 
+    labs(title = "Proporção de Votos (n=50)", x = "Pessoas", y = "Proporção") +
+    theme(text=element_text(size=14)) 
+
+
+library(gridExtra)
+grid.arrange(g10, g50, ncol=2)
+```
+
+
+### Intervalo de Confiança para uma proporção
+
+O intervalo de confiança será sempre da forma:
+$$\begin{aligned}
+& \widehat p \pm \mbox{Margem de Erro} \\
+& \widehat p \pm z_{\alpha/2} EP(\widehat p)
+\end{aligned}$$
+
+A margem de erro pode ser calculada de duas maneiras, resultando nos seguintes IC's:
+
+1) Usando a estimativa de $p$:
+$$IC(p, 1-\alpha) = \left[ \widehat p \pm z_{\alpha/2}\sqrt{\frac{\widehat p(1-\widehat p)}{n}} \right]$$
+
+2) Pelo método conservador:
+$$IC(p, 1-\alpha) = \left[\widehat p \pm z_{\alpha/2}\sqrt{\frac{1}{4n}} \right]$$
+
+```{r}
+ci <- function(x, n, alpha=0.05){
+    z = qnorm(alpha/2, lower.tail = FALSE)
+    
+    p = x/n
+    me = z*sqrt(p*(1 - p)/n)
+    ci = p + c(-1, 1)*me
+    if(ci[1] < 0) ci[1] = 0
+    if(ci[2] > 1) ci[2] = 1
+    return(ci)
+}
+
+library(purrr)
+ci10 = t(sapply(votos10, ci, n=10))
+ci50 = t(sapply(votos50, ci, n=50))
+
+votos$ci10LI = ci10[, 1]
+votos$ci10LS = ci10[, 2]
+
+votos$ci50LI = ci50[, 1]
+votos$ci50LS = ci50[, 2]
+
+```
+
+Abaixo temos o gráfico das estimativas das proporções quando $n=50$ e seus respectivos IC's.
+```{r}
+ggplot(votos, aes(x = id)) +
+    geom_hline(yintercept = 0.3, col = 4, lty = 2) + 
+    geom_errorbar(aes(ymax = ci50LS, ymin = ci50LI)) + 
+    geom_point(aes(y = p50), size = 2, col=2) +
+    ylim(c(0, 0.7)) + 
+    labs(title = "Proporção de Votos (n=50)", x = "Pessoas", y = "Proporção") + 
+    theme(text=element_text(size=14)) 
+```
+
+Veja no gráfico abaixo que quatro dos 30 IC's, ou seja, 13% não cobrem o verdadeiro valor da proporção. O esperado é que 95% de 30, ou seja, entre 28 e 29 intervalos cubram o verdadeiro valor de $p$.
+
+```{r}
+cores = rep(1, 30) 
+cores[c(2, 21, 23, 25)] = "orange"
+
+ggplot(votos, aes(x = id)) +
+    geom_hline(yintercept = 0.3, col = 4, lty = 2) + 
+    geom_errorbar(aes(ymax = ci50LS, ymin = ci50LI), col = cores) + 
+    geom_point(aes(y = p50), size = 2, col=2) +
+    ylim(c(0, 0.7)) + 
+    labs(title = "Proporção de Votos (n=50)", x = "Pessoas", y = "Proporção") +
+    theme(text=element_text(size=14)) 
+```
+
+
+
+```{r, eval=FALSE}
+ggplot(votos, aes(x = id)) +
+    geom_hline(yintercept = 0.3, col=4, lty=2) + 
+    geom_errorbar(aes(ymax = ci10LS, ymin = ci10LI)) + 
+    geom_point(aes(y = p10), size = 2, col=2) +
+    ylim(c(0, 1)) + 
+    labs(title = "Proporção de Votos (n=10)", x = "Pessoas", y = "Proporção")
+```
+
