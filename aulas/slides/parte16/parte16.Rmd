@@ -31,7 +31,7 @@ A média amostral, $\bar{X}_n$, tem em geral valores diferentes para diferentes 
 
 > * Coletar uma a.a. de tamanho $n$ a partir da população com distribuição $X$ e guardar o valor da média desta amostra.
 
-> * Coletar outra a.a. de tamanho $n$ a partir da população com distribuição $X$ e guardo o valor da média desta amostra.  Repetir isso várias vezes. 
+> * Coletar outra a.a. de tamanho $n$ a partir da população com distribuição $X$ e guardar o valor da média desta amostra. Repetir isso várias vezes. 
 
 > * Construir um histograma com todas as médias obtidas para estudar o comportamento de $\bar{X}_n$: avaliando a média, a dispersão e a distribuição.
 
@@ -43,7 +43,7 @@ A média amostral, $\bar{X}_n$, tem em geral valores diferentes para diferentes 
 
 ## Teorema Central do Limite {.build}
 
-Na prática: iremos coletar somente **uma amostra** de tamanho $n$, não faremos inúmeras vezes esse processo. Teremos apenas um valor: $\bar{x}$.
+Na prática: iremos coletar somente **uma amostra** de tamanho $n$. Não faremos inúmeras vezes esse processo. Com isso, teremos apenas um valor: $\bar{x}$.
 
 > Então como saberemos as propriedades deste estimador? Quão útil ele é?
 
@@ -53,9 +53,7 @@ Para amostras aleatórias simples $X_{1},...,X_{n}$ coletadas de uma população
 $$ \bar{X}_{n} \sim N\left(\mu, \frac{\sigma^{2}}{n} \right)$$
 
 
-
 ## Teorema Central do Limite
-
 
 <center>
 ```{r, echo=FALSE, fig.height=5, fig.width=6}
@@ -65,7 +63,7 @@ mycol <- brewer.pal(8,"Dark2")
 n <- 20
 k = 4 # df da qui-quadrado
 
-maxy <- qchisq(.99,df=k)
+maxy <- qchisq(.99, df=k)
 
 par(mar=c(4, 4, 1, 2) + .1)
 curve(dnorm(x, mean=k, sd=sqrt(2*k/n)), 0, maxy, bty="l", yaxs = "i", xaxs="i", 
@@ -320,7 +318,7 @@ $$
 
 ## Tamanho da Amostra {.build}
 
-**Exemplo:** Por experiência, sabe-se que o peso de um salmão de certo criatório segue uma distribuição normal com uma média que varia a cada estação, mas com desvio-padrão sempre igual a 0.3 libras.  
+**Exemplo:** Por experiência, sabe-se que o peso de um salmão de certo criatório segue uma distribuição normal com uma média que varia a cada estação, mas com desvio padrão sempre igual a 0.3 libras.  
 
 > Se quisermos estimar o peso médio dos peixes de maneira que nossa estimativa seja diferente da verdadeira média em no máximo 0.1 libras para mais ou para menos com probabilidade igual a 0.9, qual o tamanho amostral necessário?
 
@@ -530,7 +528,7 @@ Obtenha um intervalo de confiança de `r (1-alpha)*100`\% para a quantidade méd
 
 ## Exemplo - Leite Materno {.build}
 
-Média e desvio-padrão da amostra ($n=`r n`$): $\bar{x}=`r xbar`$ e $s=`r s`$. 
+Média e desvio padrão da amostra ($n=`r n`$): $\bar{x}=`r xbar`$ e $s=`r s`$. 
 
 Pela distribuição t, para $\alpha= `r alpha`$: $t_{`r n-1`,`r alpha/2`}= `r talpha`$
 
@@ -547,7 +545,7 @@ Com grau de confiança igual a `r (1-alpha)*100`\%, estimamos que a média da qu
 
 ## Exemplo - Exame {.build}
 
-O desvio-padrão da pontuação em um certo exame é 11.3. Uma amostra aleatória de 81 estudantes que fizeram o exame foi coletada e a nota de cada estudantes foi anotada. A pontuação média entre os estudantes amostrados foi 74.6. 
+O desvio padrão da pontuação em um certo exame é 11.3. Uma amostra aleatória de 81 estudantes que fizeram o exame foi coletada e a nota de cada estudantes foi anotada. A pontuação média entre os estudantes amostrados foi 74.6. 
 
 Encontre um intervalo de 90\% de confiança para a pontuação média entre todos os estudantes que fizeram o exame.
 
@@ -565,7 +563,7 @@ $$
 
 ## Exemplo: precisão e tamanho amostral {.build}
 
-Qual deve ser o tamanho de uma amostra cuja população da qual ela será sorteada possui um desvio-padrão igual a 10, para que a diferença da média amostral para a média da população, em valor absoluto, seja menor que 1, com coeficiente de confiança igual a:
+Qual deve ser o tamanho de uma amostra cuja população da qual ela será sorteada possui um desvio padrão igual a 10, para que a diferença da média amostral para a média da população, em valor absoluto, seja menor que 1, com coeficiente de confiança igual a:
 
 > * $95\%$
 

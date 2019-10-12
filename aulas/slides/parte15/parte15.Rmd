@@ -413,19 +413,20 @@ $$P(|\widehat p -p|<0.02)=0.95$$
 
 
 
-## Exemplo: Proteção ao Meio-Ambiente {.build}
+## Exemplo: Proteção ao Meio Ambiente {.build}
 
 Na teoria, muita gente se considera "*eco-friendly*".  Mas e na prática?
 
-**Pergunta:** Você pagaria mais para um produto em favor ao meio-ambiente?
+**Pergunta:** Você pagaria mais para um produto em favor ao meio ambiente?
 
 Em 2000, GSS perguntou: "Você estaria disposto a pagar mais pela gasolina para proteger o ambiente?"
 
-Entre $n=1154$ participantes, 518 responderam que sim. 
+Entre $n=1154$ participantes, $518$ responderam que sim. 
 
 * Encontre IC 95\% para a proporção da população que concorda.
 
 * Interprete.
+
 
 ## Exemplo (continuação) {.build}
 
