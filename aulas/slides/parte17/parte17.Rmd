@@ -303,7 +303,7 @@ onde $EP_0(\widehat p)$ é o erro padrão de $\widehat p$ sob $H_0$. Portanto,
 
 > $$Z=\frac{\widehat p-p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}} \overset{H_0}{\sim}\mbox{N}(0,1)$$
 
-> * A estatística do teste mede quão distante está $\widehat p$ de $p_0$ em unidades  de "erro-padrão".
+> * A estatística do teste mede quão distante está $\widehat p$ de $p_0$ em unidades  de "erro padrão".
 
 
 ## Exemplo: Mapa Astral {.build}
@@ -317,7 +317,7 @@ onde $EP_0(\widehat p)$ é o erro padrão de $\widehat p$ sob $H_0$. Portanto,
 > * A estatística do teste observada é:
 $$z_{obs}=\frac{\widehat p-p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}=  \frac{0.345-1/3}{\sqrt{\frac{1/3(1-1/3)}{116}}}=0.27$$ 
 
-> * A proporção amostral está a 0.27 erro-padrão de distância da proporção populacional, segundo $H_0$.
+> * A proporção amostral está a 0.27 erro padrão de distância da proporção populacional, segundo $H_0$.
 
 
 ## Exemplo: Mapa Astral {.build}
@@ -326,15 +326,15 @@ $$z_{obs}=\frac{\widehat p-p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}=  \frac{0.345-1/3}{
 
 **Passo 4: Valor-de-p**
 
-* Tendo observado $z_{obs}=0.27$, isso traz evidência contra $H_0$ a favor de $H_A$?
+* Tendo observado $z_{obs}=0.27$, isso traz evidência contra $H_0$ (a favor de $H_A$)?
 
 > * Quão improvável é $z_{obs}=0.27$ se a proporção de acertos dos astrólogos é de fato $p=p_0=1/3$?  
 
-> * Valor-de-p: probabilidade de que uma estatística do teste assuma um valor igual ou mais extremo do que o observado, assumindo $H_0$ verdadeira.  
+> * valor-de-p: probabilidade de que uma estatística do teste assuma um valor igual ou mais extremo do que o observado, assumindo $H_0$ verdadeira.  
 
-> * Mais extremo: neste caso, é um maior valor de $z_{obs}$, pois equivale a um maior $\widehat p$, maior proporção amostral de acertos (astrólogos alegam que $p>1/3$).
+> * Mais extremo: neste caso, um valor maior que $z_{obs}$, pois equivale a um maior $\widehat p$, maior proporção amostral de acertos (astrólogos alegam que $p>1/3$).
 
-> * Valor-de-p: $P(Z>z_{obs})=P(Z>0.27)=0.3936$, onde $Z \sim \mbox{N}(0,1)$.
+> * valor-de-p: $P(Z>z_{obs})=P(Z>0.27)=0.3936$, onde $Z \sim \mbox{N}(0,1)$.
 
 
 ## Exemplo: Mapa Astral {.build}
@@ -402,7 +402,7 @@ Detalhes da pesquisa podem ser encontrados no artigo da revista Nature: <br />
 
 # Resumo: Teste de Hipótese para uma proporção
 
-## Resumo: Teste de Hipótese para uma proporção {.build .smaller}
+## Resumo: Teste de Hipótese para uma proporção {.build}
 
 Suponho que temos uma população e uma hipótese sobre a proporção $p$ de indíviduos  com certa característica.
 
