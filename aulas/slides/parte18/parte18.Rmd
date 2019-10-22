@@ -296,7 +296,7 @@ $$
 
 ## Tipos de Erro {.build}
 
-Observando a relação entre os erros tipo I e II, e $t_c$: <font size=4>$H_{0}: p=0.5 \; \mbox{vs} \; H_a: p=0.7$</font>
+Observando a relação entre os erros tipo I e II, e $t_c$: <font size=5>$H_{0}: p=0.5 \; \mbox{vs} \; H_a: p=0.7$</font>
 
 $t_c$ | P(Erro Tipo I) | P(Erro Tipo II)  
 ----- | -------------- | --------------
@@ -312,9 +312,14 @@ Então, optamos por controlar $\alpha=$P(Erro Tipo I), que é considerado o erro
 
 # Teste de hipóteses para média ($\sigma$ conhecido)
 
+## Teste de hipóteses: proporção ou média
+
+<center><img src="figuras/introTesteHipotese.jpg" width=600></center>
+
+
 ## Exemplo: Café {.build}
 
-Vamos voltar no problema da máquina que enche pacotes de café. Digamos que o peso nominal do pacote de café seja de 500g. Assume-se que o desvio-padrão é conhecido ($\sigma = 10$).
+Vamos voltar no problema da máquina que enche pacotes de café. Digamos que o peso nominal do pacote de café seja de 500g. Assume-se que o desvio padrão é conhecido ($\sigma = 10$).
 
 > Retiraram uma amostra de 25 pacotes e observaram um peso médio de 485g.
 
