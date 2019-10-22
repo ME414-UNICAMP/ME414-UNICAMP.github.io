@@ -316,6 +316,8 @@ Então, optamos por controlar $\alpha=$P(Erro Tipo I), que é considerado o erro
 
 <center><img src="figuras/introTesteHipotese.jpg" width=600></center>
 
+<!-- Fonte: http://nbcgib.uesc.br/lec/professores/ivan?layout=edit&id=141 -->
+
 
 ## Exemplo: Café {.build}
 
@@ -546,22 +548,24 @@ $$t = \frac{\bar{X}-\mu_0}{s/\sqrt{n}} \overset{H_0}{\sim} t_{n-1}$$
 Para as hipóteses unilaterais, o raciocínio é semelhante ao que foi feito anteriormente quando $\sigma$ é conhecido.
 
 
-## Teste de hipóteses para média ($\sigma$ desconhecido) {.build .smaller}
+## Teste de hipóteses para média ($\sigma$ desconhecido) {.build}
 
 No nosso exemplo, suponha que não sabemos o valor de $\sigma$, mas o desvio padrão da amostra é 7.1g. Queremos testar
- $$H_0: \mu = 500 \quad \mbox{vs} \quad H_a: \mu \neq 500$$
+<font size=5> $$H_0: \mu = 500 \quad \mbox{vs} \quad H_a: \mu \neq 500$$ </font>
 
 **Estatística do teste:**
-$$t_{obs} = \frac{\bar{X}-\mu_0}{s/\sqrt{n}} = \frac{485-500}{7.1/5} = -10.56$$
+<font size=5>$$t_{obs} = \frac{\bar{X}-\mu_0}{s/\sqrt{n}} = \frac{485-500}{7.1/5} = -10.56$$ </font>
 
-**valor-de-p:** $P(|t_{24}| ≥ 10.56) = 2P(t_{24} ≥ 10.56) \approx 0$
+**valor-de-p:** <font size=5>$P(|t_{24}| ≥ 10.56) = 2P(t_{24} ≥ 10.56) \approx 0$ </font>
 
 **Conclusão:** Rejeitamos a hipótese de que a média é 500g.
 
-**valor crítico:** para nível de significância $\alpha=0.05$ e teste bilateral, $t_{crit}$ é tal que $P(t_{24}>t_{crit})=P(t_{24}<-t_{crit})=0.025$. De maneira que $t_{crit}=`r round(qt(.975,24),2)`$. Portanto, se $|t_{obs}|>t_{crit}$, rejeita-se $H_0$.
+**valor crítico:** <font size=5>para nível de significância $\alpha=0.05$ e teste bilateral, $t_{crit}$ é tal que $P(t_{24}>t_{crit})=P(t_{24}<-t_{crit})=0.025$. De maneira que $t_{crit}=`r round(qt(.975,24),2)`$. Portanto, se $|t_{obs}|>t_{crit}$, rejeita-se $H_0$.</font>
 
 
 ## Exemplo: Dieta LowCarb {.build}
+
+<img src="figuras/lowcarb.jpg" width=300 style="float: right; margin:10px">
 
 > * 41 pacientes obesos, selecionados aleatoriamente, foram submetidos a uma dieta com baixa quantidade de carboidratos.
 
@@ -572,22 +576,30 @@ $$t_{obs} = \frac{\bar{X}-\mu_0}{s/\sqrt{n}} = \frac{485-500}{7.1/5} = -10.56$$
 > * O que podemos concluir deste estudo? 
 
 <br />
-
-> Detalhes do estudo podem ser encontrados no artigo: [Effect of 6-month adherence to a very low carbohydrate diet program](http://www.amjmed.com/article/S0002-9343(02)01129-4/abstract).
+Detalhes do estudo: [Effect of 6-month adherence to a very low carbohydrate diet program](http://www.amjmed.com/article/S0002-9343(02)01129-4/abstract).
 
 
 ## Exemplo: Dieta LowCarb {.build}
 
-**Suposições**: $X_i$ é a diferença entre peso inicial e final do $i$-ésimo obeso.  Sabemos que $\mathbb E(X_i)=\mu$ e $Var(X_i)=\sigma^2$. Coletou-se uma amostra de tamanho $n=41$. Pelo TCL: $$\bar{X}\sim N(\mu,\sigma^2/n)$$ 
+<img src="figuras/lowcarb.jpg" width=300 style="float: right; margin:10px">
+
+**Suposições**: $X_i$ é a diferença entre peso inicial e final do $i$-ésimo obeso.  
+
+Sabemos que $\mathbb E(X_i)=\mu$ e $Var(X_i)=\sigma^2$. 
+
+Coletou-se uma amostra de tamanho $n=41$. 
+
+Pelo TCL: $\bar{X}\sim N(\mu,\sigma^2/n)$
 
 <br />
-
 **Hipóteses**: $H_0: \mu= 0 \quad \mbox{vs} \quad H_a:\mu <  0$
 
 Ou seja, estamos testando se não há diferença no peso após a dieta versus a hipótese que há redução no peso após a dieta. 
 
 
 ## Exemplo: Dieta LowCarb {.build}
+
+<img src="figuras/lowcarb.jpg" width=300 style="float: right; margin:10px">
 
 **Estatística do teste**: Como $n=41$, podemos usar a aproximação normal $$z_{obs}=\frac{\bar{X}-\mu_0}{s/\sqrt{n}}=\frac{-9.7-0}{3.4/\sqrt{41}}=-18.3$$
 
