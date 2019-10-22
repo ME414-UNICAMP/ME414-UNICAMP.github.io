@@ -575,8 +575,8 @@ No nosso exemplo, suponha que não sabemos o valor de $\sigma$, mas o desvio pad
 
 > * O que podemos concluir deste estudo? 
 
-<br />
-Detalhes do estudo: [Effect of 6-month adherence to a very low carbohydrate diet program](http://www.amjmed.com/article/S0002-9343(02)01129-4/abstract).
+<br /><font size=5>
+Detalhes do estudo: [Effect of 6-month adherence to a very low carbohydrate diet program](http://www.amjmed.com/article/S0002-9343(02)01129-4/abstract). </font>
 
 
 ## Exemplo: Dieta LowCarb {.build}
@@ -604,7 +604,8 @@ Ou seja, estamos testando se não há diferença no peso após a dieta versus a 
 **Estatística do teste**: Como $n=41$, podemos usar a aproximação normal $$z_{obs}=\frac{\bar{X}-\mu_0}{s/\sqrt{n}}=\frac{-9.7-0}{3.4/\sqrt{41}}=-18.3$$
 
 **Valor-de-p**: Como o teste é unilateral à esquerda
-$$\mbox{valor-de-p}=P(Z<-18.3) \approx 0$$
+
+$\qquad \mbox{valor-de-p}=P(Z<-18.3) \approx 0$
 
 <br />
 
@@ -613,13 +614,16 @@ $$\mbox{valor-de-p}=P(Z<-18.3) \approx 0$$
 
 ## Exemplo: Acidentes de trabalho {.build}
 
+<img src="figuras/acidentetrabalho.jpg" width=300 style="float: right; margin:10px">
+
 A associação dos proprietários de indústrias metalúrgicas está muito preocupada com o tempo perdido com acidentes de trabalho, cuja média, nos últimos tempos, tem sido da ordem de 60 horas/homem por ano e desvio padrão de 20 horas/homem.  
 
 Tentou-se um programa de prevenção de acidentes, após o qual foi tomada uma amostra de nove indústrias e medido o número de horas/homens perdidos por acidentes, que foi de 50 horas.  
 
-Você diria, no nível de $5\%$, que há evidência de melhoria?
+Você diria, a um nível de significânia de $5\%$, que há evidência de melhoria?
 
-*Fonte: Morettin \& Bussab*, Estatística Básica $5^a$ edição, pág 334.
+<br />
+*Fonte: Morettin \& Bussab*, Estatística Básica $5^a$ edição, pág. 334.
 
 
 ## Exemplo: Acidentes de trabalho {.build}
