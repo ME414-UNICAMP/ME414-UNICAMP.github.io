@@ -182,7 +182,7 @@ Resumindo:
 Variâncias                             | Margem de Erro  | $IC(\mu_1 - \mu_2, 1-\alpha)$
 -------------------------------------- | --------------- | --------------
 Diferentes e conhecidas ($\sigma_1^2 \neq \sigma_2^2$) | $z_{\alpha/2} \sqrt{\displaystyle \frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}$ | $(\bar{x} - \bar{y}) \pm z_{\alpha/2} \sqrt{\displaystyle \frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}$
-Iguais e conhecidas ($\sigma_1^2 = \sigma_2^2 =\sigma^2$) | $\pm z_{\alpha/2} \sqrt{\displaystyle \sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$ | $(\bar{x} - \bar{y}) \pm z_{\alpha/2} \sqrt{\displaystyle \sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$
+Iguais e conhecidas ($\sigma_1^2 = \sigma_2^2 =\sigma^2$) | $z_{\alpha/2} \sqrt{\displaystyle \sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$ | $(\bar{x} - \bar{y}) \pm z_{\alpha/2} \sqrt{\displaystyle \sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$
 Iguais e desconhecidas ($\sigma_1^2 = \sigma_2^2 =\sigma^2$) | $t_{n+m-2, \alpha/2} \sqrt{\displaystyle s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$ | $(\bar{x} - \bar{y}) \pm t_{n+m-2, \alpha/2} \sqrt{\displaystyle s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$
 
 
@@ -234,12 +234,12 @@ Construa um IC de $95\%$ para a diferença do tempo médio de incubação entre 
 
 Os tempos de incubação (em meses) registrados foram:
 
-* X: tempo de incubação do vírus 1 (`r n` observações)
+X: tempo de incubação do vírus 1 (`r n` observações)
 ```{r, echo=FALSE}
 x
 ```
 
-* Y: tempo de incubação do vírus 2 (`r m` observações)
+Y: tempo de incubação do vírus 2 (`r m` observações)
 ```{r, echo=FALSE}
 y
 ```
@@ -417,7 +417,7 @@ me <- round(t.alfa2*se.est, 2)
 ic <- round(est + c(-1, 1)*me, 2)
 ```
 
-Veja que não sabemos a variância populacional, mas temos os desvios-padrão amostrais e estes são bem próximos. Então iremos assumir que as variâncias são iguais porém desconhecidas. 
+Veja que não sabemos a variância populacional, mas temos os desvios padrão amostrais e estes são bem próximos. Então iremos assumir que as variâncias são iguais porém desconhecidas. 
 
 Nesse caso, vamos então estimar a variância amostral combinada.
 
