@@ -326,10 +326,10 @@ Delta0 <- 3
 alpha <- .01
 z.alfa2 <- round(qnorm(1-alpha/2), 2)
 
-est <- xbar-ybar-Delta0
+est <- xbar - ybar - Delta0
 se.est <- sqrt(sigma21/n + sigma22/m)
 ic <- round(est + c(-1, 1)*z.alfa2*se.est, 2)
-zobs <- round(est/se.est,2)
+zobs <- round(est/se.est, 2)
 phiabsz <- round(pnorm(abs(zobs),lower.tail=TRUE),4)
 valorp <- 2*round(pnorm(abs(zobs),lower.tail=FALSE),4)
 zc <- round(qnorm(1-alpha/2, lower.tail=TRUE),2)
@@ -382,7 +382,7 @@ $\sigma_1^2 = `r sigma21`$ e $\sigma_2^2= `r sigma22`$. Veja que as populações
 
 Cálculo da estatística do teste:
 
-$$Z = \frac{(\bar X - \bar Y) - \Delta_0}{\sqrt{\frac{\sigma_1^2}{n} + \frac{\sigma_2^2}{m}}}  = \frac{(`r xbar` - `r ybar`) - `r Delta0`}{\sqrt{\frac{`r sigma21`}{`r n`} + \frac{`r sigma22`}{`r m`}}} =  `r abs(zobs)` = z_{obs}$$
+$$Z = \frac{(\bar X - \bar Y) - \Delta_0}{\sqrt{\frac{\sigma_1^2}{n} + \frac{\sigma_2^2}{m}}}  = \frac{(`r xbar` - `r ybar`) - `r Delta0`}{\sqrt{\frac{`r sigma21`}{`r n`} + \frac{`r sigma22`}{`r m`}}} =  `r zobs` = z_{obs}$$
 
 <br />
 Como é um teste bilateral, o valor de p é dado por:
@@ -391,7 +391,7 @@ $$\mbox{valor-p} = P(|Z| \geq |z_{obs}|) = P(|Z| \geq `r abs(zobs)`) = 2 P(Z \le
 
 Para um nível de significância $\alpha=0.01$: Como p-valor = `r valorp` $> \alpha=0.01$, não temos evidência para rejeitar $H_{0}: \mu_1 = 3 + \mu_2$.
 
-Valor crítico para $\alpha=0.01$: $z_{0.005} = `r zc`$, ou seja, rejeita-se $H_0$ se $|z_{obs}|\geq `r zc`$.
+Valor crítico para $\alpha=0.01$: $z_{0.005} = `r zc`$, ou seja, rejeita-se $H_0$ se $z_{obs} \geq `r zc`$ ou $z_{obs} \leq `r -zc`$.
 
 
 ## Exemplo: Tecidos {.build}
