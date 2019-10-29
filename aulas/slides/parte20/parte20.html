@@ -3121,15 +3121,15 @@ if (document.readyState !== "loading" &&
 
 <slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Inferência para duas populações: Teste de hipótese para duas médias</h2></hgroup><article  id="inferencia-para-duas-populacoes-teste-de-hipotese-para-duas-medias">
 
-</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias</h2></hgroup><article  class="build" id="teste-de-hipotese-para-duas-medias">
+</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias</h2></hgroup><article  id="teste-de-hipotese-para-duas-medias" class="build">
 
-<p><strong>População 1:</strong> Coletamos uma amostra aleatória \(X_1, X_2, \ldots, X_n\) de uma população com média \(\mu_1\) e a variância \(\sigma_1^2\) e usamos \(\bar{X}\) para estimar \(\mu_1\).</p>
+<p><strong>População 1:</strong> Coletamos uma amostra aleatória \(X_1, X_2, \ldots, X_n\) de uma população com média \(\mu_1\) e a variância \(\sigma_1^2\) e usamos \(\bar X\) para estimar \(\mu_1\).</p>
 
-<p><strong>População 2:</strong> Coletamos uma amostra aleatória \(Y_1, Y_2, \ldots, Y_m\) de uma população com média \(\mu_2\) e a variância \(\sigma_2^2\) e usamos \(\bar{Y}\) para estimar \(\mu_2\).</p>
+<p><strong>População 2:</strong> Coletamos uma amostra aleatória \(Y_1, Y_2, \ldots, Y_m\) de uma população com média \(\mu_2\) e a variância \(\sigma_2^2\) e usamos \(\bar Y\) para estimar \(\mu_2\).</p>
 
 <p>A população 1 é independente da população 2.</p>
 
-</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias</h2></hgroup><article  class="build" id="teste-de-hipotese-para-duas-medias-1">
+</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias</h2></hgroup><article  id="teste-de-hipotese-para-duas-medias-1" class="build">
 
 <p><strong>Condições:</strong></p>
 
@@ -3138,70 +3138,99 @@ if (document.readyState !== "loading" &&
 <li><p>Os tamanhos amostrais \(n\) e \(m\) são suficientemente grandes.</p></li>
 </ol>
 
-<p>Se pelo menos uma das condições acima é satisfeita, temos: \[\bar{X} \sim N\left(\mu_1,\frac{\sigma_1^2}{n} \right) \quad \mbox{e} \quad  \bar{Y} \sim N\left(\mu_2,\frac{\sigma_2^2}{m} \right)\]</p>
+<p>Se pelo menos uma das condições acima é satisfeita, temos: \[\bar X \sim N\left(\mu_1,\frac{\sigma_1^2}{n} \right) \quad \mbox{e} \quad  \bar Y \sim N\left(\mu_2,\frac{\sigma_2^2}{m} \right)\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias (\(\sigma_1^2\neq\sigma_2^2\))</h2></hgroup><article  class="build" id="teste-de-hipotese-para-duas-medias-sigma_12neqsigma_22">
+</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias (\(\sigma_1^2\neq\sigma_2^2\))</h2></hgroup><article  id="teste-de-hipotese-para-duas-medias-sigma_12neqsigma_22" class="build">
 
 <p><strong>Caso 1: Variâncias diferentes e conhecidas</strong></p>
 
 <p>Assumindo que as duas amostras \(X_1, \ldots, X_n\) e \(Y_1, \ldots, Y_m\) são independentes com \(\sigma_1^2 \neq \sigma_2^2\) conhecidas, temos:</p>
 
-<p>\[\bar{X} - \bar{Y} \sim N\left(\mu_1 - \mu_2, \frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}  \right)\]</p>
+<p>\[\bar X - \bar Y \sim N\left(\mu_1 - \mu_2, \frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}  \right)\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias (\(\sigma_1^2\neq\sigma_2^2\))</h2></hgroup><article  class="build" id="teste-de-hipotese-para-duas-medias-sigma_12neqsigma_22-1">
+</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias (\(\sigma_1^2 \neq \sigma_2^2\))</h2></hgroup><article  id="teste-de-hipotese-para-duas-medias-sigma_12-neq-sigma_22" class="build">
 
 <p><strong>Caso 1: Variâncias diferentes e conhecidas</strong></p>
 
-<p>Temos interesse em: \[\begin{aligned}
+<p>Temos interesse em testar as hipóteses: \[\begin{aligned}
 H_0: \mu_1 - \mu_2 = \Delta_0 \qquad  \mbox{vs} \qquad H_A: \mu_1 - \mu_2 &amp; \neq \Delta_0  \mbox{ ou} \\ 
 H_A: \mu_1 - \mu_2 &amp;&lt; \Delta_0 \mbox{ ou} \\
 H_A:  \mu_1-\mu_2 &amp;&gt; \Delta_0.
 \end{aligned}\]</p>
 
-<p>E daí, sob \(H_0\), temos que: \[Z= \frac{(\bar{X} - \bar{Y}) - \overbrace{(\mu_1 - \mu_2)}^{\Delta_0}}{ \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}} \sim N(0, 1)\]</p>
+<p>E daí, sob \(H_0\), temos que: \[Z= \frac{(\bar X - \bar Y) - \overbrace{(\mu_1 - \mu_2)}^{\Delta_0}}{ \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}} \sim N(0, 1)\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias (\(\sigma_1^2\neq\sigma_2^2\))</h2></hgroup><article  class="build" id="teste-de-hipotese-para-duas-medias-sigma_12neqsigma_22-2">
+</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias (\(\sigma_1^2\neq\sigma_2^2\))</h2></hgroup><article  id="teste-de-hipotese-para-duas-medias-sigma_12neqsigma_22-1" class="build">
 
-<p>Se temos interesse em: \(H_{0}: \mu_{1}-\mu_{2}=\Delta_{0} \hspace{0.3cm} vs \hspace{0.3cm} H_A: \mu_{1}-\mu_{2} &gt; \Delta_{0}\).</p>
+<p>Definidas as hipóteses, coletamos as informações das duas populações.</p>
 
-<blockquote>
-<p>Uma amostra aleatória de tamanho \(n\) é coletada da população \(X\) e calcula-se a média amostral, \(\bar{x}\). Similarmente, para a população \(Y\), temos \(\bar{y}\) obtida a partir de uma amostra aleatória de tamanho \(m\).</p>
-</blockquote>
+<p>Para a população \(X\): uma amostra aleatória de tamanho \(n\) é coletada e calcula-se a média amostral \(\bar x\).</p>
 
-<p>\[\begin{aligned}
-\mbox{p-valor} &amp; =  P\left(\frac{\bar{X}-\bar{Y}-\Delta_{0}}{\sqrt{\sigma_{1}^{2}/n+\sigma_{2}^{2}/m}} \geq \frac{\bar{x}-\bar{y}-\Delta_{0}}{\sqrt{\sigma_1^2/n+\sigma_2^2/m}}\right)  =  P\left(Z \geq \frac{\bar{x}-\bar{y}-\Delta_{0}}{\sqrt{\sigma_{1}^{2}/n+\sigma_{2}^{2}/m}}\right) \\
-&amp; = 1-\Phi\left(\frac{\bar{x}-\bar{y}-\Delta_{0}}{\sqrt{\sigma_{1}^{2}/n+\sigma_{2}^{2}/m}}\right) \nonumber
-\end{aligned}\] em que \(\Phi(z)=P(Z\leq z)\) para \(Z\sim N(0,1)\).</p>
+<p>Para a população \(Y\): similarmente, uma amostra aleatória de tamanho \(m\) é coletada e calcula-se a média amostral \(\bar y\).</p>
 
-</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias (\(\sigma_1^2\neq\sigma_2^2\))</h2></hgroup><article  class="build" id="teste-de-hipotese-para-duas-medias-sigma_12neqsigma_22-3">
+<p>Calcula-se a estatística do teste:</p>
 
-<p>Se temos interesse em: \(H_{0}: \mu_{1}-\mu_{2}=\Delta_{0} \hspace{0.3cm} vs \hspace{0.3cm} H_A: \mu_{1}-\mu_{2} &lt; \Delta_{0}\).</p>
+<p>\[Z= \frac{(\bar X - \bar Y) - \overbrace{(\mu_1 - \mu_2)}^{\Delta_0}}{ \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}} \qquad \Longrightarrow \qquad z_{obs}= \frac{(\bar x - \bar y) - \Delta_0}{\sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}}\]</p>
 
-<p>\[\begin{aligned}
-\mbox{p-valor} &amp; =  P\left(\frac{\bar{X}-\bar{Y}-\Delta_{0}}{\sqrt{\frac{\sigma_{1}^{2}}{n}+\frac{\sigma_{2}^{2}}{m}}} \leq \frac{\bar{x}-\bar{y}-\Delta_{0}}{\sqrt{\frac{\sigma_{1}^{2}}{n}+\frac{\sigma_{2}^{2}}{m}}}\right) \nonumber \\
-&amp; =  P\left(Z \leq \frac{\bar{x}-\bar{y}-\Delta_{0}}{\sqrt{\frac{\sigma_{1}^{2}}{n}+\frac{\sigma_{2}^{2}}{m}}}\right) =  \Phi\left(\frac{\bar{x}-\bar{y}-\Delta_{0}}{\sqrt{\frac{\sigma_{1}^{2}}{n}+\frac{\sigma_{2}^{2}}{m}}}\right) \nonumber
-\end{aligned}\] em que \(\Phi(z)=P(Z\leq z)\) para \(Z\sim N(0,1)\).</p>
+</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias (\(\sigma_1^2 \neq \sigma_2^2\))</h2></hgroup><article  id="teste-de-hipotese-para-duas-medias-sigma_12-neq-sigma_22-1" class="build">
 
-</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias (\(\sigma_1^2\neq\sigma_2^2\))</h2></hgroup><article  class="build" id="teste-de-hipotese-para-duas-medias-sigma_12neqsigma_22-4">
+<p>O valor-de-p é calculado de acordo com a hipótese alternativa.</p>
 
-<p>Se temos interesse em: \(H_{0}: \mu_1 - \mu_2 = \Delta_0 \qquad \mbox{vs} \qquad H_A: \mu_1 - \mu_2 \neq \Delta_0\).</p>
+<p><img src="data:image/png;base64,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" width=430 style="float: right; margin-left:30px"></p>
 
-<p>\[\begin{aligned}
-\mbox{p-valor} &amp; =  P\left(\frac{|\bar{X}-\bar{Y}-\Delta_{0}|}{\sqrt{\frac{\sigma_{1}^{2}}{n}+\frac{\sigma_{2}^{2}}{m}}} \geq \frac{|\bar{x}-\bar{y}-\Delta_{0}|}{\sqrt{\frac{\sigma_{1}^{2}}{n}+\frac{\sigma_{2}^{2}}{m}}}\right) \nonumber \\
-&amp; =  P\left(|Z| \geq \frac{|\bar{x}-\bar{y}-\Delta_{0}|}{\sqrt{\frac{\sigma_{1}^{2}}{n}+\frac{\sigma_{2}^{2}}{m}}}\right) =  2\times \left[ 1 - \Phi\left(\frac{|\bar{x}-\bar{y}-\Delta_{0}|}{\sqrt{\frac{\sigma_{1}^{2}}{n}+\frac{\sigma_{2}^{2}}{m}}}\right) \right ]\nonumber
-\end{aligned}\] em que \(\Phi(z)=P(Z\leq z)\) para \(Z\sim N(0,1)\).</p>
+<p>Se o teste é <strong>bilateral</strong>, ou seja, \[\begin{aligned}
+H_0: \mu_1 - \mu_2 &amp; = \Delta_0 \\
+H_A: \mu_1 - \mu_2 &amp; \neq \Delta_0  
+\end{aligned}\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias (\(\sigma_1^2=\sigma_2^2\))</h2></hgroup><article  class="build" id="teste-de-hipotese-para-duas-medias-sigma_12sigma_22">
+<p>Usando o valor observado da estatística do teste: \[\begin{aligned}
+\mbox{valor-p} &amp;= P(|Z| \geq |z_{obs}|) \\
+&amp;= 2P(Z \leq -|z_{obs}|)
+\end{aligned}\]</p>
+
+<p><br /> <strong>Conclusão</strong>: Rejeita-se \(H_0\) se valor-p \(\leq \alpha\) ou, de forma equivalente, se \(z_{obs}\) cai na região crítica (área cinza do gráfico).</p>
+
+</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias (\(\sigma_1^2 \neq \sigma_2^2\))</h2></hgroup><article  id="teste-de-hipotese-para-duas-medias-sigma_12-neq-sigma_22-2" class="build">
+
+<p>O valor-de-p é calculado de acordo com a hipótese alternativa.</p>
+
+<p><img src="data:image/png;base64,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" width=430 style="float: right; margin-left:30px"></p>
+
+<p>Se o teste é <strong>unilateral à esquerda</strong>, ou seja, \[\begin{aligned}
+H_0: \mu_1 - \mu_2 &amp; = \Delta_0 \\
+H_A: \mu_1 - \mu_2 &amp; &lt; \Delta_0  
+\end{aligned}\]</p>
+
+<p>Usando o valor observado da estatística do teste: \[\mbox{valor-p} = P(Z \leq z_{obs})\]</p>
+
+<p><br /> <strong>Conclusão</strong>: Rejeita-se \(H_0\) se valor-p \(\leq \alpha\) ou, de forma equivalente, se \(z_{obs}\) cai na região crítica (área cinza à esquerda do gráfico).</p>
+
+</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias (\(\sigma_1^2 \neq \sigma_2^2\))</h2></hgroup><article  id="teste-de-hipotese-para-duas-medias-sigma_12-neq-sigma_22-3" class="build">
+
+<p>O valor-de-p é calculado de acordo com a hipótese alternativa.</p>
+
+<p><img src="data:image/png;base64,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" width=430 style="float: right; margin-left:30px"></p>
+
+<p>Se o teste é <strong>unilateral à direita</strong>, ou seja, \[\begin{aligned}
+H_0: \mu_1 - \mu_2 &amp; = \Delta_0 \\
+H_A: \mu_1 - \mu_2 &amp; &gt; \Delta_0  
+\end{aligned}\]</p>
+
+<p>Usando o valor observado da estatística do teste: \[\mbox{valor-p} = P(Z \geq z_{obs})\]</p>
+
+<p><br /> <strong>Conclusão</strong>: Rejeita-se \(H_0\) se valor-p \(\leq \alpha\) ou, de forma equivalente, se \(z_{obs}\) cai na região crítica (área cinza à direita do gráfico).</p>
+
+</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias (\(\sigma_1^2 = \sigma_2^2\))</h2></hgroup><article  id="teste-de-hipotese-para-duas-medias-sigma_12-sigma_22" class="build">
 
 <p><strong>Caso 2: Variâncias iguais e conhecidas</strong></p>
 
-<p>\[ \bar{X} - \bar{Y} \sim N\left(\mu_1 - \mu_2, \frac{\sigma^{2}}{n} + \frac{\sigma^{2}}{m}  \right)\]</p>
+<p>\[ \bar X - \bar Y \sim N\left(\mu_1 - \mu_2, \frac{\sigma^{2}}{n} + \frac{\sigma^{2}}{m}  \right)\]</p>
 
 <p>As hipóteses são as mesmas que as testadas no caso 1.</p>
 
-<p>E daí, sob \(H_0\), temos que: \[Z= \frac{(\bar{X} - \bar{Y}) - \overbrace{(\mu_1 - \mu_2)}^{\Delta_0}}{ \sqrt{\sigma^2 ( \frac{1}{n} + \frac{1}{m}} )} \sim N(0, 1)\]</p>
+<p>E daí, sob \(H_0\), temos que: \[Z= \frac{(\bar X - \bar Y) - \overbrace{(\mu_1 - \mu_2)}^{\Delta_0}}{\sqrt{\sigma^2 \left( \frac{1}{n} + \frac{1}{m} \right)}} \sim N(0, 1)\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias (\(\sigma_1^2=\sigma_2^2\))</h2></hgroup><article  class="build" id="teste-de-hipotese-para-duas-medias-sigma_12sigma_22-1">
+</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias (\(\sigma_1^2=\sigma_2^2\))</h2></hgroup><article  id="teste-de-hipotese-para-duas-medias-sigma_12sigma_22" class="build">
 
 <p><strong>Caso 3: Variâncias iguais e desconhecidas</strong></p>
 
@@ -3209,25 +3238,27 @@ H_A:  \mu_1-\mu_2 &amp;&gt; \Delta_0.
 
 <p>No caso de duas populações, o estimador da variância \(\sigma^2\) é a combinação das variâncias amostrais de cada população, ou seja, \[S_p^2 = \frac{(n-1)S_1^2 + (m-1)S_2^2}{n+m-2},\] sendo \(S_i^2\) é a variância amostral da população \(i\).</p>
 
-</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias</h2></hgroup><article  class="build" id="teste-de-hipotese-para-duas-medias-2">
+</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias</h2></hgroup><article  id="teste-de-hipotese-para-duas-medias-2" class="build">
 
 <p>As variâncias são iguais \(\sigma_1^2 = \sigma_2^2 = \sigma^2\).</p>
 
-<p>Quando \(\sigma^2\) é conhecida: \[ \frac{\bar X - \bar Y - (\mu_1 - \mu_2)}{\sqrt{\sigma^2 \left( \frac{1}{n} + \frac{1}{m} \right)}} \sim N(0,1)\]</p>
+<p>Quando \(\sigma^2\) é conhecida: \[Z = \frac{\bar X - \bar Y - (\mu_1 - \mu_2)}{\sqrt{\sigma^2 \left( \frac{1}{n} + \frac{1}{m} \right)}} \sim N(0,1)\]</p>
 
-<p>Quando \(\sigma^2\) é desconhecida: \[ \frac{\bar X - \bar Y - (\mu_1 - \mu_2)}{\sqrt{S_p^2 \left( \frac{1}{n} + \frac{1}{m} \right)}} \sim t_{n+m-2}\]</p>
+<p>Quando \(\sigma^2\) é desconhecida: \[T = \frac{\bar X - \bar Y - (\mu_1 - \mu_2)}{\sqrt{S_p^2 \left( \frac{1}{n} + \frac{1}{m} \right)}} \sim t_{n+m-2}\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias (\(\sigma_1^2=\sigma_2^2\))</h2></hgroup><article  class="build" id="teste-de-hipotese-para-duas-medias-sigma_12sigma_22-2">
+</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas médias (\(\sigma_1^2=\sigma_2^2\))</h2></hgroup><article  id="teste-de-hipotese-para-duas-medias-sigma_12sigma_22-1" class="build">
 
-<p>Temos interesse em: \(H_0\): \(\mu_1 - \mu_2 = \Delta_0\) vs \(H_A\): \(\mu_1 - \mu_2 \neq \Delta_0\) (ou &gt; ou &lt;).</p>
+<p>Temos interesse em testar: \(H_0: \mu_1 - \mu_2 = \Delta_0 \qquad \mbox{vs} \qquad H_A: \mu_1 - \mu_2 \neq \Delta_0 \quad (\mbox{ou hipóteses unilaterais})\)</p>
 
-<p>E daí, sob \(H_0\), temos que: \[T= \frac{(\bar{X} - \bar{Y}) - \overbrace{(\mu_1 - \mu_2)}^{\Delta_0}}{ \sqrt{S_p^2 ( \frac{1}{n} + \frac{1}{m}} )} \sim t_{n+m-2}\]</p>
+<p>E daí, sob \(H_0\), temos que: \[T= \frac{(\bar X - \bar Y) - \overbrace{(\mu_1 - \mu_2)}^{\Delta_0}}{ \sqrt{S_p^2 \left( \frac{1}{n} + \frac{1}{m} \right) }} \sim t_{n+m-2}.\]</p>
 
-<p><strong>Observação:</strong> Se \(n\) e \(m\) são pequenos, as duas amostras devem vir de populações aproximadamente normais. Se \(n\) e \(m\) são grandes, então a distribuição \(t\) com \(n+m-2\) graus de liberdade aproxima-se de uma normal.</p>
+<p><strong>Observação:</strong> Se \(n\) e \(m\) são pequenos, as duas amostras devem vir de populações aproximadamente normais. Se \(n\) e \(m\) são grandes, então a distribuição \(t\) com \(n + m - 2\) graus de liberdade aproxima-se de uma normal.</p>
 
-</article></slide><slide class=""><hgroup><h2>Resumo: Teste de hipótese para duas médias</h2></hgroup><article  class="smaller" id="resumo-teste-de-hipotese-para-duas-medias">
+<p>Esse teste é conhecido como <strong>teste t</strong> para amostras independentes.</p>
 
-<p>Para \(H_0: \mu_1-\mu_2=\Delta_0 \qquad \mbox{vs} \qquad H_A: \mu_1-\mu_2\neq\Delta_0\)</p>
+</article></slide><slide class=""><hgroup><h2>Resumo: Teste de hipótese para duas médias</h2></hgroup><article  id="resumo-teste-de-hipotese-para-duas-medias" class="smaller">
+
+<p>Para \(H_0: \mu_1 - \mu_2 = \Delta_0 \qquad \mbox{vs} \qquad H_A: \mu_1 - \mu_2 \neq \Delta_0\)</p>
 
 <table class = 'rmdtable'>
 <col width="30.882353%" />
@@ -3242,25 +3273,25 @@ H_A:  \mu_1-\mu_2 &amp;&gt; \Delta_0.
 </tr>
 <tr class="odd">
 <td align="left">Diferentes e conhecidas (\(\sigma_1^2 \neq \sigma_2^2\))</td>
-<td align="left">\[Z= \frac{(\bar{X} - \bar{Y}) - \Delta_0}{ \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}} \sim N(0, 1)\]</td>
-<td align="left">\[\mbox{rejeitar se }\mid z_{obs}\mid\geq z_{\alpha/2}\]</td>
-<td align="left">\[2 P(Z\geq \mid z_{obs}\mid)\]</td>
+<td align="left">\[Z = \frac{(\bar X - \bar Y) - \Delta_0}{\sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}} \sim N(0, 1)\]</td>
+<td align="left">\[\mbox{rejeitar se } |z_{obs}| \geq z_{\alpha/2}\]</td>
+<td align="left">\[2 P(Z \geq |z_{obs}|)\]</td>
 </tr>
 <tr class="even">
-<td align="left">Iguais e conhecidas (\(\sigma_1^2 = \sigma_2^2 =\sigma^2\))</td>
-<td align="left">\[Z= \frac{(\bar{X} - \bar{Y}) - \Delta_0}{ \sqrt{\sigma^2 \left( \frac{1}{n} + \frac{1}{m} \right)}} \sim N(0, 1)\]</td>
-<td align="left">\[\mbox{rejeitar se }\mid z_{obs}\mid\geq z_{\alpha/2}\]</td>
-<td align="left">\[2 P(Z\geq \mid z_{obs}\mid)\]</td>
+<td align="left">Iguais e conhecidas (\(\sigma_1^2 = \sigma_2^2 = \sigma^2\))</td>
+<td align="left">\[Z = \frac{(\bar X - \bar Y) - \Delta_0}{\sqrt{\sigma^2 \left( \frac{1}{n} + \frac{1}{m} \right)}} \sim N(0, 1)\]</td>
+<td align="left">\[\mbox{rejeitar se } |z_{obs}| \geq z_{\alpha/2}\]</td>
+<td align="left">\[2 P(Z \geq |z_{obs}|)\]</td>
 </tr>
 <tr class="odd">
-<td align="left">Iguais e desconhecidas (\(\sigma_1^2 = \sigma_2^2 =\sigma^2\))</td>
-<td align="left">\[T\sim\frac{(\bar{X} - \bar{Y}) -\Delta_0}{ \sqrt{S_p^2 \left( \frac{1}{n} + \frac{1}{m} \right)}}\sim t_{n+m-2}\]</td>
-<td align="left">\[\mbox{rejeitar se }\mid t_{obs}\mid\geq t_{n+m-2,\alpha/2}\]</td>
-<td align="left">\[2 P(T\geq \mid t_{obs}\mid)\]</td>
+<td align="left">Iguais e desconhecidas (\(\sigma_1^2 = \sigma_2^2 = \sigma^2\))</td>
+<td align="left">\[T = \frac{(\bar X - \bar Y) - \Delta_0}{\sqrt{S_p^2 \left( \frac{1}{n} + \frac{1}{m} \right)}} \sim t_{n+m-2}\]</td>
+<td align="left">\[\mbox{rejeitar se } |t_{obs}| \geq t_{n+m-2, \alpha/2}\]</td>
+<td align="left">\[2 P(T \geq |t_{obs}|)\]</td>
 </tr>
 </table>
 
-</article></slide><slide class=""><hgroup><h2>Resumo: Teste de hipótese para duas médias</h2></hgroup><article  class="smaller" id="resumo-teste-de-hipotese-para-duas-medias-1">
+</article></slide><slide class=""><hgroup><h2>Resumo: Teste de hipótese para duas médias</h2></hgroup><article  id="resumo-teste-de-hipotese-para-duas-medias-1" class="smaller">
 
 <p>Para \(H_0: \mu_1-\mu_2 = \Delta_0 \qquad \mbox{vs} \qquad H_A: \mu_1 - \mu_2 &lt; \Delta_0\)</p>
 
@@ -3277,27 +3308,27 @@ H_A:  \mu_1-\mu_2 &amp;&gt; \Delta_0.
 </tr>
 <tr class="odd">
 <td align="left">Diferentes e conhecidas (\(\sigma_1^2 \neq \sigma_2^2\))</td>
-<td align="left">\[Z= \frac{(\bar{X} - \bar{Y}) - \Delta_0}{ \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}} \sim N(0, 1)\]</td>
-<td align="left">rejeitar se \(z_{obs}\leq -z_{\alpha}\)</td>
-<td align="left">\(P(Z\leq z_{obs})\)</td>
+<td align="left">\[Z = \frac{(\bar X - \bar Y) - \Delta_0}{ \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}} \sim N(0, 1)\]</td>
+<td align="left">rejeitar se \(z_{obs} \leq -z_{\alpha}\)</td>
+<td align="left">\(P(Z \leq z_{obs})\)</td>
 </tr>
 <tr class="even">
-<td align="left">Iguais e conhecidas (\(\sigma_1^2 = \sigma_2^2 =\sigma^2\))</td>
-<td align="left">\[Z= \frac{(\bar{X} - \bar{Y}) - \Delta_0}{\sqrt{\sigma^2 \left( \frac{1}{n} + \frac{1}{m} \right)}} \sim N(0, 1)\]</td>
-<td align="left">rejeitar se \(z_{obs}\leq -z_{\alpha}\)</td>
-<td align="left">\(P(Z\leq z_{obs})\)</td>
+<td align="left">Iguais e conhecidas (\(\sigma_1^2 = \sigma_2^2 = \sigma^2\))</td>
+<td align="left">\[Z = \frac{(\bar X - \bar Y) - \Delta_0}{\sqrt{\sigma^2 \left( \frac{1}{n} + \frac{1}{m} \right)}} \sim N(0, 1)\]</td>
+<td align="left">rejeitar se \(z_{obs} \leq -z_{\alpha}\)</td>
+<td align="left">\(P(Z \leq z_{obs})\)</td>
 </tr>
 <tr class="odd">
-<td align="left">Iguais e desconhecidas (\(\sigma_1^2 = \sigma_2^2 =\sigma^2\))</td>
-<td align="left">\[T\sim\frac{(\bar{X} - \bar{Y}) -\Delta_0}{ \sqrt{S_p^2 \left( \frac{1}{n} + \frac{1}{m} \right)}}\sim t_{n+m-2}\]</td>
-<td align="left">rejeitar se \(t_{obs}\leq -t_{n+m+2,\alpha}\)</td>
-<td align="left">\(P(T\leq t_{obs})\)</td>
+<td align="left">Iguais e desconhecidas (\(\sigma_1^2 = \sigma_2^2 = \sigma^2\))</td>
+<td align="left">\[T = \frac{(\bar X - \bar Y) - \Delta_0}{ \sqrt{S_p^2 \left( \frac{1}{n} + \frac{1}{m} \right)}} \sim t_{n+m-2}\]</td>
+<td align="left">rejeitar se \(t_{obs} \leq -t_{n+m+2, \alpha}\)</td>
+<td align="left">\(P(T \leq t_{obs})\)</td>
 </tr>
 </table>
 
-</article></slide><slide class=""><hgroup><h2>Resumo: Teste de hipótese para duas médias</h2></hgroup><article  class="smaller" id="resumo-teste-de-hipotese-para-duas-medias-2">
+</article></slide><slide class=""><hgroup><h2>Resumo: Teste de hipótese para duas médias</h2></hgroup><article  id="resumo-teste-de-hipotese-para-duas-medias-2" class="smaller">
 
-<p>Para \(H_0: \mu_1-\mu_2 = \Delta_0 \qquad \mbox{vs} \qquad H_A: \mu_1 - \mu_2 &gt; \Delta_0\)</p>
+<p>Para \(H_0: \mu_1 - \mu_2 = \Delta_0 \qquad \mbox{vs} \qquad H_A: \mu_1 - \mu_2 &gt; \Delta_0\)</p>
 
 <table class = 'rmdtable'>
 <col width="30.882353%" />
@@ -3312,27 +3343,27 @@ H_A:  \mu_1-\mu_2 &amp;&gt; \Delta_0.
 </tr>
 <tr class="odd">
 <td align="left">Diferentes e conhecidas (\(\sigma_1^2 \neq \sigma_2^2\))</td>
-<td align="left">\[Z= \frac{(\bar{X} - \bar{Y}) - \Delta_0}{ \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}} \sim N(0, 1)\]</td>
-<td align="left">rejeitar se \(z_{obs}\geq z_{\alpha}\)</td>
-<td align="left">\(P(Z\geq z_{obs})\)</td>
+<td align="left">\[Z = \frac{(\bar X - \bar Y) - \Delta_0}{ \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}} \sim N(0, 1)\]</td>
+<td align="left">rejeitar se \(z_{obs} \geq z_{\alpha}\)</td>
+<td align="left">\(P(Z \geq z_{obs})\)</td>
 </tr>
 <tr class="even">
 <td align="left">Iguais e conhecidas (\(\sigma_1^2 = \sigma_2^2 = \sigma^2\))</td>
-<td align="left">\[Z= \frac{(\bar{X} - \bar{Y}) - \Delta_0}{ \sqrt{\sigma^2 \left( \frac{1}{n} + \frac{1}{m} \right)}} \sim N(0, 1)\]</td>
-<td align="left">rejeitar se \(z_{obs}\geq z_{\alpha}\)</td>
-<td align="left">\(P(Z\geq z_{obs})\)</td>
+<td align="left">\[Z = \frac{(\bar X - \bar Y) - \Delta_0}{ \sqrt{\sigma^2 \left( \frac{1}{n} + \frac{1}{m} \right)}} \sim N(0, 1)\]</td>
+<td align="left">rejeitar se \(z_{obs} \geq z_{\alpha}\)</td>
+<td align="left">\(P(Z \geq z_{obs})\)</td>
 </tr>
 <tr class="odd">
-<td align="left">Iguais e desconhecidas (\(\sigma_1^2 = \sigma_2^2 =\sigma^2\))</td>
-<td align="left">\[T\sim\frac{(\bar{X} - \bar{Y}) -\Delta_0}{ \sqrt{S_p^2 \left( \frac{1}{n} + \frac{1}{m} \right)}}\sim t_{n+m-2}\]</td>
-<td align="left">rejeitar se \(t_{obs}\geq t_{n+m+2,\alpha}\)</td>
-<td align="left">\(P(T\geq t_{obs})\)</td>
+<td align="left">Iguais e desconhecidas (\(\sigma_1^2 = \sigma_2^2 = \sigma^2\))</td>
+<td align="left">\[T = \frac{(\bar X - \bar Y) - \Delta_0}{ \sqrt{S_p^2 \left( \frac{1}{n} + \frac{1}{m} \right)}} \sim t_{n+m-2}\]</td>
+<td align="left">rejeitar se \(t_{obs} \geq t_{n+m+2,\alpha}\)</td>
+<td align="left">\(P(T \geq t_{obs})\)</td>
 </tr>
 </table>
 
 </article></slide><slide class=""><hgroup><h2>Relembrando: Como encontrar \(z_{\alpha/2}\)</h2></hgroup><article  id="relembrando-como-encontrar-z_alpha2">
 
-<p>\[P(|Z|\leq z_{\alpha/2})=P(-z_{\alpha/2}\leq Z \leq z_{\alpha/2})=1-\alpha\]</p>
+<p>\[P(|Z|\leq z_{\alpha/2}) = P(-z_{\alpha/2} \leq Z \leq z_{\alpha/2}) = 1 - \alpha\]</p>
 
 <center>
 
@@ -3352,9 +3383,9 @@ H_A:  \mu_1-\mu_2 &amp;&gt; \Delta_0.
 
 </center>
 
-<p>Nesse caso, \(\nu=n+m-2\) e os valores da distribuição \(t\) encontram-se tabelados.</p>
+<p><br /> Nesse caso, \(\nu=n+m-2\) e os valores da distribuição \(t\) encontram-se tabelados.</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: Tempo de Incubação</h2></hgroup><article  class="build" id="exemplo-tempo-de-incubacao">
+</article></slide><slide class=""><hgroup><h2>Exemplo: Tempo de Incubação</h2></hgroup><article  id="exemplo-tempo-de-incubacao" class="build">
 
 <p>O tempo de incubação do vírus 1 segue uma distribuição normal com média \(\mu_1\) e desvio padrão \(\sigma_{1}=\sqrt{2}\).</p>
 
@@ -3364,31 +3395,27 @@ H_A:  \mu_1-\mu_2 &amp;&gt; \Delta_0.
 
 <p>Afirma-se que em média, o tempo de incubação do vírus 1 é 3 meses depois do tempo médio de incubação do vírus 2.</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: Tempo de Incubação</h2></hgroup><article  class="build" id="exemplo-tempo-de-incubacao-1">
+</article></slide><slide class=""><hgroup><h2>Exemplo: Tempo de Incubação</h2></hgroup><article  id="exemplo-tempo-de-incubacao-1" class="build">
 
 <p>Realizaram um estudo de controle e os tempos de incubação registrados foram (tempo em meses):</p>
 
-<ul>
-<li>X: tempo de incubação do vírus 1 (20 observações)</li>
-</ul>
+<p>X: tempo de incubação do vírus 1 (20 observações)</p>
 
 <pre >##  [1] 4.56 3.72 3.45 2.86 4.03 4.08 6.56 4.31 0.42 5.56 5.92 2.65 4.54 4.04
 ## [15] 4.23 6.24 6.16 5.46 3.22 2.28</pre>
 
-<ul>
-<li>Y: tempo de incubação do vírus 2 (22 observações)</li>
-</ul>
+<p><br /> Y: tempo de incubação do vírus 2 (22 observações)</p>
 
 <pre >##  [1] 2.44 1.49 2.68 2.60 1.51 1.60 1.47 3.70 2.22 1.78 2.36 1.56 2.98 3.33
 ## [15] 2.22 0.58 2.26 2.26 1.92 0.50 1.17 1.70</pre>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: Tempo de Incubação</h2></hgroup><article  class="build" id="exemplo-tempo-de-incubacao-2">
+</article></slide><slide class=""><hgroup><h2>Exemplo: Tempo de Incubação</h2></hgroup><article  id="exemplo-tempo-de-incubacao-2" class="build">
 
 <p>Recentemente, pacientes contaminados com os vírus foram avaliados e suspeita-se que talvez o tempo de incubação do vírus 1 não seja 3 meses depois do tempo médio de incubação do vírus 2.</p>
 
 <p>Definindo as hipóteses as serem testadas:</p>
 
-<p>\(H{}: \mu_{1}-\mu_{2} = 3 \qquad \mbox{vs} \qquad H_A: \mu_{1}-\mu_{2} \neq 3\)</p>
+<p>\(H_0: \mu_{1}-\mu_{2} = 3 \qquad \mbox{vs} \qquad H_A: \mu_{1}-\mu_{2} \neq 3\)</p>
 
 <p>Os dados coletados serão usados para avaliar se temos ou não evidências contra \(H_0\).</p>
 
@@ -3396,19 +3423,19 @@ H_A:  \mu_1-\mu_2 &amp;&gt; \Delta_0.
 
 <p>Pelo enunciado, as duas populações são normais e as variâncias são conhecidas: \(\sigma_1^2 = 2\) e \(\sigma_2^2= 1\). Veja que as populações são normais, variâncias diferentes mas conhecidas. Além disso, \(n=20\) e \(m=22\).</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: Tempo de Incubação</h2></hgroup><article  class="build" id="exemplo-tempo-de-incubacao-3">
+</article></slide><slide class=""><hgroup><h2>Exemplo: Tempo de Incubação</h2></hgroup><article  id="exemplo-tempo-de-incubacao-3" class="build">
 
-<p>\[\begin{aligned}
-\mbox{p-valor} &amp; =  P\left(\frac{|\bar{X}-\bar{Y}-\Delta_{0}|}{\sqrt{\frac{\sigma_{1}^{2}}{m}+\frac{\sigma_{2}^{2}}{n}}}\geq \frac{|4.21-2.02-3|}{\sqrt{\frac{2}{22}+\frac{1}{20}}}\right)  \\
-&amp; =  P\left(|Z|\geq 2.12\right) = 2\times P\left(Z \geq 2.12\right)  \\
-&amp; =  2\times \left[1-\Phi\left(2.12\right)\right] = 2\times \left[1-0.983\right] = 0.034 
-\end{aligned}\]</p>
+<p>Cálculo da estatística do teste:</p>
 
-<p>Se \(\alpha=0.01\), como p-valor=0.034 \(&gt; \alpha=0.01\), não temos evidência para rejeitar \(H_{0}: \mu_{1}=3+\mu_{2}\) com nível de significância 0.01.</p>
+<p>\[Z = \frac{(\bar X - \bar Y) - \Delta_0}{\sqrt{\frac{\sigma_1^2}{n} + \frac{\sigma_2^2}{m}}}  = \frac{(4.21 - 2.02) - 3}{\sqrt{\frac{2}{20} + \frac{1}{22}}} =  2.12 = z_{obs}\]</p>
 
-<p>Valor crítico para \(\alpha=0.01\): 2.58, ou seja, se \(|z_{obs}|\geq 2.58\) temos evidências para rejeitar \(H_0\) com nível de significância \(\alpha=0.01\).</p>
+<p><br /> Como é um teste bilateral, o valor de p é dado por: \[\mbox{valor-p} = P(|Z| \geq |z_{obs}|) = P(|Z| \geq 2.12) = 2 P(Z \leq - 2.12) =  0.034\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: Tecidos</h2></hgroup><article  class="build" id="exemplo-tecidos">
+<p>Para um nível de significância \(\alpha=0.01\): Como p-valor = 0.034 \(&gt; \alpha=0.01\), não temos evidência para rejeitar \(H_{0}: \mu_1 = 3 + \mu_2\).</p>
+
+<p>Valor crítico para \(\alpha=0.01\): \(z_{0.005} = 2.58\), ou seja, rejeita-se \(H_0\) se \(|z_{obs}|\geq 2.58\).</p>
+
+</article></slide><slide class=""><hgroup><h2>Exemplo: Tecidos</h2></hgroup><article  id="exemplo-tecidos" class="build">
 
 <p>Dois tipos diferentes de tecido devem ser comparados. Uma máquina de testes <em>Martindale</em> pode comparar duas amostras ao mesmo tempo. O peso (em miligramas) para sete experimentos foram:</p>
 
@@ -3451,39 +3478,35 @@ H_A:  \mu_1-\mu_2 &amp;&gt; \Delta_0.
 
 <p><em>Adaptado de: Profa. Nancy Garcia</em>, Notas de aula.</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: Tecidos</h2></hgroup><article  class="build" id="exemplo-tecidos-1">
+</article></slide><slide class=""><hgroup><h2>Exemplo: Tecidos</h2></hgroup><article  id="exemplo-tecidos-1" class="build">
 
-<p>Os tecidos do tipo A tem uma média amostral igual a \(\bar{x}_A=30.86\). Já os tecidos do tipo B têm média amostral de \(\bar{x}_B=33.57\).</p>
+<p>Os tecidos do tipo A tem uma média amostral igual a \(\bar X_A=30.86\). Já os tecidos do tipo B têm média amostral de \(\bar X_B=33.57\).</p>
 
 <p>A variância populacional é igual a 49, enquanto as variâncias amostrais são 44.14 e 52.62, respectivamente.</p>
 
 <p><strong>Suposições:</strong> Como os tamanhos amostrais \(n=m=7\) são pequenos, devemos assumir os pesos dos tecidos dos dois tipos são normalmente distribuídos ou seja, \(X_A \sim N(\mu_A, \sigma^2)\) e \(X_B \sim N(\mu_B, \sigma^2)\). Além disso são independentes e com variâncias iguais.</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: Tecidos</h2></hgroup><article  class="build" id="exemplo-tecidos-2">
+</article></slide><slide class=""><hgroup><h2>Exemplo: Tecidos</h2></hgroup><article  id="exemplo-tecidos-2" class="build">
 
 <p>Assumimos que as variâncias são iguais e <strong>conhecidas</strong> (\(\sigma_1^2=\sigma_2^2=49\)). Além disso, \(n=7\) e \(m=7\).</p>
 
-<p>Definindo as hipóteses as serem testadas:</p>
+<p>Definindo as hipóteses a serem testadas: \(H_0: \mu_A - \mu_B = 0 \qquad \mbox{vs} \qquad H_A: \mu_A - \mu_B \neq 0\)</p>
 
-<p>\(H_{0}: \mu_{A}-\mu_{B}=0 \hspace{0.3cm} vs \hspace{0.3cm} H_{1}: \mu_{A}-\mu_{B}\neq 0\).</p>
+<p>Como a variância é conhecida, a estatística do teste é dada por \[Z = \frac{(\bar X_A - \bar X_B) - \Delta_0}{\sqrt{\sigma^2 \left(\frac{1}{n_A} + \frac{1}{n_B} \right)}}\]</p>
 
-<p>Como a variância é conhecida, a estatística do teste é dada por \[Z = \frac{\bar{X}_A-\bar{X}_B-\Delta_0}{\sigma \sqrt{\frac{1}{n_A} + \frac{1}{n_B}}}\]</p>
+<p>Se a hipótese nula é verdadeira, temos que \(\Delta_0 = \mu_A - \mu_B = 0\) e \(Z \sim N \left(0, 1 \right)\). Note que a hipótese alternativa é do tipo \(\neq\), então o teste é bilateral.</p>
 
-<p>Se a hipótese nula é verdadeira, temos que \(\Delta_0=\mu_A-\mu_B=0\) e \(Z \sim N \left(0, 1 \right)\). Note que a hipótese alternativa é do tipo \(\neq\), então o teste é bilateral.</p>
+</article></slide><slide class=""><hgroup><h2>Exemplo: Tecidos</h2></hgroup><article  id="exemplo-tecidos-3" class="build">
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: Tecidos</h2></hgroup><article  class="build" id="exemplo-tecidos-3">
+<p>Cálculo da estatística do teste: \[Z = \frac{(\bar X_A - \bar X_B) - \Delta_0}{\sqrt{\sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}} = \frac{(30.86 - 33.57) - 0}{\sqrt{49 \left(\frac{1}{7} + \frac{1}{7} \right)}} =  -0.72 = z_{obs}\]</p>
 
-<p>\[\begin{aligned}
-\mbox{p-valor} &amp; =  P\left(\frac{|\bar{X}_A-\bar{X}_B-\Delta_{0}|}{\sigma\sqrt{\frac{1}{n_A}+\frac{1}{n_B}}}\geq \frac{|30.86-33.57-0|}{7\sqrt{\frac{1}{7}+\frac{1}{7}}}\right)  \\
-&amp; =  P\left(|Z|\geq 0.72\right) = 2\times P\left(Z \geq 0.72\right)  \\
-&amp; =  2\times \left[1-\Phi\left(0.72\right)\right] = 2\times \left[1-0.7642\right] = 0.4716 
-\end{aligned}\]</p>
+<p><br /> Como é um teste bilateral, o valor de p é dado por: \[\mbox{valor-p} = P(|Z| \geq |z_{obs}|) = P(|Z| \geq 0.72) = 2 P(Z \leq - 0.72) = 0.4716\]</p>
 
-<p>Se \(\alpha=0.05\), como p-valor=0.4716 \(&gt; \alpha=0.05\), não temos evidência para rejeitar \(H_{0}: \mu_{A}=\mu_{B}\) com nível de significância 0.05.</p>
+<p>Para um nível de significância \(\alpha=0.05\): Como p-valor = \(0.4716 &gt; \alpha=0.05\), não temos evidência para rejeitar \(H_{0}: \mu_A = \mu_B\).</p>
 
-<p>Valor crítico para \(\alpha=0.05\): 1.96, ou seja, se \(|z_{obs}|\geq 1.96\) temos evidências para rejeitar \(H_0\) com nível de significância \(\alpha=0.05\).</p>
+<p>Valor crítico para \(\alpha=0.05\): \(z_{0.025} = 1.96\), ou seja, rejeita-se \(H_0\) se \(|z_{obs}|\geq 1.96\).</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: Tecidos</h2></hgroup><article  class="build" id="exemplo-tecidos-4">
+</article></slide><slide class=""><hgroup><h2>Exemplo: Tecidos</h2></hgroup><article  id="exemplo-tecidos-4" class="build">
 
 <p>Vamos assumir agora que a variância populacional não fosse conhecida.</p>
 
@@ -3495,24 +3518,19 @@ s_p^2 &amp;= \frac{(n-1)s_1^2 + (m-1)s_2^2}{n+m-2}\\
 &amp;= 48.38
 \end{aligned}\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: Tecidos</h2></hgroup><article  class="build" id="exemplo-tecidos-5">
+</article></slide><slide class=""><hgroup><h2>Exemplo: Tecidos</h2></hgroup><article  id="exemplo-tecidos-5" class="build">
 
 <p>Nesse caso, a estatística do teste, sob \(H_0\), é dada por:</p>
 
-<p>\[T=\frac{\bar{X}_A-\bar{X}_B}{\sqrt{S_p^2\left(\frac{1}{n_A}+\frac{1}{n_B}\right)}}\sim t_{n+m-2}\]</p>
+<p>\[T = \frac{\bar X_A - \bar X_B}{\sqrt{S_p^2 \left(\frac{1}{n_A} + \frac{1}{n_B} \right)}}\sim t_{n+m-2}\]</p>
 
-<p>\[\begin{aligned}
-t_{obs} &amp; =\frac{\bar{x}_A-\bar{x}_B}{\sqrt{s_p^2(1/n_A+1/n_B)}}\\
-        &amp; =\frac{30.86-33.57}{\sqrt{48.38(1/7+1/7)}}= -0.73
-\end{aligned}\]</p>
+<p>Então, \[t_{obs} = \frac{\bar x_A - \bar x_B}{\sqrt{s_p^2 \left(\frac{1}{n_A} + \frac{1}{n_B} \right)}}  = \frac{30.86-33.57}{\sqrt{48.38 \left( \frac{1}{7} + \frac{1}{7} \right)}} = -0.73\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: Tecidos</h2></hgroup><article  class="build" id="exemplo-tecidos-6">
+<p>Para um nível de significância \(\alpha = 0.05\), rejeitamos \(H_0\) se \(|t_{obs}| \geq t_{n+m-2,0.025}\).</p>
 
-<p>Considerando nível de significância 0.05, rejeitamos \(H_0\) se \(|t_{obs}|\geq t_{n+m-2,0.025}\).</p>
+<p>No caso, \(|t_{obs}| = 0.73 &lt; 2.18 = t_{12,0.025}\). Portanto, não temos evidências para rejeitar a hipótese de que as médias dos dois tecidos são iguais.</p>
 
-<p>Valor crítico para \(\alpha=0.05\): 2.18, ou seja, se \(|t_{obs}|\geq 2.18\) temos evidências para rejeitar \(H_0\) com nível de significância \(\alpha=0.05\). No caso, \(|t_{obs}|=0.73 &lt; 2.18\), portanto não encontramos evidências para rejeitar a hipótese de que as médias são iguais.</p>
-
-</article></slide><slide class=""><hgroup><h2>Exemplo: Tempo de Adaptação</h2></hgroup><article  class="build" id="exemplo-tempo-de-adaptacao">
+</article></slide><slide class=""><hgroup><h2>Exemplo: Tempo de Adaptação</h2></hgroup><article  id="exemplo-tempo-de-adaptacao" class="build">
 
 <p>Num estudo comparativo do tempo médio de adaptação (em anos), uma amostra aleatória, de 50 homens e 50 mulheres de um grande complexo industrial, produziu os seguintes resultados:</p>
 
@@ -3534,102 +3552,99 @@ t_{obs} &amp; =\frac{\bar{x}_A-\bar{x}_B}{\sqrt{s_p^2(1/n_A+1/n_B)}}\\
 </tr>
 </table>
 
-<p>Construa um teste de hipótese com nível de significância de 5% para a diferença entre o tempo médio de adaptação para homens e mulheres.</p>
+<p><br /> Construa um teste de hipótese com nível de significância de 5% para a diferença entre o tempo médio de adaptação para homens e mulheres.</p>
 
 <p><em>Fonte:</em> Adaptado de Morettin &amp; Bussab, Estatística Básica \(5^a\) edição, pág 365.</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: Tempo de Adaptação</h2></hgroup><article  class="build" id="exemplo-tempo-de-adaptacao-1">
+</article></slide><slide class=""><hgroup><h2>Exemplo: Tempo de Adaptação</h2></hgroup><article  id="exemplo-tempo-de-adaptacao-1" class="build">
 
-<p>Veja que não sabemos a variância populacional, mas temos os desvios-padrão amostrais e estes são bem próximos. Então iremos assumir que as variâncias são iguais porém desconhecidas.</p>
+<p>Veja que não sabemos a variância populacional, mas temos os desvios padrão amostrais e estes são bem próximos. Então iremos assumir que as variâncias são iguais porém desconhecidas.</p>
 
 <p>Nesse caso, vamos então estimar a variância amostral combinada.</p>
 
-<p>Sabendo que \(s_1=0.8\), \(s_2=0.9\) e \(n=m=50\) temos: \[\begin{aligned}
-s_p^2 &amp;= \frac{(n-1)s_1^2 + (m-1)s_2^2}{n+m-2}\\
+<p>Sabendo que \(s_H = 0.8\), \(s_M = 0.9\) e \(n=m=50\) temos: \[\begin{aligned}
+s_p^2 &amp;= \frac{(n-1)s_H^2 + (m-1)s_M^2}{n+m-2}\\
 &amp;= \frac{(50-1) (0.8)^2 + (50-1)(0.9)^2}{50 + 50 - 2} \\
 &amp;= 0.73
 \end{aligned}\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: Tempo de Adaptação</h2></hgroup><article  class="build" id="exemplo-tempo-de-adaptacao-2">
+</article></slide><slide class=""><hgroup><h2>Exemplo: Tempo de Adaptação</h2></hgroup><article  id="exemplo-tempo-de-adaptacao-2" class="build">
 
-<p>Nesse caso, a estatística do teste, sob \(H_0\), é dada por:</p>
+<p>Nesse caso, a estatística do teste, sob \(H_0\), é dada por: \[T = \frac{\bar X_H - \bar X_M}{\sqrt{S_p^2 (\frac{1}{n} + \frac{1}{m})}} \sim t_{n+m-2}\]</p>
 
-<p>\[T=\frac{\bar{X}_1 -\bar{X}_2}{\sqrt{S_p^2(\frac{1}{n}+\frac{1}{m})}}\sim t_{n_A+m_B-2}\]</p>
+<p>Então, \[t_{obs} = \frac{\bar x_H - \bar x_M}{\sqrt{s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}}  = \frac{3.2-3.7}{\sqrt{0.73 \left( \frac{1}{50} + \frac{1}{50} \right)}} = -2.93\]</p>
 
-<p>\[\begin{aligned}
-t_{obs} &amp; =\frac{\bar{x}_1-\bar{x}_2}{\sqrt{s_p^2(\frac{1}{n}+\frac{1}{m})}}\\
-        &amp; =\frac{3.2-3.7}{\sqrt{0.73(\frac{1}{50}+\frac{1}{50})}}= -2.93
-\end{aligned}\]</p>
+<p>Para um nível de significância \(\alpha = 0.05\), rejeitamos \(H_0\) se \(|t_{obs}| \geq t_{n+m-2,0.025}\).</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: Tempo de Adaptação</h2></hgroup><article  class="build" id="exemplo-tempo-de-adaptacao-3">
-
-<p>Considerando nível de significância 0.05 e \(H_A\): \(\mu_1\neq\mu_2\), rejeitamos \(H_0\) se \(|t_{obs}|\geq t_{n+m-2,0.025}=1.98\).</p>
-
-<p>Valor crítico para \(\alpha=0.05\): 1.98, ou seja, se \(|t_{obs}|\geq 1.98\) temos evidências para rejeitar \(H_0\) com nível de significância \(\alpha=0.05\). No caso, \(|t_{obs}|=2.93 &gt; 1.98\), portanto encontramos evidências para rejeitar a hipótese de que as médias são iguais.</p>
+<p>No caso, \(|t_{obs}| = 2.93 &gt; 1.98 = t_{98,0.025}\). Portanto, temos evidências para rejeitar a hipótese de que as médias dos tempos de adaptação são iguais.</p>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Inferência para duas populações: Teste de hipótese para duas proporções</h2></hgroup><article  id="inferencia-para-duas-populacoes-teste-de-hipotese-para-duas-proporcoes">
 
-</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas proporções</h2></hgroup><article  class="build" id="teste-de-hipotese-para-duas-proporcoes">
+</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas proporções</h2></hgroup><article  id="teste-de-hipotese-para-duas-proporcoes" class="build">
 
 <p>Considere \(X_1, \ldots,X_{n_1}\) e \(Y_1, \ldots,Y_{n_2}\) duas amostras independentes de ensaios de Bernoulli tal que \(X \sim b(p_1)\) e \(Y \sim b(p_2)\), com probabilidade \(p_1\) e \(p_2\) de apresentarem uma certa característica.</p>
 
-<p>Queremos testar: \(H_0\): \(p_1-p_2=0\) vs \(H_A\): \(p_1-p_2\neq0\) (ou \(H_A\): \(p_1-p_2&lt; 0\) ou \(H_A\): \(p_1-p_2 &gt; 0\)).</p>
+<p>Temos interesse em testar as hipóteses: <font size=4.5> \[\begin{aligned}
+H_0: p_1 - p_2 = 0 \qquad  \mbox{vs} \qquad H_A: p_1 - p_2 &amp; \neq 0  \mbox{ ou} \\ 
+H_A: p_1 - p_2 &amp;&lt; 0 \mbox{ ou} \\
+H_A: p_1 - p_2 &amp;&gt; 0
+\end{aligned}\] </font></p>
 
-<p>Em aulas anteriores vimos que: \[\hat p_1 \sim N\left(p_1,\frac{p_1(1-p_1)}{n_1} \right) \quad \mbox{e} \quad  \hat p_2 \sim N\left(p_2,\frac{p_2(1-p_2)}{n_2} \right)\]</p>
+<p>Em aulas anteriores vimos que: <font size=4.5> \[\hat p_1 \sim N\left(p_1, \frac{p_1(1-p_1)}{n_1} \right) \quad \mbox{e} \quad  \hat p_2 \sim N\left(p_2, \frac{p_2(1-p_2)}{n_2} \right)\]</font></p>
 
 <p>Como as variâncias de \(\hat p_1\) e \(\hat p_2\) dependem de \(p_1\) e \(p_2\) e, portanto, não são conhecidas, iremos usar uma estimativa dessas variâncias.</p>
 
-</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas proporções</h2></hgroup><article  class="build" id="teste-de-hipotese-para-duas-proporcoes-1">
+</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas proporções</h2></hgroup><article  id="teste-de-hipotese-para-duas-proporcoes-1" class="build">
 
-<p>Sob \(H_0\), \(p_1=p_2=p\), portanto:</p>
+<p>Sob \(H_0\), \(p_1 = p_2 = p\), portanto: \[\hat p_1 \sim N\left(p_1, \frac{p(1-p)}{n_1} \right) \quad \mbox{e} \quad  \hat p_2 \sim N\left(p_2,\frac{p(1-p)}{n_2} \right)\]</p>
 
-<p>\[\hat p_1 \sim N\left(p_1,\frac{p(1-p)}{n_1} \right) \quad \mbox{e} \quad  \hat p_2 \sim N\left(p_2,\frac{p(1-p)}{n_2} \right)\]</p>
+<p>No entanto, \(p\) é desconhecido.</p>
 
-<p>No entanto, \(p\) é desconhecido. Iremos utilizar como estimativa para \(p\), \(\widehat p\), definido como o número de sucessos entre todos os elementos amostrados.</p>
+<p>Iremos utilizar como estimativa para \(p\), a proporção de sucessos na amostra toda (\(\widehat p\)), sem levar em consideração as populações, ou seja,</p>
 
-<p>Ou seja, \(\widehat p\) é a proporção de sucessos na amostra toda, sem levar em consideração as populações, pois, sob \(H_0\), \(p_1=p_2\) (não há diferença entre as proporções das duas populações).</p>
+<p>\[\widehat p = \frac{n_1 \widehat p_1 + n_2 \widehat p_2}{n_1 + n2}.\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas proporções</h2></hgroup><article  class="build" id="teste-de-hipotese-para-duas-proporcoes-2">
+</article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas proporções</h2></hgroup><article  id="teste-de-hipotese-para-duas-proporcoes-2" class="build">
 
-<p>Então, para \(H_0\): \(p_1=p_2\) usamos a estatística do teste a seguir: \[Z = \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}(1 - \hat{p}) \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}} \sim N(0, 1)\]</p>
+<p>Então, para \(H_0: p_1 = p_2\) usamos a estatística do teste a seguir: \[Z = \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}(1 - \hat{p}) \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}} \sim N(0, 1)\]</p>
 
 <p>em que \(\hat p\) é a proporção de sucessos entre os \(n_1 + n_2\) elementos amostrados.</p>
 
-<p><strong>Condições:</strong> Todas as quantidades \(n_1\hat p_1, \; n_1(1- \hat p_1), \; n_2\hat p_2 \; \mbox{ e } \; n_2(1- \hat p_2)\) devem ser pelo menos igual a 10 para que a aproximação pela normal seja válida.</p>
+<p><br /> <strong>Condições:</strong> Todas as quantidades \(n_1\hat p_1, \; n_1(1- \hat p_1), \; n_2\hat p_2 \; \mbox{ e } \; n_2(1- \hat p_2)\) devem ser pelo menos igual a 10 para que a aproximação pela normal seja válida.</p>
 
 </article></slide><slide class=""><hgroup><h2>Teste de hipótese para duas proporções</h2></hgroup><article  id="teste-de-hipotese-para-duas-proporcoes-3">
 
-<p>Resumindo:</p>
+<p>Para testar \(H_0: p_1-p_2 = 0\), calcula-se a estatística do teste \[Z = \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}(1 - \hat{p}) \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}} \sim N(0, 1)\]</p>
 
-<p>Para \(H_0\): \(p_1-p_2=0\)</p>
+<p>O valor de p e a conclusão se dá de acordo com a hipótese alternativa na tabela:</p>
 
 <table class = 'rmdtable'>
-<col width="23.333333%" />
-<col width="48.333333%" />
-<col width="28.333333%" />
+<col width="35.483871%" />
+<col width="41.935484%" />
+<col width="22.580645%" />
 <tr class="header">
-<th align="left">\(H_A\)</th>
+<th align="left">Hipótese Alternativa</th>
 <th align="left">Valor crítico para \(\alpha\)</th>
 <th align="left">Valor de p</th>
 </tr>
 <tr class="odd">
-<td align="left">\(p_1-p_2\neq0\)</td>
-<td align="left">rejeitar se \(\mid z_{obs}\mid\geq z_{\alpha/2}\)</td>
+<td align="left">\(H_A: p_1 - p_2 \neq 0\)</td>
+<td align="left">rejeitar \(H_0\) se \(\mid z_{obs}\mid\geq z_{\alpha/2}\)</td>
 <td align="left">\(2 P(Z\geq \mid z_{obs}\mid)\)</td>
 </tr>
 <tr class="even">
-<td align="left">\(p_1-p_2&lt;0\)</td>
-<td align="left">rejeitar se \(z_{obs}\leq -z_{\alpha}\)</td>
+<td align="left">\(H_A: p_1 - p_2 &lt; 0\)</td>
+<td align="left">rejeitar \(H_0\) se \(z_{obs}\leq -z_{\alpha}\)</td>
 <td align="left">\(P(Z\leq z_{obs})\)</td>
 </tr>
 <tr class="odd">
-<td align="left">\(p_1-p_2&gt;0\)</td>
-<td align="left">rejeitar se \(z_{obs}\geq z_{\alpha}\)</td>
+<td align="left">\(H_A: p_1 - p_2 &gt; 0\)</td>
+<td align="left">rejeitar \(H_0\) se \(z_{obs}\geq z_{\alpha}\)</td>
 <td align="left">\(P(Z\geq z_{obs})\)</td>
 </tr>
 </table>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: decisão sobre gastos</h2></hgroup><article  class="build" id="exemplo-decisao-sobre-gastos">
+</article></slide><slide class=""><hgroup><h2>Exemplo: decisão sobre gastos</h2></hgroup><article  id="exemplo-decisao-sobre-gastos" class="build">
 
 <p>O dinheiro que não é gasto hoje pode ser gasto depois.</p>
 
@@ -3650,57 +3665,60 @@ t_{obs} &amp; =\frac{\bar{x}_1-\bar{x}_2}{\sqrt{s_p^2(\frac{1}{n}+\frac{1}{m})}}
 <li><p>\(H_A\): Relembrar o aluno de que ele pode poupar para comprar algo especial depois irá aumentar a chance dele não gastar em algo no presente.</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: decisão sobre gastos</h2></hgroup><article  class="build smaller" id="exemplo-decisao-sobre-gastos-1">
+</article></slide><slide class=""><hgroup><h2>Exemplo: decisão sobre gastos</h2></hgroup><article  id="exemplo-decisao-sobre-gastos-1" class="build smaller">
 
 <p>Alunos de ME414 do segundo semestres de 2015 foram recrutados para um estudo e cada um recebeu a seguinte informação através do Google Forms:</p>
 
 <p><em>Imagine que você estivesse poupando para comprar algo especial. Em uma visita ao shopping você encontra um DVD da sua série/filme favorita que estava na sua &ldquo;lista de desejos&rdquo; há tempos. O DVD está em promoção, custando R$ 20,00. O que você faria?</em></p>
 
-<p>56 alunos (grupo 1) selecionados ao acaso receberam a seguinte opção de resposta:</p>
+<p>56 alunos (Grupo 1) selecionados ao acaso receberam a seguinte opção de resposta:</p>
 
 <ul>
 <li>Compraria o DVD.</li>
 <li>Não compraria o DVD.</li>
 </ul>
 
-<p>54 alunos (grupo 2) selecionados ao acaso receberam a seguinte opção de resposta:</p>
+<p>54 alunos (Grupo 2) selecionados ao acaso receberam a seguinte opção de resposta:</p>
 
 <ul>
 <li>Compraria o DVD.</li>
 <li>Não compraria o DVD. Pouparia os R$ 20,00 para algo especial.</li>
 </ul>
 
-<p>Obs: estudo adaptado do artigo <em><a href='http://faculty.som.yale.edu/ravidhar/documents/OpportunityCostNeglect.pdf' title=''>Frederick S, Novemsky N, Wang J, Dhar R, Nowlis S. 2009. Opportunity Cost Neglect. Journal of Consumer Research 36: 553-561.</a></em></p>
+<p><br /> Obs: estudo adaptado do artigo <em><a href='http://faculty.som.yale.edu/ravidhar/documents/OpportunityCostNeglect.pdf' title=''>Frederick S, Novemsky N, Wang J, Dhar R, Nowlis S. 2009. Opportunity Cost Neglect. Journal of Consumer Research 36: 553-561.</a></em></p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: decisão sobre gastos</h2></hgroup><article  class="build" id="exemplo-decisao-sobre-gastos-2">
+</article></slide><slide class=""><hgroup><h2>Exemplo: decisão sobre gastos</h2></hgroup><article  id="exemplo-decisao-sobre-gastos-2" class="build">
 
 <table class = 'rmdtable'>
 <tr class="header">
 <th align="left"></th>
 <th align="right">Compraria</th>
 <th align="right">Não compraria</th>
+<th align="right">Total</th>
 </tr>
 <tr class="odd">
-<td align="left">grupo1</td>
+<td align="left">Grupo1</td>
 <td align="right">31</td>
 <td align="right">25</td>
+<td align="right">56</td>
 </tr>
 <tr class="even">
-<td align="left">grupo2</td>
+<td align="left">Grupo2</td>
 <td align="right">29</td>
 <td align="right">25</td>
+<td align="right">54</td>
 </tr>
 </table>
 
-<p><br /> Entre os alunos do grupo 1, a proporção que decide não comprar foi 0.45.</p>
+<p><br /> Entre os alunos do Grupo 1, a proporção que decide não comprar foi \[\widehat p_1 = 25/56 = 0.45\]</p>
 
-<p>Entre os alunos do grupo 2, a proporção que decide não comprar foi 0.46.</p>
+<p>Entre os alunos do Grupo 2, a proporção que decide não comprar foi \[\widehat p_2 = 25/54 = 0.46\]</p>
 
 <blockquote>
 <p>Temos evidências contra a hipótese nula, ou seja, relembrar o aluno não influencia na decisão?</p>
 </blockquote>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: decisão sobre gastos</h2></hgroup><article  class="build" id="exemplo-decisao-sobre-gastos-3">
+</article></slide><slide class=""><hgroup><h2>Exemplo: decisão sobre gastos</h2></hgroup><article  id="exemplo-decisao-sobre-gastos-3" class="build">
 
 <p>Para realizar o teste de hipótese, devemos fazer algumas suposições.</p>
 
@@ -3709,55 +3727,42 @@ t_{obs} &amp; =\frac{\bar{x}_1-\bar{x}_2}{\sqrt{s_p^2(\frac{1}{n}+\frac{1}{m})}}
 </blockquote>
 
 <ul class = 'build'>
-<li>\(X_i\sim b(p_1)\) indica se o i-ésimo aluno do <strong>grupo 1</strong> decide não comprar o DVD e \(p_1\) é a probabilidade de decidir por não comprar.</li>
+<li>\(X_i\sim b(p_1)\) indica se o i-ésimo aluno do <strong>Grupo 1</strong> decide não comprar o DVD e \(p_1\) é a probabilidade de decidir por não comprar.</li>
 </ul>
 
 <ul class = 'build'>
-<li>\(Y_i\sim b(p_2)\) indica se o i-ésimo aluno do <strong>grupo 2</strong> decide não comprar o DVD e \(p_2\) é a probabilidade de decidir por não comprar.</li>
+<li>\(Y_i\sim b(p_2)\) indica se o i-ésimo aluno do <strong>Grupo 2</strong> decide não comprar o DVD e \(p_2\) é a probabilidade de decidir por não comprar.</li>
 </ul>
 
-<blockquote>
-<p>Queremos testar:</p>
-</blockquote>
+<p><br /> Queremos testar: \[H_0: p_1 = p_2 \qquad \mbox{vs} \qquad H_A: p_1 &lt; p_2\]</p>
 
-<ul>
-<li>\(H_0\): \(p_1=p_2\)</li>
-</ul>
+</article></slide><slide class=""><hgroup><h2>Exemplo: decisão sobre gastos</h2></hgroup><article  id="exemplo-decisao-sobre-gastos-4" class="build smaller">
 
-<ul class = 'build'>
-<li>\(H_A\): \(p_1 &lt; p_2\)</li>
-</ul>
+<p>Seja \(\hat{p}_1\) a proporção que decide não comprar entre os \(n_1\) alunos <strong>amostrados do Grupo 1</strong>. <br /> Seja \(\hat{p}_2\) a proporção que decide não comprar entre os \(n_2\) alunos <strong>amostrados do Grupo 2</strong>.</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: decisão sobre gastos</h2></hgroup><article  class="build smaller" id="exemplo-decisao-sobre-gastos-4">
-
-<p>Seja \(\hat{p}_1\) a proporção que decide não comprar entre os alunos \(n_1\) <strong>amostrados do grupo 1</strong>.</p>
-
-<p>Seja \(\hat{p}_2\) a proporção que decide não comprar entre os \(n_2\) alunos <strong>amostrados do grupo 2</strong>.</p>
-
-<blockquote>
-<p>Relembrando o TCL:</p>
-</blockquote>
-
-<p>\[\hat p_1 \sim N\left(p_1,\frac{ p_1(1 - p_1)}{n_1} \right) \quad \mbox{e} \quad  \hat p_2 \sim N\left(p_2,\frac{ p_2(1 -  p_2)}{n_2} \right)\]</p>
+<p>Relembrando o TCL: \[\hat p_1 \sim N\left(p_1,\frac{ p_1(1 - p_1)}{n_1} \right) \quad \mbox{e} \quad  \hat p_2 \sim N\left(p_2,\frac{ p_2(1 -  p_2)}{n_2} \right)\]</p>
 
 <p><strong>Condições:</strong> Todas as quantidades \(n_1\hat p_1, \; n_1(1- \hat p_1), \; n_2\hat p_2 \; \mbox{ e } \; n_2(1- \hat p_2)\) devem ser pelo menos igual a 10 para que a aproximação pela normal seja válida.</p>
 
-<p>Então, para \(H_0\): \(p_1=p_2\) usamos a estatística do teste a seguir: \[Z = \frac{(\hat p_1 - \hat p_2)}{\sqrt{\hat p(1 - \hat p) \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}} \sim N(0, 1)\]</p>
+<p>Então, para \(H_0\): \(p_1=p_2\) usamos a estatística do teste a seguir: \[Z = \frac{(\hat p_1 - \hat p_2)}{\sqrt{\hat p(1 - \hat p) \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}} \sim N(0, 1),\] em que \(\hat p\) é a proporção que decide não comprar entre os \(n_1 + n_2\) alunos amostrados: \[\widehat p = \frac{25 + 25}{56 + 54} = \frac{50}{110} = 0.45\]</p>
 
-<p>em que \(\hat p\) é a proporção que decide não comprar entre os \(n_1 + n_2\) alunos amostrados.</p>
+</article></slide><slide class=""><hgroup><h2>Exemplo: decisão sobre gastos</h2></hgroup><article  id="exemplo-decisao-sobre-gastos-5" class="build">
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: decisão sobre gastos</h2></hgroup><article  class="build" id="exemplo-decisao-sobre-gastos-5">
+<p>\[\begin{cases}
+H_0: p_1=p_2 \\
+H_A: p_1 &lt; p_2
+\end{cases} \qquad \Longleftrightarrow \qquad 
+\begin{cases}
+H_0: p_1 - p_2 = 0 \\
+H_A: p_1 - p_2 &lt; 0
+\end{cases}
+\]</p>
 
-<p>\(H_0: p_1=p_2 \quad \mbox{vs} \quad H_A: p_1 &lt; p_2\), que é equivalente a testar: <br /> \(H_0: p_1 - p_2 = 0 \quad \mbox{vs} \quad H_A: p_1 - p_2 &lt; 0\).</p>
+<p>Calculando a estatística do teste: \[Z = \frac{\hat p_1 - \hat p_2}{\sqrt{\hat p(1 - \hat p) \left(\frac{1}{n_1} + \frac{1}{n_2} \right)}} = \frac{0.45-0.46}{\sqrt{(0.45)(0.55) \left( \frac{1}{56} + \frac{1}{54} \right)}} = -0.11 = z_{obs}\]</p>
 
-<p>\[\begin{aligned}
-\mbox{p-valor} &amp; =  P\left(\frac{\hat p_1-\hat p_2}{\sqrt{\hat p(1 - \hat p) \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}}\leq \frac{25/56-25/54}{\sqrt{5/11(1-5/11)(\frac{1}{56}+\frac{1}{54})}}\right)  \\
-&amp; = P(Z \leq -0.17) = 0.4325
-\end{aligned}\]</p>
+<p><br /> Para um nível de significância \(\alpha = 0.05\), rejeitamos \(H_0\) se \(z_{obs} \leq -z_{0.05}\). <br />No caso, \(z_{obs} = -0.11 &gt; -1.64 = -z_{0.05}\). Portanto, não temos evidências para rejeitar a hipótese de que as duas proporções são iguais.</p>
 
-<p>Se \(\alpha=0.05\), como p-valor=0.4325 \(&gt; \alpha=0.05\), não temos evidência para rejeitar \(H_{0}\) com nível de significância 0.05.</p>
-
-<p>Valor crítico para \(\alpha=0.05\): -1.64, ou seja, se \(z_{obs}\leq -1.64\) temos evidências para rejeitar \(H_0\) com nível de significância \(\alpha=0.05\).</p>
+<p>valor de p = \(P(Z \leq z_{obs}) = P(Z \leq -0.11) = 0.4562 &gt; \alpha\). Portanto, não rejeitamos \(H_0\).</p>
 
 </article></slide><slide class=""><hgroup><h2>Leituras</h2></hgroup><article  id="leituras">
 
