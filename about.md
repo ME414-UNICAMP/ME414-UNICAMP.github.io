@@ -42,7 +42,6 @@ permalink: /about/
 ### PEDs
 
 * Hugo Calegari - RA: 155738
-* José Alejandro Ordoñez Cuastumal - RA: 162509
 * Katherine Andreida Loor Valeriano - RA: 192629
 
 
@@ -57,9 +56,7 @@ permalink: /about/
 |:---------------:	|:---------	:|:-----------:	|-----------	|
 | 2as-feiras    	| 13-14h  	| IMECC 125 	| Katherine |
 | 3as-feiras    	| 13-14h  	| IMECC 124 	| Hugo     	|
-| 3as-feiras      | 12-13h    | IMECC 324   | José      |
 | 3as-feiras    	| 13-14h  	| IMECC 225 	| Sara      	|
 | 4as-feiras    	| 13-14h  	| IMECC 225 	| Sara      	|
 | 5as-feiras    	| 13-14h  	| IMECC 123 	| Katherine |
 | 5as-feiras    	| 13-14h  	| IMECC 124 	| Hugo	|
-| 5as-feiras      | 18-19h    | IMECC 322   | José  |
