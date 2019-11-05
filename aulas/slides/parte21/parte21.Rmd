@@ -437,6 +437,24 @@ $\begin{aligned}
 Como as probabilidades das cores na hipótese nula são todas iguais, as frequências esperadas também serão todas iguais, ou seja,
 $$E_i = n\times \frac{1}{6} = `r n`\times \frac{1}{6} = `r esp[1]`, \quad i=1,\ldots,6.$$
 
+## Exemplo: Cores dos M&M's {.build}
+
+Você acha que as cores aparecem na mesma proporção?
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(ggplot2)
+mm = data.frame(cores = c("azul", "laranja", "verde", "vermelho", "amarelo", "marrom"),
+                observado = obs, esperado = esp)
+mm$cores = factor(mm$cores, 
+                  levels =  c("azul", "laranja", "verde", "vermelho", "amarelo", "marrom"))
+
+ggplot(mm) +
+  geom_bar(aes(x = cores, y = observado, fill = cores), stat = "identity", show.legend = FALSE) +
+  labs(title = "Frequência Observada dos M&Ms", y = "frequência") + 
+  scale_fill_manual(values = c("blue", "orange", "green", "red", "yellow", "brown")) 
+```
+
+
 
 ## Exemplo: Cores dos M&M's  {.build}
 
