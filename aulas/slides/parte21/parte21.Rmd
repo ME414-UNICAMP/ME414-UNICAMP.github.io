@@ -14,8 +14,27 @@ logo: ../logo-imecc.png
 
 Muitas vezes, a informação da amostra coletada tem a estrutura de dados categorizados, ou seja, cada membro da população pode assumir um entre $k$ valores de uma ou mais características estudadas. 
 
+Alguns exemplos de características:
+
+- Cores possíveis para o modelo de um carro;
+- Genótipo de um paciente;
+- Tipo de gripe: gripe comum ou H1N1;
+- Descendência de uma pessoa;
+- Grau de satisfação;
+- Cor dos olhos: verdes, azuis, castanhos ou pretos.
+
+
+## Introdução {.build}
+
 Dessa forma, o conjunto de dados consiste em frequências de contagens para essas categorias. 
 
+Por exemplo, cor dos olhos de 100 alunos:
+
+Cor | verdes | azuis | castanhos | pretos | total
+-----:|:---------:|:---------:|:---------:|:---------:|:---------
+Frequência  | 16 | 15 | 51 | 18 | 100 
+
+<br />
 Esse tipo de dados ocorre com frequência nas áreas sociais e biomédicas.
 
 O objetivo aqui é estudar dados agrupados em categorias múltiplas e veremos isso através de dois tipos de testes: 
@@ -35,22 +54,38 @@ Duas características serão independentes se a classificação de um membro da 
 Na aula de hoje iremos focar em **Testes de Aderência**.
 
 
-## Exemplo: Cores de Geladeira {.build}
+## Exemplo: Cores dos M&Ms {.build}
 
-Uma determinada marca de geladeira é vendida em cinco cores diferentes e uma pesquisa de mercado quer avaliar a popularidade das várias cores.  
+<img src="figuras/M&Mbag.jpg" width=250 style="float: right; margin-left:30px">
 
-As frequências abaixo são observadas para uma amostra de 300 vendas feitas num semestre.  
+Uma conhecida marca de chocolate é vendida em pacotinhos contendo em seis cores diferentes: laranja, vermelho, amarelo, verde, azul e marrom.
 
-<center>Vendas das cinco cores das geladeiras da marca W</center>
+<center><img src="figuras/M&M_spokescandies.jpeg" width=450></center>
 
-Cor | marrom | creme | vermelho | azul | branco | total
----:|:------:|:-----:|:--------:|:----:|:------:|:-----
-Frequência  | 88 | 65 | 52 | 40 | 55 | 300 
+<br />
+Suponha que você esteja curioso sobre a distribuição das cores dos M&M's no pacote e pergunta: todas as cores aparecem na mesma proporção?
+
+Esse é o tipo de pergunta que pode ser respondida com um **teste de aderência**!
+
+
+## Exemplo: Cores dos M&Ms {.build}
+
+<img src="figuras/M&M_spokescandies.jpeg" width=350 style="float: right; margin-left:30px">
+
+
+Suponha que nós temos uma amostra aleatória de 600 M&M's e as frequências de cada cor estão na tabela abaixo:
 
 <br />
 
-Suponha que seja de interesse testar a hipótese das cinco cores serem igualmente populares. 
+Cor | azul | laranja | verde | vermelho | amarelo | marrom | total
+---:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------
+Frequência  | 212 | 147 | 103 | 50 | 46 | 42 | 600 
 
+<br />
+
+Nosso interesse é testar a hipótese de que as seis cores são igualmente prováveis. 
+
+Nesse caso, que modelo de probabilidade representaria a distribuição das cores?
 
 
 # Modelo Multinomial
@@ -86,6 +121,8 @@ Se designarmos a componente $n_1$ como "sucesso" e juntarmos as demais numa mesm
 
 Portanto: $\qquad \mathbb E(n_1)=np_1 \qquad$ e  $\qquad Var(n_1)=np_1(1-p_1)$. 
 
+<br />
+
 Analogamente aplicando o mesmo argumento a cada $n_i$ temos: 
 $$\mathbb E(n_i)=np_i \qquad \mbox{e} \qquad Var(n_i)=np_i(1-p_i)$$
 
@@ -101,6 +138,8 @@ Iremos usar o valor esperado de $n_i$ nos testes que veremos a seguir.
 **Exemplo**: Vocês já devem ter visto em alguma aula de Biologia o seguinte:
 
 <center><img src="figuras/ArvoreGenetica.png" width=500></center>
+
+<br />
 
 3 genótipos (categorias): AA, Aa e aa
 
@@ -320,7 +359,7 @@ Frequência Esperada  | `r esp[1]` | `r esp[2]` | `r esp[3]` | `r n`
 <br />
 **Estatística do Teste**:
 $$\begin{aligned}
-\chi^2_{obs} &= \sum_{i=1}^3 \frac{(O_i-E_i)^2}{E_i} = \frac{(26-25)^2}{25} + \frac{(45-50)^2}{50} + \frac{(29-25)^2}{25} \\
+\chi^2_{obs} = \sum_{i=1}^3 \frac{(O_i-E_i)^2}{E_i} &= \frac{(26-25)^2}{25} + \frac{(45-50)^2}{50} + \frac{(29-25)^2}{25} \\
 &= `r res[1]` + `r res[2]` + `r res[3]` = `r stat` 
 \end{aligned}$$
 
@@ -333,6 +372,8 @@ $$\mbox{valor-de-p} = P(\chi^2_2 \geq \chi^2_{obs}) = P(\chi^2_2 \geq `r stat`) 
 
 Para um nível de significância $\alpha=`r alpha`$, olhando na Tabela Qui-Quadrado, o valor crítico é:
 $\chi^2_{crit} = `r xcrit`$
+
+<br />
 
 **Conclusão:** Para $\alpha = `r alpha`$, como valor-de-p$= `r round(xsq$p.value, 3)` > `r alpha`$, não rejeitamos a hipótese
 $H_0$, isto é, essa população segue o modelo genético proposto.
@@ -365,12 +406,12 @@ axis(1, at=xobs, label= bquote(chi[obs]^2 == .(xobs)))
 </center>
 
 
-## Exemplo: Cores de Geladeira {.build}
+## Exemplo: Cores dos M&M's {.build}
 
 ```{r geladeira, echo=FALSE}
-obs <- c(G1=88, G2=65, G3=52, G4=40, G5=55)
+obs <- c(G1=212, G2=147, G3=103, G4=50, G5=46, G6=42) 
 n <- sum(obs)
-p0 <- rep(1/5, 5)
+p0 <- rep(1/6, 6)
 
 xsq <- chisq.test(obs, p=p0)
 esp <- xsq$expected
@@ -382,37 +423,39 @@ df <- xsq$parameter
 xcrit <- round(qchisq(1-alpha, df), 3)
 ```
 
-Voltando aos dados do exemplo das cores da geladeira, cujas componentes têm frequências multinomiais, a hipótese nula especifica que as cinco cores são igualmente populares. Ou seja,  
-$$\begin{aligned}
-& H_0: \; p_1 = p_2 = \ldots = p_k= 1/5 \\
+<img src="figuras/M&M_spokescandies.jpeg" width=350 style="float: right; margin-left:30px">
+
+Voltando aos dados das cores dos M&M's, cujas componentes têm frequências multinomiais, a hipótese nula especifica que as seis cores são igualmente prováveis. Ou seja,  
+
+$\begin{aligned}
+& H_0: \; p_1 = p_2 = \ldots = p_6= 1/6 \\
 & H_A: \; \mbox{existe pelo menos uma diferença}
-\end{aligned}$$
+\end{aligned}$
 
-Componente | marrom | creme | vermelho | azul | branco | total
-----------:|:------:|:-----:|:--------:|:----:|:------:|:-----
-Frequência Observada | `r obs[1]` | `r obs[2]` | `r obs[3]` | `r obs[4]` | `r obs[5]` | `r n`
+<br />
 
-Como as probabilidades das componentes na hipótese nula são todas iguais, as frequências esperadas também serão todas iguais, ou seja,
-$$E_i = n\times \frac{1}{5} = `r n`\times \frac{1}{5} = `r esp[1]`, \quad i=1,2,3,4,5.$$
+Como as probabilidades das cores na hipótese nula são todas iguais, as frequências esperadas também serão todas iguais, ou seja,
+$$E_i = n\times \frac{1}{6} = `r n`\times \frac{1}{6} = `r esp[1]`, \quad i=1,\ldots,6.$$
 
 
-## Exemplo: Cores de Geladeira  {.build}
+## Exemplo: Cores dos M&M's  {.build}
 
-Componente | marrom | creme | vermelho | azul | branco | total
-----------:|:------:|:-----:|:--------:|:----:|:------:|:-----
-Frequência Observada | `r obs[1]` | `r obs[2]` | `r obs[3]` | `r obs[4]` | `r obs[5]` | `r n`
-Frequência Esperada  | `r esp[1]` | `r esp[2]` | `r esp[3]` | `r esp[4]` | `r esp[5]` | `r n` 
-$\displaystyle \frac{(O-E)^2}{E}$ | `r res[1]` | `r res[2]` | `r res[3]` | `r res[4]` | `r res[5]` | `r stat`
+Cor        | azul | laranja | verde | vermelho | amarelo | marrom | total
+----------:|:------:|:-----:|:--------:|:----:|:------:|:------:|:-----
+Frequência Observada ($O$)| `r obs[1]` | `r obs[2]` | `r obs[3]` | `r obs[4]` | `r obs[5]` |  `r obs[6]` | `r n`
+Frequência Esperada ($E$) | `r esp[1]` | `r esp[2]` | `r esp[3]` | `r esp[4]` | `r esp[5]` |  `r esp[6]` | `r n` 
+$O - E$ | `r obs[1] - esp[1]` | `r obs[2] - esp[2]` | `r obs[3] - esp[3]` | `r obs[4] - esp[4]` | `r obs[5] - esp[5]` | `r obs[6] - esp[6]` | 
+$\displaystyle \frac{(O-E)^2}{E}$ | `r res[1]` | `r res[2]` | `r res[3]` | `r res[4]` | `r res[5]` | `r res[6]` | `r stat`
 
 <br />
 **Estatística do Teste:**
+<font size=5>
 $$\begin{aligned}
-\chi^2=\sum_{i=1}^5 \frac{(O_i-E_i)^2}{E_i} &= `r res[1]` + `r res[2]` + `r res[3]` + `r res[4]` + `r res[5]` \\ 
-&= `r stat`
-\end{aligned}$$
+\chi^2 = \sum_{i=1}^6 \frac{(O_i-E_i)^2}{E_i} &= `r res[1]` + `r res[2]` + `r res[3]` + `r res[4]` + `r res[5]` + `r res[6]` = `r stat`
+\end{aligned}$$</font>
 
 
-## Exemplo: Cores de Geladeira {.build}
+## Exemplo: Cores dos M&M's {.build}
 
 Olhando na tabela Qui-quadrado com `r df` graus de liberdade, para $\alpha=`r alpha`$, o valor crítico é $\chi^2_{crit} = \chi^2_{`r df`, `r alpha`} = `r xcrit`$.
 
@@ -434,7 +477,7 @@ text(xcrit + 3, 0.01, labels= bquote("área = "* .(alpha)), pos = 3, cex = 1.2, 
 ```
 </center>
 
-**Conclusão:** Para $\alpha = `r alpha`$, como $\chi^2_{obs}= `r stat` > `r xcrit` = \chi^2_{crit},$ rejeitamos a hipótese de que as cinco cores são igualmente populares.
+**Conclusão:** Para $\alpha = `r alpha`$, como $\chi^2_{obs}= `r stat` > `r xcrit` = \chi^2_{crit},$ rejeitamos a hipótese de que as cinco cores são igualmente prováveis.
 
 
 ## Exemplo: Tipo Sanguíneo {.build}
@@ -537,7 +580,8 @@ df <- xsq$parameter
 xcrit <- round(qchisq(1-alpha, df), 3)
 ```
 
-Mendel fez o cruzamento de `r n` ervilhas híbridas e o resultado foram `r obs[1]` ervilhas amarelas e `r obs[2]` ervilhas verdes.  Teoricamente, cada cruzamento deve resultar em ervilha amarela com probabilidade $3/4$ e verde com probabilidade $1/4$.
+Mendel fez o cruzamento de `r n` ervilhas híbridas e o resultado foi `r obs[1]` ervilhas amarelas e `r obs[2]` ervilhas verdes. <br /> 
+Teoricamente, cada cruzamento deve resultar em ervilha amarela com probabilidade $3/4$ e verde com probabilidade $1/4$.
 $$\begin{aligned}
 & H_0: \; p_1=3/4 \; \mbox{ e } \; p_2=1/4 \\
 & H_A: \; \mbox{existe pelo menos uma diferença}
