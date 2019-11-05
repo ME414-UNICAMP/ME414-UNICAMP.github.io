@@ -91,7 +91,7 @@ Nesse caso, que modelo de probabilidade representaria a distribuição das cores
 # Modelo Multinomial
 
 ## Distribuição Multinomial {.build}
-Para acomodar dados como no Exemplo 1, precisamos estender o modelo Bernoulli de forma que os resultados possam ser classificados em mais de duas categorias.  Esse modelo é chamado de **distribuição multinomial**.
+Para acomodar dados como nos exemplos anteriores, precisamos estender o modelo Bernoulli de forma que os resultados possam ser classificados em mais de duas categorias.  Esse modelo é chamado de **distribuição multinomial**.
 
 **Modelo Multinomial**
 
@@ -233,7 +233,7 @@ Frequência Esperada | $E_1$ | $E_2$ | ... | $E_k$ | $n$
 
 
 ## Teste de Aderência - Procedimento {.build}
-Para quantificar quão distante os frequências observadas estão das frequências esperadas, usamos a seguinte estatística:
+Para quantificar quão distante as frequências observadas estão das frequências esperadas, usamos a seguinte estatística:
 
 **Estatística do Teste**:
 $$\chi^2=\sum_{i=1}^k \frac{(O_i-E_i)^2}{E_i} = \sum^{k}_{i=1}\frac{(n_i-np_{0i})^2}{np_{0i}}$$
@@ -495,7 +495,7 @@ text(xcrit + 3, 0.01, labels= bquote("área = "* .(alpha)), pos = 3, cex = 1.2, 
 ```
 </center>
 
-**Conclusão:** Para $\alpha = `r alpha`$, como $\chi^2_{obs}= `r stat` > `r xcrit` = \chi^2_{crit},$ rejeitamos a hipótese de que as cinco cores são igualmente prováveis.
+**Conclusão:** Para $\alpha = `r alpha`$, como $\chi^2_{obs}= `r stat` > `r xcrit` = \chi^2_{crit},$ rejeitamos a hipótese de que as seis cores são igualmente prováveis.
 
 
 ## Exemplo: Tipo Sanguíneo {.build}
