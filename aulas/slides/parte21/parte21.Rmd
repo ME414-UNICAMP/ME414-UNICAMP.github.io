@@ -8,7 +8,7 @@ logo: ../logo-imecc.png
 ---
 
 
-# Testes Chi-Quadrado: Aderência e Independência
+# Testes Qui-Quadrado: Aderência e Independência
 
 ## Introdução {.build}
 
