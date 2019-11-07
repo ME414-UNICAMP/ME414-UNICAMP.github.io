@@ -14,7 +14,10 @@ logo: ../logo-imecc.png
 
 Quando dois ou mais atributos são observados para cada elemento amostrado, os dados podem ser simultaneamente classificados com respeito aos níveis de ocorrência para cada um dos atributos.  
 
-> Por exemplo, empregados podem ser classificados de acordo com escolaridade e tipo de ocupação, flores podem ser classificadas com respeito ao tipo de folhagem e tamanho.  
+Por exemplo:
+
+* funcionários podem ser classificados de acordo com escolaridade e tipo de ocupação;
+* flores podem ser classificadas com respeito ao tipo de folhagem e tamanho.  
 
 **Tabela de contingência:** enumerar a frequência de obervações da classificação simultânea de duas ou mais características.
 
@@ -24,7 +27,7 @@ Podemos usar a tabela de contingência para estudar se certa característica par
 ## Exemplo: Racionamento de energia {.build}
 
 
-```{r racionamento, echo=FALSE}
+```{r racionamento, echo=FALSE, warning=FALSE}
 x <- matrix(c(138,83,64,
               64,67,84),byrow = TRUE,ncol=3)
 colnames(x) <- c("Favorável","Indiferente","Contrário")
@@ -47,7 +50,7 @@ Podemos medir quantitativamente a associação entre as duas características?
 
 ## Exemplo: Racionamento de Energia {.build}
 
-Primeiramente, consideremos a tabela de um ponto de vista descritivo, transformando as contagens em proporcões.
+Primeiramente, consideremos a tabela de um ponto de vista descritivo, transformando as contagens em proporções.
 
 * Proporções por caselas
 
@@ -108,7 +111,14 @@ barplot(prop.table(x, 2), xlab="Opinião sobre racionamento", main="Proporção 
 
 Através das tabelas de proporções e gráficos de barras, observam-se diferenças aparentes nas distribuições ao longo das linhas, colunas ou das proporções totais das respostas. 
 
-Por exemplo, com relação às proporções por linha, observa-se que as proporções diminuem ao longo da primeira linha e aumentam ao longo da segunda.
+Por exemplo, observe a tabela das proporções por linhas:
+
+|   | Favorável            | Indiferente          | Contrário             | Total
+|:--|---------------------:|---------------------:|----------------------:|---------------------:
+|A  |`r round(x[1,1]/sum(x[1,]),2)`|`r round(x[1,2]/sum(x[1,]),2)`|`r round(x[1,3]/sum(x[1,]),2)` |1.00
+|B  |`r round(x[2,1]/sum(x[2,]),2)`|`r round(x[2,2]/sum(x[2,]),2)`|`r round(x[2,3]/sum(x[2,]),2)` |1.00
+
+Veja que as proporções diminuem ao longo da primeira linha e aumentam ao longo da segunda.
 
 Podemos usar um teste estatístico para avaliar possível associação entre filiação partidária e opinião com relação ao programa de racionamento de energia.
 
@@ -137,10 +147,10 @@ $n_{0j}=$ total da $j$-ésima coluna, ou frequência de $B_j$.
 | Total da coluna | $n_{01}$ | $n_{02}$ | $\ldots$ | $n_{0c}$ | $n$|
 
 
+Podemos usar a população classificada em termos de proporções populacionais, ou seja, dividir todas os frequências observadas por $n$ e teremos a tabela a seguir.
 
-## Teste de Independência {.smaller}
 
-Podemos usar a população classificada em termos de proporções populacionais e a tabela anterior fica:
+## Teste de Independência 
 
 |   | $B_1$| $B_2$|  $\ldots$ | $B_c$ | Total da linha |
 |:--|-----:|-----:|----------:|------:|---------------:|
@@ -150,10 +160,8 @@ Podemos usar a população classificada em termos de proporções populacionais 
 |$A_r$  |$p_{r1}$ | $p_{r2}$  | $\ldots$ | $p_{rc}$ | $p_{r0}$ |
 | Total da coluna | $p_{01}$ | $p_{02}$ | $\ldots$ | $p_{0c}$ | $1$|
 
-$p_{ij}=P(A_i \cap B_j)$ é a probabilidade da ocorrência conjunta de $A_i$ e $B_j$. 
-
-$p_{i0}=P(A_{i})$ é a probabilidade total da $i$-ésima linha. 
-
+$p_{ij}=P(A_i \cap B_j)$ é a probabilidade da ocorrência conjunta de $A_i$ e $B_j$. <br />
+$p_{i0}=P(A_{i})$ é a probabilidade total da $i$-ésima linha. <br />
 $p_{0j}=P(B_{j})$ é a probabilidade total da $j$-ésima coluna. 
 
 
@@ -167,9 +175,9 @@ para todo $i = 1, 2, \ldots, r$ e $j = 1, 2, \ldots, c$.
 
 **Hipóteses:**
 
- $H_0: p_{ij} = p_{i0} \, p_{0j}$ para todas as componentes $(i,j)$ (**independência**)
+ $H_0: p_{ij} = p_{i0} \; p_{0j}$ para todas as componentes $(i,j)$ (**independência**)
 
- $H_A: p_{ij} \neq p_{i0} \, p_{0j}$ para pelo menos um par $(i,j)$
+ $H_A: p_{ij} \neq p_{i0} \; p_{0j}$ para pelo menos um par $(i,j)$
 
 
 ## Teste de Independência {.build}
@@ -405,28 +413,28 @@ Como $\chi^2_{obs}= `r round(a$statistic,2)` > `r chi_crit` = \chi^2_{crit}$, re
 
 ## Teste de Homogeneidade {.build}
 
-Nas situações em que utilizamos os testes de independência, o esquema de amostragem utilizado foi baseado numa amostra aleatória de tamanho $n$ que é classificada com respeito a duas características simultaneamente. 
+Nas situações em que utilizamos os **testes de independência**, o esquema de amostragem utilizado foi baseado numa amostra aleatória de tamanho $n$, que é classificada com respeito a duas características simultaneamente. 
 
 Nesse caso, as frequências marginais totais (totais por linhas e totais por colunas) são variáveis aleatórias, pois a cada nova amostragem, não temos como saber de antemão quais serão os valores dos totais por linhas/colunas.
 
-Se o esquema de amostragem for de dividir a população em duas subpopulações de acordo com as categorias de uma característica e selecionar uma amostra de um tamanho pré-determinado para cada subpopulação, então esta será uma situação de tabela de contingência com margens fixas. 
+Se o esquema de amostragem for de dividir a população em duas subpopulações de acordo com as categorias de uma característica e selecionar uma amostra de um tamanho pré-determinado para cada subpopulação, então esta será uma situação de tabela de contingência com **margens fixas**. 
 
 
 ## Teste de Homogeneidade {.build}
 
-Por exemplo, no caso do problema de filiação partidária, poderíamos selecionar amostras aleatórias de tamanho $200$ entre afiliados do partido $A$ e $300$ dentre os afiliados do partido $B$ e se classificaria essas amostras de acordo com a atitude (favorável, indiferente ou contrário).
+Por exemplo, no caso do problema de filiação partidária, poderíamos selecionar amostras aleatórias de tamanho $200$ entre afiliados do partido $A$ e $300$ dentre os afiliados do partido $B$ e então classificar essas amostras de acordo com a atitude (favorável, indiferente ou contrário).
 
-O interesse então é estudar as proporções nessas categorias para determinar se elas são aproximadamente iguais para as diferentes subpopulações. Ou seja, queremos testar se as subpopulações são homogêneas.
+Nesse caso, o interesse é estudar as proporções nessas categorias para determinar se elas são aproximadamente iguais para as diferentes subpopulações. Ou seja, queremos testar se as subpopulações são **homogêneas**.
 
 
-## Teste de Homogeneidade {.build .smaller}
+## Teste de Homogeneidade {.build}
 
-Suponha que amostras aleatórias independentes de tamanho $n_{10}, \ldots, n_{r0}$ são selecionadas de $r$ subpopulações $A_1, \ldots, A_r$ respectivamente.  Classificando cada amostra em uma das categorias $B_1, \ldots, B_c$, obtemos uma tabela de contigência $r \times c$ onde os totais das linhas são tamanhos de amostras fixos. 
+<font size=5>
+Suponha que amostras aleatórias independentes de tamanho $n_{10}, \ldots, n_{r0}$ são selecionadas de $r$ subpopulações $A_1, \ldots, A_r$ respectivamente. <br />
+Classificando cada amostra em uma das categorias $B_1, \ldots, B_c$, obtemos uma tabela de contigência $r \times c$ em que os totais das linhas são fixos. </font>
 
-Tabelas de contingência $r \times c$ com totais das linhas fixos:
-
-|   | $B_1$| $B_2$|  $\ldots$ | $B_c$ | Total da linha |
-|:--|-----:|-----:|----------:|------:|---------------:|
+|     | $B_1$| $B_2$|  $\ldots$ | $B_c$ | Total da linha |
+|:-----|-----:|-----:|----------:|------:|----:|
 |$A_1$  |$n_{11}$ | $n_{12}$  | $\ldots$ | $n_{1c}$ | $n_{10}$ |
 |$A_2$  |$n_{21}$ | $n_{22}$  | $\ldots$ | $n_{2c}$ | $n_{20}$ |
 |$\vdots$| $\vdots$ | $\vdots$|  $\vdots$ |  $\vdots$ | $\vdots$|
@@ -434,13 +442,13 @@ Tabelas de contingência $r \times c$ com totais das linhas fixos:
 | Total da coluna | $n_{01}$ | $n_{02}$ | $\ldots$ | $n_{0c}$ | $n$|
 
 
-## Teste de Homogeneidade {.build .smaller}
+## Teste de Homogeneidade {.build}
 
-As probabilidades das várias categorias de $B$ dentro de cada subpopulação de $A$ também são apresentadas a seguir, onde cada $w$ representa uma probabilidade condicional,
+As probabilidades das várias categorias de $B$ dentro de cada subpopulação de $A$ também são apresentadas a seguir, onde cada $w$ representa uma probabilidade condicional, ou seja,
+<font size=5>
+$$w_{ij}=P(B_j| A_i)= \text{ probabilidade de } B_j \text{ dentro da população }  A_i.$$</font>
 
-$$w_{ij}=P(B_j| A_i)= \text{ probabilidade de } B_j \text{ dentro da população }  A_i.$$
-
-Probabilidades das categorias de $B$ dentro de cada subpopulação:
+<!-- Probabilidades das categorias de $B$ dentro de cada subpopulação:  -->
 
 |   | $B_1$| $B_2$|  $\ldots$ | $B_c$ | Total da linha |
 |:--|-----:|-----:|----------:|------:|---------------:|
@@ -488,8 +496,7 @@ Pode-se observar que as fórmulas e os graus de liberdade dessa seção são igu
 
 Foi feita uma pesquisa para determinar a incidência de alcoolismo em diferentes grupos profissionais.   
 
-Separadamente, um amostra aleatória entre religiosos, educadores, executivos e comerciantes foi coletada.  
-Os dados são apresentados na tabela:
+Separadamente, um amostra aleatória entre religiosos, educadores, executivos e comerciantes foi coletada.  Os dados são apresentados na tabela:
 
 ```{r,echo=FALSE}
 x = matrix(c(32,268,51,199,67,233,83,267),nrow=4,byrow=TRUE)
@@ -554,7 +561,7 @@ $$H_0: p_1= p_2 = p_3 = p_4 \quad \mbox{vs} \quad H_A: \mbox{pelo menos uma prop
 </font>
 
 A estatística observada é:
-<font size=4>
+<font size=5>
 $$\chi^2_{obs}= \frac{(32-58.25)^2}{58.25}+ \cdots + \frac{(267-282.04)^2}{282.04}=`r round(a$statistic,2)` \stackrel{H_0}{\sim} \chi^2_{`r a$parameter`}$$
 </font>
 
@@ -582,7 +589,7 @@ chi_crit <- round(qchisq(1-alpha, df=a$parameter), 2)
 
 O Google está constantemente elaborando experimentos para testar novos algoritmos de busca. 
 
-Exemplo: o Google está interessado em testar 3 algoritmos usando uma amostra aleatória. Para isso, foram selecionadas ao acaso: <br />
+**Exemplo:** o Google está interessado em testar 3 algoritmos usando uma amostra aleatória. Para isso, foram selecionadas ao acaso: <br />
 - `r sum(x[,1])` buscas feitas com o algoritmo atual; <br />
 - `r sum(x[,2])` buscas feitas com o algoritmo teste 1; e <br />
 - `r sum(x[,3])` buscas feitas com o algoritmo teste 2.
@@ -618,7 +625,7 @@ kable(e)
 
 <br />
 A estatística $\chi^2$ tem o valor observado de 
-<font size=4>
+<font size=4.5>
 $$\chi^2_{obs}=\frac{(`r x[1,1]`-`r e[1,1]`)^2}{`r e[1,1]`}+\frac{(`r x[1,2]`-`r e[1,2]`)^2}{`r e[1,2]`}+\frac{(`r x[2,1]`-`r e[2,1]`)^2}{`r e[2,1]`}+\frac{(`r x[2,2]`-`r e[2,2]`)^2}{`r e[2,2]`}=`r round(a$statistic,2)` \stackrel{H_0}{\sim} \chi^2_{`r a$parameter`}$$
 </font>
 
