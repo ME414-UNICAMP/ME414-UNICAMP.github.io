@@ -7,7 +7,7 @@ output:
 logo: ../logo-imecc.png
 ---
 
-```{r setup, echo=FALSE}
+```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
 library(knitr)
 library(printr)
 library(ggplot2)
@@ -148,7 +148,7 @@ SYY = with(notas, sqrt(sum((P1-mean(P1))^2)))
 
 $$S_{XY} = `r round(SXY, 2)`, \qquad S_{XX} = `r round(SXX, 2)`, \qquad S_{XY} = `r round(SYY, 2)`$$
 
-$$R = `r round(SXY/(SXX*SYY), 4)`$$
+Portanto, $R = `r round(SXY/(SXX*SYY), 4)`.$
 
 
 ## Fórmula 2 {.build}
@@ -160,18 +160,17 @@ R & = \frac{\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})}{\sqrt{\sum_{i=1}^n (X_i
 \end{aligned}
 $$
 
-Notem que $s_X$ e $s_Y$ representam os desvios-padrão amostrais de $X$ e $Y$, respectivamente.
+Notem que $s_X$ e $s_Y$ representam os desvios padrão amostrais de $X$ e $Y$, respectivamente.
 
 
 ```{r calc_cor2, echo=FALSE}
 SXYP = with(notas, sum(((Moodle-mean(Moodle))/sd(Moodle))*((P1-mean(P1))/sd(P1))))
-Nm1 = nrow(notas)-1
+Nm1 = nrow(notas) - 1
 ```
 
-$$\begin{aligned}
-\sum_{i=1}^n \left(\frac{X_i - \bar{X}}{s_X} \right) \left(\frac{Y_i - \bar{Y}}{s_Y} \right)& = `r round(SXYP, 2)` \qquad \qquad n-1 = `r Nm1` \\
-R & = `r round(SXYP/Nm1, 4)`
-\end{aligned}$$
+$$\sum_{i=1}^n \left(\frac{X_i - \bar{X}}{s_X} \right) \left(\frac{Y_i - \bar{Y}}{s_Y} \right) = `r round(SXYP, 2)` \qquad \mbox{e} \qquad n-1 = `r Nm1`$$ 
+
+Portanto, $R = `r round(SXYP/Nm1, 4)`.$
 
 
 ## Fórmula 3 {.build}
@@ -181,8 +180,7 @@ R & = \frac{\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})}{\sqrt{\sum_{i=1}^n (X_i
   & = \frac{1}{n-1} \frac{\sum_{i=1}^n X_i Y_i -n \bar{X}\bar{Y}}{s_X s_Y}
 \end{aligned}$$
 
-Observem que $\bar{X}$ e $\bar{Y}$ representam as médias amostrais de cada uma das variáveis;
-e $s_X$ e $s_Y$ são os desvios-padrão amostrais de cada uma das variáveis.
+Observem que $\bar{X}$, $\bar{Y}$,  $s_X$ e $s_Y$ representam, respectivamente, as médias amostrais e desvios padrão amostrais de cada uma das variáveis.
 
 ```{r calc_cor3, echo=FALSE}
 SXYU = with(notas, sum(Moodle*P1))
@@ -195,11 +193,11 @@ SXYU = SXYU/(sd(notas$Moodle)*sd(notas$P1))
 
 $$\begin{aligned}
 \bar{X} = `r round(aveX, 2)` \qquad
-\bar{Y} = `r round(aveY, 2)` \qquad
-n-1 & = `r Nm1` \\
-\frac{\sum_{i=1}^n X_i Y_i -n \bar{X}\bar{Y}}{s_X s_Y} & = `r round(SXYU, 2)` \\
-R & = `r round((SXYU/Nm1), 4)`
+\bar{Y}  = `r round(aveY, 2)` \qquad
+n-1 = `r Nm1` \qquad \frac{\sum_{i=1}^n X_i Y_i -n \bar{X}\bar{Y}}{s_X s_Y}  = `r round(SXYU, 2)` 
 \end{aligned}$$
+
+Portanto, $R = `r round((SXYU/Nm1), 4)`$.
 
 
 # Regressão Linear Simples
@@ -220,7 +218,7 @@ Para alunos com notas de atividades de no máximo 6.25, como as notas das ativid
 
 ## Forma do Modelo {.build}
 
-O modelo de regressão usual descreve associação linear: 
+O modelo de regressão usual descreve associação linear entre $Y$ e $X$ da seguinte forma: 
 $$Y= \alpha + \beta X + \varepsilon.$$
 
 Neste modelo, os termos adicionais são:
@@ -242,17 +240,19 @@ Considerar o erro é necessário, pois associações perfeitas são improváveis
 Modelo de regressão linear assume:
 
 - Linearidade entre variáveis;
-- Erros aleatórios nas observações;
+- Erros aleatórios independentes nas observações;
 - Erro tem média zero;
 - Variância constante do erro $\sigma^2$;
 
-Desta forma, a variável aleatória $Y$, $$Y = \alpha + \beta X + \varepsilon, $$ possui as seguintes características:
+Desta forma, a variável aleatória $Y$, escrita como 
+$$Y = \alpha + \beta X + \varepsilon,$$ 
+possui as seguintes características:
 
-- $E(Y) = E( \alpha + \beta X + \varepsilon) = \alpha + \beta X$
-- $\mbox{Var}(Y) = Var( \alpha + \beta X + \varepsilon) = Var(\varepsilon)  = \sigma^2$
+- $\mathbb E(Y) = \mathbb E( \alpha + \beta X + \varepsilon) = \alpha + \beta X + \mathbb E(\varepsilon) = \alpha + \beta X$
+- $\mbox{Var}(Y) = \mbox{Var}( \alpha + \beta X + \varepsilon) = \mbox{Var}(\varepsilon)  = \sigma^2$
   
     
-## Como saber se a Regressão Linear é adequada? {.build}
+## Como saber se a regressão linear é adequada? {.build}
 
 - Utilizar diagramas de dispersão;
 - Analisar visualmente a forma de associação entre X e Y;
@@ -261,23 +261,25 @@ Desta forma, a variável aleatória $Y$, $$Y = \alpha + \beta X + \varepsilon, $
 - Buscar informação sobre independência das observações.
 
 
-## Exemplo: Notas no Moodle e P1 
+<!-- ## Exemplo: Notas no Moodle e P1  -->
 
-Na última aula, trabalhamos com o conjunto de dados refere às notas do Moodle e da Prova P1 de `r n0` alunos matriculados em ME414 no 2S2015.
+<!-- Na última aula, trabalhamos com o conjunto de dados refere às notas do Moodle e da Prova P1 de `r n0` alunos matriculados em ME414 no 2S2015. -->
 
-Hoje, focaremos nas observações referentes a `r nrow(notas)` alunos que obtiveram, no máximo, 6.25 pontos nas atividades do Moodle.
+<!-- Hoje, focaremos nas observações referentes a `r nrow(notas)` alunos que obtiveram, no máximo, 6.25 pontos nas atividades do Moodle. -->
 
-Nosso objetivo é inferir a respeito da associação das notas (absolutas) das atividades disponibilizadas no Moodle com aquelas da Prova P1.
+<!-- Nosso objetivo é inferir a respeito da associação das notas (absolutas) das atividades disponibilizadas no Moodle com aquelas da Prova P1. -->
+
+
+<!-- ## Exemplo: Notas no Moodle e P1 -->
+
+<!-- ```{r show_moodle_p1, echo=FALSE} -->
+<!-- kable(head(notas)) -->
+<!-- ``` -->
 
 
 ## Exemplo: Notas no Moodle e P1
 
-```{r show_moodle_p1, echo=FALSE}
-kable(head(notas))
-```
-
-
-## Exemplo: Notas no Moodle e P1
+Voltando no exemplo das notas do Moodle e P1 para 116 alunos.
 
 ```{r dados_nota_rl, echo=FALSE, fig.align='center'}
 sc2
@@ -286,7 +288,7 @@ sc2
 
 ## Escolha da Melhor Reta {.build}
 
-Um modo de determinar a melhor reta é pelo meio da minimização da soma dos erros quadrados:
+Um modo de determinar a melhor reta é escolhendo os parâmetros de forma que a distância entre os pontos e a reta seja mínimo, ou seja, pelo método conhecido como mínimos quadrados:
 
 - Determinar a função a ser minimizada;
 - Determinar a primeira derivada com respeito aos parâmetros de interesse;
@@ -313,44 +315,55 @@ sxy = function(x, y) sum((x-mean(x))*(y-mean(y)))
 ```
 
 
-## A Escolha da Melhor Reta
-
-```{r diagpontos_notas, echo=FALSE, fig.align='center'}
-sc2
-```
-
 
 ## Exemplo: Moodle x P1 {.build}
 ```{r reta_notas, echo=FALSE}
-sxxmark = with(notas, sxx(Moodle))
-sxymark =  with(notas, sxy(Moodle, P1))
+sxxmark = round(with(notas, sxx(Moodle)), 2)
+sxymark = round(with(notas, sxy(Moodle, P1)), 2)
 xmean = round(mean(notas$Moodle), 2)
 hatb = round(sxymark/sxxmark, 2)
 ymean = round(mean(notas$P1), 2)
 hata = mean(notas$P1) - sxymark/sxxmark*mean(notas$Moodle)
 ```
 
+Para esses dados, calculou-se:
+
+$$\bar X = `r xmean`, \qquad \bar Y = `r ymean`, \qquad S_{XY} = `r sxymark` \qquad \mbox{e} \qquad S_{XX} = `r sxxmark`. $$
+
+Então, as estimativas dos coeficientes são:
 $$\begin{aligned}
 \hat{\beta} & = \frac{S_{XY}}{S_{XX}} = `r ifelse(sxymark < 0, '-', '')` \frac{`r abs(round(sxymark, 2))`}{`r round(sxxmark, 2)`} = `r hatb` \\
-\hat{\alpha} & = \bar{Y} - \hat{\beta} \bar{X} = `r ymean` `r ifelse(hatb < 0, '+', '-')` `r abs(hatb)` \times `r xmean` = `r round(hata, 2)` \\
-\mbox{P1} &= `r round(hata, 2)` `r ifelse( hatb < 0, '-', '+')` `r abs(hatb)` \times \mbox{Moodle}
+\hat{\alpha} & = \bar{Y} - \hat{\beta} \bar{X} \\
+&= `r ymean` `r ifelse(hatb < 0, '+', '-')` `r abs(hatb)` \times `r xmean` = `r round(hata, 2)` 
 \end{aligned}$$
 
-```{r reg1, echo=FALSE, fig.align='center', fig.height=3, fig.width=5}
+E a equação da reta estimada é dada por:
+$$\mbox{P1} = `r round(hata, 2)` `r ifelse( hatb < 0, '-', '+')` `r abs(hatb)` \times \mbox{Moodle}.$$
+
+
+## A Escolha da Melhor Reta
+
+$$\mbox{P1} = `r round(hata, 2)` `r ifelse( hatb < 0, '-', '+')` `r abs(hatb)` \times \mbox{Moodle}$$
+
+```{r diagpontos_notas, echo=FALSE, fig.align='center'}
 sc2
 ```
 
 
 ## Interpretação dos Parâmetros {.build}
 
+<img src="figuras/regressaoMoodle.jpg" width=550 style="float: left; margin-right:30px">
+
+<br /><br /><br />
+
 $$\mbox{P1} = `r round(hata, 2)` `r ifelse( hatb < 0, '-', '+')` `r abs(hatb)` \times \mbox{Moodle}$$
 
-- $\hat{\alpha} = `r round(hata, 2)`$ é a nota média na P1 para alunos com nota 0 no Moodle;
-- $\hat{\beta} = `r abs(hatb)`$ é o aumento médio na nota da P1 para cada ponto extra no Moodle.
+<br /><br /><br /><br /><br /><br />
+$\hat{\alpha} = `r round(hata, 2)`$ é a nota média na P1 para alunos com nota 0 no Moodle **(intercepto)**.
 
-```{r reg1_interpretacao, echo=FALSE, fig.align='center', fig.height=3, fig.width=5}
-sc2
-```
+$\hat{\beta} = `r abs(hatb)`$ é o aumento médio na nota da P1 para cada ponto extra no Moodle **(coeficiente angular)**.
+
+
 
 
 ## Erros na Interpretação de Correlação e Regressão {.build}
@@ -365,21 +378,21 @@ sc2
 ## Associações
 
 O gráfico abaixo apresenta o número de divórcios (por 1000 casamentos) no Maine/EUA e o consumo *per capita* de margarina (em libras) ao longo dos anos.
-```{r assoc, echo=FALSE, fig.align='center', warning=FALSE, message=FALSE}
-assoc = data.frame(ano=2000:2009,
-                   margarina=c(8.2, 7, 6.5, 5.3, 5.2, 4, 4.6, 4.5, 4.2, 3.7),
-                   divorcios=c(5, 4.7, 4.6, 4.4, 4.3, 4.1, 4.2, 4.2, 4.2, 4.1))
-tmp0 = cbind(assoc[, 1:2], tipo='margarina')
-colnames(tmp0)[2] = 'valor'
-tmp1 = cbind(assoc[, -2], tipo='divorcio')
-colnames(tmp1)[2] = 'valor'
-assoc0 = rbind(tmp0, tmp1)
-rm(tmp0, tmp1)
-assoc_graph = ggplot(assoc0, aes(ano, valor, colour=tipo)) + geom_smooth(se=FALSE) + theme_bw()
+
+```{r assoc, echo=FALSE, fig.align='center', fig.height = 4, fig.widht=5, warning=FALSE, message=FALSE}
+assoc = data.frame(ano = 2000:2009,
+                   margarina = c(8.2, 7, 6.5, 5.3, 5.2, 4, 4.6, 4.5, 4.2, 3.7),
+                   divorcios = c(5, 4.7, 4.6, 4.4, 4.3, 4.1, 4.2, 4.2, 4.2, 4.1))
+
+assoc_long = tidyr::gather(assoc, "tipo", "valor", -ano)
+
+assoc_graph = ggplot(assoc_long, aes(ano, valor, colour=tipo)) + 
+  geom_smooth(method = "loess", se=FALSE) + 
+  theme_bw() +
+  theme(text = element_text(size = 16)) +
+  scale_x_continuous(breaks = seq(2000, 2010, by = 2))
+
 assoc_graph
-#plot(assoc$ano, assoc$margarina, type='l', col=1, lwd=3, xlab='Ano', ylab='')
-#lines(assoc$ano, assoc$divorcios, col=2, lwd=3)
-#legend('topright', c('Margarina', 'Divorcios'), lwd=3, col=1:2)
 ```
 
 
@@ -401,20 +414,28 @@ $$\mbox{divórcios} = 3.30 + 0.20 \times \mbox{margarina}$$
 
 ## Associações
 
-Importante lembrar que modelos de regressão descrevem associação, não causalidade.
+$$\mbox{divórcios} = 3.30 + 0.20 \times \mbox{margarina}$$
 
-```{r graf_reg_assoc, echo=FALSE, fig.align='center'}
-ggplot(assoc, aes(margarina, divorcios)) + geom_point() + geom_smooth(method='lm', se=FALSE) + theme_bw()
+```{r graf_reg_assoc, echo=FALSE, fig.height=3.5, fig.width=6.5, fig.align='center'}
+ggplot(assoc, aes(margarina, divorcios)) + 
+  geom_point(color = "blue", alpha = 0.8, size = 3) + 
+  geom_smooth(method='lm', se=FALSE, color = "red") + 
+  theme_bw() +
+  theme(text = element_text(size = 16))
 ```
 
+**Importante:**  modelos de regressão descrevem **associação**, não causalidade.
 
-## Extrapolações
+
+## Extrapolações {.build}
 
 Qual o consumo esperado de margarina em 2016?
 
-```{r graf_extrapol, echo=FALSE, fig.align='center', warning=FALSE, message=FALSE}
+```{r graf_extrapol, echo=FALSE, fig.height = 4, fig.widht=5}
 assoc_graph
 ```
+
+Extrapolações não devem ser feitas!!!
 
 
 ## Leituras
