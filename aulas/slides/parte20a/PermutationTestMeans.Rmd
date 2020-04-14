@@ -10,7 +10,7 @@ logo: ../logo-imecc.png
 
 ## Introdução {.build}
 
-Testes de permutação/aleatorização podem ser utilizados para avaliar hipóteses sobre efeitos de tratamentos, quando as unidades experimentais aleatoriamente para cada tratamento.
+Testes de permutação/aleatorização podem ser utilizados para avaliar hipóteses sobre efeitos de tratamentos, quando as unidades experimentais são alocadas aleatoriamente para cada tratamento.
 
 > **Exemplo:** Um grupo de pesquisadores quer avaliar se dois tratamentos, $A$ e $B$ apresentam diferença com relação a uma certa resposta de interesse.
 
