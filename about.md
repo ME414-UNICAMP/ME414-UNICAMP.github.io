@@ -11,28 +11,28 @@ permalink: /about/
 ### ME414 - D
 
 * Professora: [Tatiana Benaglia](http://www.ime.unicamp.br/~tatiana/)
-* Horário das aulas: Terças e Quintas 8 às 10h - CB06
+* Horário das aulas: Terças e Quintas 8 às 10h
 * [Informações da disciplina](http://www.ggte.unicamp.br/eam/enrol/index.php?id=13791)
 
 
 ### ME414 - E
 
 * Professor: Marina Vachkovskaia
-* Horário das aulas: Segundas e Quartas 14 às 16h - CB04
+* Horário das aulas: Segundas e Quartas 14 às 16h
 * [Informações da disciplina](http://www.ggte.unicamp.br/eam/course/view.php?id=14699)
 
 
 ### ME414 - F
 
 * Professora: [Samara Flamini Kiihl](http://www.ime.unicamp.br/~samara/)
-* Horário das aulas: Terças e Quintas 8 às 10 - CB01
+* Horário das aulas: Terças e Quintas 8 às 10
 * [Informações da disciplina](http://www.ggte.unicamp.br/eam/course/view.php?id=13593)
 
 
 ### ME414 - I
 
 * Professor: [Filidor E. Vilca Labra](http://www.ime.unicamp.br/~fily/)
-* Horário das aulas: Terças e Quintas 16 às 18 - PB15
+* Horário das aulas: Terças e Quintas 16 às 18
 * [Informações da disciplina](http://www.ggte.unicamp.br/eam/enrol/index.php?id=14475)
 
 
