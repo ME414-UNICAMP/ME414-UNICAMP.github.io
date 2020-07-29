@@ -7,6 +7,7 @@ url: "http://yourdomain.com" # the base hostname & protocol for your site
 github_username:  samarafk
 github_username2:  benilton
 github_username3:  tatibenaglia
+github_username4:  larissamatos
 
 # Build settings
 markdown: kramdown
