@@ -5,34 +5,42 @@ permalink: /about/
 ---
 
 
-## Turmas 2o Semestre 2019
+## Turmas Segundo Semestre 2020
+
+
+### ME414 - C
+
+* Professora: [Larissa Matos](https://larissamatos.github.io/)
+* [Informações da disciplina]()
 
 
 ### ME414 - D
 
-* Professora: [Tatiana Benaglia](http://www.ime.unicamp.br/~tatiana/)
-* Horário das aulas: Terças e Quintas 8 às 10h
-* [Informações da disciplina](http://www.ggte.unicamp.br/eam/enrol/index.php?id=13791)
+* Professora: [Samara Flamini Kiihl](http://www.ime.unicamp.br/~samara/)
+* [Informações da disciplina]()
 
 
 ### ME414 - E
 
-* Professor: Marina Vachkovskaia
-* Horário das aulas: Segundas e Quartas 14 às 16h
-* [Informações da disciplina](http://www.ggte.unicamp.br/eam/course/view.php?id=14699)
+* Professor: [Élcio Lebensztayn](http://www.ime.unicamp.br/~lebensztayn/)
+* [Informações da disciplina]()
 
 
 ### ME414 - F
 
-* Professora: [Samara Flamini Kiihl](http://www.ime.unicamp.br/~samara/)
-* Horário das aulas: Terças e Quintas 8 às 10
-* [Informações da disciplina](http://www.ggte.unicamp.br/eam/course/view.php?id=13593)
+* Professora: [Tatiana Benaglia](http://www.ime.unicamp.br/~tatiana/)
+* [Informações da disciplina](http://www.ggte.unicamp.br/eam/enrol/index.php?id=13791)
+
+
+### ME414 - H
+
+* Professora: [Ronaldo Dias](http://www.ime.unicamp.br/~dias/)
+* [Informações da disciplina]()
 
 
 ### ME414 - I
 
 * Professor: [Filidor E. Vilca Labra](http://www.ime.unicamp.br/~fily/)
-* Horário das aulas: Terças e Quintas 16 às 18
 * [Informações da disciplina](http://www.ggte.unicamp.br/eam/enrol/index.php?id=14475)
 
 
@@ -41,13 +49,13 @@ permalink: /about/
 
 ### PEDs
 
-* Hugo Calegari - RA: 155738
-* Katherine Andreida Loor Valeriano - RA: 192629
+* 
+* 
 
 
 ### PAD
 
-* Sara Sousa De Oliveira - RA: 205733
+* 
 
 
 ### Horários de atendimento
