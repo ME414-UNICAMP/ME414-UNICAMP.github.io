@@ -8,17 +8,17 @@ permalink: /cronograma/
 
 ### Cronograma
 
-| Data          | Aula          | Slides  | Formulário de presença |
-| ------------- |:-------------:| -------:| -------:|
-| 06/03/2017    | Aula 1        |  [Parte 1](http://me414-unicamp.github.io/aulas/slides/parte01/parte01.html)| [Aula 1](https://goo.gl/forms/lROolBcvXCPjMVEo1)
-| 08/03/2017    | Aula 2      | [Parte 2](http://me414-unicamp.github.io/aulas/slides/parte02/parte02.html)| [Aula 2](https://goo.gl/forms/zGBbDpRuAR3plFKY2)
-| 13/03/2017    | Aula 3      |[Parte 3](http://me414-unicamp.github.io/aulas/slides/parte03/parte03.html)| [Aula 3](https://goo.gl/forms/B2F1N1YSTTcpKah83)
-| 15/03/2017    | Aula 4      |[Parte 4](http://me414-unicamp.github.io/aulas/slides/parte04/parte04.html)| [Aula 4](https://goo.gl/forms/6OrbDJ0nuOmm8Ck62)
-| 20/03/2017    | Aula 5      |[Parte 5](http://me414-unicamp.github.io/aulas/slides/parte05/parte05.html)| [Aula 5](https://goo.gl/forms/Pa64rphqqHvEuXXu1)
-| 22/03/2017    | Aula 6      |[Parte 6](http://me414-unicamp.github.io/aulas/slides/parte06/parte06.html)    | [Aula 6](https://goo.gl/forms/OrSOUGmoRdRmD3Hy1)
-| 27/03/2017    | Aula 7      |[Parte 7](http://me414-unicamp.github.io/aulas/slides/parte07/parte07.html)    | [Aula 7](https://goo.gl/forms/uJzvFudJpbiO2eT32)
-| 29/03/2017    | Aula 8      |[Parte 8](http://me414-unicamp.github.io/aulas/slides/parte08/parte08.html)    | 
-| 03/04/2017    | Aula 9      |[Parte 9](http://me414-unicamp.github.io/aulas/slides/parte09/parte09.html)      | 
+| Data          | Aula          | Slides  | Vídeos | Exercícios Moodle | Vídeos Extra | 
+| ------------- |:-------------:| -------:| -------:|-------:|-------:|-------:|
+| 06/03/2017    | Aula 1        |  [Parte 1](http://me414-unicamp.github.io/aulas/slides/parte01/parte01.html)| |
+| 08/03/2017    | Aula 2      | [Parte 2](http://me414-unicamp.github.io/aulas/slides/parte02/parte02.html)| |
+| 13/03/2017    | Aula 3      |[Parte 3](http://me414-unicamp.github.io/aulas/slides/parte03/parte03.html)|  |
+| 15/03/2017    | Aula 4      |[Parte 4](http://me414-unicamp.github.io/aulas/slides/parte04/parte04.html)| |
+| 20/03/2017    | Aula 5      |[Parte 5](http://me414-unicamp.github.io/aulas/slides/parte05/parte05.html)|  |
+| 22/03/2017    | Aula 6      |[Parte 6](http://me414-unicamp.github.io/aulas/slides/parte06/parte06.html)    | |
+| 27/03/2017    | Aula 7      |[Parte 7](http://me414-unicamp.github.io/aulas/slides/parte07/parte07.html)    |  |
+| 29/03/2017    | Aula 8      |[Parte 8](http://me414-unicamp.github.io/aulas/slides/parte08/parte08.html)    |       |
+| 03/04/2017    | Aula 9      |[Parte 9](http://me414-unicamp.github.io/aulas/slides/parte09/parte09.html)      |      |
 | 05/04/2017    | Aula 10      |[Parte 10](http://me414-unicamp.github.io/aulas/slides/parte10/parte10.html)      | 
 | 10/04/2017    | Aula 11      |[Parte 10](http://me414-unicamp.github.io/aulas/slides/parte10/parte10.html)      | 
 | 12/04/2017    | Aula 12      |[Parte 11](http://me414-unicamp.github.io/aulas/slides/parte11/parte11.html)    |
