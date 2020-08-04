@@ -6,7 +6,6 @@ permalink: /cronograma/
 
 
 
-### Cronograma
 
 O conteúdo é disponibilizado às segundas-feiras e deve ser desenvolvido durante a semana.
 
