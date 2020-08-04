@@ -48,7 +48,7 @@ permalink: /about/
 ### Bibliografia
 
 * Ross, S. M. (2010). [Introductory Statistics](http://www.sciencedirect.com/science/book/9780123743886).
-* Diez, D. M.; Barr, C. D.; Çetinkaya-Rundel, M. (2015). [OpenIntro Statistics](https://drive.google.com/file/d/0B-DHaDEbiOGkY1FCdEJFNGV1Ym8/view).
+* Diez, D. M.; Barr, C. D.; Çetinkaya-Rundel, M. (2015). [OpenIntro Statistics](https://leanpub.com/openintro-statistics).
 * Magalhães, M.N. e de Lima, A.C.P. (2001) Noções de Probabilidade e Estatística IME-USP.
 
 Para acessar livros digitais fora da Unicamp, você precisará do VPN. Veja instruções de instalação [aqui](http://www.ccuec.unicamp.br/ccuec/acesso_remoto_vpn).
