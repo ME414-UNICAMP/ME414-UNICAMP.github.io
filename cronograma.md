@@ -8,7 +8,7 @@ permalink: /cronograma/
 
 ### Cronograma
 
-O conteúdo será disponibilizado às segundas-feiras.
+O conteúdo é disponibilizado às segundas-feiras e deve ser desenvolvido durante a semana.
 
 | Data          | Semana          | Slide  | Vídeo | Exercícios Moodle | Vídeo Extra | 
 | ------------- |:-------------:| -------:| -------:|-------:|-------:|-------:|
