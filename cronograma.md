@@ -28,7 +28,7 @@ O conteúdo é disponibilizado às segundas-feiras e deve ser desenvolvido duran
 | **21/12/2020**    | 14 | [Parte 21](http://me414-unicamp.github.io/aulas/slides/parte21/parte21.html) [Parte 22](http://me414-unicamp.github.io/aulas/slides/parte22/parte22.html)        |    | 
 | 04/01/2021    |  15 | [Parte 23](http://me414-unicamp.github.io/aulas/slides/parte23/parte23.html) [Parte 24](http://me414-unicamp.github.io/aulas/slides/parte24/parte24.html)           |    | 
 | 11/01/2021    | 16 | Prova 2 (detalhes no Moodle)   |    | 
-| **18/01/2021**    |  17    | Substitutiva (detalhes no Moodle)   | 
-| 20 a 26/01/2021 |  18 | Exame (detalhes no Moodle)
+| entre 15 e 19/01/2021    |  17    | Substitutiva (detalhes no Moodle)   | 
+| entre 20 e 26/01/2021 |  18 | Exame (detalhes no Moodle)
 
 
