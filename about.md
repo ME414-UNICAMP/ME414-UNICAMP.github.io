@@ -57,11 +57,7 @@ Para acessar livros digitais fora da Unicamp, você precisará do VPN. Veja inst
 
 ### Horários de atendimento
 
-| Dia da Semana 	| Horário 	| Sala      	| Monitor   	|
+| Dia da Semana 	| Horário 	| Google Meet      	| Responsável   	|
 |:---------------:	|:---------	:|:-----------:	|-----------	|
-| 2as-feiras    	| 13-14h  	| IMECC 125 	| Katherine |
-| 3as-feiras    	| 13-14h  	| IMECC 124 	| Hugo     	|
-| 3as-feiras    	| 13-14h  	| IMECC 225 	| Sara      	|
-| 4as-feiras    	| 13-14h  	| IMECC 225 	| Sara      	|
-| 5as-feiras    	| 13-14h  	| IMECC 123 	| Katherine |
-| 5as-feiras    	| 13-14h  	| IMECC 124 	| Hugo	|
+| 3as-feiras    	| 09-10h  	| ex1  	| Profa. Samara |
+| 5as-feiras    	| 09-10h  	| ex2  	| Profa. Tatiana   |
