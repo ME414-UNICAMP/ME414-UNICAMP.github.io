@@ -57,7 +57,11 @@ Para acessar livros digitais fora da Unicamp, você precisará do VPN. Veja inst
 
 ### Horários de atendimento
 
+Dúvidas relacionadas aos slides e exercícios podem ser discutidas em todos os atendimentos.
+
+Para dúvidas específicas sobre logísticas de cada turma, o aluno deve procurar seu professor.
+
 | Dia da Semana 	| Horário 	| Google Meet      	| Responsável   	|
 |:---------------:	|:---------	:|:-----------:	|-----------	|
-| 3as-feiras    	| 09-10h  	| ex1  	| Profa. Samara |
+| 3as-feiras    	| 09-10h  	| [uhb-tsyy-fay](https://meet.google.com/uhb-tsyy-fay)  	| Profa. Samara |
 | 5as-feiras    	| 09-10h  	| ex2  	| Profa. Tatiana   |
