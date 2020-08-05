@@ -9,7 +9,7 @@ permalink: /cronograma/
 
 O conteúdo é disponibilizado às segundas-feiras e deve ser desenvolvido durante a semana.
 
-Verifiquem com o professor os horários das provas. 
+**Verifique com seu professor os horários e instruções das provas.**
 
 | Data          | Semana          | Slide  | Vídeo | Exercícios Moodle | Vídeo Extra | 
 |:-------------:|:-------------:| :-------:| :-------:|:-------:|:-------:|:-------:|
