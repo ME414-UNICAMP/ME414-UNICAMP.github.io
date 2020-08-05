@@ -57,6 +57,8 @@ Para acessar livros digitais fora da Unicamp, você precisará do VPN. Veja inst
 
 [Distribuição Normal, distribuição t, distribuição Qui-Quadrado, distribuição F](Tabelas-impressao.pdf)
 
+[Widget para cálculo da Normal](https://www.wolframalpha.com/widgets/gallery/view.jsp?id=9bd010a31f27d2500aede72eb5852af2)
+
 ### Horários de atendimento
 
 Dúvidas relacionadas aos slides e exercícios podem ser discutidas em todos os atendimentos.
