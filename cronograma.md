@@ -12,7 +12,7 @@ O conteúdo é disponibilizado às segundas-feiras e deve ser desenvolvido duran
 Verifiquem com o professor os horários das provas. 
 
 | Data          | Semana          | Slide  | Vídeo | Exercícios Moodle | Vídeo Extra | 
-| ------------- |:-------------:| -------:| -------:|-------:|-------:|-------:|
+|:-------------:|:-------------:| :-------:| :-------:|:-------:|:-------:|:-------:|
 | 16/09/2020    | Apresentação  |         |         |        |        |        |
 | 21/09/2020    |   1           |  [Parte 1](http://me414-unicamp.github.io/aulas/slides/parte01/parte01.html) [Parte 2](http://me414-unicamp.github.io/aulas/slides/parte02/parte02.html)| |
 | 28/09/2020    |   2           | [Parte 3](http://me414-unicamp.github.io/aulas/slides/parte03/parte03.html) [Parte 4](http://me414-unicamp.github.io/aulas/slides/parte04/parte04.html)| |
