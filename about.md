@@ -32,11 +32,6 @@ permalink: /about/
 * [Informações da disciplina](http://www.ggte.unicamp.br/eam/enrol/index.php?id=13791)
 
 
-#### ME414 - H
-
-* Professora: [Ronaldo Dias](http://www.ime.unicamp.br/~dias/)
-* [Informações da disciplina]()
-
 
 #### ME414 - I
 
