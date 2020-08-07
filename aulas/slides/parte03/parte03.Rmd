@@ -238,21 +238,21 @@ Q_2= \begin{cases}
   \end{cases}
 $$
 
-## Quartis e simetria da distribuição {.build}
+<!-- ## Quartis e simetria da distribuição {.build} -->
 
-<center>
-![quart](figuras/quartiles.png)
-</center>
+<!-- <center> -->
+<!-- ![quart](figuras/quartiles.png) -->
+<!-- </center> -->
 
-Para uma distribuição simétrica ou aproximadamente simétrica:
+<!-- Para uma distribuição simétrica ou aproximadamente simétrica: -->
 
-> * $Q_2-x_{(1)}\approx x_{(n)}-Q_2$
+<!-- > * $Q_2-x_{(1)}\approx x_{(n)}-Q_2$ -->
 
-> * $Q_2-Q_1\approx Q_3-Q_2$
+<!-- > * $Q_2-Q_1\approx Q_3-Q_2$ -->
 
-> * $Q_1-x_{(1)} \approx x_{(n)}-Q_3$
+<!-- > * $Q_1-x_{(1)} \approx x_{(n)}-Q_3$ -->
 
-> * distâncias entre a mediana e $Q_1$, $Q_3$ menores do que as distâncias entre os extremos e $Q_1$, $Q_3$.
+<!-- > * distâncias entre a mediana e $Q_1$, $Q_3$ menores do que as distâncias entre os extremos e $Q_1$, $Q_3$. -->
 
 
 ## Dados discrepantes (*outliers*) {.build}
@@ -317,7 +317,7 @@ abline(v=LS, col="red", lty=2, lwd=3)
 axis(side=1, at=c(LS), labels=c("Q3 + 1.5 IQ"), cex.axis=1.5, cex.lab=1.5)
 ```
 
-> Dizemos *potencial outlier*, pois se a distribuição tem cauda longa (à direita ou à esquerda), algumas observações irão cair no critério, apesar de não serem outliers.
+> Dizemos *potencial outlier*, pois se a distribuição tem cauda longa, algumas observações irão cair no critério, apesar de não serem *outliers*.
 
 ## Boxplot {.build}
 
