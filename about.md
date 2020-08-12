@@ -7,6 +7,10 @@ permalink: /about/
 
 ## Turmas Segundo Semestre 2020
 
+#### ME414 - A
+
+* Professor: Mauricio Zevallos
+* [Informações da disciplina]()
 
 #### ME414 - C
 
@@ -29,14 +33,14 @@ permalink: /about/
 #### ME414 - F
 
 * Professora: [Tatiana Benaglia](http://www.ime.unicamp.br/~tatiana/)
-* [Informações da disciplina](http://www.ggte.unicamp.br/eam/enrol/index.php?id=13791)
+* [Informações da disciplina]()
 
 
 
 #### ME414 - I
 
-* Professor: [Filidor E. Vilca Labra](http://www.ime.unicamp.br/~fily/)
-* [Informações da disciplina](http://www.ggte.unicamp.br/eam/enrol/index.php?id=14475)
+* Professor: Filidor E. Vilca Labra
+* [Informações da disciplina]()
 
 
 
