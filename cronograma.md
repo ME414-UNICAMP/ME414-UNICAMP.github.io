@@ -13,8 +13,8 @@ O conteúdo é disponibilizado às segundas-feiras e deve ser desenvolvido duran
 
 **Verifique com seu professor condições para prova substitutiva.**
 
-| Data          | Semana          | Conteúdo | Slides para estudo   | Vídeos | Exercícios Moodle | Vídeos Extras | 
-|:-------------:|:-------------:| :-------:| :-------:|:-------:|:-------:|:-------:|
+| Data          | Semana          | Conteúdo | Slides para estudo   | Vídeos  | Extras | 
+|:-------------:|:-------------:| :-------:| :-------:|:-------:|:-------:|
 | 16/09/2020    |  |     Apresentação    |  |     |        |        |        |
 | 21/09/2020    |   1       | Estatística Descritiva    |  Parte [1](http://me414-unicamp.github.io/aulas/slides/parte01/parte01.html)-[2](http://me414-unicamp.github.io/aulas/slides/parte02/parte02.html)| |
 | 28/09/2020    |   2      | Estatística Descritiva    | Parte [3](http://me414-unicamp.github.io/aulas/slides/parte03/parte03.html)-[4](http://me414-unicamp.github.io/aulas/slides/parte04/parte04.html)| |
