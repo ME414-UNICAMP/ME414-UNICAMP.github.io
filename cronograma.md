@@ -34,8 +34,6 @@ O conteúdo é disponibilizado às segundas-feiras e deve ser desenvolvido duran
 | 04/01/2021    |  15 | Regressão Linear Simples e Análise de Variância | Parte [23](http://me414-unicamp.github.io/aulas/slides/parte23/parte23.html)-[24](http://me414-unicamp.github.io/aulas/slides/parte24/parte24.html)           |    | 
 | **11/01/2021 Segunda-feira**   | 16 | **Prova 2: Turmas A, C, E**   |    | 
 | **12/01/2021 Terça-feira**   | 16 | **Prova 2: Turmas D, F, I**   |    | 
-| 13/01/2021 Quarta-feira    |  17    | Substitutiva: Turmas E, C   | 
-| 14/01/2021 Quinta-feira    |  17    | Substitutiva: Turmas A, D, F, I   | 
 | **20/01/2021 Quarta-feira** | 18 | **Exame: Turmas C, E**|
 | **21/01/2021 Quinta-feira** |  18 | **Exame: Turmas A, D, F, I**|
 
