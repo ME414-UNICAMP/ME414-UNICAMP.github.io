@@ -13,7 +13,6 @@ permalink: /aulas/
   + Distribuição de Frequência: tabelas e gráficos de barras
 * Variáveis Contínuas
   + Histograma
-  + Ramo-e-folha
   + Medidas de posição
   + Medidas de dispersão
   + Boxplot
