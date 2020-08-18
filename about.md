@@ -10,37 +10,37 @@ permalink: /about/
 #### ME414 - A
 
 * Professor: Mauricio Zevallos
-* [Informações da disciplina]()
+* [Moodle da disciplina]()
 
 #### ME414 - C
 
 * Professora: [Larissa Matos](https://larissamatos.github.io/)
-* [Informações da disciplina]()
+* [Moodle da disciplina]()
 
 
 #### ME414 - D
 
 * Professora: [Samara Flamini Kiihl](http://www.ime.unicamp.br/~samara/)
-* [Informações da disciplina]()
+* [Moodle da disciplina]()
 
 
 #### ME414 - E
 
 * Professor: [Élcio Lebensztayn](http://www.ime.unicamp.br/~lebensztayn/)
-* [Informações da disciplina]()
+* [Moodle da disciplina]()
 
 
 #### ME414 - F
 
 * Professora: [Tatiana Benaglia](http://www.ime.unicamp.br/~tatiana/)
-* [Informações da disciplina]()
+* [Moodle da disciplina]()
 
 
 
 #### ME414 - I
 
 * Professor: Filidor E. Vilca Labra
-* [Informações da disciplina]()
+* [Moodle da disciplina]()
 
 
 
