@@ -9,6 +9,19 @@ logo: ../logo-imecc.png
 
 # Intervalo de Confiança
 
+##
+
+
+<center>
+![](figuras/JN.png){width=650px}
+</center>
+
+<center>
+[Vídeo: Pesquisa Eleitorial - JN - 20/08/2018](https://www.youtube.com/watch?v=Q1iSF0hSz4o)
+</center>
+
+
+
 ## Introdução {.build}
 
 > * Vimos que podemos utilizar uma estatística, como $\bar{X}$, para estimar um parâmetro populacional, como a média populacional $\mu$.
