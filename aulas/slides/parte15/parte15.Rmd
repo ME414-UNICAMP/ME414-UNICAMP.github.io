@@ -55,9 +55,9 @@ Sendo:
 
 * Seja $X_i \sim Bernoulli(p)$, $i=1, \ldots, n$. 
 
-> * Se $n$ suficientemente grande, $$S_n=\sum_{i=1}^nX_i\approx N\left(np,np(1-p)\right)$$ 
+> * Se $n$ suficientemente grande, $$\hat{p}_n=\frac{1}{n}\sum_{i=1}^nX_i\approx N\left(p,\frac{p(1-p)}{n}\right)$$ 
 
-> * E então $Z=\frac{S_n-np}{\sqrt{np(1-p)}}\approx N(0,1)$ 
+> * E então $Z=\frac{\hat{p}_n-p}{\sqrt{\frac{p(1-p)}{n}}}\approx N(0,1)$ 
 
 > * Seja $1-\alpha$ o grau de confiança do intervalo
 
@@ -68,13 +68,12 @@ Sendo:
 ## Intervalo de Confiança como Estimativa de p
 $$ \begin{aligned}
 0.95 & =  P\left(-1.96\leq Z \leq 1.96\right) \\
-& = P\left(-1.96\leq \frac{S_n-np}{\sqrt{np(1-p)}} \leq 1.96\right) \\
-& = P\left(-1.96\sqrt{np(1-p)}\leq S_n-np \leq 1.96\sqrt{np(1-p)}\right) \\
-& = P\left(\frac{-1.96\sqrt{np(1-p)}}{n}\leq \frac{S_n-np}{n} \leq \frac{1.96\sqrt{np(1-p)}}{n}\right) \\
-& = P\left(\widehat p - 1.96\sqrt{\frac{p(1-p)}{n}}\leq p \leq \widehat p + 1.96\sqrt{\frac{p(1-p)}{n}}\right), 
+& = P\left(-1.96\leq \frac{\hat{p}_n-p}{\sqrt{\frac{p(1-p)}{n}}} \leq 1.96\right) \\
+& = P\left(-1.96\sqrt{\frac{p(1-p)}{n}}\leq \hat{p}_n-p \leq 1.96\sqrt{\frac{p(1-p)}{n}}\right) \\
+& = P\left(\hat{p}_n - 1.96\sqrt{\frac{p(1-p)}{n}}\leq p \leq \hat{p}_n + 1.96\sqrt{\frac{p(1-p)}{n}}\right), 
 \end{aligned}
 $$ 
-em que $\widehat p = \frac{S_n}{n}$ e a margem de erro é $1.96\sqrt{\frac{p(1-p)}{n}}$.
+em que $\hat{p}_n = \frac{\sum_{i=1}^n X_i}{n}$ e a margem de erro é $1.96\sqrt{\frac{p(1-p)}{n}}$.
 
 
 ## Intervalo de Confiança como Estimativa de p {.build}
