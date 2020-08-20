@@ -1,0 +1,340 @@
+---
+title: ME414 - Estatística para Experimentalistas
+subtitle: Parte 14
+output:
+  ioslides_presentation:
+    widescreen: yes
+logo: ../logo-imecc.png
+---
+
+# Distribuição amostral
+
+## Motivação
+
+* Quero saber se o candidato $A$ vai ganhar as eleições para prefeito.
+
+* Cidade com $N$ pessoas.
+
+* Posso esperar o resultado ads eleições para saber, ou seja, teríamos a resposta de todas as pessoas da cidade.
+
+* Posso usar uma amostra para estimar a proporção de votos para $A$.
+
+* Quão boa é a estimativa? É precisa? 
+
+* Posso pensar no problema de duas formas: Modo 1 e Modo 2.
+
+
+## Modo 1
+
+* Cidade com $N$ pessoas.
+
+* $X_i = 1$ se a pessoa $i$ vota em $A$
+
+* $X_i=0$ se a pessoa $i$ não vota em $A$.
+
+* $\mathbf{X}=(X_1,X_2,\ldots,X_N)$: resposta de toda a população (temos no dia da eleição).
+
+* Média populacional: $$p=\frac{1}{N}\sum_{i=1}^N X_i$$
+
+## Modo 1 {.smaller}
+
+* Variância populacional:
+
+$$\begin{eqnarray} 
+\sigma^2&=&\frac{1}{N}\sum_{i=1}^N(X_i-p)^2\\
+&=&\frac{1}{N}\sum_{i=1}^N(X_i^2-2pX_i+p^2)\\
+&=&\frac{\sum_{i=1}^N X_i^2-2p\sum_{i=1}^N X_i+\sum_{i=1}^N p^2}{N}\\
+&=&\frac{\sum_{i=1}^N X_i-2p\sum_{i=1}^N X_i+\sum_{i=1}^N p^2}{N}\\
+&=&\frac{Np-2pNp+Np^2}{N}=p(1-p)
+\end{eqnarray}$$
+
+
+## Modo 1 
+
+* $p$ = proporção de pessoas que votam em $A$ na cidade
+
+* $\sigma^2=p(1-p)$ é a variância da população.
+
+* Até o dia da eleição, não sabemos $p$.
+
+* Coletamos uma amostra aleatória de tamanho $n$ para uma pesquisa eleitoral.
+
+* $\hat{p}$: proporção de pessoas que votam em $A$ na amostra.
+
+* Quão boa é a estimativa? É precisa? 
+
+## Modo 1 - Exemplo $N=5$ e $n=2$
+
+
+$$\mathbf{X}=(X_1,X_2,\ldots,X_5)=(1,0,1,0,1)$$
+
+$$p=\frac{\sum_{i=1}^5X_i}{5}=\frac{3}{5}=0.6$$
+
+$$\begin{eqnarray} 
+\sigma^2&=&\frac{1}{5}\sum_{i=1}^N(X_i-p)^2\\
+&=&\frac{3\times(1-0.6)^2+2\times(0-0.6)^2}{5}\\
+&=&0.24\\
+&=&p(1-p)
+\end{eqnarray}$$
+
+## Modo 1 - Exemplo $N=5$ e $n=2$ {.smaller}
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+library(kableExtra)
+aa <- expand.grid(1:5,1:5)
+xx <- c(1,0,1,0,1)
+phat <- unlist(apply(aa,1,function(x) mean(xx[x])))
+aa$phat <- phat
+#colnames(aa) <- c("Pessoa amostrada 1","Pessoa amostrada 2","$\\hat{p}$")
+kable(aa,align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","$\\hat{p}$"))
+```
+
+## Modo 1 - Exemplo $N=5$ e $n=2$ 
+
+Distribuição **amostral** de $\hat{p}$:
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+ff <- as.data.frame(table(aa$phat))
+ff$Prop=ff$Freq/(sum(ff$Freq))
+kable(ff[,c(1,3)],align = 'cc',col.names = c("$x$","$P(\\hat{p}=x)$"))
+```
+
+$$\begin{eqnarray} 
+E(\hat{p})&=&0\times 0.2 + 0.5\times 0.4 + 1\times 0.4 = 0.6 = p\\
+Var(\hat{p})&=&E[(\hat{p}-p)^2]\\
+&=&0.16\times(0-0.6)^2 + 0.48\times(0.5-0.6)^2 + 0.36\times (1-0.6)^2\\
+&=&0.12=\frac{p(1-p)}{n}
+\end{eqnarray}$$
+
+## Modo 1 - Exemplo $N=5$ e $n=2$
+
+Distribuição amostral de $\hat{p}$:
+
+```{r,echo=FALSE,fig.align='center'}
+namess <- as.character(round(as.numeric(as.character(ff$Var1)),2))
+barplot(ff$Prop, names.arg=namess, col="blue", main="", 
+            cex.lab=1.0, cex.axis=1.0, cex.names=1.0, cex.main=2, las=2)
+```
+
+
+## Modo 1 - Exemplo $N=5$ e $n=3$
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+library(kableExtra)
+aa <- expand.grid(1:5,1:5,1:5)
+xx <- c(1,0,1,0,1)
+phat <- unlist(apply(aa,1,function(x) mean(xx[x])))
+aa$phat <- round(phat,3)
+#colnames(aa) <- c("Pessoa amostrada 1","Pessoa amostrada 2","$\\hat{p}$")
+kable(aa,align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\hat{p}$"))
+```
+
+## Modo 1 - Exemplo $N=5$ e $n=3$ 
+
+Distribuição **amostral** de $\hat{p}$:
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+ff <- as.data.frame(table(aa$phat))
+ff$Prop=round(ff$Freq/(sum(ff$Freq)),3)
+kable(ff[,c(1,3)],align = 'cc',col.names = c("$x$","$P(\\hat{p}=x)$"))
+```
+
+$$\begin{eqnarray} 
+E(\hat{p})&=&0\times 0.064 + 0.333\times 0.288 + 0.667\times 0.432 + 1\times 0.216\\
+&=& 0.6 = p\\
+Var(\hat{p})&=&E[(\hat{p}-p)^2]\\
+&=&0.08=\frac{p(1-p)}{n}
+\end{eqnarray}$$
+
+## Modo 1 - Exemplo $N=5$ e $n=3$
+
+Distribuição amostral de $\hat{p}$:
+
+```{r,echo=FALSE,fig.align='center'}
+namess <- as.character(round(as.numeric(as.character(ff$Var1)),2))
+barplot(ff$Prop, names.arg=namess, col="blue", main="", 
+            cex.lab=1.0, cex.axis=1.0, cex.names=1.0, cex.main=2, las=2)
+```
+
+
+## Modo 1
+
+* Amostra aleatória de tamanho $n$:
+
+* $\hat{p}$ é v.a.
+
+* $E(\hat{p})=p$
+
+* $Var(\hat{p})=\frac{p(1-p)}{n}$.
+
+
+## Modo 1 - Exemplo $N=1000000$ e $n=100$
+
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+N=1000000
+n=100
+n1 = ceiling(N*.6)
+n2= N-n1
+xx <- c(rep(1,n1),rep(0,n2))
+B=100000
+bb <- matrix(NA,nrow=B,ncol=n)
+for (i in 1:B)
+{
+  bb[i,] <- sample(1:N,n,replace=TRUE)
+}
+phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+aa <- data.frame(bb)
+aa$phat <- round(phat,3)
+```
+
+
+Distribuição **amostral** de $\hat{p}$:
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+ff <- as.data.frame(table(aa$phat))
+ff$Prop=round(ff$Freq/(sum(ff$Freq)),3)
+```
+
+
+```{r,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE}
+library(ggplot2)
+df <- data.frame(PF = aa$phat)
+ggplot(df, aes(x = PF)) + 
+    geom_histogram(aes(y =..density..),
+                   breaks = seq(min(aa$phat), max(aa$phat), by = .01), 
+                   colour = "black", 
+                   fill = "blue") +
+stat_function(fun = dnorm, args = list(mean = 0.6, sd = sqrt(0.6*.4/n))) + xlab(" ") + ylab(" ") + ylim(0,30) + xlim(0.4,0.8)
+
+
+```
+
+
+## Modo 1 - Exemplo $N=1000000$ e $n=1000$
+
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+N=1000000
+n=1000
+n1 = ceiling(N*.6)
+n2= N-n1
+xx <- c(rep(1,n1),rep(0,n2))
+B=100000
+bb <- matrix(NA,nrow=B,ncol=n)
+for (i in 1:B)
+{
+  bb[i,] <- sample(1:N,n,replace=TRUE)
+}
+phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+aa <- data.frame(bb)
+aa$phat <- round(phat,3)
+```
+
+
+Distribuição **amostral** de $\hat{p}$:
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+ff <- as.data.frame(table(aa$phat))
+ff$Prop=round(ff$Freq/(sum(ff$Freq)),3)
+```
+
+
+```{r,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE}
+df <- data.frame(PF = aa$phat)
+ggplot(df, aes(x = PF)) + 
+    geom_histogram(aes(y =..density..),
+                   breaks = seq(min(aa$phat), max(aa$phat), by = .005), 
+                   colour = "black", 
+                   fill = "blue") +
+stat_function(fun = dnorm, args = list(mean = 0.6, sd = sqrt(0.6*.4/n))) + xlab(" ") + ylab(" ") + ylim(0,30)+xlim(0.4,0.8)
+```
+
+
+
+## Modo 2
+
+Suponha que a resposta de uma pessoa da cidade sobre se vota ou não no candidato $A$ possa ser representada por uma v.a. $X$ que assume o valor $1$ com probabilidade $p$ ou $0$ com probabilidade $1-p$.
+
+$\begin{aligned}
+\mathbb E(X) &= 1 \times P(X=1) + 0 \times P(X=0) \\ 
+&= 1\times p + 0\times (1-p) = p
+\end{aligned}$
+
+<br /> 
+$\begin{aligned}
+\sigma^2 &= Var(X) = \mathbb E[(X - \mu)^2] \\
+&= (1-p)^2 \times P(X=1) + (0 - p)^2 \times P(X=0) \\
+&=p(1-p)^2+(1-p)p^2\\
+&= p(1-p)
+\end{aligned}$
+
+## Modo 2 - Exemplo $n=2$  {.smaller}
+
+> Todas as combinações possíveis de valores para o primeiro e para o segundo elemento amostrados segundo o plano $AAS_c$ com $n=2$ são:
+
+Possibilidades        | $(X_1 = 1, X_2 = 1)$ | $(X_1 = 1, X_2 = 0)$ | $(X_1 = 0, X_2 = 1)$ | $(X_1=0,X_2=0)$
+----------------------|----------------------|----------------------|----------------------|-----------------
+$\hat{p}=\frac{1}{n}\sum_{i=1}^nX_i$              | 1                    | 0.5                  | 0.5                  |   0
+$P(X_1 = i, X_2 = j)$ | $p^2$                | $p(1-p)$                 | $(1-p)p$                 | $(1-p)^2$
+
+<br />
+
+> $\displaystyle \mathbb E(\hat{p}) = 1 \times p^2 + 0.5 \times p(1-p) + 0.5 \times (1-p)p + 0\times (1-p)^2= p$
+
+> $\begin{aligned}
+Var(\hat{p}) &= \mathbb E[(\hat{p} - p)^2 ] \\
+&= (1 - p)^2 \times p^2 + (0.5 - p)^2 p(1-p) + (0.5 - p)^2 (1-p)p + (0 - p)^2 (1-p)^2 = \frac{p(1-p)}{2}
+\end{aligned}$
+
+> Note que: $\displaystyle \mathbb E(\hat{p}) = p = \mathbb E(X)$ e $\displaystyle Var(\hat{p}) = \frac{\sigma^2}{n} = \frac{Var(X)}{n}$.
+
+
+## Resultado  {.build .smaller}
+
+Seja $X$ uma v.a. com média $\mu$ e variância $\sigma^{2}$ e $X_{1}, \ldots, X_{n}$ uma amostra aleatória simples de $X$. A média amostral
+$$\bar X_n = \frac{X_1 + \ldots + X_n}{n}$$ 
+tem as seguintes propriedades:
+
+> $$\mathbb E (\bar X_n) = \mu \qquad \mbox{e} \qquad Var(\bar X_n) = \frac{\sigma^2}{n}.$$ 
+
+Ou seja, embora $\mu$ seja desconhecido, sabemos que o valor esperado da média amostral é $\mu$. 
+
+Além disso, conforme o tamanho amostral aumenta, a imprecisão da média amostral para estimar $\mu$ fica cada vez menor, pois $Var(\bar X) = \sigma^2/n$.
+
+(propriedade de linearidade da esperança e da variância, esta última em caso de independência)
+
+
+# Teorema do Limite Central
+
+## Teorema do Limite Central {.build}
+
+Usando o resultado enunciado anteriormente, temos a esperança e a variância da média amostral $\bar X$: $\mathbb E(\bar X) = \mu$ e $Var(\bar X) = \frac{\sigma^2}{n}$.
+
+> No entanto, para conhecermos a distribuição de probabilidade de $\bar X$, como foi feito no exemplo anterior, é preciso conhecer todos os valores possíveis de $X$ e suas respectivas probabilidades. 
+
+> Mas, se conhecermos tudo isso, não precisamos fazer amostragem nem inferência: saberemos tudo o que desejarmos daquela população!
+
+> O exemplo anterior foi um caso hipotético apenas para demonstrar como a média amostral $\bar X$ se comporta quando realizamos a amostragem.
+
+> Na prática, não teremos informações suficientes para de fato descrevermos a distribuição exata de $\bar X$.
+
+
+
+
+
+## Leituras
+
+* [Ross](http://www.sciencedirect.com/science/article/pii/B9780123743886000077): capítulo 7. 
+* [OpenIntro](https://www.openintro.org/stat/textbook.php): seção 4.1.
+* Magalhães: capítulo 7.
+
+<br /><br />
+
+Slides produzidos pelos professores:
+
+* Samara Kiihl
+
+* Tatiana Benaglia
+
+* Benilton Carvalho
