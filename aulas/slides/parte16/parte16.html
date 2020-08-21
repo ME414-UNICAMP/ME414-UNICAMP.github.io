@@ -4,7 +4,6 @@
   <title>ME414 - Estatística para Experimentalistas</title>
 
   <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="generator" content="pandoc" />
 
@@ -252,7 +251,6 @@ background: black;
 }
 
 slides > slide {
-display: none;
 font-family: 'Open Sans', Arial, sans-serif;
 font-size: 26px;
 color: #797979;
@@ -273,17 +271,19 @@ transition: all 0.6s ease-in-out;
 }
 
 slides > slide.far-past {
-display: none;
 }
 
 slides > slide.past {
-display: block;
 opacity: 0;
 }
 
 slides > slide.current {
 display: block;
 opacity: 1;
+z-index: 1;
+}
+slides > slide:not(.current) {
+z-index: 0;
 }
 
 slides > slide.current .auto-fadein {
@@ -298,13 +298,11 @@ background-size: 100% 100%;
 }
 
 slides > slide.next {
-display: block;
 opacity: 0;
 pointer-events: none;
 }
 
 slides > slide.far-next {
-display: none;
 }
 
 slides > slide.dark {
@@ -376,8 +374,6 @@ width: 1100px;
 
 slides.layout-widescreen > slide.far-past,
 slides.layout-faux-widescreen > slide.far-past {
-display: block;
-display: none;
 -webkit-transform: translate(-2260px);
 -moz-transform: translate(-2260px);
 -ms-transform: translate(-2260px);
@@ -411,8 +407,6 @@ pointer-events: none;
 
 slides.layout-widescreen > slide.far-next,
 slides.layout-faux-widescreen > slide.far-next {
-display: block;
-display: none;
 -webkit-transform: translate(2260px);
 -moz-transform: translate(2260px);
 -ms-transform: translate(2260px);
@@ -1344,7 +1338,19 @@ opacity: 1;
 .overview .slide-area {
 display: none;
 }
+slides > slide {
+background: linear-gradient(#ffffff, #ffffff 85%, #e6e6e6);
+background-color: white;
+}
+slides > slide {
+opacity: 0;
+}
 @media print {
+
+@page {
+size: landscape;
+margin: 0;
+}
 
 slides slide {
 display: block !important;
@@ -3069,6 +3075,10 @@ if (document.readyState !== "loading" &&
       font-style: italic;
     }
 
+    summary {
+      display: list-item;
+    }
+
     slides > slide {
       -webkit-transition: all 0.4s ease-in-out;
       -moz-transition: all 0.4s ease-in-out;
@@ -3084,6 +3094,10 @@ if (document.readyState !== "loading" &&
       transition: opacity 0.6s ease-in 0.4s;
       opacity: 0;
     }
+/* https://github.com/ropensci/plotly/pull/524#issuecomment-468142578 */
+slide:not(.current) .plotly.html-widget{
+  display: block;
+}
 
     slides > slide:not(.nobackground):before {
       font-size: 12pt;
@@ -3119,9 +3133,9 @@ if (document.readyState !== "loading" &&
           </hgroup>
   </slide>
 
-<slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Intervalo de confiança para a média populacional</h2></hgroup><article  id="intervalo-de-confianca-para-a-media-populacional">
+<slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Intervalo de confiança para a média populacional</h2></hgroup><article  id="intervalo-de-confiança-para-a-média-populacional">
 
-</article></slide><slide class=""><hgroup><h2>Revisão</h2></hgroup><article  class="build" id="revisao">
+</article></slide><slide class=""><hgroup><h2>Revisão</h2></hgroup><article  class="build" id="revisão">
 
 <ul>
 <li>Vimos que podemos usar uma estatística para estimar um parâmetro de uma distribuição que temos interesse.</li>
@@ -3139,7 +3153,7 @@ if (document.readyState !== "loading" &&
 <li><strong>Resultado:</strong> Se \(X\) tem \(\mathbb E(X)=\mu\) e \(Var(X)=\sigma^2\), então a distribuição da média amostral, \(\bar{X}_n\), tem \[\mathbb E(\bar{X}_n)=\mu \quad \mbox{e} \quad Var(\bar{X}_n)=\frac{\sigma^2}{n}\]</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Distribuição da Média Amostral</h2></hgroup><article  class="build" id="distribuicao-da-media-amostral">
+</article></slide><slide class=""><hgroup><h2>Distribuição da Média Amostral</h2></hgroup><article  class="build" id="distribuição-da-média-amostral">
 
 <p>A média amostral, \(\bar{X}_n\), tem em geral valores diferentes para diferentes amostras aleatórias obtidas: é uma variável aleatória.</p>
 
@@ -3192,13 +3206,13 @@ if (document.readyState !== "loading" &&
 </article></slide><slide class=""><hgroup><h2>Usando o TCL para construir um IC</h2></hgroup><article  id="usando-o-tcl-para-construir-um-ic">
 
 <ul>
-<li>Temos uma amostra aleatoria \(X_1,\ldots,X_n\) e estamos usando a média amostral \(\bar{X}_n\) para estimar \(\mu\), a média populacional.</li>
+<li><p>Temos uma amostra aleatoria \(X_1,\ldots,X_n\) e estamos usando a média amostral \(\bar{X}_n\) para estimar \(\mu\), a média populacional.</p></li>
 <li><p>Quão boa é esta estimativa? Ela tem boa precisão? Qual o grau de confiança?</p></li>
 <li><p>Em geral: queremos alto grau de confiança, por exemplo, \(1-\alpha=0.95\).</p></li>
 <li><p>Imagine que seja possível coletar uma amostra de tamanho \(n\) da população várias vezes. Para cada vez, você calcula \(\bar{x}\) é constrói um IC de 95% para \(\mu\). Imagine também que você conhece \(\mu\) e conte quantos dos intervalos contêm \(\mu\). A proporção de intervalos que contem \(\mu\) será próxima a 0.95.</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Interpretação do Intervalo de Confiança para \(\mu\)</h2></hgroup><article  class="build" id="interpretacao-do-intervalo-de-confianca-para-mu">
+</article></slide><slide class=""><hgroup><h2>Interpretação do Intervalo de Confiança para \(\mu\)</h2></hgroup><article  class="build" id="interpretação-do-intervalo-de-confiança-para-mu">
 
 <center>
 
@@ -3296,7 +3310,7 @@ P(90 &lt; \bar{X} &lt; 110) &amp;= P\left( \frac{90-100}{10/4} &lt; \frac{\bar{X
 <p>Portanto, \(n=4\) é suficiente para obtermos a confiança desejada.</p>
 </blockquote>
 
-</article></slide><slide class=""><hgroup><h2>Intervalo de Confiança para \(\mu\)</h2></hgroup><article  class="build" id="intervalo-de-confianca-para-mu">
+</article></slide><slide class=""><hgroup><h2>Intervalo de Confiança para \(\mu\)</h2></hgroup><article  class="build" id="intervalo-de-confiança-para-mu">
 
 <ul class = 'build'>
 <li>Coletamos uma amostra aleatória \(X_1,X_2,\ldots,X_n\) de uma população com média \(\mu\) e a variância \(\sigma^2\) e usamos \(\bar{X}_n\) para estimar \(\mu\).</li>
@@ -3342,7 +3356,7 @@ P(90 &lt; \bar{X} &lt; 110) &amp;= P\left( \frac{90-100}{10/4} &lt; \frac{\bar{X
 
 <p><br /><br /><br /><br /><br /><br /> Pela tabela, \(z_{0.05} = 1.64.\)</p>
 
-</article></slide><slide class=""><hgroup><h2>Intervalo de Confiança para \(\mu\): \(\sigma\) conhecido</h2></hgroup><article  class="build" id="intervalo-de-confianca-para-mu-sigma-conhecido">
+</article></slide><slide class=""><hgroup><h2>Intervalo de Confiança para \(\mu\): \(\sigma\) conhecido</h2></hgroup><article  class="build" id="intervalo-de-confiança-para-mu-sigma-conhecido">
 
 <p>Seja \(X_1,\ldots, X_n\) uma a.a. de uma população com média \(\mu\) e variância \(\sigma^2\) conhecida. Então,</p>
 
@@ -3352,7 +3366,7 @@ P(90 &lt; \bar{X} &lt; 110) &amp;= P\left( \frac{90-100}{10/4} &lt; \frac{\bar{X
 
 <p>Um Intervalo de \(100(1-\alpha)\%\) de confiança para \(\mu\) é dado por: \[IC(\mu, 1-\alpha) = \left[ \bar{x} - z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\,;\,\bar{x} +z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right]\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: Café</h2></hgroup><article  class="build" id="exemplo-cafe">
+</article></slide><slide class=""><hgroup><h2>Exemplo: Café</h2></hgroup><article  class="build" id="exemplo-café">
 
 <p>Uma máquina enche pacotes de café com variância igual a 100\(g^2\). Ela estava regulada para encher os pacotes com uma média de 500g. Mas o fabricante desconfia que a máquina está desregulada e quer então estimar a nova média \(\mu\).</p>
 
@@ -3395,7 +3409,7 @@ IC(\mu, 0.95) &amp;= \left[ \bar{x} - z_{0.025} \frac{\sigma}{\sqrt{n}};\,\bar{x
 
 <p>\[n=\left( \frac{z_{\alpha/2}}{m}\right)^2\sigma^2\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Intervalo de Confiança para \(\mu\): \(\sigma\) desconhecido</h2></hgroup><article  class="build smaller" id="intervalo-de-confianca-para-mu-sigma-desconhecido">
+</article></slide><slide class=""><hgroup><h2>Intervalo de Confiança para \(\mu\): \(\sigma\) desconhecido</h2></hgroup><article  class="build smaller" id="intervalo-de-confiança-para-mu-sigma-desconhecido">
 
 <p>Seja \(X_1, \ldots, X_n\) uma a.a. de uma população com média \(\mu\), mas com variância \(\sigma^2\) desconhecida</p>
 
@@ -3423,7 +3437,7 @@ IC(\mu, 0.95) &amp;= \left[ \bar{x} - z_{0.025} \frac{\sigma}{\sqrt{n}};\,\bar{x
 
 <p>Os valores da distribuição \(t\)-student também encontram-se tabelados.</p>
 
-</article></slide><slide class=""><hgroup><h2>Distribuição \(t\)-student e Normal Padrão</h2></hgroup><article  id="distribuicao-t-student-e-normal-padrao">
+</article></slide><slide class=""><hgroup><h2>Distribuição \(t\)-student e Normal Padrão</h2></hgroup><article  id="distribuição-t-student-e-normal-padrão">
 
 <p>Para \(n\) grande a distribuição \(t\)-student se aproxima da normal padrão \(N(0,1)\).</p>
 
@@ -3433,7 +3447,7 @@ IC(\mu, 0.95) &amp;= \left[ \bar{x} - z_{0.025} \frac{\sigma}{\sqrt{n}};\,\bar{x
 
 </center>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: Café</h2></hgroup><article  class="build" id="exemplo-cafe-1">
+</article></slide><slide class=""><hgroup><h2>Exemplo: Café</h2></hgroup><article  class="build" id="exemplo-café-1">
 
 <p>No exemplo da máquina que enche pacotes de café, suponha agora que a variância é <strong>desconhecida</strong>.</p>
 
@@ -3556,7 +3570,7 @@ IC(\mu, 0.90) &amp;= \left[ 74.6 - 1.645 \frac{11.3}{9};\,  74.6 + 1.645\frac{11
 <p>Com grau de confiança igual a 90%, estimamos que a pontuação média entre os estudantes está entre 72.53 e 76.67.</p>
 </blockquote>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: precisão e tamanho amostral</h2></hgroup><article  class="build" id="exemplo-precisao-e-tamanho-amostral">
+</article></slide><slide class=""><hgroup><h2>Exemplo: precisão e tamanho amostral</h2></hgroup><article  class="build" id="exemplo-precisão-e-tamanho-amostral">
 
 <p>Qual deve ser o tamanho de uma amostra cuja população da qual ela será sorteada possui um desvio padrão igual a 10, para que a diferença da média amostral para a média da população, em valor absoluto, seja menor que 1, com coeficiente de confiança igual a:</p>
 
@@ -3570,7 +3584,7 @@ IC(\mu, 0.90) &amp;= \left[ 74.6 - 1.645 \frac{11.3}{9};\,  74.6 + 1.645\frac{11
 
 <p><em>Fonte: Morettin &amp; Bussab</em>, Estatística Básica \(5^a\) edição, pág 308.</p>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: precisão e tamanho amostral</h2></hgroup><article  class="build" id="exemplo-precisao-e-tamanho-amostral-1">
+</article></slide><slide class=""><hgroup><h2>Exemplo: precisão e tamanho amostral</h2></hgroup><article  class="build" id="exemplo-precisão-e-tamanho-amostral-1">
 
 <p>Pelo TCL: \(\bar{X}_n \sim N(\mu, 10^2/n)\)</p>
 
@@ -3594,7 +3608,7 @@ IC(\mu, 0.90) &amp;= \left[ 74.6 - 1.645 \frac{11.3}{9};\,  74.6 + 1.645\frac{11
 <p>Como \(P(-1.96 &lt; Z &lt; 1.96) = 0.95\), então \[\frac{\sqrt{n}}{10} = 1.96 \quad \Rightarrow  \quad n \approx 385\]</p>
 </blockquote>
 
-</article></slide><slide class=""><hgroup><h2>Exemplo: precisão e tamanho amostral</h2></hgroup><article  id="exemplo-precisao-e-tamanho-amostral-2">
+</article></slide><slide class=""><hgroup><h2>Exemplo: precisão e tamanho amostral</h2></hgroup><article  id="exemplo-precisão-e-tamanho-amostral-2">
 
 <p>De modo análogo, para um grau de confiança de \(99\%\), temos que \[P(-2.58 &lt; Z &lt; 2.58) = 0.99\]</p>
 
