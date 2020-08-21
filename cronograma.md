@@ -16,7 +16,7 @@ O conteúdo é disponibilizado às segundas-feiras e deve ser desenvolvido duran
 | Data          | Semana          | Conteúdo | Slides para estudo   | Vídeos  | Extras | 
 |:-------------:|:-------------:| :-------:| :-------:|:-------:|:-------:|
 | 16/09/2020    |  |     Apresentação    |  |     |        |        |        |
-| 21/09/2020    |   1       | Estatística Descritiva    |  Parte [1](http://me414-unicamp.github.io/aulas/slides/parte01/parte01.html)-[2](http://me414-unicamp.github.io/aulas/slides/parte02/parte02.html)| |
+| 21/09/2020    |   1       | Estatística Descritiva    |  Parte [1](http://me414-unicamp.github.io/aulas/slides/parte01/parte01.pdf)-[2](http://me414-unicamp.github.io/aulas/slides/parte02/parte02.html)| |
 | 28/09/2020    |   2      | Estatística Descritiva    | Parte [3](http://me414-unicamp.github.io/aulas/slides/parte03/parte03.html)-[4](http://me414-unicamp.github.io/aulas/slides/parte04/parte04.html)| |
 | 05/10/2020    |   3       | Probabilidade    | Parte [5](http://me414-unicamp.github.io/aulas/slides/parte05/parte05.html)-[6](http://me414-unicamp.github.io/aulas/slides/parte06/parte06.html)   |  |
 | 12/10/2020    |   4     | Probabilidade      |Parte [7](http://me414-unicamp.github.io/aulas/slides/parte07/parte07.html)-[8](http://me414-unicamp.github.io/aulas/slides/parte08/parte08.html)  | |
