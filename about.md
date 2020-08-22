@@ -21,7 +21,7 @@ permalink: /about/
 #### ME414 - D
 
 * Professora: [Samara Flamini Kiihl](http://www.ime.unicamp.br/~samara/)
-* [Moodle da disciplina]()
+* [Moodle da disciplina](https://moodle.ggte.unicamp.br/course/view.php?id=7529)
 
 
 #### ME414 - E
