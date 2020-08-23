@@ -644,4 +644,7 @@ Slides produzidos pelos professores:
 
 <br />
 
-<center><img src="figuras/boyfriend.png" width=700></center>
+<center><img src="https://imgs.xkcd.com/comics/boyfriend.png" width=700></center>
+<center>
+<https://xkcd.com/539/>
+</center>
