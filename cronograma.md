@@ -11,8 +11,6 @@ O conteúdo é disponibilizado às segundas-feiras e deve ser desenvolvido duran
 
 **Verifique com seu professor os horários e instruções das provas.**
 
-**Verifique com seu professor condições para prova substitutiva.**
-
 | Data          | Semana          | Conteúdo | Slides para estudo   | Vídeos  | Extras | 
 |:-------------:|:-------------:| :-------:| :-------:|:-------:|:-------:|
 | 16/09/2020    |  |     Apresentação    |  |     |        |        |        |
