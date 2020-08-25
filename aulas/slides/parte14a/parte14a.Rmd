@@ -500,8 +500,6 @@ stat_function(fun = dnorm, args = list(mean = 0.6, sd = sqrt(0.6*.4/n)),col="red
 
 > * Quero saber o salário médio das pessoas de uma certa cidade (parâmetro populacional de interesse).
 
-> * Cidade com $N$ pessoas.
-
 > * Posso usar uma amostra e estimar usando a média amostral. 
 
 > * Quão boa é a estimativa? É precisa? 
