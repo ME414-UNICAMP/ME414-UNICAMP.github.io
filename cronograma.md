@@ -24,7 +24,7 @@ O conteúdo é disponibilizado às segundas-feiras e deve ser desenvolvido duran
 | **11/11/2020 Quarta-feira**   |   8           |  **Prova 1: Turmas E, C** |       |
 | **12/11/2020 Quinta-feira**   |   8           |  **Prova 1: Turmas A, D, F, I** |       |
 | 16/11/2020    |   9       | Variáveis Aleatórias Contínuas    | Parte [12](http://me414-unicamp.github.io/aulas/slides/parte12/parte12.html)-[13](http://me414-unicamp.github.io/aulas/slides/parte13/parte13.html)   |      |
-| 23/11/2020    |  10       | Distribuição Amostral     |  [Parte 14](http://me414-unicamp.github.io/aulas/slides/parte14/parte14.html)    | 
+| 23/11/2020    |  10       | Distribuição Amostral     |  [Parte 14](http://me414-unicamp.github.io/aulas/slides/parte14/parte14.pdf)    | 
 | 30/11/2020   |  11   | Inferência: uma população     |   Parte [15](http://me414-unicamp.github.io/aulas/slides/parte15/parte15.html)-[16](http://me414-unicamp.github.io/aulas/slides/parte16/parte16.html)      | 
 | 07/12/2020    |  12    | Inferência: uma população    |   Parte [17](http://me414-unicamp.github.io/aulas/slides/parte17/parte17.html)-[18](http://me414-unicamp.github.io/aulas/slides/parte18/parte18.html) |
 | 14/12/2020    |  13   | Inferência: duas populações     | Parte [19](http://me414-unicamp.github.io/aulas/slides/parte19/parte19.html)-[20](http://me414-unicamp.github.io/aulas/slides/parte20/parte20.html)   | 
