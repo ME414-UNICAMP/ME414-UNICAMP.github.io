@@ -16,7 +16,7 @@ logo: ../logo-imecc.png
 
 > * Quero saber se o candidato $A$ vai ganhar as eleições para prefeito.
 
-> * Cidade com $N$ pessoas.
+> * Quero saber parâmetro populacional $p$ = proporção de pessoas que votam em $A$.
 
 > * Posso esperar o resultado das eleições para saber, ou seja, teríamos as respostas de todas as pessoas da cidade.
 
@@ -27,20 +27,20 @@ logo: ../logo-imecc.png
 > * Posso pensar no problema de duas formas: Modo 1 e Modo 2.
 
 
-## Modo 1
+## Modo 1 {.build}
 
 <img src="figuras/image-from-rawpixel-id-439565-original.jpg" width=270 style="float: right; margin-left: 30px">
 
 
-* Cidade com $N$ pessoas.
+> * Cidade com $N$ pessoas.
 
-* $X_i = 1$ se a pessoa $i$ vota em $A$
+> * $X_i = 1$ se a pessoa $i$ vota em $A$
 
-* $X_i=0$ se a pessoa $i$ não vota em $A$.
+> * $X_i=0$ se a pessoa $i$ não vota em $A$.
 
-* $\mathbf{X}=(X_1,X_2,\ldots,X_N)$: respostas de toda a população (temos no dia da eleição).
+> * $\mathbf{X}=(X_1,X_2,\ldots,X_N)$: respostas de toda a população (temos no dia da eleição).
 
-* Média populacional: $$p=\frac{1}{N}\sum_{i=1}^N X_i$$
+> * Média populacional: $$p=\frac{1}{N}\sum_{i=1}^N X_i$$
 
 <!-- Repare que aqui, nao estou falando de variáveis aleatórias, temos apenas dados das pessoas da cidade -->
 <!-- Estou calculando a média populacional e a variancia, conforme vimos nas estatísticas descritivas -->
@@ -61,23 +61,23 @@ $$\begin{eqnarray}
 \end{eqnarray}$$
 
 
-## Modo 1 
+## Modo 1 {.build}
 
-* $p$ = proporção de pessoas que votam em $A$ na cidade
+> * $p$ = proporção de pessoas que votam em $A$ na cidade
 
-* $\sigma^2=p(1-p)$ é a variância da população.
+> * $\sigma^2=p(1-p)$ é a variância da população.
 
-* Até o dia da eleição, não sabemos $p$.
+> * Até o dia da eleição, não sabemos $p$.
 
-* Coletamos uma amostra aleatória de tamanho $n$ para uma pesquisa eleitoral.
+> * Coletamos uma amostra aleatória de tamanho $n$ para uma pesquisa eleitoral.
 
-* $\hat{p}$: proporção de pessoas que votam em $A$ na amostra.
+> * $\hat{p}$: proporção de pessoas que votam em $A$ na amostra.
 
-* Quão boa é a estimativa? É precisa? 
+> * Quão boa é a estimativa? É precisa? 
 
-* Se outra pessoa também coleta uma amostra aleatória de tamanho $n$ e calcula $\hat{p}$ teremos o mesmo valor?
+> * Se outra pessoa também coleta uma amostra aleatória de tamanho $n$ e calcula $\hat{p}$ teremos o mesmo valor?
 
-## Modo 1 - Exemplo $N=5$ e $n=2$
+## Modo 1 - Exemplo $N=5$ e $n=2$ {.build}
 
 
 $$\mathbf{X}=(X_1,X_2,\ldots,X_5)=(1,0,1,0,1)$$
@@ -115,7 +115,7 @@ aa$phat <- phat
 kable(aa,align = 'ccc',col.names = c("Primeira pessoa","Segunda pessoa","$\\hat{p}$"))
 ```
 
-## Modo 1 - Exemplo $N=5$ e $n=2$ 
+## Modo 1 - Exemplo $N=5$ e $n=2$ {.build}
 
 Distribuição **amostral** de $\hat{p}$:
 
@@ -129,7 +129,7 @@ $$\begin{eqnarray}
 E(\hat{p})&=&0\times 0.16 + 0.5\times 0.48 + 1\times 0.36 = 0.6 = p\\
 Var(\hat{p})&=&E[(\hat{p}-p)^2]\\
 &=&0.16\times(0-0.6)^2 + 0.48\times(0.5-0.6)^2 + 0.36\times (1-0.6)^2\\
-&=&0.12=\frac{p(1-p)}{n}
+&=&0.12=\frac{0.24}{2}=\frac{p(1-p)}{n}
 \end{eqnarray}$$
 
 ## Modo 1 - Exemplo $N=5$ e $n=2$
@@ -198,7 +198,7 @@ $$\begin{eqnarray}
 E(\hat{p})&=&0\times 0.064 + 0.333\times 0.288 + 0.667\times 0.432 + 1\times 0.216\\
 &=& 0.6 = p\\
 Var(\hat{p})&=&E[(\hat{p}-p)^2]\\
-&=&0.08=\frac{p(1-p)}{n}
+&=&0.08=\frac{0.24}{3}=\frac{p(1-p)}{n}
 \end{eqnarray}$$
 
 ## Modo 1 - Exemplo $N=5$ e $n=3$
@@ -311,9 +311,9 @@ stat_function(fun = dnorm, args = list(mean = 0.6, sd = sqrt(0.6*.4/n)),col="red
 
 
 
-## Modo 2
+## Modo 2 {.build}
 
-Suponha que a resposta de uma pessoa da cidade sobre se vota ou não no candidato $A$ possa ser representada por uma **variável aleatória**. $X$ que assume o valor $1$ com probabilidade $p$ ou $0$ com probabilidade $1-p$. 
+> Suponha que a resposta de uma pessoa da cidade sobre se vota ou não no candidato $A$ possa ser representada por uma **variável aleatória**. $X$ que assume o valor $1$ com probabilidade $p$ ou $0$ com probabilidade $1-p$. 
 
 $\begin{aligned}
 X &\sim Bernoulli(p)\\
@@ -343,7 +343,7 @@ axis(2, at= c(0, p, 1), labels=c(0, "1-p", "p", 1), cex.axis=1.5, las=1)
 
 
 
-## Modo 2 - Exemplo $n=2$  {.smaller}
+## Modo 2 - Exemplo $n=2$  {.smaller .build}
 
 > Todas as combinações possíveis de amostras com $n=2$ são:
 
@@ -368,7 +368,7 @@ Var(\hat{p}) &= \mathbb E[(\hat{p} - p)^2 ] \\
 
 Seja $X$ uma v.a. com média $\mu$ e variância $\sigma^{2}$ e $X_{1}, \ldots, X_{n}$ uma amostra aleatória simples de $X$. 
 
-A média amostral
+> A média amostral
 $$\bar X_n = \frac{1}{n}\sum_{i=1}^n X_i$$ 
 tem as seguintes propriedades:
 
@@ -376,11 +376,11 @@ tem as seguintes propriedades:
 
 (propriedade de linearidade da esperança e da variância, esta última em caso de independência)
 
-Ou seja, embora $\mu$ seja desconhecido, sabemos que o valor esperado da média amostral é $\mu$. 
+> Ou seja, embora $\mu$ seja desconhecido, sabemos que o valor esperado da média amostral é $\mu$. 
 
-Além disso, conforme o tamanho amostral aumenta, a imprecisão da média amostral para estimar $\mu$ fica cada vez menor, pois $Var(\bar X) = \sigma^2/n$ é inversamente proporcional ao tamanho amostral $n$.
+> Além disso, conforme o tamanho amostral aumenta, a imprecisão da média amostral para estimar $\mu$ fica cada vez menor, pois $Var(\bar X) = \sigma^2/n$ é inversamente proporcional ao tamanho amostral $n$.
 
-## Resultado  {.build .smaller}
+## Resultado  {.smaller}
 
 Seja $X$ uma v.a. com distribuição de Bernoulli com parâmetro $p$. Sabe-se que $E(X)=p$ e $Var(X)=p(1-p)$.
 
@@ -388,7 +388,7 @@ A proporção amostral
 $$\hat{p} = \frac{1}{n}\sum_{i=1}^n X_i$$ 
 tem as seguintes propriedades:
 
-> $$\mathbb E (\hat{p}) = p \qquad \mbox{e} \qquad Var(\hat{p}) = \frac{p(1-p)}{n}.$$ 
+ $$\mathbb E (\hat{p}) = p \qquad \mbox{e} \qquad Var(\hat{p}) = \frac{p(1-p)}{n}.$$ 
 
 (propriedade de linearidade da esperança e da variância, esta última em caso de independência)
 
@@ -488,7 +488,7 @@ stat_function(fun = dnorm, args = list(mean = 0.6, sd = sqrt(0.6*.4/n)),col="red
 
 > * Modo 2: respostas são v.a.'s $X\sim Bernoulli(p)$, $E(X)=p$, $Var(X)=p(1-p)$.
 
-> * Em ambos os casos, a partir do momento que retiro uma amostra aleatória de tamanho $n$, temos as mesmas propriedades e comportamento para a proporção amostral $\hat{p}$: $E(\hat{p})=p$ e Var(\hat{p})=\frac{p(1-p)}{n}$
+> * Em ambos os casos, a partir do momento que retiro uma amostra aleatória de tamanho $n$, temos as mesmas propriedades e comportamento para a proporção amostral $\hat{p}$: $E(\hat{p})=p$ e $Var(\hat{p})=\frac{p(1-p)}{n}$
 
 > E, conforme $n$ aumenta, vimos nos gráficos que: $\hat{p}\sim \mathcal{N}\left(p,\frac{p(1-p)}{n}\right)$
 
@@ -780,28 +780,24 @@ stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(vari/n)),col="red") 
 
 ## Modo 2
 
-Suponha que o salário de uma pessoa possa ser representado por uma **variável aleatória** contínua $X\sim U(1000,5000)$. 
+Suponha que o salário de uma pessoa possa ser representado por uma **variável aleatória** uniforme discreta assumindo os valores 1000,2000, 3000, 4000 ou 5000. 
 
 $\begin{aligned}
-X &\sim U(1000,5000)\\
-\mu=\mathbb E(X) &= \frac{1000+5000}{2}=3000 \\ 
-\sigma^2=Var(X) &= \frac{(5000-1000)^2}{12}=1333333
+\mu=\mathbb E(X) &= \frac{1000+2000+3000+4000+5000}{5}=3000 \\ 
+\sigma^2=Var(X) &= \frac{1}{5}[(1000-3000)^2+(2000-3000)^2+(3000-3000)^2\\
+&+(4000-3000)^2+(5000-3000)^2]\\
+&= 2000000
 \end{aligned}$
 
 ## Modo 2 
 
 Distribuição da variável $X$ (do salário de cada indivíduo da população): 
 
-```{r,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE}
-df <- data.frame(PF = runif(1000000,min=1000,max=5000))
-ggplot(df, aes(x = PF)) + 
-    geom_histogram(aes(y =..density..),
-                   breaks = seq(1000, 5000, by = 50), 
-                   colour = "black", 
-                   fill = "blue") + xlab(" ") + ylab(" ") 
+```{r,echo=FALSE,fig.align='center'}
+namess <- c("1000","2000","3000","4000","5000")
+barplot(c(rep(1/5,5)), names.arg=namess, col="blue", main="", 
+            cex.lab=1.0, cex.axis=1.0, cex.names=1.0, cex.main=2, las=2)
 ```
-
-
 
 
 
@@ -812,7 +808,7 @@ ggplot(df, aes(x = PF)) +
 > $\displaystyle \mathbb E(\bar{X}) = \frac{1}{n}\sum_{i=1}^n \mathbb E (X_i)= E(X)=\mu=3000$
 
 > $\begin{aligned}
-Var(\bar{X}) &= \frac{1}{n}\sum_{i=1}^n Var (X_i)= \frac{Var(X)}{n}=\frac{\sigma^2}{n}=666666.5\\
+Var(\bar{X}) &= \frac{1}{n}\sum_{i=1}^n Var (X_i)= \frac{Var(X)}{n}=\frac{\sigma^2}{n}=1000000\\
 \end{aligned}$
 
 (propriedades de linearidade da esperança e variância (a.a.))
@@ -840,7 +836,7 @@ Além disso, conforme o tamanho amostral aumenta, a imprecisão da média amostr
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 N=1000000
 n=100
-xx <- runif(N,min=1000,max=5000)
+xx=sample(x=c(1000,2000,3000,4000,5000),size=N,replace=TRUE)
 B=100000
 bb <- matrix(NA,nrow=B,ncol=n)
 for (i in 1:B)
@@ -868,7 +864,7 @@ ggplot(df, aes(x = PF)) +
                    breaks = seq(min(aa$phat), max(aa$phat), by = 10), 
                    colour = "black", 
                    fill = "blue") +  geom_vline(xintercept=mu, color="red") +
-stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(vari/n)),col="red") + xlab(" ") + ylab(" ") + ylim(0,0.012)+xlim(2000,4000)
+stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(vari/n)),col="red") + xlab(" ") + ylab(" ") + ylim(0,0.01)+xlim(2000,4000)
 ```
 
 ## Modo 2 - Exemplo $n=1000$
@@ -877,7 +873,7 @@ stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(vari/n)),col="red") 
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 N=1000000
 n=1000
-xx <- runif(N,min=1000,max=5000)
+xx=sample(x=c(1000,2000,3000,4000,5000),size=N,replace=TRUE)
 B=100000
 bb <- matrix(NA,nrow=B,ncol=n)
 for (i in 1:B)
@@ -905,7 +901,7 @@ ggplot(df, aes(x = PF)) +
                    breaks = seq(min(aa$phat), max(aa$phat), by = 10), 
                    colour = "black", 
                    fill = "blue") +  geom_vline(xintercept=mu, color="red") +
-stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(vari/n)),col="red") + xlab(" ") + ylab(" ") + ylim(0,0.012)+xlim(2000,4000)
+stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(vari/n)),col="red") + xlab(" ") + ylab(" ") + ylim(0,0.01)+xlim(2000,4000)
 ```
 
 
