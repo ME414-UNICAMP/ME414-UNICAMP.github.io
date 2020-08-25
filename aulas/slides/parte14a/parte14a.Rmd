@@ -482,17 +482,15 @@ stat_function(fun = dnorm, args = list(mean = 0.6, sd = sqrt(0.6*.4/n)),col="red
 ```
 
 
-## Resumo dos exemplos:
+## Resumo dos exemplos {.build}
 
-Tanto pensando que temos uma população "fixa" e retira-se uma amostra aleatória (Modo 1) ou assumindo que cada pessoa da população tenha resposta de acordo com uma variável aleatória e retira-se uma amostra aleatória (Modo 2), temos as mesmas propriedades e comportamento para a proporção amostral $\hat{p}$ a partir de uma amostra de tamanho $n$:
+> * Modo 1: repostas são "fixas", com média populacional $p$ e variância populacional $p(1-p)$.
 
-$$E(\hat{p})=p$$
+> * Modo 2: respostas são v.a.'s $X\sim Bernoulli(p)$, $E(X)=p$, $Var(X)=p(1-p)$.
 
-$$Var(\hat{p})=\frac{p(1-p)}{n}$$
+> * Em ambos os casos, a partir do momento que retiro uma amostra aleatória de tamanho $n$, temos as mesmas propriedades e comportamento para a proporção amostral $\hat{p}$: $E(\hat{p})=p$ e Var(\hat{p})=\frac{p(1-p)}{n}$
 
-E, conforme $n$ aumenta, vimos nos gráficos que:
-
-$$\hat{p}\sim \mathcal{N}\left(p,\frac{p(1-p)}{n}\right)$$
+> E, conforme $n$ aumenta, vimos nos gráficos que: $\hat{p}\sim \mathcal{N}\left(p,\frac{p(1-p)}{n}\right)$
 
 
 ## Estimar uma média: Salários {.build}
