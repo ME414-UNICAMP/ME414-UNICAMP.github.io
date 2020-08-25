@@ -591,7 +591,7 @@ vari <- sum( ((as.numeric(as.character(ff$Var1)) - esp )^2)*ff$Prop)
 $$\begin{eqnarray} 
 E(\bar{X})&=&`r esp`=\mu\\
 Var(\bar{X})&=&E[(\bar{X}-\mu)^2]=`r vari`\\
-&=\frac{2000000}{2}=\frac{\sigma^2}{n}
+&=&\frac{2000000}{2}=\frac{\sigma^2}{n}
 \end{eqnarray}$$
 
 ## Modo 1 - Exemplo $N=5$ e $n=2$
