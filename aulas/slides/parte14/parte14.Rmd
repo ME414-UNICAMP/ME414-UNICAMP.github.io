@@ -969,14 +969,13 @@ Então $\mathbb E(X_i) = \frac{1}{2}$ e $Var(X_i) = \frac{1}{4}$.
 
 Suponha que $X_{i}$ modela o tempo de vida de um transistor em horas. Os tempos de vida de 100 transistores são coletados. Desejamos estudar a variável aleatória $\bar X_{100}$ (média amostral de uma amostra de tamanho 100). 
 
-Sabemos:
-$$\mathbb E(\bar X_{100}) = \mathbb E\left(\frac{1}{n}\sum_{i=1}^{100} X_i \right)=\frac{1}{n}\sum_{i=1}^{100}\mathbb E(X_i) =\frac{1}{2}$$ 
+
 
 ## Exemplo {.build}
 
+$$\mathbb E(\bar X_{100}) = \mathbb E\left(\frac{1}{n}\sum_{i=1}^{100} X_i \right)=\frac{1}{n}\sum_{i=1}^{100}\mathbb E(X_i) =\frac{1}{2}$$ 
 
 $$ Var(\bar X_{100}) = \frac{1/4}{100} = \frac{1}{400}$$
-
 Pelo TLC, temos que: $\displaystyle \bar X_{n}\sim N \left(\frac{1}{2},\frac{1}{400}\right)$
 
 
@@ -1205,60 +1204,12 @@ Você pode verificar o comportamento de $\bar X$ para várias distribuições de
 [TCL para médias](https://gallery.shinyapps.io/CLT_mean/)
 
 
-# Aproximação da Binomial pela Normal
 
-## Aproximação da Binomial pela Normal {.build}
-
-> Consideremos uma população em que a proporção de indivíduos portadores de uma certa característica seja $p$. 
-$$ X_{i} = \left\{
-\begin{array}{ll}
-1, & \mbox{se o indivíduo i possui a característica} \\
-0, & \mbox{caso contrário} \\
-\end{array}
-\right.$$ 
-
-> Veja que $X_{i}\sim Bernoulli(p)$; $i = 1, 2, \ldots, n$. 
-
-> Se as observações são independentes: $S_{n} = X_{1} + \ldots + X_{n} \sim  Bin(n,p)$. 
-
-> Após a coleta de uma amostra aleatória simples de $n$ indivíduos, podemos considerar que um estimador de $p$ é dado por: 
-
-> $$\widehat{p} = \frac{S_{n}}{n} \quad \mbox{(média amostral)}.$$
 
 
 ## Aproximação da Binomial pela Normal {.build}
 
-Utilizando a distribuição exata (n pequeno):
-$$P\left(\widehat p = \frac{k}{n}\right) = P\left(\frac{S_{n}}{n} = \frac{k}{n}\right) = P\left(S_{n} = k\right) = {n \choose k} p^{k} \left(1-p\right)^{n-k},$$  
-para $k=0,1,...,n$. 
-
-
-> Utilizando a aproximação para a Normal (n grande): 
-$$\widehat p \sim N\left(p, \frac{p(1-p)}{n} \right)$$
-
-
-## Exemplo {.build}
-
-Se $p$ for a proporção de fumantes no estado de SP ($p=0.2$) e tivermos coletado uma amostra aleatória simples de 500 indivíduos:
-$$ X_{i} = \left\{
-\begin{array}{ll}
-1, & \mbox{se o indivíduo i é fumante} \\
-0, & \mbox{caso contrário} \\
-\end{array}
-\right.$$
-
-Qual a probabilidade de que termos observado não mais que 25% de fumantes na amostra?
-
-> O estimador de $p$ é: $\widehat p = \frac{1}{500} \sum_{i=1}^{500} X_i$. 
-
-> Pela aproximação Normal, $\widehat p \sim N\left(0.2, \frac{0.2\times0.8}{500}\right) = N \left(0.2, 0.00032 \right)$ 
-
-> $$P\left( \widehat p \leq 0.25 \right) = P \left(Z\leq 2.795 \right) = \Phi\left(2.795 \right) = 0.9974$$
-
-
-## Aproximação da Binomial pela Normal {.build}
-
-> Se $\quad \widehat p = \frac{S_n}{n} \quad \Longrightarrow \quad S_n = n\widehat p$. 
+> Se $\quad \widehat p = \frac{\sum_{i=1}^n X_i}{n}=\frac{S_n}{n} \quad \Longrightarrow \quad S_n = n\widehat p$. 
 
 > Quando $n$ é grande o suficiente: $\quad \widehat p \sim N \left(p, \frac{p(1-p)}{n}\right)$ 
 
@@ -1272,30 +1223,13 @@ $$S_n = n \widehat p \sim N \left(np, np(1-p) \right)$$
 > Portanto, quando $n$ é grande, $Bin(n, p) \approx N \left(np, np(1-p) \right)$ 
 
 
-## Exemplo {.build}
-
-Seja $X \sim Bin(100, 0.4)$. 
-
-Qual a probabilidade de $X$ ser menor ou igual a $50$?
-
-Sabemos que:
-
-* $\mathbb E(X) = 100 \times0.4 = 40$ 
-
-* $Var(X) = 100 \times 0.4 \times0.6 = 24$ 
-
-Como $n$ é grande, podemos usar a aproximação $X \approx N(40,24)$. Portanto, 
-
-$$P\left( X \leq 50 \right) = P\left(Z \leq \frac{50-40}{\sqrt{24}}\right) \approx \Phi \left( \frac{10}{\sqrt{24}} \right) = \Phi \left(2.04 \right) \approx 0.9793$$
-
-
 # Fundamentos de Inferência
 
 ## Introdução {.build}
 
 <img src="figuras/InferenceGraphicSU17.png" width=350 style="float: right; margin-left: 30px">
 
-> Um dos principais objetivos da Estatística é tirar conclusões a partir dos dados.
+Um dos principais objetivos da Estatística é tirar conclusões a partir dos dados.
 
 > Dados em geral consistem de uma amostra de elementos de uma população de interesse.
 
@@ -1304,7 +1238,7 @@ $$P\left( X \leq 50 \right) = P\left(Z \leq \frac{50-40}{\sqrt{24}}\right) \appr
 > Quão confiável será utilizar a informação obtida apenas de uma amostra para concluir algo sobre a população?
 
 
-## Introdução {.build}
+## Introdução
 
 <img src="figuras/InferenceGraphicSU17.png" width=350 style="float: right; margin-left: 30px">
 
@@ -1354,10 +1288,11 @@ $$P\left( X \leq 50 \right) = P\left(Z \leq \frac{50-40}{\sqrt{24}}\right) \appr
 
 > Note que uma estatística é uma função que em uma determinada amostra assume um valor específico (estimativa).
 
+<sub>[Fonte da imagem](http://www.portalaction.com.br/inferencia-0)</sub>
 
 ## Estatística {.build}
 
-<img src="figuras/Parametros.jpg" width=550 style="float: right; margin-left: 30px">
+<img src="figuras/Parametros.png" width=550 style="float: right; margin-left: 30px">
 
 Para que serve uma estatística? 
 
@@ -1366,12 +1301,12 @@ Para "estimar" características de uma população.
 > **População:**
 
 * Média $\mu$
-* Variância $\sigma^2$
+* Proporção $p$
 
 > **Amostra:**
 
 * Média Amostral $\bar X = \frac{1}{n} \sum_{i=1}^{n} X_i$
-* Variância Amostral $S^2 = \frac{1}{n} \sum_{i=1}^n(X_i - \bar X)^2$ 
+* Proporção Amostral $\hat{p}=\frac{1}{n} \sum_{i=1}^{n} X_i$
 
 
 ## Exemplo {.build}
@@ -1384,7 +1319,7 @@ Temos interesse em saber a média e a variância da altura dos brasileiros: $\mu
 
 > **Solução 2:** Selecionar de forma aleatória alguns brasileiros (amostra), analisá-la e inferir propriedades para toda a população.
 
-
+<sub>[Fonte da imagem](http://www.portalaction.com.br/inferencia-0)</sub>
 
 ## Parâmetro {.build}
 
@@ -1403,13 +1338,23 @@ Temos interesse em saber a média e a variância da altura dos brasileiros: $\mu
 <img src="figuras/Sampling_.jpg" width=550>
 </center>
 
+<sub>[Fonte da imagem](https://sphweb.bumc.bu.edu/otlt/MPH-Modules/BS/BS704_BiostatisticsBasics/BS704_BiostatisticsBasics2.html)</sub>
+
 ## Leituras
+
+
+<img src="figuras/tirinha.jpg" width=550 style="float: right; margin-left: 30px">
+
+
+
 
 * [Ross](http://www.sciencedirect.com/science/article/pii/B9780123743886000077): capítulo 7. 
 * [OpenIntro](https://www.openintro.org/stat/textbook.php): seção 4.1.
 * Magalhães: capítulo 7.
 
 <br /><br />
+
+
 
 Slides produzidos pelos professores:
 
@@ -1418,3 +1363,5 @@ Slides produzidos pelos professores:
 * Tatiana Benaglia
 
 * Benilton Carvalho
+
+<sub>[Fonte da imagem](https://f.i.uol.com.br/fotografia/2018/08/29/15355904245b874018219ac_1535590424_3x2_md.jpg)</sub>
