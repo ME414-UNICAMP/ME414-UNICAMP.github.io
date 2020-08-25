@@ -58,6 +58,8 @@ Para acessar livros digitais fora da Unicamp, você precisará do VPN. Veja inst
 
 [Widget para cálculo da Normal](https://www.wolframalpha.com/widgets/gallery/view.jsp?id=9bd010a31f27d2500aede72eb5852af2)
 
+[Widget para cálculo da Normal e outras distribuições](https://gallery.shinyapps.io/dist_calc/)
+
 ### Horários de atendimento
 
 Dúvidas relacionadas aos slides e exercícios podem ser discutidas em todos os atendimentos.

@@ -7,259 +7,952 @@ output:
 logo: ../logo-imecc.png
 ---
 
+# Distribuição amostral e Teorema Central do Limite
 
-# Fundamentos de Inferência
+## Estimar uma proporção: Eleições para a prefeitura {.build}
 
-## Introdução {.build}
+<img src="figuras/image-from-rawpixel-id-409554-original.jpg" width=270 style="float: right; margin-left: 30px">
 
-<img src="figuras/population-vs-sample.jpg" width=270 style="float: right; margin-left: 30px">
 
-> Um dos principais objetivos da Estatística é tirar conclusões a partir dos dados.
+> * Quero saber se o candidato $A$ vai ganhar as eleições para prefeito.
 
-> Dados em geral consistem de uma amostra de elementos de uma população de interesse.
+> * Quero saber parâmetro populacional $p$ = proporção de pessoas que votam em $A$.
 
-> O objetivo é usar a amostra e tirar conclusões sobre a população.
+> * Posso esperar o resultado das eleições para saber, ou seja, teríamos as respostas de todas as pessoas da cidade.
 
-> Quão confiável será utilizar a informação obtida apenas de uma amostra para concluir algo sobre a população?
+> * Posso usar uma amostra para estimar a proporção de votos para $A$.
 
+> * Quão boa é a estimativa? É precisa? 
 
-## Introdução {.build}
+> * Posso pensar no problema de duas formas: Modo 1 e Modo 2.
 
-<img src="figuras/population-vs-sample.jpg" width=270 style="float: right; margin-left: 30px">
 
-<br />
+## Modo 1 {.build}
 
-**População**: todos os elementos ou resultados de um problema que está sendo estudado.
+<img src="figuras/image-from-rawpixel-id-439565-original.jpg" width=270 style="float: right; margin-left: 30px">
 
-<br />
-**Amostra:** qualquer subconjunto da população que contém os elementos que podem ser observados e é onde as quantidades de interesse podem ser medidas. 
 
+> * Cidade com $N$ pessoas.
 
-## Inferência Estatística {.build}
+> * $X_i = 1$ se a pessoa $i$ vota em $A$
 
-<img src="figuras/inferencia.PNG" width=550 style="float: right; margin-left: 30px">
+> * $X_i=0$ se a pessoa $i$ não vota em $A$.
 
-**Variável Aleatória**: Característica numérica do resultado de um experimento.
+> * $\mathbf{X}=(X_1,X_2,\ldots,X_N)$: respostas de toda a população (temos no dia da eleição).
 
-**Parâmetros**: Característica numérica (desconhecida) da distribuição dos elementos da população.
+> * Média populacional: $$p=\frac{1}{N}\sum_{i=1}^N X_i$$
 
-**Estimador/Estatística**: Função da amostra, construída com a finalidade de representar, ou estimar um parâmetro de interesse na população. 
+<!-- Repare que aqui, nao estou falando de variáveis aleatórias, temos apenas dados das pessoas da cidade -->
+<!-- Estou calculando a média populacional e a variancia, conforme vimos nas estatísticas descritivas -->
 
-**Estimativa**: Valor numérico que um estimador assume para uma dada amostra.
+## Modo 1 {.smaller}
 
-**Erro amostral:** é a diferença entre um estimador e o parâmetro que se quer estimar.
+<img src="figuras/image-from-rawpixel-id-408061-original.jpg" width=270 style="float: right; margin-left: 30px">
 
 
-## Inferência Estatística 
+* Variância populacional:
 
-<center><img src="figuras/IntencaoVoto.jpeg" width=650></center>
+$$\begin{eqnarray} 
+\sigma^2&=&\frac{1}{N}\sum_{i=1}^N(X_i-p)^2\\
+&=&\frac{1}{N}\sum_{i=1}^N(X_i^2-2pX_i+p^2)\\
+&=&\frac{\sum_{i=1}^N X_i^2-2p\sum_{i=1}^N X_i+\sum_{i=1}^N p^2}{N}\\
+&=&\frac{\sum_{i=1}^N X_i-2p\sum_{i=1}^N X_i+\sum_{i=1}^N p^2}{N}\\
+&=&\frac{Np-2pNp+Np^2}{N}=p(1-p)
+\end{eqnarray}$$
 
 
-## Estatística {.build}
+## Modo 1 {.build}
 
-<img src="figuras/inferencia.PNG" width=500 style="float: right; margin-left: 30px">
+> * $p$ = proporção de pessoas que votam em $A$ na cidade
 
-> Seja $X_{1},...,X_{n}$ uma amostra e $$T = f(X_{1}, \ldots, X_{n})$$ é uma estatística.
+> * $\sigma^2=p(1-p)$ é a variância da população.
 
-**Exemplos:**
+> * Até o dia da eleição, não sabemos $p$.
 
-> * $\bar X_{n}=\frac{1}{n}\sum_{i=1}^{n}X_{i}=\frac{1}{n}(X_{1}+...+X_{n})$
+> * Coletamos uma amostra aleatória de tamanho $n$ para uma pesquisa eleitoral.
 
-> * $X_{(1)}=min\{X_{1},...,X_{n}\}$ ou $X_{(n)}=max\{X_{1},...,X_{n}\}$
+> * $\hat{p}$: proporção de pessoas que votam em $A$ na amostra.
 
-> * $X_{(i)}$ é o i-ésimo valor da amostra ordenada 
+> * Quão boa é a estimativa? É precisa? 
 
-> Note que uma estatística é uma função que em uma determinada amostra assume um valor específico (estimativa).
+> * Se outra pessoa também coleta uma amostra aleatória de tamanho $n$ e calcula $\hat{p}$ teremos o mesmo valor?
 
+## Modo 1 - Exemplo $N=5$ e $n=2$ {.build}
 
-## Estatística {.build}
 
-<img src="figuras/Parametros.jpg" width=550 style="float: right; margin-left: 30px">
+$$\mathbf{X}=(X_1,X_2,\ldots,X_5)=(1,0,1,0,1)$$
 
-Para que serve uma estatística? 
+$$p=\frac{\sum_{i=1}^5X_i}{5}=\frac{3}{5}=0.6$$
 
-Para "estimar" características de uma população. 
+$$\begin{eqnarray} 
+\sigma^2&=&\frac{1}{5}\sum_{i=1}^N(X_i-p)^2\\
+&=&\frac{3\times(1-0.6)^2+2\times(0-0.6)^2}{5}\\
+&=&0.24\\
+&=&p(1-p)
+\end{eqnarray}$$
 
-> **População:**
+## Modo 1 - Exemplo $N=5$ e $n=2$
 
-* Média $\mu$
-* Variância $\sigma^2$
+Gráfico de barras (proporção) dos dados populacionais:
 
-> **Amostra:**
+```{r,echo=FALSE,fig.align='center'}
+namess <- c("0","1")
+barplot(c(0.4,0.6), names.arg=namess, col="blue", main="", 
+            cex.lab=1.0, cex.axis=1.0, cex.names=1.0, cex.main=2, las=2)
+```
 
-* Média Amostral $\bar X = \frac{1}{n} \sum_{i=1}^{n} X_i$
-* Variância Amostral $S^2 = \frac{1}{n} \sum_{i=1}^n(X_i - \bar X)^2$ 
 
+## Modo 1 - Exemplo $N=5$ e $n=2$ {.smaller}
 
-## Exemplo {.build}
+$N^n=25$ amostras possíveis.
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+library(kableExtra)
+aa <- expand.grid(1:5,1:5)
+xx <- c(1,0,1,0,1)
+phat <- unlist(apply(aa,1,function(x) mean(xx[x])))
+aa$phat <- phat
+#colnames(aa) <- c("Pessoa amostrada 1","Pessoa amostrada 2","$\\hat{p}$")
+kable(aa,align = 'ccc',col.names = c("Primeira pessoa","Segunda pessoa","$\\hat{p}$"))
+```
 
-Temos interesse em conhecer a média e variância das alturas dos brasileiros adultos. Sabemos que a distribuição das alturas pode ser representada por um modelo normal. 
+## Modo 1 - Exemplo $N=5$ e $n=2$ {.build}
 
-<img src="figuras/inferencia2.PNG" width=550>
+Distribuição **amostral** de $\hat{p}$:
 
-> **Solução 1:** Medir a altura de todos os brasileiros adultos (censo).
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+ff <- as.data.frame(table(aa$phat))
+ff$Prop=ff$Freq/(sum(ff$Freq))
+kable(ff[,c(1,3)],align = 'cc',col.names = c("$x$","$P(\\hat{p}=x)$"))
+```
 
-> **Solução 2:** Selecionar de forma aleatória algumas pessoas (amostra), analisá-las e inferir propriedades para toda a população.
+$$\begin{eqnarray} 
+E(\hat{p})&=&0\times 0.16 + 0.5\times 0.48 + 1\times 0.36 = 0.6 = p\\
+Var(\hat{p})&=&E[(\hat{p}-p)^2]\\
+&=&0.16\times(0-0.6)^2 + 0.48\times(0.5-0.6)^2 + 0.36\times (1-0.6)^2\\
+&=&0.12=\frac{0.24}{2}=\frac{p(1-p)}{n}
+\end{eqnarray}$$
 
+## Modo 1 - Exemplo $N=5$ e $n=2$
 
+Distribuição amostral de $\hat{p}$:
 
-## Exemplo {.build}
+```{r,echo=FALSE,fig.align='center'}
+namess <- as.character(round(as.numeric(as.character(ff$Var1)),2))
+barplot(ff$Prop, names.arg=namess, col="blue", main="", 
+            cex.lab=1.0, cex.axis=1.0, cex.names=1.0, cex.main=2, las=2)
+```
 
-Seja $\theta$ a proporção de alunos na Unicamp que concorda com a presença da PM no campus.
 
-> * Inviável perguntar para todos os estudantes: coleta-se uma amostra. 
+## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
 
-> * Planejamento amostral:  obter uma amostra aleatória simples de tamanho $n=100$ alunos, sem reposição. 
+$N^n=125$ amostras possíveis.
 
-> * Cada $X_{i}$, $i=1,...,100$, vai assumir o valor 1 se o aluno $i$ concorda com presença da PM, e 0 se não. 
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+library(kableExtra)
+aa <- expand.grid(1:5,1:5,1:5)
+xx <- c(1,0,1,0,1)
+phat <- unlist(apply(aa,1,function(x) mean(xx[x])))
+aa$phat <- round(phat,3)
+#colnames(aa) <- c("Pessoa amostrada 1","Pessoa amostrada 2","$\\hat{p}$")
+kable(aa[1:25,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\hat{p}$"))
+```
 
-> * Estatística: $T = \frac{X_{1} + \ldots + X_{100}}{100}$ (proporção amostral) 
+## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
 
-> * Uma vez que a coleta foi implementada, $T$ assume um valor, por exemplo, 0.63, que será usado para estimar $\theta$, ou seja, $\widehat \theta = 0.63$.
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[26:50,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\hat{p}$"))
+```
 
+## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
 
-## Parâmetro {.build}
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[51:75,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\hat{p}$"))
+```
 
-> *  Cada quantidade de interesse (como $\theta$ no exemplo anterior) é chamada de parâmetro da população. 
+## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
 
-> *  Para apresentar uma estimativa de um parâmetro ($\widehat \theta$), devemos escolher uma estatística ($T$). 
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[76:100,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\hat{p}$"))
+```
 
-> *  Note que da maneira que o plano amostral foi executado (amostra aleatória simples), a estatística $T$ é uma variável aleatória, visto que cada vez que executarmos o plano amostral poderemos obter resultados diversos.
 
-> *  Portanto, a estatística $T$ possui uma distribuição de probabilidade, chamada de **distribuição amostral** de T.
 
+## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
 
-# Distribuição Amostral
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[101:125,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\hat{p}$"))
+```
 
-## Exemplo {.build}
 
-Imagine um fenômeno de interesse que possa ser representado por uma v.a. $X$ que assume os valores $1$ ou $2$ com igual probabilidade.
+## Modo 1 - Exemplo $N=5$ e $n=3$ 
 
-Nesse caso,
+Distribuição **amostral** de $\hat{p}$:
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+ff <- as.data.frame(table(aa$phat))
+ff$Prop=round(ff$Freq/(sum(ff$Freq)),3)
+kable(ff[,c(1,3)],align = 'cc',col.names = c("$x$","$P(\\hat{p}=x)$"))
+```
+
+$$\begin{eqnarray} 
+E(\hat{p})&=&0\times 0.064 + 0.333\times 0.288 + 0.667\times 0.432 + 1\times 0.216\\
+&=& 0.6 = p\\
+Var(\hat{p})&=&E[(\hat{p}-p)^2]\\
+&=&0.08=\frac{0.24}{3}=\frac{p(1-p)}{n}
+\end{eqnarray}$$
+
+## Modo 1 - Exemplo $N=5$ e $n=3$
+
+Distribuição amostral de $\hat{p}$:
+
+```{r,echo=FALSE,fig.align='center'}
+namess <- as.character(round(as.numeric(as.character(ff$Var1)),2))
+barplot(ff$Prop, names.arg=namess, col="blue", main="", 
+            cex.lab=1.0, cex.axis=1.0, cex.names=1.0, cex.main=2, las=2)
+```
+
+
+## Modo 1
+
+<img src="figuras/image-from-rawpixel-id-408061-original.jpg" width=270 style="float: right; margin-left: 30px">
+
+* $\mathbf{X}=(X_1,\ldots,X_N)$ é fixo
+
+* Amostra aleatória de tamanho $n$
+
+* $\hat{p}$ é v.a. (pelo processo de amostragem)
+
+* $E(\hat{p})=p$
+
+* $Var(\hat{p})=\frac{p(1-p)}{n}$
+
+
+
+## Modo 1 - Exemplo $N=1000000$ e $n=100$
+
+
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+N=1000000
+n=100
+n1 = ceiling(N*.6)
+n2= N-n1
+xx <- c(rep(1,n1),rep(0,n2))
+B=100000
+bb <- matrix(NA,nrow=B,ncol=n)
+for (i in 1:B)
+{
+  bb[i,] <- sample(1:N,n,replace=TRUE)
+}
+phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+aa <- data.frame(bb)
+aa$phat <- round(phat,3)
+```
+
+
+$p=0.6$. Distribuição **amostral** de $\hat{p}$:
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+ff <- as.data.frame(table(aa$phat))
+ff$Prop=round(ff$Freq/(sum(ff$Freq)),3)
+```
+
+
+```{r,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE}
+library(ggplot2)
+df <- data.frame(PF = aa$phat)
+ggplot(df, aes(x = PF)) + 
+    geom_histogram(aes(y =..density..),
+                   breaks = seq(min(aa$phat), max(aa$phat), by = .01), 
+                   colour = "black", 
+                   fill = "blue") +  geom_vline(xintercept=0.6, color="red") + 
+stat_function(fun = dnorm, args = list(mean = 0.6, sd = sqrt(0.6*.4/n)),col="red") + xlab(" ") + ylab(" ") + ylim(0,30) + xlim(0.4,0.8)
+```
+
+
+## Modo 1 - Exemplo $N=1000000$ e $n=1000$
+
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+N=1000000
+n=1000
+n1 = ceiling(N*.6)
+n2= N-n1
+xx <- c(rep(1,n1),rep(0,n2))
+B=100000
+bb <- matrix(NA,nrow=B,ncol=n)
+for (i in 1:B)
+{
+  bb[i,] <- sample(1:N,n,replace=TRUE)
+}
+phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+aa <- data.frame(bb)
+aa$phat <- round(phat,3)
+```
+
+
+$p=0.6$. Distribuição **amostral** de $\hat{p}$:
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+ff <- as.data.frame(table(aa$phat))
+ff$Prop=round(ff$Freq/(sum(ff$Freq)),3)
+```
+
+
+```{r,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE}
+df <- data.frame(PF = aa$phat)
+ggplot(df, aes(x = PF)) + 
+    geom_histogram(aes(y =..density..),
+                   breaks = seq(min(aa$phat), max(aa$phat), by = .003), 
+                   colour = "black", 
+                   fill = "blue") +  geom_vline(xintercept=0.6, color="red") +
+stat_function(fun = dnorm, args = list(mean = 0.6, sd = sqrt(0.6*.4/n)),col="red") + xlab(" ") + ylab(" ") + ylim(0,30)+xlim(0.4,0.8)
+```
+
+
+
+## Modo 2 {.build}
+
+> Suponha que a resposta de uma pessoa da cidade sobre se vota ou não no candidato $A$ possa ser representada por uma **variável aleatória**. $X$ que assume o valor $1$ com probabilidade $p$ ou $0$ com probabilidade $1-p$. 
 
 $\begin{aligned}
-\mu = \mathbb E(X) &= 1 \times P(X=1) + 2 \times P(X=2) \\ 
-&= 1\times \frac{1}{2} + 2\times \frac{1}{2} = \frac{3}{2}
+X &\sim Bernoulli(p)\\
+\mathbb E(X) &= 1 \times P(X=1) + 0 \times P(X=0) \\ 
+&= 1\times p + 0\times (1-p) = p\\
+Var(X) &= \mathbb E[(X - p)^2] \\
+&= (1-p)^2 \times P(X=1) + (0 - p)^2 \times P(X=0) \\
+&=p(1-p)^2+(1-p)p^2\\
+&= p(1-p)
 \end{aligned}$
 
-<br /> 
-$\begin{aligned}
-\sigma^2 &= Var(X) = \mathbb E[(X - \mu)^2] \\
-&= (1-1.5)^2 \times P(X=1) + (2 - 1.5)^2 \times P(X=2) \\
-&= \frac{1}{4}
-\end{aligned}$
+## Modo 2 
+
+Distribuição da variável $X$: 
 
 
-## Exemplo {.build}
-
-Imagine que uma população de interesse tenha distribuição como a de $X$ definida anteriormente.
-
-> Imagine também que, embora saibamos que os valores possíveis sejam $1$ e $2$, não tenhamos conhecimento sobre suas respectivas probabilidades.
-
-> Isto é, se temos $N$ elementos nessa população, podemos pensar que a característica de interesse de cada elemento $i$ segue uma v.a. $X_i$ em que $P(X_i=1)=P(X_i=2)=1/2$, mas nós não sabemos disso.
-
-> Imagine que o interesse seja $\mu$.
-
-
-## Exemplo {.build}
-
-Vamos coletar uma amostra aleatória simples com reposição ($AAS_c$) de tamanho $n=2$ e calcular a média amostral.
-
-> Usaremos esta média amostral para estimar $\mu$.
-
-> Quão útil é esta estimativa que se baseia em apenas 2 elementos da população?
-
-> Quão precisa?
+```{r, echo=FALSE, fig.align='center'}
+p <- c(.3, .7)
+## Função de Massa
+par(mar=c(c(5, 4, 2, 1) + 0.1))
+barplot(p, names.arg=0:1, col="blue", ylim=c(0, 1.1), ylab="P(X=x)", xlab="x",  
+        cex.lab=1.5, cex.axis=1.2, cex.names=1.5, yaxt="n", main=" ")
+box(bty="l", lwd=2)
+axis(2, at= c(0, p, 1), labels=c(0, "1-p", "p", 1), cex.axis=1.5, las=1)
+```
 
 
-## Exemplo {.build }
-
-> Imagine que o aluno $A$ coleta uma $AAS_c$ com $n=2$ a partir da população, obtém os dados e calcula $\bar X$.
-
-> O aluno $B$ coleta uma $AAS_c$ com $n=2$ a partir da população, obtém os dados e calcula $\bar X$.
-
-> As duas médias amostrais serão necessariamente iguais?
-
-> A média amostral é uma v.a. e, portanto, tem uma distribuição de probabilidade.
 
 
-## Exemplo {.build .smaller}
+## Modo 2 - Exemplo $n=2$  {.smaller .build}
 
-> Todas as combinações possíveis de valores para o primeiro e para o segundo elemento amostrados segundo o plano $AAS_c$ com $n=2$ são:
+> Todas as combinações possíveis de amostras com $n=2$ são:
 
-Possibilidades        | $(X_1 = 1, X_2 = 1)$ | $(X_1 = 1, X_2 = 2)$ | $(X_1 = 2, X_2 = 1)$ | $(X_1=2,X_2=2)$
+Possibilidades        | $(X_1 = 1, X_2 = 1)$ | $(X_1 = 1, X_2 = 0)$ | $(X_1 = 0, X_2 = 1)$ | $(X_1=0,X_2=0)$
 ----------------------|----------------------|----------------------|----------------------|-----------------
-$\bar X$              | 1                    | 1.5                  | 1.5                  |   2
-$P(X_1 = i, X_2 = j)$ | 0.25                 | 0.25                 | 0.25                 | 0.25
+$\hat{p}=\frac{1}{n}\sum_{i=1}^nX_i$              | 1                    | 0.5                  | 0.5                  |   0
+$P(X_1 = i, X_2 = j)$ | $p^2$                | $p(1-p)$                 | $(1-p)p$                 | $(1-p)^2$
 
 <br />
 
-> $\displaystyle \mathbb E(\bar X) = 1 \times \frac{1}{4} + 1.5 \times \frac{1}{2} + 2 \times \frac{1}{4} = \frac{3}{2} = 1.5$
+> $\displaystyle \mathbb E(\hat{p}) = 1 \times p^2 + 0.5 \times p(1-p) + 0.5 \times (1-p)p + 0\times (1-p)^2= p$
 
 > $\begin{aligned}
-Var(\bar X) &= \mathbb E[(\bar X - \mathbb E(\bar X))^2 ] \\
-&= (1 - 1.5)^2 \times \frac{1}{4} + (1.5 - 1.5)^2 \frac{1}{2} + (2 - 1.5)^2 \frac{1}{4} = \frac{1}{8}
+Var(\hat{p}) &= \mathbb E[(\hat{p} - p)^2 ] \\
+&= (1 - p)^2 \times p^2 + (0.5 - p)^2 p(1-p) + (0.5 - p)^2 (1-p)p + (0 - p)^2 (1-p)^2 = \frac{p(1-p)}{2}
 \end{aligned}$
 
-> Note que: $\displaystyle \mathbb E(\bar X) = \mu = \mathbb E(X)$ e $\displaystyle Var(\bar X) = \frac{\sigma^2}{n} = \frac{Var(X)}{n}$.
+> Note que: $\displaystyle \mathbb E(\hat{p}) = p = \mathbb E(X)$ e $\displaystyle Var(\hat{p}) =  \frac{Var(X)}{n}$.
 
 
-## Exemplo
+## Resultado  {.build .smaller}
 
-Distribuição de probabilidade de $X$ (esquerda) e de $\bar X$ (direita):
+Seja $X$ uma v.a. com média $\mu$ e variância $\sigma^{2}$ e $X_{1}, \ldots, X_{n}$ uma amostra aleatória simples de $X$. 
 
-<center><img src="figuras/X_Xbar.png" width=500></center>
-
-
-## Distribuição Amostral {.build}
-
-**Resultado:** Seja $X$ uma v.a. com média $\mu$ e variância $\sigma^{2}$ e $X_{1}, \ldots, X_{n}$ uma amostra aleatória simples de $X$. A média amostral
-$$\bar X_n = \frac{X_1 + \ldots + X_n}{n}$$ 
+> A média amostral
+$$\bar X_n = \frac{1}{n}\sum_{i=1}^n X_i$$ 
 tem as seguintes propriedades:
 
 > $$\mathbb E (\bar X_n) = \mu \qquad \mbox{e} \qquad Var(\bar X_n) = \frac{\sigma^2}{n}.$$ 
 
+(propriedade de linearidade da esperança e da variância, esta última em caso de independência)
+
+> Ou seja, embora $\mu$ seja desconhecido, sabemos que o valor esperado da média amostral é $\mu$. 
+
+> Além disso, conforme o tamanho amostral aumenta, a imprecisão da média amostral para estimar $\mu$ fica cada vez menor, pois $Var(\bar X) = \sigma^2/n$ é inversamente proporcional ao tamanho amostral $n$.
+
+## Resultado  {.smaller}
+
+Seja $X$ uma v.a. com distribuição de Bernoulli com parâmetro $p$. Sabe-se que $E(X)=p$ e $Var(X)=p(1-p)$.
+
+A proporção amostral
+$$\hat{p} = \frac{1}{n}\sum_{i=1}^n X_i$$ 
+tem as seguintes propriedades:
+
+ $$\mathbb E (\hat{p}) = p \qquad \mbox{e} \qquad Var(\hat{p}) = \frac{p(1-p)}{n}.$$ 
+
+(propriedade de linearidade da esperança e da variância, esta última em caso de independência)
+
+Ou seja, embora $p$ seja desconhecido, sabemos que o valor esperado da proporção amostral é $p$. 
+
+Além disso, conforme o tamanho amostral aumenta, a imprecisão de $\hat{p}$ para estimar $p$ fica cada vez menor, pois $Var(\hat{p}) = p(1-p)/n$ é inversamente proporcional ao tamanho amostral $n$.
+
+
+## Modo 2
+
+<img src="figuras/image-from-rawpixel-id-408061-original.jpg" width=270 style="float: right; margin-left: 30px">
+
+* $X_i\sim Bernoulli (p)$ é v.a. (o voto ou não em $A$ é considerado uma v.a.)
+
+* Amostra aleatória de tamanho $n$
+
+* $\hat{p}$ é v.a. (é combinação linear de v.a.'s)
+
+* $E(\hat{p})=p$
+
+* $Var(\hat{p})=\frac{p(1-p)}{n}$
+
+## Modo 2 - Exemplo $n=100$
+
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+N=1000000
+n=100
+xx <- rbinom(N,1,0.6)
+B=100000
+bb <- matrix(NA,nrow=B,ncol=n)
+for (i in 1:B)
+{
+  bb[i,] <- sample(1:N,n,replace=TRUE)
+}
+phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+aa <- data.frame(bb)
+aa$phat <- round(phat,3)
+```
+
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+ff <- as.data.frame(table(aa$phat))
+ff$Prop=round(ff$Freq/(sum(ff$Freq)),3)
+```
+
+
+```{r,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE}
+df <- data.frame(PF = aa$phat)
+ggplot(df, aes(x = PF)) + 
+    geom_histogram(aes(y =..density..),
+                   breaks = seq(min(aa$phat), max(aa$phat), by = .01), 
+                   colour = "black", 
+                   fill = "blue") +  geom_vline(xintercept=0.6, color="red") +
+stat_function(fun = dnorm, args = list(mean = 0.6, sd = sqrt(0.6*.4/n)),col="red") + xlab(" ") + ylab(" ") + ylim(0,30)+xlim(0.4,0.8)
+```
+
+## Modo 2 - Exemplo $n=1000$
+
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+N=1000000
+n=1000
+xx <- rbinom(N,1,0.6)
+B=100000
+bb <- matrix(NA,nrow=B,ncol=n)
+for (i in 1:B)
+{
+  bb[i,] <- sample(1:N,n,replace=TRUE)
+}
+phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+aa <- data.frame(bb)
+aa$phat <- round(phat,3)
+```
+
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+ff <- as.data.frame(table(aa$phat))
+ff$Prop=round(ff$Freq/(sum(ff$Freq)),3)
+```
+
+
+```{r,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE}
+df <- data.frame(PF = aa$phat)
+ggplot(df, aes(x = PF)) + 
+    geom_histogram(aes(y =..density..),
+                   breaks = seq(min(aa$phat), max(aa$phat), by = .005), 
+                   colour = "black", 
+                   fill = "blue") +  geom_vline(xintercept=0.6, color="red") +
+stat_function(fun = dnorm, args = list(mean = 0.6, sd = sqrt(0.6*.4/n)),col="red") + xlab(" ") + ylab(" ") + ylim(0,30)+xlim(0.4,0.8)
+```
+
+
+## Resumo dos exemplos {.build}
+
+> * Modo 1: repostas são "fixas", com média populacional $p$ e variância populacional $p(1-p)$.
+
+> * Modo 2: respostas são v.a.'s $X\sim Bernoulli(p)$, $E(X)=p$, $Var(X)=p(1-p)$.
+
+> * Em ambos os casos, a partir do momento que retiro uma amostra aleatória de tamanho $n$, temos as mesmas propriedades e comportamento para a proporção amostral $\hat{p}$: $E(\hat{p})=p$ e $Var(\hat{p})=\frac{p(1-p)}{n}$
+
+> E, conforme $n$ aumenta, vimos nos gráficos que: $\hat{p}\sim \mathcal{N}\left(p,\frac{p(1-p)}{n}\right)$
+
+
+## Estimar uma média: Salários {.build}
+
+<img src="figuras/image-from-rawpixel-id-414919-jpeg.jpg" width=270 style="float: right; margin-left: 30px">
+
+
+> * Quero saber o salário médio das pessoas de uma certa cidade (parâmetro populacional de interesse).
+
+> * Posso usar uma amostra e estimar usando a média amostral. 
+
+> * Quão boa é a estimativa? É precisa? 
+
+> * Posso pensar no problema de duas formas: Modo 1 e Modo 2.
+
+
+## Modo 1
+
+<img src="figuras/image-from-rawpixel-id-424760-original.jpg" width=270 style="float: right; margin-left: 30px">
+
+
+* Cidade com $N$ pessoas.
+
+* $X_i$ é o salário da pessoa $i$.
+
+* $\mathbf{X}=(X_1,X_2,\ldots,X_N)$: respostas de toda a população.
+
+* Média populacional: $\mu=\frac{1}{N}\sum_{i=1}^N X_i$
+
+* Variância populacional: $\sigma^2=\frac{1}{N}\sum_{i=1}^N(X_i-\mu)^2$
+
+<!-- Repare que aqui, nao estou falando de variáveis aleatórias, temos apenas dados das pessoas da cidade -->
+<!-- Estou calculando a média populacional e a variancia, conforme vimos nas estatísticas descritivas -->
+
+
+
+## Modo 1 
+
+* $\mu$ = salário médio da população.
+
+* $\sigma^2$ é a variância da população.
+
+* Coletamos uma amostra aleatória de tamanho $n$.
+
+* $\bar{X}$: média salarial na amostra.
+
+* Quão boa é a estimativa? É precisa? 
+
+* Se outra pessoa também coleta uma amostra aleatória de tamanho $n$ e calcula $\bar{X}$ teremos o mesmo valor?
+
+## Modo 1 - Exemplo $N=5$ e $n=2$
+
+$$\mathbf{X}=(X_1,X_2,\ldots,X_5)=(1000,2000,3000,4000,5000)$$
+
+$$\mu=\frac{\sum_{i=1}^5X_i}{5}=3000$$
+$$\sigma^2=\frac{1}{5}\sum_{i=1}^N(X_i-\mu)^2=2000000$$
+
+## Modo 1 - Exemplo $N=5$ e $n=2$
+
+Gráfico de barras (proporção) dos dados populacionais:
+
+```{r,echo=FALSE,fig.align='center'}
+namess <- c("1000","2000","3000","4000","5000")
+barplot(c(rep(1/5,5)), names.arg=namess, col="blue", main="", 
+            cex.lab=1.0, cex.axis=1.0, cex.names=1.0, cex.main=2, las=2)
+```
+
+
+## Modo 1 - Exemplo $N=5$ e $n=2$ {.smaller}
+
+$N^n=25$ amostras possíveis.
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+library(kableExtra)
+aa <- expand.grid(1:5,1:5)
+xx <- c(1000,2000,3000,4000,5000)
+phat <- unlist(apply(aa,1,function(x) mean(xx[x])))
+aa$phat <- phat
+kable(aa,align = 'ccc',col.names = c("Primeira pessoa","Segunda pessoa","$\\bar{X}$"))
+```
+
+## Modo 1 - Exemplo $N=5$ e $n=2$ 
+
+Distribuição **amostral** de $\bar{X}$:
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+ff <- as.data.frame(table(aa$phat))
+ff$Prop=ff$Freq/(sum(ff$Freq))
+kable(ff[,c(1,3)],align = 'cc',col.names = c("$x$","$P(\\bar{X}=x)$"))
+esp <- sum(as.numeric(as.character(ff$Var1))*ff$Prop)
+vari <- sum( ((as.numeric(as.character(ff$Var1)) - esp )^2)*ff$Prop)
+```
+
+## Modo 1 - Exemplo $N=5$ e $n=2$ 
+
+
+$$\begin{eqnarray} 
+E(\bar{X})&=&`r esp`=\mu\\
+Var(\bar{X})&=&E[(\bar{X}-\mu)^2]=`r vari`\\
+&=&\frac{2000000}{2}=\frac{\sigma^2}{n}
+\end{eqnarray}$$
+
+## Modo 1 - Exemplo $N=5$ e $n=2$
+
+Distribuição amostral de $\bar{X}$:
+
+```{r,echo=FALSE,fig.align='center'}
+namess <- as.character(round(as.numeric(as.character(ff$Var1)),2))
+barplot(ff$Prop, names.arg=namess, col="blue", main="", 
+            cex.lab=1.0, cex.axis=1.0, cex.names=1.0, cex.main=2, las=2)
+```
+
+
+## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
+
+$N^n=125$ amostras possíveis.
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+library(kableExtra)
+aa <- expand.grid(1:5,1:5,1:5)
+xx <- c(1000,2000,3000,4000,5000)
+phat <- unlist(apply(aa,1,function(x) mean(xx[x])))
+aa$phat <- round(phat,3)
+#colnames(aa) <- c("Pessoa amostrada 1","Pessoa amostrada 2","$\\hat{p}$")
+kable(aa[1:25,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))
+```
+
+## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[26:50,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))
+```
+
+## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[51:75,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))
+```
+
+## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[76:100,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))
+```
+
+
+
+## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[101:125,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))
+```
+
+
+## Modo 1 - Exemplo $N=5$ e $n=3$ 
+
+Distribuição **amostral** de $\bar{X}$:
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+ff <- as.data.frame(table(aa$phat))
+ff$Prop=round(ff$Freq/(sum(ff$Freq)),3)
+kable(ff[,c(1,3)],align = 'cc',col.names = c("$x$","$P(\\bar{X}=x)$"))
+esp <- sum(as.numeric(as.character(ff$Var1))*ff$Prop)
+vari <- sum( ((as.numeric(as.character(ff$Var1)) - esp )^2)*ff$Prop)
+```
+
+
+$$\begin{eqnarray} 
+E(\bar{X})&=&`r esp`=\mu\\
+Var(\bar{X})&=&E[(\bar{X}-\mu)^2]=`r vari`\\
+&=\frac{2000000}{3}=\frac{\sigma^2}{n}
+\end{eqnarray}$$
+
+
+## Modo 1 - Exemplo $N=5$ e $n=3$
+
+
+Distribuição amostral de $\bar{X}$:
+
+```{r,echo=FALSE,fig.align='center'}
+namess <- as.character(round(as.numeric(as.character(ff$Var1)),2))
+barplot(ff$Prop, names.arg=namess, col="blue", main="", 
+            cex.lab=1.0, cex.axis=1.0, cex.names=1.0, cex.main=2, las=2)
+```
+
+
+## Modo 1
+
+<img src="figuras/image-from-rawpixel-id-414919-jpeg.jpg" width=270 style="float: right; margin-left: 30px">
+
+* $\mathbf{X} = (X_1,\ldots,X_N)$ é fixo
+
+* Amostra aleatória de tamanho $n$
+
+* $\bar{X}$ é v.a.
+
+* $E(\bar{X})=\mu$
+
+* $Var(\bar{X})=\frac{\sigma^2}{n}$
+
+
+
+
+## Modo 1 - Exemplo $N=1000000$ e $n=100$
+
+
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+N=1000000
+n=100
+xx <- c(rep(1000,N/5),rep(2000,N/5),rep(3000,N/5),rep(4000,N/5),rep(5000,N/5))
+mu=mean(xx)
+vari = var(xx) * (N-1)/N
+B=100000
+bb <- matrix(NA,nrow=B,ncol=n)
+for (i in 1:B)
+{
+  bb[i,] <- sample(1:N,n,replace=TRUE)
+}
+phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+aa <- data.frame(bb)
+aa$phat <- round(phat,3)
+```
+
+
+$\mu=3000$. Distribuição **amostral** de $\bar{X}$:
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+ff <- as.data.frame(table(aa$phat))
+ff$Prop=round(ff$Freq/(sum(ff$Freq)),3)
+```
+
+
+```{r,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE}
+library(ggplot2)
+df <- data.frame(PF = aa$phat)
+ggplot(df, aes(x = PF)) + 
+    geom_histogram(aes(y =..density..),
+                   breaks = seq(min(aa$phat), max(aa$phat), by = 10), 
+                   colour = "black", 
+                   fill = "blue") +  geom_vline(xintercept=mu, color="red") + 
+stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(vari/n)),col="red") + xlab(" ") + ylab(" ") + ylim(0,0.01) + xlim(2400,3600)
+```
+
+
+## Modo 1 - Exemplo $N=1000000$ e $n=1000$
+
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+N=1000000
+n=1000
+xx <- c(rep(1000,N/5),rep(2000,N/5),rep(3000,N/5),rep(4000,N/5),rep(5000,N/5))
+mu=mean(xx)
+vari = var(xx) * (N-1)/N
+B=100000
+bb <- matrix(NA,nrow=B,ncol=n)
+for (i in 1:B)
+{
+  bb[i,] <- sample(1:N,n,replace=TRUE)
+}
+phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+aa <- data.frame(bb)
+aa$phat <- round(phat,3)
+```
+
+
+$\mu=3000$. Distribuição **amostral** de $\bar{X}$:
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+ff <- as.data.frame(table(aa$phat))
+ff$Prop=round(ff$Freq/(sum(ff$Freq)),3)
+```
+
+
+```{r,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE}
+df <- data.frame(PF = aa$phat)
+ggplot(df, aes(x = PF)) + 
+    geom_histogram(aes(y =..density..),
+                   breaks = seq(min(aa$phat), max(aa$phat), by = 10), 
+                   colour = "black", 
+                   fill = "blue") +  geom_vline(xintercept=mu, color="red") +
+stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(vari/n)),col="red") + xlab(" ") + ylab(" ") + ylim(0,0.01) + xlim(2400,3600)
+```
+
+
+
+## Modo 2
+
+Suponha que o salário de uma pessoa possa ser representado por uma **variável aleatória** uniforme discreta assumindo os valores 1000,2000, 3000, 4000 ou 5000. 
+
+$\begin{aligned}
+\mu=\mathbb E(X) &= \frac{1000+2000+3000+4000+5000}{5}=3000 \\ 
+\sigma^2=Var(X) &= \frac{1}{5}[(1000-3000)^2+(2000-3000)^2+(3000-3000)^2\\
+&+(4000-3000)^2+(5000-3000)^2]\\
+&= 2000000
+\end{aligned}$
+
+## Modo 2 
+
+Distribuição da variável $X$ (do salário de cada indivíduo da população): 
+
+```{r,echo=FALSE,fig.align='center'}
+namess <- c("1000","2000","3000","4000","5000")
+barplot(c(rep(1/5,5)), names.arg=namess, col="blue", main="", 
+            cex.lab=1.0, cex.axis=1.0, cex.names=1.0, cex.main=2, las=2)
+```
+
+
+
+
+## Modo 2 - Exemplo $n=2$  {.smaller}
+
+
+> $\displaystyle \mathbb E(\bar{X}) = \frac{1}{n}\sum_{i=1}^n \mathbb E (X_i)= E(X)=\mu=3000$
+
+> $\begin{aligned}
+Var(\bar{X}) &= \frac{1}{n}\sum_{i=1}^n Var (X_i)= \frac{Var(X)}{n}=\frac{\sigma^2}{n}=1000000\\
+\end{aligned}$
+
+(propriedades de linearidade da esperança e variância (a.a.))
+
+## Resultado  {.build .smaller}
+
+Seja $X$ uma v.a. com média $\mu$ e variância $\sigma^{2}$ e $X_{1}, \ldots, X_{n}$ uma amostra aleatória simples de $X$. 
+
+A média amostral
+$$\bar X_n = \frac{1}{n}\sum_{i=1}^n X_i$$ 
+tem as seguintes propriedades:
+
+> $$\mathbb E (\bar X_n) = \mu \qquad \mbox{e} \qquad Var(\bar X_n) = \frac{\sigma^2}{n}.$$ 
+
+(propriedade de linearidade da esperança e da variância, esta última em caso de independência)
+
 Ou seja, embora $\mu$ seja desconhecido, sabemos que o valor esperado da média amostral é $\mu$. 
 
-Além disso, conforme o tamanho amostral aumenta, a imprecisão da média amostral para estimar $\mu$ fica cada vez menor, pois $Var(\bar X) = \sigma^2/n$.
+Além disso, conforme o tamanho amostral aumenta, a imprecisão da média amostral para estimar $\mu$ fica cada vez menor, pois $Var(\bar X) = \sigma^2/n$ é inversamente proporcional ao tamanho amostral $n$.
 
 
-## Exemplo
-
-> **Exemplo:** $X_1, X_2, X_3$ ensaios de Bernoulli(p) independentes. 
-
-> * $\mu = \mathbb E(X_i) = 0.3 \qquad \Rightarrow \qquad \mathbb E (\bar X_3) = 0.3.$ 
-
-> * $\sigma^2 = Var(X_i) = p(1 - p) = 0.3(0.7) = 0.21 \;\; \Rightarrow \;\; Var(\bar X_3) = \frac{0.21}{3} = 0.07$
+## Modo 2 - Exemplo $n=100$
 
 
-# Teorema do Limite Central
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+N=1000000
+n=100
+xx=sample(x=c(1000,2000,3000,4000,5000),size=N,replace=TRUE)
+B=100000
+bb <- matrix(NA,nrow=B,ncol=n)
+for (i in 1:B)
+{
+  bb[i,] <- sample(1:N,n,replace=TRUE)
+}
+phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+aa <- data.frame(bb)
+aa$phat <- round(phat,3)
+mu=mean(xx)
+vari = var(xx) * (N-1)/N
+```
+
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+ff <- as.data.frame(table(aa$phat))
+ff$Prop=round(ff$Freq/(sum(ff$Freq)),3)
+```
+
+
+```{r,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE}
+df <- data.frame(PF = aa$phat)
+ggplot(df, aes(x = PF)) + 
+    geom_histogram(aes(y =..density..),
+                   breaks = seq(min(aa$phat), max(aa$phat), by = 10), 
+                   colour = "black", 
+                   fill = "blue") +  geom_vline(xintercept=mu, color="red") +
+stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(vari/n)),col="red") + xlab(" ") + ylab(" ") + ylim(0,0.01)+xlim(2000,4000)
+```
+
+## Modo 2 - Exemplo $n=1000$
+
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+N=1000000
+n=1000
+xx=sample(x=c(1000,2000,3000,4000,5000),size=N,replace=TRUE)
+B=100000
+bb <- matrix(NA,nrow=B,ncol=n)
+for (i in 1:B)
+{
+  bb[i,] <- sample(1:N,n,replace=TRUE)
+}
+phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+aa <- data.frame(bb)
+aa$phat <- round(phat,3)
+mu=mean(xx)
+vari = var(xx) * (N-1)/N
+```
+
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+ff <- as.data.frame(table(aa$phat))
+ff$Prop=round(ff$Freq/(sum(ff$Freq)),3)
+```
+
+
+```{r,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE}
+df <- data.frame(PF = aa$phat)
+ggplot(df, aes(x = PF)) + 
+    geom_histogram(aes(y =..density..),
+                   breaks = seq(min(aa$phat), max(aa$phat), by = 10), 
+                   colour = "black", 
+                   fill = "blue") +  geom_vline(xintercept=mu, color="red") +
+stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(vari/n)),col="red") + xlab(" ") + ylab(" ") + ylim(0,0.01)+xlim(2000,4000)
+```
+
+
+## Resultados {.smaller}
+
+Temos uma população com média (proporção) $\mu$ ($p$) e variância $\sigma^2$ desconhecida. 
+
+Retira-se uma amostra aleatória de tamanho $n$ e calcula-se a média (ou proporção) amostral $\bar{X}$ (ou $\hat{p}$) para estimar o parâmetro populacional desconhecido $\mu$ (ou $p$).
+
+Temos as propriedades:
+
+
+$$E(\bar{X})=\mu \quad \quad Var(\bar{X})=\frac{\sigma^2}{n}$$
+
+$$E(\hat{p})=p\quad \quad Var(\hat{p})=\frac{p(1-p)}{n}$$
+##
+
+
+E, conforme $n$ aumenta, pelos gráficos, *parece* que a distribuição amostral de $\bar{X}$ e $\hat{p}$ se aproxima da normal:
+
+$$\bar{X}\sim \mathcal{N}\left(\mu,\frac{\sigma^2}{n}\right) \quad \quad \hat{p}\sim \mathcal{N}\left(p,\frac{p(1-p)}{n}\right)$$
+
+
 
 ## Teorema do Limite Central {.build}
 
-Usando o resultado enunciado anteriormente, temos a esperança e a variância da média amostral $\bar X$: $\mathbb E(\bar X) = \mu$ e $Var(\bar X) = \frac{\sigma^2}{n}$.
+Temos os resultados:
 
-> No entanto, para conhecermos a distribuição de probabilidade de $\bar X$, como foi feito no exemplo anterior, é preciso conhecer todos os valores possíveis de $X$ e suas respectivas probabilidades. 
+* $\bar X$: $\mathbb E(\bar X) = \mu$ e $Var(\bar X) = \frac{\sigma^2}{n}$.
 
-> Mas, se conhecermos tudo isso, não precisamos fazer amostragem nem inferência: saberemos tudo o que desejarmos daquela população!
+* $\hat{p}$: $\mathbb E(\hat{p}) = p$ e $Var(\hat{p}) = \frac{p(1-p)}{n}$.
 
-> O exemplo anterior foi um caso hipotético apenas para demonstrar como a média amostral $\bar X$ se comporta quando realizamos a amostragem.
+> No exemplos, vimos também a distribuição amostral de $\bar X$ ou $\hat{p}$, mas isso só foi possível porque tínhamos informação de todos os valores possíveis na população. 
 
-> Na prática, não teremos informações suficientes para de fato descrevermos a distribuição exata de $\bar X$.
+> Os exemplos anteriores foram casos hipotéticos apenas para demonstrar como $\bar X$ e $\hat{p}$ se comportam quando realizamos a amostragem.
 
+> Na prática, não teremos informações suficientes para de fato descrevermos de fato a distribuição de $\bar X$ e $\hat{p}$ (se tivermos, nem é preciso fazer amostragem!)
 
-
-## Teorema Central do Limite (TLC) {.build}
+## Teorema do Limite Central {.build}
 
 **Resultado** 
 
-Para uma amostra aleatória simples $X_1, \ldots ,X_n$ coletada de uma população com média $\mu$ e variância $\sigma^{2}$, a distribuição amostral de $\bar X_{n}$ aproxima-se de uma **distribuição Normal** de média $\mu$ e variância $\frac{\sigma^{2}}{n}$, quando $n$ for suficientemente grande.
+* Para uma amostra aleatória $X_1, \ldots ,X_n$ coletada de uma população com média $\mu$ e variância $\sigma^{2}$
+
+> * a distribuição amostral de $\bar X_{n}$ aproxima-se de uma **distribuição Normal** de média $\mu$ e variância $\frac{\sigma^{2}}{n}$, quando $n$ for suficientemente grande:
+
+$$\bar{X}_n\sim\mathcal{N}\left(\mu,\frac{\sigma^2}{n}\right)$$
+
 
 >
 
-Definimos também: 
-
 $$Z = \frac{\bar X_{n} - \mu}{\sigma / \sqrt{n}} \sim N(0,1)$$ 
+
 
 
 ## Teorema do Limite Central
@@ -274,30 +967,20 @@ $$f_{X_i}(x) = 2e^{-2x}, \qquad \mbox{para } x \geq 0$$
 
 Então $\mathbb E(X_i) = \frac{1}{2}$ e $Var(X_i) = \frac{1}{4}$.
 
-Suponha que $X_{i}$ modela o tempo de vida de um transistor em horas. Os tempos de vida de 100 transistores são coletados. Desejamos estudar a variável aleatória $\bar X_{100}$ (média amostral de uma amostra de tamanho 100). Sabemos:
-$$\mathbb E(\bar X_{100}) = \frac{1}{2} \qquad \mbox{e} \qquad Var(\bar X_{100}) = \frac{1/4}{100} = \frac{1}{400}.$$
+Suponha que $X_{i}$ modela o tempo de vida de um transistor em horas. Os tempos de vida de 100 transistores são coletados. Desejamos estudar a variável aleatória $\bar X_{100}$ (média amostral de uma amostra de tamanho 100). 
+
+Sabemos:
+$$\mathbb E(\bar X_{100}) = \mathbb E\left(\frac{1}{n}\sum_{i=1}^{100} X_i \right)=\frac{1}{n}\sum_{i=1}^{100}\mathbb E(X_i) =\frac{1}{2}$$ 
+
+## Exemplo {.build}
+
+
+$$ Var(\bar X_{100}) = \frac{1/4}{100} = \frac{1}{400}$$
 
 Pelo TLC, temos que: $\displaystyle \bar X_{n}\sim N \left(\frac{1}{2},\frac{1}{400}\right)$
 
 
-## Exemplo
-
-$\begin{aligned}
-F_{\bar X_{100}}(x) = P\left(\bar X_{100} \leq x\right) & = P\left(\frac{\bar X_{100}-(1/2)}{(1/2)/\sqrt{100}} \leq \frac{x-(1/2)}{(1/2)/\sqrt{100}}\right)  \\
-& = P\left(Z \leq 10(2x-1) \right) 
-\end{aligned}$
-
-e
-
-$\begin{aligned}
-P\left(\bar X_{100} \geq x\right) & = 1 - P\left(\bar X_{100} < x\right)  \\
- & = 1 - P\left(\frac{\bar X_{100}-(1/2)}{(1/2)/\sqrt{100}} \leq \frac{x-(1/2)}{(1/2)/\sqrt{100}}\right)  \\
-& = 1 - P\left(Z \leq 10(2x-1) \right) 
-\end{aligned}$
-
-
-
-## Exemplo {.build}
+## Exemplo - lançamento de dados {.build}
 
 $X=$ resultado obtido no lançamento de um dado honesto.
 
@@ -308,88 +991,220 @@ $p(x)=P(X=x)$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | 
 
 > $\mathbb E(X) = \frac{1}{6}\times(1+2+3+4+5+6) = \frac{21}{6} = 3.5$
 
-> $Var(X) = \frac{1}{6}[(1+4+9+16+25+36)-\frac{1}{6}\times(21)^{2}] = \frac{35}{2} = 17.5$
+> $Var(X) = \frac{1}{6}[(1-3.5)^2+(2-3.5)^2+\ldots+(6-3.5)^2] = \frac{17.5}{6} = 2.92$
 
 > * $X_i$: resultado do $i$-ésimo lançamento de um dado honesto.
 
-> * $X_i$ tem distribuição uniforme discreta $\forall i$.
+> * $X_i$ tem distribuição uniforme discreta.
 
-> * $\mu = \mathbb E(X_i) = 3.5 \qquad$ e $\qquad \sigma^2 = Var(X_i) = 17.5$, $\forall i$.
-
-
-## Exemplo {.build .smaller}
-
-> Se temos uma amostra aleatória simples de tamanho $n$: $X_1,X_2,\ldots, X_n$, pelo TLC sabemos que a distribuição amostral de $\bar X_n$ é aproximadamente Normal$\left( 3.5, \frac{17.5}{n} \right)$.
+> * $\mu = \mathbb E(X_i) = 3.5 \qquad$ e $\qquad \sigma^2 = Var(X_i) = 2.92$
 
 
-> O primeiro histograma a seguir mostra o resultado de 10000 repetições do seguinte experimento: observar o resultado do lançamento de 1 dado. Repare que é muito próximo de uma distribuição uniforme discreta (chance 1/6 para cada resultado).
+## Exemplo - lançamento de dados {.build .smaller}
 
-> O segundo histograma mostra o resultado de 10000 repetições do seguinte experimento: observar a média do lançamento de 2 dados  (equivalente a observar a média de 2 lançamentos de um dado). 
-
-
-> O último histograma mostra o resultado de 10000 repetições do seguinte experimento: observar a média do lançamento de 100 dados (equivalente a observar a média de 100 lançamentos de um dado). 
-
-> Repare que conforme o número de dados (tamanho amostral) aumenta, a distribuição da média amostral se aproxima da distribuição normal com média 3.5 e variância cada vez menor (17.5/n).
+> Se temos uma amostra aleatória simples de tamanho $n$: $X_1,X_2,\ldots, X_n$, pelo TLC sabemos que a distribuição amostral de $\bar X_n$ é aproximadamente Normal$\left( 3.5, \frac{2.92}{n} \right)$.
 
 
-## Exemplo
+> O primeiro histograma a seguir mostra o resultado de 100000 repetições do seguinte experimento: observar o resultado do lançamento de 1 dado. Repare que é muito próximo de uma distribuição uniforme discreta (chance 1/6 para cada resultado).
+
+> O segundo histograma mostra o resultado de 100000 repetições do seguinte experimento: observar a média do lançamento de 2 dados. 
+
+
+> O último histograma mostra o resultado de 100000 repetições do seguinte experimento: observar a média do lançamento de 100 dados. 
+
+> Repare que conforme o número de dados (tamanho amostral) aumenta, a distribuição da média amostral se aproxima da distribuição normal com média 3.5 e variância cada vez menor (2.92/n).
+
+
+
+## Exemplo - lançamento de dados
+
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+B=100000
+mu=3.5
+vari = 17.5/6
+```
+
+
+```{r dados1,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE,eval=FALSE}
+png("./figuras/dados1.png")
+n=1
+bb <- matrix(NA,nrow=B,ncol=n)
+for (i in 1:B)
+{
+  bb[i,] <- sample(1:6,n,replace=TRUE)
+}
+phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+aa <- data.frame(bb)
+aa$phat <- round(phat,3)
+df <- data.frame(PF = aa$phat)
+ggplot(df, aes(x = PF)) + 
+    geom_histogram(aes(y =..density..),
+                   breaks = seq(1, 6, by = 1/6), 
+                   colour = "black", 
+                   fill = "blue") +  geom_vline(xintercept=mu, color="red") + ylim(0,2.5)+xlim(1,6)+ xlab(" ") + ylab(" ") +ggtitle("Média de 1 dado")
+dev.off()
+```
 
 <center>
-```{r, echo=FALSE, fig.width=10, fig.height=5}
-par(mfrow=c(2, 3), mar=c(3, 4, 2, 2))
-n1 <- sample(1:6, 10000, replace=TRUE)
-barplot(table(n1), ylim=c(0, 1800), main="Média de 1 dado", col="blue", las=1)
-
-n1a <- sample(1:6, 10000, replace=TRUE)
-n2a <- sample(1:6, 10000, replace=TRUE)
-n2 <- (n1a + n2a)/2
-barplot(table(n2), ylim=c(0, 1800), main="Média de 2 dados", col="blue", las=1)
-
-n1a <- sample(1:6, 10000, replace=TRUE)
-n2a <- sample(1:6, 10000, replace=TRUE)
-n3a <- sample(1:6, 10000, replace=TRUE)
-n3 <- (n1a+n2a+n3a)/3
-barplot(table(n3), ylim=c(0, 1800), main="Média de 3 dados", col="blue", las=1)
+![](figuras/dados1.png)</center>
 
 
-n=10
-N <- matrix(sample(1:6, 10000*n, replace=TRUE), ncol=n)
-nn <- apply(N, 1, mean)
 
-#barplot(table(nn),ylim=c(0,1800),main="Média de 10 dados",col="blue")
-hist(nn, xlim=c(1, 6), main="Média de 10 dados", col="blue", xlab=" ", ylab="",
-     ylim=c(0, 1800), las=1)
-
-n=50
-N <- matrix(sample(1:6, 10000*n, replace=TRUE), ncol=n)
-nn <- round(apply(N, 1, mean), 2)
-
-#barplot(table(nn), ylim=c(0,1800), main="Média de 50 dados", col="blue")
-hist(nn, xlim=c(1, 6), main="Média de 50 dados", col="blue", xlab=" ", ylab="",
-     ylim=c(0, 1800), las=1)
+## Exemplo - lançamento de dados
 
 
-n=100
-N <- matrix(sample(1:6, 10000*n, replace=TRUE), ncol=n)
-nn <- round(apply(N, 1, mean), 2)
 
-#barplot(table(nn),ylim=c(0,1800), main="Média de 100 dados",col="blue")
-hist(nn, xlim=c(1, 6), main="Média de 100 dados", col="blue", xlab=" ", ylab="",
-     ylim=c(0, 1800), las=1)
+
+
+
+```{r dados2,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE,eval=FALSE}
+png("./figuras/dados2.png")
+n=2
+bb <- matrix(NA,nrow=B,ncol=n)
+for (i in 1:B)
+{
+  bb[i,] <- sample(1:6,n,replace=TRUE)
+}
+phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+aa <- data.frame(bb)
+aa$phat <- round(phat,3)
+df <- data.frame(PF = aa$phat)
+ggplot(df, aes(x = PF)) + 
+    geom_histogram(aes(y =..density..),
+                   breaks = seq(1, 6, by = 1/6), 
+                   colour = "black", 
+                   fill = "blue") +  geom_vline(xintercept=mu, color="red") +ylim(0,2.5)+xlim(1,6)+ xlab(" ") + ylab(" ")  +ggtitle("Média de 2 dados")
+dev.off()
 ```
-</center>
+
+<center>
+![](figuras/dados2.png)</center>
+
+
+## Exemplo - lançamento de dados
+
+
+```{r dados3,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE,eval=FALSE}
+png("./figuras/dados3.png")
+n=3
+bb <- matrix(NA,nrow=B,ncol=n)
+for (i in 1:B)
+{
+  bb[i,] <- sample(1:6,n,replace=TRUE)
+}
+phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+aa <- data.frame(bb)
+aa$phat <- round(phat,3)
+df <- data.frame(PF = aa$phat)
+ggplot(df, aes(x = PF)) + 
+    geom_histogram(aes(y =..density..),
+                   breaks = seq(1, 6, by = .35), 
+                   colour = "black", 
+                   fill = "blue") +  geom_vline(xintercept=mu, color="red") +
+stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(vari/n)),col="red") +ylim(0,2.5)+xlim(1,6)+ xlab(" ") + ylab(" ")  +ggtitle("Média de 3 dados")
+dev.off()
+```
+
+<center>
+![](figuras/dados3.png)</center>
+
+
+## Exemplo - lançamento de dados
+
+
+
+```{r dados10,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE,eval=FALSE}
+png("./figuras/dados10.png")
+n=10
+bb <- matrix(NA,nrow=B,ncol=n)
+for (i in 1:B)
+{
+  bb[i,] <- sample(1:6,n,replace=TRUE)
+}
+phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+aa <- data.frame(bb)
+aa$phat <- round(phat,3)
+df <- data.frame(PF = aa$phat)
+ggplot(df, aes(x = PF)) + 
+    geom_histogram(aes(y =..density..),
+                   breaks = seq(1, 6, by = .1), 
+                   colour = "black", 
+                   fill = "blue") +  geom_vline(xintercept=mu, color="red") +
+stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(vari/n)),col="red") +ylim(0,2.5)+xlim(1,6)+ xlab(" ") + ylab(" ")  +ggtitle("Média de 10 dados")
+dev.off()
+```
+<center>
+![](figuras/dados10.png)</center>
+
+
+## Exemplo - lançamento de dados
+
+
+```{r dados50,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE,eval=FALSE}
+png("./figuras/dados50.png")
+n=50
+bb <- matrix(NA,nrow=B,ncol=n)
+for (i in 1:B)
+{
+  bb[i,] <- sample(1:6,n,replace=TRUE)
+}
+phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+aa <- data.frame(bb)
+aa$phat <- round(phat,3)
+df <- data.frame(PF = aa$phat)
+ggplot(df, aes(x = PF)) + 
+    geom_histogram(aes(y =..density..),
+                   breaks = seq(1, 6, by = 0.1), 
+                   colour = "black", 
+                   fill = "blue") +  geom_vline(xintercept=mu, color="red") +
+stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(vari/n)),col="red") +ylim(0,2.5)+ xlim(1,6) + xlab(" ") + ylab(" ") +ggtitle("Média de 50 dados")
+dev.off()
+```
+
+<center>
+![](figuras/dados50.png)</center>
+
+
+## Exemplo - lançamento de dados
+
+
+
+```{r dados100,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE,eval=FALSE}
+png("./figuras/dados100.png")
+n=100
+bb <- matrix(NA,nrow=B,ncol=n)
+for (i in 1:B)
+{
+  bb[i,] <- sample(1:6,n,replace=TRUE)
+}
+phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+aa <- data.frame(bb)
+aa$phat <- round(phat,3)
+df <- data.frame(PF = aa$phat)
+ggplot(df, aes(x = PF)) + 
+    geom_histogram(aes(y =..density..),
+                   breaks = seq(1, 6, by = 0.1), 
+                   colour = "black", 
+                   fill = "blue") +  geom_vline(xintercept=mu, color="red") +
+stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(vari/n)),col="red")+ylim(0,2.5)+xlim(1,6) + xlab(" ") + ylab(" ") +ggtitle("Média de 100 dados")
+dev.off()
+```
+
+<center>
+![](figuras/dados100.png)</center>
+
 
 
 ## Teorema do Limite Central (TLC)
 
 Você pode verificar o comportamento de $\bar X$ para várias distribuições de $X$:
 
-https://nishantsbi.shinyapps.io/CLT_Shiny
+[TCL para proporções](https://gallery.shinyapps.io/CLT_prop/)
+[TCL para médias](https://gallery.shinyapps.io/CLT_mean/)
 
-https://gallery.shinyapps.io/CLT_mean/
 
-
-# Aproximação da Distribuição Binomial pela Normal
+# Aproximação da Binomial pela Normal
 
 ## Aproximação da Binomial pela Normal {.build}
 
@@ -472,6 +1287,120 @@ Como $n$ é grande, podemos usar a aproximação $X \approx N(40,24)$. Portanto,
 
 $$P\left( X \leq 50 \right) = P\left(Z \leq \frac{50-40}{\sqrt{24}}\right) \approx \Phi \left( \frac{10}{\sqrt{24}} \right) = \Phi \left(2.04 \right) \approx 0.9793$$
 
+
+# Fundamentos de Inferência
+
+## Introdução {.build}
+
+<img src="figuras/InferenceGraphicSU17.png" width=350 style="float: right; margin-left: 30px">
+
+> Um dos principais objetivos da Estatística é tirar conclusões a partir dos dados.
+
+> Dados em geral consistem de uma amostra de elementos de uma população de interesse.
+
+> Usar a amostra para tirar conclusões sobre a população.
+
+> Quão confiável será utilizar a informação obtida apenas de uma amostra para concluir algo sobre a população?
+
+
+## Introdução {.build}
+
+<img src="figuras/InferenceGraphicSU17.png" width=350 style="float: right; margin-left: 30px">
+
+<br />
+
+<!-- Fonte da figura: https://online.stat.psu.edu/stat200/book/export/html/21 -->
+
+**População**: todos os elementos ou resultados de um problema que está sendo estudado.
+
+<br />
+**Amostra:**  subconjunto da população de interesse. 
+
+
+## Inferência Estatística {.build}
+
+<img src="figuras/inferencia.PNG" width=550 style="float: right; margin-left: 30px">
+
+**Variável**: Característica numérica do resultado de um experimento.
+
+**Parâmetros**: Característica numérica (desconhecida) da distribuição dos elementos da população.
+
+**Estimador/Estatística**: Função da amostra, construída com a finalidade de representar, ou estimar um parâmetro de interesse na população. 
+
+**Estimativa**: Valor numérico que um estimador assume para uma dada amostra.
+
+**Erro amostral:** é a diferença entre um estimador e o parâmetro que se quer estimar.
+
+
+## Inferência Estatística 
+
+<center><img src="figuras/IntencaoVoto.jpeg" width=650></center>
+
+
+## Estatística {.build}
+
+<img src="figuras/inferencia.PNG" width=500 style="float: right; margin-left: 30px">
+
+> Seja $X_{1},...,X_{n}$ uma amostra e $$T = f(X_{1}, \ldots, X_{n})$$ é uma estatística.
+
+**Exemplos:**
+
+> * $\bar X_{n}=\frac{1}{n}\sum_{i=1}^{n}X_{i}=\frac{1}{n}(X_{1}+...+X_{n})$
+
+> * $X_{(1)}=min\{X_{1},...,X_{n}\}$ ou $X_{(n)}=max\{X_{1},...,X_{n}\}$
+
+> * $X_{(i)}$ é o i-ésimo valor da amostra ordenada 
+
+> Note que uma estatística é uma função que em uma determinada amostra assume um valor específico (estimativa).
+
+
+## Estatística {.build}
+
+<img src="figuras/Parametros.jpg" width=550 style="float: right; margin-left: 30px">
+
+Para que serve uma estatística? 
+
+Para "estimar" características de uma população. 
+
+> **População:**
+
+* Média $\mu$
+* Variância $\sigma^2$
+
+> **Amostra:**
+
+* Média Amostral $\bar X = \frac{1}{n} \sum_{i=1}^{n} X_i$
+* Variância Amostral $S^2 = \frac{1}{n} \sum_{i=1}^n(X_i - \bar X)^2$ 
+
+
+## Exemplo {.build}
+
+Temos interesse em saber a média e a variância da altura dos brasileiros: $\mu$ e $\sigma^2$. 
+
+<img src="figuras/inferencia2.PNG" width=550>
+
+> **Solução 1:** Medir a altura de todos os brasileiros.
+
+> **Solução 2:** Selecionar de forma aleatória alguns brasileiros (amostra), analisá-la e inferir propriedades para toda a população.
+
+
+
+## Parâmetro {.build}
+
+> *  Cada quantidade de interesse (como $\mu$ e $\sigma^2$ no exemplo anterior) é chamada de parâmetro da população. 
+
+> *  Para apresentar uma estimativa de um parâmetro ($\widehat \mu$ e $\hat{\sigma}^2$), devemos escolher uma estatística ($T$). 
+
+> *  Note que da maneira que o plano amostral foi executado (amostra aleatória simples), a estatística $T$ é uma variável aleatória, visto que cada vez que executarmos o plano amostral poderemos obter resultados diversos.
+
+> *  Portanto, a estatística $T$ possui uma distribuição de probabilidade, chamada de **distribuição amostral** de T.
+
+
+## Distribuição amostral da estatística usada para estimar o parâmetro de interesse
+
+<center>
+<img src="figuras/Sampling_.jpg" width=550>
+</center>
 
 ## Leituras
 
