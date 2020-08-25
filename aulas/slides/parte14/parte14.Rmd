@@ -1201,6 +1201,7 @@ dev.off()
 Você pode verificar o comportamento de $\bar X$ para várias distribuições de $X$:
 
 [TCL para proporções](https://gallery.shinyapps.io/CLT_prop/)
+
 [TCL para médias](https://gallery.shinyapps.io/CLT_mean/)
 
 
