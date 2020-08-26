@@ -24,7 +24,7 @@ logo: ../logo-imecc.png
 
 ## Introdução {.build}
 
-> * Vimos que podemos utilizar uma estatística, como $\bar{X}$, para estimar um parâmetro populacional, como a média populacional $\mu$.
+> * Vimos que podemos utilizar uma estatística, como $\bar{X}$ ($\hat{p}$), para estimar um parâmetro populacional, como a média populacional $\mu$ (proporção populacional $p$).
 
 > * Após coletarmos uma amostra aleatória calculamos $\bar{x}$, que é a nossa estimativa para $\mu$. Chamamos esta estimativa de **estimativa pontual**.
 
@@ -712,6 +712,75 @@ Suponha que estejamos interessados em estimar a porcentagem de consumidores de u
 
 Note que a prática de obter amostras pequenas para examinar $p$, e aí determinar o tamanho amostral sem utilizar o "pior caso", é no que consiste a idéia de **amostras piloto**.
 
+##
+
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+library(ggplot2)
+set.seed(1321)
+n <- 10
+sd <- 2
+n.reps <- 100
+my.mean <- 10
+alpha <- 0.05
+
+mydata <- matrix(rnorm(n = n.reps * n, mean = my.mean, sd =sd), ncol = n.reps)
+
+sample.means <- apply(mydata, 2, mean)
+
+error <- apply(mydata, 2, function(x) qt(p=1-alpha/2,df=length(x)-1)*sd (x)/sqrt(length(x)))
+
+
+dfx <- data.frame(sample.means, error, lcl = sample.means-error, ucl = sample.means+error, trial = 1:n.reps)
+dfx$miss <- dfx$ucl < my.mean | dfx$lcl > my.mean
+ggplot(dfx, aes(x = sample.means, y = trial, xmin = lcl, xmax = ucl, color = miss)) + geom_errorbarh() + geom_point(pch = 1) +
+  geom_vline(aes(xintercept=my.mean), lty=2) +
+  xlab("True Mean in Blue and 95% Confidence Intervals") + ylab ("Trial") + ggtitle(paste("Successful CI's:", 100*mean(!dfx$miss), "%")) + scale_color_manual(values = c("green", "red")) +
+  theme_bw()
+```
+
+##
+
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+set.seed(1)
+
+population <- rnorm(10000, 3, 3)
+
+population_mean <- mean(population)
+
+my_sample <- sample(population, 100, replace = FALSE)
+
+standard_error <- sqrt(var(my_sample)/length(my_sample))
+
+sampling_distribution_of_mean <- rnorm(10000, mean = population_mean, sd = standard_error)
+
+my_confidence_intervals <- function(){
+
+    my_sample <- sample(population, 100, replace = FALSE)
+
+    sample_mean <- mean(my_sample)
+
+    standard_error <- sqrt(var(my_sample)/length(my_sample))
+
+    margin_of_error <- 1.96*standard_error
+
+    mean_minus_margin_of_error <- sample_mean - margin_of_error
+    mean_plus_margin_of_error <- sample_mean + margin_of_error
+
+    c(mean_minus_margin_of_error, mean_plus_margin_of_error)
+
+}
+
+library(plyr)
+
+xx<-llply(1:20, function(x) my_confidence_intervals())
+xx<-data.frame(y=1:20*50, x=do.call(rbind, xx))
+
+ggplot(data.frame(x = sampling_distribution_of_mean), aes(x)) + 
+    geom_histogram() + 
+    geom_vline(xintercept = population_mean, color = "red") + 
+    geom_errorbarh(aes(y=y, x=x.1, xmin=x.1, xmax=x.2), data=xx, col="#0094EA", size=1.2)
+
+```
 
 ## Leituras
 
