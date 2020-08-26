@@ -18,7 +18,7 @@ O conteúdo é disponibilizado às segundas-feiras e deve ser desenvolvido duran
 | 28/09/2020    |   2      | Estatística Descritiva    | Parte [3](http://me414-unicamp.github.io/aulas/slides/parte03/parte03.pdf)-[4](http://me414-unicamp.github.io/aulas/slides/parte04/parte04.pdf)| |
 | 05/10/2020    |   3       | Probabilidade    | Parte [5](http://me414-unicamp.github.io/aulas/slides/parte05/parte05.pdf)-[6](http://me414-unicamp.github.io/aulas/slides/parte06/parte06.pdf)   |  |
 | 12/10/2020    |   4     | Probabilidade      |Parte [7](http://me414-unicamp.github.io/aulas/slides/parte07/parte07.pdf)-[8](http://me414-unicamp.github.io/aulas/slides/parte08/parte08.pdf)  | |
-| 19/10/2020   |   5       | Variáveis Aleatórias Discretas    | [Parte 9](http://me414-unicamp.github.io/aulas/slides/parte09/parte09.pdf)   |  |
+| 19/10/2020   |   5       | Variáveis Aleatórias Discretas    | [Parte 9](http://me414-unicamp.github.io/aulas/slides/parte09/parte09)   |  |
 | 26/10/2020   |   6      |Variáveis Aleatórias Discretas     | [Parte 10](http://me414-unicamp.github.io/aulas/slides/parte10/parte10.pdf)    | |
 | 02/11/2020    |   7       |Variáveis Aleatórias Discretas    |  [Parte 11](http://me414-unicamp.github.io/aulas/slides/parte11/parte11.pdf) |  |
 | **11/11/2020 Quarta-feira**   |   8           |  **Prova 1: Turmas E, C** |       |
