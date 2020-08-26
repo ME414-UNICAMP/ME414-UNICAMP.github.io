@@ -16,7 +16,7 @@ logo: ../logo-imecc.png
 
 > * Quero saber se o candidato $A$ vai ganhar as eleições para prefeito.
 
-> * Quero saber parâmetro populacional $p$ = proporção de pessoas que votam em $A$.
+> * Quero saber o parâmetro populacional $p$ = proporção de pessoas que votam em $A$.
 
 > * Posso esperar o resultado das eleições para saber, ou seja, teríamos as respostas de todas as pessoas da cidade.
 
@@ -77,7 +77,7 @@ $$\begin{eqnarray}
 
 > * Se outra pessoa também coleta uma amostra aleatória de tamanho $n$ e calcula $\hat{p}$ teremos o mesmo valor?
 
-## Modo 1 - Exemplo $N=5$ e $n=2$ {.build}
+## Modo 1 - Exemplo $N=5$ {.build}
 
 
 $$\mathbf{X}=(X_1,X_2,\ldots,X_5)=(1,0,1,0,1)$$
@@ -91,7 +91,7 @@ $$\begin{eqnarray}
 &=&p(1-p)
 \end{eqnarray}$$
 
-## Modo 1 - Exemplo $N=5$ e $n=2$
+## Modo 1 - Exemplo $N=5$
 
 Gráfico de barras (proporção) dos dados populacionais:
 
@@ -354,15 +354,15 @@ Var(\hat{p}) &= \mathbb E[(\hat{p} - p)^2 ] \\
 
 ## Modo 2 - Exemplo $n=2$
 
-Veja os gráficos das distribuições de probabilidade de $X\sim Bernoulli(p=0.5)$ e $\hat{p}$, respectivamente. 
+Gráficos das distribuições de probabilidade de $X\sim Bernoulli(p=0.6)$ e $\hat{p}$: 
 
 
 ```{r, echo=FALSE, fig.height=3.5, fig.width=6,fig.align='center'}
 par(mfrow=c(1, 2), mar = c(4, 3, 2, 1))
-barplot(c(0.5, 0.5), las = 1, col = "turquoise3", ylim = c(0, 1), width = 0.25,
+barplot(c(0.4, 0.6), las = 1, col = "turquoise3", ylim = c(0, 1), width = 0.25,
         names.arg = c(0, 1), 
         main = "", xlab = "X", ylab = "", xlim = c(0, 1))
-barplot(c(0.25, 0.5, 0.25), las = 1, col = "turquoise3", 
+barplot(c(0.36, 0.48, 0.16), las = 1, col = "turquoise3", 
         names.arg = c("0", "1/2", "1"), 
         main = " ", 
         xlab = bquote("" * hat(p) * "") , ylab = "", ylim = c(0, 1), )
@@ -423,11 +423,11 @@ Além disso, conforme o tamanho amostral aumenta, a imprecisão de $\hat{p}$ par
 
 Amostra aleatória $n=3$ de $X\sim Bernoulli(p=0.6)$. 
 
-* $p = \mathbb E(X) = 0.6 \qquad \Rightarrow \qquad \mathbb E (\hat{p}) = 0.6$ 
+* $\mathbb E(X) = p = 0.6 \qquad \Rightarrow \qquad \mathbb E (\hat{p}) = 0.6$ 
 
-* $p(1-p) = Var(X) = p(1 - p) = 0.24 \;\; \Rightarrow \;\; Var(\hat{p}) = \frac{0.24}{3} = 0.08$
+* $Var(X) = p(1 - p) = 0.24 \;\; \Rightarrow \;\; Var(\hat{p}) = \frac{0.24}{3} = 0.08$
 
-```{r, echo=FALSE, fig.height=3.5, fig.width=6,fig.align='center'}
+```{r, echo=FALSE, fig.height=3, fig.width=7,fig.align='center'}
 n = 3
 p = 0.6
 
@@ -730,10 +730,13 @@ vari <- sum( ((as.numeric(as.character(ff$Var1)) - esp )^2)*ff$Prop)
 ```
 
 
+## Modo 1 - Exemplo $N=5$ e $n=3$ 
+
+
 $$\begin{eqnarray} 
 E(\bar{X})&=&`r esp`=\mu\\
 Var(\bar{X})&=&E[(\bar{X}-\mu)^2]=`r vari`\\
-&=\frac{2000000}{3}=\frac{\sigma^2}{n}
+&=&\frac{2000000}{3}=\frac{\sigma^2}{n}
 \end{eqnarray}$$
 
 
@@ -1099,7 +1102,7 @@ xbar = replicate(10000, mean(rexp(100, rate = 2)))
 normdens = function(x) dnorm(x, mean = 1/2, sd = 1/20)
 
 par(mar = c(4, 4, 2, 1))
-hist(xbar, prob = TRUE, las = 1, col = "lightblue", ylim = c(0, 8), 
+hist(xbar, prob = TRUE, las = 1, col = "turquoise3", ylim = c(0, 8), 
      main = "Distribuição Amostral", ylab = "densidade",  
      xlab = bquote("" * bar(X) * ""))
 curve(normdens, col = "red", lwd = 2, add = TRUE)
@@ -1163,7 +1166,7 @@ for (i in 1:B)
 {
   bb[i,] <- sample(1:6,n,replace=TRUE)
 }
-phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+phat <- rowMeans(bb)
 aa <- data.frame(bb)
 aa$phat <- round(phat,3)
 df <- data.frame(PF = aa$phat)
@@ -1195,7 +1198,7 @@ for (i in 1:B)
 {
   bb[i,] <- sample(1:6,n,replace=TRUE)
 }
-phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+phat <- rowMeans(bb)
 aa <- data.frame(bb)
 aa$phat <- round(phat,3)
 df <- data.frame(PF = aa$phat)
@@ -1222,7 +1225,7 @@ for (i in 1:B)
 {
   bb[i,] <- sample(1:6,n,replace=TRUE)
 }
-phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+phat <- rowMeans(bb)
 aa <- data.frame(bb)
 aa$phat <- round(phat,3)
 df <- data.frame(PF = aa$phat)
@@ -1251,7 +1254,7 @@ for (i in 1:B)
 {
   bb[i,] <- sample(1:6,n,replace=TRUE)
 }
-phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+phat <- rowMeans(bb)
 aa <- data.frame(bb)
 aa$phat <- round(phat,3)
 df <- data.frame(PF = aa$phat)
@@ -1278,7 +1281,7 @@ for (i in 1:B)
 {
   bb[i,] <- sample(1:6,n,replace=TRUE)
 }
-phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+phat <- rowMeans(bb)
 aa <- data.frame(bb)
 aa$phat <- round(phat,3)
 df <- data.frame(PF = aa$phat)
@@ -1307,7 +1310,7 @@ for (i in 1:B)
 {
   bb[i,] <- sample(1:6,n,replace=TRUE)
 }
-phat <- unlist(apply(bb,1,function(x) mean(xx[x])))
+phat <- rowMeans(bb)
 aa <- data.frame(bb)
 aa$phat <- round(phat,3)
 df <- data.frame(PF = aa$phat)
@@ -1462,7 +1465,7 @@ Temos interesse em saber a média e a variância da altura dos brasileiros: $\mu
 > *  Portanto, a estatística $T$ possui uma distribuição de probabilidade, chamada de **distribuição amostral** de T.
 
 
-## Distribuição amostral da estatística usada para estimar o parâmetro de interesse
+## 
 
 <center>
 <img src="figuras/Sampling_.jpg" width=550>
