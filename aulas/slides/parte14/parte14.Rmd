@@ -614,14 +614,14 @@ stat_function(fun = dnorm, args = list(mean = 0.6, sd = sqrt(0.6*.4/n)),col="red
 
 * Se outra pessoa também coleta uma amostra aleatória de tamanho $n$ e calcula $\bar{X}$ teremos o mesmo valor?
 
-## Modo 1 - Exemplo $N=5$ e $n=2$
+## Modo 1 - Exemplo $N=5$
 
 $$\mathbf{X}=(X_1,X_2,\ldots,X_5)=(1000,2000,3000,4000,5000)$$
 
 $$\mu=\frac{\sum_{i=1}^5X_i}{5}=3000$$
 $$\sigma^2=\frac{1}{5}\sum_{i=1}^N(X_i-\mu)^2=2000000$$
 
-## Modo 1 - Exemplo $N=5$ e $n=2$
+## Modo 1 - Exemplo $N=5$
 
 Gráfico de barras (proporção) dos dados populacionais:
 
