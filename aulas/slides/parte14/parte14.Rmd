@@ -915,6 +915,7 @@ Temos as propriedades:
 $$E(\bar{X})=\mu \quad \quad Var(\bar{X})=\frac{\sigma^2}{n}$$
 
 $$E(\hat{p})=p\quad \quad Var(\hat{p})=\frac{p(1-p)}{n}$$
+
 ##
 
 
