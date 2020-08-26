@@ -442,28 +442,28 @@ barplot(dbinom(0:n, n, p), las = 1, col = "turquoise3",
 ```
 
 
-## Modo 2 - Exemplo $n=30$
+<!-- ## Modo 2 - Exemplo $n=30$ -->
 
 
-Amostra aleatória $n=30$ de $X\sim Bernoulli(p=0.6)$. 
+<!-- Amostra aleatória $n=30$ de $X\sim Bernoulli(p=0.6)$.  -->
 
-* $p = \mathbb E(X) = 0.6 \qquad \Rightarrow \qquad \mathbb E (\hat{p}) = 0.6$ 
+<!-- * $p = \mathbb E(X) = 0.6 \qquad \Rightarrow \qquad \mathbb E (\hat{p}) = 0.6$  -->
 
-* $p(1-p) = Var(X) = p(1 - p) = 0.24 \;\; \Rightarrow \;\; Var(\hat{p}) = \frac{0.24}{3} = 0.08$
+<!-- * $p(1-p) = Var(X) = p(1 - p) = 0.24 \;\; \Rightarrow \;\; Var(\hat{p}) = \frac{0.24}{3} = 0.08$ -->
 
-```{r, echo=FALSE, fig.height=3.5, fig.width=6,fig.align='center'}
-n = 30
-p = 0.6
+<!-- ```{r, echo=FALSE, fig.height=3.5, fig.width=6,fig.align='center'} -->
+<!-- n = 30 -->
+<!-- p = 0.6 -->
 
-par(mfrow=c(1, 2), mar = c(4, 3, 2, 1))
-barplot(c(1-p, p), las = 1, col = "turquoise3", ylim = c(0, .8), width = 0.25, 
-        names.arg = c(0, 1), 
-        main = "Bernoulli(p=0.6)", xlab = "X", ylab = "", xlim = c(0, 1))
-barplot(dbinom(0:n, n, p), las = 1, col = "turquoise3", 
-        names.arg = round(0:n/n, 2), 
-        main = "Distribuição Amostral", 
-        xlab = bquote("" * hat(p) * "") , ylab = "")
-```
+<!-- par(mfrow=c(1, 2), mar = c(4, 3, 2, 1)) -->
+<!-- barplot(c(1-p, p), las = 1, col = "turquoise3", ylim = c(0, .8), width = 0.25,  -->
+<!--         names.arg = c(0, 1),  -->
+<!--         main = "Bernoulli(p=0.6)", xlab = "X", ylab = "", xlim = c(0, 1)) -->
+<!-- barplot(dbinom(0:n, n, p), las = 1, col = "turquoise3",  -->
+<!--         names.arg = round(0:n/n, 2),  -->
+<!--         main = "Distribuição Amostral",  -->
+<!--         xlab = bquote("" * hat(p) * "") , ylab = "") -->
+<!-- ``` -->
 
 
 ## Modo 2 - Exemplo $n=30$
