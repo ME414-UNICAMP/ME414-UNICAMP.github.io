@@ -889,7 +889,7 @@ Var(\bar{X}) &= \frac{1}{n}\sum_{i=1}^n Var (X_i)= \frac{Var(X)}{n}=\frac{\sigma
 
 ## Resultado  {.build .smaller}
 
-Seja $X$ uma v.a. com média $\mu$ e variância $\sigma^{2}$ e $X_{1}, \ldots, X_{n}$ uma amostra aleatória simples de $X$. 
+Seja $X$ uma v.a. com média $\mu$ e variância $\sigma^{2}$ e $X_{1}, \ldots, X_{n}$ uma amostra aleatória de $X$. 
 
 A média amostral
 $$\bar X_n = \frac{1}{n}\sum_{i=1}^n X_i$$ 
@@ -1134,7 +1134,7 @@ $p(x)=P(X=x)$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | 
 
 ## Exemplo - lançamento de dados {.build .smaller}
 
-> Se temos uma amostra aleatória simples de tamanho $n$: $X_1,X_2,\ldots, X_n$, pelo TLC sabemos que a distribuição amostral de $\bar X_n$ é Normal$\left( 3.5, \frac{2.92}{n} \right)$ para $n$ grande.
+> Se temos uma amostra aleatória de tamanho $n$: $X_1,X_2,\ldots, X_n$, pelo TLC sabemos que a distribuição amostral de $\bar X_n$ é Normal$\left( 3.5, \frac{2.92}{n} \right)$ para $n$ grande.
 
 > O primeiro histograma a seguir mostra o resultado de 100000 repetições do seguinte experimento: observar o resultado do lançamento de 1 dado. Repare que é muito próximo de uma distribuição uniforme discreta (chance 1/6 para cada resultado), que é a distribuição de $X$.
 
@@ -1459,7 +1459,7 @@ Temos interesse em saber a média e a variância da altura dos brasileiros: $\mu
 
 > *  Para apresentar uma estimativa de um parâmetro ($\widehat \mu$ e $\hat{\sigma}^2$), devemos escolher uma estatística ($T$). 
 
-> *  Note que da maneira que o plano amostral foi executado (amostra aleatória simples), a estatística $T$ é uma variável aleatória, visto que cada vez que executarmos o plano amostral poderemos obter resultados diversos.
+> *  Note que da maneira que o plano amostral foi executado (amostra aleatória), a estatística $T$ é uma variável aleatória, visto que cada vez que executarmos o plano amostral poderemos obter resultados diversos.
 
 > *  Portanto, a estatística $T$ possui uma distribuição de probabilidade, chamada de **distribuição amostral** de T.
 
