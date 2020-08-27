@@ -50,35 +50,173 @@ Sendo:
 
 > * **margem de erro:** quantidade que depende da distribuição amostral do estimador pontual de $\theta$, do grau de confiança pré-estabelecido e do erro padrão da estimativa
 
+# Intervalo de Confiança como Estimativa de $p$
 
-## Intervalo de Confiança como Estimativa de p {.build}
+## Distribuição Amostral de $\hat{p}$
 
-* Seja $X_i \sim Bernoulli(p)$, $i=1, \ldots, n$. 
+Temos uma população com proporção $p$ e variância $p(1-p)$ desconhecidos. 
 
-> * Se $n$ suficientemente grande, $$\hat{p}_n=\frac{1}{n}\sum_{i=1}^nX_i\approx N\left(p,\frac{p(1-p)}{n}\right)$$ 
+Retira-se uma amostra aleatória de tamanho $n$ e calcula-se a proporção amostral $\hat{p}$ para estimar o parâmetro populacional desconhecido $p$.
 
-> * E então $Z=\frac{\hat{p}_n-p}{\sqrt{\frac{p(1-p)}{n}}}\approx N(0,1)$ 
+Temos as propriedades:
 
-> * Seja $1-\alpha$ o grau de confiança do intervalo
 
-> * Geralmente usamos $\alpha=0.05$, então o grau de confiança é $95\%$.
+$$E(\hat{p})=p\quad \quad Var(\hat{p})=\frac{p(1-p)}{n}\quad\quad EP(\hat{p})=\sqrt{\frac{p(1-p)}{n}}$$
+Pelo Teorema do Limite Central: a distribuição amostral de $\hat{p}$ aproxima-se da seguinte **distribuição Normal** quando $n$ for suficientemente grande:
 
-> * Queremos encontrar um intervalo tal que a probabilidade do intervalo conter o verdadeiro valor de $p$ seja $(1-\alpha)\times 100 \%$
+$$\hat{p}\sim\mathcal{N}\left(p,\frac{p(1-p)}{n}\right)$$
 
-## Intervalo de Confiança como Estimativa de p
+
+
+
+## Distribuição Amostral de $\hat{p}$
+
+```{r, echo=FALSE, fig.height=4.5, fig.width=6.5, message=FALSE, results='hide',fig.align='center'}
+library(openintro, verbose=FALSE)
+library(latex2exp)
+data(COL)
+par(mar=c(5, 4, 1, 1) + 0.1)
+normTail(M = c(-2.58, 2.58),
+         df = 10,
+         col = COL[1],
+         xlim = 3.3 * c(-1, 1),
+         ylim = c(0, 0.8),
+         xlab=" ",
+         axes=FALSE)
+axis(1,at=c(-1,0,1),labels = c(TeX('$p-\\sqrt{p(1-p)/n}$'),TeX('$p$'),TeX('$p+\\sqrt{p(1-p)/n}$')),
+     padj=.5)
+X <- rev(seq(-4, 4, 0.025))
+Y <- dt(X, 10) # makes better visual
+
+yMax <- 0.60
+
+lines(1.96*c(-1,1), rep(yMax,2), lwd=2)
+lines(rep(-1.96,2), c(0,yMax), lty=2)
+lines(rep( 1.96,2), c(0,yMax), lty=2)
+#text(0, yMax, '95%: de -1.96 a 1.96', pos=3)
+text(0,yMax,TeX('$95%: \\, \\pm  1.96\\sqrt{p(1-p)/n}$'),pos=3)
+
+
+yMax <- 0.73
+lines(2.58*c(-1,1), rep(yMax,2), lwd=2)
+lines(rep(-2.58,2), c(0,yMax), lty=2)
+lines(rep( 2.58,2), c(0,yMax), lty=2)
+#text(0, yMax, '99%: de -2.58 a 2.58', pos=3)
+text(0,yMax,TeX('$99%: \\, \\pm  2.58\\sqrt{p(1-p)/n}$'),pos=3)
+
+
+yMax <- 0.41
+lines(1.645*c(-1,1), rep(yMax,2), lwd=2)
+lines(rep(-1.645,2), c(0,yMax), lty=2)
+lines(rep( 1.645,2), c(0,yMax), lty=2)
+#text(0, yMax, '90%: de -1.64 a 1.64', pos=3)
+text(0,yMax,TeX('$90%: \\, \\pm  1.64\\sqrt{p(1-p)/n}$'),pos=3)
+
+yMax <- 0.15
+lines(1*c(-1,1), rep(yMax,2), lwd=2)
+lines(rep(-1,2), c(0,yMax), lty=2)
+lines(rep( 1,2), c(0,yMax), lty=2)
+#text(0, yMax, '68%: de -1 a 1', pos=3)
+text(0,yMax,TeX('$68%: \\, \\pm  \\sqrt{p(1-p)/n}$'),pos=3)
+```
+
+
+
+
+##
+
+$$Z=\frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}}\sim \mathcal{N}(0,1)$$
+```{r, echo=FALSE, fig.height=4.5, fig.width=6.5, message=FALSE, results='hide',fig.align='center'}
+library(openintro, verbose=FALSE)
+data(COL)
+par(mar=c(5, 4, 1, 1) + 0.1)
+normTail(M = c(-2.58, 2.58),
+         df = 10,
+         col = COL[1],
+         xlim = 3.3 * c(-1, 1),
+         ylim = c(0, 0.8),
+         xlab='Desvios-padrão a partir da média')
+X <- rev(seq(-4, 4, 0.025))
+Y <- dt(X, 10) # makes better visual
+
+yMax <- 0.60
+
+lines(1.96*c(-1,1), rep(yMax,2), lwd=2)
+lines(rep(-1.96,2), c(0,yMax), lty=2)
+lines(rep( 1.96,2), c(0,yMax), lty=2)
+text(0, yMax, '95%: de -1.96 a 1.96', pos=3)
+
+yMax <- 0.73
+lines(2.58*c(-1,1), rep(yMax,2), lwd=2)
+lines(rep(-2.58,2), c(0,yMax), lty=2)
+lines(rep( 2.58,2), c(0,yMax), lty=2)
+text(0, yMax, '99%: de -2.58 a 2.58', pos=3)
+
+
+yMax <- 0.41
+lines(1.645*c(-1,1), rep(yMax,2), lwd=2)
+lines(rep(-1.645,2), c(0,yMax), lty=2)
+lines(rep( 1.645,2), c(0,yMax), lty=2)
+text(0, yMax, '90%: de -1.64 a 1.64', pos=3)
+
+yMax <- 0.15
+lines(1*c(-1,1), rep(yMax,2), lwd=2)
+lines(rep(-1,2), c(0,yMax), lty=2)
+lines(rep( 1,2), c(0,yMax), lty=2)
+text(0, yMax, '68%: de -1 a 1', pos=3)
+```
+
+
+
+##
+
+Qual a probabilidade de que o estimador $\hat{p}$ esteja distante do valor verdadeiro, $p$, em no máximo 1 erro-padrão?
+
+$$P\left(\mid \hat{p} - p \mid \leq \sqrt{\frac{p(1-p)}{n}}\right)$$
 $$ \begin{aligned}
-0.95 & =  P\left(-1.96\leq Z \leq 1.96\right) \\
-& = P\left(-1.96\leq \frac{\hat{p}_n-p}{\sqrt{\frac{p(1-p)}{n}}} \leq 1.96\right) \\
-& = P\left(-1.96\sqrt{\frac{p(1-p)}{n}}\leq \hat{p}_n-p \leq 1.96\sqrt{\frac{p(1-p)}{n}}\right) \\
-& = P\left(\hat{p}_n - 1.96\sqrt{\frac{p(1-p)}{n}}\leq p \leq \hat{p}_n + 1.96\sqrt{\frac{p(1-p)}{n}}\right), 
+P\left(\mid \hat{p} - p \mid \leq \sqrt{\frac{p(1-p)}{n}}\right)&= P\left( -\sqrt{\frac{p(1-p)}{n}}\leq \hat{p}-p \leq \sqrt{\frac{p(1-p)}{n}} \right)\\
+& =  P\left(-1\leq \frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}} \leq 1\right) \\
+& =  P(-1\leq Z\leq 1)\\
+& =  0.68, 
 \end{aligned}
 $$ 
-em que $\hat{p}_n = \frac{\sum_{i=1}^n X_i}{n}$ e a margem de erro é $1.96\sqrt{\frac{p(1-p)}{n}}$.
+
+## {.smaller}
+
+Qual a probabilidade de que o estimador $\hat{p}$ esteja distante do valor verdadeiro, $p$, em no máximo 1.96 erro-padrão?
+
+$$P\left(\mid \hat{p} - p \mid \leq 1.96\sqrt{\frac{p(1-p)}{n}}\right)$$
+$$ \begin{aligned}
+P\left(\mid \hat{p} - p \mid \leq 1.96 \sqrt{\frac{p(1-p)}{n}}\right)&= P\left( -1.96\sqrt{\frac{p(1-p)}{n}}\leq \hat{p}-p \leq 1.96\sqrt{\frac{p(1-p)}{n}} \right)\\
+& =  P\left(-1\leq \frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}} \leq 1\right) \\
+& =  P(-1.96\leq Z\leq 1.96)\\
+& =  0.95, 
+\end{aligned}
+$$
+
+##  {.build}
+
+Intervalo de confiança de $95\%$
+
+$IC(p, 95\%) = \left[\widehat p -1.96\sqrt{\frac{p(1-p)}{n}};\widehat p +1.96\sqrt{\frac{p(1-p)}{n}}\right]$
 
 
-## Intervalo de Confiança como Estimativa de p {.build}
+Intervalo de confiança de $90\%$
 
-Note que $p$ é desconhecido, mas a variância depende da função de $p(1-p)$, dada no seguinte gráfico: 
+$IC(p, 90\%) = \left[\widehat p -1.64\sqrt{\frac{p(1-p)}{n}};\widehat p +1.64\sqrt{\frac{p(1-p)}{n}}\right]$
+
+
+Intervalo de confiança de $99\%$
+
+$IC(p, 99\%) = \left[\widehat p -2.58\sqrt{\frac{p(1-p)}{n}};\widehat p +2.58\sqrt{\frac{p(1-p)}{n}}\right]$
+
+Qual o problema?
+
+Sabemos $p(1-p)$?
+
+## 
+
+Não sabemos $p(1-p)$, porém:
 
 <center>
 ```{r, echo=FALSE, fig.width=4.5, fig.height=3.5}
@@ -91,13 +229,56 @@ curve(x*(1-x), 0, maxp, xlab = "p", ylab = "p(1-p)", type = "l", bty="l", las=1,
 A função $p(1-p)$ atinge o valor máximo quando $p=1/2$, ou seja, $p(1-p) \leq \frac{1}{4}$.
 
 
-## Intervalo de Confiança como Estimativa de p {.build}
+
+
+<!-- ## Intervalo de Confiança como Estimativa de $p$ {.build} -->
+
+<!-- * Seja $X_1, \ldots, X_n$ uma amostra aleatória de $X \sim Bernoulli(p)$.  -->
+
+<!-- > * Se $n$ suficientemente grande, $$\hat{p}=\frac{1}{n}\sum_{i=1}^nX_i\sim \mathcal{N}\left(p,\frac{p(1-p)}{n}\right)$$  -->
+
+<!-- > * E então $Z=\frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}}\sim \mathcal{N}(0,1)$  -->
+
+<!-- > * Seja $1-\alpha$ o grau de confiança do intervalo -->
+
+<!-- > * Geralmente usamos $\alpha=0.05$, então o grau de confiança é $95\%$. -->
+
+<!-- > * Queremos encontrar um intervalo tal que a probabilidade do intervalo conter o verdadeiro valor de $p$ seja $(1-\alpha)\times 100 \%$ -->
+
+<!-- ## Intervalo de Confiança como Estimativa de p -->
+<!-- $$ \begin{aligned} -->
+<!-- 0.95 & =  P\left(-1.96\leq Z \leq 1.96\right) \\ -->
+<!-- & = P\left(-1.96\leq \frac{\hat{p}_n-p}{\sqrt{\frac{p(1-p)}{n}}} \leq 1.96\right) \\ -->
+<!-- & = P\left(-1.96\sqrt{\frac{p(1-p)}{n}}\leq \hat{p}_n-p \leq 1.96\sqrt{\frac{p(1-p)}{n}}\right) \\ -->
+<!-- & = P\left(\hat{p}_n - 1.96\sqrt{\frac{p(1-p)}{n}}\leq p \leq \hat{p}_n + 1.96\sqrt{\frac{p(1-p)}{n}}\right),  -->
+<!-- \end{aligned} -->
+<!-- $$  -->
+<!-- em que $\hat{p}_n = \frac{\sum_{i=1}^n X_i}{n}$ e a margem de erro é $1.96\sqrt{\frac{p(1-p)}{n}}$. -->
+
+
+<!-- ## Intervalo de Confiança como Estimativa de p {.build} -->
+
+<!-- Note que $p$ é desconhecido, mas a variância depende da função de $p(1-p)$, dada no seguinte gráfico:  -->
+
+<!-- <center> -->
+<!-- ```{r, echo=FALSE, fig.width=4.5, fig.height=3.5} -->
+<!-- maxp = 1 -->
+<!-- par(mar=c(5, 4, 2, 2) + .1) -->
+<!-- curve(x*(1-x), 0, maxp, xlab = "p", ylab = "p(1-p)", type = "l", bty="l", las=1, col="blue", lwd=3, cex.lab=1.3, main=" ") -->
+<!-- ``` -->
+<!-- </center> -->
+
+<!-- A função $p(1-p)$ atinge o valor máximo quando $p=1/2$, ou seja, $p(1-p) \leq \frac{1}{4}$. -->
+
+
+##  Intervalo de confiança para $p$ {.build}
 
 Vimos que $p(1-p)\leq \frac{1}{4}$, então erro padrão é maximizado por: 
 
 $$\sqrt{\frac{p(1-p)}{n}}\leq \sqrt{\frac{1}{4n}} \quad \Longleftrightarrow \quad -\sqrt{\frac{p(1-p)}{n}}\geq -\sqrt{\frac{1}{4n}}$$ 
 
-Portanto, $0.95 \leq P\left(\widehat p - 1.96\sqrt{\frac{1}{4n}} \leq p \leq \widehat p + 1.96\sqrt{\frac{1}{4n}}\right)$. 
+Portanto, $IC(p, 95\%) = \left[\widehat p -1.96\sqrt{\frac{1}{4n}};\widehat p +1.96\sqrt{\frac{1}{4n}}\right]$
+. 
  
 > Caso geral (conservador): Um IC de $100(1-\alpha)\%$ para $p$ é dado por
 
@@ -105,7 +286,7 @@ Portanto, $0.95 \leq P\left(\widehat p - 1.96\sqrt{\frac{1}{4n}} \leq p \leq \wi
 $IC(p, 1-\alpha) = \left[\widehat p -z_{\alpha/2}\sqrt{\frac{1}{4n}};\widehat p +z_{\alpha/2}\sqrt{\frac{1}{4n}}\right]$
 </center>
 
-Veja que tivemos que escolher as quantidades $z_{\alpha/2}$ tal que:
+em que $z_{\alpha/2}$ é tal que:
 
 $$P(-z_{\alpha/2}<Z<z_{\alpha/2})=1-\alpha$$
 
@@ -300,27 +481,27 @@ $$IC_2(p, 1-\alpha)=\left[\widehat p -z_{\alpha/2}\sqrt{\frac{\widehat p (1-\wid
 Veja que nos dois casos, os $IC$'s são da forma $\widehat p \pm \mbox{margem de erro}$
 
 
-## Resumo {.build}
+<!-- ## Resumo {.build} -->
 
-* Coletamos uma amostra aleatória $X_1, X_2, \ldots, X_n$ de uma população com distribuição de Bernoulli com probabilidade de sucesso igual a $p$, portanto com média $p$ e a variância $p(1-p)$ e usamos $\bar X_n = \widehat p$ para estimar $p$.
+<!-- * Coletamos uma amostra aleatória $X_1, X_2, \ldots, X_n$ de uma população com distribuição de Bernoulli com probabilidade de sucesso igual a $p$, portanto com média $p$ e a variância $p(1-p)$ e usamos $\bar X_n = \widehat p$ para estimar $p$. -->
 
-* Pelo TCL: $$\widehat p \sim N\left(p, \frac{p(1-p)}{n}\right)$$
+<!-- * Pelo TCL: $$\widehat p \sim N\left(p, \frac{p(1-p)}{n}\right)$$ -->
 
-* Propriedade da Normal: $$Z=\frac{\widehat p - p}{\sqrt{p(1-p)/n}} \sim N(0,1)$$
-$$P(-z_{\alpha/2}<Z<z_{\alpha/2})=1-\alpha$$
+<!-- * Propriedade da Normal: $$Z=\frac{\widehat p - p}{\sqrt{p(1-p)/n}} \sim N(0,1)$$ -->
+<!-- $$P(-z_{\alpha/2}<Z<z_{\alpha/2})=1-\alpha$$ -->
 
 
-## Intervalo de Confiança para $p$ {.build}
+<!-- ## Intervalo de Confiança para $p$ {.build} -->
 
-Então, um intervalo de $100(1-\alpha)\%$ de confiança para $p$:
+<!-- Então, um intervalo de $100(1-\alpha)\%$ de confiança para $p$: -->
 
-$$IC(p, 1-\alpha) = \left[ \widehat p - z_{\alpha/2}\sqrt{\frac{p(1-p)}{n}}\,;\, \widehat p  + z_{\alpha/2}\sqrt{\frac{p(1-p)}{n}}\right]$$
+<!-- $$IC(p, 1-\alpha) = \left[ \widehat p - z_{\alpha/2}\sqrt{\frac{p(1-p)}{n}}\,;\, \widehat p  + z_{\alpha/2}\sqrt{\frac{p(1-p)}{n}}\right]$$ -->
 
-**Problema:** não conhecemos $p$. Portanto, usamos:
+<!-- **Problema:** não conhecemos $p$. Portanto, usamos: -->
 
-$$IC(p, 1-\alpha) = \left[ \widehat p - z_{\alpha/2}\sqrt{\frac{\widehat p(1-\widehat p)}{n}}\,;\,  \widehat p  +z_{\alpha/2}\sqrt{\frac{\widehat p (1-\widehat p)}{n}}\right]$$
-ou, pelo método conservador,
-$$IC(p, 1-\alpha) = \left[\widehat p - z_{\alpha/2}\sqrt{\frac{1}{4n}}\,;\, \widehat p  + z_{\alpha/2}\sqrt{\frac{1}{4n}}\right]$$
+<!-- $$IC(p, 1-\alpha) = \left[ \widehat p - z_{\alpha/2}\sqrt{\frac{\widehat p(1-\widehat p)}{n}}\,;\,  \widehat p  +z_{\alpha/2}\sqrt{\frac{\widehat p (1-\widehat p)}{n}}\right]$$ -->
+<!-- ou, pelo método conservador, -->
+<!-- $$IC(p, 1-\alpha) = \left[\widehat p - z_{\alpha/2}\sqrt{\frac{1}{4n}}\,;\, \widehat p  + z_{\alpha/2}\sqrt{\frac{1}{4n}}\right]$$ -->
 
 
 ## Exemplo: Universitários Não Fumantes {.build}
@@ -712,9 +893,9 @@ Suponha que estejamos interessados em estimar a porcentagem de consumidores de u
 
 Note que a prática de obter amostras pequenas para examinar $p$, e aí determinar o tamanho amostral sem utilizar o "pior caso", é no que consiste a idéia de **amostras piloto**.
 
-##
 
-```{r,echo=FALSE,message=FALSE,warning=FALSE}
+
+```{r,echo=FALSE,message=FALSE,warning=FALSE,eval=FALSE}
 library(ggplot2)
 set.seed(1321)
 n <- 10
@@ -738,9 +919,9 @@ ggplot(dfx, aes(x = sample.means, y = trial, xmin = lcl, xmax = ucl, color = mis
   theme_bw()
 ```
 
-##
 
-```{r,echo=FALSE,message=FALSE,warning=FALSE}
+
+```{r,echo=FALSE,message=FALSE,warning=FALSE,eval=FALSE}
 set.seed(1)
 
 population <- rnorm(10000, 3, 3)
