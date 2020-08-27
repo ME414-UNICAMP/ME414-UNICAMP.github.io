@@ -9,6 +9,8 @@ permalink: /cronograma/
 
 O conteúdo é disponibilizado às segundas-feiras e deve ser desenvolvido durante a semana.
 
+Os exercícios estão disponíveis no Moodle, verifique semanalmente.
+
 **Verifique com seu professor os horários e instruções das provas.**
 
 | Data          | Semana          | Conteúdo | Slides em .pdf   | Vídeos  | Extras | 
