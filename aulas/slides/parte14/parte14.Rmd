@@ -1016,17 +1016,17 @@ $$\bar{X}\sim \mathcal{N}\left(\mu,\frac{\sigma^2}{n}\right) \quad \quad \hat{p}
 
 
 
-## Teorema do Limite Central {.build}
+##  {.smaller .build}
 
 Temos os resultados:
 
-* $\bar X$: $\mathbb E(\bar X) = \mu$ e $Var(\bar X) = \frac{\sigma^2}{n}$.
+* $\bar X$: $\mathbb E(\bar X) = \mu$ e $Var(\bar X) = \frac{\sigma^2}{n}$. Erro padrão: $EP(\bar{X})=\sqrt{Var(\bar X)}=\sigma/\sqrt{n}$.
 
-* $\hat{p}$: $\mathbb E(\hat{p}) = p$ e $Var(\hat{p}) = \frac{p(1-p)}{n}$.
+* $\hat{p}$: $\mathbb E(\hat{p}) = p$ e $Var(\hat{p}) = \frac{p(1-p)}{n}$. Erro padrão: $EP(\hat{p})=\sqrt{Var(\hat p)}=\sqrt{\frac{p(1-p)}{n}}$.
 
 > No exemplos, vimos também a distribuição amostral de $\bar X$ ou $\hat{p}$, mas isso só foi possível porque tínhamos informação de todos os valores possíveis na população. 
 
-> Os exemplos anteriores foram casos hipotéticos apenas para demonstrar como $\bar X$ e $\hat{p}$ se comportam quando realizamos a amostragem.
+> Os exemplos anteriores foram casos hipotéticos apenas para ilustrar como $\bar X$ e $\hat{p}$ se comportam quando realizamos a amostragem.
 
 > Na prática, não teremos informações suficientes para de fato descrevermos a distribuição amostral exata de $\bar X$ e $\hat{p}$ (se tivermos, nem é preciso fazer amostragem!)
 
@@ -1043,7 +1043,7 @@ $$\bar{X}_n\sim\mathcal{N}\left(\mu,\frac{\sigma^2}{n}\right)$$
 
 >
 
-$$Z = \frac{\bar X_{n} - \mu}{\sigma / \sqrt{n}} \sim N(0,1)$$ 
+$$Z = \frac{\bar X_{n} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0,1)$$ 
 
 
 
@@ -1053,7 +1053,7 @@ $$Z = \frac{\bar X_{n} - \mu}{\sigma / \sqrt{n}} \sim N(0,1)$$
 
 
 
-## Exemplo - Transistor
+## Exemplo - Transistor {.build}
 
 Suponha que $X$ denota o tempo de vida de um transistor (em horas) e seu comportamento pode ser representado por uma distribuição Exponencial, tal que $X \sim Exp(2)$, ou seja: 
 $$f_{X}(x) = 2e^{-2x}, \qquad \mbox{para } x \geq 0.$$
@@ -1061,7 +1061,7 @@ $$f_{X}(x) = 2e^{-2x}, \qquad \mbox{para } x \geq 0.$$
 <img src="figuras/TransistorExp2.png" width=380 style="float: left; margin-right: 2cm">
 
 <br /> 
-Sem maiores detalhes, pode-se mostrar que:
+Sabemos que:
 
 $\mathbb E(X) = \frac{1}{2}$ 
 
@@ -1081,18 +1081,18 @@ curve(exp2, col = "red", lwd = 2, add = TRUE)
 
 
 
-## Exemplo - Transistor
+## Exemplo - Transistor {.build}
 
 Os tempos de vida de 100 transistores são coletados e a média dos tempos é calculada, denotada por $\bar X_{100}$.
 
-Desejamos estudar a variável aleatória $\bar X_{100}$. 
+> Desejamos estudar a variável aleatória $\bar X_{100}$. 
 
 <img src="figuras/TransistorMedia.png" width=380 style="float: right; margin-left: 1cm">
 
-Sabemos que:
+> Sabemos que:
 $$\mathbb E(\bar X_{100}) = \frac{1}{2} \mbox{  e  } Var(\bar X_{100}) = \frac{1/4}{100} = \frac{1}{400}$$
 
-Então, pelo TLC: 
+> Então, pelo TLC: 
 
 $$\displaystyle \bar X_{100}\sim N \left(\frac{1}{2},\frac{1}{400}\right).$$
 
@@ -1134,17 +1134,16 @@ $p(x)=P(X=x)$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | 
 
 ## Exemplo - lançamento de dados {.build .smaller}
 
-> Se temos uma amostra aleatória simples de tamanho $n$: $X_1,X_2,\ldots, X_n$, pelo TLC sabemos que a distribuição amostral de $\bar X_n$ é aproximadamente Normal$\left( 3.5, \frac{2.92}{n} \right)$.
+> Se temos uma amostra aleatória simples de tamanho $n$: $X_1,X_2,\ldots, X_n$, pelo TLC sabemos que a distribuição amostral de $\bar X_n$ é Normal$\left( 3.5, \frac{2.92}{n} \right)$ para $n$ grande.
 
-
-> O primeiro histograma a seguir mostra o resultado de 100000 repetições do seguinte experimento: observar o resultado do lançamento de 1 dado. Repare que é muito próximo de uma distribuição uniforme discreta (chance 1/6 para cada resultado).
+> O primeiro histograma a seguir mostra o resultado de 100000 repetições do seguinte experimento: observar o resultado do lançamento de 1 dado. Repare que é muito próximo de uma distribuição uniforme discreta (chance 1/6 para cada resultado), que é a distribuição de $X$.
 
 > O segundo histograma mostra o resultado de 100000 repetições do seguinte experimento: observar a média do lançamento de 2 dados. 
 
 
 > O último histograma mostra o resultado de 100000 repetições do seguinte experimento: observar a média do lançamento de 100 dados. 
 
-> Repare que conforme o número de dados (tamanho amostral) aumenta, a distribuição da média amostral se aproxima da distribuição normal com média 3.5 e variância cada vez menor (2.92/n).
+> Repare que conforme o número de dados lançados (tamanho amostral) aumenta, a distribuição da média amostral se aproxima da distribuição normal com média 3.5 e variância cada vez menor (2.92/n).
 
 
 
@@ -1465,13 +1464,13 @@ Temos interesse em saber a média e a variância da altura dos brasileiros: $\mu
 > *  Portanto, a estatística $T$ possui uma distribuição de probabilidade, chamada de **distribuição amostral** de T.
 
 
-## 
+<!-- ##  -->
 
-<center>
-<img src="figuras/Sampling_.jpg" width=550>
-</center>
+<!-- <center> -->
+<!-- <img src="figuras/Sampling_.jpg" width=550> -->
+<!-- </center> -->
 
-<sub>[Fonte da imagem](https://sphweb.bumc.bu.edu/otlt/MPH-Modules/BS/BS704_BiostatisticsBasics/BS704_BiostatisticsBasics2.html)</sub>
+<!-- <sub>[Fonte da imagem](https://sphweb.bumc.bu.edu/otlt/MPH-Modules/BS/BS704_BiostatisticsBasics/BS704_BiostatisticsBasics2.html)</sub> -->
 
 ## Leituras
 
