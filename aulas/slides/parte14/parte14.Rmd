@@ -1018,11 +1018,15 @@ $$\bar{X}\sim \mathcal{N}\left(\mu,\frac{\sigma^2}{n}\right) \quad \quad \hat{p}
 
 ##  {.smaller .build}
 
-Temos os resultados:
+Para uma amostra aleatória de tamanho $n$ a partir de uma população:
 
-* $\bar X$: $\mathbb E(\bar X) = \mu$ e $Var(\bar X) = \frac{\sigma^2}{n}$. Erro padrão: $EP(\bar{X})=\sqrt{Var(\bar X)}=\sigma/\sqrt{n}$.
+* com média $\mu$ e variância $\sigma^2$
+    
+    $\bar X$: $\mathbb E(\bar X) = \mu$ e $Var(\bar X) = \frac{\sigma^2}{n}$. Erro padrão: $EP(\bar{X})=\sqrt{Var(\bar X)}=\sigma/\sqrt{n}$.
 
-* $\hat{p}$: $\mathbb E(\hat{p}) = p$ e $Var(\hat{p}) = \frac{p(1-p)}{n}$. Erro padrão: $EP(\hat{p})=\sqrt{Var(\hat p)}=\sqrt{\frac{p(1-p)}{n}}$.
+* com proporção populacional $p$
+
+    $\hat{p}$: $\mathbb E(\hat{p}) = p$ e $Var(\hat{p}) = \frac{p(1-p)}{n}$. Erro padrão: $EP(\hat{p})=\sqrt{Var(\hat p)}=\sqrt{\frac{p(1-p)}{n}}$.
 
 > No exemplos, vimos também a distribuição amostral de $\bar X$ ou $\hat{p}$, mas isso só foi possível porque tínhamos informação de todos os valores possíveis na população. 
 
@@ -1036,14 +1040,17 @@ Temos os resultados:
 
 * Para uma amostra aleatória $X_1, \ldots ,X_n$ coletada de uma população com média $\mu$ e variância $\sigma^{2}$
 
-> * a distribuição amostral de $\bar X_{n}$ aproxima-se de uma **distribuição Normal** de média $\mu$ e variância $\frac{\sigma^{2}}{n}$, quando $n$ for suficientemente grande:
+> * a distribuição amostral de $\bar X$ aproxima-se de uma **distribuição Normal** de média $\mu$ e variância $\frac{\sigma^{2}}{n}$, quando $n$ for suficientemente grande:
 
-$$\bar{X}_n\sim\mathcal{N}\left(\mu,\frac{\sigma^2}{n}\right)$$
+$$\bar{X}\sim\mathcal{N}\left(\mu,\frac{\sigma^2}{n}\right)$$
 
 
 >
 
-$$Z = \frac{\bar X_{n} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0,1)$$ 
+$$Z = \frac{\bar X - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0,1)$$ 
+
+Obs: o resultado vale para $\hat{p}$, com $\mu=p$ e $\sigma^2=p(1-p)$.
+
 
 
 
@@ -1083,7 +1090,7 @@ curve(exp2, col = "red", lwd = 2, add = TRUE)
 
 ## Exemplo - Transistor {.build}
 
-Os tempos de vida de 100 transistores são coletados e a média dos tempos é calculada, denotada por $\bar X_{100}$.
+Os tempos de vida de 100 transistores escolhidos ao acaso são coletados e a média dos tempos é calculada, denotada por $\bar X_{100}$.
 
 > Desejamos estudar a variável aleatória $\bar X_{100}$. 
 
@@ -1134,7 +1141,7 @@ $p(x)=P(X=x)$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | 
 
 ## Exemplo - lançamento de dados {.build .smaller}
 
-> Se temos uma amostra aleatória de tamanho $n$: $X_1,X_2,\ldots, X_n$, pelo TLC sabemos que a distribuição amostral de $\bar X_n$ é Normal$\left( 3.5, \frac{2.92}{n} \right)$ para $n$ grande.
+> Se temos uma amostra aleatória de tamanho $n$: $X_1,X_2,\ldots, X_n$, pelo TLC sabemos que a distribuição amostral de $\bar X$ é Normal$\left( 3.5, \frac{2.92}{n} \right)$ para $n$ grande.
 
 > O primeiro histograma a seguir mostra o resultado de 100000 repetições do seguinte experimento: observar o resultado do lançamento de 1 dado. Repare que é muito próximo de uma distribuição uniforme discreta (chance 1/6 para cada resultado), que é a distribuição de $X$.
 
@@ -1331,9 +1338,9 @@ dev.off()
 
 Você pode verificar o comportamento de $\bar X$ para várias distribuições de $X$:
 
-[TCL para proporções](https://gallery.shinyapps.io/CLT_prop/)
+[TLC para proporções](https://gallery.shinyapps.io/CLT_prop/)
 
-[TCL para médias](https://gallery.shinyapps.io/CLT_mean/)
+[TLC para médias](https://gallery.shinyapps.io/CLT_mean/)
 
 
 
