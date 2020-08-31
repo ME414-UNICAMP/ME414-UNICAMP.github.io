@@ -49,8 +49,11 @@ permalink: /about/
 * Ross, S. M. (2010). [Introductory Statistics](http://www.sciencedirect.com/science/book/9780123743886).
 * Diez, D. M.; Barr, C. D.; Çetinkaya-Rundel, M. (2015). [OpenIntro Statistics](https://leanpub.com/openintro-statistics).
 * Magalhães, M.N. e de Lima, A.C.P. (2001) Noções de Probabilidade e Estatística IME-USP.
+* Devore, J. L. (2018). [Probabilidade e estatística para engenharia e ciências](	http://acervus.unicamp.br/index.asp?codigo_sophia=1138563)
 
 Para acessar livros digitais fora da Unicamp, você precisará do VPN. Veja instruções de instalação [aqui](http://www.ccuec.unicamp.br/ccuec/acesso_remoto_vpn).
+
+Para acessar o livro do Devore, siga as [instruções](https://www.biblioteca.fea.unicamp.br/sites/biblioteca/files/GuiaDeAcessoAosE-booksCengage.pdf).
 
 ### Tabelas das Distribuições
 
