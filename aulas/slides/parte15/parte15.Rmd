@@ -17,7 +17,7 @@ logo: ../logo-imecc.png
 </center>
 
 <center>
-[Vídeo: Pesquisa Eleitorial - JN - 20/08/2018](https://www.youtube.com/watch?v=Q1iSF0hSz4o)
+[Vídeo: Pesquisa Eleitoral - JN - 20/08/2018](https://www.youtube.com/watch?v=Q1iSF0hSz4o)
 </center>
 
 
@@ -52,17 +52,18 @@ Sendo:
 
 # Intervalo de Confiança como Estimativa de $p$
 
-## Distribuição Amostral de $\hat{p}$
+## Distribuição Amostral de $\hat{p}$ {.build}
 
 Temos uma população com proporção $p$ e variância $p(1-p)$ desconhecidos. 
 
-Retira-se uma amostra aleatória de tamanho $n$ e calcula-se a proporção amostral $\hat{p}$ para estimar o parâmetro populacional desconhecido $p$.
+> Retira-se uma amostra aleatória de tamanho $n$ e calcula-se a proporção amostral $\hat{p}$ para estimar o parâmetro populacional desconhecido $p$.
 
-Temos as propriedades:
+> Temos as propriedades:
 
 
 $$E(\hat{p})=p\quad \quad Var(\hat{p})=\frac{p(1-p)}{n}\quad\quad EP(\hat{p})=\sqrt{\frac{p(1-p)}{n}}$$
-Pelo Teorema do Limite Central: a distribuição amostral de $\hat{p}$ aproxima-se da seguinte **distribuição Normal** quando $n$ for suficientemente grande:
+
+> Pelo Teorema do Limite Central: a distribuição amostral de $\hat{p}$ aproxima-se da seguinte **distribuição Normal** quando $n$ for suficientemente grande:
 
 $$\hat{p}\sim\mathcal{N}\left(p,\frac{p(1-p)}{n}\right)$$
 
@@ -168,11 +169,13 @@ text(0, yMax, '68%: de -1 a 1', pos=3)
 
 
 
-##
+## {.build}
 
 Qual a probabilidade de que o estimador $\hat{p}$ esteja distante do valor verdadeiro, $p$, em no máximo 1 erro-padrão?
 
-$$P\left(\mid \hat{p} - p \mid \leq \sqrt{\frac{p(1-p)}{n}}\right)$$
+> $$P\left(\mid \hat{p} - p \mid \leq \sqrt{\frac{p(1-p)}{n}}\right)$$
+
+>
 $$ \begin{aligned}
 P\left(\mid \hat{p} - p \mid \leq \sqrt{\frac{p(1-p)}{n}}\right)&= P\left( -\sqrt{\frac{p(1-p)}{n}}\leq \hat{p}-p \leq \sqrt{\frac{p(1-p)}{n}} \right)\\
 & =  P\left(-1\leq \frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}} \leq 1\right) \\
