@@ -27,7 +27,7 @@ permalink: /about/
 #### ME414 - E
 
 * Professor: [Élcio Lebensztayn](http://www.ime.unicamp.br/~lebensztayn/)
-* [Moodle da disciplina]()
+* [Moodle da disciplina](https://moodle.ggte.unicamp.br/enrol/index.php?id=7710)
 
 
 #### ME414 - F
@@ -40,7 +40,7 @@ permalink: /about/
 #### ME414 - I
 
 * Professor: Filidor E. Vilca Labra
-* [Moodle da disciplina]()
+* [Moodle da disciplina](https://moodle.ggte.unicamp.br/enrol/index.php?id=7760)
 
 
 
