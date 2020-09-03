@@ -63,14 +63,11 @@ Para acessar o livro do Devore, siga as [instruções](https://www.biblioteca.fe
 
 [Widget para cálculo da Normal e outras distribuições](https://gallery.shinyapps.io/dist_calc/)
 
-### Horários de atendimento
+### Horários de monitorias PED
 
-Dúvidas relacionadas aos slides e exercícios podem ser discutidas em todos os atendimentos.
-
-Para dúvidas específicas sobre logísticas de cada turma, o aluno deve procurar seu professor.
 
 | Dia da Semana 	| Horário 	| Google Meet      	| Responsável   	|
 |:---------------:	|:---------	:|:-----------:	|-----------	|
-| 3as-feiras    	| 09-10h  	| [uhb-tsyy-fay](https://meet.google.com/uhb-tsyy-fay)  	| Profa. Samara |
-| 4as-feiras      | 19-20h    | [uut-jmxw-hwg](https://meet.google.com/uut-jmxw-hwg)    | Profa. Larissa |
-| 5as-feiras    	| 09-10h  	| ex2  	| Profa. Tatiana   |
+|     	| 	|   	|  |
+|   |     |     |  |
+|  	|  	|   	| |
