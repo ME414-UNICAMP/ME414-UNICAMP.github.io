@@ -11,7 +11,7 @@ logo: ../logo-imecc.png
 library(reshape2)
 library(ggplot2)
 library(plotly)
-
+library(TeachingDemos)
 # library(printr)
 library(knitr)
 library(DT)
@@ -107,7 +107,6 @@ Tais eventos, em geral, estão associados a **experimentos aleatórios**.
 
 <center>
 ```{r, echo=FALSE, message=FALSE, fig.height=4}
-library(TeachingDemos)
 set.seed(1234)
 x1 <- dice(rolls=100, ndice=1)
 plot.dice(x1, layout=c(15, 7))
@@ -220,7 +219,8 @@ g <- ggplot(dados, aes(x=x, y=y)) +
     geom_line(colour=mycol[1], size=1.05) +
     xlab("Número de Lançamentos") + ylab("Proporção Acumulada de 6") + 
     ggtitle("Simulação 3") + xlim(0, 100) + ylim(0, 1) + eixos
-ggplotly(g)
+#ggplotly(g)
+g
 ```
 </center>
 
@@ -241,7 +241,8 @@ g <- ggplot(dados, aes(x=x, y=y)) +
     geom_line(colour=mycol[2], size=1.05) +
     xlab("Número de Lançamentos") + ylab("Proporção Acumulada de 6") + 
     ggtitle("Simulação 2") + xlim(0, 100) + ylim(0, 1) + eixos
-ggplotly(g)
+#ggplotly(g)
+g
 ```
 </center>
 
@@ -262,7 +263,8 @@ g <- ggplot(dados, aes(x=x, y=y)) +
     geom_line(colour=mycol[3], size=1.05) +
     xlab("Número de Lançamentos") + ylab("Proporção Acumulada de 6") + 
     ggtitle("Simulação 1") + xlim(0, 100) + ylim(0, 1) + eixos
-ggplotly(g)
+#ggplotly(g)
+g
 ```
 </center>
 
@@ -535,8 +537,6 @@ $$A=\{CCC, CCI, CIC, ICC\}$$
 
 
 > * A soma das probabilidades de cada elemento do espaço amostral deve ser igual a 1.
-
-
 
 ## Exemplo: lançar uma moeda duas vezes {.build}
 
