@@ -11,6 +11,8 @@ logo: ../logo-imecc.png
 
 ## Experimento: Lançamento de 3 moedas {.build}
 
+ <img src="figuras/lancamentomoedas.jpg" width=95 style="float: right;">
+ 
  Lançar 3 moedas honestas simultaneamente, e observar a face voltada para cima. 
 
  > $$\Omega= \{ (CCC), (CCX),(CXC),(XCC),(XXC),(XCX),(CXX),(XXX)\}$$
@@ -186,6 +188,13 @@ De quantas formas diferentes podemos escolher a placa de um carro, tendo essa 3 
 
 > $$ 26 × 25 × 24 × 10 × 9 × 8 × 7 = 78.624.000$$
 
+## Subconjuntos de um conjunto finito
+
+Um conjunto com $n$ elementos tem $2^n$ subconjuntos.
+
+> **Exemplo:** Formar $S \subset \{ a, b, c \}$.
+
+<center><img src="figuras/combinatoria.png" width=700></center>
 
 ## Permutação {.build}
 
