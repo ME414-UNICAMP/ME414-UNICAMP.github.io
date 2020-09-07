@@ -1366,7 +1366,7 @@ $$S_n = n \widehat p \sim N \left(np, np(1-p) \right)$$
 
 ## Introdução {.build}
 
-<img src="figuras/InferenceGraphicSU17.png" width=350 style="float: right; margin-left: 30px">
+<img src="figuras/inferencia_pop.png" width=650 style="float: right; margin-left: 30px">
 
 Um dos principais objetivos da Estatística é tirar conclusões a partir dos dados.
 
@@ -1379,7 +1379,7 @@ Um dos principais objetivos da Estatística é tirar conclusões a partir dos da
 
 ## Introdução
 
-<img src="figuras/InferenceGraphicSU17.png" width=350 style="float: right; margin-left: 30px">
+<img src="figuras/inferencia_pop.png" width=650 style="float: right; margin-left: 30px">
 
 <br />
 
@@ -1393,7 +1393,7 @@ Um dos principais objetivos da Estatística é tirar conclusões a partir dos da
 
 ## Inferência Estatística {.build}
 
-<img src="figuras/inferencia.PNG" width=550 style="float: right; margin-left: 30px">
+<img src="figuras/inferencia_.PNG" width=550 style="float: right; margin-left: 30px">
 
 **Variável**: Característica numérica do resultado de um experimento.
 
@@ -1413,7 +1413,7 @@ Um dos principais objetivos da Estatística é tirar conclusões a partir dos da
 
 ## Estatística {.build}
 
-<img src="figuras/inferencia.PNG" width=500 style="float: right; margin-left: 30px">
+<img src="figuras/inferencia_.PNG" width=500 style="float: right; margin-left: 30px">
 
 > Seja $X_{1},...,X_{n}$ uma amostra e $$T = f(X_{1}, \ldots, X_{n})$$ é uma estatística.
 
@@ -1427,7 +1427,6 @@ Um dos principais objetivos da Estatística é tirar conclusões a partir dos da
 
 > Note que uma estatística é uma função que em uma determinada amostra assume um valor específico (estimativa).
 
-<font size="1"> Fonte da imagem: http://www.portalaction.com.br/inferencia-0 </font>
 
 ## Estatística {.build}
 
@@ -1452,13 +1451,12 @@ Para "estimar" características de uma população.
 
 Temos interesse em saber a média e a variância da altura dos brasileiros: $\mu$ e $\sigma^2$. 
 
-<img src="figuras/inferencia2.PNG" width=550>
+<img src="figuras/inferencia2_.PNG" width=550>
 
 > **Solução 1:** Medir a altura de todos os brasileiros.
 
 > **Solução 2:** Selecionar de forma aleatória alguns brasileiros (amostra), analisá-la e inferir propriedades para toda a população.
 
-<font size="1"> Fonte da imagem: http://www.portalaction.com.br/inferencia-0 </font>
 
 ## Parâmetro {.build}
 
@@ -1503,5 +1501,5 @@ Slides produzidos pelos professores:
 
 * Benilton Carvalho
 
-<font size="1"> [Fonte da imagem](https://f.i.uol.com.br/fotografia/2018/08/29/15355904245b874018219ac_1535590424_3x2_md.jpg)</font>
+<font size="2"> [Fonte da imagem](https://f.i.uol.com.br/fotografia/2018/08/29/15355904245b874018219ac_1535590424_3x2_md.jpg)</font>
 
