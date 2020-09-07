@@ -1427,7 +1427,7 @@ Um dos principais objetivos da Estatística é tirar conclusões a partir dos da
 
 > Note que uma estatística é uma função que em uma determinada amostra assume um valor específico (estimativa).
 
-<sub>[Fonte da imagem](http://www.portalaction.com.br/inferencia-0)</sub>
+<font size="1"> Fonte da imagem: http://www.portalaction.com.br/inferencia-0 </font>
 
 ## Estatística {.build}
 
@@ -1458,7 +1458,7 @@ Temos interesse em saber a média e a variância da altura dos brasileiros: $\mu
 
 > **Solução 2:** Selecionar de forma aleatória alguns brasileiros (amostra), analisá-la e inferir propriedades para toda a população.
 
-<sub>[Fonte da imagem](http://www.portalaction.com.br/inferencia-0)</sub>
+<font size="1"> Fonte da imagem: http://www.portalaction.com.br/inferencia-0 </font>
 
 ## Parâmetro {.build}
 
@@ -1503,4 +1503,5 @@ Slides produzidos pelos professores:
 
 * Benilton Carvalho
 
-<sub>[Fonte da imagem](https://f.i.uol.com.br/fotografia/2018/08/29/15355904245b874018219ac_1535590424_3x2_md.jpg)</sub>
+<font size="1"> [Fonte da imagem](https://f.i.uol.com.br/fotografia/2018/08/29/15355904245b874018219ac_1535590424_3x2_md.jpg)</font>
+
