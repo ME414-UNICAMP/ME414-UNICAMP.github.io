@@ -544,9 +544,9 @@ E pelo método conservador, com um grau de confiança de 99\%, estimamos que a p
 
 ## Exemplo: A esposa deve sacrificar a carreira? {.build}
 
-Pesquisa do GSS. Você concorda ou não com a seguinte frase: "é mais importante para um esposa ajudar a carreira do marido do que ter uma carreira própria."  
+Pesquisa do [GSS](https://gss.norc.org/get-documentation/questionnaires). Você concorda ou não com a seguinte frase: "é mais importante para um esposa ajudar a carreira do marido do que ter uma carreira própria."  
 
-A última vez que esta pergunta foi incluída no GSS foi em 1998 onde 1823 pessoas responderam e 19\% concordaram. 
+A última vez que esta pergunta foi incluída no [GSS](https://gss.norc.org/get-documentation/questionnaires) foi em 1998 onde 1823 pessoas responderam e 19\% concordaram. 
 
 > * Calcule e interprete o $IC$ de 95\% para a proporção na população que concorda com a frase. 
 
@@ -605,7 +605,7 @@ $$P(|\widehat p -p|<0.02)=0.95$$
 
 > **Interpretação:** Com probabilidade 0.95, o erro ao usar a proporção amostral para estimar a proporção populacional não excede 0.02.
 
-> Curiosidade: em 1977 a pergunta foi feita pela primeira vez no GSS. $\widehat p =0.57$ e $IC$ de 95\% foi $[0.55; 0.59]$.
+> Curiosidade: em 1977 a pergunta foi feita pela primeira vez no [GSS](https://gss.norc.org/get-documentation/questionnaires). $\widehat p =0.57$ e $IC$ de 95\% foi $[0.55; 0.59]$.
 
 
 
@@ -615,7 +615,7 @@ Na teoria, muita gente se considera "*eco-friendly*".  Mas e na prática?
 
 **Pergunta:** Você pagaria mais para um produto em favor ao meio ambiente?
 
-Em 2000, GSS perguntou: "Você estaria disposto a pagar mais pela gasolina para proteger o ambiente?"
+Em 2000, [GSS](https://gss.norc.org/get-documentation/questionnaires) perguntou: "Você estaria disposto a pagar mais pela gasolina para proteger o ambiente?"
 
 Entre $n=1154$ participantes, $518$ responderam que sim. 
 
@@ -668,7 +668,7 @@ $$
 
 **Pergunta:** Se a esposa quer ter um filho, mas o marido não, é justo que ele se recuse a ter um filho? 
 
-GSS: 598 responderam, 366 acham justo. Encontre um $IC$ de 99\%. 
+[GSS](https://gss.norc.org/get-documentation/questionnaires): 598 responderam, 366 acham justo. Encontre um $IC$ de 99\%. 
 
 Estimativa: $\widehat p = 366/598 = 0.61$
 
