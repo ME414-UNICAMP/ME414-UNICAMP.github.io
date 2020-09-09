@@ -577,7 +577,7 @@ $$
 
 **INCORRETO:** Dizer que "a probabilidade de que $p$ esteja dentro do intervalo é 95\%"
 
-Por que incorreto? $p$ é uma constante, não é variável aleatória. Ou $p$ está no intervalo ou não está. O intervalo é que é aleatório.
+Por que incorreto? $p$ é uma constante, não é variável aleatória. Ou $p$ está no intervalo calculado ou não está.
 
 
 ## Interpretação do Intervalo de Confiança {.build}
