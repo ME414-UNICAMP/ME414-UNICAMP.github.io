@@ -527,7 +527,7 @@ $$
 
 ## Exemplo: Universitários Não Fumantes {.build}
 
-Podemos também calcular o $IC$ de 99\% pelo método conversador:
+Podemos também calcular o $IC$ de 99\% pelo método conservador:
 $$
 \begin{aligned}
 IC_2(p, 0.99) &= \left[\widehat p  - z_{\alpha/2}\sqrt{\frac{1}{4n}}; \widehat p  + z_{\alpha/2}\sqrt{\frac{1}{4n}}\right] \\
