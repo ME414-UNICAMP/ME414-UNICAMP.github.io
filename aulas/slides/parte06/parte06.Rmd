@@ -167,7 +167,7 @@ Você volta no mesmo restaurante das tortas e sorvetes. Há dois sabores de tort
 <img src="figuras/sorvete.jpg" width=280>
 </center> 
 
-Apenas aos sábados, o restaurante oferece a "Torta da Casa", que é uma torta com sorvete em cima. Aos sábados, quantas opções de sobremesa você?
+Apenas aos sábados, o restaurante oferece a "Torta da Casa", que é uma torta com sorvete em cima. Aos sábados, quantas opções de sobremesa você tem no total?
 
 > * $2+3= `r 2+3`$ opções caso não escolha "Torta da Casa".
 
@@ -225,6 +225,9 @@ $$abc, acb, bac, bca, cab, cba$$
 
 > $$ 1 \times 6! \times 2 = `r factorial(6)*2`$$
 
+<center><img src="figuras/AngErv.png" width=350></center>
+
+
 
 ## Permutação {.build}
 
@@ -242,6 +245,18 @@ Suponha que queremos permutar $n$ objetos, mas alguns deles são indistinguívei
 
 $$\frac{6!}{3!2!} = `r factorial(6)/(factorial(3)*factorial(2))`$$
 
+## Permutação {.build}
+
+O número de divisões possíveis de $n$ objetos distintos em $r$ grupos distintos de tamanhos respectivos
+$n_1, n_2, \dots, n_r$ ($n_1 + \dots + n_r = n$) é
+
+<br />
+
+$$\binom{n}{n_1, n_2, \dots, n_r} = \frac {n!}{n_1! \, n_2! \, \dots \, n_r!},$$
+
+<br />
+
+que é chamado um *coeficiente multinomial*.
 
 ## Arranjo {.build}
 Suponha que tenhamos uma coleção $O=\{w_1,w_2,...,w_n\}$ de $n$ objetos. 
