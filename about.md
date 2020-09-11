@@ -66,9 +66,7 @@ Para acessar o livro do Devore, siga as [instruções](https://www.biblioteca.fe
 ### Horários de monitorias PED
 
 
-* Nury Bibana Riaño - Segundas 12h às 13h
-* Jose Alejandro Ordoñez Cuastumal - Segundas 13h às 14h
-* Jose Alejandro Ordoñez Cuastumal - Quartas 13h às 14h
-* Nury Bibiana Riaño - Quartas 18h às 19h
+* Nury Bibana Riaño - Segundas 12h às 13h e Quartas 18h às 19h
+* Jose Alejandro Ordoñez Cuastumal - Segundas e Quartas 13h às 14h
 * Fernanda Paula Rocha - Sextas 17h às 19h
 
