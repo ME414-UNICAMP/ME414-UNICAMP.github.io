@@ -272,9 +272,9 @@ Em sua autobiografia _A Sort of Life_, o autor inglês Graham Greene descreveu u
 
 $$\left( \frac{5}{6} \right)^6 = 0.33489 $$
 
-Seja $X$ o número de disparos na roleta russa em 6 partidas e $p=1/6$ a probabilidade de disparo. Então, $X \sim Bin(6, 1/6).$
+<!-- Seja $X$ o número de disparos na roleta russa em 6 partidas e $p=1/6$ a probabilidade de disparo. Então, $X \sim Bin(6, 1/6).$ -->
 
-$$P(X=0)=\binom{6}{0}p^0(1-p)^{6-0} = \left( \frac{5}{6} \right)^6 = 0.33489$$
+<!-- $$P(X=0)=\binom{6}{0}p^0(1-p)^{6-0} = \left( \frac{5}{6} \right)^6 = 0.33489$$ -->
 
 
 ## Exemplo: Roleta Russa {.build}
