@@ -14,16 +14,16 @@ permalink: /about/
 | D                 | [Samara Flamini Kiihl](http://www.ime.unicamp.br/~samara/) |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7529) |
 | E                 | [Élcio Lebensztayn](http://www.ime.unicamp.br/~lebensztayn/) | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7710) |
 | F                 | [Tatiana Benaglia](http://www.ime.unicamp.br/~tatiana/) | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7566) |
-| I                  | Filidor E. Vilca Labra | [Moodle da disciplina](https://moodle.ggte.unicamp.br/enrol/index.php?id=7760) | 
+| I                  | Filidor E. Vilca Labra | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7760) | 
 
 
 ### Horários de monitorias PED
 
 | PED                   | Horários de Atendimento | Link Google Meet | 
 |:----------------------|:----------------------------------|:-----------------------------------------|
-Nury Bibiana Riaño | 2as-feiras das  12h às 13h e 4as-feiras das 18h às 19h |  | 
-Jose Alejandro Ordoñez Cuastumal | 2as e 4as-feiras das 13h às 14h |  |
-Fernanda Paula Rocha | 6as-feiras das  17h às 19h |  |
+Nury Bibiana Riaño | 2as-feiras 12h-13h e 4as-feiras 18h-19h |  | 
+Jose Alejandro Ordoñez Cuastumal | 2as e 4as-feiras das 13h-14h |  |
+Fernanda Paula Rocha | 6as-feiras das  17h-19h |  |
 
 
 ### Bibliografia
