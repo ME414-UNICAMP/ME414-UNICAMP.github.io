@@ -5,53 +5,25 @@ permalink: /about/
 ---
 
 
-## Turmas Segundo Semestre 2020
-
-#### ME414 - A
-
-* Professor: Mauricio Zevallos
-* [Moodle da disciplina](https://moodle.ggte.unicamp.br/enrol/index.php?id=8334)
-
-#### ME414 - C
-
-* Professora: [Larissa Matos](https://larissamatos.github.io/)
-* [Moodle da disciplina](https://moodle.ggte.unicamp.br/enrol/index.php?id=7575)
-
-
-#### ME414 - D
-
-* Professora: [Samara Flamini Kiihl](http://www.ime.unicamp.br/~samara/)
-* [Moodle da disciplina](https://moodle.ggte.unicamp.br/course/view.php?id=7529)
-
-
-#### ME414 - E
-
-* Professor: [Élcio Lebensztayn](http://www.ime.unicamp.br/~lebensztayn/)
-* [Moodle da disciplina](https://moodle.ggte.unicamp.br/enrol/index.php?id=7710)
-
-
-#### ME414 - F
-
-* Professora: [Tatiana Benaglia](http://www.ime.unicamp.br/~tatiana/)
-* [Moodle da disciplina](https://moodle.ggte.unicamp.br/enrol/index.php?id=7566)
-
-
-
-#### ME414 - I
-
-* Professor: Filidor E. Vilca Labra
-* [Moodle da disciplina](https://moodle.ggte.unicamp.br/enrol/index.php?id=7760)
-
-
 ## Turmas 2o Semestre de 2020
 
-| Turma          | Professor Responsável        |  E-mail       | Moodle da Disciplina |  
-|:----------------:|:-------------------------------------:|:--------------:|:-----------------------------|
-| A                  | Mauricio Zevallos                  |  @unicamp.br | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=8334) |
-| C                 | [Larissa Matos](https://larissamatos.github.io/)  |  |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7575) |
-| D                 | [Samara Flamini Kiihl](http://www.ime.unicamp.br/~samara/) | samarak@unicamp.br |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7529) |
-| E                 | [Élcio Lebensztayn](http://www.ime.unicamp.br/~lebensztayn/) | | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7710) |
-| F                 | [Tatiana Benaglia](http://www.ime.unicamp.br/~tatiana/) | benaglia@unicamp.br | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7566) |
+| Turma          | Professor Responsável        |  Moodle da Disciplina |  
+|:----------------:|:-------------------------------------|:-----------------------------:|
+| A                  | Mauricio Zevallos                  |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=8334) |
+| C                 | [Larissa Matos](https://larissamatos.github.io/)  |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7575) |
+| D                 | [Samara Flamini Kiihl](http://www.ime.unicamp.br/~samara/) |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7529) |
+| E                 | [Élcio Lebensztayn](http://www.ime.unicamp.br/~lebensztayn/) | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7710) |
+| F                 | [Tatiana Benaglia](http://www.ime.unicamp.br/~tatiana/) | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7566) |
+| I                  | Filidor E. Vilca Labra | [Moodle da disciplina](https://moodle.ggte.unicamp.br/enrol/index.php?id=7760) | 
+
+
+### Horários de monitorias PED
+
+| PED                   | Horários de Atendimento | Link Google Meet | 
+|:----------------------|:----------------------------------|:-----------------------------------------|
+Nury Bibiana Riaño | 2as-feiras das  12h às 13h e 4as-feiras das 18h às 19h |  | 
+Jose Alejandro Ordoñez Cuastumal | 2as e 4as-feiras das 13h às 14h |  |
+Fernanda Paula Rocha | 6as-feiras das  17h às 19h |  |
 
 
 ### Bibliografia
@@ -65,18 +37,11 @@ Para acessar livros digitais fora da Unicamp, você precisará do VPN. Veja inst
 
 Para acessar o livro do Devore, siga as [instruções](https://www.biblioteca.fea.unicamp.br/sites/biblioteca/files/GuiaDeAcessoAosE-booksCengage.pdf).
 
+
 ### Tabelas das Distribuições
 
-[Distribuição Normal, distribuição t, distribuição Qui-Quadrado, distribuição F](Tabelas-impressao.pdf)
+* [Distribuição Normal, distribuição t, distribuição Qui-Quadrado, distribuição F](Tabelas-impressao.pdf)
 
-[Widget para cálculo da Normal](https://www.wolframalpha.com/widgets/gallery/view.jsp?id=9bd010a31f27d2500aede72eb5852af2)
+* [Widget para cálculo da Normal](https://www.wolframalpha.com/widgets/gallery/view.jsp?id=9bd010a31f27d2500aede72eb5852af2)
 
-[Widget para cálculo da Normal e outras distribuições](https://gallery.shinyapps.io/dist_calc/)
-
-
-### Horários de monitorias PED
-
-* Nury Bibiana Riaño - Segundas 12h às 13h e Quartas 18h às 19h
-* Jose Alejandro Ordoñez Cuastumal - Segundas e Quartas 13h às 14h
-* Fernanda Paula Rocha - Sextas 17h às 19h
-
+* [Widget para cálculo da Normal e outras distribuições](https://gallery.shinyapps.io/dist_calc/)
