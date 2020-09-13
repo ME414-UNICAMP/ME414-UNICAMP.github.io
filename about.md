@@ -43,6 +43,16 @@ permalink: /about/
 * [Moodle da disciplina](https://moodle.ggte.unicamp.br/enrol/index.php?id=7760)
 
 
+## Turmas 2o Semestre de 2020
+
+| Turma          | Professor Responsável        |  E-mail       | Moodle da Disciplina |  
+|:----------------:|:-------------------------------------:|:--------------:|:-----------------------------|
+| A                  | Mauricio Zevallos                  |  @unicamp.br | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=8334) |
+| C                 | [Larissa Matos](https://larissamatos.github.io/)  |  |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7575) |
+| D                 | [Samara Flamini Kiihl](http://www.ime.unicamp.br/~samara/) | samarak@unicamp.br |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7529) |
+| E                 | [Élcio Lebensztayn](http://www.ime.unicamp.br/~lebensztayn/) | | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7710) |
+| F                 | [Tatiana Benaglia](http://www.ime.unicamp.br/~tatiana/) | benaglia@unicamp.br | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7566) |
+
 
 ### Bibliografia
 
@@ -63,8 +73,8 @@ Para acessar o livro do Devore, siga as [instruções](https://www.biblioteca.fe
 
 [Widget para cálculo da Normal e outras distribuições](https://gallery.shinyapps.io/dist_calc/)
 
-### Horários de monitorias PED
 
+### Horários de monitorias PED
 
 * Nury Bibiana Riaño - Segundas 12h às 13h e Quartas 18h às 19h
 * Jose Alejandro Ordoñez Cuastumal - Segundas e Quartas 13h às 14h
