@@ -573,7 +573,7 @@ $$
 
 ## Interpretação do Intervalo de Confiança {.build}
 
-**Interpretação:** Se várias amostras forem retiradas da população e calcularmos um $IC$ de 95\% para cada amostra, cerca de 95\% desses intervalos irão conter a verdadeira proporção na população, $p$. 
+**Interpretação:** Se várias amostras aleatórias forem retiradas da população e calcularmos um $IC$ de 95\% para cada amostra, cerca de 95\% desses intervalos irão conter a verdadeira proporção na população, $p$. 
 
 **INCORRETO:** Dizer que "a probabilidade de que $p$ esteja dentro do intervalo é 95\%"
 
