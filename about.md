@@ -5,7 +5,7 @@ title: " "
 
 # Informações Gerais
 
-Nesse site você encontra informações das turmas coordenadas da disciplina ME414 - Estatística para Experimentalistas, oferecida pelo Departamento de Estatística da Unicamp no 2º semestre de 2020.
+
 
 ### ME414 - Turmas 2º Semestre de 2020
 
