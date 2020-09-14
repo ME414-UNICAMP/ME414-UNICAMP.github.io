@@ -5,7 +5,7 @@ title: " "
 
 # Informações Gerais
 
-
+<br />
 
 ### ME414 - Turmas 2º Semestre de 2020
 
@@ -19,13 +19,14 @@ title: " "
 | **Turma I**       | Filidor E. Vilca Labra | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7760) | 
 
 <br />
+
 ### Horários de monitorias PED
 
 | PED    | Atendimento  | Link Google Meet | 
 |:--------------|:---------------|:-----------------------------------------|
-**Nury Bibiana Riaño** | 2as-feiras das 12h às 13h   4as-feiras das 18h às 19h |  [meet.google.com/yee-wcrw-ngs](meet.google.com/yee-wcrw-ngs) | 
-**Jose Alejandro Ordoñez Cuastumal** | 2as-feiras das 13h às 14h   4as-feiras das 13h às 14h | [meet.google.com/eue-aicp-ckt](meet.google.com/eue-aicp-ckt) |
-**Fernanda Paula Rocha** | 6as-feiras das 17h às 19h | [meet.google.com/iyb-pwpt-sgz](meet.google.com/iyb-pwpt-sgz) |
+**Nury Bibiana Riaño** | 2as-feiras das 12h às 13h   4as-feiras das 18h às 19h |  [yee-wcrw-ngs](meet.google.com/yee-wcrw-ngs) | 
+**Jose Alejandro Ordoñez Cuastumal** | 2as-feiras das 13h às 14h   4as-feiras das 13h às 14h | [eue-aicp-ckt](meet.google.com/eue-aicp-ckt) |
+**Fernanda Paula Rocha** | 6as-feiras das 17h às 19h | [iyb-pwpt-sgz](meet.google.com/iyb-pwpt-sgz) |
 
 <br />
 
