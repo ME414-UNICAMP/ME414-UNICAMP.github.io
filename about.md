@@ -5,7 +5,7 @@ title: " "
 
 # Informações Gerais
 
-
+<br/>
 
 ### ME414 - Turmas 2º Semestre de 2020
 
@@ -40,6 +40,7 @@ title: " "
 Para acessar livros digitais fora da Unicamp, você precisará do VPN. Veja instruções de instalação [aqui](http://www.ccuec.unicamp.br/ccuec/acesso_remoto_vpn). <br />
 Para acessar o livro do Devore, siga as instruções disponíveis [aqui](https://www.biblioteca.fea.unicamp.br/sites/biblioteca/files/GuiaDeAcessoAosE-booksCengage.pdf).
 
+<br />
 
 ### Tabelas das Distribuições
 
