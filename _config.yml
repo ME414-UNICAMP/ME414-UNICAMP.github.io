@@ -6,10 +6,10 @@
 # --- Required options --- #
 
 # Name of website
-title: ME414
+title: ME414 - UNICAMP
 
 # Your name to show in the footer
-author: Benilton Carvalho/Larissa Matos/Samara Kihll/Tatiana Benaglia 
+author: Benilton Carvalho / Larissa Matos / Samara Kiihl / Tatiana Benaglia 
 
 # --- List of links in the navigation bar --- #
 
@@ -39,7 +39,7 @@ round-avatar: true
 social-network-links:
 #  email: "someone@example.com"
 #  facebook: deanattali
-#  github: tatibenaglia
+  github: me414-unicamp
 #  twitter: daattali
 #  reddit: yourname
 #  linkedin: daattali
