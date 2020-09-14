@@ -1,30 +1,33 @@
 ---
 layout: page
-title: Informações gerais
-permalink: /about/
+title:" "
 ---
 
+# Informações Gerais
 
-## Turmas 2o Semestre de 2020
+Nesse site você encontra informações das turmas coordenadas da disciplina ME414 - Estatística para Experimentalistas, oferecida pelo Departamento de Estatística da Unicamp no 2º semestre de 2020.
 
-| Turma          | Professor Responsável        |  Moodle da Disciplina |  
+### Turmas 2o Semestre de 2020
+
+| ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:----------------:|:-------------------------------------|:-----------------------------:|
-| A                  | Mauricio Zevallos                  |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=8334) |
-| C                 | [Larissa Matos](https://larissamatos.github.io/)  |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7575) |
-| D                 | [Samara Flamini Kiihl](http://www.ime.unicamp.br/~samara/) |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7529) |
-| E                 | [Élcio Lebensztayn](http://www.ime.unicamp.br/~lebensztayn/) | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7710) |
-| F                 | [Tatiana Benaglia](http://www.ime.unicamp.br/~tatiana/) | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7566) |
-| I                  | Filidor E. Vilca Labra | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7760) | 
+| **Turma A**       | Mauricio Zevallos                  |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=8334) |
+| **Turma C**      | [Larissa Matos](https://larissamatos.github.io/)  |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7575) |
+| **Turma D**      | [Samara Flamini Kiihl](http://www.ime.unicamp.br/~samara/) |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7529) |
+| **Turma E**      | [Élcio Lebensztayn](http://www.ime.unicamp.br/~lebensztayn/) | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7710) |
+| **Turma F**      | [Tatiana Benaglia](http://www.ime.unicamp.br/~tatiana/) | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7566) |
+| **Turma I**       | Filidor E. Vilca Labra | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7760) | 
 
-
+<br />
 ### Horários de monitorias PED
 
-| PED                   | Horários de Atendimento | Link Google Meet | 
-|:----------------------|:----------------------------------|:-----------------------------------------|
-Nury Bibiana Riaño | 2as-feiras 12h-13h e 4as-feiras 18h-19h |  | 
-Jose Alejandro Ordoñez Cuastumal | 2as e 4as-feiras das 13h-14h |  |
-Fernanda Paula Rocha | 6as-feiras das  17h-19h |  |
+| PED    | Atendimento  | Link Google Meet | 
+|:--------------|:---------------|:-----------------------------------------|
+**Nury Bibiana Riaño** | 2as-feiras das 12h às 13h   4as-feiras das 18h às 19h |  [meet.google.com/yee-wcrw-ngs](meet.google.com/yee-wcrw-ngs) | 
+**Jose Alejandro Ordoñez Cuastumal** | 2as-feiras das 13h às 14h   4as-feiras das 13h às 14h | [meet.google.com/eue-aicp-ckt](meet.google.com/eue-aicp-ckt) |
+**Fernanda Paula Rocha** | 6as-feiras das 17h às 19h | [meet.google.com/iyb-pwpt-sgz](meet.google.com/iyb-pwpt-sgz) |
 
+<br />
 
 ### Bibliografia
 
@@ -33,15 +36,12 @@ Fernanda Paula Rocha | 6as-feiras das  17h-19h |  |
 * Magalhães, M.N. e de Lima, A.C.P. (2001) Noções de Probabilidade e Estatística IME-USP.
 * Devore, J. L. (2018). [Probabilidade e estatística para engenharia e ciências](	http://acervus.unicamp.br/index.asp?codigo_sophia=1138563)
 
-Para acessar livros digitais fora da Unicamp, você precisará do VPN. Veja instruções de instalação [aqui](http://www.ccuec.unicamp.br/ccuec/acesso_remoto_vpn).
-
-Para acessar o livro do Devore, siga as [instruções](https://www.biblioteca.fea.unicamp.br/sites/biblioteca/files/GuiaDeAcessoAosE-booksCengage.pdf).
+Para acessar livros digitais fora da Unicamp, você precisará do VPN. Veja instruções de instalação [aqui](http://www.ccuec.unicamp.br/ccuec/acesso_remoto_vpn). <br />
+Para acessar o livro do Devore, siga as instruções disponíveis [aqui](https://www.biblioteca.fea.unicamp.br/sites/biblioteca/files/GuiaDeAcessoAosE-booksCengage.pdf).
 
 
 ### Tabelas das Distribuições
 
 * [Distribuição Normal, distribuição t, distribuição Qui-Quadrado, distribuição F](Tabelas-impressao.pdf)
-
 * [Widget para cálculo da Normal](https://www.wolframalpha.com/widgets/gallery/view.jsp?id=9bd010a31f27d2500aede72eb5852af2)
-
 * [Widget para cálculo da Normal e outras distribuições](https://gallery.shinyapps.io/dist_calc/)
