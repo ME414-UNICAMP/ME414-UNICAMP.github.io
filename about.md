@@ -22,6 +22,8 @@ title: " "
 
 ### Horários de monitorias PED
 
+Atendimento exclusivo para alunos das turmas A, C, D, E, F e I.
+
 | PED    | Atendimento  | Link Google Meet | 
 |:--------------|:---------------|:-----------------------------------------|
 **Nury Bibiana Riaño** | 2as-feiras das 12h às 13h   4as-feiras das 18h às 19h |  [meet.google.com/yee-wcrw-ngs](meet.google.com/yee-wcrw-ngs) | 
