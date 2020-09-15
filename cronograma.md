@@ -5,7 +5,10 @@ title: ""
 
 # Cronograma
 
-O conteúdo é disponibilizado às segundas-feiras e deve ser desenvolvido durante a semana. <br />
+Este cronograma se refere exclusivamente às turmas A, C, D, E, F e I.
+
+O conteúdo é disponibilizado às segundas-feiras e deve ser desenvolvido durante a semana. 
+
 Os exercícios serão disponibilizados no Moodle. Verifique frequentemente.
 
 **Atenção:** Verifique com seu professor os horários e instruções das provas.
