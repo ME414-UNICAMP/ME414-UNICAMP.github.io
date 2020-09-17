@@ -7,7 +7,7 @@ output:
 logo: ../logo-imecc.png
 ---
 
-# Intervalo de confiança para a média populacional
+# Intervalo de confiança para a média populacional $\mu$
 
 ## Revisão {.build}
 
@@ -18,8 +18,8 @@ logo: ../logo-imecc.png
 > * Por ex: podemos usar a média amostral ($\bar{x}$), obtida a partir de um amostra aleatória, se estamos interessados na média populacional ($\mu$).
 
 
-> * **Resultado:** Se $X$ tem $\mathbb E(X)=\mu$ e $Var(X)=\sigma^2$, então a distribuição da média amostral,  $\bar{X}_n$, tem 
-$$\mathbb E(\bar{X}_n)=\mu \quad \mbox{e} \quad Var(\bar{X}_n)=\frac{\sigma^2}{n}$$
+<!-- > * **Resultado:** Se $X$ tem $\mathbb E(X)=\mu$ e $Var(X)=\sigma^2$, então a distribuição da média amostral,  $\bar{X}_n$, tem  -->
+<!-- $$\mathbb E(\bar{X}_n)=\mu \quad \mbox{e} \quad Var(\bar{X}_n)=\frac{\sigma^2}{n}$$ -->
 
 
 
@@ -27,11 +27,13 @@ $$\mathbb E(\bar{X}_n)=\mu \quad \mbox{e} \quad Var(\bar{X}_n)=\frac{\sigma^2}{n
 
 A média amostral, $\bar{X}_n$, tem em geral valores diferentes para diferentes amostras aleatórias obtidas: é uma variável aleatória.
 
-> Para obtermos a distribuição da média amostral:
+> Para obtermos a distribuição da média amostral (empiricamente):
 
 > * Coletar uma a.a. de tamanho $n$ a partir da população com distribuição $X$ e guardar o valor da média desta amostra.
 
-> * Coletar outra a.a. de tamanho $n$ a partir da população com distribuição $X$ e guardar o valor da média desta amostra. Repetir isso várias vezes. 
+> * Coletar outra a.a. de tamanho $n$ a partir da população com distribuição $X$ e guardar o valor da média desta amostra. 
+
+> * Repetir isso várias vezes. 
 
 > * Construir um histograma com todas as médias obtidas para estudar o comportamento de $\bar{X}_n$: avaliando a média, a dispersão e a distribuição.
 
@@ -49,8 +51,113 @@ Na prática: iremos coletar somente **uma amostra** de tamanho $n$. Não faremos
 
 > **Resultado (TCL):**
 
-Para amostras aleatórias simples $X_{1},...,X_{n}$ coletadas de uma população com média $\mu$ e variância $\sigma^{2}$, a distribuição amostral de $\bar{X}_{n}$ aproxima-se de uma distribuição Normal de média $\mu$ e variância $\frac{\sigma^{2}}{n}$, quando $n$ for suficientemente grande, isto é,
+Para amostras aleatórias simples $X_{1},...,X_{n}$ coletadas de uma população com média $\mu$ e variância $\sigma^{2}$, a distribuição amostral de $\bar{X}_{n}$ aproxima-se de uma distribuição Normal:
 $$ \bar{X}_{n} \sim N\left(\mu, \frac{\sigma^{2}}{n} \right)$$
+
+
+
+
+## Distribuição Amostral de $\bar{X}_n$
+
+```{r, echo=FALSE, fig.height=4.5, fig.width=6.5, message=FALSE, results='hide',fig.align='center'}
+library(openintro, verbose=FALSE)
+library(latex2exp)
+data(COL)
+par(mar=c(5, 4, 1, 1) + 0.1)
+normTail(M = c(-2.58, 2.58),
+         df = 10,
+         col = COL[1],
+         xlim = 3.3 * c(-1, 1),
+         ylim = c(0, 0.8),
+         xlab=" ",
+         axes=FALSE)
+axis(1,at=c(-1,0,1),labels = c(TeX('$\\mu -\\sigma / \\sqrt{n}$'),TeX('$\\mu$'),TeX('$\\mu +\\sigma / \\sqrt{n}$')),
+     padj=.5)
+X <- rev(seq(-4, 4, 0.025))
+Y <- dt(X, 10) # makes better visual
+
+yMax <- 0.60
+
+lines(1.96*c(-1,1), rep(yMax,2), lwd=2)
+lines(rep(-1.96,2), c(0,yMax), lty=2)
+lines(rep( 1.96,2), c(0,yMax), lty=2)
+#text(0, yMax, '95%: de -1.96 a 1.96', pos=3)
+text(0,yMax,TeX('$95%: \\, \\pm  1.96\\sigma /\\sqrt{n}$'),pos=3)
+
+
+yMax <- 0.73
+lines(2.58*c(-1,1), rep(yMax,2), lwd=2)
+lines(rep(-2.58,2), c(0,yMax), lty=2)
+lines(rep( 2.58,2), c(0,yMax), lty=2)
+#text(0, yMax, '99%: de -2.58 a 2.58', pos=3)
+text(0,yMax,TeX('$99%: \\, \\pm  2.58\\sigma /\\sqrt{n}$'),pos=3)
+
+
+yMax <- 0.41
+lines(1.645*c(-1,1), rep(yMax,2), lwd=2)
+lines(rep(-1.645,2), c(0,yMax), lty=2)
+lines(rep( 1.645,2), c(0,yMax), lty=2)
+#text(0, yMax, '90%: de -1.64 a 1.64', pos=3)
+text(0,yMax,TeX('$90%: \\, \\pm  1.64\\sigma /\\sqrt{n}$'),pos=3)
+
+yMax <- 0.15
+lines(1*c(-1,1), rep(yMax,2), lwd=2)
+lines(rep(-1,2), c(0,yMax), lty=2)
+lines(rep( 1,2), c(0,yMax), lty=2)
+#text(0, yMax, '68%: de -1 a 1', pos=3)
+text(0,yMax,TeX('$68%: \\, \\pm  \\sigma /\\sqrt{n}$'),pos=3)
+```
+
+
+
+
+##
+
+$$Z=\frac{\bar{X}_n-\mu}{\sigma/\sqrt{n}}\sim \mathcal{N}(0,1)$$
+
+```{r, echo=FALSE, fig.height=4.5, fig.width=6.5, message=FALSE, results='hide',fig.align='center'}
+library(openintro, verbose=FALSE)
+data(COL)
+par(mar=c(5, 4, 1, 1) + 0.1)
+normTail(M = c(-2.58, 2.58),
+         df = 10,
+         col = COL[1],
+         xlim = 3.3 * c(-1, 1),
+         ylim = c(0, 0.8),
+         xlab='Desvios-padrão a partir da média')
+X <- rev(seq(-4, 4, 0.025))
+Y <- dt(X, 10) # makes better visual
+
+yMax <- 0.60
+
+lines(1.96*c(-1,1), rep(yMax,2), lwd=2)
+lines(rep(-1.96,2), c(0,yMax), lty=2)
+lines(rep( 1.96,2), c(0,yMax), lty=2)
+text(0, yMax, '95%: de -1.96 a 1.96', pos=3)
+
+yMax <- 0.73
+lines(2.58*c(-1,1), rep(yMax,2), lwd=2)
+lines(rep(-2.58,2), c(0,yMax), lty=2)
+lines(rep( 2.58,2), c(0,yMax), lty=2)
+text(0, yMax, '99%: de -2.58 a 2.58', pos=3)
+
+
+yMax <- 0.41
+lines(1.645*c(-1,1), rep(yMax,2), lwd=2)
+lines(rep(-1.645,2), c(0,yMax), lty=2)
+lines(rep( 1.645,2), c(0,yMax), lty=2)
+text(0, yMax, '90%: de -1.64 a 1.64', pos=3)
+
+yMax <- 0.15
+lines(1*c(-1,1), rep(yMax,2), lwd=2)
+lines(rep(-1,2), c(0,yMax), lty=2)
+lines(rep( 1,2), c(0,yMax), lty=2)
+text(0, yMax, '68%: de -1 a 1', pos=3)
+```
+
+
+
+
 
 
 ## Teorema Central do Limite
@@ -80,118 +187,68 @@ legend("topright", legend=c("Distribuição População","Distribuição Média 
 </center>
 
 
-## Usando o TCL para construir um IC
-
-* Temos uma amostra aleatoria $X_1,\ldots,X_n$ e estamos usando a média amostral $\bar{X}_n$ para estimar $\mu$, a média populacional. 
-* Quão boa é esta estimativa?  Ela tem boa precisão?  Qual o grau de confiança? 
-
-* Em geral: queremos alto grau de confiança, por exemplo, $1-\alpha=0.95$. 
-
-* Imagine que seja possível coletar uma amostra de tamanho $n$ da população várias vezes.  Para cada vez, você calcula $\bar{x}$ é constrói um IC de 95\% para $\mu$.  Imagine também que você conhece $\mu$  e conte quantos dos intervalos contêm $\mu$.  A proporção de intervalos que contem $\mu$ será próxima a 0.95.
 
 
-## Interpretação do Intervalo de Confiança para $\mu$ {.build}
+## {.build}
 
-<center><img src="figuras/ICmean.png" width=750></center>
+Qual a probabilidade de que o estimador $\bar{X}_n$ esteja distante do valor verdadeiro, $\mu$, em no máximo 1 erro-padrão?
 
+> $$P\left(\mid \bar{X}_n - \mu \mid \leq \sigma/\sqrt{n}\right)$$
 
-## Exemplo
-
-Uma variável aleatória $X$ tem distribução normal, com média 100 e desvio padrão 10.
-
-* Qual a $P(90 < X < 110)$? 
-
-* Se $\bar{X}$ for a média de uma amostra de 16 elementos retirados dessa população, calcule $P(90 < \bar{X} < 110)$. 
-
-* Represente, num único gráfico, as distribuições de $X$ e $\bar{X}$. 
-
-* Que tamanho deveria ter a amostra para que $P(90 < \bar{X} < 110) = 0.95$? 
-
-<br />
-<font size=5>
-*Fonte: Morettin \& Bussab*, Estatística Básica $5^a$ edição, pág 274.
-</font>
+>
+$$ \begin{aligned}
+P\left(\mid \bar{X}_n - \mu \mid \leq \sigma/\sqrt{n}\right)&= P\left( -\sigma/\sqrt{n}\leq \bar{X}_n-\mu \leq \sigma/\sqrt{n} \right)\\
+& =  P\left(-1\leq \frac{\bar{X}_n-\mu}{\sigma/\sqrt{n}} \leq 1\right) \\
+& =  P(-1\leq Z\leq 1)\\
+& =  0.68
+\end{aligned}
+$$ 
 
 
-## Exemplo {.build}
 
-Qual a $P(90 < X < 110)$? 
+## {.build}
 
-> Devemos padronizar o evento, para usar a distribuição normal padrão. 
+Qual a probabilidade de que o estimador $\bar{X}_n$ esteja distante do valor verdadeiro, $\mu$, em no máximo 1.96 erro-padrão?
 
-> $$P(90 < X < 110) =  P\left( \frac{90-100}{10} < \frac{X-100}{10} < \frac{110-100}{10} \right) $$  
+> $$P\left(\mid \bar{X}_n - \mu \mid \leq 1.96\,\sigma/\sqrt{n}\right)$$
 
-$$= P(-1 < Z < 1) =  P(Z<1) - P(Z<-1) = \Phi(1) - \Phi(-1)$$
+$$ \begin{aligned}
+P\left(\mid \bar{X}_n - \mu \mid \leq 1.96\sigma/\sqrt{n}\right)&= P\left( -\sigma/\sqrt{n}\leq \bar{X}_n-\mu \leq \sigma/\sqrt{n} \right)\\
+& =  P\left(-1.96\leq \frac{\bar{X}_n-\mu}{\sigma/\sqrt{n}} \leq 1.96\right) \\
+& =  P(-1.96\leq Z\leq 1.96)\\
+& =  0.95
+\end{aligned}
+$$ 
 
-> Consultando a tabela Normal disponível na página da disciplina, vemos que $\Phi(1) = 0.8413$  
+## Intervalo de Confiança para $\mu$: $\sigma$ conhecido {.build}
 
-> Por simetria, $\Phi(-1) = 1-\Phi(1) = 0.1569$ e portanto 
-$$P(90 < X < 110) = \Phi(1) - \Phi(-1) = 0.6844$$
+Seja $X_1,\ldots, X_n$ uma a.a. de uma população com média $\mu$ e variância $\sigma^2$  conhecida. Então,
 
-## Exemplo {.build .smaller}
-
-Calcule $P(90 < \bar{X} < 110)$, sendo $\bar{X}$ for a média de uma amostra de 16 elementos dessa população
-
-> Sabemos que $\mathbb E(\bar{X})=100$ e $Var(\bar{X}) = \sigma^2/n=100/16$. 
-
-> Consequentemente, o desvio padrão de $\bar{X}$ será $\sigma/ \sqrt{n}=10/4$.  
-
-> Temos então que 
-$$\begin{aligned}
-P(90 < \bar{X} < 110) &= P\left( \frac{90-100}{10/4} < \frac{\bar{X}-100}{10/4} < \frac{110-100}{10/4} \right) \\
-& = P ( -4 < Z < 4) \\
-&=  P(Z<4) - P(Z<-4) \\
-&=  \Phi(4) - \Phi(-4)
-\end{aligned}$$ 
-
-> Se consultarmos a tabela agora, veremos que a probabilidade $P(Z<4)$ é tão grande nem está listada. Ela então pode ser considerada como aproximadamente igual a 1. De fato, com a ajuda de algum método de integração numérica, podemos verificar que $\Phi(4) - \Phi(-4)$ é igual a $0.9999367$.
-
-
-## Exemplo {.build}
-
-Distribuições de $X$ e $\bar{X}$:
-
-<center>
-```{r, echo=FALSE, fig.height=4.2, fig.width=6}
-library(RColorBrewer)
-mycol <- brewer.pal(8,"Dark2")
-
-par(mar=c(4, 4, 1, 2) + .1)
-curve(dnorm(x, mean=100, sd=10), 80, 120, bty="l", ylim=c(0, 0.2), yaxs = "i", xaxs="i", 
-      main="", ylab="f(x)", cex.lab=1.3, cex.axis=1.3, 
-      cex.main=1.3, col=mycol[4], lwd=3, las=1)
-curve(dnorm(x, mean=100, sd=2.5), 80, 120, n=1000, col=mycol[3], lwd=3, add=TRUE)
-
-legend("topright", legend=c("Distribuição População","Distribuição Média Amostral"),
-       lwd=2, col=mycol[c(4,3)], cex=1, bty="n")
-```
-</center>
-
-## Exemplo {.build}
-
-Que tamanho deveria ter a amostra para que $P(90 < \bar{X} < 110) = 0.95$? 
-
-> Queremos resolver a seguinte equação:
-
-$$P\left( \frac{90-100}{10/\sqrt{n}} < \frac{\bar{X}-100}{10/\sqrt{n}} < \frac{110-100}{10/\sqrt{n}} \right) = 0.95$$ 
-
-> Consultando a tabela, vemos que $P(-z_{0.025}<Z<z_{0.025})=0.95$ se $z_{0.025} = 1.96$.  
-> Então a equação que queremos resolver pode ser reescrita como: 
-
-$$ \frac{110-100}{10/\sqrt{n}} = 1.96   \quad \Leftrightarrow  \quad \sqrt{n}\frac{110-100}{10} = 1.96   \quad \Leftrightarrow \quad n = 1.96^2$$
-
-> Portanto, $n=4$ é suficiente para obtermos a confiança desejada.
-
-
-## Intervalo de Confiança para $\mu$ {.build}
-
-> * Coletamos uma amostra aleatória $X_1,X_2,\ldots,X_n$ de uma população com média $\mu$ e a variância $\sigma^2$ e usamos $\bar{X}_n$ para estimar $\mu$.
-
-> * Pelo TCL: $$\bar{X}_n \sim N(\mu,\sigma^2/n)$$
-
-> * Propriedade da Normal: $$Z=\frac{\bar{X}_n-\mu}{\sqrt{\sigma^2/n}} \sim N(0,1)$$
+$$Z=\frac{\bar{X}_n-\mu}{\sigma/\sqrt{n}} \sim N(0,1)$$
 
 $$P(-z_{\alpha/2}<Z<z_{\alpha/2})=1-\alpha$$
+
+Um Intervalo de $100(1-\alpha)\%$ de confiança para $\mu$ é dado por:
+$$IC(\mu, 1-\alpha) = \left[ \bar{x} - z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\,;\,\bar{x} +z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right]$$
+
+
+##  {.build}
+
+Intervalo de confiança de $95\%$
+
+$IC(\mu, 95\%) = \left[\bar{x} -1.96\,\sigma/\sqrt{n};\bar{x} +1.96\,\sigma/\sqrt{n}\right]$
+
+
+Intervalo de confiança de $90\%$
+
+$IC(\mu, 90\%) = \left[\bar{x} -1.64\,\sigma/\sqrt{n};\bar{x} +1.64\,\sigma/\sqrt{n}\right]$
+
+
+Intervalo de confiança de $99\%$
+
+$IC(\mu, 99\%) = \left[\bar{x} -2.58\,\sigma/\sqrt{n};\bar{x} +2.58\,\sigma/\sqrt{n}\right]$
+
+
 
 ## Como encontrar $z_{\alpha/2}$
 
@@ -286,16 +343,122 @@ Encontrar $z_{0.05}$ tal que $0.90 = P\left(-z_{0.05}\leq Z\leq z_{0.05}\right)$
 Pela tabela, $z_{0.05} = 1.64.$
 
 
-## Intervalo de Confiança para $\mu$: $\sigma$ conhecido {.build}
 
-Seja $X_1,\ldots, X_n$ uma a.a. de uma população com média $\mu$ e variância $\sigma^2$  conhecida. Então,
 
-$$Z=\frac{\bar{X}_n-\mu}{\sqrt{\sigma^2/n}} \sim N(0,1)$$
 
-$$P(-z_{\alpha/2}<Z<z_{\alpha/2})=1-\alpha$$
 
-Um Intervalo de $100(1-\alpha)\%$ de confiança para $\mu$ é dado por:
-$$IC(\mu, 1-\alpha) = \left[ \bar{x} - z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\,;\,\bar{x} +z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right]$$
+## Interpretação do Intervalo de Confiança para $\mu$ {.build}
+
+* Temos uma amostra aleatoria $X_1,\ldots,X_n$ e estamos usando a média amostral $\bar{X}_n$ para estimar $\mu$, a média populacional. 
+* Quão boa é esta estimativa?  Ela tem boa precisão?  Qual o grau de confiança? 
+
+* Em geral: queremos alto grau de confiança, por exemplo, $1-\alpha=0.95$. 
+
+* Imagine que seja possível coletar uma amostra de tamanho $n$ da população várias vezes.  Para cada vez, você calcula $\bar{x}$ e constrói um IC de 95\% para $\mu$.  Imagine também que você conhece $\mu$  e conte quantos dos intervalos contêm $\mu$.  A proporção de intervalos que contêm $\mu$ será próxima a 0.95.
+
+
+## Interpretação do Intervalo de Confiança para $\mu$ {.build}
+
+<center><img src="figuras/ICmean.png" width=750></center>
+
+
+<!-- ## Exemplo -->
+
+<!-- Uma variável aleatória $X$ tem distribução normal, com média 100 e desvio padrão 10. -->
+
+<!-- * Qual a $P(90 < X < 110)$?  -->
+
+<!-- * Se $\bar{X}$ for a média de uma amostra de 16 elementos retirados dessa população, calcule $P(90 < \bar{X} < 110)$.  -->
+
+<!-- * Represente, num único gráfico, as distribuições de $X$ e $\bar{X}$.  -->
+
+<!-- * Que tamanho deveria ter a amostra para que $P(90 < \bar{X} < 110) = 0.95$?  -->
+
+<!-- <br /> -->
+<!-- <font size=5> -->
+<!-- *Fonte: Morettin \& Bussab*, Estatística Básica $5^a$ edição, pág 274. -->
+<!-- </font> -->
+
+
+<!-- ## Exemplo {.build} -->
+
+<!-- Qual a $P(90 < X < 110)$?  -->
+
+<!-- > Devemos padronizar o evento, para usar a distribuição normal padrão.  -->
+
+<!-- > $$P(90 < X < 110) =  P\left( \frac{90-100}{10} < \frac{X-100}{10} < \frac{110-100}{10} \right) $$   -->
+
+<!-- $$= P(-1 < Z < 1) =  P(Z<1) - P(Z<-1) = \Phi(1) - \Phi(-1)$$ -->
+
+<!-- > Consultando a tabela Normal disponível na página da disciplina, vemos que $\Phi(1) = 0.8413$   -->
+
+<!-- > Por simetria, $\Phi(-1) = 1-\Phi(1) = 0.1569$ e portanto  -->
+<!-- $$P(90 < X < 110) = \Phi(1) - \Phi(-1) = 0.6844$$ -->
+
+<!-- ## Exemplo {.build .smaller} -->
+
+<!-- Calcule $P(90 < \bar{X} < 110)$, sendo $\bar{X}$ for a média de uma amostra de 16 elementos dessa população -->
+
+<!-- > Sabemos que $\mathbb E(\bar{X})=100$ e $Var(\bar{X}) = \sigma^2/n=100/16$.  -->
+
+<!-- > Consequentemente, o desvio padrão de $\bar{X}$ será $\sigma/ \sqrt{n}=10/4$.   -->
+
+<!-- > Temos então que  -->
+<!-- $$\begin{aligned} -->
+<!-- P(90 < \bar{X} < 110) &= P\left( \frac{90-100}{10/4} < \frac{\bar{X}-100}{10/4} < \frac{110-100}{10/4} \right) \\ -->
+<!-- & = P ( -4 < Z < 4) \\ -->
+<!-- &=  P(Z<4) - P(Z<-4) \\ -->
+<!-- &=  \Phi(4) - \Phi(-4) -->
+<!-- \end{aligned}$$  -->
+
+<!-- > Se consultarmos a tabela agora, veremos que a probabilidade $P(Z<4)$ é tão grande nem está listada. Ela então pode ser considerada como aproximadamente igual a 1. De fato, com a ajuda de algum método de integração numérica, podemos verificar que $\Phi(4) - \Phi(-4)$ é igual a $0.9999367$. -->
+
+
+<!-- ## Exemplo {.build} -->
+
+<!-- Distribuições de $X$ e $\bar{X}$: -->
+
+<!-- <center> -->
+<!-- ```{r, echo=FALSE, fig.height=4.2, fig.width=6} -->
+<!-- library(RColorBrewer) -->
+<!-- mycol <- brewer.pal(8,"Dark2") -->
+
+<!-- par(mar=c(4, 4, 1, 2) + .1) -->
+<!-- curve(dnorm(x, mean=100, sd=10), 80, 120, bty="l", ylim=c(0, 0.2), yaxs = "i", xaxs="i",  -->
+<!--       main="", ylab="f(x)", cex.lab=1.3, cex.axis=1.3,  -->
+<!--       cex.main=1.3, col=mycol[4], lwd=3, las=1) -->
+<!-- curve(dnorm(x, mean=100, sd=2.5), 80, 120, n=1000, col=mycol[3], lwd=3, add=TRUE) -->
+
+<!-- legend("topright", legend=c("Distribuição População","Distribuição Média Amostral"), -->
+<!--        lwd=2, col=mycol[c(4,3)], cex=1, bty="n") -->
+<!-- ``` -->
+<!-- </center> -->
+
+<!-- ## Exemplo {.build} -->
+
+<!-- Que tamanho deveria ter a amostra para que $P(90 < \bar{X} < 110) = 0.95$?  -->
+
+<!-- > Queremos resolver a seguinte equação: -->
+
+<!-- $$P\left( \frac{90-100}{10/\sqrt{n}} < \frac{\bar{X}-100}{10/\sqrt{n}} < \frac{110-100}{10/\sqrt{n}} \right) = 0.95$$  -->
+
+<!-- > Consultando a tabela, vemos que $P(-z_{0.025}<Z<z_{0.025})=0.95$ se $z_{0.025} = 1.96$.   -->
+<!-- > Então a equação que queremos resolver pode ser reescrita como:  -->
+
+<!-- $$ \frac{110-100}{10/\sqrt{n}} = 1.96   \quad \Leftrightarrow  \quad \sqrt{n}\frac{110-100}{10} = 1.96   \quad \Leftrightarrow \quad n = 1.96^2$$ -->
+
+<!-- > Portanto, $n=4$ é suficiente para obtermos a confiança desejada. -->
+
+
+<!-- ## Intervalo de Confiança para $\mu$ {.build} -->
+
+<!-- > * Coletamos uma amostra aleatória $X_1,X_2,\ldots,X_n$ de uma população com média $\mu$ e a variância $\sigma^2$ e usamos $\bar{X}_n$ para estimar $\mu$. -->
+
+<!-- > * Pelo TCL: $$\bar{X}_n \sim N(\mu,\sigma^2/n)$$ -->
+
+<!-- > * Propriedade da Normal: $$Z=\frac{\bar{X}_n-\mu}{\sqrt{\sigma^2/n}} \sim N(0,1)$$ -->
+
+<!-- $$P(-z_{\alpha/2}<Z<z_{\alpha/2})=1-\alpha$$ -->
 
 ## Exemplo: Café {.build}
 

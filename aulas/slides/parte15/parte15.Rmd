@@ -180,7 +180,7 @@ $$ \begin{aligned}
 P\left(\mid \hat{p} - p \mid \leq \sqrt{\frac{p(1-p)}{n}}\right)&= P\left( -\sqrt{\frac{p(1-p)}{n}}\leq \hat{p}-p \leq \sqrt{\frac{p(1-p)}{n}} \right)\\
 & =  P\left(-1\leq \frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}} \leq 1\right) \\
 & =  P(-1\leq Z\leq 1)\\
-& =  0.68, 
+& =  0.68
 \end{aligned}
 $$ 
 
@@ -193,7 +193,7 @@ $$ \begin{aligned}
 P\left(\mid \hat{p} - p \mid \leq 1.96 \sqrt{\frac{p(1-p)}{n}}\right)&= P\left( -1.96\sqrt{\frac{p(1-p)}{n}}\leq \hat{p}-p \leq 1.96\sqrt{\frac{p(1-p)}{n}} \right)\\
 & =  P\left(-1\leq \frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}} \leq 1\right) \\
 & =  P(-1.96\leq Z\leq 1.96)\\
-& =  0.95, 
+& =  0.95
 \end{aligned}
 $$
 
