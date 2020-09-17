@@ -29,9 +29,9 @@ A média amostral, $\bar{X}_n$, tem em geral valores diferentes para diferentes 
 
 > Para obtermos a distribuição da média amostral (empiricamente):
 
-> * Coletar uma a.a. de tamanho $n$ a partir da população com distribuição $X$ e guardar o valor da média desta amostra.
+> * Coletar uma a.a. de tamanho $n$ a partir da população e calcular o valor da média desta amostra.
 
-> * Coletar outra a.a. de tamanho $n$ a partir da população com distribuição $X$ e guardar o valor da média desta amostra. 
+> * Coletar outra a.a. de tamanho $n$ a partir da população e calcular o valor da média desta amostra. 
 
 > * Repetir isso várias vezes. 
 
