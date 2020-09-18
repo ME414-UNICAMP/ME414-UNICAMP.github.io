@@ -232,7 +232,7 @@ Um Intervalo de $100(1-\alpha)\%$ de confiança para $\mu$ é dado por:
 $$IC(\mu, 1-\alpha) = \left[ \bar{x} - z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\,;\,\bar{x} +z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right]$$
 
 
-##  {.build}
+## Intervalo de Confiança para $\mu$: $\sigma$ conhecido {.build}
 
 Intervalo de confiança de $95\%$
 
