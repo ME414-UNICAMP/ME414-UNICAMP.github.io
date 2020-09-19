@@ -316,8 +316,6 @@ Fonte: [http://www.censo2010.ibge.gov.br](http://www.censo2010.ibge.gov.br)
 
 Suponha que extraímos informações de 50 emails recebidos e armazemos esses dados numa tabela. Esse é um **conjunto de dados**.
 
-Primeiras linhas do conjunto de dados:
-
 ```{r, message=FALSE, warning=FALSE}
 library(readr)
 library(dplyr)
@@ -331,10 +329,10 @@ colnames(dados) = c("spam", "characters", "lineBreaks", "format", "number")
 
 library(knitr)
 library(kableExtra)
-head(dados, 4) %>% 
-  kable() %>% 
-  kable_styling(bootstrap_options = c("bordered", "striped"),
-                position = "left", full_width = FALSE)
+head(dados, 8) %>% 
+  kable(caption = "Primeiras linhas do conjunto de dados") %>% 
+  kable_styling(bootstrap_options = c("bordered", "striped", "condensed"),
+                position = "left", full_width = FALSE, font_size = 18)
 ```
 
 
@@ -463,14 +461,14 @@ tmp = data.frame(tab.gender, round(prop.table(tab.gender), 3))
 tmp = tmp[, -3]
 colnames(tmp) = c("Gênero", "Freq. Absoluta", "Freq. Relativa")
 
-tmp %>% kable() %>% 
+tmp %>% kable(caption = "Tabela de Frequências") %>% 
   kable_styling(position = "left", 
                 bootstrap_options = c("bordered", "striped"),
                 full_width = FALSE)
 ```
 
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, eval=FALSE}
 png("graficoBarrasGenero.png")
 par(mar = c(3, 5.1, 3, 3))
 barplot(tab.gender, las = 1, main = "Gráfico de Barras - Gênero", 
@@ -507,7 +505,6 @@ dev.off()
 
 Qual ator atuou no maior número de episódios da série [Doctor Who](https://pt.wikipedia.org/wiki/Doctor_Who)?
 
-**Tabela de frequências absolutas e relativas**
 <img src="figuras/doctors.png" width=330 style="float: left; margin-right: 2cm">
 
 ```{r, echo=FALSE}
@@ -548,7 +545,7 @@ whos$prop <- round(whos$n_episodes/sum(whos$n_episodes), 3)
 
 colnames(whos) <- c("Ator", "Freq. Absoluta", "Freq. Relativa")
 
-whos %>% kable() %>% 
+whos %>% kable(caption = "Tabela de Frequências Absolutas e Relativas") %>% 
   kable_styling(position = "left", 
                 bootstrap_options = c("striped", "condensed"),
                 full_width = FALSE, font_size = 14)
@@ -615,7 +612,7 @@ tmp2 = data.frame(tab.anxiety, round(prop.table(tab.anxiety), 3))
 tmp2 = tmp2[, -3]
 colnames(tmp2) = c("Anxiety Status", "Freq. Absoluta", "Freq. Relativa")
 
-tmp2 %>% kable() %>% 
+tmp2 %>% kable(caption = "Tabela de Frequências") %>% 
   kable_styling(position = "left", 
                 bootstrap_options = c("bordered", "striped"),
                 full_width = FALSE, font_size = 20)
@@ -649,14 +646,16 @@ Nesse caso, assim como nas variáveis categóricas, podemos apresentar uma tabel
 <img src="figuras/earlyclass.jpeg" width=380 style="float: right; margin-right: 1cm">
 
 
-```{r, echo=FALSE}
+```{r}
 tab.early = table(SleepStudy$NumEarlyClass)
 tmp3 = data.frame(tab.early, round(prop.table(tab.early), 3))[, -3]
-colnames(tmp3) = c("Número de Aulas", "Frequência", "Freq. Relativa")
+colnames(tmp3) = c("Número de Aulas", "Freq. Absoluta", "Freq. Relativa")
 
-library(knitr)
-library(kableExtra)
-kable(tmp3, align = c("c", "c", "c")) %>% kable_styling(position = "left", font_size = 20)
+tmp3 %>% 
+  kable(align = c("c", "c", "c")) %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
 ```
 
 
