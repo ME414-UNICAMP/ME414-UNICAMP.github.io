@@ -11,6 +11,7 @@ logo: ../logo-imecc.png
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 ## options(knitr.table.format = "html") 
+options("kableExtra.html.bsTable" = T)
 ```
 
 
@@ -317,19 +318,23 @@ Suponha que extraímos informações de 50 emails recebidos e armazemos esses da
 
 Primeiras linhas do conjunto de dados:
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+```{r, message=FALSE, warning=FALSE}
 library(readr)
 library(dplyr)
 dados = read_tsv("email50.txt")
 
 dados = dados %>% 
   select(spam, num_char, line_breaks, format, number) %>% 
-  mutate(spam = factor(spam, labels = c("No", "Yes")),
+  mutate(spam = factor(spam, labels = c("no", "yes")),
          num_char = num_char*1000)
 colnames(dados) = c("spam", "characters", "lineBreaks", "format", "number")
 
 library(knitr)
-kable(head(dados, 4))
+library(kableExtra)
+head(dados, 4) %>% 
+  kable() %>% 
+  kable_styling(bootstrap_options = c("bordered", "striped"),
+                position = "left", full_width = FALSE)
 ```
 
 
@@ -341,7 +346,7 @@ Cada linha representa um email recebido.
 
 Colunas:
 
-* `r colnames(dados)[1]`: `Yes` se spam e `No` caso contrário.
+* `r colnames(dados)[1]`: `yes` se spam e `no` caso contrário.
 
 * `r colnames(dados)[2]`: número de caracteres no email.
 
@@ -458,12 +463,10 @@ tmp = data.frame(tab.gender, round(prop.table(tab.gender), 3))
 tmp = tmp[, -3]
 colnames(tmp) = c("Gênero", "Freq. Absoluta", "Freq. Relativa")
 
-library(knitr)
-library(kableExtra)
-kable(tmp, "html") %>% 
+tmp %>% kable() %>% 
   kable_styling(position = "left", 
-                bootstrap_options = c("bordered", "hover"),
-                font_size = 24, full_width = FALSE)
+                bootstrap_options = c("bordered", "striped"),
+                full_width = FALSE)
 ```
 
 
@@ -504,7 +507,7 @@ dev.off()
 
 Qual ator atuou no maior número de episódios da série [Doctor Who](https://pt.wikipedia.org/wiki/Doctor_Who)?
 
-**Tabela de frequências e frequências relativas**
+**Tabela de frequências absolutas e relativas**
 <img src="figuras/doctors.png" width=330 style="float: left; margin-right: 2cm">
 
 ```{r, echo=FALSE}
@@ -543,9 +546,12 @@ whos <- data.frame(
 whos$doctor <- factor(whos$doctor, levels = whos$doctor)
 whos$prop <- round(whos$n_episodes/sum(whos$n_episodes), 3)
 
-colnames(whos) <- c("Ator", "Frequência", "Freq. Relativa")
+colnames(whos) <- c("Ator", "Freq. Absoluta", "Freq. Relativa")
 
-kable(whos) %>% kable_styling(position = "left", font_size = 22)
+whos %>% kable() %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed"),
+                full_width = FALSE, font_size = 14)
 ```
 
 <br />
@@ -599,7 +605,7 @@ Assim como na variável categórica nominal, podemos utilizar as frequências ab
 
 <img src="figuras/graficoAnxiety.png" width=400 style="float: right; margin-right: 1cm">
 
-```{r, echo=FALSE}
+```{r}
 # Transformando AnxietyStatus em fator ordenado
 SleepStudy$AnxietyStatus = ordered(SleepStudy$AnxietyStatus, 
                                    levels = c("normal", "moderate", "severe"))
@@ -607,15 +613,16 @@ SleepStudy$AnxietyStatus = ordered(SleepStudy$AnxietyStatus,
 tab.anxiety = table(SleepStudy$AnxietyStatus)
 tmp2 = data.frame(tab.anxiety, round(prop.table(tab.anxiety), 3))
 tmp2 = tmp2[, -3]
-colnames(tmp2) = c("Anxiety Status", "Frequência", "Freq. Relativa")
+colnames(tmp2) = c("Anxiety Status", "Freq. Absoluta", "Freq. Relativa")
 
-library(knitr)
-library(kableExtra)
-kable(tmp2) %>% kable_styling(position = "left", font_size = 20)
+tmp2 %>% kable() %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("bordered", "striped"),
+                full_width = FALSE, font_size = 20)
 ```
  
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, eval=FALSE}
 library(RColorBrewer)
 mycol = brewer.pal(10, "Spectral")
 png("figuras/graficoAnxiety.png", width = 600, height = 400)
