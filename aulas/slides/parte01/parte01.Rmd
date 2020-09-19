@@ -7,163 +7,153 @@ output:
 logo: ../logo-imecc.png
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+
 # Introdução
 
-## Estatísticas
+## Por que aprender Estatística?
 
-<center>
-![chaves](figuras/chaves.png)
-</center>
+Jornais, revistas, noticiários da TV estão repletos de informações obtidas através de pesquisas de opinião, pesquisas médicas, estudos econômicos, estudos ambientais, estatísticas sobre uma pandemia.
 
-[Vídeo: Chaves e as Estatísticas](https://www.youtube.com/watch?v=VC1NmtmF4zE)
+<img src="figuras/mapa-de-carreira.jpg" width=500 style="float: right; margin-top: 0cm; margin-left: 1cm">
 
-## 
+Números e conclusões tiradas a partir deles são cada vez mais comuns no dia-a-dia.
 
-<center>
-![arrival](figuras/arrival.jpg)
-</center>
+No meio de tantos dados e informações, o que levar em conta e o que descartar?
+
+Estamos na era da informação e a Estatística trabalha no uso da informação para tomada de decisão.
 
 
-## Entendendo sobre Variabilidade
+## Alguns exemplos 
 
-<center>
-![books1](figuras/livro1.png) 
-</center>
+<img src="figuras/covid19EstimatesUSA.jpg" width=350 style="float: right; margin-top: 0cm; margin-left: 1cm">
 
+> * Como predizer o número de casos/óbitos por COVID-19?
 
-## Entendendo sobre Variabilidade
+> * Como analisar se um tratamento é realmente eficaz para uma certa doença? Ex: uso da cloroquina/hidroxicloroquina no combate a COVID-19?
 
-<center>
-![books2](figuras/livro2.png)
-</center>
-
-
-## Introdução {.build}
-
- No livro [Mankind in the Making](http://www.goodreads.com/book/show/1940169.Mankind_in_the_Making), de 1903, [H.G. Wells](http://pt.wikipedia.org/wiki/H._G._Wells) [escreveu](http://www.statschat.org.nz/2012/08/13/what-wells-actually-said-in-context/):   
-
->... e não estamos muito longe do tempo em que se entenderá que, para exercermos a cidadania de maneira eficiente, será tão necessário saber calcular e pensar em médias, máximos e mínimos, quanto é agora necessário saber ler e escrever.
-
-
-## Introdução{.build}
-
-Jornais e revistas estão repletos de informações obtidas através de pesquisas de opinião, pesquisas médicas, estudos econômicos, estudos ambientais.
-
-> Números e conclusões tiradas a partir deles são cada vez mais comuns no dia-a-dia.
-
-> No meio de tantos dados e informações, o que levar em conta e o que descartar?
-
-
-## Introdução{.build}
-
-* Como avaliar evidências sobre aquecimento global?
-
-> * Celulares fazem mal à saúde?
-
-> * Qual sua chance de ganhar a loteria?
+> * Qual sua chance de ganhar na megasena?
 
 > * Há preconceito contra as mulheres para cargos de chefia?
 
-> * Como analisar se um tratamento  está realmente funcionando?
-
-> * Como predizer o valor de venda de uma casa?
-
 > * Como o Netflix sabe que tipo de filmes/séries você gosta?
 
-> Na era da internet e do "Big Data", entender estatística é essencial.
+
+## Big Data
+
+<img src="figuras/BigData.jpg" width=700>
+
+Na era da internet e do "Big Data", entender Estatística é essencial.
 
 
-## Introdução
+## Pensamento Estatístico 
 
-<center>
-![Globo News](figuras/globonews.png "Globo News")
-</center>
+<img src="figuras/mankind.jpg" width=250 style="float: right; margin-top: 0cm; margin-left: 1cm">
 
+No livro [Mankind in the Making](http://www.goodreads.com/book/show/1940169.Mankind_in_the_Making), de 1903, [H.G. Wells](http://pt.wikipedia.org/wiki/H._G._Wells) [escreveu](http://www.statschat.org.nz/2012/08/13/what-wells-actually-said-in-context/):   
+<br />
 
-## Introdução
-
-<center>
-![Pesquisa](figuras/graficofake2.png "Pesquisa")
-</center>
-
-## Introdução {.build}
-
-> * Em 1920, estudando dados de produtividade de cultivo, [Ronald Fisher](http://en.wikipedia.org/wiki/Ronald_Fisher) formou a base da estatística moderna.
-
-> * Em 1925, Fisher escreveu o livro [Statistical Methods for Research Workers](http://en.wikipedia.org/wiki/Statistical_Methods_for_Research_Workers) para biólogos com problemas estatísticos similares aos que ele encontrou trabalhando com experimentos agrícolas em [Rothamsted](http://www.rothamsted.ac.uk).
-
-> * Tópicos do livro: teste-t, correlação, teste qui-quadrado, análise de variância e regressão. 
-
-* Ainda hoje, estes são os principais tópicos de cursos de metodologia estatística. 
+*"... e não estamos muito longe do tempo em que se entenderá que, para exercermos a cidadania de maneira eficiente, será tão necessário saber calcular e pensar em médias, máximos e mínimos, quanto é agora necessário saber ler e escrever."*
 
 
-## Introdução {.build}
+<!-- ## Estatística Moderna  -->
 
-<center>
-![stat](figuras/stats.jpg)
-</center>
+<!-- <img src="figuras/RAFisher.jpeg" width=250 style="float: left; margin-top: 0cm; margin-right: 1cm"> -->
 
-A estatística é um conjunto de técnicas que permite, de forma sistemática, organizar, descrever, analisar e interpretar dados oriundos de estudos ou experimentos, realizados em qualquer área do conhecimento.
+<!-- [Ronald Fisher](http://en.wikipedia.org/wiki/Ronald_Fisher) (1890 - 1962): estatístico, biólogo, eugenista e professor britânico. -->
+
+<!-- Em 1920, estudando dados de produtividade de cultivo, Ronald Fisher formou a base da estatística moderna. -->
+
+<!-- Fisher se interessava pela aplicação e popularização de métodos estatísticos (Conniffe, 1991). -->
+
+<!-- Em 1925, Fisher escreveu o livro [Statistical Methods for Research Workers](http://en.wikipedia.org/wiki/Statistical_Methods_for_Research_Workers) para biólogos com problemas estatísticos similares aos que ele encontrou trabalhando com experimentos agrícolas em [Rothamsted](http://www.rothamsted.ac.uk). -->
+
+<!-- **Tópicos do livro:** teste-t, correlação, teste qui-quadrado, análise de variância e regressão. Ainda hoje, estes são os principais tópicos de cursos de metodologia estatística.  -->
+
+
+## Estatística 
+
+<img src="figuras/word-cloud-statistics.png" width=400 style="float: right; margin-top: 0cm; margin-left: 1cm">
+
+A **Estatística** é um conjunto de técnicas que permite, de forma sistemática, organizar, descrever, analisar e interpretar dados oriundos de estudos ou experimentos, realizados em qualquer área do conhecimento.
             
-            
-Estatística é a arte do aprendizado através de dados. 
+**Estatística** é a arte de aprender através de dados. 
 
 
-## Por que usar métodos estatísticos? {.build}
+Três aspectos principais da estatística: 
+
+* **Planejamento**: planejar como obter os dados para responder às perguntas de interesse. <br />
+* **Descrição**: resumir os dados obtidos. <br />
+* **Inferência**: tomar decisões e fazer predições baseando-se nos dados.
 
 
-> Três aspectos principais da estatística:
-
-
-> * **Planejamento**: planejar como obter os dados para responder às perguntas de interesse.
-
-> * **Descrição**: resumir os dados obtidos.
-
-> * **Inferência**: tomar decisões e fazer predições baseando-se nos dados.
-
- 
-## Por que usar métodos estatísticos? {.build}
+## Por que usar métodos estatísticos? 
    
-> Os tópicos de estudo de um certo pesquisador são tão diversos quanto as perguntas de interesse.
+<img src="figuras/research.jpg" width=480 style="float: right; margin-left: 1cm">
 
-> No entanto, muitas vezes esses estudos podem ser realizados com técnicas simples de amostragem, análise de dados e conceitos fundamentais de inferência estatística.
+Os tópicos de estudo de um certo pesquisador são tão diversos quanto as perguntas de interesse.
 
+Muitas vezes esses estudos podem ser realizados com técnicas simples de amostragem, análise de dados e conceitos fundamentais de inferência estatística.
 
-## Estudo de Caso: stents e prevenção de infarto {.build}
-
-> Problema comum em medicina: como avaliar a eficácia de um procedimento médico?
-
-> [Estudo](http://www.nejm.org/doi/full/10.1056/NEJMoa1105335): [stents](http://www.nhlbi.nih.gov/health/health-topics/topics/stents) são eficazes no tratamento de pacientes com risco de infarto?
-
-> Stents são usados para a recuperação de pacientes que já sofreram infarto.
-
-## Estudo de Caso: stents e prevenção de infarto
-<center>
-<img src="figuras/Stent_NIH.gif" width=300>
-<figcaption>Figura: Stents no tratamento de infarto </figcaption>
-</center>
+Com isso, a Estatística pode trabalhar em parceria com qualquer área do conhecimento, planejando experimentos, auxiliando na coleta de amostras representativas, resumindo e analisando seus dados, tirando conclusões a partir de experimentos.
 
 
-## Estudo de Caso: stents e prevenção de infarto {.build}
+## Estatística aplicada nas mais diversas áreas
 
-> Os pesquisadores do estudo investigaram se havia benefícios também para pacientes com risco de infarto.
+<img src="figuras/Semest_AreasAtuacao.png" width=450 style="float: left; margin-right: 2cm">
 
-> * **Pergunta de interesse:** O uso de stent reduz o risco de infarto?
+* Meio Ambiente
+* Pesquisa de Mercado
+* Big Data
+* Informática/Telecomunicação
+* Agronegócio
+* Hospitais e Pesquisa Médica
+* Mercado Financeiro
+* Indústria
+* Biomedicina/Indústria Farmacêutica
+* Instituições de Ensino e Pesquisa
 
-> * **Estudo**: Os pesquisadores coletaram dados de 451 pacientes com risco de infarto que se voluntariaram para o estudo.
 
-> Cada paciente foi alocado aleatoriamente em um dos grupos:
+## Estudo de Caso: stents e prevenção de infarto 
 
-> * **Grupo de Tratamento**: paciente recebe stent e medicação.
+<img src="figuras/Stent_NIH.gif" width=280 style="float: right; margin-top: 0cm; margin-left: 1cm">
+<!-- <figcaption>Figura: Stents no tratamento de infarto </figcaption> -->
 
-> * **Grupo Controle**: paciente recebe a mesma medicação do grupo tratamento, mas não recebe stent.
+Problema comum em medicina: como avaliar a eficácia de um procedimento médico?
+
+[Estudo](http://www.nejm.org/doi/full/10.1056/NEJMoa1105335): [stents](http://www.nhlbi.nih.gov/health/health-topics/topics/stents) são eficazes no tratamento de pacientes com risco de infarto?
+
+Stents são usados para a recuperação de pacientes que já sofreram infarto.
+
+<br />
+Os pesquisadores do estudo investigaram se havia benefícios também para pacientes com risco de infarto.
+
+**Pergunta de interesse:** O uso de stent reduz o risco de infarto?
 
 
-## Estudo de Caso: stents e prevenção de infarto {.build}
+## Estudo de Caso: stents e prevenção de infarto 
 
-> Cada paciente foi avaliado em duas ocasiões: primeiros 30 dias e após 1 ano.
+<img src="figuras/Stent_NIH.gif" width=280 style="float: right; margin-top: 0cm; margin-left: 1cm">
 
-<center><img src="figuras/stent1.png" width=400></center>
+**Estudo**: Os pesquisadores coletaram dados de 451 pacientes com risco de infarto que se voluntariaram para o estudo.
+
+<br />
+Cada paciente foi alocado aleatoriamente em um dos grupos:
+
+* **Grupo de Tratamento**: paciente recebe stent e medicação. <br />
+* **Grupo Controle**: paciente recebe a mesma medicação do grupo tratamento, mas não recebe stent.
+
+
+## Estudo de Caso: stents e prevenção de infarto 
+
+<img src="figuras/Stent_NIH.gif" width=280 style="float: right; margin-top: 0cm; margin-left: 1cm">
+
+Cada paciente foi avaliado em duas ocasiões: primeiros 30 dias e após 1 ano.
+
+<img src="figuras/stent1.png" width=400>
 </br>
 
 Avaliar cada paciente individualmente desta planilha de dados é eficaz?
@@ -171,19 +161,23 @@ Avaliar cada paciente individualmente desta planilha de dados é eficaz?
 Como poderíamos resumir?
 
 
-## Estudo de Caso: stents e prevenção de infarto {.build}
+## Estudo de Caso: stents e prevenção de infarto 
 
-<center><img src="figuras/stent2.png" width=500></center>
-</br>
+<img src="figuras/stent2.png" width=480 style="float: right; margin-top: 0cm; margin-left: 1cm">
+
+Veja a tabela ao lado com os resultados.
+
 Dentre os 224 pacientes do grupo tratamento:
 
-* 33 pacientes tiveram infarto durante os primeiros 30 dias.
+* 33 pacientes tiveram infarto durante os primeiros 30 dias. <br />
 * 45 pacientes tiveram infarto durante o primeiro ano.
 
 
 Qual a proporção de pacientes do grupo tratamento que sofreram infarto durante o primeiro ano?
 
 $$\frac{45}{224} = `r round(45/224,2)` = `r round(45/224,2)*100`\%$$
+
+Podemos calcular **estatísticas sumárias** a partir da tabela.
 
 ```{r, echo=FALSE, message=FALSE, eval=FALSE}
 
@@ -217,110 +211,113 @@ print(g)
 ```
 
 
-  
-## Estudo de Caso: stents e prevenção de infarto {.build}
+## Estudo de Caso: stents e prevenção de infarto 
 
-<center><img src="figuras/stent2.png"></center>
-
-Podemos calcular **estatísticas sumárias** a partir da tabela.
+<img src="figuras/stent2.png" width=480 style="float: right; margin-left: 1cm">
 
 **Estatística Sumária**: número obtido a partir de informações dos dados coletados para resumí-los.
 
+<br /><br />
 Proporção de pacientes do grupo tratamento que sofreram infarto: 
-<font size=4> $$\frac{45}{224} = `r round(45/224, 2)` = `r round(45/224, 2)*100`\%$$ </font>
+$\displaystyle \frac{45}{224} = `r round(45/224, 2)` = `r round(45/224, 2)*100`\%$
 
 Proporção de pacientes do grupo controle que sofreram infarto: 
-<font size=4> $$\frac{28}{227} = `r round(28/227, 2)` = `r round(28/227, 2)*100`\%$$
-</font>
+$\displaystyle \frac{28}{227} = `r round(28/227, 2)` = `r round(28/227, 2)*100`\%$
+
+No grupo tratamento, temos 8% a mais de pacientes que sofreram infarto.
 
 
-## Estudo de Caso: stents e prevenção de infarto {.build}
+## Estudo de Caso: stents e prevenção de infarto 
 
-> No grupo tratamento, temos 8% a mais de pacientes que sofreram infarto.
+Relembrando a pergunta de interesse. <br />
+**Pergunta de interesse:** O uso de stent reduz o risco de infarto?
 
-> Isto está de acordo com a expectativa dos pesquisadores do estudo? (relembre a pergunta de interesse)
+O resultado observado está de acordo com a expectativa dos pesquisadores? 
 
-> 8% é uma diferença **considerável**? 
+8% é uma diferença **considerável**? 
 
-> Uma diferença de 8% poderia acontecer ao acaso, mesmo que os dois tratamentos na verdade oferecessem o mesmo risco de infarto?
+Uma diferença de 8% poderia acontecer ao acaso, mesmo que os dois tratamentos na verdade oferecessem o mesmo risco de infarto?
 
-> Utilizando metodologia estatística, os pesquisadores chegaram à conclusão de que stents não servem para previnir novos infartos.
+Utilizando metodologia estatística, os pesquisadores chegaram à conclusão de que stents não servem para previnir novos infartos.
 
-> Razão médica: o stent só resolve o fluxo sanguíneo naquela artéria específica lesionada, mas o paciente continua sendo de alto risco para infarto pois a doença está disseminada.  
-
-
-## Estudo de Caso: stents e prevenção de infarto {.build}
-<div class="red2">
-**CUIDADO!**
-
-</div>
+**Razão médica:** o stent só resolve o fluxo sanguíneo naquela artéria específica lesionada, mas o paciente continua sendo de alto risco para infarto pois a doença está disseminada.  
 
 
-> Não podemos generalizar os resultados do estudo para todo tipo de paciente e todo tipo de stent.
+## Estudo de Caso: stents e prevenção de infarto 
 
-<center><img src="figuras/sins1.png" width=200></center>
+<img src="figuras/sins1.png" width=280 style="float: left; margin-left: 1cm; margin-right:2cm; margin-top:1cm">
+
+<br /><br />
+<div class="red2">**CUIDADO!**</div>
+
+<br />
+
+Não podemos generalizar os resultados do estudo para todo tipo de paciente e todo tipo de stent.
 
 
-# Estatística Descritiva: Introdução
+# Análise Descritiva
 
-## Estatística Descritiva {.build}
-> **Estatística descritiva** se refere a métodos para resumir dados.
+## Análise Descritiva 
+**Análise descritiva** se refere a métodos para resumir e descrever os dados.
 
-> Gráficos, tabelas, médias, porcentagens,...
+<img src="figuras/EstatisticaDescritiva.png" width=400 style="float: right; margin-top: 0cm">
 
-<center><img src="figuras/jamesBond.png" width=500></center>
+É o primeiro passo antes de qualquer análise estatística!
+
+Dados aqui refere-se à informação contida na amostra, ou seja, a que foi coletada de um experimento, uma pesquisa, um registro histórico, etc.
+
+Resumo dos dados pode ser feito por meio de: 
+
+* **métricas quantitativas**: estatísticas sumárias como média, mediana, desvio padrão, proporções. <br />
+* **ferramentas visuais**: gráficos.
+
+A técnica adequada depende do tipo de variável.
 
 
 ## Exemplo: Dados do Censo
 
 É mais simples olharmos gráficos ou 35.723.254 questionários?
 
-![](figuras/censo-SP.png)
+<img src="figuras/censo-SP.png" width=800>
 
+<font size=4>
 Fonte: [http://www.censo2010.ibge.gov.br](http://www.censo2010.ibge.gov.br)
-
-# Estatística Descritiva: Estrutura básica de dados
-
-## Estrutura dos dados
-
-Para que possamos resumir os dados, é importante primeiramente entender como eles são organizados e também os diversos tipos de cada variável.
-
-<center>
-![later](figuras/later.jpg)
-</center>
-
-## Exemplo: spam
-
-<center>
-![spamfig](figuras/spamfig.png)
-</center>
-</br>
-**Conjunto de dados**: informação de 50 emails recebidos.
+</font>
 
 
 ## Exemplo: spam
 
-Primeiras linhas do conjunto de dados (ou matriz de dados):
+<img src="figuras/spamfig.png" width=300 style="float: right; margin-left: 1cm">
+
+Suponha que extraímos informações de 50 emails recebidos e armazemos esses dados numa tabela. Esse é um **conjunto de dados**.
+
+Primeiras linhas do conjunto de dados:
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(readr)
 library(dplyr)
-dados <- read_tsv("email50.txt")
-dados <- dados %>% select(spam, num_char, line_breaks, format, number) %>% 
-    mutate(num_char = num_char*1000)
+dados = read_tsv("email50.txt")
+
+dados = dados %>% 
+  select(spam, num_char, line_breaks, format, number) %>% 
+  mutate(spam = factor(spam, labels = c("No", "Yes")),
+         num_char = num_char*1000)
+colnames(dados) = c("spam", "characters", "lineBreaks", "format", "number")
 
 library(knitr)
-kable(head(dados))
+kable(head(dados, 4))
 ```
 
 
-## Exemplo: spam {.build}
+## Exemplo: spam
+
+<img src="figuras/spamfig.png" width=300 style="float: right; margin-left: 1cm">
 
 Cada linha representa um email recebido.
 
 Colunas:
 
-* `r colnames(dados)[1]`: 1 se spam e 0 caso contrário.
+* `r colnames(dados)[1]`: `Yes` se spam e `No` caso contrário.
 
 * `r colnames(dados)[2]`: número de caracteres no email.
 
@@ -331,35 +328,32 @@ Colunas:
 * `r colnames(dados)[5]`: indica se o email não continha nenhum número (none), um número pequeno (small) ou um número grande (big).
 
 
-## Tipos de Variável
+## Estrutura básica dos dados 
 
-* Variável é uma condição ou característica de um elemento de estudo.
+<img src="figuras/later.jpg" width=340 style="float: right; margin-top: 0cm">
 
-* Pode assumir valores diferentes em diferentes elementos.
+Para que possamos resumir os dados, é importante primeiramente entender como eles são organizados e também os diversos tipos de cada variável.
 
-* Peso, altura, curso, são exemplos de variáveis: para cada
-pessoa, os valores mudam.
+**Variável** é uma condição ou característica de um elemento de estudo. Pode assumir valores diferentes em diferentes elementos.
 
-</br>
-<center>
-![Tipos de Variáveis](figuras/FIG_ESB_001.png)
-</center>
+**Tipos de Variáveis**
 
+<img src="figuras/tiposDados.png" width=500 style="float: left; margin-top: 0cm; margin-right: 1cm">
 
-## Tipos de Variável {.build}
+**Exemplos**: peso, altura, curso. 
 
-> * **Qualitativa**
->      + Nominal: Não existe ordenação (ex: sexo, estado civil, profissão)
->      + Ordinal: Existe uma certa ordem (ex: escolaridade, estágio da doença, classe social)
-
-> * **Quantitativa**
->      + Discreta: os valores possíveis formam um conjunto finito ou enumerável (ex: número de filhos)
->      + Contínua: os valores possíveis estão dentro de um intervalo, aberto ou fechado, dos números reais (ex: peso, altura, salário)
+Veja que para cada pessoa, os valores não necessariamente são os mesmos.
 
 
-## Tipos de Variável {.build}
+## Tipos de Variável 
 
-Coletamos três variáveis entre os alunos da classe:
+Suponha que nós aplicamos um questionário entre os alunos de ME414 e coletamos várias informações sobre vocês. 
+
+Cada pergunta se refere a uma variável, que pode ter valores diferentes para cada um de vocês. 
+
+Dentre outras coisas, perguntamos sobre as seguintes variáveis:
+
+<img src="figuras/tiposDados.png" width=500 style="float: right; margin-left: 2cm; margin-top:1cm">
 
 * Número de irmãos
 * Altura
@@ -369,35 +363,113 @@ Coletamos três variáveis entre os alunos da classe:
 Qual o tipo de cada variável?
 
 
-# Resumindo Dados Categóricos: Frequências e Proporções
+## Análise Descritiva Univariada
 
-## Dados Categóricos{.build}
+A análise descritiva univariada consiste basicamente em, para cada uma das variáveis individualmente:
 
-> O primeiro passo para resumir numericamente os dados de uma variável é olhar para todos os valores possíveis e contar quantas vezes cada um aparece.
+* classificar a variável quanto a seu tipo: qualitativa (nominal ou ordinal) ou quantitativa (discreta ou contínua)
 
-> **Exemplo**: No conjunto de dados `spam`, temos a variável categórica `number` que indica se no conteúdo do email encontramos números e se eles eram grandes ou pequenos.
+<img src="figuras/univariate_analysis.png" width=400 style="float: right; margin-left: 2cm">
 
-> Podemos fazer uma **Tabela de Frequência**, ou seja, simplesmente contar quantos foram os emails em cada categoria da variável `number`:
+* obter tabela, gráfico e/ou medidas resumo apropriados
 
-> 
+A partir destes resultados pode-se montar um resumo geral dos dados.
+
+Na aula de hoje, falaremos sobre tabelas e gráficos apropriados para cada tipo de variável.
+
+
+##  Exemplo: `SleepStudy`
+
+<img src="figuras/MIT-Sleepy-Students.jpg" width=350 style="float: right; margin-top: 0cm; margin-left: 1cm; margin-bottom: 0.5cm">
+
+Para ilustrar as diferentes técnicas usadas em análise descritiva, vamos utilizar o conjunto de dados `SleepStudy` disponível no pacote `Lock5Data` do `R`.
+
+Esses dados referem-se a um estudo de padrões de sono para estudantes universitários.
+
+Os dados foram obtidos de uma amostra de 253 alunos universitários que fizeram testes de habilidades para medir função cognitiva. 
+
+Todos os participantes completaram uma pesquisa, na qual responderam questões sobre atitudes e hábitos. Eles também mantiveram um diário para registrar o tempo e a qualidade do sono durante um período de duas semanas. 
+
+Nesse conjunto de dados encontramos todos os tipos de variáveis.
 
 ```{r, echo=FALSE}
-dados <- read.delim("email.txt", header=TRUE)
-dados <- dados[, c("spam", "num_char", "line_breaks", "format", "number")]
-dados$spam1 <- ifelse(dados$spam==0, "not spam", "spam")
+library(Lock5Data)  ## carregando o pacote
+data(SleepStudy) ## carregando o banco de dados
+names(SleepStudy) ## nomes das variáveis/colunas
+```
 
-addmargins(table(dados$number))
-#addmargins(table(dados$spam1,dados$number))
+
+## Exemplo: `SleepStudy`
+
+<img src="figuras/MIT-Sleepy-Students.jpg" width=350 style="float: right; margin-top: 0cm; margin-left: 1cm; margin-bottom: 0.5cm">
+
+Iremos selecionar algumas variáveis de cada tipo:
+
+- Gênero (`Gender`): categórica nominal 
+        
+- Autodeclaração de uso de álcool (`AlcoholUse`) e nível de ansiedade (`AnxietyStatus`): categórica ordinal  
+
+- Número de aulas na semana antes das 9am (`NumEarlyClass`) e número de bebidas alcoólicas por semana (`Drinks`): quantitativa discreta 
+      
+- Média de horas de sono em todos os dias (`AverageSleep`) e *score* de cognição (`CognitionZscore`): quantitativa contínua
+
+
+# Resumindo Dados Qualitativos 
+
+## Variável Categórica Nominal 
+
+A variável gênero (`Gender`) é do tipo categórica (qualitativa) nominal. 
+
+Para resumir esse tipo de variável começamos por uma **tabela de frequências** e também podemos representar as frequências num **gráfico de barras ou de pizza (setores)**.
+
+**Tabela de frequência**: listas todos os valores possíveis e contar quantas vezes cada um aparece.
+
+<img src="figuras/graficosGenero.png" width=450 style="float: right; margin-right: 1cm">
+
+```{r, echo=FALSE}
+dados = SleepStudy
+dados$Gender = factor(dados$Gender, labels = c("female", "male"))
+
+tab.gender = table(dados$Gender)
+tmp = data.frame(tab.gender, round(prop.table(tab.gender), 3))
+tmp = tmp[, -3]
+colnames(tmp) = c("Gênero", "Frequência", "Freq. Relativa")
+
+library(knitr)
+library(kableExtra)
+kable(tmp) %>% kable_styling(position = "left", font_size = 20)
+```
+
+
+```{r, echo=FALSE, eval=FALSE}
+png("graficoBarrasGenero.png")
+par(mar = c(3, 5.1, 3, 3))
+barplot(tab.gender, las = 1, main = "Gráfico de Barras - Gênero", 
+        col = c("tomato", "dodgerblue"), ylim = c(0, 170), ylab = "Frequency", 
+        cex.axis = 1.5, cex.names = 2, cex.main = 2, cex.lab = 1.8)
+dev.off()
+
+pct = round(prop.table(tab.gender), 2)*100
+lbs = paste0(levels(dados$Gender), " ", pct, "%")
+
+png("graficosGenero.png", width = 600, height = 300)
+par(mfrow=c(1, 2), mar = c(3, 5.1, 3, 3))
+barplot(tab.gender, las = 1, main = "Gráfico de Barras", 
+        col = c("tomato", "dodgerblue"), ylim = c(0, 170), ylab = "Frequency", 
+        cex.axis = 1.5, cex.names = 2, cex.main = 2, cex.lab = 1.8)
+pie(table(dados$Gender), labels = lbs, radius = 1, cex = 2, cex.main = 2, 
+    col = c("tomato", "dodgerblue"), main = "Gráfico de Pizza")
+dev.off()
 ```
 
 
 ## Exemplo: Doctor Who
+
 Qual ator atuou no maior número de episódios da série [Doctor Who](https://pt.wikipedia.org/wiki/Doctor_Who)?
 
-<center><img src="figuras/doctors.png" width=350></center> 
+**Tabela de frequências e frequências relativas**
+<img src="figuras/doctors.png" width=330 style="float: left; margin-right: 2cm">
 
-## Exemplo: Doctor Who
-Informações do site IMDB ([1963-1989](http://www.imdb.com/title/tt0056751/fullcredits?ref_=tt_cl_sm#cast), [2005-2015](http://www.imdb.com/title/tt0436992/fullcredits?ref_=tt_cl_sm#cast)): tabela de frequências e proporções:
 ```{r, echo=FALSE}
 # http://4dpiecharts.com/2013/08/03/the-tenure-of-doctor-who-incarnations/
 # http://www.imdb.com/title/tt0436992/fullcredits?ref_=tt_cl_sm#cast
@@ -432,213 +504,385 @@ whos <- data.frame(
   stringsAsFactors = FALSE
 )
 whos$doctor <- factor(whos$doctor, levels = whos$doctor)
+whos$prop <- round(whos$n_episodes/sum(whos$n_episodes), 3)
 
-whos$prop <- round(whos$n_episodes/sum(whos$n_episodes),2)
+colnames(whos) <- c("Ator", "Frequência", "Freq. Relativa")
 
-rownames(whos) <- NULL
-colnames(whos) <- c("Ator", "Frequência", "Proporção")
-whos
+kable(whos) %>% kable_styling(position = "left", font_size = 22)
 ```
 
+<br />
+<font size=4>
+Fonte: Informações do site IMDB ([1963-1989](http://www.imdb.com/title/tt0056751/fullcredits?ref_=tt_cl_sm#cast), [2005-2015](http://www.imdb.com/title/tt0436992/fullcredits?ref_=tt_cl_sm#cast))
+</font>
 
-# Resumindo Dados Categóricos: Representação Gráfica
 
 ## Gráfico de Barras
 
-![He-Man](figuras/heman.png)
+<img src="figuras/heman.png" width=450 style="float: left; margin-right: 2cm">
+
+**Gráfico de barras**
+
+* técnica visual para resumir dados categóricos. 
+
+* É uma representação gráfica da tabela de frequências absolutas ou frequências relativas.
+
 
 
 ## Exemplo: Doctor Who
+
+Veja o gráfico de barras representando a tabela de frequências absolutas.
 
 ```{r, echo=FALSE}
 library(ggplot2)
 colnames(whos) <- c("doctor", "n_episodes", "prop")
 
-ggplot(whos, aes(doctor, n_episodes)) +
-  geom_bar(stat = "identity") +
+ggplot(whos, aes(x = reorder(doctor, n_episodes), y = n_episodes)) +
+  geom_bar(stat = "identity", fill = "turquoise3") +
   coord_flip() + 
-    ylab("Número de episódios") +
-    xlab("Atores") +
-    ggtitle("Gráfico de Barras - Frequências") +
-    theme(axis.title = element_text(face="bold", size=14, color="black"),
-          axis.text = element_text(face="bold", size=12, color="black"),
-          plot.title = element_text(size=18))
+  ylab("Número de episódios (Frequência)") +
+  xlab("Atores") +
+  ggtitle("Gráfico de Barras - Frequências Absolutas") +
+  theme_bw() + 
+    theme(axis.title = element_text(face="bold", size=13),
+          axis.text = element_text(face="bold", size=12),
+          plot.title = element_text(face="bold", size=16))
 ```
 
 
 ## Exemplo: Doctor Who
 
+Veja o gráfico de barras representando a tabela de frequências relativas.
+
 ```{r, echo=FALSE}
-ggplot(whos, aes(doctor, prop)) +
-    geom_bar(stat = "identity") +
-    coord_flip() + ylab("Proporção") + xlab("Atores") +
-    ggtitle("Gráfico de Barras - Proporções") +
-    theme(axis.title = element_text(face="bold", size=14, color="black"),
-          axis.text = element_text(face="bold", size=12, color="black"),
-          plot.title = element_text(size=18)) 
+ggplot(whos, aes(x = reorder(doctor, prop), y = prop)) +
+    geom_bar(stat = "identity", fill = "turquoise3") +
+    coord_flip() + ylab("Proporção de episódios (Frequência Relativa)") + xlab("Atores") +
+    ggtitle("Gráfico de Barras - Frequências Relativas") +
+  theme_bw() + 
+    theme(axis.title = element_text(face="bold", size=13),
+          axis.text = element_text(face="bold", size=11),
+          plot.title = element_text(face="bold", size=16)) 
 ```
+
+
+## Variável Categórica Ordinal
+
+A variável `AnxietyStatus` é uma variável categórica (qualitativa) ordinal, ou seja, são categorias cuja ordem é relevante.
+
+Assim como na variável categórica nominal, podemos utilizar as frequências absolutas e relativas para resumir os dados. Visualmente, representamos essa variável com um gráfico de barras.
+
+<img src="figuras/graficoAnxiety.png" width=400 style="float: right; margin-right: 1cm">
+
+```{r, echo=FALSE}
+# Transformando AnxietyStatus em fator ordenado
+SleepStudy$AnxietyStatus = ordered(SleepStudy$AnxietyStatus, 
+                                   levels = c("normal", "moderate", "severe"))
+
+tab.anxiety = table(SleepStudy$AnxietyStatus)
+tmp2 = data.frame(tab.anxiety, round(prop.table(tab.anxiety), 3))
+tmp2 = tmp2[, -3]
+colnames(tmp2) = c("Anxiety Status", "Frequência", "Freq. Relativa")
+
+library(knitr)
+library(kableExtra)
+kable(tmp2) %>% kable_styling(position = "left", font_size = 20)
+```
+ 
+
+```{r, echo=FALSE, eval=FALSE}
+library(RColorBrewer)
+mycol = brewer.pal(10, "Spectral")
+png("figuras/graficoAnxiety.png", width = 600, height = 400)
+par(mar = c(3, 5.1, 3, 3))
+barplot(tab.anxiety, las = 1, main = "Anxiety Status",  
+        col = mycol[c(7, 4, 1)], ylab = "Frequency", ylim = c(0, 190), 
+        angle = 45, 
+        cex.axis = 1.5, cex.names = 2, cex.main = 2, cex.lab = 1.8)
+dev.off()
+```
+
 
 
 # Resumindo Dados Quantitativos
 
-## Descrevendo Dados Quantitativos{.build}
+## Variável Quantitativa Discreta
 
-> Como estudar a distribuição de frequências de uma variável quantitativa?
+**Quantitativa Discreta:** conjunto enumerável e finito de valores possíveis.
 
-> **Quantitativa Discreta:** listar todos os valores possíveis nos dados e contar quantas vezes cada valor ocorre.
+**Exemplo:** Nos dados `SleepStudy`, a variável `NumEarlyClass` representa o número de aulas por semana antes das 9am, sendo então quantitativa discreta.
 
-> **Exemplo: Licença Médica**
+Nesse caso, assim como nas variáveis categóricas, podemos apresentar uma tabela de frequências absolutas e/ou relativas.
 
-> Os dados a seguir representam o número de dias de licença médica de 50 funcionários de uma fábrica nas últimas 6 semanas:
+<img src="figuras/earlyclass.jpeg" width=380 style="float: right; margin-right: 1cm">
+
 
 ```{r, echo=FALSE}
-dias <- c(2,2,0,0,5,8,3,4,1,0,0,7,1,7,1,5,4,0,4,0,1,8,9,7,0,
-          1,7,2,5,5,4,3,3,0,0,2,5,1,3,0,1,0,2,4,5,0,5,7,5,1)
-dias
-```
+tab.early = table(SleepStudy$NumEarlyClass)
+tmp3 = data.frame(tab.early, round(prop.table(tab.early), 3))[, -3]
+colnames(tmp3) = c("Número de Aulas", "Frequência", "Freq. Relativa")
 
-## Exemplo: Licença Médica
-
-Como o número de valores distintos nos dados é pequeno, podemos usar uma tabela para apresentar a frequência de cada valor:
-
-<font size=5>
-```{r, echo=FALSE}
-licenca <- as.data.frame(table(dias))
-licenca$prop <- round(licenca$Freq/length(dias), 2)
-
-licenca1 <- tbl_df(licenca)
-colnames(licenca1) <- c("Dias de Licença","Frequência","Proporção")
-
-kable(licenca1, format="html", align = "c")
-```
-</font> 
-
-## Exemplo: Licença Médica
-
-```{r, echo=FALSE}
-# http://docs.ggplot2.org/0.9.3.1/geom_bar.html
-ggplot(licenca, aes(dias, Freq)) +
-    geom_bar(stat = "identity", fill="blue") + 
-    ylab("Frequência") + xlab("Dias de Licença") +
-    ggtitle("Gráfico de Barras dos Dias de Licença - Frequência") + 
-    theme(axis.text = element_text(face="bold", size=12, color="black"),
-          axis.title = element_text(face="bold", size=12, color="black"),
-          plot.title = element_text(size=18))
+library(knitr)
+library(kableExtra)
+kable(tmp3, align = c("c", "c", "c")) %>% kable_styling(position = "left", font_size = 20)
 ```
 
 
-## Exemplo: Licença Médica
+## Variável Quantitativa Discreta
 
-```{r, echo=FALSE}
-ggplot(licenca, aes(x=dias, y=prop)) +
-    geom_bar(stat = "identity", fill="blue") + 
-    ylab("Proporção") + xlab("Dias de Licença") +
-    ggtitle("Gráfico de Barras dos Dias de Licença - Proporção") + 
-    theme(axis.text = element_text(face="bold", size=12, color="black"),
-          axis.title = element_text(face="bold", size=12, color="black"),
-          plot.title = element_text(size=18))
+As frequências absolutas ou relativas podem ser apresentadas num gráfico de barras.
+
+```{r, echo=FALSE, fig.width=6, fig.height=3.5}
+SleepStudy %>% ggplot(aes(x = factor(NumEarlyClass),
+                          y=..count../sum(..count..))) +
+  geom_bar(fill="turquoise3") + 
+  labs(title = "Aulas por semana antes das 9am", x = "Número de aulas antes das 9am", y = "Frequência Relativa") +
+  theme_bw() + 
+  theme(axis.title = element_text(face="bold", size=13),
+          axis.text = element_text(face="bold", size=11),
+          plot.title = element_text(face="bold", size=16)) 
 ```
 
-
-## Descrevendo Dados Quantitativos{.build}
-
-Como estudar a distribuição de frequências de uma variável quantitativa?
-
-> **Quantitativa Contínua:** listar todos os valores possíveis nos dados e contar quantas vezes cada valor ocorre??? É eficiente?
+É comum esses universitários terem aulas antes das 9h da manhã?
 
 
-## Histograma{.build}
+## Variável Quantitativa Discreta
 
-> * Ordene os dados do menor para o maior.
-> * Escolha intervalos de maneira que cada observação possa ser incluída em exatamente um deles.
-> * Neste curso: os intervalos são abertos à esquerda e fechados à direita $(a,b]$.
-> * Construa uma tabela de frequências
-> * Desenhe o gráfico: a altura corresponde à frequência do intervalo.
+**Exemplo**: Nos dados `SleepStudy`, outra variável quantitativa discreta é `Drinks` (número de bebidas alcoólicas por semana). 
 
-## Exemplo: QI{.build}
+Poderíamos também aqui apresentar uma tabela de frequências absolutas e/ou relativas.
 
-Os dados a seguir representam o QI de 40 crianças de 12 anos de idade:
+<img src="figuras/drinks.png" width=280 style="float: right; margin-top: 2cm; margin-right: 1cm">
 
-```{r,echo=FALSE}
-QI <- c(114, 122, 103, 118, 99, 105, 134, 125, 117, 106, 109, 104, 111, 127, 133, 111, 117, 103, 120, 98, 100, 130, 141, 119, 128, 106, 109, 115, 113, 121, 100, 130, 125, 117, 119, 113, 104, 108, 110, 102)
-
-QI
+```{r}
+table(SleepStudy$Drinks)
 ```
 
-> Ordenando:
+Porém, nesse caso, veja que são muitos valores possíveis e apresentá-los numa tabela não é a melhor alternativa.
+
+
+## Variável Quantitativa Discreta
 
 ```{r, echo=FALSE}
-sort(QI)
+SleepStudy %>% ggplot(aes(x = Drinks)) +
+  geom_bar(fill="turquoise3") + 
+  labs(title = "Frequência de Drinks por Semana", x = "Drinks por Semana", y = "Frequência") +
+  theme_bw() + 
+  theme(axis.title = element_text(face="bold", size=13),
+          axis.text = element_text(face="bold", size=11),
+          plot.title = element_text(face="bold", size=16)) 
 ```
 
-## Exemplo: QI{.build}
+Esse gráfico pode ser feito também usando frequências relativas.
 
-Dados ordenados:
 
-```{r, echo=FALSE}
-sort(QI)
+## Variáveis Quantitativas Contínuas
+
+**Quantitativa Contínua**: os valores possíveis estão dentro de um intervalo dos números reais.
+
+Faz sentido estudar a distribuição de frequências de uma variável contínua?
+
+No exemplo do `SleepStudy`, a variável `AverageSleep` representa a média de horas de sono para todos os dias, sendo então quantitativa contínua. 
+
+Podemos listar todos os valores possíveis e contar quantas vezes cada valor ocorre? Isso seria eficiente?
+
+Existem diferentes tipos de gráficos para esse tipo de variável, mas aqui vamos estudar dois muito usados:
+
+* Histograma
+* Boxplot (próxima aula)
+
+
+## Histograma
+
+Histograma é uma representação gráfica de uma variável contínua.
+
+Pode-se dizer que é semelhante a um gráfico de frequências para variáveis discretas. Porém, aqui os dados contínuos são agrupados em classes disjuntas e o histograma representa a frequência de dados em cada classe. 
+
+**Exemplo**: Suponha que a variável seja a idade de um grupo de 100 pessoas.
+
+<img src="figuras/histogramIdade.png" width=400 style="float: left; margin-top: 0cm; margin-right: 3cm">
+
+```{r, echo=FALSE, eval=FALSE}
+set.seed(1111)
+idade = rnorm(100, 60, 10)
+png("figuras/histogramIdade.png", width = 500, height = 350)
+par(mar=c(5, 5, 3, 1))
+hist(idade, nclass=20, las=1, main = "Histograma de Idade", 
+     xlab = "idade", ylab = "Frequência", col = "turquoise3",
+     cex.lab = 1.5, cex.main = 1.5, cex.axis = 1.5)
+dev.off()
 ```
 
-> Intervalos:
+Em vez de calcular as frequências de cada idade individualmente, calculamos as frequências por faixas etárias: (30, 35], (35, 40], ..., (80, 85], (85, 90].
 
- * $(95,100]$: `r sum(QI>95 & QI<=100)`  $\;\;\;\;\;$ $(100,105]$: `r sum(QI>100 & QI<=105)`
- * $(105,110]$: `r sum(QI>105 & QI<=110)` $\;\;\;\;\;$ $(110,115]$: `r sum(QI>110 & QI<=115)`
- * $(115,120]$: `r sum(QI>115 & QI<=120)` $\;\;\;\;\;$ $(120,125]$: `r sum(QI>120 & QI<=125)`
- * $(125,130]$: `r sum(QI>125 & QI<=130)` $\;\;\;\;\;$ $(130,135]$: `r sum(QI>130 & QI<=135)`
- * $(135,140]$: `r sum(QI>135 & QI<=140)` $\;\;\;\;\;$ $(140,145]$: `r sum(QI>140 & QI<=145)`
+
+## Construção de um Histograma 
+
+<img src="figuras/CreateHistogramKhanAcademy.png" width=400 style="float: right; margin-top: 0cm; margin-left: 2cm">
+
+Assista ao vídeo da Khan Academy sobre como criar um histogram:
+
+https://youtu.be/gSEYtAjuZ-Y
+
+<br />
+
+**Passo-a-passo:**
+
+1) Ordene os dados do menor para o maior.
+2) Escolha intervalos disjuntos, ou seja, de maneira que cada observação possa ser incluída em exatamente um deles.
+3) Neste curso os intervalos são abertos à esquerda e fechados à direita (a,b].
+4) Construa uma tabela de frequências
+5) Desenhe o gráfico: a altura corresponde à frequência do intervalo.
+
 
 ## Exemplo: QI
 
-```{r, echo=FALSE}
+Os dados a seguir representam o QI de 32 crianças de 12 anos de idade:
+
+114, 122, 103, 118, 99, 105, 134, 125, 117, 106, 109, 104, 111, 127, 133, 111, <br />
+117, 103, 120, 98, 100, 130, 141, 119, 128, 106, 109, 115, 113, 121, 100, 130
+
+```{r}
+QI = c(114, 122, 103, 118, 99, 105, 134, 125, 117, 106, 109, 104, 111, 127, 133, 111, 117, 103, 120, 98, 100, 130, 141, 119, 128, 106, 109, 115, 113, 121, 100, 130)
+
+## QI
+```
+
+Dados ordenados:
+
+98, 99, 100, 100, 103, 103, 104, 105, 106, 106, 109, 109, 111, 111, 113, 114, <br />
+115, 117, 117, 118, 119, 120, 121, 122, 125, 127, 128, 130, 130, 133, 134, 141
+
+```{r, eval=FALSE}
+sort(QI)
+```
+
+<img src="figuras/IQtest.jpg" width=280 style="float: right; margin-right: 2cm">
+
+**Intervalos:** <br />
+(95, 100]: `r sum(QI>95 & QI<=100)` $\qquad$ (120, 125]: `r sum(QI>120 & QI<=125)`  <br />
+(100, 105]: `r sum(QI>100 & QI<=105)` $\qquad$ (125, 130]: `r sum(QI>125 & QI<=130)`  <br />
+(105, 110]: `r sum(QI>105 & QI<=110)` $\qquad$ (130, 135]: `r sum(QI>130 & QI<=135)`  <br />
+(110, 115]: `r sum(QI>110 & QI<=115)` $\qquad$ (135, 140]: `r sum(QI>135 & QI<=140)` <br />
+(115, 120]: `r sum(QI>115 & QI<=120)` $\qquad$ (140, 145]: `r sum(QI>140 & QI<=145)`
+
+
+## Exemplo: QI
+
+<img src="figuras/histogramQI.png" width=550 style="float: left; margin-top: 0cm; margin-right: 2cm">
+
+<font size=5>
+**Intervalos:** <br />
+(95, 100]: `r sum(QI>95 & QI<=100)` $\quad$ (120, 125]: `r sum(QI>120 & QI<=125)`  <br />
+(100, 105]: `r sum(QI>100 & QI<=105)` $\quad$ (125, 130]: `r sum(QI>125 & QI<=130)`  <br />
+(105, 110]: `r sum(QI>105 & QI<=110)` $\quad$ (130, 135]: `r sum(QI>130 & QI<=135)`  <br />
+(110, 115]: `r sum(QI>110 & QI<=115)` $\quad$ (135, 140]: `r sum(QI>135 & QI<=140)` <br />
+(115, 120]: `r sum(QI>115 & QI<=120)` $\quad$ (140, 145]: `r sum(QI>140 & QI<=145)`
+</font>
+
+
+```{r, echo=FALSE, eval=FALSE}
 dadosQI <- data.frame(QI = QI)
 ## hist(QI, col="lightblue", xlab="QI", ylab="Frequência", main=" ", cex.lab=1.5, cex.axis=1.5)
 
-ggplot(data=dadosQI, aes(dadosQI$QI)) + 
-    geom_histogram(binwidth = 5, center=97.5, colour="black", fill="blue") +
-    labs(x="QI", y="Frequência") + 
-    ggtitle("Histograma de QI") + 
-    theme(axis.title = element_text(face="bold", size=12, color="black"),
-          axis.text = element_text(face="bold", size=12, color="black"),
-          plot.title = element_text(size=18))
+ggplot(dadosQI, aes(QI)) + 
+  geom_histogram(binwidth = 5, center = 97.5, col = "black", 
+                 fill="turquoise3") +
+  labs(x="QI", y="Frequência", title="Histograma de QI") + 
+  theme_bw() + 
+  theme(axis.title = element_text(face="bold", size=12),
+        axis.text = element_text(face="bold", size=12),
+        plot.title = element_text(size=16))
+
+ggsave("figuras/histogramQI.png", width = 6, height = 4)
 ```
 
+<br /><br /><br /><br /><br /><br />
+Se apenas esse histograma dos QI's fosse apresentado a você, que conclusões você tira?
 
-## Ramo-e-folhas {.build}
 
-> O ramo-e-folhas representa graficamente os dados sem perder nenhuma informação
+## Histograma
 
-> Cada valor é dividido em duas partes: a primeira (ramo) é colocada à esquerda da linha vertical, e a segunda (folhas) à direita.
+Histograma são usados para estudar a distribuição de uma variável e até mesmo encontrar erros. Veja alguns exemplos de formatos de distribuição:
 
-## Exemplo: QI {.smaller}
-Dados:
-```{r,echo=FALSE}
-QI
+```{r, echo=FALSE, fig.width=8, fig.height=3.8}
+# Build dataset with different distributions
+data <- data.frame(
+  type = c( rep("edge peak", 1000), rep("comb", 1000), rep("normal", 1000), rep("uniform", 1000), rep("bimodal", 1000), rep("skewed", 1000) ),
+  value = c( rnorm(900), rep(3, 100), rnorm(360, sd=0.5), rep(c(-1,-0.75,-0.5,-0.25,0,0.25,0.5,0.75), 80), rnorm(1000), runif(1000), rnorm(500, mean=-2), rnorm(500, mean=2), abs(log(rnorm(1000))) )
+)
+
+# Represent it
+data %>%
+  ggplot( aes(x=value)) +
+    geom_histogram(fill="#69b3a2", color="#e9ecef", alpha=0.9) +
+    facet_wrap(~type, scale="free_x") +
+    theme_bw() +
+    theme(
+      panel.spacing = unit(0.1, "lines"),
+      axis.title.x=element_blank(),
+      axis.text.x=element_blank(),
+      axis.ticks.x=element_blank()
+    )
 ```
 
-Ramo-e-folhas: 
-```{r,echo=FALSE}
-stem(QI)
+<font size=4>
+**Fonte:** https://www.data-to-viz.com/graph/histogram.html
+</font>
+
+
+## Histograma
+
+Vamos fazer o histograma da variável `AverageSleep` do `SleepStudy`.
+
+```{r, echo=FALSE, fig.height=4, fig.width=6}
+par(mar=c(5, 5, 3, 1))
+hist(SleepStudy$AverageSleep, las=1, 
+     main = "Histograma do Tempo Médio de Sono", ylim=c(0, 60),
+     xlab = "Tempo médio de sono (em horas)", ylab = "Frequência", 
+     col = "turquoise3", cex.lab = 1.3, cex.main = 1.3, cex.axis = 1.3)
 ```
 
-## Exemplo: Notas dos Alunos{.build}
+Como você analisa esse gráfico?
 
-Um professor apresenta à classe as notas do exame usando um gráfico de ramo-e-folhas.
 
-```{r, echo=FALSE}
-notas <- c(65,68,68,70,71,71,73,76,77,77,79,81,82,82,83,83,83,84,
-           86,87,87,87,88,89,90,91,91,92,93,94,94,95,98)
-stem(notas, scale=0.5)
-```
+## Ramo-e-folhas 
 
-> Qual o total de alunos?
+**Ramo-e-folhas:** representa graficamente os dados sem perder nenhuma informação.
 
-> Qual a menor nota?
+O gráfico de ramo-e-folhas (*stem-and-leaf plot* em inglês) é, basicamente, uma tabela num formato especial usada para representar dados quantitativos.
 
-> Qual a maior nota?
+Veja um exemplo:
+
+<img src="figuras/stem-and-leaf-example1.png" width=420 style="float: left; margin-top: 0cm; margin-right: 2.5cm">
+
+Cada observação (valor) é separado em duas partes: o ramo (colocado à esquerda) e as folhas (colocadas à direita).
+
 
 ## Exemplo: Notas dos Alunos
 
-```{r, echo=FALSE, fig.width=5}
+Um professor apresenta à classe as notas do exame usando um gráfico de ramo-e-folhas.
+
+```{r}
+notas = c(65,68,68,70,71,71,73,76,77,77,79,81,82,82,83,83,83,84,
+           86,87,87,87,88,89,90,91,91,92,93,94,94,95,98)
+## stem(notas, scale=0.5)
+```
+
+<img src="figuras/stem-and-leaf-Notas.png" width=350 style="float: left; margin-top: 0cm; margin-right: 2.5cm">
+
+Analisando esse gráfico, responda:
+
+* Qual o total de alunos?
+
+* Qual a menor nota?
+
+* Qual a maior nota?
+
+* Você conseguiria listar todas as notas?
+
+
+```{r, eval=FALSE, fig.width=5}
 ## hist(notas, col="lightblue",xlab="Notas",ylab="Frequência",main=" ",nclass=4,cex.axis=1.5,cex.lab=1.5)
 
 ggplot(data=data.frame(notas=notas), aes(notas)) + 
@@ -650,32 +894,43 @@ ggplot(data=data.frame(notas=notas), aes(notas)) +
           plot.title = element_text(size=18))
 ```
 
-## Ramos-e-Folhas x Histograma
 
+## Ramo-e-Folhas x Histograma
+
+Vamos voltar nos dados de QI (ordenados): <br />
+98, 99, 100, 100, 103, 103, 104, 105, 106, 106, 109, 109, 111, 111, 113, 114, <br />
+115, 117, 117, 118, 119, 120, 121, 122, 125, 127, 128, 130, 130, 133, 134, 141
+
+Gráfico ramo-e-folhas (à esquerda) e histograma (à direita):
+
+<img src="figuras/stem-and-leaf-QI.png" width=220 style="float: left; margin-right: 4cm">
+
+<img src="figuras/histogramQI.png" width=400><br />
 Qual o tipo de informação você obtém através de um gráfico de ramo-e-folhas mas não não através de um histograma?
-
-
 
 
 ## Dados sobre vacinas nos EUA
 
 No link [http://graphics.wsj.com/infectious-diseases-and-vaccines/](http://graphics.wsj.com/infectious-diseases-and-vaccines/) temos vários gráficos mostrando muito bem o efeito de vacinas ao longo dos anos para cada estado americano, para várias doenças.
 
-
 <center><img src="figuras/measles.png" width=500></center>
+
 
 ## Leitura
 
-* [OpenIntro](https://www.openintro.org/stat/textbook.php): seções 1.1, 1.2, 1.6, 1.7
-* [Ross](http://www.sciencedirect.com/science/book/9780123743886): seções 1.1, 1.2, 1.3, 1.4, 2.1, 2.2, 2.3, 2.4
+[OpenIntro](https://www.openintro.org/stat/textbook.php): seções 1.1, 1.2, 1.6, 1.7
 
+[Ross](http://www.sciencedirect.com/science/book/9780123743886): seções 1.1, 1.2, 1.3, 1.4, 2.1, 2.2, 2.3, 2.4
 
-##
+[Khan Academy - Creating a Histogram](https://youtu.be/gSEYtAjuZ-Y)
+
+[Khan Academy - Stem-and-Leaf Plots](https://youtu.be/LEFE1km5ROY)
+
+<br />
 
 Slides produzidos pelos professores:
 
 * Samara Kiihl
-
 * Tatiana Benaglia
-
+* Larissa Matos
 * Benilton Carvalho
