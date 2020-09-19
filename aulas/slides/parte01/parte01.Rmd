@@ -9,6 +9,8 @@ logo: ../logo-imecc.png
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+## options(knitr.table.format = "html") 
 ```
 
 
@@ -29,24 +31,46 @@ Estamos na era da informação e a Estatística trabalha no uso da informação 
 
 ## Alguns exemplos 
 
-<img src="figuras/covid19EstimatesUSA.jpg" width=350 style="float: right; margin-top: 0cm; margin-left: 1cm">
+<img src="figuras/covid19.jpg" width=350 style="float: right; margin-top: 0cm; margin-left: 1cm">
 
-> * Como predizer o número de casos/óbitos por COVID-19?
+<!-- <img src="figuras/covid19EstimatesUSA.jpg" width=350 style="float: right; margin-top: 0cm; margin-left: 1cm"> -->
 
-> * Como analisar se um tratamento é realmente eficaz para uma certa doença? Ex: uso da cloroquina/hidroxicloroquina no combate a COVID-19?
+* Como predizer o número de casos/óbitos por COVID-19?
 
-> * Qual sua chance de ganhar na megasena?
+* Como analisar se um tratamento é realmente eficaz para uma certa doença? Exemplo: uso da cloroquina/hidroxicloroquina no combate à COVID-19?
 
-> * Há preconceito contra as mulheres para cargos de chefia?
+* Qual sua chance de ganhar na megasena?
 
-> * Como o Netflix sabe que tipo de filmes/séries você gosta?
+* Há preconceito contra as mulheres para cargos de chefia?
+
+* Qual a chance de um cliente do banco não pagar um empréstimo?
 
 
 ## Big Data
 
+Na era da internet e do "Big Data", entender Estatística é essencial.
+
 <img src="figuras/BigData.jpg" width=700>
 
-Na era da internet e do "Big Data", entender Estatística é essencial.
+
+## Sistemas de Recomendação
+
+Como o Netflix sabe que tipo de filmes/séries você gosta?
+
+<img src="figuras/NetflixRecomendation.png" width=620 style = "float:left; margin-right: 2cm">
+<img src="figuras/Netflix1.png" width=250>
+<img src="figuras/Streaming.png" width=250>
+
+<br />
+Recomendações personalizadas: serviços de streaming, como o Netflix e Spotify, devem muito do seu sucesso às técnicas dessa área.
+
+
+## Reconhecimento Facial
+
+<img src="figuras/FaceRecognition.png" width=550 style = "float:left; margin-right: 2cm">
+<img src="figuras/FaceRecognition2.png" width=290>
+
+**Reconhecimento Facial:** usado para desbloquear dispositivos, organizar fotos, etc.
 
 
 ## Pensamento Estatístico 
@@ -382,7 +406,7 @@ Na aula de hoje, falaremos sobre tabelas e gráficos apropriados para cada tipo 
 
 <img src="figuras/MIT-Sleepy-Students.jpg" width=350 style="float: right; margin-top: 0cm; margin-left: 1cm; margin-bottom: 0.5cm">
 
-Para ilustrar as diferentes técnicas usadas em análise descritiva, vamos utilizar o conjunto de dados `SleepStudy` disponível no pacote `Lock5Data` do `R`.
+Para ilustrar as diferentes técnicas usadas em análise descritiva, vamos utilizar o conjunto de dados chamado `SleepStudy`.
 
 Esses dados referem-se a um estudo de padrões de sono para estudantes universitários.
 
@@ -395,7 +419,6 @@ Nesse conjunto de dados encontramos todos os tipos de variáveis.
 ```{r, echo=FALSE}
 library(Lock5Data)  ## carregando o pacote
 data(SleepStudy) ## carregando o banco de dados
-names(SleepStudy) ## nomes das variáveis/colunas
 ```
 
 
@@ -426,18 +449,21 @@ Para resumir esse tipo de variável começamos por uma **tabela de frequências*
 
 <img src="figuras/graficosGenero.png" width=450 style="float: right; margin-right: 1cm">
 
-```{r, echo=FALSE}
+```{r, results = 'asis'}
 dados = SleepStudy
 dados$Gender = factor(dados$Gender, labels = c("female", "male"))
 
 tab.gender = table(dados$Gender)
 tmp = data.frame(tab.gender, round(prop.table(tab.gender), 3))
 tmp = tmp[, -3]
-colnames(tmp) = c("Gênero", "Frequência", "Freq. Relativa")
+colnames(tmp) = c("Gênero", "Freq. Absoluta", "Freq. Relativa")
 
 library(knitr)
 library(kableExtra)
-kable(tmp) %>% kable_styling(position = "left", font_size = 20)
+kable(tmp, "html") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("bordered", "hover"),
+                font_size = 24, full_width = FALSE)
 ```
 
 
@@ -461,6 +487,17 @@ pie(table(dados$Gender), labels = lbs, radius = 1, cex = 2, cex.main = 2,
     col = c("tomato", "dodgerblue"), main = "Gráfico de Pizza")
 dev.off()
 ```
+
+
+## Gráfico de Barras
+
+<img src="figuras/heman.png" width=450 style="float: left; margin-right: 2cm">
+
+**Gráfico de barras**
+
+* Técnica visual para resumir dados categóricos. 
+
+* É uma representação gráfica da tabela de frequências absolutas ou frequências relativas.
 
 
 ## Exemplo: Doctor Who
@@ -515,18 +552,6 @@ kable(whos) %>% kable_styling(position = "left", font_size = 22)
 <font size=4>
 Fonte: Informações do site IMDB ([1963-1989](http://www.imdb.com/title/tt0056751/fullcredits?ref_=tt_cl_sm#cast), [2005-2015](http://www.imdb.com/title/tt0436992/fullcredits?ref_=tt_cl_sm#cast))
 </font>
-
-
-## Gráfico de Barras
-
-<img src="figuras/heman.png" width=450 style="float: left; margin-right: 2cm">
-
-**Gráfico de barras**
-
-* técnica visual para resumir dados categóricos. 
-
-* É uma representação gráfica da tabela de frequências absolutas ou frequências relativas.
-
 
 
 ## Exemplo: Doctor Who
