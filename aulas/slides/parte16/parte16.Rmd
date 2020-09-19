@@ -485,13 +485,26 @@ $$
 
 > Se quisermos estimar o peso médio dos peixes de maneira que nossa estimativa seja diferente da verdadeira média em no máximo 0.1 libras para mais ou para menos com probabilidade igual a 0.9, qual o tamanho amostral necessário?
 
-**Solução**
+> $$P(\mid\bar{X}-\mu\mid\leq 0.1)=0.9$$
+
+## Tamanho da Amostra {.build}
+
+
+$$P(-0.1 \leq \bar{X}-\mu\leq 0.1)=P\left(- \frac{0.1}{\sigma/\sqrt{n}}\leq \frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\leq \frac{0.1}{\sigma/\sqrt{n}}\right)$$
+
+$$=P\left( - \frac{0.1}{\sigma/\sqrt{n}} \leq Z\leq \frac{0.1}{\sigma/\sqrt{n}} \right)=0.9$$
+
+$$ \frac{0.1}{\sigma/\sqrt{n}} =1.645$$
+
+$$ n=\left(\frac{1.645\sigma}{0.1}\right)^2=\left(\frac{1.645\times 0.3}{0.1}\right)^2\approx 25$$
+
+## Tamanho da Amostra {.build}
+
 $$IC(\mu, 1-\alpha) = \left[ \bar{x} -z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\,;\,  \bar{x} +z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right]$$
 
 Margem de erro: $z_{\alpha/2}\frac{\sigma}{\sqrt{n}}$
 
 
-## Tamanho da Amostra {.build}
 
 Margem de erro 0.1, isto é, 
 $$z_{\alpha/2}\frac{\sigma}{\sqrt{n}}=0.1$$
@@ -501,6 +514,9 @@ $\alpha=0.1$ (90\% de confiança) e $z_{0.05}=1.645$.
 $$1.645\frac{0.3}{\sqrt{n}}=0.1 \quad \Rightarrow \quad n=24.35$$
 
 Tamanho amostral: 25
+
+
+## Tamanho da Amostra {.build}
 
 Em geral, para uma margem de erro $m$ e confiança $100(1-\alpha)\%$:
 

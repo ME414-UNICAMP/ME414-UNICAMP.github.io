@@ -3463,11 +3463,25 @@ IC(\mu, 0.95) &amp;= \left[ \bar{x} - z_{0.025} \frac{\sigma}{\sqrt{n}};\,\bar{x
 <p>Se quisermos estimar o peso médio dos peixes de maneira que nossa estimativa seja diferente da verdadeira média em no máximo 0.1 libras para mais ou para menos com probabilidade igual a 0.9, qual o tamanho amostral necessário?</p>
 </blockquote>
 
-<p><strong>Solução</strong> \[IC(\mu, 1-\alpha) = \left[ \bar{x} -z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\,;\,  \bar{x} +z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right]\]</p>
-
-<p>Margem de erro: \(z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\)</p>
+<blockquote>
+<p>\[P(\mid\bar{X}-\mu\mid\leq 0.1)=0.9\]</p>
+</blockquote>
 
 </article></slide><slide class=""><hgroup><h2>Tamanho da Amostra</h2></hgroup><article  id="tamanho-da-amostra-1" class="build">
+
+<p>\[P(-0.1 \leq \bar{X}-\mu\leq 0.1)=P\left(- \frac{0.1}{\sigma/\sqrt{n}}\leq \frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\leq \frac{0.1}{\sigma/\sqrt{n}}\right)\]</p>
+
+<p>\[=P\left( - \frac{0.1}{\sigma/\sqrt{n}} \leq Z\leq \frac{0.1}{\sigma/\sqrt{n}} \right)=0.9\]</p>
+
+<p>\[ \frac{0.1}{\sigma/\sqrt{n}} =1.645\]</p>
+
+<p>\[ n=\left(\frac{1.645\sigma}{0.1}\right)^2=\left(\frac{1.645\times 0.3}{0.1}\right)^2\approx 25\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Tamanho da Amostra</h2></hgroup><article  id="tamanho-da-amostra-2" class="build">
+
+<p>\[IC(\mu, 1-\alpha) = \left[ \bar{x} -z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\,;\,  \bar{x} +z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right]\]</p>
+
+<p>Margem de erro: \(z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\)</p>
 
 <p>Margem de erro 0.1, isto é, \[z_{\alpha/2}\frac{\sigma}{\sqrt{n}}=0.1\]</p>
 
@@ -3476,6 +3490,8 @@ IC(\mu, 0.95) &amp;= \left[ \bar{x} - z_{0.025} \frac{\sigma}{\sqrt{n}};\,\bar{x
 <p>\[1.645\frac{0.3}{\sqrt{n}}=0.1 \quad \Rightarrow \quad n=24.35\]</p>
 
 <p>Tamanho amostral: 25</p>
+
+</article></slide><slide class=""><hgroup><h2>Tamanho da Amostra</h2></hgroup><article  id="tamanho-da-amostra-3" class="build">
 
 <p>Em geral, para uma margem de erro \(m\) e confiança \(100(1-\alpha)\%\):</p>
 
