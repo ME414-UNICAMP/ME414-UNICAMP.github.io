@@ -213,7 +213,7 @@ Qual a probabilidade de que o estimador $\bar{X}_n$ esteja distante do valor ver
 > $$P\left(\mid \bar{X}_n - \mu \mid \leq 1.96\,\sigma/\sqrt{n}\right)$$
 
 $$ \begin{aligned}
-P\left(\mid \bar{X}_n - \mu \mid \leq 1.96\sigma/\sqrt{n}\right)&= P\left( -\sigma/\sqrt{n}\leq \bar{X}_n-\mu \leq \sigma/\sqrt{n} \right)\\
+P\left(\mid \bar{X}_n - \mu \mid \leq 1.96\sigma/\sqrt{n}\right)&= P\left( -1.96\,\sigma/\sqrt{n}\leq \bar{X}_n-\mu \leq 1.96\,\sigma/\sqrt{n} \right)\\
 & =  P\left(-1.96\leq \frac{\bar{X}_n-\mu}{\sigma/\sqrt{n}} \leq 1.96\right) \\
 & =  P(-1.96\leq Z\leq 1.96)\\
 & =  0.95
@@ -232,7 +232,7 @@ Um Intervalo de $100(1-\alpha)\%$ de confiança para $\mu$ é dado por:
 $$IC(\mu, 1-\alpha) = \left[ \bar{x} - z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\,;\,\bar{x} +z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right]$$
 
 
-##  {.build}
+## Intervalo de Confiança para $\mu$: $\sigma$ conhecido {.build}
 
 Intervalo de confiança de $95\%$
 
