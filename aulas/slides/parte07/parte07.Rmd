@@ -232,7 +232,9 @@ Em uma família com duas crianças, considere os eventos:
 > - $A$={a primeira criança é uma menina}
 > - $B$={as duas crianças são meninas}.
 
-Mostre que $P(B\mid A)=1/2$.
+<!-- Mostre que $P(B\mid A)=1/2$. -->
+
+Qual a $P(B\mid A)$?
 
 $\Omega=\{FF,MM,FM,MF\}$
 
@@ -358,6 +360,31 @@ Então:
 $$P(A) = \frac{10}{15} = \frac{2}{3} \qquad \mbox{e} \qquad P(B|A) = \frac{5}{14}$$
 
 
+<!-- ## Exemplo {.build} -->
+
+<!-- O espaço amostral (todos os resultados possíveis) é dado por -->
+<!-- $$\begin{aligned} -->
+<!-- \Omega=\{BB,BV,VB,VV\}, -->
+<!-- \end{aligned}$$ -->
+
+<!-- e as probabilidades dos eventos do espaço amostral são: -->
+
+<!-- $$\begin{aligned} -->
+<!-- P(BB)&=\frac{5}{15}\times \frac{4}{14}=\frac{20}{210}=\frac{2}{21},\\ -->
+<!-- P(BV)&=\frac{5}{15}\times \frac{10}{14}=\frac{50}{210}=\frac{5}{21},\\ -->
+<!-- P(VB)&=\frac{10}{15}\times \frac{5}{14}=\frac{50}{210}=\frac{5}{21}, \\ -->
+<!-- P(VV)&=\frac{10}{15}\times \frac{9}{14}=\frac{90}{210}=\frac{9}{21}. -->
+<!-- \end{aligned}$$ -->
+
+
+<!-- ## Exemplo {.build} -->
+
+<!-- Então, -->
+<!-- $$P(A) = P(VB) + P(VV)  = \frac{5}{21} + \frac{9}{21} = \frac{14}{21} = \frac{2}{3}$$ -->
+<!-- e  -->
+
+<!-- $$ \qquad P(B|A) =  \frac{P(A \cap B)}{P(A)} = \frac{5/21}{14/21} = \frac{5}{14}$$ -->
+
 ## Teorema de Bayes {.build}
 
 Considere dois eventos quaisquer $A$ e $B$. 
@@ -425,12 +452,26 @@ Um exame de sangue é 99% efetivo em detectar uma certa doença quando esta est�
 
 Qual a probabilidade condicional de que um indivíduo testado aleatoriamente tenha a doença dado que o teste deu positivo? 
 
-Considere os eventos: $D$ = {estar doente} e $TP$ = {testar positivo}
+Temos que,
 
-$P(TP \mid D)=0.99 \qquad P(TP \mid D^c)=0.02	\quad \mbox{e} \quad P(D)=0.005$
+  - 0,5% da população tem a doença;
+  
+  - o exame é 99% efetivo em detectar a doença quando esta está presente; e
+  
+  - 2% são falso-positivos.
+
+## Exemplo: Teste de diagnóstico {.build}
+
+Considere os eventos: $D$ = {estar doente} e $TP$ = {testar positivo}, temos que 
+
+
+$P(TP \mid D)=0.99, \qquad P(TP \mid D^c)=0.02	\quad \mbox{e} \quad P(D)=0.005$
+
+Então,
 
 $$\begin{aligned}
-P(D \mid TP) & = \frac{P(TP \mid D)P(D)}{P(TP \mid D)P(D) + P(TP \mid D^c)P(D^c)} \\
+P(D \mid TP) & = \frac{P(TP \mid D)P(D)}{P(TP)} \\
+& = \frac{P(TP \mid D)P(D)}{P(TP \mid D)P(D) + P(TP \mid D^c)P(D^c)} \\
 & = \frac{0.99 \times 0.005}{0.99 \times 0.005 + 0.02 \times 0.995} = 0.20
 \end{aligned}$$
 
