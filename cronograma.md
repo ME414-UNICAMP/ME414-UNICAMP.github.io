@@ -1,6 +1,6 @@
 ---
-layout: page
 title: ""
+layout: page
 ---
 
 # Cronograma
