@@ -17,7 +17,7 @@ options("kableExtra.html.bsTable" = T)
 
 # Introdução
 
-## Por que aprender Estatística?
+## Por que aprender Estatística? {.build}
 
 Jornais, revistas, noticiários da TV estão repletos de informações obtidas através de pesquisas de opinião, pesquisas médicas, estudos econômicos, estudos ambientais, estatísticas sobre uma pandemia.
 
@@ -30,7 +30,7 @@ No meio de tantos dados e informações, o que levar em conta e o que descartar?
 Estamos na era da informação e a Estatística trabalha no uso da informação para tomada de decisão.
 
 
-## Alguns exemplos 
+## Alguns exemplos {.build}
 
 <img src="figuras/covid19.jpg" width=350 style="float: right; margin-top: 0cm; margin-left: 1cm">
 
@@ -63,7 +63,7 @@ Como o Netflix sabe que tipo de filmes/séries você gosta?
 <img src="figuras/Streaming.png" width=250>
 
 <br />
-Recomendações personalizadas: serviços de streaming, como o Netflix e Spotify, devem muito do seu sucesso às técnicas dessa área.
+**Recomendações personalizadas:** serviços de streaming, como o Netflix e Spotify, devem muito do seu sucesso às técnicas dessa área.
 
 
 ## Reconhecimento Facial
@@ -99,7 +99,7 @@ No livro [Mankind in the Making](http://www.goodreads.com/book/show/1940169.Mank
 <!-- **Tópicos do livro:** teste-t, correlação, teste qui-quadrado, análise de variância e regressão. Ainda hoje, estes são os principais tópicos de cursos de metodologia estatística.  -->
 
 
-## Estatística 
+## Estatística {.build}
 
 <img src="figuras/word-cloud-statistics.png" width=400 style="float: right; margin-top: 0cm; margin-left: 1cm">
 
@@ -108,7 +108,7 @@ A **Estatística** é um conjunto de técnicas que permite, de forma sistemátic
 **Estatística** é a arte de aprender através de dados. 
 
 
-Três aspectos principais da estatística: 
+> Três aspectos principais da estatística: 
 
 * **Planejamento**: planejar como obter os dados para responder às perguntas de interesse. <br />
 * **Descrição**: resumir os dados obtidos. <br />
@@ -142,7 +142,7 @@ Com isso, a Estatística pode trabalhar em parceria com qualquer área do conhec
 * Instituições de Ensino e Pesquisa
 
 
-## Estudo de Caso: stents e prevenção de infarto 
+## Estudo de Caso: stents e prevenção de infarto {.build}
 
 <img src="figuras/Stent_NIH.gif" width=280 style="float: right; margin-top: 0cm; margin-left: 1cm">
 <!-- <figcaption>Figura: Stents no tratamento de infarto </figcaption> -->
@@ -159,7 +159,7 @@ Os pesquisadores do estudo investigaram se havia benefícios também para pacien
 **Pergunta de interesse:** O uso de stent reduz o risco de infarto?
 
 
-## Estudo de Caso: stents e prevenção de infarto 
+## Estudo de Caso: stents e prevenção de infarto {.build}
 
 <img src="figuras/Stent_NIH.gif" width=280 style="float: right; margin-top: 0cm; margin-left: 1cm">
 
@@ -172,7 +172,7 @@ Cada paciente foi alocado aleatoriamente em um dos grupos:
 * **Grupo Controle**: paciente recebe a mesma medicação do grupo tratamento, mas não recebe stent.
 
 
-## Estudo de Caso: stents e prevenção de infarto 
+## Estudo de Caso: stents e prevenção de infarto {.build}
 
 <img src="figuras/Stent_NIH.gif" width=280 style="float: right; margin-top: 0cm; margin-left: 1cm">
 
@@ -186,7 +186,7 @@ Avaliar cada paciente individualmente desta planilha de dados é eficaz?
 Como poderíamos resumir?
 
 
-## Estudo de Caso: stents e prevenção de infarto 
+## Estudo de Caso: stents e prevenção de infarto {.build}
 
 <img src="figuras/stent2.png" width=480 style="float: right; margin-top: 0cm; margin-left: 1cm">
 
@@ -236,7 +236,7 @@ print(g)
 ```
 
 
-## Estudo de Caso: stents e prevenção de infarto 
+## Estudo de Caso: stents e prevenção de infarto {.build}
 
 <img src="figuras/stent2.png" width=480 style="float: right; margin-left: 1cm">
 
@@ -252,7 +252,7 @@ $\displaystyle \frac{28}{227} = `r round(28/227, 2)` = `r round(28/227, 2)*100`\
 No grupo tratamento, temos 8% a mais de pacientes que sofreram infarto.
 
 
-## Estudo de Caso: stents e prevenção de infarto 
+## Estudo de Caso: stents e prevenção de infarto {.build}
 
 Relembrando a pergunta de interesse. <br />
 **Pergunta de interesse:** O uso de stent reduz o risco de infarto?
@@ -316,7 +316,7 @@ Fonte: [http://www.censo2010.ibge.gov.br](http://www.censo2010.ibge.gov.br)
 
 Suponha que extraímos informações de 50 emails recebidos e armazemos esses dados numa tabela. Esse é um **conjunto de dados**.
 
-```{r, message=FALSE, warning=FALSE}
+```{r}
 library(readr)
 library(dplyr)
 dados = read_tsv("email50.txt")
@@ -355,7 +355,7 @@ Colunas:
 * `r colnames(dados)[5]`: indica se o email não continha nenhum número (none), um número pequeno (small) ou um número grande (big).
 
 
-## Estrutura básica dos dados 
+## Estrutura básica dos dados {.build}
 
 <img src="figuras/later.jpg" width=340 style="float: right; margin-top: 0cm">
 
@@ -372,7 +372,7 @@ Para que possamos resumir os dados, é importante primeiramente entender como el
 Veja que para cada pessoa, os valores não necessariamente são os mesmos.
 
 
-## Tipos de Variável 
+## Tipos de Variável {.build}
 
 Suponha que nós aplicamos um questionário entre os alunos de ME414 e coletamos várias informações sobre vocês. 
 
@@ -405,7 +405,7 @@ A partir destes resultados pode-se montar um resumo geral dos dados.
 Na aula de hoje, falaremos sobre tabelas e gráficos apropriados para cada tipo de variável.
 
 
-##  Exemplo: `SleepStudy`
+##  Exemplo: `SleepStudy` {.build}
 
 <img src="figuras/MIT-Sleepy-Students.jpg" width=350 style="float: right; margin-top: 0cm; margin-left: 1cm; margin-bottom: 0.5cm">
 
@@ -442,7 +442,7 @@ Iremos selecionar algumas variáveis de cada tipo:
 
 # Resumindo Dados Qualitativos 
 
-## Variável Categórica Nominal 
+## Variável Categórica Nominal {.build}
 
 A variável gênero (`Gender`) é do tipo categórica (qualitativa) nominal. 
 
@@ -452,7 +452,7 @@ Para resumir esse tipo de variável começamos por uma **tabela de frequências*
 
 <img src="figuras/graficosGenero.png" width=450 style="float: right; margin-right: 1cm">
 
-```{r, results = 'asis'}
+```{r}
 dados = SleepStudy
 dados$Gender = factor(dados$Gender, labels = c("female", "male"))
 
@@ -594,7 +594,7 @@ ggplot(whos, aes(x = reorder(doctor, prop), y = prop)) +
 ```
 
 
-## Variável Categórica Ordinal
+## Variável Categórica Ordinal {.build}
 
 A variável `AnxietyStatus` é uma variável categórica (qualitativa) ordinal, ou seja, são categorias cuja ordem é relevante.
 
@@ -635,7 +635,7 @@ dev.off()
 
 # Resumindo Dados Quantitativos
 
-## Variável Quantitativa Discreta
+## Variável Quantitativa Discreta {.build}
 
 **Quantitativa Discreta:** conjunto enumerável e finito de valores possíveis.
 
@@ -677,7 +677,7 @@ SleepStudy %>% ggplot(aes(x = factor(NumEarlyClass),
 É comum esses universitários terem aulas antes das 9h da manhã?
 
 
-## Variável Quantitativa Discreta
+## Variável Quantitativa Discreta {.build}
 
 **Exemplo**: Nos dados `SleepStudy`, outra variável quantitativa discreta é `Drinks` (número de bebidas alcoólicas por semana). 
 
@@ -707,7 +707,7 @@ SleepStudy %>% ggplot(aes(x = Drinks)) +
 Esse gráfico pode ser feito também usando frequências relativas.
 
 
-## Variáveis Quantitativas Contínuas
+## Variáveis Quantitativas Contínuas {.build}
 
 **Quantitativa Contínua**: os valores possíveis estão dentro de um intervalo dos números reais.
 
@@ -766,7 +766,7 @@ https://youtu.be/gSEYtAjuZ-Y
 5) Desenhe o gráfico: a altura corresponde à frequência do intervalo.
 
 
-## Exemplo: QI
+## Exemplo: QI {.build}
 
 Os dados a seguir representam o QI de 32 crianças de 12 anos de idade:
 
@@ -877,7 +877,7 @@ hist(SleepStudy$AverageSleep, las=1,
 Como você analisa esse gráfico?
 
 
-## Ramo-e-folhas 
+## Ramo-e-folhas {.build}
 
 **Ramo-e-folhas:** representa graficamente os dados sem perder nenhuma informação.
 
@@ -890,7 +890,7 @@ Veja um exemplo:
 Cada observação (valor) é separado em duas partes: o ramo (colocado à esquerda) e as folhas (colocadas à direita).
 
 
-## Exemplo: Notas dos Alunos
+## Exemplo: Notas dos Alunos {.build}
 
 Um professor apresenta à classe as notas do exame usando um gráfico de ramo-e-folhas.
 
@@ -926,7 +926,7 @@ ggplot(data=data.frame(notas=notas), aes(notas)) +
 ```
 
 
-## Ramo-e-Folhas x Histograma
+## Ramo-e-Folhas x Histograma {.build}
 
 Vamos voltar nos dados de QI (ordenados): <br />
 98, 99, 100, 100, 103, 103, 104, 105, 106, 106, 109, 109, 111, 111, 113, 114, <br />
