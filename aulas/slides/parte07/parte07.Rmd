@@ -460,20 +460,20 @@ Temos que,
   
   - 2% são falso-positivos.
 
-## Exemplo: Teste de diagnóstico {.build}
+<!-- ## Exemplo: Teste de diagnóstico {.build} -->
 
-Considere os eventos: $D$ = {estar doente} e $TP$ = {testar positivo}, temos que 
+<!-- Considere os eventos: $D$ = {estar doente} e $TP$ = {testar positivo}, temos que  -->
 
 
-$P(TP \mid D)=0.99, \qquad P(TP \mid D^c)=0.02	\quad \mbox{e} \quad P(D)=0.005$
+<!-- $P(TP \mid D)=0.99, \qquad P(TP \mid D^c)=0.02	\quad \mbox{e} \quad P(D)=0.005$ -->
 
-Então,
+<!-- Então, -->
 
-$$\begin{aligned}
-P(D \mid TP) & = \frac{P(TP \mid D)P(D)}{P(TP)} \\
-& = \frac{P(TP \mid D)P(D)}{P(TP \mid D)P(D) + P(TP \mid D^c)P(D^c)} \\
-& = \frac{0.99 \times 0.005}{0.99 \times 0.005 + 0.02 \times 0.995} = 0.20
-\end{aligned}$$
+<!-- $$\begin{aligned} -->
+<!-- P(D \mid TP) & = \frac{P(TP \mid D)P(D)}{P(TP)} \\ -->
+<!-- & = \frac{P(TP \mid D)P(D)}{P(TP \mid D)P(D) + P(TP \mid D^c)P(D^c)} \\ -->
+<!-- & = \frac{0.99 \times 0.005}{0.99 \times 0.005 + 0.02 \times 0.995} = 0.20 -->
+<!-- \end{aligned}$$ -->
 
 
 ## Câncer de Mama {.build}
