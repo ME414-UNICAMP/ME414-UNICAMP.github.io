@@ -36,7 +36,7 @@ Relembrando, a análise descritiva univariada consiste em:
 
 * obter tabela, gráfico e/ou medidas resumo apropriados
 
-Na aula de hoje, falaremos sobre **medidas resumo** e mais gráficos utilizados para variáveis quantitativas contínuas, como o **boxplot**.
+Na aula de hoje, falaremos sobre **estastísticas sumárias** ou **medidas resumo**, tanto de posição quanto de dispersão.
 
 
 ## Medidas Resumo
@@ -374,12 +374,12 @@ Para os homens, a média é:
 $$\bar{x}=\frac{0\times 7074 + 1\times 1561 + 2\times 43}{8678} = 0.19$$
 </font>
 
-Nesse caso, temos que a média é a medida de posição que consegue direnciar homens e mulheres quanto ao número de casamentos.
+Nesse caso, temos que a média é a medida de posição que consegue diferenciar homens e mulheres quanto ao número de casamentos.
 
 
 ## Exemplo: número de casamentos 
 
-Como o número de casamentos assume apenas os valores 0, 1 e 2, podemos apresentar os dados usando gráficos de barra.
+Como o número de casamentos assume apenas os valores 0, 1 e 2, podemos apresentar os dados usando um gráficos de barra.
 
 <br />
 ```{r casamentos}
