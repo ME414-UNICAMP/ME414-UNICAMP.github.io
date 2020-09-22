@@ -254,38 +254,38 @@ P(X=15) &= (1-p)^{15-1} p \\
 \end{aligned} $$
 
 
-## Exemplo: Roleta Russa {.build}
+<!-- ## Exemplo: Roleta Russa {.build} -->
 
-Em sua autobiografia _A Sort of Life_, o autor inglês Graham Greene descreveu um período de grave depressão em que ele jogava roleta russa.  Esse "jogo" consiste em colocar uma bala em uma das seis câmaras de um revólver, girar o tambor e disparar a arma contra a própria cabeça. 
+<!-- Em sua autobiografia _A Sort of Life_, o autor inglês Graham Greene descreveu um período de grave depressão em que ele jogava roleta russa.  Esse "jogo" consiste em colocar uma bala em uma das seis câmaras de um revólver, girar o tambor e disparar a arma contra a própria cabeça.  -->
 
-> * Greene jogou seis partidas deste jogo, e teve a sorte da arma nunca ter disparado.  Qual a probabilidade desse resultado? 
+<!-- > * Greene jogou seis partidas deste jogo, e teve a sorte da arma nunca ter disparado.  Qual a probabilidade desse resultado?  -->
 
-> * Suponha que ele continue jogando roleta russa até a arma finalmente disparar.  Qual é a probabilidade de Greene morrer na $k$-ésima jogada? 
+<!-- > * Suponha que ele continue jogando roleta russa até a arma finalmente disparar.  Qual é a probabilidade de Greene morrer na $k$-ésima jogada?  -->
 
-*Fonte: A. Agresti*, Categorical Data Analysis.
+<!-- *Fonte: A. Agresti*, Categorical Data Analysis. -->
 
-## Exemplo: Roleta Russa {.build}
+<!-- ## Exemplo: Roleta Russa {.build} -->
 
-> * Greene jogou seis partidas deste jogo, e teve a sorte da arma nunca ter disparado.  Qual a probabilidade desse resultado? 
+<!-- > * Greene jogou seis partidas deste jogo, e teve a sorte da arma nunca ter disparado.  Qual a probabilidade desse resultado?  -->
 
-> Ao girar o tambor, a arma disparar ou não é um ensaio de Bernoulli com probabilidade $1/6$ de disparar. Como cada uma das jogadas é independente, a probabilidade da arma não ter disparado em nenhuma das seis vezes é
+<!-- > Ao girar o tambor, a arma disparar ou não é um ensaio de Bernoulli com probabilidade $1/6$ de disparar. Como cada uma das jogadas é independente, a probabilidade da arma não ter disparado em nenhuma das seis vezes é -->
 
-$$\left( \frac{5}{6} \right)^6 = 0.33489 $$
+<!-- $$\left( \frac{5}{6} \right)^6 = 0.33489 $$ -->
 
-<!-- Seja $X$ o número de disparos na roleta russa em 6 partidas e $p=1/6$ a probabilidade de disparo. Então, $X \sim Bin(6, 1/6).$ -->
+<!-- <!-- Seja $X$ o número de disparos na roleta russa em 6 partidas e $p=1/6$ a probabilidade de disparo. Então, $X \sim Bin(6, 1/6).$ --> -->
 
-<!-- $$P(X=0)=\binom{6}{0}p^0(1-p)^{6-0} = \left( \frac{5}{6} \right)^6 = 0.33489$$ -->
+<!-- <!-- $$P(X=0)=\binom{6}{0}p^0(1-p)^{6-0} = \left( \frac{5}{6} \right)^6 = 0.33489$$ --> -->
 
 
-## Exemplo: Roleta Russa {.build}
+<!-- ## Exemplo: Roleta Russa {.build} -->
 
-> * Qual é a probabilidade de Greene morrer na $k$-ésima jogada? 
+<!-- > * Qual é a probabilidade de Greene morrer na $k$-ésima jogada?  -->
 
-> Ao efetuar a 1ª jogada, o autor pode morrer com probabilidade $1/6$, ou continuar jogando. Se ele sobreviver à primeira, pode jogar pela 2ª vez, e morrer com probabilidade $5/6 \times 1/6$, ou continuar jogando. Repetindo esse raciocínio, a probabilidade de morte na $k$-ésima jogada é  
-$$\left( \frac{5}{6} \right)^{k-1} \frac{1}{6}$$ 
+<!-- > Ao efetuar a 1ª jogada, o autor pode morrer com probabilidade $1/6$, ou continuar jogando. Se ele sobreviver à primeira, pode jogar pela 2ª vez, e morrer com probabilidade $5/6 \times 1/6$, ou continuar jogando. Repetindo esse raciocínio, a probabilidade de morte na $k$-ésima jogada é   -->
+<!-- $$\left( \frac{5}{6} \right)^{k-1} \frac{1}{6}$$  -->
 
-Ou podemos definir $X$ como o número de tentativas até o 1º disparo e $p=1/6$ a probabilidade de um disparo ocorrer. Então, $X \sim G(1/6)$ e:
-$$P(X=k) = \left( \frac{5}{6} \right)^{k-1} \frac{1}{6}$$ 
+<!-- Ou podemos definir $X$ como o número de tentativas até o 1º disparo e $p=1/6$ a probabilidade de um disparo ocorrer. Então, $X \sim G(1/6)$ e: -->
+<!-- $$P(X=k) = \left( \frac{5}{6} \right)^{k-1} \frac{1}{6}$$  -->
 
 
 ## Exemplo: Banco de Sangue {.build}
