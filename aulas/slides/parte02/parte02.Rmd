@@ -30,13 +30,13 @@ Na aula passada trabalhamos na análise descritiva univariada para variáveis ca
 
 Relembrando, a análise descritiva univariada consiste em:
 
-<img src="figuras/univariate_analysis.png" width=400 style="float: right; margin-left: 2cm">
+<img src="figuras/univariate_analysis.png" width=390 style="float: right; margin-left: 2cm">
 
-* classificar a variável quanto a seu tipo
+* classificar a variável quanto ao seu tipo
 
 * obter tabela, gráfico e/ou medidas resumo apropriados
 
-Na aula de hoje, falaremos sobre **estastísticas sumárias** ou **medidas resumo**, tanto de posição quanto de dispersão.
+Na aula de hoje, falaremos sobre **estatísticas sumárias** ou **medidas resumo**, tanto de posição quanto de dispersão.
 
 
 ## Medidas Resumo
