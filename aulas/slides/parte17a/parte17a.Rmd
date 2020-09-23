@@ -256,8 +256,14 @@ $$P(X=5)+P(X=6)=`r as.character(p5)` + `r as.character(p6)` = `r as.character(pv
 > Se este valor for considerado baixo, temos evidências, baseando-se no experimento realizado, para rejeitar $H_0$. 
 
 
+## Nível de significância - Erro tipo I
 
+**Nível de significância** $\alpha$ também conhecido como **probabilidade de Erro do Tipo I**:
 
+$$P(\mbox{Rejeito }H_0\mid H_0\mbox{ é verdadeira})$$
+Em um teste de hipóteses, definimos um $\alpha$, que é o erro que estamos dispostos a cometer rejeitando a $H_0$ quando ela é verdadeira.
+
+Desta forma, quando meu p-valor é menor do que $\alpha$, encontramos evidências para rejeitar $H_0$.
  
 ## Leituras:
 
