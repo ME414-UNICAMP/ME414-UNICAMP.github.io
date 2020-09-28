@@ -553,6 +553,20 @@ Responda:
 
 ## Exemplo: Taxa de desemprego na UE em 2003 {.build}
 
+<style>
+.column-left{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.column-right{
+  float: right;
+  width: 50%;
+  text-align: left;
+}
+</style>
+
+
 ```{r}
 Q1 = quantile(desemprego, prob=.25, type=2)
 Q3 = quantile(desemprego,prob=.75, type=2)
