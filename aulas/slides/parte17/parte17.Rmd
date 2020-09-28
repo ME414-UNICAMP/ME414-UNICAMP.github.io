@@ -120,7 +120,7 @@ $$X_i\sim \mbox{Bernoulli}(p)$$
 
 <img src="figuras/mapa.png" width=300 style="float: right; margin-left:30px">
 
-**Hipótese:** *Usando o mapa astral de uma pessoa, a probabilidade $p$ de um astrólogo predizer corretamente qual dos 3 questionários está associado àquele mapa astral é igual a $1/3$. Ou seja, os astrólogos apenas selecionam ao acaso um dos questionários.*
+**Hipótese:** *Usando o mapa astral de uma pessoa, a probabilidade $p$ de um astrólogo predizer corretamente qual dos 3 questionários está associado àquele mapa astral é igual a $1/3$. Ou seja, os astrólogos apenas selecionam ao acaso um dos questionários.
 
 > Nesse caso, para saber se os astrólogos têm a capacidade de predizer a personalidade usando o mapa astral, usaríamos as seguintes **hipóteses**:
 
