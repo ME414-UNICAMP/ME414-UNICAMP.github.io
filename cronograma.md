@@ -17,7 +17,7 @@ Os exercícios serão disponibilizados no Moodle. Verifique frequentemente.
 |:-------------:|:-------:| :-------:| :---------------:|:-------:|:------:|
 | 16/09/2020    |         | Apresentação              |        
 | 21/09/2020    |   1     | Estatística Descritiva    | [Parte 1](http://me414-unicamp.github.io/aulas/slides/parte01/parte01.pdf) [Parte 2](http://me414-unicamp.github.io/aulas/slides/parte02/parte02.pdf) | [Parte 1](https://drive.google.com/drive/folders/1YhZjqt_9QJbr81BNh7N0GREb2RxBUMOE?usp=sharing) [Parte 2](https://drive.google.com/drive/folders/1YlTJt_MdPiqoV9vDIfXTxpv0KIAL1Xqk?usp=sharing)
-| 28/09/2020    |   2     | Estatística Descritiva    | <!-- [Parte 3](http://me414-unicamp.github.io/aulas/slides/parte03/parte03.pdf) [Parte 4](http://me414-unicamp.github.io/aulas/slides/parte04/parte04.pdf) -->  |  
+| 28/09/2020    |   2     | Estatística Descritiva    |  [Parte 3](http://me414-unicamp.github.io/aulas/slides/parte03/parte03.pdf) <!-- [Parte 4](http://me414-unicamp.github.io/aulas/slides/parte04/parte04.pdf) -->  |  
 | 05/10/2020    |   3     | Probabilidade             | <!-- [Parte 5](http://me414-unicamp.github.io/aulas/slides/parte05/parte05.pdf) [Parte 6](http://me414-unicamp.github.io/aulas/slides/parte06/parte06.pdf) -->  |   <!-- [Vídeo 5](https://drive.google.com/drive/folders/1RnD9YZq1hioXV_Fzl2OqoUpm4tjkpFFo?usp=sharing) Vídeo 6 --> 
 | 12/10/2020    |   4     | Probabilidade             | <!-- [Parte 7](http://me414-unicamp.github.io/aulas/slides/parte07/parte07.pdf) [Parte 8](http://me414-unicamp.github.io/aulas/slides/parte08/parte08.pdf) -->  | 
 | 19/10/2020    |   5     | Variáveis Aleatórias Discretas   | <!-- [Parte 9](http://me414-unicamp.github.io/aulas/slides/parte09/parte09.pdf) -->  |  
