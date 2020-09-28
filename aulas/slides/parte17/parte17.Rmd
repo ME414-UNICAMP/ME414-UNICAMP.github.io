@@ -84,7 +84,7 @@ Para **um outro astrólogo**, foram dados:
 
 ## Exemplo: Mapa Astral {.build}
 
-<img src="figuras/mapa.png" width=300 style="float: right; margin-left:30px">
+<!-- <img src="figuras/mapa.png" width=300 style="float: right; margin-left:30px"> -->
 
 Como definir a variável aleatória? 
 
