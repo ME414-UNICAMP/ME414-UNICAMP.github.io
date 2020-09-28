@@ -71,7 +71,7 @@ Para **um outro astrólogo**, foram dados:
 
 <img src="figuras/mapa.png" width=300 style="float: right; margin-left:30px">
 
-* 28 astrólogos foram selecionados aleatoriamente a partir de uma lista de astrólogos familiarizados com o   "California Personality Index".   
+* Astrólogos foram selecionados aleatoriamente a partir de uma lista de astrólogos familiarizados com o   "California Personality Index".   
 
 > * A lista foi preparada pelo ["National Council for Geocosmic Research"](https://geocosmic.org/).  
 
@@ -131,7 +131,7 @@ $$
 \end{cases}
 $$
 
-> No experimento com os 28 astrólogos, observar uma proporção alta de acertos pode ser uma evidência contra a hipótese de que $p=1/3$.   
+> No experimento com os astrólogos, observar uma proporção alta de acertos pode ser uma evidência contra a hipótese de que $p=1/3$.   
 
 
 ## Passos de um teste de hipótese {.build}
