@@ -28,7 +28,6 @@ logo: ../logo-imecc.png
 
 ## Exemplo: Mapa Astral 
 
-<img src="figuras/mapa.png" width=300 style="float: right; margin-left:40px">
 
 Um teste foi feito da seguinte maneira:   116 pessoas selecionadas aleatoriamente forneceram data, hora e local de nascimento. 
 
@@ -39,7 +38,6 @@ Um teste foi feito da seguinte maneira:   116 pessoas selecionadas aleatoriament
 
 ## Exemplo: Mapa Astral 
 
-<img src="figuras/mapa.png" width=300 style="float: right; margin-left:50px">
 
 Para **um outro astrólogo**, foram dados:   
 
@@ -54,22 +52,19 @@ Para **um outro astrólogo**, foram dados:
 
 ## Exemplo: Mapa Astral 
 
-<img src="figuras/mapa.png" width=300 style="float: right; margin-left:50px">
+* Seja $p$ a probabilidade de que o astrólogo identifique o questionário correto.  
 
- * Seja $p$ a probabilidade de que o astrólogo identifique o questionário correto.  
+* Se de fato a informação do Mapa Astral não caracteriza a personalidade de uma pessoa e na verdade o astrólogo está apenas escolhendo um dos 3 questionários ao acaso, a probabilidade de acerto é $p=1/3$.  
 
- * Se de fato a informação do Mapa Astral não caracteriza a personalidade de uma pessoa e na verdade o astrólogo está apenas escolhendo um dos 3 questionários ao acaso, a probabilidade de acerto é $p=1/3$.  
+* Astrólogos confiam em seus estudos e dizem que a probabilidade de acerto é maior do que $1/3$.  
 
- * Astrólogos confiam em seus estudos e dizem que a probabilidade de acerto é maior do que $1/3$.  
+* Como testar se eles estão certos?  
 
- * Como testar se eles estão certos?  
-
- * Escolher ao acaso um astrólogo e fazer o teste com ele uma vez, é suficiente?
+* Escolher ao acaso um astrólogo e fazer o teste com ele uma vez, é suficiente?
 
 
 ## Exemplo: Mapa Astral 
 
-<img src="figuras/mapa.png" width=300 style="float: right; margin-left:30px">
 
 * Astrólogos foram selecionados aleatoriamente a partir de uma lista de astrólogos familiarizados com o   "California Personality Index".   
 
