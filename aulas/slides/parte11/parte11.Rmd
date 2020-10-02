@@ -759,14 +759,10 @@ $$
 
 <img src="figuras/fishy.jpg" width=360 style="float:right">
 
-
 <br /><br />
 Slides produzidos pelos professores:
 
 * Samara Kiihl
-
 * Tatiana Benaglia
-
 * Larissa Matos
-
 * Benilton Carvalho
