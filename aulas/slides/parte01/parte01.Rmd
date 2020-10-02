@@ -976,10 +976,9 @@ No link [http://graphics.wsj.com/infectious-diseases-and-vaccines/](http://graph
 
 [Khan Academy - Stem-and-Leaf Plots](https://youtu.be/LEFE1km5ROY)
 
-<img src="figuras/leitura.jpg" width=370 style="float: right; margin-leftt: 3cm">
+<img src="figuras/leitura.jpg" width=400 style="float: right; margin-left: 3cm">
 
 <br />
-
 Slides produzidos pelos professores:
 
 * Samara Kiihl

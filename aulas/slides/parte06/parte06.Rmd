@@ -608,10 +608,10 @@ $$\frac{6 \times 1 \times 5 \times 5}{1296}= \frac{25}{216} \approx 0.12$$
 
 Slides produzidos pelos professores:
 
+<img src="figuras/leitura.jpg" width=450 style="float: right; 
+margin-top: 4cm; margin-left: 3cm">
+
 * Samara Kiihl
-
 * Tatiana Benaglia
-
 * Larissa Matos
-
 * Benilton Carvalho

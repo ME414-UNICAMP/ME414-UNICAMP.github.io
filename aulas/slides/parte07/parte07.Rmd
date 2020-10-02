@@ -611,9 +611,6 @@ P(I\mid C) & = \frac{P(I \cap C)}{P(C)} = \frac{P(C\mid I)P(I)}{P(C)} \\
 Slides produzidos pelos professores:
 
 * Samara Kiihl
-
 * Tatiana Benaglia
-
 * Larissa Matos
-
 * Benilton Carvalho
