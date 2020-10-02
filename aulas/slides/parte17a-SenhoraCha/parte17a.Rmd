@@ -272,8 +272,8 @@ Desta forma, quando meu p-valor é menor do que $\alpha$, encontramos evidência
 * [Dama apreciadora de chá](https://pt.wikipedia.org/wiki/Dama_apreciadora_de_chá)
 
 
-##
-
 Slides produzidos por:
 
 * Samara Kiihl
+
+
