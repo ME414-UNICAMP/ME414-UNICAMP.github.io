@@ -595,7 +595,7 @@ p <- 0.5
 
 T <- 0:n
 
-tmp <- cbind(T,round(dbinom(T,n,p),4))
+tmp <- cbind(T,round(dbinom(T,n,p),6))
 
 #plot(T, dbinom(T, n, p), type="h",xlab="total de acertos",ylab="probabilidade")
 
@@ -640,7 +640,7 @@ binomshade <- function(n, p, a, b){
           main=paste("Bin(", n, ", ",  p, ")", sep=""), 
           cex.lab=1.2, cex.axis=1.2, cex.names=1.2, cex.main=1.3, las=1)
   box(bty="l", lwd=2)
-  prob <- round(sum(dbinom(a:b, n, p)), 4)
+  prob <- round(sum(dbinom(a:b, n, p)), 6)
   expr <- bquote(P( {.(a) <= X} <= .(b)) == .(prob))
   title(expr, cex.main=0.95, line=0.5)
 }
@@ -662,7 +662,7 @@ Seja $T$ é o número de acertos. Utilizando a aproximação pela Normal, temos 
 
 $$z_{obs} = \frac{\widehat p - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}} = \frac{`r acertos/20` - 0.5}{\sqrt{\frac{(0.50)(0.50)}{20}}} = `r zobs`$$
 
-**valor-de-p** = $P(Z \geq `r zobs`) = `r round(valorpn,4)`$
+**valor-de-p** = $P(Z \geq `r zobs`) = `r round(valorpn,6)`$
 
 
 **Conclusão:** Fixando $\alpha=0.05$, rejeitamos a hipótese de que probabilidade de acertos é 50%. 
@@ -692,7 +692,7 @@ arrows(3.5, yMax / 2,
        length = 0.1,
        col = COL[1],
        lwd = 1.5)
-text(3.5, yMax / 2, labels= paste0("valor-de-p = ", round(valorpn,5)),
+text(3.5, yMax / 2, labels= paste0("valor-de-p = ", round(valorpn,6)),
      pos = 3,
      cex = 1.2,
      col = COL[1])
@@ -701,6 +701,8 @@ text(3.5, yMax / 2, labels= paste0("valor-de-p = ", round(valorpn,5)),
 
 
 ## Leituras
+
+<img src="https://imgs.xkcd.com/comics/negative_results.png" width=300 style="float: right; margin-left:30px">
 
 * [Ross](http://www.sciencedirect.com/science/article/pii/B9780123743886000090): capítulo 9. 
 * [OpenIntro](https://www.openintro.org/stat/textbook.php): seções 4.3 e 6.1.
@@ -717,3 +719,9 @@ Slides produzidos pelos professores:
 * Larissa Matos
 
 * Benilton Carvalho
+
+<font size="3"> [Fonte da imagem](https://xkcd.com/2020/)</font>
+
+
+
+
