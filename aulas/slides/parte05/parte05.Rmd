@@ -901,12 +901,11 @@ $$P(\bar{C})=\frac{164128}{579006}=0.283$$
 
 <br /><br />
 
+<img src="figuras/leitura.jpg" width=370 style="float: right; margin-leftt: 3cm">
+
 Slides produzidos pelos professores:
 
 * Samara Kiihl
-
 * Tatiana Benaglia
-
 * Larissa Matos
-
 * Benilton Carvalho
