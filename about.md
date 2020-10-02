@@ -46,6 +46,7 @@ Para acessar o livro do Devore, siga as instruções disponíveis [aqui](https:/
 
 ### Tabelas das Distribuições
 
-* [Distribuição Normal, distribuição t, distribuição Qui-Quadrado, distribuição F](Tabelas-impressao.pdf)
+* [Distribuição Normal, t-student, Qui-Quadrado, F](Tabelas-impressao.pdf)
 * [Widget para cálculo da Normal](https://www.wolframalpha.com/widgets/gallery/view.jsp?id=9bd010a31f27d2500aede72eb5852af2)
 * [Widget para cálculo da Normal e outras distribuições](https://gallery.shinyapps.io/dist_calc/)
+* [Normal, t-student, F, Qui-quadrado](http://www.bertolo.pro.br/FinEst/Estatistica/DistribuicaoProbabilidades2/normal/index.html)
