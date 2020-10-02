@@ -622,9 +622,6 @@ $$X+Y\sim N(\mu_x+\mu_y,\sigma_x^2+\sigma_y^2)$$
 Slides produzidos pelos professores:
 
 * Samara Kiihl
-
 * Tatiana Benaglia
-
 * Larissa Matos
-
 * Benilton Carvalho
