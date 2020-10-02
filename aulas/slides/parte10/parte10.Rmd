@@ -358,7 +358,8 @@ Quem tem maior probabilidade de ser sorteado?
 >  + como eu e meu colega temos 5 bilhetes, temos a mesma probabilidade de ganhar a rifa: $\frac{5}{100}=\frac{1}{20}$.
    
 >  + assim, a probabilidade de ganhar depende somente da quantidade de bilhetes que se tem na mão, independente da numeração.
-  
+
+
 ## Uniforme Discreta {.build}
 
 * A v.a. discreta $X$, assumindo valores $x_{1},x_{2},...,x_{k}$, segue uma distribuição uniforme discreta se, e somente se, cada valor possível tem a mesma probabilidade de ocorrer, isto é,
@@ -376,7 +377,7 @@ $p(x)$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{
 
 A média e a variância são dadas por:
 
-<font size=4>
+<font size=5>
 $\displaystyle \mathbb E(X) = \sum_{i=1}^k x_iP(X=x_i)= \frac{1}{k}\sum_{i=1}^k x_i$
 
 $\displaystyle Var(X) = \sum_{i=1}^k (x_i - \mathbb E(X))^2 P(X=x_i) = \frac{1}{k} \sum_{i=1}^k (x_i - \mathbb E(X))^2$
@@ -840,14 +841,12 @@ Portanto, é mais interessante ao industrial que o comprador A examine mais peç
 * [Ross](http://www.sciencedirect.com/science/book/9780123743886): capítulo 5
 * Magalhães: capítulo 3
 
-
 <br /><br />
+<img src="figuras/leitura.jpg" width=370 style="float: right; margin-leftt: 3cm">
+
 Slides produzidos pelos professores:
 
 * Samara Kiihl
-
 * Tatiana Benaglia
-
 * Larissa Matos
-
 * Benilton Carvalho
