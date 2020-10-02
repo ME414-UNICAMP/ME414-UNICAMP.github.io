@@ -423,6 +423,7 @@ $P(X=x)$ | 0.245 | 0.288 | 0.256 | 0.145 | 0.066
 
 > Note que a f.d.a. de $X=$ número de doses é definida para qualquer valor real, logo: 
 
+<font size=5>
 $$ F(x) = 
 \begin{cases}
 0     & x < 1 \\
@@ -432,7 +433,7 @@ $$ F(x) =
 0.934 & 4 \leq x < 5 \\
 1     & x \geq 5 \\
 \end{cases}
-$$
+$$</font>
 
 
 ## Exemplo: Vacina
@@ -441,6 +442,7 @@ Função de distribuição acumulada (f.d.a.) do número de doses ($X$)
 
 <div class="columns-2">
 
+<font size=5>
 $$ F(x) = 
 \begin{cases}
 0     & x < 1 \\
@@ -450,7 +452,7 @@ $$ F(x) =
 0.934 & 4 \leq x < 5 \\
 1     & x \geq 5 \\
 \end{cases}
-$$
+$$</font>
 
 <center>
 ```{r, echo=FALSE, fig.height=4.5, fig.width=5}
@@ -473,6 +475,7 @@ $X$ | 0 | 1 | 2 | 3
 --------- |:---:|:---:|:---:|:---:
 $P(X=x)$ | 0.203 | 0.450 | 0.291 | 0.056
 
+<font size=5>
 $$
 F(x) = P(X \leq x) = \begin{cases} 
 0, & \mbox{se } x<0 \\ 
@@ -482,6 +485,7 @@ F(x) = P(X \leq x) = \begin{cases}
 1 & \mbox{se } x\geq3
 \end{cases}
 $$
+</font>
 
 
 ## Exemplo: Comissão {.build}
@@ -489,6 +493,8 @@ $$
 <div class="columns-2">
 
 Função de distribuição acumulada de $X$: número de mulheres na comissão.
+
+<font size=5>
 $$
 F(x) = \begin{cases} 
 0, & \mbox{se } x<0 \\ 
@@ -498,6 +504,7 @@ F(x) = \begin{cases}
 1 & \mbox{se } x\geq3
 \end{cases}
 $$
+</font>
 
 <center>
 ```{r, echo=FALSE, fig.height=4, fig.width=5}
@@ -526,15 +533,17 @@ $$\mathbb E(X)=\sum_{i=1}^n x_i P(X=x_i)$$
 
 * Suponha que $X$ assuma os valores 0 ou 1 com igual probabilidade, ou seja,
 
+<font size=5>
 $$P(X=0)=P(X=1)=\frac{1}{2}$$ 
 
-> $$\mathbb E(X)=  0\times P(X=0)+1\times P(X=1)=\frac{1}{2}$$
+> $$\mathbb E(X)=  0\times P(X=0)+1\times P(X=1)=\frac{1}{2}$$</font>
 
 * Suponha que $X$ assuma os valores 0 ou 1 com as seguintes probabilidades,
 
+<font size=5>
 $$P(X=0)=\frac{2}{3} \quad \mbox{e} \quad P(X=1)=\frac{1}{3}$$
 
-> $$\mathbb E(X)=  0\times P(X=0)+1\times P(X=1)= 0\times\frac{2}{3}+1\times\frac{1}{3}=\frac{1}{3}$$
+> $$\mathbb E(X)=  0\times P(X=0)+1\times P(X=1)= 0\times\frac{2}{3}+1\times\frac{1}{3}=\frac{1}{3}$$</font>
 
 > Veja que nesses dois exemplos: $\mathbb E(X) = P(X=1)$
 
@@ -695,14 +704,17 @@ $P(X=x)$ | 0.19 | 0.02 | 0.23 | 0.56
 
 > Lembrem-se que a esperança de uma v.a. $X$ com valores $x_1, x_2, \ldots, x_n$ é:
 
-$$\mathbb E\left( X \right) = \sum_{i=1}^n x_i P(X=x_i)$$
+<font size=5>
+$$\mathbb E\left( X \right) = \sum_{i=1}^n x_i P(X=x_i)$$</font>
 
 > Para saber o lucro esperado, basta aplicar a fórmula:
 
- $$\begin{aligned}
+<font size=5>
+$$\begin{aligned}
  \mathbb E \left( X \right) &= -5\times0.19 + 5\times0.02 + 10\times0.23 + 15\times0.56 \\
  & = 9.85
  \end{aligned}$$
+</font>
 
 
 ## Exemplo: Pedágio
@@ -742,6 +754,7 @@ Seja a v.a. $T$: idade do veículo até a troca.
 
 Função de distribuição acumulada é dada por:
 
+<font size=5>
 $$
 F(t) = 
 \begin{cases}
@@ -754,6 +767,7 @@ F(t) =
 1 & \mbox{se} & t \geq 7 \\
 \end{cases}
 $$
+</font>
 
 <center>
 ```{r, echo=FALSE, fig.height=4.5, fig.width=4.5}
@@ -776,19 +790,20 @@ Probabilidade de trocar de carro em até 3 anos: $0.2$
 
 Portanto, $C_1$ assume os valores: 
 
+<font size=5>
 $$ C_1 = \begin{cases}
 73.16+13.05\times 12 \times 3 = 542.96, & \mbox{com probabilidade 0.8} \\
 73.16+13.05\times 12 \times 3+43.83=586.79, & \mbox{com probabilidade 0.2}
 \end{cases}
 $$
 
-> $$\mathbb E(C_1)=542.96\times 0.8+586.79\times 0.2=551.73$$ 
+> $\mathbb E(C_1)=542.96\times 0.8+586.79\times 0.2=551.73$</font>
 
 > * $C_2$: custo do plano 2 por 3 anos. 
 
 $C_2$ assume o valor $17.28\times 12 \times 3 = 622.08$, com probabilidade 1
 
-$$\mathbb E(C_2)=622.08$$
+$\mathbb E(C_2)=622.08$
 
 
 ## {.build}
@@ -801,19 +816,20 @@ Probabilidade de trocar de carro em até 6 anos: $0.9$
 
 > Portanto, $C_1$ assume os valores:
 
+<font size=5>
 $$ C_1 = \begin{cases}
 2\times73.16+13.05\times 12 \times 6 = 1085.92, & \mbox{com probabilidade 0.1} \\
 2\times73.16+13.05\times 12 \times 6+43.83=1129.75, & \mbox{com probabilidade 0.9}
 \end{cases}
 $$
 
-> $$\mathbb E(C_1)=1085.92\times 0.1+1129.75\times 0.9=1125.37$$ 
+> $\mathbb E(C_1)=1085.92\times 0.1+1129.75\times 0.9=1125.37$ </font>
 
-> *  $C_2$: custo do plano 2 por 6 anos. 
+> * $C_2$: custo do plano 2 por 6 anos. 
  
  $C_2$ assume o valor $17.28\times 12 \times 6= 1244.16$, com probabilidade 1 
 
-> $$\mathbb E(C_2)=1244.16$$
+> $\mathbb E(C_2)=1244.16$
 
 
 ## Leituras
@@ -822,15 +838,12 @@ $$
 * [Ross](http://www.sciencedirect.com/science/book/9780123743886): seções 5.1, 5.2, 5.3.
 * Magalhães: seção 3.1.
 
+<img src="figuras/leitura.jpg" width=400 style="float: right; margin-left: 3cm">
 
-##
-
+<br /><br />
 Slides produzidos pelos professores:
 
 * Samara Kiihl
-
 * Tatiana Benaglia
-
 * Larissa Matos
-
 * Benilton Carvalho
