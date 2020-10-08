@@ -559,9 +559,9 @@ Número de amostras possíveis de $n$ elementos de uma população de $N$.
      + $1/\frac{N!}{(N-n)!}$, caso ordenado.
     
      
-## Piada no Facebook
+<!-- ## Piada no Facebook -->
 
-<center><img src="figuras/piada_face.png" width=500></center>
+<!-- <center><img src="figuras/piada_face.png" width=500></center> -->
 
 
 ## Exemplo {.build}
