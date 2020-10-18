@@ -26,23 +26,13 @@ Os exercícios serão disponibilizados no Moodle. Verifique frequentemente.
 | **11/11/2020 Quarta-feira**   |   8     |  **Prova 1: Turmas E, C**       |   
 | **12/11/2020 Quinta-feira**   |   8     |  **Prova 1: Turmas A, D, F, I** |      
 | 16/11/2020    |   9     | Variáveis Aleatórias Contínuas    | <!-- [Parte 12](http://me414-unicamp.github.io/aulas/slides/parte12/parte12.pdf) [Parte 13](http://me414-unicamp.github.io/aulas/slides/parte13/parte13.pdf) -->  |   
-<!-- [Parte12]()  [Parte13]() -->
 | 23/11/2020    |   10    | Distribuição Amostral     |  <!-- [Parte14](http://me414-unicamp.github.io/aulas/slides/parte14/parte14.pdf) --> | <!--[Parte14](https://drive.google.com/drive/folders/1r5CXL-KnQ0aIkfprFl1IsJtqs-8zh7EC?usp=sharing) --> 
 | 30/11/2020    |   11    | Inferência: uma população     | <!-- [Parte15](http://me414-unicamp.github.io/aulas/slides/parte15/parte15.pdf) [Parte16](http://me414-unicamp.github.io/aulas/slides/parte16/parte16.pdf) -->  | <!-- [Parte15](https://drive.google.com/drive/folders/1ScJQjeT8n0SQGT1Spq8czCQfzv5J8VQx?usp=sharing) 
 [Parte16](https://drive.google.com/drive/folders/1Nw2gqgCRwATkeCOmvjuZddeUfndS7Mtp?usp=sharing) -->
---> 
-| 07/12/2020    |   12    | Inferência: uma população    |  <!-- [Parte 17](http://me414-unicamp.github.io/aulas/slides/parte17/parte17.pdf) [Parte 18](http://me414-unicamp.github.io/aulas/slides/parte18/parte18.pdf) -->    | 
-<!-- [Parte17](https://drive.google.com/drive/folders/1Hkoh9qvMmkQtacoB7SS57ppnIggwLw_q?usp=sharing) 
-[Parte18]() -->
-| 14/12/2020    |   13    | Inferência: duas populações     | <!-- [Parte 19](http://me414-unicamp.github.io/aulas/slides/parte19/parte19.pdf) [Parte 20](http://me414-unicamp.github.io/aulas/slides/parte20/parte20.pdf) -->  |   
-<!-- [Parte19]() 
-[Parte20]() -->
-| 21/12/2020    |   14    | Regressão Linear Simples e Análise de Variância | <!-- [Parte 23](http://me414-unicamp.github.io/aulas/slides/parte23/parte23.pdf) [Parte 24](http://me414-unicamp.github.io/aulas/slides/parte24/parte24.pdf)  --> | 
-<!-- [Parte23]() 
-[Parte24]() -->
-| 04/01/2021    |   15    | Aderência, Homogeneidade e Independência  | <!-- [Parte 21](http://me414-unicamp.github.io/aulas/slides/parte21/parte21.pdf) [Parte 22](http://me414-unicamp.github.io/aulas/slides/parte22/parte22.pdf) --> | 
-<!-- [Parte21]() 
-[Parte22]() -->
+| 07/12/2020    |   12    | Inferência: uma população    |  
+| 14/12/2020    |   13    | Inferência: duas populações  |    
+| 21/12/2020    |   14    | Regressão Linear Simples e Análise de Variância |
+| 04/01/2021    |   15    | Aderência, Homogeneidade e Independência  | 
 | **11/01/2021 Segunda-feira**  |   16     | **Prova 2 : Turmas A, C, E**  |   
 | **12/01/2021 Terça-feira**    |   16     | **Prova 2: Turmas D, F, I**   |     
 | **20/01/2021 Quarta-feira**   |   18     | **Exame: Turmas C, E**        |
