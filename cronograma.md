@@ -21,10 +21,7 @@ Os exercícios serão disponibilizados no Moodle. Verifique frequentemente.
 | 05/10/2020    |   3     | Probabilidade             | [Parte5](http://me414-unicamp.github.io/aulas/slides/parte05/parte05.pdf) [Parte6](http://me414-unicamp.github.io/aulas/slides/parte06/parte06.pdf)   |    [Parte5](https://drive.google.com/drive/folders/1RnD9YZq1hioXV_Fzl2OqoUpm4tjkpFFo?usp=sharing) [Parte6](https://drive.google.com/drive/folders/1-bD-G0QovYhZitYEOkupD3Ch0KOT-JSB?usp=sharing)
 | 12/10/2020    |   4     | Probabilidade             | [Parte7](http://me414-unicamp.github.io/aulas/slides/parte07/parte07.pdf) [Parte8](http://me414-unicamp.github.io/aulas/slides/parte08/parte08.pdf)  | [Parte7](https://drive.google.com/drive/folders/1d6VobTbrRmFNKjqmMzA6rDeyewnomeaz?usp=sharing) [Parte8](https://drive.google.com/drive/folders/1IoCsLpCNMiY1H2l1aXH3vVCfMgynaFmO?usp=sharing)
 | 19/10/2020    |   5     | Variáveis Aleatórias Discretas   |  [Parte9](http://me414-unicamp.github.io/aulas/slides/parte09/parte09.pdf)  |  [Parte9](https://drive.google.com/drive/folders/1SYM7vsO9SVx084EN73FLTfwCRe_hbRYq?usp=sharing) 
-| 26/10/2020    |   6     | Variáveis Aleatórias Discretas   | 
-[Parte10](http://me414-unicamp.github.io/aulas/slides/parte10/parte10.pdf) 
-[Parte11](http://me414-unicamp.github.io/aulas/slides/parte11/parte11.pdf) |   [Parte10](https://drive.google.com/drive/folders/16I7ebZ0BZJEWjVfxPhdnwBjKVq1Dm5cW?usp=sharing)  
-[Parte11](https://drive.google.com/drive/folders/1YOakSF7xbNLAkV4rEt-yVhYXKhMnhUCv?usp=sharing) 
+| 26/10/2020    |   6     | Variáveis Aleatórias Discretas   | [Parte10](http://me414-unicamp.github.io/aulas/slides/parte10/parte10.pdf) [Parte11](http://me414-unicamp.github.io/aulas/slides/parte11/parte11.pdf) | [Parte10](https://drive.google.com/drive/folders/16I7ebZ0BZJEWjVfxPhdnwBjKVq1Dm5cW?usp=sharing) [Parte11](https://drive.google.com/drive/folders/1YOakSF7xbNLAkV4rEt-yVhYXKhMnhUCv?usp=sharing) 
 | 02/11/2020    |   7     | Variáveis Aleatórias Discretas   |  
 | **11/11/2020 Quarta-feira**   |   8     |  **Prova 1: Turmas E, C**       |   
 | **12/11/2020 Quinta-feira**   |   8     |  **Prova 1: Turmas A, D, F, I** |      
