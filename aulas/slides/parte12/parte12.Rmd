@@ -137,9 +137,9 @@ x, & 0\leq x < 1 \\
 
 > Pela definição de função de densidade:  
  
-> $f(x) \geq 0, \quad \forall \, x \in \mathbb R$  
+> $f_{X}(x) \geq 0, \quad \forall \, x \in \mathbb R$  
 
-> $\displaystyle \int_{0}^{2}f(x)dx=  \int_{0}^{1}xdx + \int_{1}^{2}(2-x)dx =1$  
+> $\displaystyle \int_{0}^{2}f_{X}(x)dx=  \int_{0}^{1}xdx + \int_{1}^{2}(2-x)dx =1$  
  
 > Podemos também calcular $\displaystyle P(0<X\leq 0.8) = \int_{0}^{0.8}xdx=0.32$
  
@@ -150,11 +150,11 @@ x, & 0\leq x < 1 \\
 **Propriedade:** toda v.a. $X$ contínua (ou seja, que possui $f_{X}$ como função de densidade) tem probabilidade pontual nula: $\, P(X=x)=0$.  
 
 
-A função de distribuição acumulada $F(x)=P(X\leq x)$: 
+A função de distribuição acumulada $F_{X}(x)=P(X\leq x)$: 
  
-* **caso discreto:** $$F(x)=P(X \leq x)=\sum_{x_{i}\leq x}P(X=x_{i})$$ 
+* **caso discreto:** $$F_{X}(x)=P(X \leq x)=\sum_{x_{i}\leq x}P(X=x_{i})$$ 
 
-* **caso contínuo:** $$F(x)=P(X \leq x)=\int_{-\infty}^{x}f_{X}(u)du$$
+* **caso contínuo:** $$F_{X}(x)=P(X \leq x)=\int_{-\infty}^{x}f_{X}(u)du$$
  
  
 ## Exemplo
@@ -162,7 +162,7 @@ A função de distribuição acumulada $F(x)=P(X\leq x)$:
 Dada a função
 
 $$
-f(x) = \left\{
+f_{X}(x) = \left\{
 \begin{array}{rcl}
 0 & \mbox{se} & x < 0\\
 2e^{-2x} & \mbox{se} & x \geq 0 \\
@@ -183,9 +183,9 @@ b. Calcule a probabilidade de $X>10$.
 
 Uma função de densidade de probabilidade deve satisfazer as seguintes propriedades:  
 
-1. $f(x)\geq0$ para todo $x \in \mathbb{R}$.  
+1. $f_{X}(x)\geq0$ para todo $x \in \mathbb{R}$.  
 
-2. $\displaystyle \int_{-\infty}^{\infty} f(x) dx = 1$.  
+2. $\displaystyle \int_{-\infty}^{\infty} f_{X}(x) dx = 1$.  
 	 
 
 > Note que $e^{-x}$ é positiva para qualquer $x$ e, consequentemente, $2e^{-2x}$ também.   
@@ -202,7 +202,7 @@ $$ \int 2e^{-2x} dx   = -e^{-2x}$$
     Então a integral é:
 
     $$\begin{aligned}
-    \int_{-\infty}^{\infty} f(x) dx &= \int_{-\infty}^0 0 dx +   \int_0^{\infty} 2e^{-2x} dx \\  
+    \int_{-\infty}^{\infty} f_{X}(x) dx &= \int_{-\infty}^0 0 dx +   \int_0^{\infty} 2e^{-2x} dx \\  
     &= \left [  -e^{-2x} \right ] _{0}^{\infty} \\
     &= \lim_{x\rightarrow \infty} -e^{-2x} - \left ( -e^{-0} \right) = 1 
     \end{aligned}$$ 
@@ -260,7 +260,7 @@ $\displaystyle Var(X) = \int_{-\infty}^{\infty}[x - \mathbb E(X)]^{2}f_{X}(x)dx 
 Uma variável aleatória $X$ tem distribuição triangular no intervalo $[0,1]$ se sua f.d.p. for dada por
 
 $$
-f(x) = \left\{
+f_{X}(x) = \left\{
 \begin{array}{rcl}
 0 & \mbox{se} & x < 0\\
 Cx & \mbox{se} & 0 \leq x \leq 1/2 \\
@@ -271,7 +271,7 @@ C(1-x) & \mbox{se} & 1/2 \leq x \leq 1 \\
 $$
  
 a. Qual valor deve ter a constante C?  
-b. Faça o gráfico de $f(x)$.  
+b. Faça o gráfico de $f_{X}(x)$.  
 c. Determine $P(X \leq 1/2)$, $P(X > 1/2)$ e $P(1/4 \leq X \leq 3/4)$.
 
 
@@ -282,15 +282,15 @@ c. Determine $P(X \leq 1/2)$, $P(X > 1/2)$ e $P(1/4 \leq X \leq 3/4)$.
 
 Item 1 -  Devemos escolher $C$ de modo que $f(x)$ satisfaça:
 	 
-   + $f(x)\geq0$ para todo $x \in \mathbb{R}$.
+   + $f_{X}(x)\geq0$ para todo $x \in \mathbb{R}$.
 
-   +  $\int_{-\infty}^{\infty} f(x) dx = 1$.
+   +  $\int_{-\infty}^{\infty} f_{X}(x) dx = 1$.
 	   
-> Pela primeira condição, temos que $C>0$.   Agora, para que $C$ satisfaça a segunda condição, devemos integrar $f(x)$:  
+> Pela primeira condição, temos que $C>0$.   Agora, para que $C$ satisfaça a segunda condição, devemos integrar $f_{X}(x)$:  
 
 $$
 \begin{aligned}
-\int_{-\infty}^{\infty} f(x) dx &=   \int_{-\infty}^{0}\!\! 0 dx +  \int_0^{1/2}\!\! Cx dx + \int_{1/2}^1\!\! C(1-x) dx + \int_{1}^{\infty}\!\! 0dx \\  
+\int_{-\infty}^{\infty} f_{X}(x) dx &=   \int_{-\infty}^{0}\!\! 0 dx +  \int_0^{1/2}\!\! Cx dx + \int_{1/2}^1\!\! C(1-x) dx + \int_{1}^{\infty}\!\! 0dx \\  
 & = C \int_0^{1/2}\!\! x dx + C \int_{1/2}^1\!\! (1-x) dx = C \left ( \left[ \frac{x^2}{2} \right]_0^{1/2} + \left[ x- \frac{x^2}{2} \right]_{1/2}^1 \right) \\
 & = C \left( \frac{1}{8} + 1 - \frac{1}{2} - \frac{1}{2} + \frac{1}{8} \right) = \frac{C}{4} \Rightarrow C \mbox{ deve ser igual a 4.} 
 \end{aligned}
@@ -299,7 +299,7 @@ $$
 
 ## Exemplo
 
-Item 2 - Função de densidade $f(x)$
+Item 2 - Função de densidade $f_{X}(x)$
 
 <center> 
 ```{r, echo=FALSE, fig.height=4.5, fig.width=6}
@@ -321,7 +321,7 @@ plot(x, tri(x), type = "l", lty = 1, col="blue", ylab = expression(f(x)),
 
 ## Exemplo {.smaller .build}
 
-Item 3 - Para encontrarmos as probabilidades dos eventos, basta integrar nas regiões correspondentes: $$P(X\leq 1/2) =   \int_0 ^{1/2} f(x)dx = \int_0 ^{1/2} 4x dx =   1/2 \,. $$  
+Item 3 - Para encontrarmos as probabilidades dos eventos, basta integrar nas regiões correspondentes: $$P(X\leq 1/2) =   \int_0 ^{1/2} f_{X}(x)dx = \int_0 ^{1/2} 4x dx =   1/2 \,. $$  
 
 <center>
 ```{r, echo=FALSE, fig.width=5, fig.height=3.5}
@@ -341,7 +341,7 @@ polygon(codx, cody, col='lightblue')
 
 ## Exemplo
 
-$$P(1/4 \leq X \leq 3/4) =   \int_{1/4} ^{3/4} f(x)dx = \int_{1/4} ^{1/2} 4xdx +   \int_{1/2} ^{3/4} 4(1-x)dx =   \frac{3}{4}\,.$$
+$$P(1/4 \leq X \leq 3/4) =   \int_{1/4} ^{3/4} f_{X}(x)dx = \int_{1/4} ^{1/2} 4xdx +   \int_{1/2} ^{3/4} 4(1-x)dx =   \frac{3}{4}\,.$$
  
 <center>
 ```{r, echo=FALSE, fig.width=5.5, fig.height=4}
@@ -365,7 +365,7 @@ Calcule a esperança, a variância e a f.d.a. da variável aleatória $X$ com a 
 
 $$
 \begin{aligned}
-\mathbb E(X) &= \int_{-\infty}^{\infty} \!\! x f(x) dx =  \int_0^{1/2} \! 4x^2dx +  \int_{1/2}^{1} \! 4x(1-x)dx\\ 
+\mathbb E(X) &= \int_{-\infty}^{\infty} \!\! x f_{X}(x) dx =  \int_0^{1/2} \! 4x^2dx +  \int_{1/2}^{1} \! 4x(1-x)dx\\ 
 & = \left[ \frac{4x^3}{3} \right]_0^{1/2} +  \left[ \frac{2}{3} x^2(3-2x) \right]_{1/2}^{1} =  \frac{1}{2}
 \end{aligned}
 $$
@@ -375,7 +375,7 @@ $$
 
 $$
 \begin{aligned}
-\mbox{Var}(X)& = \int_{-\infty}^{\infty} \!\! (x - \mathbb E(X))^2 f(x) dx \\
+\mbox{Var}(X)& = \int_{-\infty}^{\infty} \!\! (x - \mathbb E(X))^2 f_{X}(x) dx \\
 &=  \int_0^{1/2} \! 4 \left(x-\frac{1}{2}\right)^2 \! xdx +   \int_{1/2}^{1} \! 4 \left(x-\frac{1}{2}\right)^2 \! (1-x)dx\\
 &=  \left[ x^4-\frac{4}{3}x^3 +  \frac{1}{2}x^2 \right]_0^{1/2} +   \left[ -x^4+\frac{8}{3}^3-\frac{5}{2}x^2 +x \right]_{1/2}^{1}\\
 &=  \frac{1}{24}
@@ -385,16 +385,16 @@ $$
 
 ## Exemplo {.build}
 
-A função de distribuição acumulada de uma variável aleatória contínua é dada por $$F(x) = \int_{-\infty}^x f(t) dt$$
+A função de distribuição acumulada de uma variável aleatória contínua é dada por $$F_{X}(x) = \int_{-\infty}^x f(t) dt$$
   
-> Temos que para $x \in [0,1/2)$, $F(x)$ é dada por $$F(x) = \int_0^x 4t dt = 2x^2$$
+> Temos que para $x \in [0,1/2)$, $F_{X}(x)$ é dada por $$F_{X}(x) = \int_0^x 4t dt = 2x^2$$
 
-> Para $x \in [1/2,1]$, a acumulada é dada por $$F(x) = \int_0^{1/2} 4t dt + \int_{1/2}^x 4(1-t)dt = -2x^2 + 4x -1$$
+> Para $x \in [1/2,1]$, a acumulada é dada por $$F_{X}(x) = \int_0^{1/2} 4t dt + \int_{1/2}^x 4(1-t)dt = -2x^2 + 4x -1$$
 
 
 ## Exemplo
 
-Para valores de $x \geq 1$, a acumulada assume valor 1. O gráfico de $F(x)$ é dado por:
+Para valores de $x \geq 1$, a acumulada assume valor 1. O gráfico de $F_{X}(x)$ é dado por:
 
 <center><img src="figuras/acum.png" width=500></center>
  
@@ -539,7 +539,7 @@ $$ f_{X}(x) = \left\{
 \end{array}
 \right.$$  
 
-> *  Notação: $X \sim exp(\lambda)$.  
+> *  Notação: $X \sim Exp(\lambda)$.  
 
 > *  Cálculo da função de distribuição acumulada:
 
@@ -560,7 +560,7 @@ Gráficos da  função de densidade de probabilidade (esquerda) e da função de
 lambda = .5
 maxi = qexp(rate=lambda,.999)
 par(mar=c(5, 4, 2, 2) + .1)
-curve(exp(-lambda*x), 0, maxi, xlab = "x", ylab = "f(x)", type = "l", bty="l", las=1, col="blue", lwd=3, cex.lab=1.3, main="Função de Densidade de Probabilidade")
+curve(lambda*exp(-lambda*x), 0, maxi, xlab = "x", ylab = "f(x)", type = "l", bty="l", las=1, col="blue", lwd=3, cex.lab=1.3, main="Função de Densidade de Probabilidade")
 
 par(mar=c(5, 4, 2, 2) + .1)
 curve(1-exp(-lambda*x), 0, maxi, xlab = "x", ylab = "F(x)", type = "l", bty="l", las=1, col="blue", lwd=3, cex.lab=1.3, main="Função de Distribuição Acumulada")
@@ -592,8 +592,8 @@ Qual é o tempo médio de vida do componente?
 
 ## Exemplo: componente eletrônico {.build}
 
-Sabemos que se $X \sim exp(\lambda)$, então 
-$$F(x) = P(X \leq x) = 1-e^{-\lambda x}$$ 
+Sabemos que se $X \sim Exp(\lambda)$, então 
+$$F_{X}(x) = P(X \leq x) = 1-e^{-\lambda x}$$ 
 e $\mathbb E(X) = \lambda^{-1}$.   
 
 > Basta então observarmos que 
