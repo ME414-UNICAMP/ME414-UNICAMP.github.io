@@ -14,7 +14,7 @@ logo: ../logo-imecc.png
 
 Dizemos que uma v.a. $X$ possui distribuição normal com parâmetros $\mu$ e $\sigma^{2}$, $\mu \in \mathbb{R}$ e $\sigma^{2}>0$, se a f.d.p. $f_{X}$ é dada por: 
 
-$$f_{X}(x) = \frac{1}{\sqrt{2\pi\sigma^{2}}} \exp \left[-\frac{(x-\mu)^{2}}{2\sigma^{2}}\right], \qquad -\infty < x < \infty$$ 
+$$f_{X}(x) = \frac{1}{\sqrt{2\pi\sigma^{2}}} \exp \left[-\frac{(x-\mu)^{2}}{2\sigma^{2}}\right], \qquad -\infty < x < \infty.$$ 
 
 **Notação:** $X\sim N(\mu,\sigma^{2})$
 
@@ -22,26 +22,26 @@ Distribuição mais importante da Estatística. Também conhecida como distribui
 
 A esperança e variância de uma v.a. $X \sim N(\mu,\sigma^{2})$ são:
 
-$$\mathbb E(X)=\mu \qquad \mbox{e} \qquad Var(X)=\sigma^2$$
+$$\mathbb E(X)=\mu \qquad \mbox{e} \qquad Var(X)=\sigma^2.$$
 
 
 ## Distribuição Normal - Esperança e Variância  {.build}
 
 **Esperança:**
-$$\mathbb E(X) = \int_{-\infty}^{\infty} x \frac{1}{\sqrt{2\pi\sigma^{2}}} \exp\left[-\frac{(x-\mu)^{2}}{2\sigma^{2}}\right]dx=\mu$$
+$$\mathbb E(X) = \int_{-\infty}^{\infty} x \frac{1}{\sqrt{2\pi\sigma^{2}}} \exp\left[-\frac{(x-\mu)^{2}}{2\sigma^{2}}\right]dx=\mu.$$
 
-**Variância**
+**Variância:**
 $$
 \begin{aligned}
 Var(X) & = \mathbb E([X - \mathbb E(X)]^{2}) \\
 & = \int_{-\infty}^{\infty}(x-\mu)^{2}\frac{1}{\sqrt{2\pi\sigma^{2}}} \exp\left[-\frac{(x-\mu)^{2}}{2\sigma^{2}}\right]dx \\
-&=\sigma^{2} 
+&=\sigma^{2}. 
 \end{aligned}
 $$
 
 
 ## Distribuição Normal
- Gráfico da função de densidade de probabilidade de uma v.a. $X \sim N(\mu,\sigma^{2})$
+Gráfico da função de densidade de probabilidade de uma v.a. $X \sim N(\mu,\sigma^{2})$:
 
 <center>
 ```{r, echo=FALSE, fig.height=4.2, fig.width=6}
@@ -50,7 +50,7 @@ mycol <- brewer.pal(8,"Dark2")
 
 par(mar=c(4, 4, 1, 2) + .1)
 curve(dnorm(x, mean=0, sd=1), -5, 5, bty="l", ylim=c(0, 0.85), yaxs = "i", xaxs="i", 
-      main="", ylab="f(x)", cex.lab=1.3, cex.axis=1.3, 
+      main="", ylab=expression(f[X](x)), cex.lab=1.3, cex.axis=1.3, 
       cex.main=1.3, col=1, lwd=3, las=1)
 curve(dnorm(x, mean=0, sd=1/2), -5, 5, n=1000, col=mycol[4], lwd=3, add=TRUE)
 curve(dnorm(x, mean=2, sd=1), -5, 5, col=mycol[3], lwd=3, add=TRUE)
@@ -63,7 +63,7 @@ legend("topright", legend=expression(mu==0 ~~ sigma == 1, mu==0 ~~ sigma == 0.5,
 ```
 </center>
 
-**Função Densidade:** "Forma de sino", centrada em $\mu$ e escala  controlada por $\sigma^2$
+**Função Densidade:** "Forma de sino", centrada em $\mu$ e escala  controlada por $\sigma^2$.
 
 
 ## Exemplo: OkCupid {.build}
@@ -101,13 +101,13 @@ Comparação da distribuição das alturas da população adulta norte-americana
 ## Distribuição Normal Padrão {.build}
 
 **Propriedade**: Se $X \sim N(\mu, \sigma^{2})$, então 
-$$Z=\frac{X-\mu}{\sigma} \sim N(0,1)$$
+$$Z=\frac{X-\mu}{\sigma} \sim N(0,1).$$
 
 Dizemos que $Z$ tem distribuição **Normal Padrão** e sua densidade se reduz a:
-$$\phi(z)=\frac{1}{\sqrt{2\pi}}e^{-z^2/2},  \qquad  -\infty < z < \infty$$ 
+$$\phi(z)=\frac{1}{\sqrt{2\pi}}e^{-z^2/2},  \qquad  -\infty < z < \infty.$$ 
 
 A f.d.a. de uma Normal padrão, que denotaremos por $\Phi$, é:
-$$\Phi(t)=P(Z\leq t)=\int_{-\infty}^{t}\frac{1}{\sqrt{2\pi}}e^{-z^2/2}dz$$
+$$\Phi(z)=P(Z\leq z)=\int_{-\infty}^{z}\frac{1}{\sqrt{2\pi}}e^{-t^2/2}dt.$$
 
 
 ## Distribuição Normal Padrão
@@ -145,9 +145,9 @@ Uma universidade americana recebeu inscrição de dois alunos (Pam e Jim) com os
 
 > Assumindo que as notas dos dois testes seguem uma distribuição normal:
 
-Seja $X$ uma v.a. representando a nota no SAT: $X\sim N(\mu=1500,\sigma=300)$.
+Seja $X$ uma v.a. representando a nota no SAT: $X\sim N(\mu=1500,\sigma^2=300^2)$.
 
-Seja $Y$ uma v.a. representando a nota no ACT: $X\sim N(\mu=21,\sigma=5)$.
+Seja $Y$ uma v.a. representando a nota no ACT: $X\sim N(\mu=21,\sigma^2=5^2)$.
 
 
 ## Exemplo: SAT e ACT
@@ -156,12 +156,12 @@ Seja $Y$ uma v.a. representando a nota no ACT: $X\sim N(\mu=21,\sigma=5)$.
 ```{r, echo=FALSE, fig.height=4.5, fig.width=5}
 par(mar=c(5, 6, 3, 2), mgp=c(4, 1, 0))
 curve(dnorm(x, mean=1500, sd=300), 500, 2500, bty="l", yaxs = "i", xaxs="i", 
-      main="Pam", ylab=expression(phi(x)), xlab="SAT", cex.lab=1.2, cex.axis=1.1, 
+      main="Pam", ylab=expression(f[X](x)), xlab="SAT", cex.lab=1.2, cex.axis=1.1, 
       cex.main=1.2, lwd=3, las=1, ylim=c(0, 0.0015))
 abline(v=1800, col="red", lwd=3)
 
 curve(dnorm(x, mean=21, sd=5), 5, 37, bty="l", yaxs = "i", xaxs="i", 
-      main="Jim", ylab=expression(phi(y)), xlab="ACT", cex.lab=1.2, cex.axis=1.1, 
+      main="Jim", ylab=expression(f[Y](y)), xlab="ACT", cex.lab=1.2, cex.axis=1.1, 
       cex.main=1.2, lwd=3, las=1, ylim=c(0, 0.09))
 abline(v=24, col="blue", lwd=3)
 
@@ -171,21 +171,21 @@ abline(v=24, col="blue", lwd=3)
 
 ## Exemplo: SAT e ACT {.build}
 
-Seja $X$ uma v.a. representando a nota no SAT: $X\sim N(\mu=1500,\sigma=300)$.
+Seja $X$ uma v.a. representando a nota no SAT: $X\sim N(\mu=1500,\sigma^2=300^2)$.
 
 > Padronizando a v.a. das notas do SAT:
 $Z_1=\frac{X-1500}{300}\sim N(0,1)$.
 
-> Padronizando a nota da Pam: $\frac{1800-1500}{300}=1$
+> Padronizando a nota da Pam: $\frac{1800-1500}{300}=1.$
 
 <br />
 
-> Seja $Y$ uma v.a. representando a nota no ACT: $Y \sim N(\mu=21,\sigma=5)$.
+> Seja $Y$ uma v.a. representando a nota no ACT: $Y \sim N(\mu=21,\sigma^2=5^2)$.
 
 > Padronizando a v.a. das notas do ACT:
 $Z_2=\frac{Y-21}{5}\sim N(0,1)$.
 
-> Padronizando a nota do Jim: $\frac{24-21}{5}=0.6$
+> Padronizando a nota do Jim: $\frac{24-21}{5}=0.6\,.$
 
 
 ## Exemplo: SAT e ACT
@@ -208,13 +208,13 @@ abline(v=.6, col="blue", lwd=3)
 
 Para calcular as probabilidades, precisamos usar a f.d.a. de $Z \sim N(0,1)$ 
 
-$$\Phi(t)=P(Z\leq t)=\int_{-\infty}^{t}\frac{1}{\sqrt{2\pi}}e^{-z^2/2}dz,$$
-que não tem forma fechada, pois $e^{-z^2}$ não tem antiderivada.  
+$$\Phi(z)=P(Z\leq z)=\int_{-\infty}^{z}\frac{1}{\sqrt{2\pi}}e^{-t^2/2}dt,$$
+que não tem forma fechada, pois $e^{-t^2}$ não tem antiderivada.  
 
 > Contudo, os valores para $Z \sim N(0,1)$ e $\phi(z)$ encontram-se tabelados.
 
 > Tudo o que precisamos fazer é transformar a variável em $N(0,1)$ e usar os valores tabelados. Ou seja, para $X \sim N(\mu, \sigma^{2})$, temos:
-> $$F_X(a)=P(X \leq a)= P\left(\underbrace{\frac{X-\mu}{\sigma}}_{Z} \leq \frac{a-\mu}{\sigma}\right) = \Phi\left(\frac{a-\mu}{\sigma}\right)$$
+> $$F_X(a)=P(X \leq a)= P\left(\underbrace{\frac{X-\mu}{\sigma}}_{Z} \leq \frac{a-\mu}{\sigma}\right) = \Phi\left(\frac{a-\mu}{\sigma}\right).$$
 
 
 ## Distribuição Normal
@@ -222,7 +222,7 @@ que não tem forma fechada, pois $e^{-z^2}$ não tem antiderivada.
 ```{r, echo=FALSE, fig.height=5, fig.width=7}
 par(mar=c(4, 5, 3, 2) + .1)
 curve(pnorm(x, mean=0, sd=1), -6, 6, bty="l", ylim=c(0,1.1), yaxs = "i", xaxs="i", 
-      main="Função de Distribuição Acumulada", ylab=expression(Phi(x)), cex.lab=1.3, 
+      main="Função de Distribuição Acumulada", ylab=expression(Phi(z)), cex.lab=1.3, 
       cex.axis=1.3, cex.main=1.3, col=1, lwd=3, las=1)
 curve(pnorm(x, mean=0, sd=1/2), -6, 6, col=mycol[4], lwd=3, add=TRUE)
 curve(pnorm(x, mean=2, sd=1), -5, 5, col=mycol[3], lwd=3, add=TRUE)
@@ -239,25 +239,26 @@ legend("topleft", legend=expression(mu==0 ~~ sigma == 1, mu==0 ~~ sigma == 0.5,
 ## Distribuição Normal - Simetria
 
 A distribuição normal é simétrica, portanto
-$$P(Z<-z)=P(Z>z)$$
+$$P(Z<-z)=P(Z>z).$$
 <center><img src="figuras/simetria.png" width=500></center>
 
 
 ## Distribuição Normal {.build}
 
 Seja $Z\sim\mbox{Normal}(0,1)$, com f.d.a. $\Phi$:
-$$\Phi(t)=P(Z\leq t)=\int_{-\infty}^{t}\frac{1}{\sqrt{2\pi}}e^{-z^2/2}dz$$ 
+$$\Phi(z)=P(Z\leq z)=\int_{-\infty}^{z}\frac{1}{\sqrt{2\pi}}e^{-t^2/2}dt.$$ 
+Então,
 
-> * $\Phi(0)=0.5$ 
+> * $\Phi(0)=0.5$, 
 
-> * $\Phi(-\infty)=0$ 
+> * $\Phi(-\infty)=0$,
 
-> * $\Phi(\infty)=1$ 
+> * $\Phi(\infty)=1$, 
 
 > * Por simetria:
 > $$\begin{aligned}
 \Phi(x) &= P(Z< x)= P(Z> -x) \\
-&=1-P(Z<-x)=1-\Phi(-x)
+&=1-P(Z<-x)=1-\Phi(-x).
 \end{aligned}$$
 
 
@@ -267,7 +268,7 @@ $$
 \begin{aligned}
 P(a<Z<b) &= P(Z<b)-P(Z<a) \\
 &= P(Z \leq b) - P(Z \leq a) \\
-&=\Phi(b)-\Phi(a)
+&=\Phi(b)-\Phi(a).
 \end{aligned}
 $$
 
@@ -317,45 +318,43 @@ Exercitando com a tabela da Normal:
 
 Recorde que se $X \sim N(\mu, \sigma^2)$, então $\frac{X-\mu}{\sigma} \sim N(0,1)$.  
 
-Neste problema, sabemos que $\mu = 10$ e  $\sigma^2 = 4$, logo $\sigma = 2$. Então 
-$$Z=\frac{(X-10)}{2} \sim N(0,1)$$ 
+Neste problema, sabemos que $\mu = 10$ e  $\sigma^2 = 4$, logo $\sigma = 2$. Então, 
+$$Z=\frac{(X-10)}{2} \sim N(0,1).$$ 
 
 Devemos transformar $X$ de modo que o evento $8<X<10$ permaneça inalterado. Fazemos isso transformando todos os lados da inequação: 
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 8<X<10 &\Leftrightarrow 8-10 < X-10 < 10-10 \\
 & \Leftrightarrow \frac{8-10}{2} < \frac{X-10}{2} < \frac{10-10}{2} \\
 &\Leftrightarrow -1 < Z < 0
 \end{aligned}
 $$
 
-
 ## Distribuição Normal {.build}
 
-Então, $P(8 < X < 10) = P(-1 < Z < 0)$
+Então, $P(8 < X < 10) = P(-1 < Z < 0)$.
 
 O valor $\varPhi(0)$ está disponível na tabela e é igual a $0.5$. 
 
-Para obtermos $\varPhi(-1)$, devemos usar a simetria da função $\varPhi$ em torno do zero: $$\varPhi(-x) = 1-\varPhi(x)$$
+Para obtermos $\varPhi(-1)$, devemos usar a simetria da função $\varPhi$ em torno do zero: $$\varPhi(-z) = 1-\varPhi(z).$$
 
-A tabela nos dá $\varPhi(1) = 0.8413 \quad \rightarrow \quad \varPhi(-1) = 1-0.8413 = 0.1587$
+A tabela nos dá $\varPhi(1) = 0.8413 \quad \Rightarrow \quad \varPhi(-1) = 1-0.8413 = 0.1587\,.$
 
 Concluimos portanto que 
- $$
- \begin{aligned}
- P(8<X<10) &= P(-1<Z<0) \\
- &= \varPhi(0)-\varPhi(-1) \\
- &= 0.5 - 0.1587 = 0.3413
- \end{aligned}
- $$
-
+$$
+\begin{aligned}
+P(8<X<10) &= P(-1<Z<0) \\
+&= \varPhi(0)-\varPhi(-1) \\
+&= 0.5 - 0.1587 = 0.3413\,.
+\end{aligned}
+$$
 
 ## Distribuição Normal
 
 Veja a tabela da normal com os valores de $\varPhi(1)$ e $\varPhi(0)$ destacados:
 
 <center><img src="figuras/TabelaNormalPadrao2.png" width=600></center>
-
 
 ## Distribuição Normal
 
@@ -368,7 +367,7 @@ b <- 10
 codx <- c(a, seq(a, b, 0.01), b)
 cody <- c(0, dnorm(seq(a, b, 0.01), mean=10, sd=2), 0)
 par(mar=c(4, 4, 1, 2) + .1)
-curve(dnorm(x, mean=10, sd=2), xlim=c(4, 16), ylim=c(0, .2), main="", ylab="f(x)", xlab="x", 
+curve(dnorm(x, mean=10, sd=2), xlim=c(4, 16), ylim=c(0, .2), main="", ylab=expression(f[X](x)), xlab="x", 
       xaxs="i", yaxs="i", bty="l", col="blue", lwd=3, las=1)
 axis(1, at=c(a,b)) 
 polygon(codx, cody, col="lightblue", border=NA)
@@ -380,19 +379,19 @@ curve(dnorm(x, mean=10, sd=2), add = TRUE, col="blue", lwd=3)
 ## Distribuição Normal {.build}
 
 $\begin{aligned}
-(2) \; P(9 \leq X \leq 12) & = P\left(\frac{9-10}{2} \leq \frac{X-10}{2} \leq \frac{12-10}{2}\right) \\
-& = P(-1/2 \leq Z \leq 1) = 0.5328
+2. \; P(9 \leq X \leq 12) & = P\left(\frac{9-10}{2} \leq \frac{X-10}{2} \leq \frac{12-10}{2}\right) \\
+& = P(-1/2 \leq Z \leq 1) = 0.5328\,.
 \end{aligned}$
 
 <br />
-$\displaystyle (3) \;  P(X>10) = P\left(\frac{X-10}{2} > \frac{10-10}{2}\right) = P(Z>0) = 0.5$
+$\displaystyle 3. \;  P(X>10) = P\left(\frac{X-10}{2} > \frac{10-10}{2}\right) = P(Z>0) = 0.5\,.$
 
 <br /> 
 $\begin{aligned}
-(4) \; P(X < 8 \mbox{ ou } X > 11) & = P(X < 8) + P(X > 11) \\
+4. \; P(X < 8 \mbox{ ou } X > 11) & = P(X < 8) + P(X > 11) \\
 &= P\left(\frac{X-10}{2} < \frac{8-10}{2}\right) + P\left(\frac{X-10}{2} > \frac{11-10}{2}\right) \\
 &= P(Z<-1) + P(Z>1/2) \\
-&= 0.1586 + 0.3085 = 0.4671
+&= 0.1586 + 0.3085 = 0.4671\,.
 \end{aligned}$
 
 
@@ -400,8 +399,8 @@ $\begin{aligned}
 **Exemplo**: Se $X \sim N(4,3^{2})$, calcule $P(X \leq 7)$ e $P(1 < X \leq 7)$. 
 
 $\begin{aligned}
-F_X(7)= P(X \leq 7) &= P\left(\frac{X-4}{3} \leq \frac{7-4}{3}\right) \\
-&= P(Z\leq 1)= \Phi(1)=0.8413
+P(X \leq 7) &= P\left(\frac{X-4}{3} \leq \frac{7-4}{3}\right) \\
+&= P(Z\leq 1)= \Phi(1)=0.8413\,.
 \end{aligned}$
 
 <br />
@@ -410,9 +409,8 @@ P(1 < X \leq 7) &= P\left(\frac{1-4}{3}<\frac{X-4}{3}\leq \frac{7-4}{3}\right) \
 &=P(-1<Z\leq 1) \\
 &=\Phi(1)-\Phi(-1) \\
 &=\Phi(1)-[1-\Phi(1)] \\
-&=2\Phi(1)-1=2\times0.8413-1=0.6826
+&=2\Phi(1)-1=2\times0.8413-1=0.6826\,.
 \end{aligned}$
-
 
 ## Distribuição Normal
 
@@ -428,7 +426,7 @@ codx <- c(a, seq(a, b, 0.01), b)
 cody <- c(0, dnorm(seq(a, b, 0.01), mean=mu, sd=sigma), 0)
 par(mar=c(4, 4, 1, 2) + .1)
 curve(dnorm(x, mean=mu, sd=sigma), xlim=c(mu-3*sigma, mu+3*sigma), ylim=c(0, .14), main="",
-      ylab="f(x)", xlab="x", xaxt="n", yaxs="i", bty="l", col="blue", lwd=2, las=1)
+      ylab=expression(f[X](x)), xlab="x", xaxt="n", yaxs="i", bty="l", col="blue", lwd=2, las=1)
 axis(1, at=seq(mu-3*sigma, mu+3*sigma, by=2)) 
 polygon(codx, cody, col="lightblue", border=NA)
 curve(dnorm(x, mean=mu, sd=sigma), add = TRUE, col="blue", lwd=3)
@@ -445,7 +443,6 @@ Em uma distribuição normal $X \sim N(\mu, \sigma^{2})$, temos o seguinte:
 
 <center><img src="figuras/regraempirica.png" width=700></center>
 
-
 ## Regra Empírica
 
 <img src="figuras/EinsteinIQ.jpg" width=350 style="float: right; margin-left: 30px">
@@ -455,8 +452,6 @@ Em uma distribuição normal $X \sim N(\mu, \sigma^{2})$, temos o seguinte:
 Encontre um intervalo que englobe os $QI$’s de $68.3\%$ da população?
 
 E se quisermos $95\%$? E $99.7\%$?
-
-
 
 ## Regra Empírica {.build}
 
@@ -473,7 +468,7 @@ $99.7\%$ da população: $55 \leq QI \leq 145$
 
 ## Aproximação Normal para uma Binomial
 
-Seja $X \sim Bin(n, p)$
+Seja $X \sim Bin(n, p)$.
 
 O que acontece quando o número de ensaios $n$ aumenta?
 
@@ -498,9 +493,9 @@ for(n in ns){
 
 Seja $X \sim Bin(n, p)$. Se $n$ é suficientemente grande, a distribuição de $X$ pode ser aproximada pela distribuição normal, isto é,
 
-> $$X \sim N(np, np(1-p))$$
+> $$X \sim N(np, np(1-p)).$$
 
-> **Exemplo:** Se $X \sim Bin(100, 0.7)$, podemos usar a aproximação $X \sim N(70, 21)$
+> **Exemplo:** Se $X \sim Bin(100, 0.7)$, podemos usar a aproximação $X \sim N(70, 21)$.
 
 ```{r, echo=FALSE, fig.height=3.2, fig.width=4.5, fig.align='center'}
 n <- 100
@@ -521,23 +516,23 @@ lines(xx - a + 0.5, dnorm(xx, mean=mu, sd=sigma), lwd=3, col="red")
 
 ## Aproximação Normal para uma Binomial {.build}
 
-**Exemplo:** Seja $X$ o número de vezes que uma moeda honesta resulta em cara quando é lançada $40$ vezes. Então
-$$X \sim Bin(40, 0.5)$$
+**Exemplo:** Seja $X$ o número de vezes que uma moeda honesta resulta em cara quando é lançada $40$ vezes. Então,
+$$X \sim Bin(40, 0.5).$$
 
 Encontre $P(X=20)$ usando a fórmula exata e a aproximação normal.
 
-* Binomial
+* Binomial:
 
-$$P(X=20) = {40 \choose 20}(0.5)^{20}(0.5)^{20}  = 0.125$$
+$$P(X=20) = {40 \choose 20}(0.5)^{20}(0.5)^{20}  = 0.125\,.$$
 
-* Normal
+* Normal:
 
-$$P(X=20) \approx P(19.5 < X \leq 20.5)  = 0.1256$$
+$$P(X=20) \approx P(19.5 < X \leq 20.5)  = 0.1256\,.$$
 
 
 ## Aproximação Normal para uma Binomial {.build}
 
-**Exemplo:** $X \sim Bin(40, 0.5)$
+**Exemplo:** $X \sim Bin(40, 0.5).$
 
 <center>
 ```{r, echo=FALSE, fig.height=4.5, fig.width=6}
@@ -572,27 +567,27 @@ Ou seja, pelo menos 10 sucessos e pelo menos 10 fracassos na amostra.
 ## Relembrando: Propriedades da Esperança {.build}
  
 1. Para qualquer v.a. $X$ e constantes $a$ e $b$:
-    $$\mathbb E(aX + b) = a \mathbb E(X) + b$$
+    $$\mathbb E(aX + b) = a \mathbb E(X) + b.$$
     
     Casos particulares:
-    + $\mathbb E(X+b) = \mathbb E(X) + b$
-    + $\mathbb E(aX) = a \mathbb E(X)$
+    + $\mathbb E(X+b) = \mathbb E(X) + b$,
+    + $\mathbb E(aX) = a \mathbb E(X)$.
 
 2. Se $X_1, X_2, \ldots, X_n$ são variáveis aleatórias:
- $$ \mathbb E\left(\sum_{i=1}^n X_i \right) = \sum_{i=1}^n \mathbb E(X_i)$$
+ $$ \mathbb E\left(\sum_{i=1}^n X_i \right) = \sum_{i=1}^n \mathbb E(X_i).$$
 
 
 ## Relembrando: Propriedades da Variância {.build}
  
 1. Para qualquer v.a. $X$ e constantes $a$ e $b$:
- $$Var(aX + b) = a^2Var(X)$$
+ $$Var(aX + b) = a^2Var(X).$$
 
     Casos particulares:
-    + $Var(X+b) = Var(X)$
-    + $Var(aX) = a^2 Var(X)$
+    + $Var(X+b) = Var(X)$,
+    + $Var(aX) = a^2 Var(X)$.
   
 2. Se $X_1, X_2, \ldots, X_n$ são variáveis aleatórias independentes:
-$$ Var \left(\sum_{i=1}^n X_i \right) = \sum_{i=1}^n Var(X_i)$$ 
+$$ Var \left(\sum_{i=1}^n X_i \right) = \sum_{i=1}^n Var(X_i).$$ 
 
 
 ## Propriedades da Normal {.build}
@@ -606,7 +601,7 @@ $$X \sim N(\mu,\sigma^2) \qquad \Longleftrightarrow  \qquad Z=\frac{X-\mu}{\sigm
 
 <br />
 Se $X$ e $Y$ são v.a.'s independentes, tal que $X \sim N(\mu_x,\sigma_x^2)$ e $Y\sim N(\mu_y,\sigma_y^2),$ então
-$$X+Y\sim N(\mu_x+\mu_y,\sigma_x^2+\sigma_y^2)$$
+$$X+Y\sim N(\mu_x+\mu_y,\sigma_x^2+\sigma_y^2).$$
 
 
 ## Leituras

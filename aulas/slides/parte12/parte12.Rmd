@@ -47,8 +47,6 @@ binomial(10, ylim=c(0, .3))
 ```
 </center>
 
-
-
 ## Exemplo: v.a. discreta
 
 <center>
@@ -85,9 +83,9 @@ par(mfrow = c(1, 2))
  
 **Definição:** a função de densidade de probabilidade de uma v.a. $X$ é uma função $f$ que verifica:  
  
-> * $f(x)\geq0, \quad \forall x\in \mathbb{R}$  
+> * $f(x)\geq0, \quad \forall x\in \mathbb{R}$; e  
 
-> * $\displaystyle \int_{-\infty}^{\infty}f(x)dx=1$ ($f$ é integrável)  
+> * $\displaystyle \int_{-\infty}^{\infty}f(x)dx=1$ ($f$ é integrável).  
  
 > Toda v.a. $X$ à qual seja possível associar uma função de densidade de probabilidade será chamada de v.a. contínua.  
  
@@ -111,7 +109,7 @@ polygon(codx, cody, col='lightblue')
 ```
 </center>
 
-Obs: Quando $X$ é v.a. contínua $P(a<X\leq b)=P(a\leq X\leq b)=P(a<X< b)=P(a\leq X <b)$ 
+Obs: Quando $X$ é v.a. contínua $P(a<X\leq b)=P(a\leq X\leq b)=P(a<X< b)=P(a\leq X <b)$. 
 
 
 ## Variáveis Aleatórias Contínuas{.build}
@@ -119,7 +117,7 @@ Obs: Quando $X$ é v.a. contínua $P(a<X\leq b)=P(a\leq X\leq b)=P(a<X< b)=P(a\l
 **Notação:** se $X$ v.a. contínua com função de densidade de probabilidade $f$, no lugar de $f$ denotaremos $f_{X}$.  
 
 > A probabilidade de que uma v.a. $X$ contínua pertença ao intervalo da reta <br /> ($-\infty,x$] daremos o nome de **função de distribuição acumulada** (f.d.a.), e a denotaremos por $F_{X}$
-$$F_{X}(x) = \int_{-\infty}^{x}f(u)du = P(X\leq x).$$
+$$F_{X}(x) = P(X\leq x) = \int_{-\infty}^{x}f_X(u)du.$$
  
 
 
@@ -129,9 +127,9 @@ Exemplo: $X$ v.a. contínua com função de densidade:
 
 $$ f_{X}(x) = \left\{
 \begin{array}{ll}
-x, & 0\leq x < 1 \\
-2-x, & 1 \leq x \leq 2 \\
-0, & \mbox{caso contrário} \\
+x & 0\leq x < 1, \\
+2-x & 1 \leq x \leq 2, \\
+0 & \mbox{caso contrário.} \\
 \end{array}
 \right.$$
 
@@ -139,9 +137,9 @@ x, & 0\leq x < 1 \\
  
 > $f_{X}(x) \geq 0, \quad \forall \, x \in \mathbb R$  
 
-> $\displaystyle \int_{0}^{2}f_{X}(x)dx=  \int_{0}^{1}xdx + \int_{1}^{2}(2-x)dx =1$  
+> $\displaystyle \int_{0}^{2}f_{X}(x)dx=  \int_{0}^{1}xdx + \int_{1}^{2}(2-x)dx =1\,.$  
  
-> Podemos também calcular $\displaystyle P(0<X\leq 0.8) = \int_{0}^{0.8}xdx=0.32$
+> Podemos também calcular $\displaystyle P(0<X\leq 0.8) = \int_{0}^{0.8}xdx=0.32\,.$
  
 
 
@@ -152,9 +150,9 @@ x, & 0\leq x < 1 \\
 
 A função de distribuição acumulada $F_{X}(x)=P(X\leq x)$: 
  
-* **caso discreto:** $$F_{X}(x)=P(X \leq x)=\sum_{x_{i}\leq x}P(X=x_{i})$$ 
+* **caso discreto:** $$F_{X}(x)=P(X \leq x)=\sum_{x_{i}\leq x}P(X=x_{i});$$ 
 
-* **caso contínuo:** $$F_{X}(x)=P(X \leq x)=\int_{-\infty}^{x}f_{X}(u)du$$
+* **caso contínuo:** $$F_{X}(x)=P(X \leq x)=\int_{-\infty}^{x}f_{X}(u)du.$$
  
  
 ## Exemplo
@@ -164,8 +162,8 @@ Dada a função
 $$
 f_{X}(x) = \left\{
 \begin{array}{rcl}
-0 & \mbox{se} & x < 0\\
-2e^{-2x} & \mbox{se} & x \geq 0 \\
+0 & \mbox{se} & x < 0,\\
+2e^{-2x} & \mbox{se} & x \geq 0. \\
 \end{array}
 \right.
 $$
@@ -183,7 +181,7 @@ b. Calcule a probabilidade de $X>10$.
 
 Uma função de densidade de probabilidade deve satisfazer as seguintes propriedades:  
 
-1. $f_{X}(x)\geq0$ para todo $x \in \mathbb{R}$.  
+1. $f_{X}(x)\geq0$ para todo $x \in \mathbb{R}$; e  
 
 2. $\displaystyle \int_{-\infty}^{\infty} f_{X}(x) dx = 1$.  
 	 
@@ -192,24 +190,24 @@ Uma função de densidade de probabilidade deve satisfazer as seguintes propried
 
 > Resta mostrar que sua integral é 1:  
 
-$$ \int 2e^{-2x} dx   = -e^{-2x}$$
+$$ \int 2e^{-2x} dx   = -e^{-2x}.$$
 
 
 ## Exemplo (solução) {.build}
 
 1. Note que a função está definida nesta forma para $x \geq 0$; para $x<0$, ela é 0. 
 
-    Então a integral é:
+    Então, a integral é:
 
     $$\begin{aligned}
     \int_{-\infty}^{\infty} f_{X}(x) dx &= \int_{-\infty}^0 0 dx +   \int_0^{\infty} 2e^{-2x} dx \\  
     &= \left [  -e^{-2x} \right ] _{0}^{\infty} \\
-    &= \lim_{x\rightarrow \infty} -e^{-2x} - \left ( -e^{-0} \right) = 1 
+    &= \lim_{x\rightarrow \infty} -e^{-2x} - \left ( -e^{-0} \right) = 1. 
     \end{aligned}$$ 
 
 
 2. A probabilidade é dada por: 
-$$P(X>10) = \int_{10}^{\infty} 2e^{-2x} dx  = \lim_{x\rightarrow \infty} -e^{-2x} - \left ( -e^{-2 \times 10} \right) = \frac{1}{e^{20}}$$
+$$P(X>10) = \int_{10}^{\infty} 2e^{-2x} dx  = \lim_{x\rightarrow \infty} -e^{-2x} - \left ( -e^{-2 \times 10} \right) = \frac{1}{e^{20}}.$$
  
 
 ## Esperança {.build}
@@ -230,7 +228,7 @@ $$\mathbb E(X^k) = \int_{-\infty}^{\infty}x^k \, f_{X}(x)dx \,.$$
 $$Var(X) = \mathbb E([X - \mathbb E(X)]^2) = \mathbb E(X^2) - [\mathbb E(X)]^2\,.$$  
 
 > E definimos como **desvio-padrão**:
-$$\sigma = \sqrt{Var(X)}$$  
+$$\sigma = \sqrt{Var(X)}\,.$$  
 
 > Note que assim como no caso discreto, ambas as quantidades oferecem medidas de dispersão da variável $X$ em relação ao valor esperado $\mathbb E(X)$.
  
@@ -241,18 +239,18 @@ Para a função $f_{X}$ seguinte, calcular $\mathbb E(X)$ e $Var(X)$:
 
 $$f_{X}(x) = \left\{
 \begin{array}{ll}
-x, & 0\leq x < 1 \\
-2-x, & 1 \leq x \leq 2 \\
-0, & \mbox{caso contrário} \\
+x & 0\leq x < 1, \\
+2-x & 1 \leq x \leq 2, \\
+0 & \mbox{caso contrário}. \\
 \end{array}
 \right.$$
 
 
 **Solução:**
 
-$\displaystyle \mathbb E(X) = \int_{-\infty}^{\infty}xf_{X}(x)dx = \int_{0}^{1}x^{2}dx+ \int_{1}^{2}x(2-x)dx = 1$
+$\displaystyle \mathbb E(X) = \int_{-\infty}^{\infty}xf_{X}(x)dx = \int_{0}^{1}x^{2}dx+ \int_{1}^{2}x(2-x)dx = 1,$
 
-$\displaystyle Var(X) = \int_{-\infty}^{\infty}[x - \mathbb E(X)]^{2}f_{X}(x)dx = \int_{-\infty}^{\infty}(x-1)^2f_{X}(x)dx = \frac{1}{6}$
+$\displaystyle Var(X) = \int_{-\infty}^{\infty}[x - \mathbb E(X)]^{2}f_{X}(x)dx = \int_{-\infty}^{\infty}(x-1)^2f_{X}(x)dx = \frac{1}{6}.$
  
 
 ## Exemplo
@@ -262,10 +260,10 @@ Uma variável aleatória $X$ tem distribuição triangular no intervalo $[0,1]$ 
 $$
 f_{X}(x) = \left\{
 \begin{array}{rcl}
-0 & \mbox{se} & x < 0\\
-Cx & \mbox{se} & 0 \leq x \leq 1/2 \\
-C(1-x) & \mbox{se} & 1/2 \leq x \leq 1 \\
-0 & \mbox{se} & x > 1\\
+0 & \mbox{se} & x < 0,\\
+Cx & \mbox{se} & 0 \leq x \leq 1/2, \\
+C(1-x) & \mbox{se} & 1/2 \leq x \leq 1, \\
+0 & \mbox{se} & x > 1.\\
 \end{array}
 \right.
 $$
@@ -282,7 +280,7 @@ c. Determine $P(X \leq 1/2)$, $P(X > 1/2)$ e $P(1/4 \leq X \leq 3/4)$.
 
 Item 1 -  Devemos escolher $C$ de modo que $f(x)$ satisfaça:
 	 
-   + $f_{X}(x)\geq0$ para todo $x \in \mathbb{R}$.
+   + $f_{X}(x)\geq0$ para todo $x \in \mathbb{R}$; e
 
    +  $\int_{-\infty}^{\infty} f_{X}(x) dx = 1$.
 	   
@@ -292,14 +290,18 @@ $$
 \begin{aligned}
 \int_{-\infty}^{\infty} f_{X}(x) dx &=   \int_{-\infty}^{0}\!\! 0 dx +  \int_0^{1/2}\!\! Cx dx + \int_{1/2}^1\!\! C(1-x) dx + \int_{1}^{\infty}\!\! 0dx \\  
 & = C \int_0^{1/2}\!\! x dx + C \int_{1/2}^1\!\! (1-x) dx = C \left ( \left[ \frac{x^2}{2} \right]_0^{1/2} + \left[ x- \frac{x^2}{2} \right]_{1/2}^1 \right) \\
-& = C \left( \frac{1}{8} + 1 - \frac{1}{2} - \frac{1}{2} + \frac{1}{8} \right) = \frac{C}{4} \Rightarrow C \mbox{ deve ser igual a 4.} 
+& = C \left( \frac{1}{8} + 1 - \frac{1}{2} - \frac{1}{2} + \frac{1}{8} \right) = \frac{C}{4}
+\\
+& \Rightarrow \frac{C}{4}=1 \\ 
+&  \\ 
+& \therefore C \mbox{ deve ser igual a 4.} 
 \end{aligned}
 $$
 
 
 ## Exemplo
 
-Item 2 - Função de densidade $f_{X}(x)$
+Item 2 - Função de densidade $f_{X}(x)$:
 
 <center> 
 ```{r, echo=FALSE, fig.height=4.5, fig.width=6}
@@ -363,33 +365,37 @@ Calcule a esperança, a variância e a f.d.a. da variável aleatória $X$ com a 
 
 *Fonte:* Morettin \& Bussab, Estatística Básica $5^a$ edição, pág 171.
 
+Temos que,
+
 $$
 \begin{aligned}
-\mathbb E(X) &= \int_{-\infty}^{\infty} \!\! x f_{X}(x) dx =  \int_0^{1/2} \! 4x^2dx +  \int_{1/2}^{1} \! 4x(1-x)dx\\ 
-& = \left[ \frac{4x^3}{3} \right]_0^{1/2} +  \left[ \frac{2}{3} x^2(3-2x) \right]_{1/2}^{1} =  \frac{1}{2}
+\mathbb E(X) &= \int_{-\infty}^{\infty} \!\! x f_{X}(x) dx =  \int_0^{1/2} \! x4xdx +  \int_{1/2}^{1} \! x4(1-x)dx\\ 
+& = \left[ \frac{4x^3}{3} \right]_0^{1/2} +  \left[ \frac{2}{3} x^2(3-2x) \right]_{1/2}^{1} =  \frac{1}{2}.
 \end{aligned}
 $$
 
 
 ## Exemplo
 
+E, 
+
 $$
 \begin{aligned}
 \mbox{Var}(X)& = \int_{-\infty}^{\infty} \!\! (x - \mathbb E(X))^2 f_{X}(x) dx \\
-&=  \int_0^{1/2} \! 4 \left(x-\frac{1}{2}\right)^2 \! xdx +   \int_{1/2}^{1} \! 4 \left(x-\frac{1}{2}\right)^2 \! (1-x)dx\\
+&=  \int_0^{1/2} \!  \left(x-\frac{1}{2}\right)^2 \! 4xdx +   \int_{1/2}^{1} \!  \left(x-\frac{1}{2}\right)^2 \! 4(1-x)dx\\
 &=  \left[ x^4-\frac{4}{3}x^3 +  \frac{1}{2}x^2 \right]_0^{1/2} +   \left[ -x^4+\frac{8}{3}^3-\frac{5}{2}x^2 +x \right]_{1/2}^{1}\\
-&=  \frac{1}{24}
+&=  \frac{1}{24}.
 \end{aligned}
 $$
 
 
 ## Exemplo {.build}
 
-A função de distribuição acumulada de uma variável aleatória contínua é dada por $$F_{X}(x) = \int_{-\infty}^x f(t) dt$$
+A função de distribuição acumulada de uma variável aleatória contínua é dada por $$F_{X}(x) = \int_{-\infty}^x f_X(t) dt.$$
   
-> Temos que para $x \in [0,1/2)$, $F_{X}(x)$ é dada por $$F_{X}(x) = \int_0^x 4t dt = 2x^2$$
+> Temos que para $x \in [0,1/2)$, $F_{X}(x)$ é dada por $$F_{X}(x) = \int_0^x 4t dt = 2x^2.$$
 
-> Para $x \in [1/2,1]$, a acumulada é dada por $$F_{X}(x) = \int_0^{1/2} 4t dt + \int_{1/2}^x 4(1-t)dt = -2x^2 + 4x -1$$
+> Para $x \in [1/2,1]$, a acumulada é dada por $$F_{X}(x) = \int_0^{1/2} 4t dt + \int_{1/2}^x 4(1-t)dt = -2x^2 + 4x -1.$$
 
 
 ## Exemplo
@@ -407,8 +413,8 @@ Para valores de $x \geq 1$, a acumulada assume valor 1. O gráfico de $F_{X}(x)$
 
 $$ f_{X}(x) = \left\{
 \begin{array}{ll}
-\frac{1}{b-a}, & a \leq x \leq b \\
-0, & \mbox{caso contrário} \\
+\frac{1}{b-a} & a \leq x \leq b, \\
+0 & \mbox{caso contrário.} \\
 \end{array}
 \right.$$  
 
@@ -418,9 +424,9 @@ $$ f_{X}(x) = \left\{
 
 $$ F_{X}(x) = \left\{
 \begin{array}{ll}
-0, & x < a \\
-\int_{a}^{x}\frac{1}{b-a}dt=\frac{x-a}{b-a}, & a \leq x \leq b \\
-1, & x > b \\
+0 & x < a, \\
+\int_{a}^{x}\frac{1}{b-a}dt=\frac{x-a}{b-a} & a \leq x \leq b, \\
+1 & x > b. \\
 \end{array}
 \right.$$
 
@@ -436,15 +442,15 @@ Gráficos da função de densidade de probabilidade e da função de distribuiç
 
 *  Cálculo da $\mathbb E(X)$:
 
-$$\mathbb E(X) = \int_{a}^{b}x\frac{1}{(b-a)}dx=\frac{(b+a)}{2}$$
+$$\mathbb E(X) = \int_{a}^{b}x\frac{1}{(b-a)}dx=\frac{(b+a)}{2}.$$
 
 > *  Cálculo da $Var(X)$: 
 
-$$\mathbb E(X^{2}) = \int_{a}^{b}x^{2}\frac{1}{(b-a)}dx = \frac{(a^{2}+ab+b^{2})}{3}$$ 
+$$\mathbb E(X^{2}) = \int_{a}^{b}x^{2}\frac{1}{(b-a)}dx = \frac{(a^{2}+ab+b^{2})}{3},$$ 
 
 $$\begin{aligned}
 Var(X) & = \mathbb E(X^{2}) - [\mathbb E(X)]^{2} \\
-&= \frac{(a^{2}+ab+b^{2})}{3}-\frac{(b+a)^{2}}{4}= \frac{(b-a)^{2}}{12}
+&= \frac{(a^{2}+ab+b^{2})}{3}-\frac{(b+a)^{2}}{4}= \frac{(b-a)^{2}}{12}.
 \end{aligned}$$
 
 
@@ -456,8 +462,8 @@ A densidade de uma $U[50, 70]$ é dada por:
 
 $$ f_{H}(h) = \left\{
 \begin{array}{ll}
-\frac{1}{70-50}=\frac{1}{20}, & 50 \leq x \leq 70 \\
-0, & \mbox{caso contrário} \\
+\frac{1}{70-50}=\frac{1}{20} & 50 \leq x \leq 70, \\
+0 & \mbox{caso contrário.} \\
 \end{array}
 \right.$$
  
@@ -517,13 +523,13 @@ $$
 
 $$ f_{X}(x) = \left\{
 \begin{array}{ll}
-\frac{1}{10}, & 10 \leq x \leq 20 \\
-0, & \mbox{caso contrário} \\
+\frac{1}{10}, & 10 \leq x \leq 20; \\
+0, & \mbox{caso contrário.} \\
 \end{array}
 \right.$$  
 
 Então, a probabilidade de $X>14$ é dada por 
-$$P(X>14) = \int_{14}^{20}\frac{1}{10}dx =  \frac{(20-14)}{10} = 0.6$$
+$$P(X>14) = \int_{14}^{20}\frac{1}{10}dx =  \frac{(20-14)}{10} = 0.6\,.$$
 
 
 # Distribuição Exponencial
@@ -534,8 +540,8 @@ $$P(X>14) = \int_{14}^{20}\frac{1}{10}dx =  \frac{(20-14)}{10} = 0.6$$
 
 $$ f_{X}(x) = \left\{
 \begin{array}{ll}
-\lambda e^{-\lambda x}, & x \geq 0 \\
-0, & \mbox{caso contrário} \\
+\lambda e^{-\lambda x} & x \geq 0, \\
+0 & \mbox{caso contrário.} \\
 \end{array}
 \right.$$  
 
@@ -545,8 +551,8 @@ $$ f_{X}(x) = \left\{
 
 $$ F_{X}(x) = \left\{
 \begin{array}{ll}
-\int_{0}^{x}\lambda e^{-\lambda t}dt=1-e^{-\lambda x}, & x \geq 0 \\
-0, & \mbox{caso contrário} \\
+\int_{0}^{x}\lambda e^{-\lambda t}dt=1-e^{-\lambda x} & x \geq 0, \\
+0 & \mbox{caso contrário.} \\
 \end{array}
 \right.$$
 
@@ -573,13 +579,13 @@ curve(1-exp(-lambda*x), 0, maxi, xlab = "x", ylab = "F(x)", type = "l", bty="l",
 
 *  Cálculo da $\mathbb E(X)$:
 
-$$\mathbb E(X)=\int_{0}^{\infty}x\lambda e^{-\lambda x}dx=\frac{1}{\lambda}$$
+$$\mathbb E(X)=\int_{0}^{\infty}x\lambda e^{-\lambda x}dx=\frac{1}{\lambda}\,.$$
 
 > *  Cálculo da $Var(X)$:
 
-$$\mathbb  E(X^{2})=\int_{0}^{\infty}x^{2}\lambda e^{-\lambda x}dx=\frac{2}{\lambda^{2}}$$
+$$\mathbb  E(X^{2})=\int_{0}^{\infty}x^{2}\lambda e^{-\lambda x}dx=\frac{2}{\lambda^{2}},$$
 
-> $$Var(X) = \mathbb E(X^{2}) - [\mathbb  E(X)]^{2} = \frac{2}{\lambda^{2}} - \frac{1}{\lambda^{2}} = \frac{1}{\lambda^{2}}$$
+> $$Var(X) = \mathbb E(X^{2}) - [\mathbb  E(X)]^{2} = \frac{2}{\lambda^{2}} - \frac{1}{\lambda^{2}} = \frac{1}{\lambda^{2}}\,.$$
 
 
 
@@ -598,7 +604,7 @@ e $\mathbb E(X) = \lambda^{-1}$.
 
 > Basta então observarmos que 
 
-$$P(X \leq 1000) = 1 - e^{-\lambda 1000} = 0.75 \quad \Leftrightarrow \quad \lambda = \frac{\ln(4)}{1000} = 0.0013863$$   
+$$P(X \leq 1000) = 1 - e^{-\lambda 1000} = 0.75 \quad \Leftrightarrow \quad \lambda = \frac{\ln(4)}{1000} = 0.0013863\,.$$   
 
 > Concluimos então que o tempo médio de vida, $\mathbb E(X)$, é igual a $1/0.0013863 = 721.35$ horas, e que $75\%$ dos componentes duram 1000 horas ou menos.
 
@@ -618,8 +624,8 @@ $X$: vida útil do tubo de TV.
 
 Então, a f.d.p. é dada por $\displaystyle \qquad f_{X}(x) = \left\{
 \begin{array}{ll}
-\frac{1}{800} e^{-\frac{x}{800}}, & x \geq 0 \\
-0, & \mbox{caso contrário} \\
+\frac{1}{800} e^{-\frac{x}{800}}, & x \geq 0; \\
+0, & \mbox{caso contrário.} \\
 \end{array}
 \right.$ 
 
@@ -632,8 +638,8 @@ $$P(X<300) = \int_0^{300}\frac{1}{800}e^{-\frac{x}{800}}dx =\left[-e^{-\frac{x}{
 
 A f.d.p. $$ f_{X}(x) = \left\{
 \begin{array}{ll}
-2 e^{-2 x}, & x \geq 0 \\
-0, & \mbox{caso contrário} \\
+2 e^{-2 x} & x \geq 0, \\
+0 & \mbox{caso contrário.} \\
 \end{array}
 \right.$$   
 
@@ -652,9 +658,11 @@ Produto liberado para consumo se: $P(X<2) = \int_0^22 e^{-2 x}dx= \left[-e^{-2x}
 
 > Produto não consumível com probabilidade  $1 - P(X<2) = 0.02 = p$.  
 
-> $Y$: número de unidades impróprias para consumo na amostra de 30. 
+> Seja $Y$: número de unidades impróprias para consumo na amostra de 30. 
 
-> $Y\sim \mbox{Bin}(30, 0.02)$.
+Então,
+
+> $$Y\sim \mbox{Bin}(30, 0.02).$$
 
 Probabilidade de que pelo menos 10\% de uma amostra de 30 unidades seja imprópria:
 </font><font size=4>
@@ -663,7 +671,7 @@ $$
 P(Y \geq 3) &= 1- P(Y<3) \\
 &= 1 - [P(Y=0) + P(Y=1) + P(Y=2)] \\
 &= 1 - \left[\binom{30}{0}(0.02)^0(0.98)^{30} + \binom{30}{1}(0.02)^1(0.98)^{29}+\binom{30}{2}(0.02)^2(0.98)^{28} \right]\\
-&= 0.022
+&= 0.022\,.
 \end{aligned}
 $$
 
