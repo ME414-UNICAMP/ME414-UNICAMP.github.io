@@ -16,7 +16,7 @@ Dizemos que uma v.a. $X$ possui distribuição normal com parâmetros $\mu$ e $\
 
 $$f_{X}(x) = \frac{1}{\sqrt{2\pi\sigma^{2}}} \exp \left[-\frac{(x-\mu)^{2}}{2\sigma^{2}}\right], \qquad -\infty < x < \infty.$$ 
 
-**Notação:** $X\sim N(\mu,\sigma^{2})$
+**Notação:** $X\sim N(\mu,\sigma^{2})$.
 
 Distribuição mais importante da Estatística. Também conhecida como distribuição Gaussiana.
 
@@ -60,6 +60,7 @@ legend("topright", legend=expression(mu==0 ~~ sigma == 1, mu==0 ~~ sigma == 0.5,
                                      mu==2 ~~ sigma == 1, mu==-2 ~~ sigma == 1,
                                      mu==0 ~~ sigma == 2),
        lwd=2, col=c(1, mycol[c(4,3,1,6)]), cex=1, bty="n")
+abline(v=0,lwd=2,lty=2)
 ```
 </center>
 
@@ -100,7 +101,7 @@ Comparação da distribuição das alturas da população adulta norte-americana
 
 ## Distribuição Normal Padrão {.build}
 
-**Propriedade**: Se $X \sim N(\mu, \sigma^{2})$, então 
+**Propriedade**: Se $Z \sim N(\mu, \sigma^{2})$, então 
 $$Z=\frac{X-\mu}{\sigma} \sim N(0,1).$$
 
 Dizemos que $Z$ tem distribuição **Normal Padrão** e sua densidade se reduz a:
@@ -147,7 +148,7 @@ Uma universidade americana recebeu inscrição de dois alunos (Pam e Jim) com os
 
 Seja $X$ uma v.a. representando a nota no SAT: $X\sim N(\mu=1500,\sigma^2=300^2)$.
 
-Seja $Y$ uma v.a. representando a nota no ACT: $X\sim N(\mu=21,\sigma^2=5^2)$.
+Seja $Y$ uma v.a. representando a nota no ACT: $Y\sim N(\mu=21,\sigma^2=5^2)$.
 
 
 ## Exemplo: SAT e ACT
@@ -275,10 +276,15 @@ $$
 <center><img src="figuras/intervalo.png" width=800></center>
 
 
-## Tabela Normal
+<!-- ## Tabela Normal -->
 
-<center><img src="figuras/TabelaNormalPadrao.png" width=700></center>
+<!-- <center><img src="figuras/TabelaNormalPadrao.png" width=700></center> -->
 
+## Distribuição Normal <!-- comentei o slide 26 e coloquei aqui! -->
+
+Veja a tabela da normal com os valores de $\varPhi(1)$ e $\varPhi(0)$ destacados:
+
+<center><img src="figuras/TabelaNormalPadrao2.png" width=600></center>
 
 ## Distribuição Normal {.build}
 
@@ -350,11 +356,11 @@ P(8<X<10) &= P(-1<Z<0) \\
 \end{aligned}
 $$
 
-## Distribuição Normal
+<!-- ## Distribuição Normal -->
 
-Veja a tabela da normal com os valores de $\varPhi(1)$ e $\varPhi(0)$ destacados:
+<!-- Veja a tabela da normal com os valores de $\varPhi(1)$ e $\varPhi(0)$ destacados: -->
 
-<center><img src="figuras/TabelaNormalPadrao2.png" width=600></center>
+<!-- <center><img src="figuras/TabelaNormalPadrao2.png" width=600></center> -->
 
 ## Distribuição Normal
 
@@ -457,7 +463,7 @@ E se quisermos $95\%$? E $99.7\%$?
 
 <img src="figuras/IQtest.gif" width=480 style="float: left; margin-right: 20px">
 
-Como $QI \sim N(100, 15)$, pela regra empírica:
+Como $QI \sim N(100, 15^2)$, pela regra empírica:
 
 $68.3\%$ da população: $85 \leq QI \leq 115$ 
 
