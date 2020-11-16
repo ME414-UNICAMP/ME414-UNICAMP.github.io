@@ -101,7 +101,7 @@ Comparação da distribuição das alturas da população adulta norte-americana
 
 ## Distribuição Normal Padrão {.build}
 
-**Propriedade**: Se $Z \sim N(\mu, \sigma^{2})$, então 
+**Propriedade**: Se $X \sim N(\mu, \sigma^{2})$, então 
 $$Z=\frac{X-\mu}{\sigma} \sim N(0,1).$$
 
 Dizemos que $Z$ tem distribuição **Normal Padrão** e sua densidade se reduz a:
