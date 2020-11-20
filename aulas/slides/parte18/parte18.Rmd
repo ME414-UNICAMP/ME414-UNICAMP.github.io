@@ -555,7 +555,7 @@ No nosso exemplo, suponha que não sabemos o valor de $\sigma$, mas o desvio pad
 <font size=5> $$H_0: \mu = 500 \quad \mbox{vs} \quad H_a: \mu \neq 500$$ </font>
 
 **Estatística do teste:**
-<font size=5>$$t_{obs} = \frac{\bar{X}-\mu_0}{s/\sqrt{n}} = \frac{485-500}{7.1/5} = -10.56$$ </font>
+<font size=5>$$t_{obs} = \frac{\bar{x}_{obs}-\mu_0}{s/\sqrt{n}} = \frac{485-500}{7.1/5} = -10.56$$ </font>
 
 **valor-de-p:** <font size=5>$P(|t_{24}| ≥ 10.56) = 2P(t_{24} ≥ 10.56) \approx 0$ </font>
 
@@ -602,7 +602,7 @@ Ou seja, estamos testando se não há diferença no peso após a dieta versus a 
 
 <img src="figuras/lowcarb.jpg" width=300 style="float: right; margin:10px">
 
-**Estatística do teste**: Como $n=41$, podemos usar a aproximação normal $$z_{obs}=\frac{\bar{X}-\mu_0}{s/\sqrt{n}}=\frac{-9.7-0}{3.4/\sqrt{41}}=-18.3$$
+**Estatística do teste**: Como $n=41$, podemos usar a aproximação normal $$z_{obs}=\frac{\bar{x}_{obs}-\mu_0}{s/\sqrt{n}}=\frac{-9.7-0}{3.4/\sqrt{41}}=-18.3$$
 
 **Valor-de-p**: Como o teste é unilateral à esquerda
 
@@ -621,7 +621,7 @@ A associação dos proprietários de indústrias metalúrgicas está muito preoc
 
 Tentou-se um programa de prevenção de acidentes, após o qual foi tomada uma amostra de nove indústrias e medido o número de horas/homens perdidos por acidentes, que foi de 50 horas.  
 
-Você diria, a um nível de significânia de $5\%$, que há evidência de melhoria?
+Você diria, a um nível de significância de $5\%$, que há evidência de melhoria?
 
 <br />
 *Fonte: Morettin \& Bussab*, Estatística Básica $5^a$ edição, pág. 334.
@@ -633,7 +633,7 @@ Queremos testar a hipótese que $\mu$, o número médio de horas perdidas com ac
 $$H_0: \mu = 60 \quad \mbox{vs} \quad H_a: \mu < 60$$ 
 
 **Estatística do teste:**
-$$z_{obs} = \frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}} = \frac{50-60}{20/3} = -1.5 $$
+$$z_{obs} = \frac{\bar{x}_{obs}-\mu_0}{\sigma/\sqrt{n}} = \frac{50-60}{20/3} = -1.5 $$
 
 **valor-de-p:** $P(Z \leq -1.5) = 0.067$
 
