@@ -433,7 +433,7 @@ s_p^2 &= \frac{(n-1)s_H^2 + (m-1)s_M^2}{n+m-2}\\
 
 Nesse caso, um IC de 95% para $\mu_H - \mu_M$ é dado por:
 $$\begin{aligned}
-IC(\mu_H - \mu_M, 0.95) &= (\bar X_H - \bar X_M) \pm t_{n+m-2, 0.025} \sqrt{s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
+IC(\mu_H - \mu_M, 0.95) &= (\bar x_H - \bar x_M) \pm t_{n+m-2, 0.025} \sqrt{s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
 &= (`r xbar` - `r ybar`) \pm `r t.alfa2` \sqrt{`r s2p` \left(\frac{1}{`r n`} + \frac{1}{`r m`}\right)} \\
 &= `r est` \pm `r t.alfa2` \times `r round(se.est, 2)` \\
 &= `r est` \pm `r me` \\
