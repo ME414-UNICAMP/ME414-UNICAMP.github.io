@@ -3175,7 +3175,7 @@ slide:not(.current) .plotly.html-widget{
 
 <p>\[P(-z_{\alpha/2} \leq Z \leq z_{\alpha/2}) = P \left( -z_{\alpha/2} \leq \frac{(\bar{X} - \bar{Y}) - (\mu_1 - \mu_2)}{\displaystyle \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}} \leq z_{\alpha/2}\right) = 1-\alpha\]</p>
 
-<p>Portanto, um IC de \(100(1-\alpha)\%\) para \(\mu_1 - \mu_2\) é dado por: \[IC(\mu_1 - \mu_2, 1-\alpha) = (\bar{X} - \bar{Y}) \pm z_{\alpha/2} \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}\]</p>
+<p>Portanto, um IC de \(100(1-\alpha)\%\) para \(\mu_1 - \mu_2\) é dado por: \[IC(\mu_1 - \mu_2, 1-\alpha) = (\bar{x} - \bar{y}) \pm z_{\alpha/2} \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}\]</p>
 
 </article></slide><slide class=""><hgroup><h2>Relembrando: Como encontrar \(z_{\alpha/2}\)</h2></hgroup><article  id="relembrando-como-encontrar-z_alpha2">
 
@@ -3197,7 +3197,7 @@ slide:not(.current) .plotly.html-widget{
 
 <p>Então, \[Z= \frac{(\bar{X} - \bar{Y}) - (\mu_1 - \mu_2)}{\displaystyle \sqrt{\sigma^2 \left(\frac{1}{n} + \frac{1}{m}\right) }} \sim N(0, 1)\]</p>
 
-<p>E um IC de \(100(1-\alpha)\%\) para \(\mu_1 - \mu_2\) é dado por: \[IC(\mu_1 - \mu_2, 1-\alpha) = (\bar{X} - \bar{Y}) \pm z_{\alpha/2} \sqrt{\sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}\]</p>
+<p>E um IC de \(100(1-\alpha)\%\) para \(\mu_1 - \mu_2\) é dado por: \[IC(\mu_1 - \mu_2, 1-\alpha) = (\bar{x} - \bar{y}) \pm z_{\alpha/2} \sqrt{\sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}\]</p>
 
 </article></slide><slide class=""><hgroup><h2>Intervalo de Confiança para Duas Médias</h2></hgroup><article  class="build" id="intervalo-de-confiança-para-duas-médias-4">
 
@@ -3213,7 +3213,7 @@ slide:not(.current) .plotly.html-widget{
 
 <p>Então temos:\(\displaystyle \quad T= \frac{(\bar{X} - \bar{Y}) - (\mu_1 - \mu_2)}{\displaystyle \sqrt{S_p^2 \left(\frac{1}{n} + \frac{1}{m}\right) }} \sim t_{n+m-2}\)</p>
 
-<p>E um IC de \(100(1-\alpha)\%\) para \(\mu_1 - \mu_2\) é dado por: \[IC(\mu_1 - \mu_2, 1-\alpha) = (\bar X - \bar Y) \pm t_{n+m-2, \alpha/2} \sqrt{S_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}\]</p>
+<p>E um IC de \(100(1-\alpha)\%\) para \(\mu_1 - \mu_2\) é dado por: \[IC(\mu_1 - \mu_2, 1-\alpha) = (\bar x - \bar y) \pm t_{n+m-2, \alpha/2} \sqrt{S_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}\]</p>
 
 <p><strong>Observação:</strong> Se \(n\) e \(m\) são pequenos, as duas amostras devem vir de populações aproximadamente normais. Se \(n\) e \(m\) são grandes, então a distribuição \(t\) com \(n+m-2\) graus de liberdade aproxima-se de uma normal.</p>
 
@@ -3302,7 +3302,7 @@ slide:not(.current) .plotly.html-widget{
 </article></slide><slide class=""><hgroup><h2>Exemplo: Tempos de Incubação</h2></hgroup><article  class="build" id="exemplo-tempos-de-incubação-3">
 
 <p>Portanto, um Intervalo de \(95\%\) de confiança para \(\mu_1-\mu_2\) é dado por: \[\begin{aligned}
-IC(\mu_1-\mu_2, 0.95)&amp;= (\bar X - \bar Y) \pm z_{0.025} \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}} \\
+IC(\mu_1-\mu_2, 0.95)&amp;= (\bar x - \bar y) \pm z_{0.025} \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}} \\
 &amp;= (4.21 - 2.02) \pm 1.96 \sqrt{\frac{2}{20} + \frac{1}{22}} \\
 &amp;= 2.19 \pm 1.96 \times 0.38 \\
 &amp;= 2.19 \pm 0.75 \\
@@ -3365,7 +3365,7 @@ IC(\mu_1-\mu_2, 0.95)&amp;= (\bar X - \bar Y) \pm z_{0.025} \sqrt{\frac{\sigma_1
 </article></slide><slide class=""><hgroup><h2>Exemplo: Tecidos</h2></hgroup><article  class="build" id="exemplo-tecidos-2">
 
 <p>Assumindo que as variâncias são iguais e <strong>conhecidas</strong> (\(\sigma_1^2=\sigma_2^2=49\)), um IC de 95% para \(\mu_A - \mu_B\) é dado por: \[\begin{aligned}
-IC(\mu_A - \mu_B, 0.95) &amp;= (\bar X_A - \bar X_B) \pm z_{0.025} \sqrt{\sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
+IC(\mu_A - \mu_B, 0.95) &amp;= (\bar x_A - \bar x_B) \pm z_{0.025} \sqrt{\sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
 &amp;= (30.86 - 33.57) \pm 1.96 \sqrt{49 \left(\frac{1}{7} + \frac{1}{7}\right)} \\
 &amp;= -2.71 \pm 1.96 \times 3.74 \\
 &amp;= -2.71 \pm 7.33 \\
@@ -3389,7 +3389,7 @@ s_p^2 &amp;= \frac{(n-1)s_1^2 + (m-1)s_2^2}{n+m-2}\\
 </article></slide><slide class=""><hgroup><h2>Exemplo: Tecidos</h2></hgroup><article  class="build" id="exemplo-tecidos-4">
 
 <p>Nesse caso, um IC de 95% para \(\mu_A - \mu_B\) é dado por: \[\begin{aligned}
-IC(\mu_A - \mu_B, 0.95) &amp;= (\bar X_A - \bar X_B) \pm t_{n+m-2, 0.025} \sqrt{s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
+IC(\mu_A - \mu_B, 0.95) &amp;= (\bar x_A - \bar x_B) \pm t_{n+m-2, 0.025} \sqrt{s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
 &amp;= (30.86 - 33.57) \pm 2.18 \sqrt{48.38 \left(\frac{1}{7} + \frac{1}{7}\right)} \\
 &amp;= -2.71 \pm 2.18 \times 3.72 \\
 &amp;= -2.71 \pm 8.11 \\

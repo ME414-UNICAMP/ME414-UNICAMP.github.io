@@ -48,7 +48,7 @@ Do resultando anterior, similar com o que fizemos para uma média, podemos const
 $$P(-z_{\alpha/2} \leq Z \leq z_{\alpha/2}) = P \left( -z_{\alpha/2} \leq \frac{(\bar{X} - \bar{Y}) - (\mu_1 - \mu_2)}{\displaystyle \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}} \leq z_{\alpha/2}\right) = 1-\alpha$$
 
 Portanto, um IC de $100(1-\alpha)\%$ para $\mu_1 - \mu_2$ é dado por:
-$$IC(\mu_1 - \mu_2, 1-\alpha) = (\bar{X} - \bar{Y}) \pm z_{\alpha/2} \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}$$
+$$IC(\mu_1 - \mu_2, 1-\alpha) = (\bar{x} - \bar{y}) \pm z_{\alpha/2} \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}$$
 
 
 ## Relembrando: Como encontrar $z_{\alpha/2}$
@@ -106,7 +106,7 @@ Então,
 $$Z= \frac{(\bar{X} - \bar{Y}) - (\mu_1 - \mu_2)}{\displaystyle \sqrt{\sigma^2 \left(\frac{1}{n} + \frac{1}{m}\right) }} \sim N(0, 1)$$
 
 E um IC de $100(1-\alpha)\%$ para $\mu_1 - \mu_2$ é dado por:
-$$IC(\mu_1 - \mu_2, 1-\alpha) = (\bar{X} - \bar{Y}) \pm z_{\alpha/2} \sqrt{\sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$$
+$$IC(\mu_1 - \mu_2, 1-\alpha) = (\bar{x} - \bar{y}) \pm z_{\alpha/2} \sqrt{\sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$$
 
 ## Intervalo de Confiança para Duas Médias {.build}
 
@@ -126,7 +126,7 @@ sendo $S_i^2$ é a variância amostral da população $i$.
 Então temos:$\displaystyle \quad T= \frac{(\bar{X} - \bar{Y}) - (\mu_1 - \mu_2)}{\displaystyle \sqrt{S_p^2 \left(\frac{1}{n} + \frac{1}{m}\right) }} \sim t_{n+m-2}$
 
 E um IC de $100(1-\alpha)\%$ para $\mu_1 - \mu_2$ é dado por:
-$$IC(\mu_1 - \mu_2, 1-\alpha) = (\bar X - \bar Y) \pm t_{n+m-2, \alpha/2} \sqrt{S_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$$
+$$IC(\mu_1 - \mu_2, 1-\alpha) = (\bar x - \bar y) \pm t_{n+m-2, \alpha/2} \sqrt{S_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$$
 
 **Observação:** Se $n$ e $m$ são pequenos, as duas amostras devem vir de populações aproximadamente normais. Se $n$ e $m$ são grandes, então a distribuição $t$ com $n+m-2$ graus de liberdade aproxima-se de uma normal.
 
@@ -270,7 +270,7 @@ ggplot(df, aes(y = tempo, x = virus, fill = virus)) +
 
 Portanto, um Intervalo de $95\%$ de confiança para $\mu_1-\mu_2$ é dado por:
 $$\begin{aligned}
-IC(\mu_1-\mu_2, 0.95)&= (\bar X - \bar Y) \pm z_{0.025} \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}} \\
+IC(\mu_1-\mu_2, 0.95)&= (\bar x - \bar y) \pm z_{0.025} \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}} \\
 &= (`r xbar` - `r ybar`) \pm `r z.alfa2` \sqrt{\frac{`r sigma21`}{`r n`} + \frac{`r sigma22`}{`r m`}} \\
 &= `r est` \pm `r z.alfa2` \times `r round(se.est, 2)` \\
 &= `r est` \pm `r me` \\
@@ -339,7 +339,7 @@ A variância populacional é igual a `r sigma2`, enquanto as variâncias amostra
 
 Assumindo que as variâncias são iguais e **conhecidas** ($\sigma_1^2=\sigma_2^2=`r sigma2`$), um IC de 95% para $\mu_A - \mu_B$ é dado por:
 $$\begin{aligned}
-IC(\mu_A - \mu_B, 0.95) &= (\bar X_A - \bar X_B) \pm z_{0.025} \sqrt{\sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
+IC(\mu_A - \mu_B, 0.95) &= (\bar x_A - \bar x_B) \pm z_{0.025} \sqrt{\sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
 &= (`r xbar` - `r ybar`) \pm `r z.alfa2` \sqrt{`r sigma2` \left(\frac{1}{`r n`} + \frac{1}{`r m`}\right)} \\
 &= `r est` \pm `r z.alfa2` \times `r round(se.est1, 2)` \\
 &= `r est` \pm `r me1` \\
@@ -367,7 +367,7 @@ s_p^2 &= \frac{(n-1)s_1^2 + (m-1)s_2^2}{n+m-2}\\
 
 Nesse caso, um IC de 95% para $\mu_A - \mu_B$ é dado por:
 $$\begin{aligned}
-IC(\mu_A - \mu_B, 0.95) &= (\bar X_A - \bar X_B) \pm t_{n+m-2, 0.025} \sqrt{s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
+IC(\mu_A - \mu_B, 0.95) &= (\bar x_A - \bar x_B) \pm t_{n+m-2, 0.025} \sqrt{s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
 &= (`r xbar` - `r ybar`) \pm `r t.alfa2` \sqrt{`r s2p` \left(\frac{1}{`r n`} + \frac{1}{`r m`}\right)} \\
 &= `r est` \pm `r t.alfa2` \times `r round(se.est2, 2)` \\
 &= `r est` \pm `r me2` \\
