@@ -532,7 +532,7 @@ Veja que as condições são satisfeitas.
 
 Então um IC de 95% para $p_A - p_B$ é dado por:
 $$\begin{aligned}
-IC(p_A - p_B, `r 1-alpha`) &= (\hat p_1 - \hat p_2) \pm z_{0.025} \sqrt{\frac{\hat p_1 (1 - \hat p_1)}{n_1} + \frac{\hat p_2 (1 - \hat p_2)}{n_2}} \\
+IC(p_A - p_B, `r 1-alpha`) &= (\hat p_A - \hat p_B) \pm z_{0.025} \sqrt{\frac{\hat p_A (1 - \hat p_A)}{n_A} + \frac{\hat p_B (1 - \hat p_B)}{n_B}} \\
 &= (`r p1` - `r p2`) \pm `r z.alfa2` \sqrt{\frac{`r p1` (`r 1-p1`)}{`r n1`} + \frac{`r p2` (`r 1-p2`)}{`r n2`}} \\
 &= `r est` \pm `r z.alfa2` \times `r round(se.est, 3)` \\
 &= `r est` \pm `r me` \\
