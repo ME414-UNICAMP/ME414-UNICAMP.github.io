@@ -43,8 +43,10 @@ n1 = 3
 
 n2 = 3
 
-trat <- sample(c("A","A","A","B","B","B"),n,replace=FALSE)
+#trat <- sample(c("A","A","A","B","B","B"),n,replace=FALSE)
 id <- 1:n
+
+trat <- c("A","A","A","B","B","B")
 resposta <- c(19,23,33,22,25,40)
 
 dados <- data.frame(ID=id,Tratamento=trat,Resposta=resposta)
@@ -66,7 +68,7 @@ Após aplicar o tratamento, coletamos a variável resposta de interesse em cada 
 
 Dados observados:
 
-```{r,echo=FALSE}
+```{r,echo=FALSE,message=FALSE}
 library(printr)
 dados
 ```
@@ -114,7 +116,7 @@ Se $H_0$ é verdadeira, então a resposta de cada pessoa não tem ligação com 
 
 Se $H_0$ é verdadeira, a diferença observada de `r xbarA-xbarB`, foi apenas consequência de uma alocação aleatória em dois grupos $A$ e $B$.
 
-Iremos, desta forma, repetir o argumento da $H_0$: avaliar todas as alocações aleatórias possíveis e 6 pessoas entre os Tratamentos $A$ e $B$ e calcular a diferença.
+Iremos, desta forma, repetir o argumento da $H_0$: avaliar todas as alocações aleatórias possíveis de 6 pessoas entre os Tratamentos $A$ e $B$ e calcular a diferença.
 
 
 ## Exemplo {.build}
