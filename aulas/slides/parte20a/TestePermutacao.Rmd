@@ -16,13 +16,13 @@ Testes de permutação/aleatorização podem ser utilizados para avaliar hipóte
 
 > Os pesquisadores têm à disposição 10 pessoas.
 
-<center><img src="figuras/IMG_20170530_143305562.jpg" width=450></center>
+<center><img src="figuras/fig1.jpg" width=550></center>
 
 ## Exemplo
 
 As 10 pessoas são alocadas, aleatoriamente, a um dos tratamentos:
 
-<center><img src="figuras/IMG_20170530_143757477.jpg" width=650></center>
+<center><img src="figuras/fig2.jpg" width=850></center>
 
 
 ```{r,echo=FALSE}
@@ -41,13 +41,23 @@ n1 = 5
 
 n2 = 5
 
-trat <- c("A","A","A","A","A","B","B","B","B","B")
+set.seed(22020)
+trat <- sample(c("A","A","A","A","A","B","B","B","B","B"),size=n,replace=FALSE)
 
 id <- 1:n
 
 set.seed(22020)
-resposta <- c(rpois(n1,lambda=14),rpois(n2,lambda=20))
-#[1] 10 16 13 18 16 33 24 19 29 29
+tmp <- c(rpois(n1,lambda=14),rpois(n2,lambda=20))
+
+resposta <- tmp
+resposta[trat=="A"] <- tmp[1:n1]
+resposta[trat=="B"] <- tmp[(n1+1):n]
+
+#[1] 10 16 13 18 16 33 24 19 29 29 (valores dos individuos id 1:10)
+#> resposta
+# [1] 33 10 24 16 13 18 19 29 29 16
+#> trat
+# [1] "B" "A" "B" "A" "A" "A" "B" "B" "B" "A"
 
 dados <- data.frame(ID=id,Tratamento=trat,Resposta=resposta)
 
@@ -262,13 +272,19 @@ n1 = 10
 
 n2 = 10
 
-trat <- c(rep("A",n1),rep("B",n2))
+set.seed(22020)
+
+trat <- sample(c(rep("A",n1),rep("B",n2)),size=n,replace=FALSE)
 id <- 1:n
 #resposta <- c(rbinom(n1,n,p=.2),rbinom(n2,n,p=.4))
 
 set.seed(22020)
-resposta <- c(rpois(n1,lambda=14),rpois(n2,lambda=20))
-#  [1] 10 16 13 18 16 25 17 13 22 21 18 32 17 21 16 13 24 34 16 24
+tmp <- c(rpois(n1,lambda=14),rpois(n2,lambda=20))
+#  [1] 10 16 13 18 16 25 17 13 22 21 18 32 17 21 16 13 24 34 16 24 resposta dos ids 1:n
+
+resposta <- tmp
+resposta[trat=="A"] <- tmp[1:n1]
+resposta[trat=="B"] <- tmp[(n1+1):n]
 
 
 dados <- data.frame(ID=id,Tratamento=trat,Resposta=resposta)
