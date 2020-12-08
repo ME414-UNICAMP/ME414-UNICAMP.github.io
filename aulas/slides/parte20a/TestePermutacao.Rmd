@@ -72,7 +72,7 @@ xbarB <- round(mean(dados$Resposta[dados$Tratamento=="B"]),2)
 Após aplicar o tratamento, coletamos a variável resposta de interesse em cada pessoa.
 
 
-<center><img src="figuras/IMG_20170530_144928401.jpg" width=650></center>
+<center><img src="figuras/fig3.jpg" width=850></center>
 
 ## Exemplo - Dados observados {.smaller}
 
@@ -112,13 +112,7 @@ Sob $H_0$, não existe diferença entre os tratamentos.
 
 Se $H_0$ é verdadeira, então a resposta de cada pessoa não tem ligação com o tratamento que ela recebeu.
 
-<center><img src="figuras/IMG_20170530_152352435.jpg" width=600></center>
-
-## Exemplo
-
-Se $H_0$ é verdadeira, então a resposta de cada pessoa não tem ligação com o tratamento que ela recebeu.
-
-<center><img src="figuras/IMG_20170530_152710620.jpg" width=600></center>
+<center><img src="figuras/fig4.jpg" width=800></center>
 
 
 ## Exemplo {.build}
