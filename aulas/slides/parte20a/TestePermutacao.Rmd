@@ -150,7 +150,7 @@ colnames(todasperm) <- c("id Trat A"," id Trat A"," id Trat A","id Trat A","id T
 ## Alguns ex das 252 combinações possíveis {.smaller}
 
 
-<center><img src="figuras/IMG_20170530_154142929.jpg" width=600></center>
+<center><img src="figuras/fig5.jpg" width=800></center>
 
 ```{r,echo=FALSE}
 todasperm[8,]
@@ -159,21 +159,13 @@ todasperm[8,]
 
 ## Alguns ex das 252 combinações possíveis {.smaller}
 
-<center><img src="figuras/IMG_20170530_154128635.jpg" width=600></center>
+<center><img src="figuras/fig6.jpg" width=800></center>
 
 
 ```{r,echo=FALSE}
 todasperm[2,]
 ```
 
-## Alguns ex das 252 combinações possíveis {.smaller}
-
-<center><img src="figuras/IMG_20170530_154108029.jpg" width=600></center>
-
-
-```{r,echo=FALSE}
-todasperm[4,]
-```
 
 ## Alguns ex das 252 combinações possíveis {.smaller}
 
