@@ -46,8 +46,8 @@ trat <- c("A","A","A","A","A","B","B","B","B","B")
 id <- 1:n
 
 set.seed(22020)
-resposta <- c(rpois(n1,lambda=14),rpois(n2,lambda=17))
-#10 16 13 18 16 29 21 16 26 25
+resposta <- c(rpois(n1,lambda=14),rpois(n2,lambda=20))
+#[1] 10 16 13 18 16 33 24 19 29 29
 
 dados <- data.frame(ID=id,Tratamento=trat,Resposta=resposta)
 
@@ -254,7 +254,7 @@ t.test(Resposta ~ Tratamento,data=dados,alternative="two.sided",var.equal=FALSE)
 
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 
-set.seed(12017) 
+#set.seed(12017) 
 
 n =20
 
@@ -264,7 +264,12 @@ n2 = 10
 
 trat <- c(rep("A",n1),rep("B",n2))
 id <- 1:n
-resposta <- c(rbinom(n1,n,p=.2),rbinom(n2,n,p=.4))
+#resposta <- c(rbinom(n1,n,p=.2),rbinom(n2,n,p=.4))
+
+set.seed(22020)
+resposta <- c(rpois(n1,lambda=14),rpois(n2,lambda=20))
+#  [1] 10 16 13 18 16 25 17 13 22 21 18 32 17 21 16 13 24 34 16 24
+
 
 dados <- data.frame(ID=id,Tratamento=trat,Resposta=resposta)
 
