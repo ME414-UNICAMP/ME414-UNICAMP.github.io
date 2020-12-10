@@ -225,7 +225,7 @@ Como temos `r choose(10,5)` combinações possíveis e apenas `r sum(abs(diff)>=
 
 $$ \frac{`r sum(abs(diff)>=abs(xbarA-xbarB))`}{`r choose(10,5)`}=`r mean(abs(diff)>=abs(xbarA-xbarB))` $$
 
-Desta maneira, uma valor de diferença como o observado ou ainda mais extremo pode ocorrer ao acaso com probabilidade `r mean(abs(diff)>=abs(xbarA-xbarB))`. Se considerarmos um nível de significância $\alpha=0.05$, concluímos que dados portanto trazem evidências para rejeitar a hipótese de que não há diferença entre os tratamentos.
+Desta maneira, uma valor de diferença como o observado ou ainda mais extremo pode ocorrer ao acaso com probabilidade `r mean(abs(diff)>=abs(xbarA-xbarB))`. Se considerarmos um nível de significância $\alpha=0.05$, concluímos que os dados trazem evidências para rejeitar a hipótese de que não há diferença entre os tratamentos.
 
 ## Exemplo
 
