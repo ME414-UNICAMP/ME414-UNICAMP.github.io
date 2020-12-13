@@ -630,12 +630,12 @@ $H_A: p_1 - p_2 > 0$| rejeitar $H_0$ se $z_{obs}\geq z_{\alpha}$ | $P(Z\geq z_{o
 
 ## Exemplo: decisão sobre gastos {.build}
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE,eval=FALSE}
 # adaptado de de Introductory Statistics with Randomization and Simulation - 1st Edition - Section 2.2  pag 65
 
 tmp <- read.csv("./dados/alunos_info.csv",na.strings = "-",stringsAsFactors = FALSE)
 dados <- tmp[tmp$P1>=5,]
-dados <- dados[complete.cases(dados),]
+dados <- dados[complete.cases(dados)]
 
 set.seed(22015)
 totalAmo <- sample(dados$email,200,replace=FALSE)
@@ -651,9 +651,10 @@ write.csv(grupo2,file="./dados/emails_versao2.csv")
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 # baixando as respostas do Google Forms
 library(downloader)
-download("https://docs.google.com/spreadsheets/d/1wkRl4U7omcjsKkqLavNLT5OomhCnNxVeV6OV_97fLuY/pub?gid=467476492&single=true&output=csv","./dados/resposta_grupo1.csv")
+#download("https://docs.google.com/spreadsheets/d/1wkRl4U7omcjsKkqLavNLT5OomhCnNxVeV6OV_97fLuY/pub?gid=467476492&single=true&output=csv","./dados/resposta_grupo1.csv")
 
-download("https://docs.google.com/spreadsheets/d/1RcUPMxfTUcPAONeW9wyhTKiKEaKs1sIl_phD5PLnrSM/pub?gid=1172315374&single=true&output=csv","./dados/resposta_grupo2.csv")
+
+#download("https://docs.google.com/spreadsheets/d/1RcUPMxfTUcPAONeW9wyhTKiKEaKs1sIl_phD5PLnrSM/pub?gid=1172315374&single=true&output=csv","./dados/resposta_grupo2.csv")
 
 library(data.table)
 resp1 <- fread("./dados/resposta_grupo1.csv")
