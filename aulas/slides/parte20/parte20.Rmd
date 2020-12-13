@@ -382,7 +382,7 @@ $\sigma_1^2 = `r sigma21`$ e $\sigma_2^2= `r sigma22`$. Veja que as populações
 
 Cálculo da estatística do teste:
 
-$$Z = \frac{(\bar X - \bar Y) - \Delta_0}{\sqrt{\frac{\sigma_1^2}{n} + \frac{\sigma_2^2}{m}}}  = \frac{(`r xbar` - `r ybar`) - `r Delta0`}{\sqrt{\frac{`r sigma21`}{`r n`} + \frac{`r sigma22`}{`r m`}}} =  `r zobs` = z_{obs}$$
+$$z_{obs} = \frac{(\bar x - \bar y) - \Delta_0}{\sqrt{\frac{\sigma_1^2}{n} + \frac{\sigma_2^2}{m}}}  = \frac{(`r xbar` - `r ybar`) - `r Delta0`}{\sqrt{\frac{`r sigma21`}{`r n`} + \frac{`r sigma22`}{`r m`}}} =  `r zobs` $$
 
 <br />
 Como é um teste bilateral, o valor de p é dado por:
@@ -469,7 +469,7 @@ Se a hipótese nula é verdadeira, temos que $\Delta_0 = \mu_A - \mu_B = 0$ e $Z
 ## Exemplo: Tecidos {.build}
 
 Cálculo da estatística do teste:
-$$Z = \frac{(\bar X_A - \bar X_B) - \Delta_0}{\sqrt{\sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}} = \frac{(`r xbar` - `r ybar`) - `r Delta0`}{\sqrt{`r sigma2` \left(\frac{1}{`r n`} + \frac{1}{`r m`} \right)}} =  `r zobs` = z_{obs}$$
+$$z_obs = \frac{(\bar x_A - \bar x_B) - \Delta_0}{\sqrt{\sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}} = \frac{(`r xbar` - `r ybar`) - `r Delta0`}{\sqrt{`r sigma2` \left(\frac{1}{`r n`} + \frac{1}{`r m`} \right)}} =  `r zobs`$$
 
 <br />
 Como é um teste bilateral, o valor de p é dado por:
