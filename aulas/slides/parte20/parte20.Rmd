@@ -447,7 +447,7 @@ zobs2 <- round(est/se.est2, 2)
 zc2 <- round(qt(1-alpha/2, n+m-2,lower.tail=TRUE),2)
 ```
 
-Os tecidos do tipo A tem uma média amostral igual a $\bar X_A=`r xbar`$. Já os tecidos do tipo B têm média amostral de $\bar X_B=`r ybar`$. 
+Os tecidos do tipo A tem uma média amostral igual a $\bar x_A=`r xbar`$. Já os tecidos do tipo B têm média amostral de $\bar x_B=`r ybar`$. 
 
 A variância populacional é igual a `r sigma2`, enquanto as variâncias amostrais são `r sigma21` e `r sigma22`, respectivamente.
 
@@ -507,66 +507,6 @@ Para um nível de significância $\alpha = `r alpha`$, rejeitamos $H_0$  se $|t_
 
 No caso, $|t_{obs}| = `r abs(zobs2)` < `r zc2` = t_{`r n + m -2`,`r alpha/2`}$. Portanto, não temos evidências para rejeitar a hipótese de que as médias dos dois tecidos são iguais.
 
-
-## Exemplo: Tempo de Adaptação {.build}
-
-Num estudo comparativo do tempo médio de adaptação (em anos), uma amostra aleatória, de 50 homens e 50 mulheres de um grande complexo industrial, produziu os seguintes resultados:
-
-  Estatística  | Homens | Mulheres
-------| ------ | --------
-Média | 3.2 | 3.7
-Desvio Padrão | 0.8 | 0.9
-
-<br />
-Construa um teste de hipótese com nível de significância de 5% para a diferença entre o tempo médio de adaptação para homens e mulheres.
-
-*Fonte:* Adaptado de Morettin \& Bussab, Estatística Básica $5^a$ edição, pág 365.
-
-
-## Exemplo: Tempo de Adaptação {.build}
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-xbar <- 3.2
-ybar <- 3.7
-
-sigma1 <- 0.8
-sigma2 <- 0.9
-n <- m <- 50
-
-## Intervalo de Confiança
-alpha <- .05 
-
-s2p <- round(((n-1)*sigma1^2 + (m-1)*sigma2^2)/(n+m-2), 2)
-
-est <- xbar - ybar
-se.est <- sqrt(s2p*(1/n + 1/m))
-
-zobs <- round(est/se.est, 2)
-zc <- round(qt(1-alpha/2, n+m-2, lower.tail=TRUE), 2)
-```
-
-Veja que não sabemos a variância populacional, mas temos os desvios padrão amostrais e estes são bem próximos. Então iremos assumir que as variâncias são iguais porém desconhecidas. 
-
-Nesse caso, vamos então estimar a variância amostral combinada.
-
-Sabendo que $s_H = `r sigma1`$, $s_M = `r sigma2`$ e $n=m=`r n`$ temos:
-$$\begin{aligned}
-s_p^2 &= \frac{(n-1)s_H^2 + (m-1)s_M^2}{n+m-2}\\
-&= \frac{(`r n`-1) (`r sigma1`)^2 + (`r m`-1)(`r sigma2`)^2}{`r n` + `r m` - 2} \\
-&= `r s2p`
-\end{aligned}$$
-
-
-## Exemplo: Tempo de Adaptação {.build}
-
-Nesse caso, a estatística do teste, sob $H_0$, é dada por:
-$$T = \frac{\bar X_H - \bar X_M}{\sqrt{S_p^2 (\frac{1}{n} + \frac{1}{m})}} \sim t_{n+m-2}$$
-
-Então,
-$$t_{obs} = \frac{\bar x_H - \bar x_M}{\sqrt{s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}}  = \frac{`r xbar`-`r ybar`}{\sqrt{`r s2p` \left( \frac{1}{`r n`} + \frac{1}{`r m`} \right)}} = `r zobs`$$
-
-Para um nível de significância $\alpha = `r alpha`$, rejeitamos $H_0$ se $|t_{obs}| \geq t_{n+m-2,`r alpha/2`}$.
-
-No caso, $|t_{obs}| = `r abs(zobs)` > `r zc` = t_{`r n + m -2`,`r alpha/2`}$. Portanto, temos evidências para rejeitar a hipótese de que as médias dos tempos de adaptação são iguais.
 
 
 # Inferência para duas populações: Teste de hipótese para duas proporções
