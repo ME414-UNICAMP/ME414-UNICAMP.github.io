@@ -544,7 +544,7 @@ quando $\sigma$ é desconhecido e a amostra é pequena ($n<30$) devemos utilizar
 **Estatística do teste**: 
 $$t = \frac{\bar{X}-\mu_0}{s/\sqrt{n}} \overset{H_0}{\sim} t_{n-1}$$
 
-**valor-de-p:** $P(|t_{n−1}| ≥ |t_{obs}|) = 2P(t_{n−1} ≥ t_{obs})$
+**valor-de-p:** $P(|t_{n−1}| ≥ |t_{obs}|) = 2P(t_{n−1} ≥ |t_{obs}|)$
 
 Para as hipóteses unilaterais, o raciocínio é semelhante ao que foi feito anteriormente quando $\sigma$ é conhecido.
 
