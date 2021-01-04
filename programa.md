@@ -102,8 +102,8 @@ title: " "
 
 ## Testes de Aderência, Independência e Homogeneidade
 
-[Parte21](../aulas/slides/parte21/parte21.html)
-[Parte22](../aulas/slides/parte22/parte22.html)
+<!--[Parte21](../aulas/slides/parte21/parte21.html) -->
+<!--[Parte22](../aulas/slides/parte22/parte22.html)-->
 
 ## Regressão Linear Simples
 
