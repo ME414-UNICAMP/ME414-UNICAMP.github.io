@@ -7,28 +7,21 @@ title: " "
 
 <br/>
 
-### ME414 - Turmas 2º Semestre de 2020
+### ME414 - Turma 1º Semestre de 2021
 
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:----------------:|:-------------------------------------|:-----------------------------:|
-| **Turma A**       | Mauricio Zevallos                  |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=8334) |
-| **Turma C**      | [Larissa Matos](https://larissamatos.github.io/)  |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7575) |
-| **Turma D**      | [Samara Flamini Kiihl](http://www.ime.unicamp.br/~samara/) |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7529) |
-| **Turma E**      | [Élcio Lebensztayn](http://www.ime.unicamp.br/~lebensztayn/) | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7710) |
-| **Turma F**      | [Tatiana Benaglia](http://www.ime.unicamp.br/~tatiana/) | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7566) |
-| **Turma I**       | Filidor E. Vilca Labra | [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=7760) | 
+| **Turma C**      | [Samara Flamini Kiihl](http://www.ime.unicamp.br/~samara/) |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=9496) |
+
 
 <br />
 
-### Horários de monitorias PED
+### Horários de monitorias PAD
 
-Atendimento exclusivo para alunos das turmas A, C, D, E, F e I.
 
-| PED    | Atendimentos | Link Google Meet     | 
+| PAD    | Atendimentos | Link Google Meet     | 
 |:--------|:-----------------|:----------------------------|
-| **Nury Bibiana Riaño** (preferencialmente A e I)| 2as-feiras das 12-13h 4as-feiras das 18-19h |  [meet.google.com/yee-wcrw-ngs](meet.google.com/yee-wcrw-ngs) | 
-| **Jose Alejandro Ordoñez Cuastumal** (preferencialmente D e F) | 2as-feiras das 13-14h 4as-feiras das 13-14h | [meet.google.com/eue-aicp-ckt](meet.google.com/eue-aicp-ckt) |
-| **Fernanda Paula Rocha** (preferencialmente C e E) | 6as-feiras das 12-13h e das 18-19h | [meet.google.com/iyb-pwpt-sgz](meet.google.com/iyb-pwpt-sgz) |
+ |  **Nury Bibiana Riaño** | 2as-feiras das 12-13h 4as-feiras das 18-19h |  [meet.google.com/yee-wcrw-ngs](meet.google.com/yee-wcrw-ngs) |
 
 
 <br />
