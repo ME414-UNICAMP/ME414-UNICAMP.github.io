@@ -102,13 +102,13 @@ title: " "
 
 ## Testes de Aderência, Independência e Homogeneidade
 
-<!--[Parte21](../aulas/slides/parte21/parte21.html) -->
-<!--[Parte22](../aulas/slides/parte22/parte22.html)-->
+[Parte21](../aulas/slides/parte21/parte21.html) 
+[Parte22](../aulas/slides/parte22/parte22.html)
 
 ## Regressão Linear Simples
 
-<!--[Parte23](../aulas/slides/parte23/parte23.html) -->
+[Parte23](../aulas/slides/parte23/parte23.html) 
 
 ## Análise de variância
 
-<!-- [Parte24](../aulas/slides/parte24/parte24.html) -->
+ [Parte24](../aulas/slides/parte24/parte24.html) 
