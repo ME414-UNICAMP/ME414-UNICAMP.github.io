@@ -11,7 +11,7 @@ title: " "
 
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:----------------:|:-------------------------------------|:-----------------------------:|
-| **Turma C**      | [Samara Flamini Kiihl](http://www.ime.unicamp.br/~samara/) |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=9496) |
+| **Turma C**      | [Samara Flamini Kiihl](https://samarafk.github.io/about/) |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=9496) |
 
 
 <br />
