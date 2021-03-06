@@ -182,7 +182,7 @@ Mas quão pequeno deve ser o valor-de-p para ser considerado forte evidência co
 
 Geralmente, fixamos o **nível de significância** do teste ($\alpha$), e usamos a seguinte regra. É comum usarmos $\alpha=0.05$.
 
- * Se valor-de-p $\leq \alpha$: rejeitamos $H_0$, ou seja, os dados trazem forte evidência contra a hipóstese nula 
+ * Se valor-de-p $\leq \alpha$: rejeitamos $H_0$, ou seja, os dados trazem forte evidência contra a hipótese nula 
  
  * Se valor-de-p > $\alpha$: não rejeitamos $H_0$, ou seja, não temos evidência nos dados contra a hipótese nula
 
