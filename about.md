@@ -16,15 +16,7 @@ title: " "
 
 <br />
 
-### Horários de monitorias PAD
 
-
-| PAD    | Atendimentos | Link Google Meet     | 
-|:--------|:-----------------|:----------------------------|
- |  **Nury Bibiana Riaño** | 2as-feiras das 12-13h 4as-feiras das 18-19h |  [meet.google.com/yee-wcrw-ngs](meet.google.com/yee-wcrw-ngs) |
-
-
-<br />
 
 ### Bibliografia
 
