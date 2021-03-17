@@ -11,6 +11,8 @@ O conteúdo é disponibilizado às segundas-feiras e deve ser desenvolvido duran
 
 Os exercícios serão disponibilizados no Moodle. Verifique frequentemente.
 
+Vídeos produzidos por: Profa. Tatiana Benaglia (Partes 1 a 4), Profa. Larissa Matos (Partes 5 a 8), Prof. Elcio Lebensztayn (Partes 9 a 11), Prof. Filidor Labra (Partes 12 e 13), Profa. Samara Kiihl (Partes 14 a 20), Prof. Mauricio Zevallos (Partes 21 a 24).
+
 
 | Data          | Semana  | Conteúdo | Slides em .pdf   | Vídeos  | Extras |
 |:-------------:|:-------:| :-------:| :---------------:|:-------:|:------:|
