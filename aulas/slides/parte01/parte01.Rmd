@@ -385,7 +385,7 @@ Veja que para cada pessoa, os valores não necessariamente são os mesmos.
 <br /> 
 **Quantitativa**
 
-* **Discreta**: os valores possíveis formam um conjunto finito ou enumerável. Ex: número de filhos, números de ovos de Páscoa que você comeu.
+* **Discreta**: os valores possíveis formam um conjunto enumerável (finito ou infinito). Ex: número de filhos, números de ovos de Páscoa que você comeu.
 
 * **Contínua**: os valores possíveis estão dentro de um intervalo, aberto ou fechado, dos números reais. Ex: peso, altura, salário.
 
@@ -656,7 +656,7 @@ dev.off()
 
 ## Variável Quantitativa Discreta {.build}
 
-**Quantitativa Discreta:** conjunto enumerável e finito de valores possíveis.
+**Quantitativa Discreta:** conjunto enumerável (finito ou infinito) de valores possíveis.
 
 **Exemplo:** Nos dados `SleepStudy`, a variável `NumEarlyClass` representa o número de aulas por semana antes das 9am, sendo então quantitativa discreta.
 
