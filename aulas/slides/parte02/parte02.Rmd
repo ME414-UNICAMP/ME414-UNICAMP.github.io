@@ -315,7 +315,7 @@ dados %>% kable(format = "html", align = c("c", "r", "r")) %>%
 <!-- 2 | 105 | 43 -->
 <!-- Total | 8739 | 8678 -->
 
-Você acha que existe diferença entre homens e mulheres quato ao número de casamentos ?
+Você acha que existe diferença entre homens e mulheres quanto ao número de casamentos ?
 
 Qual medida de posição você usaria para apresentar a diferença entre homens e mulheres: **média, mediana ou moda**?
 
