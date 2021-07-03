@@ -540,7 +540,7 @@ No entanto, $p$ é desconhecido.
 
 Iremos utilizar como estimativa para $p$, a proporção de sucessos na amostra toda ($\widehat p$), sem levar em consideração as populações, ou seja,
 
-$$\widehat p = \frac{n_1 \widehat p_1 + n_2 \widehat p_2}{n_1 + n2}.$$
+$$\widehat p = \frac{n_1 \widehat p_1 + n_2 \widehat p_2}{n_1 + n_2}.$$
 
 
 ## Teste de hipótese para duas proporções {.build}
