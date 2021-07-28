@@ -7,11 +7,19 @@ title: " "
 
 <br/>
 
-### ME414 - Turma 1º Semestre de 2021
+### ME414 - Turma 2º Semestre de 2021
 
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:----------------:|:-------------------------------------|:-----------------------------:|
-| **Turma C**      | [Samara Flamini Kiihl](https://samarafk.github.io/about/) |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=9496) |
+| **Turma B**      | Christophe    |      |
+| **Turma C**      | Élcio   |      |
+| **Turma D**      | [Tatiana Benaglia](https://www.ime.unicap.br/~tatiana) |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=9496) |
+| **Turma E**      | Filidor   |      |
+| **Turma F**      | Maurício   |      |
+| **Turma I**      | Hotta   |      |
+
+
+
 
 
 <br />
