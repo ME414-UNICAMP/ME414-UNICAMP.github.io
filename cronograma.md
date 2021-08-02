@@ -29,7 +29,7 @@ Vídeos produzidos por:
 | 30/08/2021    |   4     | Probabilidade             | [Parte7](http://me414-unicamp.github.io/aulas/slides/parte07/parte07.pdf) [Parte8](http://me414-unicamp.github.io/aulas/slides/parte08/parte08.pdf)  | Parte7 Parte8 | [Summary Song #1](https://youtu.be/lm53uqt-ln0)
 | 06/09/2021    |   5     | Variáveis Aleatórias Discretas   |  [Parte9](http://me414-unicamp.github.io/aulas/slides/parte09/parte09.pdf)  |  Parte9
 | 13/09/2021    |   6     | Variáveis Aleatórias Discretas   | [Parte10](http://me414-unicamp.github.io/aulas/slides/parte10/parte10.pdf) [Parte11](http://me414-unicamp.github.io/aulas/slides/parte11/parte11.pdf) | Parte10  Parte11
-| 20/09/2021    |   7     |    |  
+| 20/09/2021    |   7     |  Revisão  |  
 | **27/09/2021**   |   8     |  **Prova 1**       |   
 | 04/10/2021    |   9     | Variáveis Aleatórias Contínuas    | [Parte12](http://me414-unicamp.github.io/aulas/slides/parte12/parte12.pdf) [Parte13](http://me414-unicamp.github.io/aulas/slides/parte13/parte13.pdf)   |  Parte12  Parte13 | [Summary Song #3](https://youtu.be/Cy07eubC-jI) [Tabelas](http://me414-unicamp.github.io/about/Tabelas-impressao.pdf)
 | 11/10/2021    |   10    | Distribuição Amostral     |  [Parte14](http://me414-unicamp.github.io/aulas/slides/parte14/parte14.pdf)|  Parte14 | [Bunnies & Dragons](https://vimeo.com/75089338)
