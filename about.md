@@ -7,21 +7,21 @@ title: " "
 
 <br/>
 
-### ME414 - Turma 2º Semestre de 2021
+### ME414 - Turmas do 2º Semestre de 2021
 
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:-----------------|:-------------------------------------|:-----------------------------:|
 | **Turma B**      | Christophe F. Gallesco   |      |
 | **Turma C**      | Élcio Lebensztayn        |      |
-| **Turma D**      | [Tatiana Benaglia](https://www.ime.unicap.br/~tatiana) |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=9496) |
+| **Turma D**      | [Tatiana Benaglia](https://www.ime.unicap.br/~tatiana) |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=11278) |
 | **Turma E**      | Filidor E. Labra |      |
 | **Turma F**      | Maurício E. Zevallos Herencia  |      |
-| **Turma I**      | Luiz K. Hotta   |      |
+| **Turma I**      | Luiz K. Hotta   |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=11336)    |
 
 
 <br />
 
-### ME414 - Atendimentos PEDs/PAD
+### Atendimentos PEDs/PAD (válido para todas as turmas)
 
 | Monitor        | Horários        |  Link Google Meet |  
 |:----------------|:-------------------------------------|:-----------------------------:|
