@@ -21,9 +21,9 @@ Vídeos produzidos por:
 * Prof. Mauricio Zevallos (Partes 21 - 24)
 
 
-| Data          | Semana  | Conteúdo | Slides em .pdf   | Vídeos  | Extras |
+| Data          | Semana  | Conteúdo | Slides em PDF   | Vídeos  | Extras |
 |:-------------:|:-------:| :-------:| :---------------:|:-------:|:------:|
-| 09/08/2021    |   1      | Apresentação e Estatística Descritiva    | [Parte1](http://me414-unicamp.github.io/aulas/slides/parte01/parte01.pdf)  [Parte2](http://me414-unicamp.github.io/aulas/slides/parte02/parte02.pdf)| [Parte1](https://drive.google.com/drive/folders/1YhZjqt_9QJbr81BNh7N0GREb2RxBUMOE?usp=sharing) [Parte2](https://drive.google.com/drive/folders/1YlTJt_MdPiqoV9vDIfXTxpv0KIAL1Xqk?usp=sharing) | [GRETL](https://drive.google.com/file/d/1WmPDVYvaCEgNIFppkJ96Rg4aut2-huIQ/view?usp=sharing) 
+| 09/08/2021    |   1      | Apresentação do Curso Estatística Descritiva    | [Parte1](http://me414-unicamp.github.io/aulas/slides/parte01/parte01.pdf)  [Parte2](http://me414-unicamp.github.io/aulas/slides/parte02/parte02.pdf)| [Parte1](https://drive.google.com/drive/folders/1YhZjqt_9QJbr81BNh7N0GREb2RxBUMOE?usp=sharing) [Parte2](https://drive.google.com/drive/folders/1YlTJt_MdPiqoV9vDIfXTxpv0KIAL1Xqk?usp=sharing) | [GRETL](https://drive.google.com/file/d/1WmPDVYvaCEgNIFppkJ96Rg4aut2-huIQ/view?usp=sharing) 
 | 16/08/2021    |   2     | Estatística Descritiva    |  [Parte3](http://me414-unicamp.github.io/aulas/slides/parte03/parte03.pdf) [Parte4](http://me414-unicamp.github.io/aulas/slides/parte04/parte04.pdf)   |  Parte3  Parte4
 | 23/08/2021    |   3     | Probabilidade             | [Parte5](http://me414-unicamp.github.io/aulas/slides/parte05/parte05.pdf) [Parte6](http://me414-unicamp.github.io/aulas/slides/parte06/parte06.pdf)   |    Parte5 Parte6
 | 30/08/2021    |   4     | Probabilidade             | [Parte7](http://me414-unicamp.github.io/aulas/slides/parte07/parte07.pdf) [Parte8](http://me414-unicamp.github.io/aulas/slides/parte08/parte08.pdf)  | Parte7 Parte8 | [Summary Song #1](https://youtu.be/lm53uqt-ln0)
@@ -36,8 +36,8 @@ Vídeos produzidos por:
 | 18/10/2021    |   11    |Inferência: uma população     |  [Parte15](http://me414-unicamp.github.io/aulas/slides/parte15/parte15.pdf) [Parte16](http://me414-unicamp.github.io/aulas/slides/parte16/parte16.pdf)  |   Parte15  Parte16 |  [Summary Song #5](https://youtu.be/sOFlR4C5YVs)
 | 25/10/2021    |   12    | Inferência: uma população    |    [Parte17](http://me414-unicamp.github.io/aulas/slides/parte17/parte17.pdf) |   Parte17  |  [Summary Song #4](https://youtu.be/HTdo6xjfFHI) [Uma Senhora Toma Chá](http://me414-unicamp.github.io/aulas/slides/parte17a-SenhoraCha/parte17a)
 | 01/11/2021    |   13    | Inferência: duas populações     |   [Parte18](http://me414-unicamp.github.io/aulas/slides/parte18/parte18.pdf)  |  Parte18 | [Teste de permutação](http://me414-unicamp.github.io/aulas/slides/parte20a/TestePermutacao.pdf) 
-| 08/11/2021    |   13    | Inferência: duas populações     |   [Parte19](http://me414-unicamp.github.io/aulas/slides/parte19/parte19.pdf) [Parte20](http://me414-unicamp.github.io/aulas/slides/parte20/parte20.pdf)   |  Parte19  Parte20  | [Teste de permutação](http://me414-unicamp.github.io/aulas/slides/parte20a/TestePermutacao.pdf) 
-| 15/11/2021    |   14    |  Regressão Linear Simples e Análise de Variância |[Regressão](http://me414-unicamp.github.io/aulas/slides/parte23/Regressao.pdf) [ANOVA](http://me414-unicamp.github.io/aulas/slides/parte24/ANOVA.pdf)  | | [GRETL 2](https://drive.google.com/file/d/1p6fRPlJ2ydrSNTInoLGhSyyQISgBUh7W/view?usp=sharing)
-| 22/11/2021    |   15    |  Aderência, Homogeneidade e Independência |[Aderência](https://drive.google.com/file/d/1cLBMSr92sMHiZep7AGXeGMjD1MLli76K/view?usp=sharing) [Homogeneidade e Independência](https://drive.google.com/file/d/15tNYzJEvkS-1kZVLWJTT7-yuzWu830dE/view?usp=sharing)  |  |
-| **29/11/2021**  |   16     | **Prova 2**  |   
-| **15 a 21/11/2021**   |   17     | **Exame**  |
+| 08/11/2021    |   14    | Inferência: duas populações     |   [Parte19](http://me414-unicamp.github.io/aulas/slides/parte19/parte19.pdf) [Parte20](http://me414-unicamp.github.io/aulas/slides/parte20/parte20.pdf)   |  Parte19  Parte20  | [Teste de permutação](http://me414-unicamp.github.io/aulas/slides/parte20a/TestePermutacao.pdf) 
+| 15/11/2021    |   15    |  Regressão Linear Simples e Análise de Variância |[Regressão](http://me414-unicamp.github.io/aulas/slides/parte23/Regressao.pdf) [ANOVA](http://me414-unicamp.github.io/aulas/slides/parte24/ANOVA.pdf)  | | [GRETL 2](https://drive.google.com/file/d/1p6fRPlJ2ydrSNTInoLGhSyyQISgBUh7W/view?usp=sharing)
+| 22/11/2021    |   16    |  Aderência, Homogeneidade e Independência |[Aderência](https://drive.google.com/file/d/1cLBMSr92sMHiZep7AGXeGMjD1MLli76K/view?usp=sharing) [Homogeneidade e Independência](https://drive.google.com/file/d/15tNYzJEvkS-1kZVLWJTT7-yuzWu830dE/view?usp=sharing)  |  |
+| **29/11/2021**  |   17     | **Prova 2**  |   
+| **15 a 21/12/2021**   |   18     | **Exame**  |
