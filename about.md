@@ -11,10 +11,10 @@ title: " "
 
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:-----------------|:-------------------------------------|:-----------------------------:|
-| **Turma B**      | Christophe F. Gallesco   |      |
+| **Turma B**      | Christophe F. Gallesco   |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=11466)    |
 | **Turma C**      | Élcio Lebensztayn        |      |
 | **Turma D**      | [Tatiana Benaglia](https://www.ime.unicap.br/~tatiana) |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=11278) |
-| **Turma E**      | Filidor E. Labra |      |
+| **Turma E**      | Filidor E. Labra |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=11455)    |
 | **Turma F**      | Maurício E. Zevallos Herencia  |      |
 | **Turma I**      | Luiz K. Hotta   |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=11336)    |
 
