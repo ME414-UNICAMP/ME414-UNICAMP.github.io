@@ -5,7 +5,7 @@ title: ""
 
 # Cronograma
 
-Este cronograma é válido exclusivamente para as **Turmas B, C, D, E, F e I** do 2S2021.
+Este cronograma é válido exclusivamente para as **Turmas B, C, D, E e F** do 2S2021.
 
 O conteúdo será disponibilizado toda sexta-feira e deve ser desenvolvido durante a semana seguinte.
 
