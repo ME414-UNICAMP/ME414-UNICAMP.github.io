@@ -24,10 +24,10 @@ title: " "
 
 | Monitor        | Horários        |  Link Google Meet |  
 |:----------------|:-------------------------------------|:-----------------------------:|
-| **Adenilson José Rodrigues Júnior**      | 2as e 4as-feiras das 13 - 14h |  meet.google.com/ase-rmmj-toe |
-| **Pedro Henrique Toledo de Oliveira Sousa** | 4as-feiras das 18 - 19h |  meet.google.com/ase-rmmj-toe |
-| **Robinson Ortega Meza**  | 3as e 5as-feiras das 18 - 19h  |  meet.google.com/ase-rmmj-toe    |
-| **Mateus Costa Trentini (PAD)** | 3as e 5as-feiras das 12 - 13h  |  meet.google.com/ase-rmmj-toe    |
+| **Adenilson José Rodrigues Júnior**      | 2as e 4as-feiras das 13 às 14h |  https://meet.google.com/ase-rmmj-toe |
+| **Pedro Henrique Toledo de Oliveira Sousa** | 4as-feiras das 18 às 19h |  https://meet.google.com/ase-rmmj-toe |
+| **Robinson Ortega Meza**  | 3as e 5as-feiras das 18 às 19h  |  https://meet.google.com/ase-rmmj-toe  |
+| **Mateus Costa Trentini (PAD)** | 3as e 5as-feiras das 12 às 13h  |  https://meet.google.com/ase-rmmj-toe |
 
 
 <br />
