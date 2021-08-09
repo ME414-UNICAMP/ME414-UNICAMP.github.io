@@ -16,7 +16,6 @@ title: " "
 | **Turma D**      | [Tatiana Benaglia](https://www.ime.unicap.br/~tatiana) |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=11278) |
 | **Turma E**      | Filidor E. Labra |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=11455)    |
 | **Turma F**      | Maurício E. Zevallos Herencia  |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=11355)    |
-| **Turma I**      | Luiz K. Hotta   |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=11336)    |
 
 
 <br />
@@ -25,10 +24,10 @@ title: " "
 
 | Monitor        | Horários        |  Link Google Meet |  
 |:----------------|:-------------------------------------|:-----------------------------:|
-| **Adenilson José Rodrigues Júnior**      | A ser definido  |      |
-| **Pedro Henrique Toledo de Oliveira Sousa**      | A ser definido  |      |
-| **Robinson Ortega Meza**  | A ser definido  |      |
-| **Mateus Costa Trentini (PAD)** | A ser definido  |      |
+| **Adenilson José Rodrigues Júnior**      | 2as e 4as-feiras das 13 - 14h |  meet.google.com/ase-rmmj-toe |
+| **Pedro Henrique Toledo de Oliveira Sousa** | 4as-feiras das 18 - 19h |  meet.google.com/ase-rmmj-toe |
+| **Robinson Ortega Meza**  | 3as e 5as-feiras das 18 - 19h  |  meet.google.com/ase-rmmj-toe    |
+| **Mateus Costa Trentini (PAD)** | 3as e 5as-feiras das 12 - 13h  |  meet.google.com/ase-rmmj-toe    |
 
 
 <br />
