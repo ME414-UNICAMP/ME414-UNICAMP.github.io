@@ -5,7 +5,7 @@ title: " "
 
 # Informações Gerais
 
-[Ementa](ementa/ementa.pdf)
+[Ementa](../ementa/ementa.pdf)
 
 <br/>
 
