@@ -1256,13 +1256,13 @@ g
 </font>
 
 
-## Doutorado em Matemática e Suicídio {.smaller}
+<!-- ## Doutorado em Matemática e Suicídio {.smaller} -->
 
-<center><img src="figuras/correlationMathSuicide.jpg" width=700></center>
+<!-- <center><img src="figuras/correlationMathSuicide.jpg" width=700></center> -->
 
-</br><font size=4>
-**Fonte:** [http://twentytwowords.com/funny-graphs-show-correlation-between-completely-unrelated-stats-9-pictures/3/](http://twentytwowords.com/funny-graphs-show-correlation-between-completely-unrelated-stats-9-pictures/3/)
-</font>
+<!-- </br><font size=4> -->
+<!-- **Fonte:** [http://twentytwowords.com/funny-graphs-show-correlation-between-completely-unrelated-stats-9-pictures/3/](http://twentytwowords.com/funny-graphs-show-correlation-between-completely-unrelated-stats-9-pictures/3/) -->
+<!-- </font> -->
 
 
 ## Taxa de analfabetismo e mortalidade infantil {.smaller}
