@@ -7,31 +7,31 @@ title: " "
 
 <br/>
 
-### ME414 - Turmas do 2º Semestre de 2021
+### ME414 - Turmas do 2º Semestre de 2022
 
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:-----------------|:-------------------------------------|:-----------------------------:|
-| **Turma B**      | Christophe F. Gallesco   |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=11466)    |
-| **Turma C**      | Élcio Lebensztayn        |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=11188)    |
-| **Turma D**      | [Tatiana Benaglia](https://www.ime.unicap.br/~tatiana) |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=11278) |
-| **Turma E**      | Filidor E. Labra |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=11455)    |
-| **Turma F**      | Maurício E. Zevallos Herencia  |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=11355)    |
+| **Turma A**      | Carlos Trucíos-Maza |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14134)    |
+| **Turma C**      | Ronaldo Dias  |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14134)    |
+| **Turma D**      | Alex dos Santos Sousa  |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14134)    |
+| **Turma E**      | Christophe F. Gallesco   |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14134)    |
+| **Turma F**      | Tatiana Benaglia |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14134) |
+| **Turma H**      | Élcio Lebensztayn        |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14134)    |
 
 
 <br />
 
-### Atendimentos PEDs/PAD 
+### Atendimentos PED
 
-Os atendimentos de PEDs/PAD serão feitos pelo Google Meet e são válidos para todas as turmas acima.
+Os atendimentos de PEDs serão feitos pelo Google Meet e são válidos para todas as turmas acima.
 
 **Link do Google Meet:** [https://meet.google.com/ase-rmmj-toe](https://meet.google.com/ase-rmmj-toe)
 
 | Monitor        | Horários        |  
 |:----------------|:-------------------------------------|
-| **Adenilson José Rodrigues Júnior**      | 2as e 4as-feiras das 13 às 14h |  
-| **Pedro Henrique Toledo de Oliveira Sousa** | 4as-feiras das 18 às 19h |  
-| **Robinson Ortega Meza**  | 3as e 5as-feiras das 18 às 19h  |  
-| **Mateus Costa Trentini (PAD)** | 3as e 5as-feiras das 12 às 13h  |  
+| **Maria Magdalena Kcala Álvaro**  (A e C)    |  |  
+| **Carina Brunehilde Pinto da Silva** (F e H) |   |  
+| **Hilário Fernandes de Araujo Júnior** (D e E) |   |  
 
 
 <br />
