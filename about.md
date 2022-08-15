@@ -11,12 +11,12 @@ title: " "
 
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:-----------------|:-------------------------------------|:-----------------------------:|
-| **Turma A**      | Carlos Trucíos-Maza |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14134)    |
-| **Turma C**      | Ronaldo Dias  |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14134)    |
-| **Turma D**      | Alex dos Santos Sousa  |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14134)    |
-| **Turma E**      | Christophe F. Gallesco   |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14134)    |
+| **Turma A**      | Carlos Trucíos-Maza |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14838)    |
+| **Turma C**      | Ronaldo Dias  |  [clique aqui](https://moodle.ggte.unicamp.br/)    |
+| **Turma D**      | Alex dos Santos Sousa  |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14657)    |
+| **Turma E**      | Christophe F. Gallesco   |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14529)    |
 | **Turma F**      | Tatiana Benaglia |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14134) |
-| **Turma H**      | Élcio Lebensztayn        |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14134)    |
+| **Turma H**      | Élcio Lebensztayn        |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14373)    |
 
 
 <br />
