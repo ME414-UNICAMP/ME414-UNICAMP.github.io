@@ -30,12 +30,12 @@ Os atendimentos de PEDs serão feitos tanto presencial quanto pelo Google Meet, 
 
 | Monitor        | Horários        |  Local | 
 |:----------------|:-------------------------------------|:-----------------|
-| **Maria Magdalena Kcala Álvaro**  (A e C)   | 5as-feiras das 18h às 19h | Remoto | 
-|                                                                         | 6as-feiras das 13h às 14h | Presencial | 
-| **Carina Brunehilde Pinto da Silva** (F e H)  |   2as-feiras das 18h às 19h | Remoto | 
-|                                                                         | 4as-feiras das 13h às 14h | Presencial | 
-| **Hilário Fernandes de Araujo Júnior** (D e E) |   3as-feiras das 13h às 14h | Presencial |       
-|                                                                           | 5as-feiras das 13h às 14h | Presencial |                          
+| **Carina Brunehilde Pinto da Silva**  |  2as-feiras das 18h às 19h | Remoto | 
+|                                                             | 4as-feiras das 13h às 14h | Presencial | 
+| **Hilário Fernandes de Araujo Júnior** | 3as-feiras das 13h às 14h | Presencial |       
+|                                                              | 5as-feiras das 13h às 14h | Presencial |      
+| **Maria Magdalena Kcala Álvaro**   | 5as-feiras das 18h às 19h | Remoto | 
+|                                                             | 6as-feiras das 13h às 14h | Presencial |                     
 
 
 <br />
