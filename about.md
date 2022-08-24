@@ -12,7 +12,7 @@ title: " "
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:-----------------|:-------------------------------------|:-----------------------------:|
 | **Turma A**      | Carlos Trucíos-Maza |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14838)    |
-| **Turma C**      | Ronaldo Dias  |  [clique aqui](https://moodle.ggte.unicamp.br/)    |
+| **Turma C**      | Ronaldo Dias  |   [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14672)    |
 | **Turma D**      | Alex dos Santos Sousa  |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14657)    |
 | **Turma E**      | Christophe F. Gallesco   |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14529)    |
 | **Turma F**      | Tatiana Benaglia |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14134) |
@@ -23,15 +23,19 @@ title: " "
 
 ### Atendimentos PED
 
-Os atendimentos de PEDs serão feitos pelo Google Meet e são válidos para todas as turmas acima.
+Os atendimentos de PEDs serão feitos tanto presencial quanto pelo Google Meet, como indicado na tabela, e são válidos para todas as turmas acima.
 
-**Link do Google Meet:** [https://meet.google.com/ase-rmmj-toe](https://meet.google.com/ase-rmmj-toe)
+**Link do Google Meet:** [https://meet.google.com/mgd-vzic-xki
+](https:/meet.google.com/mgd-vzic-xki)
 
-| Monitor        | Horários        |  
-|:----------------|:-------------------------------------|
-| **Maria Magdalena Kcala Álvaro**  (A e C)    |  |  
-| **Carina Brunehilde Pinto da Silva** (F e H) |   |  
-| **Hilário Fernandes de Araujo Júnior** (D e E) |   |  
+| Monitor        | Horários        |  Local | 
+|:----------------|:-------------------------------------|:-----------------|
+| **Maria Magdalena Kcala Álvaro**  (A e C)   | 5as-feiras das 18h às 19h | Remoto | 
+|                                                                         | 6as-feiras das 13h às 14h | Presencial | 
+| **Carina Brunehilde Pinto da Silva** (F e H)  |   2as-feiras das 18h às 19h | Remoto | 
+|                                                                         | 4as-feiras das 13h às 14h | Presencial | 
+| **Hilário Fernandes de Araujo Júnior** (D e E) |   3as-feiras das 13h às 14h | Presencial |       
+|                                                                           | 5as-feiras das 13h às 14h | Presencial |                          
 
 
 <br />
