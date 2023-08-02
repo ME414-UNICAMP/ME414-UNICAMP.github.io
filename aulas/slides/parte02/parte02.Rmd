@@ -363,14 +363,14 @@ dados %>% kable(format = "html", align = c("c", "r", "r")) %>%
 **Média**
 
 Para as mulheres, a média é:
-<font size=5>
+<font size=4>
 $$\bar{x}=\frac{0\times 5861 + 1\times 2773 + 2\times 105}{8739} = 0.34$$
 </font>
 
 </br>
 
 Para os homens, a média é: 
-<font size=5>
+<font size=4>
 $$\bar{x}=\frac{0\times 7074 + 1\times 1561 + 2\times 43}{8678} = 0.19$$
 </font>
 
