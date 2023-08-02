@@ -7,16 +7,15 @@ title: " "
 
 <br/>
 
-### ME414 - Turmas do 2º Semestre de 2022
+### ME414 - Turmas do 2º Semestre de 2023
 
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:-----------------|:-------------------------------------|:-----------------------------:|
-| **Turma A**      | Carlos Trucíos-Maza |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14838)    |
-| **Turma C**      | Ronaldo Dias  |   [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14672)    |
-| **Turma D**      | Alex dos Santos Sousa  |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14657)    |
-| **Turma E**      | Christophe F. Gallesco   |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14529)    |
-| **Turma F**      | Tatiana Benaglia |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14134) |
-| **Turma H**      | Élcio Lebensztayn        |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=14373)    |
+| **Turma B**      | Guilherme Vieira Nunes Ludwig|  [clique aqui]()    |
+| **Turma C**      | Benilton De Sa Carvalho  |   [clique aqui]()    |
+| **Turma D**      | Rafael Pimentel Maia  |  [clique aqui]()    |
+| **Turma E**      | Ronaldo Dias   |  [clique aqui]()    |
+| **Turma H**      | Christophe Frederic Gallesco        |  [clique aqui]()    |
 
 
 <br />
@@ -30,12 +29,12 @@ Os atendimentos de PEDs serão feitos tanto presencial quanto pelo Google Meet, 
 
 | Monitor        | Horários        |  Local | 
 |:----------------|:-------------------------------------|:-----------------|
-| **Carina Brunehilde Pinto da Silva**  |  2as-feiras das 18h às 19h | Remoto | 
-|                                                             | 4as-feiras das 13h às 14h | CB06 | 
-| **Hilário Fernandes de Araujo Júnior** | 3as-feiras das 13h às 14h | CB06 |       
-|                                                              | 5as-feiras das 13h às 14h | CB06 |      
-| **Maria Magdalena Kcala Álvaro**   | 5as-feiras das 18h às 19h | Remoto | 
-|                                                             | 6as-feiras das 13h às 14h | CB06 |                     
+|  |  |  | 
+|                                                             |  |  | 
+|  |  | |       
+|                                                              | | |      
+|   |  | | 
+|                                                             | | |                     
 
 
 <br />
