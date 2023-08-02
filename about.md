@@ -10,12 +10,12 @@ title: " "
 ### ME414 - Turmas do 2º Semestre de 2023
 
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
-|:-----------------|:-------------------------------------|:-----------------------------:|
-| **Turma B**      | Guilherme Vieira Nunes Ludwig|  [clique aqui]()    |
-| **Turma C**      | Benilton De Sa Carvalho  |   [clique aqui]()    |
-| **Turma D**      | Rafael Pimentel Maia  |  [clique aqui]()    |
-| **Turma E**      | Ronaldo Dias   |  [clique aqui]()    |
-| **Turma H**      | Christophe Frederic Gallesco        |  [clique aqui]()    |
+|:-------------|:-----------------------------|:-----------------------------:|
+| **Turma B**  | Guilherme Vieira Nunes Ludwig|  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=17286)    |
+| **Turma C**  | Benilton De Sa Carvalho      |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=17204)    |
+| **Turma D**  | Rafael Pimentel Maia         |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=16958)    |
+| **Turma E**  | Ronaldo Dias                 |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=17207)    |
+| **Turma H**  | Christophe Frederic Gallesco |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=17362)    |
 
 
 <br />
@@ -29,12 +29,13 @@ Os atendimentos de PEDs serão feitos tanto presencial quanto pelo Google Meet, 
 
 | Monitor        | Horários        |  Local | 
 |:----------------|:-------------------------------------|:-----------------|
-|  |  |  | 
-|                                                             |  |  | 
-|  |  | |       
-|                                                              | | |      
-|   |  | | 
-|                                                             | | |                     
+| Carolina Peçaibes de Oliveira (PED) | | |    
+| Diego da Silva Santos (PED)         | | | 
+| Maria Magdalena Kcala Álvaro (PED)  | | | 
+| Robinson Ortega Meza (PED)         | | |       
+| Letícia Miyuki Tanaka Yamane (PAD) | | |      
+|   | | | 
+|   | | |                     
 
 
 <br />
