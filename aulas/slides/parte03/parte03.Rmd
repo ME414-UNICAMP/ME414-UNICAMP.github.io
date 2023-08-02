@@ -413,9 +413,9 @@ axis(side=1, at=c(LS), labels=c("Q3 + 1.5 IQ"), cex.axis=1.5, cex.lab=1.5)
 Dizemos *potencial outlier*, pois se a distribuição tem cauda longa, algumas observações irão cair no critério, apesar de não serem *outliers*.
 
 
-## Boxplot {.build}
+## *Boxplot* {.build}
 
-**Boxplot**: representação gráfica do esquema dos 5 números. 
+*Boxplot* : representação gráfica do esquema dos 5 números. 
 
 Esse gráfico permite resumir visualmente importante características dos dados (posição, dispersão, assimetria) e identificar a presença de *outliers*.
 
@@ -424,7 +424,7 @@ Esse gráfico permite resumir visualmente importante características dos dados 
 **ATENÇÃO:** Prestem atenção no que são os limites inferior e superior!!!
 
 
-## Boxplot {.build}
+## *Boxplot* {.build}
 
 <img src="figuras/cereal_box.png" width=180 style="float: right; margin-left: 1cm">
 
@@ -500,7 +500,7 @@ Então, possíveis *outliers* são observações menores que 25 ou maiores que 3
 <!-- <center><img src="figuras/box4.png" width=300></center> -->
 
 
-## Construção de um Boxplot 
+## Construção de um *Boxplot* 
 
 <img src="figuras/CreateBoxplotKhanAcademy.png" width=400 style="float: right; margin-top: 0cm; margin-left: 2cm">
 
@@ -667,11 +667,11 @@ hist(cereais, xlim=c(-1, 330), breaks=seq(0, 320, by=40),
 ```
 
 
-## Boxplot x Histograma {.build}
+## *Boxplot* x Histograma {.build}
 
-Boxplot não substitui o histograma e vice-versa. 
+*Boxplot* não substitui o histograma e vice-versa. 
 
-Por exemplo, se a distribuição é bimodal, não observamos isso pelo boxplot.
+Por exemplo, se a distribuição é bimodal, não observamos isso pelo *boxplot*.
 
 ```{r, fig.width=5.5, fig.height=4}
 mu1 <- log(1)   
@@ -703,7 +703,7 @@ hist(log(bimodalData), nclass=20, xlab="", ylab="Frequência",
 
 ## Exemplo: QI
 
-Para os dados dos QI's das 32 crianças, vamos calcular as medidas resumo, fazer o boxplot e histograma.
+Para os dados dos QI's das 32 crianças, vamos calcular as medidas resumo, fazer o *boxplot* e histograma.
 ```{r}
 QI = c(114, 122, 103, 118, 99, 105, 134, 125, 117, 106, 109, 104, 111, 127, 133, 111, 117, 103, 120, 98, 100, 130, 141, 119, 128, 106, 109, 115, 113, 121, 100, 130)
 ```
