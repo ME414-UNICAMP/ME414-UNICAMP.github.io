@@ -5,7 +5,7 @@ title: ""
 
 # Cronograma
 
-Este cronograma é válido exclusivamente para as **Turmas B, C, D, E e H** do 2S2023.
+Este cronograma é válido exclusivamente para as **Turmas A, B, C, D, E e H** do 2S2023.
 
 O conteúdo será disponibilizado toda sexta-feira e deve ser desenvolvido durante a semana seguinte.
 
