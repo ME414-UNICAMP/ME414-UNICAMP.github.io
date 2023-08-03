@@ -35,7 +35,7 @@ Os atendimentos de PEDs serão feitos tanto presencial quanto pelo Google Meet, 
 | Maria Magdalena Kcala Álvaro (PED)  | | | 
 | Robinson Ortega Meza (PED)          | | |       
 | Letícia Miyuki Tanaka Yamane (PAD)  | | |      
-| Cristiane Yi Jung Li (PAD)  | | | 
+| Cristiane Yi Jung Li (PAD)   | | | 
 |   | | |                     
 
 

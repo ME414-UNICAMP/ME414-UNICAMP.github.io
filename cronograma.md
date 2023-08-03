@@ -13,7 +13,7 @@ Os exercícios serão disponibilizados no Moodle. Verifique frequentemente.
 
 Vídeos produzidos por: 
 
-* Profa. Tatiana Benaglia (Partes 1 - 4)
+* Profa. Tatiana Benaglia (Partes 1 - 4) 
 * Profa. Larissa Matos (Partes 5 - 8)
 * Prof. Elcio Lebensztayn (Partes 9 - 11)
 * Prof. Filidor Labra (Partes 12 e 13)
