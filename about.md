@@ -11,6 +11,7 @@ title: " "
 
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:-------------|:-----------------------------|:-----------------------------:|
+| **Turma A**  | Filidor Edilfonso Vilca Labra|  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=17404)    |
 | **Turma B**  | Guilherme Vieira Nunes Ludwig|  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=17286)    |
 | **Turma C**  | Benilton De Sa Carvalho      |  [clique aqui](https://moodle.ggte.unicamp.br/enrol/index.php?id=17204)    |
 | **Turma D**  | Rafael Pimentel Maia         |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=16958)    |
@@ -32,9 +33,9 @@ Os atendimentos de PEDs serão feitos tanto presencial quanto pelo Google Meet, 
 | Carolina Peçaibes de Oliveira (PED) | | |    
 | Diego da Silva Santos (PED)         | | | 
 | Maria Magdalena Kcala Álvaro (PED)  | | | 
-| Robinson Ortega Meza (PED)         | | |       
-| Letícia Miyuki Tanaka Yamane (PAD) | | |      
-|   | | | 
+| Robinson Ortega Meza (PED)          | | |       
+| Letícia Miyuki Tanaka Yamane (PAD)  | | |      
+| Cristiane Yi Jung Li (PAD)  | | | 
 |   | | |                     
 
 
