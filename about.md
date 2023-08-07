@@ -32,7 +32,7 @@ Os atendimentos de PEDs serão feitos tanto presencial quanto pelo Google Meet, 
 |:----------------|:-------------------------------------|:-----------------|
 | Carolina Peçaibes de Oliveira (PED) | | |    
 | Diego da Silva Santos (PED)         | | | 
-| Maria Magdalena Kcala Álvaro (PED)  | | | 
+| Maria Magdalena Kcala Álvaro (PED)  | Quartas e Quinats das 18 ás 19 h | Sala 125 IMECC | 
 | Robinson Ortega Meza (PED)          | | |       
 | Letícia Miyuki Tanaka Yamane (PAD)  | Terças e Quintas das 13 às 14 h| Sala 322 IMECC|  
 | Cristiane Yi Jung Li (PAD)   | Terças e Quintas das 13 às 14 h| Sala 322 IMECC| 
