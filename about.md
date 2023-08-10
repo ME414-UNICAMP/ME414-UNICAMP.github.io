@@ -30,11 +30,11 @@ Os atendimentos de PEDs serão feitos tanto presencial quanto pelo Google Meet, 
 | Monitor        | Horários        |  Local | 
 |:----------------|:-------------------------------------|:-----------------|
 | Carolina Peçaibes de Oliveira (PED) | | |    
-| Diego da Silva Santos (PED)         | Quintas das 18 às 19 h| | Sala 123 IMECC| 
+| Diego da Silva Santos (PED)         | Quintas das 18 às 19 h | Sala 123 IMECC| 
 | Maria Magdalena Kcala Álvaro (PED)  | Quartas e Quinats das 18 ás 19 h | Sala 125 IMECC |
-| Robinson Ortega Meza (PED)          | Segunda das 12 às 13 h | **Link do Google Meet:** [ https://meet.google.com/vra-ejad-wbp
+| Robinson Ortega Meza (PED)          | Segundas das 12 às 13 h | **Link do Google Meet:** [ https://meet.google.com/vra-ejad-wbp
 ]( https://meet.google.com/vra-ejad-wbp)|   
-| Robinson Ortega Meza (PED)          | Quarta das 13 às 14 h e Quinta das 19 às 19 h| Sala ??? IMECC |       
+| Robinson Ortega Meza (PED)          | Quartas das 13 às 14 h e Quinta das 19 às 19 h| Sala ??? IMECC |       
 | Letícia Miyuki Tanaka Yamane (PAD)  | Terças e Quintas das 13 às 14 h| Sala 322 IMECC|  
 | Cristiane Yi Jung Li (PAD)   | Terças e Quintas das 13 às 14 h| Sala 322 IMECC| 
 |   | | |                     
