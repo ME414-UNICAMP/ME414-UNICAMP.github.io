@@ -26,18 +26,27 @@ title: " "
 Os atendimentos de PEDs serão feitos tanto presencial quanto pelo Google Meet, como indicado na tabela, e são válidos para todas as turmas acima.
 
 
+| Monitor                             | Horários                         |  Local                                          |  Agendamento Requerido |
+|:------------------------------------|:---------------------------------|:------------------------------------------------|:-----------------------|
+| Carolina Peçaibes de Oliveira (PED) | Terças 10 às 12h                 | Saguão IMECC                                    | Sim (24h antecedência) |
+| Carolina Peçaibes de Oliveira (PED) | Sextas 17:30 às 19:30            | (*online*)[https://meet.google.com/vki-wnqd-zgv]| Sim (24h antecedência) |
+| Diego da Silva Santos (PED)         | Quintas das 18 às 19 h           | Sala 123 IMECC                                  |                        |
+| Gabriel Ukstin Talasso (PAD)        | Quintas 18:15 às 19:00           | A ser determinado                               | Sim (24h antecedência) |
+| Gabriel Ukstin Talasso (PAD)        | Sextas 13:00 às 14:00            | A ser determinado                               | Sim (24h antecedência) |
+| Maria Magdalena Kcala Álvaro (PED)  | Quartas e Quintas das 18 ás 19 h | Sala 125 IMECC                                  |                        |
+| Robinson Ortega Meza (PED)          | Segundas das 12 às 13 h *online* | [link](https://meet.google.com/vra-ejad-wbp)    |                        |
+| Robinson Ortega Meza (PED)          | Quartas das 13 às 14 h           | Sala 225 IMECC                                  |                        |
+| Robinson Ortega Meza (PED)          | Quintas das 18 às 19 h           | Sala 324 IMECC                                  |                        |
+| Letícia Miyuki Tanaka Yamane (PAD)  | Terças e Quintas das 13 às 14 h  | Sala 322 IMECC                                  |                        |
+| Cristiane Yi Jung Li (PAD)          | Terças e Quintas das 13 às 14 h  | Sala 322 IMECC                                  |                        |
 
-| Monitor        | Horários        |  Local | 
-|:----------------|:-------------------------------------|:-----------------|
-| Carolina Peçaibes de Oliveira (PED) | | |    
-| Diego da Silva Santos (PED)         | Quintas das 18 às 19 h | Sala 123 IMECC| 
-| Maria Magdalena Kcala Álvaro (PED)  | Quartas e Quintas das 18 ás 19 h | Sala 125 IMECC |
-| Robinson Ortega Meza (PED)          | Segundas das 12 às 13 h *online* | https://meet.google.com/vra-ejad-wbp |   
-| Robinson Ortega Meza (PED)          | Quartas das 13 às 14 h | Sala 225 IMECC |       
-| Robinson Ortega Meza (PED)          | Quintas das 18 às 19 h | Sala 324 IMECC | 
-| Letícia Miyuki Tanaka Yamane (PAD)  | Terças e Quintas das 13 às 14 h| Sala 322 IMECC|  
-| Cristiane Yi Jung Li (PAD)   | Terças e Quintas das 13 às 14 h| Sala 322 IMECC| 
 
+Contatos para agendamento de atendimentos (adicionar o símbolo arroba seguido de dac <ponto> unicamp <ponto> br:
+
+* Carolina (PED): c215843
+* Gabriel (PAD): g235078
+
+**Importante:** os monitores destacados acima com "Agendamento Requerido" poderão não estar presentes no horário/local listado acima caso não haja uma solicitação explícita de pessoas interessadas. Se um atendimento é previsto para a sexta-feira, às 17:30, a parte interessada deve contatar o monitor até às 17:30 da quinta-feira.
 
 <br />
 
