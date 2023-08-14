@@ -29,7 +29,7 @@ Os atendimentos de PEDs serão feitos tanto presencial quanto pelo Google Meet, 
 | Monitor                             | Horários                         |  Local                                          |  Agendamento Requerido |
 |:------------------------------------|:---------------------------------|:------------------------------------------------|:-----------------------|
 | Carolina Peçaibes de Oliveira (PED) | Terças 10 às 12h                 | Saguão IMECC                                    | Sim (24h antecedência) |
-| Carolina Peçaibes de Oliveira (PED) | Sextas 17:30 às 19:30            | (*online*)[https://meet.google.com/vki-wnqd-zgv]| Sim (24h antecedência) |
+| Carolina Peçaibes de Oliveira (PED) | Sextas 17:30 às 19:30            | [link](https://meet.google.com/vki-wnqd-zgv)    | Sim (24h antecedência) |
 | Diego da Silva Santos (PED)         | Quintas das 18 às 19 h           | Sala 123 IMECC                                  |                        |
 | Gabriel Ukstin Talasso (PAD)        | Quintas 18:15 às 19:00           | A ser determinado                               | Sim (24h antecedência) |
 | Gabriel Ukstin Talasso (PAD)        | Sextas 13:00 às 14:00            | A ser determinado                               | Sim (24h antecedência) |
