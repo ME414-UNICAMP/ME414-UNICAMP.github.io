@@ -618,7 +618,7 @@ $$
 \end{aligned} 
 $$
 
-Então, $\lambda=9$ e
+Então, usando "regra de três", $\lambda=9$ e
 
 $$
 \begin{aligned}
