@@ -21,8 +21,8 @@ Os vídeos foram produzidos durante a pandemia da Covid-19 e podem ser utilizado
 * Prof. Mauricio Zevallos (Partes 21 - 24)
 
 
-| Data Início Semana          | Semana  | Conteúdo | Slides em PDF   | Vídeos  | Extras |
-|:-------------:|:-------:| :-------:| :---------------:|:-------:|:------:|
+| Data         | Semana  | Conteúdo | Slides em PDF   | Vídeos  | Extras |
+|:-------------------------:|:-------------------------:| :--------:| :---------------:|:-------:|:------:|
 | ---    |   1      | Apresentação do Curso Estatística Descritiva    | [Parte1](http://me414-unicamp.github.io/aulas/slides/parte01/parte01.pdf)  [Parte2](http://me414-unicamp.github.io/aulas/slides/parte02/parte02.pdf)| [Parte1](https://drive.google.com/drive/folders/1YhZjqt_9QJbr81BNh7N0GREb2RxBUMOE?usp=sharing) [Parte2](https://drive.google.com/drive/folders/1YlTJt_MdPiqoV9vDIfXTxpv0KIAL1Xqk?usp=sharing) | [GRETL](https://drive.google.com/file/d/1WmPDVYvaCEgNIFppkJ96Rg4aut2-huIQ/view?usp=sharing) 
 | ---    |   2     | Estatística Descritiva    |  [Parte3](http://me414-unicamp.github.io/aulas/slides/parte03/parte03.pdf) [Parte4](http://me414-unicamp.github.io/aulas/slides/parte04/parte04.pdf)   |  [Parte3](https://drive.google.com/drive/folders/1EgkZy6aTnawO5Ra6P1Y0G9hRV2CBJr91?usp=sharing)  [Parte4](https://drive.google.com/drive/folders/18Z0pLSbMEmAsFFMNC6Jnn0pGFHiLDK8F?usp=sharing)
 | ---    |   3     | Probabilidade             | [Parte5](http://me414-unicamp.github.io/aulas/slides/parte05/parte05.pdf) [Parte6](http://me414-unicamp.github.io/aulas/slides/parte06/parte06.pdf)   | [Parte5](https://drive.google.com/drive/folders/1RnD9YZq1hioXV_Fzl2OqoUpm4tjkpFFo?usp=sharing) [Parte6](https://drive.google.com/drive/folders/1-bD-G0QovYhZitYEOkupD3Ch0KOT-JSB?usp=sharing) | [Summary Song #1](https://youtu.be/lm53uqt-ln0)
