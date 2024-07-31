@@ -11,7 +11,7 @@ Os docentes seguirão este programa, mas não necessariamente estarão trabalhan
 
 Os exercícios serão disponibilizados no Moodle. Verifique frequentemente.
 
-Vídeos produzidos por: 
+Os vídeos foram produzidos durante a pandemia da Covid-19 e podem ser utilizados como material complementar. 
 
 * Profa. Tatiana Benaglia (Partes 1 - 4) 
 * Profa. Larissa Matos (Partes 5 - 8)
