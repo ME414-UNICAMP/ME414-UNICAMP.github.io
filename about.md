@@ -28,7 +28,7 @@ Os atendimentos de PEDs serão feitos tanto presencial quanto pelo Google Meet, 
 |:-----------------------------|:------------------------|:--------------------------------|:-----------------------|
 | Diego da Silva Santos (PED) | Horário a ser definido   |  Sala xxx IMECC                 |                        |
 | Fidel Aniano Causil Barrios (PED) | Horário a ser definido   |                                 |                        |
-| Brenda Luiza Correa (PAD)   | Horário a ser definido   |                                 |                        |
+| Brenda Luiza Correa (PAD)   | 2as e 4as-feiras das 18h às 19h | Sala xxx IMECC                                |                        |
 | Mariana Peres Nascimento    | Horário a ser definido   |                                 |                        |
 | Nicole Maestri Meyer (PAD)  | Horário a ser definido   |                                 |                        |
 
