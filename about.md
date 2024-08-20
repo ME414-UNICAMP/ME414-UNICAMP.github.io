@@ -16,35 +16,30 @@ title: " "
 | **Turma D**  | Tatiana Benaglia         |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=19625)    |
 | **Turma E**  | Felipe Augusto Fernandes |  [clique aqui](https://moodle.ggte.unicamp.br)    |
 
-
 <br />
 
 ### Atendimentos PED
 
-Os atendimentos de PEDs serão feitos tanto presencial quanto pelo Google Meet, como indicado na tabela, e são válidos para todas as turmas acima.
+Os atendimentos de PEDs e PADs serão feitos de forma presencial, <!-- PEDs serão feitos tanto presencial quanto pelo Google Meet, --> como indicado na tabela, e são válidos para todas as turmas acima.
 
+| Monitor                           | Horários                        |  Local             |  
+|:----------------------------------|:--------------------------------|:-------------------|
+| Robinson Ortega Meza              | 3as-feiras das 12-13h           | Sala 323 IMECC     |    
+| Fidel Aniano Causil Barrios (PED) | 4as-feiras das 13-14h           | Sala 325 IMECC     |                        
+| Diego da Silva Santos (PED)       | 5as-feiras das 13-14h           | Sala 322 IMECC     |                        
+| Brenda Luiza Correa (PAD)         | 2as e 4as-feiras das 18h às 19h | Sala 325 IMECC     | 
+| Mariana Peres Nascimento (PAD)    | 2as e 4as-feiras das 12h às 13h | Sala 224 IMECC     |        
+| Nicole Maestri Meyer (PAD) | 3as-feiras das 18-19h <br/> 5as-feiras das 12-13h | CB07  |            
+                
 
-| Monitor                      | Horários                |  Local                          |  Agendamento Requerido |
-|:-----------------------------|:------------------------|:--------------------------------|:-----------------------|
-| Diego da Silva Santos (PED) | 5as-feiras das 13-14h   |  Sala xxx IMECC                 |                        |
-| Fidel Aniano Causil Barrios (PED) | Horário a ser definido   |                                 |                        |
-| Brenda Luiza Correa (PAD)   | 2as e 4as-feiras das 18h às 19h | Sala 325 IMECC                                |                        |
-| Mariana Peres Nascimento    | Horário a ser definido   |                                 |                        |
-| Nicole Maestri Meyer (PAD)  | 3as-feiras das 18-19h   |   Sala xxx IMECC   |                        |
-| Nicole Maestri Meyer (PAD)  | 5as-feiras das 12-13h   |   Sala xxx IMECC   |                        |
+<!-- Contatos para agendamento de atendimentos (adicionar o símbolo arroba seguido de dac <ponto> unicamp <ponto> br:  -->
 
+<!-- * (PED): axxxxxx  -->
+<!-- * (PAD): bxxxxxx -->
 
-
-Contatos para agendamento de atendimentos (adicionar o símbolo arroba seguido de dac <ponto> unicamp <ponto> br:
-
-* (PED): axxxxxx
-* (PAD): bxxxxxx
-
-**Importante:** os monitores destacados acima com "Agendamento Requerido" poderão não estar presentes no horário/local listado acima caso não haja uma solicitação explícita de pessoas interessadas. Se um atendimento é previsto para a sexta-feira, às 17:30, a parte interessada deve contatar o monitor até às 17:30 da quinta-feira.
+<!-- **Importante:** os monitores destacados acima com "Agendamento Requerido" poderão não estar presentes no horário/local listado acima caso não haja uma solicitação explícita de pessoas interessadas. Se um atendimento é previsto para a sexta-feira, às 17:30, a parte interessada deve contatar o monitor até às 17:30 da quinta-feira. -->
 
 <br />
-
-
 
 ### Bibliografia
 
