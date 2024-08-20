@@ -11,10 +11,10 @@ title: " "
 
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:-------------|:-----------------------------|:-----------------------------:|
-| **Turma A**  | Filidor Labra|  [clique aqui](https://moodle.ggte.unicamp.br)    |
-| **Turma B**  | Larissa Avila Matos      |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=19182)    |
-| **Turma D**  | Tatiana Benaglia         |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=19625)    |
-| **Turma E**  | Felipe Augusto Fernandes |  [clique aqui](https://moodle.ggte.unicamp.br)    |
+| **Turma A**  | Filidor Labra|  [clique aqui](https://moodle.ggte.unicamp.br) |
+| **Turma B**  | Larissa Avila Matos      |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=19182)  |
+| **Turma D**  | Tatiana Benaglia         |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=19625)  |
+| **Turma E**  | Felipe Augusto Fernandes |  [clique aqui](https://moodle.ggte.unicamp.br)  |
 
 <br />
 
