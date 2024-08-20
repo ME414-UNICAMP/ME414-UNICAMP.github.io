@@ -650,7 +650,7 @@ $$s^2 = \frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})^2$$
 
 **Desvio padrão** é a raiz quadrada da variância:
 
-$$s = \sqrt{\frac{1}{n-1} \sum_{i=1}^n(x_i-\bar{x})^2}$$
+$$s = \sqrt{\frac{\sum_{i=1}^n(x_i-\bar{x})^2}{n-1}}$$
 
 **Interpretação**: distância típica entre uma observação e a média dos dados.
 

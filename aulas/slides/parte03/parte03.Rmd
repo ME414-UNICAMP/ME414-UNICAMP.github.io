@@ -40,7 +40,7 @@ Lembram do exemplo dos salários de professores de música na Dinamarca e EUA?
 
 A média dos salários são equivalentes. <br />
 Então, para comparar, usamos uma medida de dispersão como, por exemplo, o **desvio padrão**:
-$$s = \sqrt{\frac{1}{n-1} \sum_{i=1}^n(x_i-\bar{x})^2}$$
+$$s = \sqrt{\frac{\sum_{i=1}^n(x_i-\bar{x})^2}{n-1} }$$
 
 <br />
 **Dinamarca**: $\bar x$ = `r round(mean(den), 2)` e $s$ = `r round(sd(den), 2)` <br />
@@ -63,7 +63,7 @@ Se compararmos as escalas de cada conjunto de dados, poderíamos dizer que o seg
 Veja que:
 
 * A maior observação do conjunto $A$, 3, é 3 vezes maior do que a menor observação, 1.
-* Já a maior observação do conjunto $B$, 102, é 1\% maior do que  a menor observação, 101.
+* Já a maior observação do conjunto $B$, 103, é 2\% maior do que  a menor observação, 101.
 
 
 
