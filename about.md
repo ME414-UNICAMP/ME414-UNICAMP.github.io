@@ -24,7 +24,7 @@ Os atendimentos de PEDs e PADs serão feitos de forma presencial, <!-- PEDs ser�
 
 | Monitor                           | Horários                        |  Local             |  
 |:----------------------------------|:--------------------------------|:-------------------|
-| Robinson Ortega Meza              | 3as-feiras das 12h às 113h      | Sala 323 IMECC     |                          
+| Robinson Ortega Meza (PED)        | 3as-feiras das 12h às 113h      | Sala 323 IMECC     |                          
 | Diego da Silva Santos (PED)       | 5as-feiras das 13h às 14h       | Sala 322 IMECC     |   
 | Mariana Peres Nascimento (PAD)    | 2as e 4as-feiras das 12h às 13h | Sala 224 IMECC     |   
 | Brenda Luiza Correa (PAD)         | 2as e 4as-feiras das 18h às 19h | Sala 325 IMECC     |      
