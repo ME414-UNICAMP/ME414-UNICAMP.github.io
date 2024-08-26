@@ -670,6 +670,15 @@ Seja o evento $I$: escolher ao acaso um aluno e ele ser estudante de estatístic
 > $$P(E\cap M)=\frac{10}{200}=0.05$$
 
 
+## Eventos aleatórios e operações
+
+**Diagrama de Venn:**
+
+<center><img src="figuras/Venn_Diagram1.jpg" width=400 height=350></center>
+
+<br />
+**Vídeo:** [Howard explained possibilities of getting ideal girl to Leonard](https://www.youtube.com/watch?v=ykz9Pe6nFyY)
+
 ## Interseção de Eventos
 
 A interseção de $A$ e $B$ consiste de elementos do espaço amostral que pertencem tanto ao evento $A$ quanto ao evento $B$.
@@ -703,7 +712,6 @@ Na figura da direita, $A$ e $B$ são denominados **disjuntos**, pois $A\cap B=\v
 > Forma correta: $P(A\cup B)=P(A)+P(B)-P(A\cap B)$.
 
 <center><img src="figuras/AunionB2.png" width=450></center> 
-
 
 ## Exemplo: Alunos de um Instituto {.smaller .build}
 
