@@ -622,8 +622,10 @@ $$P(A)=P(\{2\},\{4\},\{6\})=P(2)+P(4)+P(6)=\frac{3}{6}=\frac{1}{2}$$
 
 >    + $\varnothing$ é um conjunto vazio ou evento impossível.
 
+</br>
+</br>
 
-Propriedades:
+**Propriedades:**
 
 >   * $0\leq P(A) \leq 1$, $\forall$ evento $A$ em $\Omega$.
 
