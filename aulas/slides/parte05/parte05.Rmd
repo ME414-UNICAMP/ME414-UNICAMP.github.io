@@ -81,7 +81,7 @@ Tais eventos, em geral, estão associados a **experimentos aleatórios**.
 > Em certo ponto do jogo, durante a sua vez, o 6 sai 3 vezes seguidas e você vence o jogo!
 
 
-> Dentre os de **100 lançamentos** do dado durante a sua vez, seu oponente no jogo comenta que o **6 saiu 23 vezes**.
+> Dentre os **100 lançamentos** do dado durante a sua vez, seu oponente no jogo comenta que o **6 saiu 23 vezes**.
 
 
 > Seu oponente então reclama que o dado estava te favorecendo com tantos 6, portanto o dado não era "justo".
