@@ -94,20 +94,20 @@ n <- sum(data)
 Para simplificar, uma frequência de 90 representa 90.000.
 
 
-## Exemplo: Qual a chance de cair na malha fina? {.build}
+## Exemplo: Qual a chance de cair na malha fina? {.smaller .build}
 
 Espaço amostral:
 
-> $$ \Omega=\{\mbox{(A, sim), (A, não), (B, sim), (B, não), (C, sim), (C, não), (D, sim), (D, não)}\}$$
+> $$\Omega=\{\mbox{(A, sim), (A, não), (B, sim), (B, não), (C, sim), (C, não), (D, sim), (D, não)}\}$$
 
 > Qual a probabilidade de cair na malha fina se a renda for acima de 100.000?
 
 > Considere os eventos:
 
-> * $\mathcal{A}$ = {caiu na malha fina} =$\{\mbox{(A, sim), (B, sim), (C, sim), (D, sim)}\}$ <br />
-> * $\mathcal{B}$ = {renda acima de 100.000} =$\{\mbox{(A, sim), (A, não)}\}$
+> * $\mathbf{F}$ = {caiu na malha fina} =$\{\mbox{(A, sim), (B, sim), (C, sim), (D, sim)}\}$ <br />
+> * $\mathbf{R}$ = {renda acima de 100.000} =$\{\mbox{(A, sim), (A, não)}\}$
 
-> $$ P(\mathcal{A} \mid \mathcal{B}) = \frac{P(\mathcal{A} \cap \mathcal{B})}{P(\mathcal{B})} 
+> $$ P(\mathbf{F} \mid \mathbf{R}) = \frac{P(\mathbf{F}  \cap \mathbf{R})}{P(\mathbf{R})} 
  = \frac{P(\{\mbox{(A, sim)}\})}{P(\{\mbox{(A, sim), (A, não})\})} $$
  
 > $$ =\frac{`r tabela[4,1]`/`r n`}{`r tabela[4, 3]`/`r n`}=`r round(tabela[4, 1]/tabela[4, 3], 3)` $$
