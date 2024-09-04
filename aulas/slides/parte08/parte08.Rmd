@@ -46,7 +46,7 @@ dados <- dados[complete.cases(dados),]
 ```
 
 A seguir apresentamos os resultados obtidos durante a aula:
-```{r, echo=FALSE}
+```{r, echo=FALSE, message=FALSE}
 #instale o pacote, para isso, retire # do início da primeira linha, rode uma vez e volte a incluir #
 #install.packages('printr',type = 'source',repos = c('http://yihui.name/xran', 'http://cran.rstudio.com'))
 
