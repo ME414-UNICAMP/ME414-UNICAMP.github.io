@@ -277,7 +277,7 @@ $Z$: diferença entre os pontos do segundo e do primeiro lançamento.
 
 <br />
 
-$Z$ | -5 | -4 | -3 | -1 | -1 | 0 | 1 | 2 | 3 | 4 | 5
+$Z$ | -5 | -4 | -3 | -2 | -1 | 0 | 1 | 2 | 3 | 4 | 5
 ----|:---:|:---:|:---:|:---:|:---:|:----:|:---:|:---:|:---:|:---:|:---:|:---:
 $P(Z=z)$| 1/36 | 2/36 | 3/36 | 4/36 | 5/36 | 6/36 | 5/36 | 4/36 | 3/36 | 2/36 | 1/36
 
@@ -362,7 +362,8 @@ $P(X=x)$ | $\displaystyle P\left(\bar C \bar C\right)=\frac{1}{4}$ | $\displayst
 
 ## Exemplo: Vacina {.build}
 
-Um grupo de 1000 crianças foi analisado para determinar a efetividade de uma vacina contra um tipo de alergia. As crianças recebiam uma dose de vacina e após um mês passavam por um novo teste. Caso ainda tivessem tido alguma reação alérgica, recebiam outra dose.  
+Um grupo de 1000 crianças foi analisado para determinar a efetividade de uma vacina contra um tipo de alergia. As crianças recebiam uma dose de vacina e após um mês passavam por um novo teste. Caso ainda tivessem tido alguma reação alérgica, recebiam outra dose.
+
 
 > Variável de interesse: X = número de doses.  
 
@@ -370,8 +371,7 @@ Doses ($X$) | 1 | 2 | 3 | 4 | 5
 --------- |:---:|:---:|:---:|:---:|:---:
 Frequência | 245 | 288 | 256 | 145 | 66 
 
-
-<br />
+\
 
 > Uma criança é sorteada ao acaso, qual a probabilidade dela ter recebido 2 doses?  
 
