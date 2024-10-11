@@ -10,10 +10,10 @@ logo: ../logo-imecc.png
 
 # Distribuição amostral e Teorema Central do Limite
 
+
 ## Estimar uma proporção: Eleições para a prefeitura {.build}
 
 <img src="figuras/image-from-rawpixel-id-409554-original.jpg" width=270 style="float: right; margin-left: 30px">
-
 
 > * Quero saber se o candidato $A$ vai ganhar as eleições para prefeito.
 
@@ -32,7 +32,6 @@ logo: ../logo-imecc.png
 
 <img src="figuras/image-from-rawpixel-id-439565-original.jpg" width=270 style="float: right; margin-left: 30px">
 
-
 > * Cidade com $N$ pessoas.
 
 > * $X_i = 1$ se a pessoa $i$ vota em $A$
@@ -46,10 +45,10 @@ logo: ../logo-imecc.png
 <!-- Repare que aqui, nao estou falando de variáveis aleatórias, temos apenas dados das pessoas da cidade -->
 <!-- Estou calculando a média populacional e a variancia, conforme vimos nas estatísticas descritivas -->
 
+
 ## Modo 1 {.smaller}
 
 <img src="figuras/image-from-rawpixel-id-408061-original.jpg" width=270 style="float: right; margin-left: 30px">
-
 
 * Variância populacional:
 
@@ -80,7 +79,6 @@ $$\begin{eqnarray}
 
 ## Modo 1 - Exemplo $N=5$ {.build}
 
-
 $$\mathbf{X}=(X_1,X_2,\ldots,X_5)=(1,0,1,0,1)$$
 
 $$p=\frac{\sum_{i=1}^5X_i}{5}=\frac{3}{5}=0.6$$
@@ -91,6 +89,7 @@ $$\begin{eqnarray}
 &=&0.24\\
 &=&p(1-p)
 \end{eqnarray}$$
+
 
 ## Modo 1 - Exemplo $N=5$
 
@@ -116,25 +115,36 @@ aa$phat <- phat
 #kable(aa,align = 'ccc',col.names = c("Primeira pessoa","Segunda pessoa","$\\hat{p}$"))
 
 library(DT)
-datatable(aa, colnames = c(c("Primeira pessoa","Segunda pessoa","ˆp")))
+datatable(aa, colnames = c("Primeira pessoa", "Segunda pessoa", "hat{p}"))
 ```
 
-## Modo 1 - Exemplo $N=5$ e $n=2$ {.build} {.smaller}
+
+## Modo 1 - Exemplo $N=5$ e $n=2$ {.build} 
 
 Distribuição **amostral** de $\hat{p}$:
 
+<center>
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 ff <- as.data.frame(table(aa$phat))
 ff$Prop=ff$Freq/(sum(ff$Freq))
-kable(ff[,c(1,3)],align = 'cc',col.names = c("$x$","$P(\\hat{p}=x)$"))
+kable(ff[,c(1,3)],align = 'cc', col.names = c("$x$", "$P(\\hat{p}=x)$")) %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
 ```
+</center>
+
+</br>
 
 $$\begin{eqnarray} 
 E(\hat{p})&=&0\times 0.16 + 0.5\times 0.48 + 1\times 0.36 = 0.6 = p\\
+&\\
 Var(\hat{p})&=&E[(\hat{p}-p)^2]\\
 &=&0.16\times(0-0.6)^2 + 0.48\times(0.5-0.6)^2 + 0.36\times (1-0.6)^2\\
 &=&0.12=\frac{0.24}{2}=\frac{p(1-p)}{n}
 \end{eqnarray}$$
+
 
 ## Modo 1 - Exemplo $N=5$ e $n=2$
 
@@ -160,7 +170,7 @@ aa$phat <- round(phat,3)
 #colnames(aa) <- c("Pessoa amostrada 1","Pessoa amostrada 2","$\\hat{p}$")
 #kable(aa[1:25,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\hat{p}$"))
 
-datatable(aa, colnames = c(c("Pessoa amostrada 1","Pessoa amostrada 1", "Pessoa amostrada 3", "ˆp")))
+datatable(aa, colnames = c("Pessoa amostrada 1","Pessoa amostrada 2", "Pessoa amostrada 3", "hat{p}"))
 ```
 
 <!-- ## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller} -->
@@ -188,15 +198,21 @@ datatable(aa, colnames = c(c("Pessoa amostrada 1","Pessoa amostrada 1", "Pessoa 
 <!-- ``` -->
 
 
-## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
+## Modo 1 - Exemplo $N=5$ e $n=3$
 
 Distribuição **amostral** de $\hat{p}$:
 
+<center>
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 ff <- as.data.frame(table(aa$phat))
 ff$Prop=round(ff$Freq/(sum(ff$Freq)),3)
-kable(ff[,c(1,3)],align = 'cc',col.names = c("$x$","$P(\\hat{p}=x)$"))
+kable(ff[,c(1,3)], align = 'cc', col.names = c("$x$","$P(\\hat{p}=x)$")) %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
 ```
+</center>
 
 $$\begin{eqnarray} 
 E(\hat{p})&=&0\times 0.064 + 0.333\times 0.288 + 0.667\times 0.432 + 1\times 0.216\\
@@ -204,6 +220,7 @@ E(\hat{p})&=&0\times 0.064 + 0.333\times 0.288 + 0.667\times 0.432 + 1\times 0.2
 Var(\hat{p})&=&E[(\hat{p}-p)^2]\\
 &=&0.08=\frac{0.24}{3}=\frac{p(1-p)}{n}
 \end{eqnarray}$$
+
 
 ## Modo 1 - Exemplo $N=5$ e $n=3$
 
@@ -231,10 +248,7 @@ barplot(ff$Prop, names.arg=namess, col="turquoise3", main="",
 * $Var(\hat{p})=\frac{p(1-p)}{n}$
 
 
-
 ## Modo 1 - Exemplo $N=1000000$ e $n=100$
-
-
 
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 N=1000000
@@ -253,14 +267,12 @@ aa <- data.frame(bb)
 aa$phat <- round(phat,3)
 ```
 
-
-$p=0.6$. Distribuição **amostral** de $\hat{p}$:
+$p=0.6$ - Distribuição **amostral** de $\hat{p}$:
 
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 ff <- as.data.frame(table(aa$phat))
 ff$Prop=round(ff$Freq/(sum(ff$Freq)),3)
 ```
-
 
 ```{r,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE}
 library(ggplot2)
@@ -275,7 +287,6 @@ stat_function(fun = dnorm, args = list(mean = 0.6, sd = sqrt(0.6*.4/n)),col="red
 
 
 ## Modo 1 - Exemplo $N=1000000$ e $n=1000$
-
 
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 N=1000000
@@ -294,14 +305,12 @@ aa <- data.frame(bb)
 aa$phat <- round(phat,3)
 ```
 
-
-$p=0.6$. Distribuição **amostral** de $\hat{p}$:
+$p=0.6$ - Distribuição **amostral** de $\hat{p}$:
 
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 ff <- as.data.frame(table(aa$phat))
 ff$Prop=round(ff$Freq/(sum(ff$Freq)),3)
 ```
-
 
 ```{r,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE}
 df <- data.frame(PF = aa$phat)
@@ -314,15 +323,16 @@ stat_function(fun = dnorm, args = list(mean = 0.6, sd = sqrt(0.6*.4/n)),col="red
 ```
 
 
-
 ## Modo 2 {.build}
 
 > Suponha que a resposta de uma pessoa da cidade sobre se vota ou não no candidato $A$ possa ser representada por uma **variável aleatória**. $X$ que assume o valor $1$ com probabilidade $p$ ou $0$ com probabilidade $1-p$. 
 
 $\begin{aligned}
 X &\sim Bernoulli(p)\\
+& \\
 \mathbb E(X) &= 1 \times P(X=1) + 0 \times P(X=0) \\ 
 &= 1\times p + 0\times (1-p) = p\\
+& \\
 Var(X) &= \mathbb E[(X - p)^2] \\
 &= (1-p)^2 \times P(X=1) + (0 - p)^2 \times P(X=0) \\
 &=p(1-p)^2+(1-p)p^2\\
@@ -330,15 +340,12 @@ Var(X) &= \mathbb E[(X - p)^2] \\
 \end{aligned}$
 
 
-
-
-
 ## Modo 2 - Exemplo $n=2$  {.smaller .build}
 
 > Todas as combinações possíveis de amostras com $n=2$ são:
 
 Possibilidades        | $(X_1 = 1, X_2 = 1)$ | $(X_1 = 1, X_2 = 0)$ | $(X_1 = 0, X_2 = 1)$ | $(X_1=0,X_2=0)$
-----------------------|----------------------|----------------------|----------------------|-----------------
+----------------------|:----------------------:|:----------------------:|:----------------------:|:-----------------:
 $\hat{p}=\frac{1}{n}\sum_{i=1}^nX_i$              | 1                    | 0.5                  | 0.5                  |   0
 $P(X_1 = i, X_2 = j)$ | $p^2$                | $p(1-p)$                 | $(1-p)p$                 | $(1-p)^2$
 
@@ -355,11 +362,9 @@ Var(\hat{p}) &= \mathbb E[(\hat{p} - p)^2 ] \\
 > Note que: $\displaystyle \mathbb E(\hat{p}) = p = \mathbb E(X)$ e $\displaystyle Var(\hat{p}) =  \frac{Var(X)}{n}$.
 
 
-
 ## Modo 2 - Exemplo $n=2$
 
 Gráficos das distribuições de probabilidade de $X\sim Bernoulli(p=0.6)$ e $\hat{p}$: 
-
 
 ```{r, echo=FALSE, fig.height=3.5, fig.width=6,fig.align='center'}
 par(mfrow=c(1, 2), mar = c(4, 3, 2, 1))
@@ -371,8 +376,6 @@ barplot(c(0.36, 0.48, 0.16), las = 1, col = "turquoise3",
         main = " ", 
         xlab = bquote("" * hat(p) * "") , ylab = "", ylim = c(0, 1), )
 ```
-
-
 
 <!-- ## Resultado  {.build .smaller} -->
 
@@ -399,7 +402,7 @@ A proporção amostral
 $$\hat{p} = \frac{1}{n}\sum_{i=1}^n X_i$$ 
 tem as seguintes propriedades:
 
- $$\mathbb E (\hat{p}) = p \qquad \mbox{e} \qquad Var(\hat{p}) = \frac{p(1-p)}{n}.$$ 
+$$\mathbb E (\hat{p}) = p \qquad \mbox{e} \qquad Var(\hat{p}) = \frac{p(1-p)}{n}.$$ 
 
 (propriedade de linearidade da esperança e da variância, esta última em caso de independência)
 
@@ -448,7 +451,6 @@ barplot(dbinom(0:n, n, p), las = 1, col = "turquoise3",
 
 <!-- ## Modo 2 - Exemplo $n=30$ -->
 
-
 <!-- Amostra aleatória $n=30$ de $X\sim Bernoulli(p=0.6)$.  -->
 
 <!-- * $p = \mathbb E(X) = 0.6 \qquad \Rightarrow \qquad \mathbb E (\hat{p}) = 0.6$  -->
@@ -487,7 +489,6 @@ aa <- data.frame(bb)
 aa$phat <- round(phat,3)
 ```
 
-
 ```{r,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE}
 df <- data.frame(PF = aa$phat)
 ggplot(df, aes(x = PF)) + 
@@ -516,8 +517,6 @@ aa <- data.frame(bb)
 aa$phat <- round(phat,3)
 ```
 
-
-
 ```{r,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE}
 df <- data.frame(PF = aa$phat)
 ggplot(df, aes(x = PF)) + 
@@ -527,6 +526,7 @@ ggplot(df, aes(x = PF)) +
                    fill = "turquoise3") +  geom_vline(xintercept=0.6, color="red") +
 stat_function(fun = dnorm, args = list(mean = 0.6, sd = sqrt(0.6*.4/n)),col="red") + xlab(" ") + ylab(" ") + ylim(0,30)+xlim(0.4,0.8)
 ```
+
 
 ## Modo 2 - Exemplo $n=1000$
 
@@ -544,9 +544,6 @@ phat <- rowMeans(bb)
 aa <- data.frame(bb)
 aa$phat <- round(phat,3)
 ```
-
-
-
 
 ```{r,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE}
 df <- data.frame(PF = aa$phat)
@@ -574,7 +571,6 @@ stat_function(fun = dnorm, args = list(mean = 0.6, sd = sqrt(0.6*.4/n)),col="red
 
 <img src="figuras/image-from-rawpixel-id-414919-jpeg.jpg" width=270 style="float: right; margin-left: 30px">
 
-
 > * Quero saber o salário médio das pessoas de uma certa cidade (parâmetro populacional de interesse).
 
 > * Posso usar uma amostra e estimar usando a média amostral. 
@@ -588,7 +584,6 @@ stat_function(fun = dnorm, args = list(mean = 0.6, sd = sqrt(0.6*.4/n)),col="red
 
 <img src="figuras/image-from-rawpixel-id-424760-original.jpg" width=270 style="float: right; margin-left: 30px">
 
-
 * Cidade com $N$ pessoas.
 
 * $X_i$ é o salário da pessoa $i$.
@@ -601,7 +596,6 @@ stat_function(fun = dnorm, args = list(mean = 0.6, sd = sqrt(0.6*.4/n)),col="red
 
 <!-- Repare que aqui, nao estou falando de variáveis aleatórias, temos apenas dados das pessoas da cidade -->
 <!-- Estou calculando a média populacional e a variancia, conforme vimos nas estatísticas descritivas -->
-
 
 
 ## Modo 1 
@@ -618,12 +612,14 @@ stat_function(fun = dnorm, args = list(mean = 0.6, sd = sqrt(0.6*.4/n)),col="red
 
 * Se outra pessoa também coleta uma amostra aleatória de tamanho $n$ e calcula $\bar{X}$ teremos o mesmo valor?
 
+
 ## Modo 1 - Exemplo $N=5$
 
 $$\mathbf{X}=(X_1,X_2,\ldots,X_5)=(1000,2000,3000,4000,5000)$$
 
 $$\mu=\frac{\sum_{i=1}^5X_i}{5}=3000$$
 $$\sigma^2=\frac{1}{5}\sum_{i=1}^N(X_i-\mu)^2=2000000$$
+
 
 ## Modo 1 - Exemplo $N=5$
 
@@ -650,27 +646,43 @@ aa$phat <- phat
 datatable(aa, colnames = c("Primeira pessoa","Segunda pessoa", "bar{X}"))
 ```
 
-## Modo 1 - Exemplo $N=5$ e $n=2$ {.smaller}
+
+## Modo 1 - Exemplo $N=5$ e $n=2$
 
 Distribuição **amostral** de $\bar{X}$:
 
+<div style="float: left; width: 40%;">
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 ff <- as.data.frame(table(aa$phat))
 ff$Prop=ff$Freq/(sum(ff$Freq))
 kable(ff[,c(1,3)],align = 'cc',col.names = c("$x$","$P(\\bar{X}=x)$")) %>%
-  kable_styling(font_size = 5)
+  row_spec(0, align = "c")  %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
 esp <- sum(as.numeric(as.character(ff$Var1))*ff$Prop)
 vari <- sum( ((as.numeric(as.character(ff$Var1)) - esp )^2)*ff$Prop)
 ```
+</div>
 
-## Modo 1 - Exemplo $N=5$ e $n=2$ 
-
-
+<div style="float: right; width: 60%;">
 $$\begin{eqnarray} 
 E(\bar{X})&=&`r esp`=\mu\\
+& \\
 Var(\bar{X})&=&E[(\bar{X}-\mu)^2]=`r vari`\\
 &=&\frac{2000000}{2}=\frac{\sigma^2}{n}
 \end{eqnarray}$$
+</div>
+
+
+<!-- ## Modo 1 - Exemplo $N=5$ e $n=2$  -->
+
+<!-- $$\begin{eqnarray}  -->
+<!-- E(\bar{X})&=&`r esp`=\mu\\ -->
+<!-- Var(\bar{X})&=&E[(\bar{X}-\mu)^2]=`r vari`\\ -->
+<!-- &=&\frac{2000000}{2}=\frac{\sigma^2}{n} -->
+<!-- \end{eqnarray}$$ -->
+
 
 ## Modo 1 - Exemplo $N=5$ e $n=2$
 
@@ -717,8 +729,6 @@ datatable(aa, colnames = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amo
 <!-- kable(aa[76:100,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$")) -->
 <!-- ``` -->
 
-
-
 <!-- ## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller} -->
 
 <!-- ```{r,echo=FALSE,warning=FALSE,message=FALSE} -->
@@ -728,30 +738,42 @@ datatable(aa, colnames = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amo
 
 ## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
 
-<!-- Distribuição **amostral** de $\bar{X}$: -->
+Distribuição **amostral** de $\bar{X}$:
 
+<div style="float: left; width: 40%;">
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 ff <- as.data.frame(table(aa$phat))
 ff$Prop=round(ff$Freq/(sum(ff$Freq)),3)
-kable(ff[,c(1,3)],align = 'cc',col.names = c("$x$","$P(\\bar{X}=x)$")) %>%
-  kable_styling(font_size = 5)
+kable(ff[,c(1,3)],align = 'cc', col.names = c("$x$","$P(\\bar{X}=x)$")) %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
 esp <- sum(as.numeric(as.character(ff$Var1))*ff$Prop)
 vari <- sum( ((as.numeric(as.character(ff$Var1)) - esp )^2)*ff$Prop)
 ```
+</div>
 
-
-## Modo 1 - Exemplo $N=5$ e $n=3$ 
-
-
+<div style="float: right; width: 60%;">
 $$\begin{eqnarray} 
 E(\bar{X})&=&`r esp`=\mu\\
+&\\
 Var(\bar{X})&=&E[(\bar{X}-\mu)^2]=`r vari`\\
 &=&\frac{2000000}{3}=\frac{\sigma^2}{n}
 \end{eqnarray}$$
+</div>
+
+
+<!-- ## Modo 1 - Exemplo $N=5$ e $n=3$  -->
+
+<!-- $$\begin{eqnarray}  -->
+<!-- E(\bar{X})&=&`r esp`=\mu\\ -->
+<!-- Var(\bar{X})&=&E[(\bar{X}-\mu)^2]=`r vari`\\ -->
+<!-- &=&\frac{2000000}{3}=\frac{\sigma^2}{n} -->
+<!-- \end{eqnarray}$$ -->
 
 
 ## Modo 1 - Exemplo $N=5$ e $n=3$
-
 
 Distribuição amostral de $\bar{X}$:
 
@@ -777,11 +799,7 @@ barplot(ff$Prop, names.arg=namess, col="turquoise3", main="",
 * $Var(\bar{X})=\frac{\sigma^2}{n}$
 
 
-
-
 ## Modo 1 - Exemplo $N=1000000$ e $n=100$
-
-
 
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 N=1000000
@@ -800,14 +818,12 @@ aa <- data.frame(bb)
 aa$phat <- round(phat,3)
 ```
 
-
-$\mu=3000$. Distribuição **amostral** de $\bar{X}$:
+$\mu=3000$ - Distribuição **amostral** de $\bar{X}$:
 
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 ff <- as.data.frame(table(aa$phat))
 ff$Prop=round(ff$Freq/(sum(ff$Freq)),3)
 ```
-
 
 ```{r,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE}
 library(ggplot2)
@@ -822,7 +838,6 @@ stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(vari/n)),col="red") 
 
 
 ## Modo 1 - Exemplo $N=1000000$ e $n=1000$
-
 
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 N=1000000
@@ -841,14 +856,12 @@ aa <- data.frame(bb)
 aa$phat <- round(phat,3)
 ```
 
-
-$\mu=3000$. Distribuição **amostral** de $\bar{X}$:
+$\mu=3000$ - Distribuição **amostral** de $\bar{X}$:
 
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 ff <- as.data.frame(table(aa$phat))
 ff$Prop=round(ff$Freq/(sum(ff$Freq)),3)
 ```
-
 
 ```{r,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE}
 df <- data.frame(PF = aa$phat)
@@ -859,7 +872,6 @@ ggplot(df, aes(x = PF)) +
                    fill = "turquoise3") +  geom_vline(xintercept=mu, color="red") +
 stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(vari/n)),col="red") + xlab(" ") + ylab(" ") + ylim(0,0.01) + xlim(2400,3600)
 ```
-
 
 
 ## Modo 2
@@ -873,6 +885,7 @@ $\begin{aligned}
 &= 2000000
 \end{aligned}$
 
+
 ## Modo 2 
 
 Distribuição da variável $X$ (do salário de cada indivíduo da população): 
@@ -884,10 +897,9 @@ barplot(c(rep(1/5,5)), names.arg=namess, col="turquoise3", main="",
 ```
 
 
-
-
 ## Modo 2 - Exemplo $n=2$  {.smaller}
 
+Então, temos que
 
 > $\displaystyle \mathbb E(\bar{X}) = \frac{1}{n}\sum_{i=1}^n \mathbb E (X_i)= E(X)=\mu=3000$
 
@@ -916,7 +928,6 @@ Além disso, conforme o tamanho amostral aumenta, a imprecisão da média amostr
 
 ## Modo 2 - Exemplo $n=30$
 
-
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 n=30
 B=100000
@@ -933,7 +944,6 @@ mu=mean(c(1000,2000,3000,4000,5000))
 vari = var(c(1000,2000,3000,4000,5000)) * (4/5)
 ```
 
-
 ```{r,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE}
 df <- data.frame(PF = aa$phat)
 ggplot(df, aes(x = PF)) + 
@@ -946,7 +956,6 @@ stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(vari/n)),col="red") 
 
 
 ## Modo 2 - Exemplo $n=100$
-
 
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 n=100
@@ -964,7 +973,6 @@ mu=mean(c(1000,2000,3000,4000,5000))
 vari = var(c(1000,2000,3000,4000,5000)) * (4/5)
 ```
 
-
 ```{r,echo=FALSE,fig.align='center',message=FALSE,warning=FALSE}
 df <- data.frame(PF = aa$phat)
 ggplot(df, aes(x = PF)) + 
@@ -975,8 +983,8 @@ ggplot(df, aes(x = PF)) +
 stat_function(fun = dnorm, args = list(mean = mu, sd = sqrt(vari/n)),col="red") + xlab(" ") + ylab(" ") + ylim(0,0.01)+xlim(2000,4000)
 ```
 
-## Modo 2 - Exemplo $n=1000$
 
+## Modo 2 - Exemplo $n=1000$
 
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 n=1000
