@@ -173,7 +173,7 @@ text(0, yMax, '68%: de -1 a 1', pos=3)
 
 ## {.build}
 
-Qual a probabilidade de que o estimador $\hat{p}$ esteja distante do valor verdadeiro, $p$, em no máximo 1 erro-padrão?
+Qual a probabilidade de que o estimador $\hat{p}$ esteja distante do valor verdadeiro, $p,$ em no máximo 1 erro-padrão?
 
 > $$P\left(\mid \hat{p} - p \mid \leq \sqrt{\frac{p(1-p)}{n}}\right)$$
 
@@ -521,8 +521,7 @@ Construa um intervalo de confiança de 99\% para a proporção de não fumantes 
 \begin{aligned}
 IC_1(p, 0.99) &= \left[\widehat p  - z_{0.005}\sqrt{\frac{\widehat p (1-\widehat p )}{n}}; \widehat p  + z_{0.005}\sqrt{\frac{\widehat p (1-\widehat p )}{n}}\right] \\
 &= \left[ 0.82 -2.58\sqrt{\frac{(0.82)(0.18)}{100}} ; 0.82 + 2.58\sqrt{\frac{(0.82)(0.18)}{100}}\right] \\
-&= [0.82 - 0.10; 0.82 + 0.10] \\
-&= [0.72; 0.92]
+&= [0.82 - 0.10; 0.82 + 0.10] = [0.72; 0.92]
 \end{aligned}
 $$
 
@@ -534,8 +533,7 @@ $$
 \begin{aligned}
 IC_2(p, 0.99) &= \left[\widehat p  - z_{\alpha/2}\sqrt{\frac{1}{4n}}; \widehat p  + z_{\alpha/2}\sqrt{\frac{1}{4n}}\right] \\
 &=  \left[0.82 - 2.58\sqrt{\frac{1}{400}}; 0.82 + 2.58\sqrt{\frac{1}{400}}\right] \\
-&= [0.82 - 0.13; 0.82 + 0.13] \\
-&= [0.69; 0.95]
+&= [0.82 - 0.13; 0.82 + 0.13] = [0.69; 0.95]
 \end{aligned}
 $$
 
