@@ -105,6 +105,9 @@ barplot(c(0.4,0.6), names.arg=namess, col="turquoise3", main="",
 ## Modo 1 - Exemplo $N=5$ e $n=2$ {.smaller}
 
 $N^n=25$ amostras possíveis.
+
+<div style="float: left; width: 50%;">
+<center>
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 library(kableExtra)
 aa <- expand.grid(1:5,1:5)
@@ -112,12 +115,31 @@ xx <- c(1,0,1,0,1)
 phat <- unlist(apply(aa,1,function(x) mean(xx[x])))
 aa$phat <- phat
 #colnames(aa) <- c("Pessoa amostrada 1","Pessoa amostrada 2","$\\hat{p}$")
-#kable(aa,align = 'ccc',col.names = c("Primeira pessoa","Segunda pessoa","$\\hat{p}$"))
+#kable(aa, align = 'ccc',col.names = c("Primeira pessoa", "Segunda pessoa","$\\hat{p}$"))
 
-library(DT)
-datatable(aa, colnames = c("Primeira pessoa", "Segunda pessoa", "hat{p}"))
+#library(DT)
+#datatable(aa, colnames = c("Primeira pessoa", "Segunda pessoa", "hat{p}"))
+
+kable(aa[1:13,], align = 'ccc', row.names = T, col.names = c("Primeira pessoa", "Segunda pessoa","$\\hat{p}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
 ```
+</center>
+</div>
 
+<div style="float: right; width: 50%;">
+<center>
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[14:25,], align = 'ccc', row.names = T, col.names = c("Primeira pessoa", "Segunda pessoa","$\\hat{p}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
+```
+</center>
+</div>
 
 ## Modo 1 - Exemplo $N=5$ e $n=2$ {.build} 
 
@@ -139,7 +161,6 @@ kable(ff[,c(1,3)],align = 'cc', col.names = c("$x$", "$P(\\hat{p}=x)$")) %>%
 
 $$\begin{eqnarray} 
 E(\hat{p})&=&0\times 0.16 + 0.5\times 0.48 + 1\times 0.36 = 0.6 = p\\
-&\\
 Var(\hat{p})&=&E[(\hat{p}-p)^2]\\
 &=&0.16\times(0-0.6)^2 + 0.48\times(0.5-0.6)^2 + 0.36\times (1-0.6)^2\\
 &=&0.12=\frac{0.24}{2}=\frac{p(1-p)}{n}
@@ -161,6 +182,7 @@ barplot(ff$Prop, names.arg=namess, col="turquoise3", main="",
 
 $N^n=125$ amostras possíveis.
 
+<div style="float: left; width: 45%;">
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 library(kableExtra)
 aa <- expand.grid(1:5,1:5,1:5)
@@ -170,32 +192,102 @@ aa$phat <- round(phat,3)
 #colnames(aa) <- c("Pessoa amostrada 1","Pessoa amostrada 2","$\\hat{p}$")
 #kable(aa[1:25,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\hat{p}$"))
 
-datatable(aa, colnames = c("Pessoa amostrada 1","Pessoa amostrada 2", "Pessoa amostrada 3", "hat{p}"))
+#datatable(aa, colnames = c("Pessoa amostrada 1","Pessoa amostrada 2", "Pessoa amostrada 3", "hat{p}"))
+
+kable(aa[1:13,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2", "Pessoa amostrada 3", "$\\hat{p}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
 ```
+</div>
 
-<!-- ## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller} -->
+<div style="float: right; width: 45%;">
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[14:26,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2", "Pessoa amostrada 3", "$\\hat{p}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
+```
+</div>
 
-<!-- ```{r,echo=FALSE,warning=FALSE,message=FALSE} -->
-<!-- kable(aa[26:50,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\hat{p}$")) -->
-<!-- ``` -->
 
-<!-- ## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller} -->
+## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
 
-<!-- ```{r,echo=FALSE,warning=FALSE,message=FALSE} -->
-<!-- kable(aa[51:75,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\hat{p}$")) -->
-<!-- ``` -->
+<div style="float: left; width: 45%;">
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[27:40,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2", "Pessoa amostrada 3", "$\\hat{p}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
+```
+</div>
 
-<!-- ## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller} -->
+<div style="float: right; width: 45%;">
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[41:54,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2", "Pessoa amostrada 3", "$\\hat{p}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
+```
+</div>
 
-<!-- ```{r,echo=FALSE,warning=FALSE,message=FALSE} -->
-<!-- kable(aa[76:100,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\hat{p}$")) -->
-<!-- ``` -->
+## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
 
-<!-- ## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller} -->
+<div style="float: left; width: 45%;">
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[55:68,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2", "Pessoa amostrada 3", "$\\hat{p}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
+```
+</div>
 
-<!-- ```{r,echo=FALSE,warning=FALSE,message=FALSE} -->
-<!-- kable(aa[101:125,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\hat{p}$")) -->
-<!-- ``` -->
+<div style="float: right; width: 45%;">
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[69:82,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2", "Pessoa amostrada 3", "$\\hat{p}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
+```
+</div>
+
+## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
+
+<div style="float: left; width: 45%;">
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[83:96,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2", "Pessoa amostrada 3", "$\\hat{p}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
+```
+</div>
+
+<div style="float: right; width: 45%;">
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[97:110,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2", "Pessoa amostrada 3", "$\\hat{p}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
+```
+</div>
+
+## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[111:125,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2", "Pessoa amostrada 3", "$\\hat{p}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
+```
 
 
 ## Modo 1 - Exemplo $N=5$ e $n=3$
@@ -635,6 +727,9 @@ barplot(c(rep(1/5,5)), names.arg=namess, col="turquoise3", main="",
 ## Modo 1 - Exemplo $N=5$ e $n=2$ {.smaller}
 
 $N^n=25$ amostras possíveis.
+
+<div style="float: left; width: 50%;">
+<center>
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 library(kableExtra)
 aa <- expand.grid(1:5,1:5)
@@ -643,8 +738,28 @@ phat <- unlist(apply(aa,1,function(x) mean(xx[x])))
 aa$phat <- phat
 #kable(aa,align = 'ccc',col.names = c("Primeira pessoa","Segunda pessoa","$\\bar{X}$"))
 
-datatable(aa, colnames = c("Primeira pessoa","Segunda pessoa", "bar{X}"))
+#datatable(aa, colnames = c("Primeira pessoa","Segunda pessoa", "bar{X}"))
+
+kable(aa[1:13,], align = 'ccc', row.names = T, col.names = c("Primeira pessoa","Segunda pessoa","$\\bar{X}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
 ```
+</center>
+</div>
+
+<div style="float: right; width: 50%;">
+<center>
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[14:25,], align = 'ccc', row.names = T, col.names = c("Primeira pessoa","Segunda pessoa","$\\bar{X}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
+```
+</center>
+</div>
 
 
 ## Modo 1 - Exemplo $N=5$ e $n=2$
@@ -652,6 +767,7 @@ datatable(aa, colnames = c("Primeira pessoa","Segunda pessoa", "bar{X}"))
 Distribuição **amostral** de $\bar{X}$:
 
 <div style="float: left; width: 40%;">
+<center>
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 ff <- as.data.frame(table(aa$phat))
 ff$Prop=ff$Freq/(sum(ff$Freq))
@@ -663,6 +779,7 @@ kable(ff[,c(1,3)],align = 'cc',col.names = c("$x$","$P(\\bar{X}=x)$")) %>%
 esp <- sum(as.numeric(as.character(ff$Var1))*ff$Prop)
 vari <- sum( ((as.numeric(as.character(ff$Var1)) - esp )^2)*ff$Prop)
 ```
+</center>
 </div>
 
 <div style="float: right; width: 60%;">
@@ -699,6 +816,7 @@ barplot(ff$Prop, names.arg=namess, col="turquoise3", main="",
 
 $N^n=125$ amostras possíveis.
 
+<div style="float: left; width: 45%;">
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 library(kableExtra)
 aa <- expand.grid(1:5,1:5,1:5)
@@ -708,32 +826,105 @@ aa$phat <- round(phat,3)
 #colnames(aa) <- c("Pessoa amostrada 1","Pessoa amostrada 2","$\\hat{p}$")
 #kable(aa[1:25,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))
 
-datatable(aa, colnames = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3", "bar{X}"))
+#datatable(aa, colnames = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3", "bar{X}"))
+
+kable(aa[1:13,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
 ```
+</div>
 
-<!-- ## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller} -->
+<div style="float: right; width: 45%;">
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[14:26,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
+```
+</div>
 
-<!-- ```{r,echo=FALSE,warning=FALSE,message=FALSE} -->
-<!-- kable(aa[26:50,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$")) -->
-<!-- ``` -->
 
-<!-- ## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller} -->
+## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
 
-<!-- ```{r,echo=FALSE,warning=FALSE,message=FALSE} -->
-<!-- kable(aa[51:75,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$")) -->
-<!-- ``` -->
+<div style="float: left; width: 45%;">
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[27:40,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
+```
+</div>
 
-<!-- ## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller} -->
+<div style="float: right; width: 45%;">
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[41:54,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
+```
+</div>
 
-<!-- ```{r,echo=FALSE,warning=FALSE,message=FALSE} -->
-<!-- kable(aa[76:100,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$")) -->
-<!-- ``` -->
 
-<!-- ## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller} -->
+## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
 
-<!-- ```{r,echo=FALSE,warning=FALSE,message=FALSE} -->
-<!-- kable(aa[101:125,],align = 'ccc',col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$")) -->
-<!-- ``` -->
+<div style="float: left; width: 45%;">
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[55:68,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
+```
+</div>
+
+<div style="float: right; width: 45%;">
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[69:82,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
+```
+</div>
+
+
+## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
+
+<div style="float: left; width: 45%;">
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[83:96,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
+```
+</div>
+
+<div style="float: right; width: 45%;">
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[97:110,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
+```
+</div>
+
+
+## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+kable(aa[111:125,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))  %>%
+  row_spec(0, align = "c") %>% 
+  kable_styling(position = "left", 
+                bootstrap_options = c("striped", "condensed", "bordered"), 
+                font_size = 18, full_width = FALSE)
+```
 
 
 ## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
@@ -741,6 +932,7 @@ datatable(aa, colnames = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amo
 Distribuição **amostral** de $\bar{X}$:
 
 <div style="float: left; width: 40%;">
+<center>
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 ff <- as.data.frame(table(aa$phat))
 ff$Prop=round(ff$Freq/(sum(ff$Freq)),3)
@@ -752,6 +944,7 @@ kable(ff[,c(1,3)],align = 'cc', col.names = c("$x$","$P(\\bar{X}=x)$")) %>%
 esp <- sum(as.numeric(as.character(ff$Var1))*ff$Prop)
 vari <- sum( ((as.numeric(as.character(ff$Var1)) - esp )^2)*ff$Prop)
 ```
+</center>
 </div>
 
 <div style="float: right; width: 60%;">
