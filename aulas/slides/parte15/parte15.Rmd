@@ -10,8 +10,7 @@ logo: ../logo-imecc.png
 
 # Intervalo de Confiança
 
-##
-
+## Eleições
 
 <center>
 ![](figuras/JN.png){width=650px}
