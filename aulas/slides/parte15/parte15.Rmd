@@ -3,6 +3,7 @@ title: ME414 - Estatística para Experimentalistas
 subtitle: Parte 15
 output:
   ioslides_presentation:
+    mathjax: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"    
     widescreen: yes
 logo: ../logo-imecc.png
 ---
@@ -95,30 +96,32 @@ lines(1.96*c(-1,1), rep(yMax,2), lwd=2)
 lines(rep(-1.96,2), c(0,yMax), lty=2)
 lines(rep( 1.96,2), c(0,yMax), lty=2)
 #text(0, yMax, '95%: de -1.96 a 1.96', pos=3)
-text(0,yMax,TeX('$95%: \\, \\pm  1.96\\sqrt{p(1-p)/n}$'),pos=3)
-
+#text(0,yMax,TeX('$95%: \\, \\pm  1.96\\sqrt{p(1-p)/n}$'),pos=3)
+text(0,yMax, TeX(r"($95\%$:  $\pm$ $1.96\sqrt{p(1-p)/n}$)"), pos=3)
 
 yMax <- 0.73
 lines(2.58*c(-1,1), rep(yMax,2), lwd=2)
 lines(rep(-2.58,2), c(0,yMax), lty=2)
 lines(rep( 2.58,2), c(0,yMax), lty=2)
 #text(0, yMax, '99%: de -2.58 a 2.58', pos=3)
-text(0,yMax,TeX('$99%: \\, \\pm  2.58\\sqrt{p(1-p)/n}$'),pos=3)
-
+#(0,yMax,TeX('$99%: \\, \\pm  2.58\\sqrt{p(1-p)/n}$'),pos=3)
+text(0,yMax, TeX(r"($99\%$:  $\pm$ $2.58\sqrt{p(1-p)/n}$)"), pos=3)
 
 yMax <- 0.41
 lines(1.645*c(-1,1), rep(yMax,2), lwd=2)
 lines(rep(-1.645,2), c(0,yMax), lty=2)
 lines(rep( 1.645,2), c(0,yMax), lty=2)
 #text(0, yMax, '90%: de -1.64 a 1.64', pos=3)
-text(0,yMax,TeX('$90%: \\, \\pm  1.64\\sqrt{p(1-p)/n}$'),pos=3)
+#text(0,yMax,TeX('$90%: \\, \\pm  1.64\\sqrt{p(1-p)/n}$'),pos=3)
+text(0,yMax, TeX(r"($90\%$:  $\pm$ $1.64\sqrt{p(1-p)/n}$)"), pos=3)
 
 yMax <- 0.15
 lines(1*c(-1,1), rep(yMax,2), lwd=2)
 lines(rep(-1,2), c(0,yMax), lty=2)
 lines(rep( 1,2), c(0,yMax), lty=2)
 #text(0, yMax, '68%: de -1 a 1', pos=3)
-text(0,yMax,TeX('$68%: \\, \\pm  \\sqrt{p(1-p)/n}$'),pos=3)
+#text(0,yMax,TeX('$68%: \\, \\pm  \\sqrt{p(1-p)/n}$'),pos=3)
+text(0,yMax, TeX(r"($68\%$:  $\pm$ $\sqrt{p(1-p)/n}$)"), pos=3)
 ```
 
 
