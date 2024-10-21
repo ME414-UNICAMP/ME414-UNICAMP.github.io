@@ -1671,9 +1671,9 @@ Temos interesse em saber a média e a variância da altura dos brasileiros: $\mu
 
 ## Parâmetro {.build}
 
-> *  Cada quantidade de interesse (como $\mu$ e $\sigma^2$ no exemplo anterior) é chamada de parâmetro da população. 
+> *  Cada quantidade de interesse (como $\mu$, $p$, $\sigma^2$ no exemplo anterior) é chamada de parâmetro da população. 
 
-> *  Para apresentar uma estimativa de um parâmetro ($\widehat \mu$ e $\hat{\sigma}^2$), devemos escolher uma estatística ($T$). 
+> *  Para representar um estimador de um parâmetro ($\widehat \mu$ e $\hat{\sigma}^2$), devemos escolher uma estatística ($T$). 
 
 > *  Note que da maneira que o plano amostral foi executado (amostra aleatória), a estatística $T$ é uma variável aleatória, visto que cada vez que executarmos o plano amostral poderemos obter resultados diversos.
 
