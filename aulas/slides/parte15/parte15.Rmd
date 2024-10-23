@@ -655,8 +655,7 @@ Margem de erro: $1.96 EP(\widehat p) = 0.03$
 <font size=5>
 $$\begin{aligned}
 IC(p, 0.95) &= \left[0.55 -1.96 \sqrt{\frac{(0.55)(0.45)}{1154}}; 0.55+1.96 \sqrt{\frac{(0.55)(0.45)}{1154}}\right] \\
-&= [0.55 - 0.03; 0.55 + 0.03] \\ 
-&= [0.52; 0.58]
+&= [0.55 - 0.03; 0.55 + 0.03] = [0.52; 0.58]
 \end{aligned}
 $$ 
 </font>
@@ -844,7 +843,7 @@ P \left( |\widehat p -p| < 0.01 \right) &= P\left(2.9 < \sum_{i=1}^n X_i < 3.1 \
 Temos uma probabilidade que é 5 vezes maior que a aproximação.
 
 
-## Exemplo: Mulheres em uma Escola {.build}
+## Exemplo: Mulheres em uma Escola {.build}{.smaller}
 
 Considere agora $n=50$. Nesse caso, a variância é $\frac{p(1-p)}{n}=0.0042$ e, portanto, a probabilidade aproximada é:
 $$P(|\widehat p - p| < 0.01) \approx P\left( |Z| < \frac{0.01}{\sqrt{0.0042}} \right) = P(-0.154 < Z < 0.154) = 0.12239$$ 

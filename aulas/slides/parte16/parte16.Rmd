@@ -3,6 +3,7 @@ title: ME414 - Estatística para Experimentalistas
 subtitle: Parte 16
 output:
   ioslides_presentation:
+    mathjax: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"        
     widescreen: yes
 logo: ../logo-imecc.png
 ---
@@ -20,7 +21,6 @@ logo: ../logo-imecc.png
 
 <!-- > * **Resultado:** Se $X$ tem $\mathbb E(X)=\mu$ e $Var(X)=\sigma^2$, então a distribuição da média amostral,  $\bar{X}_n$, tem  -->
 <!-- $$\mathbb E(\bar{X}_n)=\mu \quad \mbox{e} \quad Var(\bar{X}_n)=\frac{\sigma^2}{n}$$ -->
-
 
 
 ## Distribuição da Média Amostral {.build}
@@ -55,8 +55,6 @@ Para amostras aleatórias simples $X_{1},...,X_{n}$ coletadas de uma população
 $$ \bar{X}_{n} \sim N\left(\mu, \frac{\sigma^{2}}{n} \right)$$
 
 
-
-
 ## Distribuição Amostral de $\bar{X}_n$
 
 ```{r, echo=FALSE, fig.height=4.5, fig.width=6.5, message=FALSE, results='hide',fig.align='center'}
@@ -82,15 +80,16 @@ lines(1.96*c(-1,1), rep(yMax,2), lwd=2)
 lines(rep(-1.96,2), c(0,yMax), lty=2)
 lines(rep( 1.96,2), c(0,yMax), lty=2)
 #text(0, yMax, '95%: de -1.96 a 1.96', pos=3)
-text(0,yMax,TeX('$95%: \\, \\pm  1.96\\sigma /\\sqrt{n}$'),pos=3)
-
+#text(0,yMax,TeX('$95%: \\, \\pm  1.96\\sigma /\\sqrt{n}$'),pos=3)
+text(0,yMax, TeX(r"($95\%$:  $\pm$ $1.96\sqrt{p(1-p)/n}$)"), pos=3)
 
 yMax <- 0.73
 lines(2.58*c(-1,1), rep(yMax,2), lwd=2)
 lines(rep(-2.58,2), c(0,yMax), lty=2)
 lines(rep( 2.58,2), c(0,yMax), lty=2)
 #text(0, yMax, '99%: de -2.58 a 2.58', pos=3)
-text(0,yMax,TeX('$99%: \\, \\pm  2.58\\sigma /\\sqrt{n}$'),pos=3)
+#text(0,yMax,TeX('$99%: \\, \\pm  2.58\\sigma /\\sqrt{n}$'),pos=3)
+text(0,yMax, TeX(r"($99\%$:  $\pm$ $2.58\sqrt{p(1-p)/n}$)"), pos=3)
 
 
 yMax <- 0.41
@@ -98,17 +97,17 @@ lines(1.645*c(-1,1), rep(yMax,2), lwd=2)
 lines(rep(-1.645,2), c(0,yMax), lty=2)
 lines(rep( 1.645,2), c(0,yMax), lty=2)
 #text(0, yMax, '90%: de -1.64 a 1.64', pos=3)
-text(0,yMax,TeX('$90%: \\, \\pm  1.64\\sigma /\\sqrt{n}$'),pos=3)
+#text(0,yMax,TeX('$90%: \\, \\pm  1.64\\sigma /\\sqrt{n}$'),pos=3)
+text(0,yMax, TeX(r"($90\%$:  $\pm$ $1.64\sqrt{p(1-p)/n}$)"), pos=3)
 
 yMax <- 0.15
 lines(1*c(-1,1), rep(yMax,2), lwd=2)
 lines(rep(-1,2), c(0,yMax), lty=2)
 lines(rep( 1,2), c(0,yMax), lty=2)
 #text(0, yMax, '68%: de -1 a 1', pos=3)
-text(0,yMax,TeX('$68%: \\, \\pm  \\sigma /\\sqrt{n}$'),pos=3)
+#text(0,yMax,TeX('$68%: \\, \\pm  \\sigma /\\sqrt{n}$'),pos=3)
+text(0,yMax, TeX(r"($68\%$:  $\pm$ $\sqrt{p(1-p)/n}$)"), pos=3)
 ```
-
-
 
 
 ##
@@ -154,10 +153,6 @@ lines(rep(-1,2), c(0,yMax), lty=2)
 lines(rep( 1,2), c(0,yMax), lty=2)
 text(0, yMax, '68%: de -1 a 1', pos=3)
 ```
-
-
-
-
 
 
 ## Teorema Central do Limite
@@ -247,7 +242,6 @@ $IC(\mu, 90\%) = \left[\bar{x} -1.64\,\sigma/\sqrt{n};\bar{x} +1.64\,\sigma/\sqr
 Intervalo de confiança de $99\%$
 
 $IC(\mu, 99\%) = \left[\bar{x} -2.58\,\sigma/\sqrt{n};\bar{x} +2.58\,\sigma/\sqrt{n}\right]$
-
 
 
 ## Como encontrar $z_{\alpha/2}$
@@ -343,10 +337,6 @@ Encontrar $z_{0.05}$ tal que $0.90 = P\left(-z_{0.05}\leq Z\leq z_{0.05}\right)$
 Pela tabela, $z_{0.05} = 1.64.$
 
 
-
-
-
-
 ## Interpretação do Intervalo de Confiança para $\mu$ {.build}
 
 * Temos uma amostra aleatoria $X_1,\ldots,X_n$ e estamos usando a média amostral $\bar{X}_n$ para estimar $\mu$, a média populacional. 
@@ -413,7 +403,6 @@ Pela tabela, $z_{0.05} = 1.64.$
 
 <!-- > Se consultarmos a tabela agora, veremos que a probabilidade $P(Z<4)$ é tão grande nem está listada. Ela então pode ser considerada como aproximadamente igual a 1. De fato, com a ajuda de algum método de integração numérica, podemos verificar que $\Phi(4) - \Phi(-4)$ é igual a $0.9999367$. -->
 
-
 <!-- ## Exemplo {.build} -->
 
 <!-- Distribuições de $X$ e $\bar{X}$: -->
@@ -462,9 +451,9 @@ Pela tabela, $z_{0.05} = 1.64.$
 
 ## Exemplo: Café {.build}
 
-Uma máquina enche pacotes de café com variância igual a 100$g^2$. Ela estava regulada para encher os pacotes com uma média de 500g. Mas o fabricante desconfia que a máquina está desregulada e quer então estimar a nova média $\mu$.
+Uma máquina enche pacotes de café com variância igual a 100$g^2$. Ela estava regulada para encher os pacotes com uma média de 500g. Mas o fabricante desconfia que a máquina está desregulada e quer então estimar a nova média $\mu.$
 
-Uma amostra de 25 pacotes apresentou uma média de 485g. Encontre um $IC$ de $95\%$ para a verdadeira média $\mu$.
+Uma amostra de 25 pacotes apresentou uma média de 485g. Encontre um $IC$ de $95\%$ para a verdadeira média $\mu.$
 
 $\bar x = 485, n=25, \sigma=10, \alpha=0.05, z_{0.025}=1.96$
 
@@ -473,8 +462,7 @@ $$
 \begin{aligned}
 IC(\mu, 0.95) &= \left[ \bar{x} - z_{0.025} \frac{\sigma}{\sqrt{n}};\,\bar{x} +z_{0.025}\frac{\sigma}{\sqrt{n}}\right] \\
 &= \left[485 - 1.96 \frac{10}{5}; 485 + 1.96 \frac{10}{5} \right] \\
-&= [485 - 3.92; 485 + 3.92] \\
-&= [481.08; 488.92]
+&= [485 - 3.92; 485 + 3.92] = [481.08; 488.92]
 \end{aligned}
 $$
 </font>
@@ -612,7 +600,7 @@ No exemplo da máquina que enche pacotes de café, suponha agora que a variânci
 
 Lembre-se que uma amostra de $25$ pacotes apresentou uma média de 485g. Observou-se um desvio padrão na amostra de 7.1g 
 
-Encontre um IC de 95% para a verdadeira média $\mu$
+Encontre um IC de 95% para a verdadeira média $\mu.$
 
 $$
 \begin{aligned}
@@ -751,7 +739,7 @@ Qual deve ser o tamanho de uma amostra cuja população da qual ela será sortea
 *Fonte: Morettin \& Bussab*, Estatística Básica $5^a$ edição, pág 308.
 
 
-## Exemplo: precisão e tamanho amostral {.build}
+## Exemplo: precisão e tamanho amostral {.build} {.smaller}
 
 Pelo TCL: $\bar{X}_n \sim N(\mu, 10^2/n)$ 
 
