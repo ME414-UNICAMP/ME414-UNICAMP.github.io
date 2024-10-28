@@ -438,15 +438,15 @@ Para um nível de significância $\alpha$:
  * Se valor-de-p > $\alpha$: não rejeitamos $H_0$
 
 
-## Exemplo: Efeitos Colaterais 
+## Exemplo: Efeitos Colaterais {.build}
 
 Uma indústria farmacêutica diz que menos de 20% dos pacientes que estão usando um certo medicamento terão efeitos colaterais. 
 
-Realizou-se então um ensaio clínico com 400 pacientes e verificou-se que 68 pacientes apresentaram efeitos colaterais
+Realizou-se então um ensaio clínico com 400 pacientes e verificou-se que 68 pacientes apresentaram efeitos colaterais.
 
-**Hipóteses:**   $H_0: p = 0.20	\quad 	\mbox{vs} \quad 	   H_A: p < 0.20$
+> **Hipóteses:**   $H_0: p = 0.20	\quad 	\mbox{vs} \quad 	   H_A: p < 0.20$
 		
-**Estatística do teste:** Da amostra temos que $\widehat p = 68/400 = 0.17$
+> **Estatística do teste:** Da amostra temos que $\widehat p = 68/400 = 0.17$
 $$z_{obs} = \frac{\widehat p - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}} = \frac{0.17 - 0.20}{\sqrt{\frac{0.20(1-0.20)}{400}}} = -1.5$$
 
 
