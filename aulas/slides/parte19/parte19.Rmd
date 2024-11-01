@@ -3,14 +3,13 @@ title: ME414 - Estatística para Experimentalistas
 subtitle: Parte 19
 output:
   ioslides_presentation:
+    mathjax: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" 
     widescreen: yes
 logo: ../logo-imecc.png
 ---
 
 
-
-# Inferência para duas populações: intervalo de confiança para duas médias
-
+# Inferência para duas populações: Intervalo de confiança para duas médias
 
 ## Intervalo de Confiança para Duas Médias {.build .smaller}
 
@@ -45,7 +44,9 @@ $$Z= \frac{(\bar{X} - \bar{Y}) - (\mu_1 - \mu_2)}{\displaystyle \sqrt{\frac{\sig
 
 Do resultando anterior, similar com o que fizemos para uma média, podemos construir um IC de $100(1-\alpha)\%$ para $\mu_1 - \mu_2$ da seguinte forma:
 
+<font size=5>
 $$P(-z_{\alpha/2} \leq Z \leq z_{\alpha/2}) = P \left( -z_{\alpha/2} \leq \frac{(\bar{X} - \bar{Y}) - (\mu_1 - \mu_2)}{\displaystyle \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}} \leq z_{\alpha/2}\right) = 1-\alpha$$
+</font>
 
 Portanto, um IC de $100(1-\alpha)\%$ para $\mu_1 - \mu_2$ é dado por:
 $$IC(\mu_1 - \mu_2, 1-\alpha) = (\bar{x} - \bar{y}) \pm z_{\alpha/2} \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}$$
@@ -100,9 +101,7 @@ Procure na tabela o valor de $z$ tal que a probabilidade acumulada até o valor 
 
 **Caso 2: Variâncias iguais e conhecidas**
 
-Considere o caso particular em que as variâncias são conhecidas e idênticas, isto é, $\sigma_1^2 = \sigma_2^2 = \sigma^2$.
-
-Então,
+Considere o caso particular em que as variâncias são conhecidas e idênticas, isto é, $\sigma_1^2 = \sigma_2^2 = \sigma^2$. Então,
 $$Z= \frac{(\bar{X} - \bar{Y}) - (\mu_1 - \mu_2)}{\displaystyle \sqrt{\sigma^2 \left(\frac{1}{n} + \frac{1}{m}\right) }} \sim N(0, 1)$$
 
 E um IC de $100(1-\alpha)\%$ para $\mu_1 - \mu_2$ é dado por:
@@ -183,7 +182,7 @@ Variâncias                             | Margem de Erro  | $IC(\mu_1 - \mu_2, 1
 -------------------------------------- | --------------- | --------------
 Diferentes e conhecidas ($\sigma_1^2 \neq \sigma_2^2$) | $z_{\alpha/2} \sqrt{\displaystyle \frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}$ | $(\bar{x} - \bar{y}) \pm z_{\alpha/2} \sqrt{\displaystyle \frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}$
 Iguais e conhecidas ($\sigma_1^2 = \sigma_2^2 =\sigma^2$) | $z_{\alpha/2} \sqrt{\displaystyle \sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$ | $(\bar{x} - \bar{y}) \pm z_{\alpha/2} \sqrt{\displaystyle \sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$
-Iguais e desconhecidas ($\sigma_1^2 = \sigma_2^2 =\sigma^2$) | $t_{n+m-2, \alpha/2} \sqrt{\displaystyle s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$ | $(\bar{x} - \bar{y}) \pm t_{n+m-2, \alpha/2} \sqrt{\displaystyle s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$
+Iguais e desconhecidas $(\sigma_1^2 = \sigma_2^2 =\sigma^2)$ | $t_{n+m-2, \alpha/2} \sqrt{\displaystyle s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$ | $(\bar{x} - \bar{y}) \pm t_{n+m-2, \alpha/2} \sqrt{\displaystyle s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$
 
 
 ## Exemplo: Tempos de Incubação {.build}
@@ -370,8 +369,7 @@ $$\begin{aligned}
 IC(\mu_A - \mu_B, 0.95) &= (\bar x_A - \bar x_B) \pm t_{n+m-2, 0.025} \sqrt{s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
 &= (`r xbar` - `r ybar`) \pm `r t.alfa2` \sqrt{`r s2p` \left(\frac{1}{`r n`} + \frac{1}{`r m`}\right)} \\
 &= `r est` \pm `r t.alfa2` \times `r round(se.est2, 2)` \\
-&= `r est` \pm `r me2` \\
-&= [`r ic2[1]`; `r ic2[2]`]
+&= `r est` \pm `r me2` = [`r ic2[1]`; `r ic2[2]`]
 \end{aligned}$$
 
 Portanto, com um grau de confiança de `r (1-alpha)*100`\%, estimamos que a diferença entre os pesos médios dos tecidos do tipo A e tipo B está entre `r ic2[1]` e `r ic2[2]`mg. 
@@ -471,7 +469,9 @@ $$Z = \frac{(\hat p_1 - \hat p_2) - (p_1 - p_2)}{\displaystyle \sqrt{\frac{\hat 
 
 Similar com o que fizemos para uma proporção, podemos então construir um IC de $100(1-\alpha)\%$ para $p_1 - p_2$ da seguinte forma:
 
+<font size=5>
 $$P(-z_{\alpha/2} \leq Z \leq z_{\alpha/2}) = P \left( -z_{\alpha/2} \leq \frac{(\hat p_1 - \hat p_2) - (p_1 - p_2)}{\sqrt{\frac{\hat p_1(1 - \hat p_1)}{n_1} + \frac{\hat p_2 (1 - \hat p_2)}{n_2}}} \leq z_{\alpha/2}\right) = 1-\alpha$$
+</font>
 
 Então, um IC de $100(1-\alpha)\%$ para $p_1 - p_2$ é dado por:
 $$IC(p_1 - p_2, 1-\alpha) = (\hat p_1 - \hat p_2) \pm z_{\alpha/2} \sqrt{\frac{\hat p_1 (1 - \hat p_1)}{n_1} + \frac{\hat p_2 (1 - \hat p_2)}{n_2}}$$
@@ -521,7 +521,7 @@ Total | 348 | 652 | 1000
 * Encontre um IC de 95% para $p_A – p_B$.
 
 * Usando os dados da tabela:
-<font size=4>
+<font size=5>
 $$\hat p_A = \frac{168}{400}=`r p1` \quad \mbox{e} \quad \hat p_B = \frac{180}{600}=`r p2`$$
 </font>
 
