@@ -3,6 +3,7 @@ title: ME414 - Estatística para Experimentalistas
 subtitle: Parte 20
 output:
   ioslides_presentation:
+    mathjax: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" 
     widescreen: yes
 logo: ../logo-imecc.png
 ---
@@ -166,7 +167,7 @@ $$T = \frac{\bar X - \bar Y - (\mu_1 - \mu_2)}{\sqrt{S_p^2 \left( \frac{1}{n} + 
 ## Teste de hipótese para duas médias ($\sigma_1^2=\sigma_2^2$) {.build}
 
 Temos interesse em testar: 
-$H_0: \mu_1 - \mu_2 = \Delta_0 \qquad \mbox{vs} \qquad H_A: \mu_1 - \mu_2 \neq \Delta_0 \quad (\mbox{ou hipóteses unilaterais})$
+$H_0: \mu_1 - \mu_2 = \Delta_0 \quad \mbox{vs} \quad H_A: \mu_1 - \mu_2 \neq \Delta_0 \quad (\mbox{ou hipóteses unilaterais})$
 
 E daí, sob $H_0$, temos que:
 $$T= \frac{(\bar X - \bar Y) - \overbrace{(\mu_1 - \mu_2)}^{\Delta_0}}{ \sqrt{S_p^2 \left( \frac{1}{n} + \frac{1}{m} \right) }} \sim t_{n+m-2}.$$
@@ -497,11 +498,14 @@ s_p^2 &= \frac{(n-1)s_1^2 + (m-1)s_2^2}{n+m-2}\\
 ## Exemplo: Tecidos {.build}
 
 Nesse caso, a estatística do teste, sob $H_0$, é dada por:
-
+<font size=5>
 $$T = \frac{\bar X_A - \bar X_B}{\sqrt{S_p^2 \left(\frac{1}{n_A} + \frac{1}{n_B} \right)}}\sim t_{n+m-2}$$
+</font>
 
 Então,
+<font size=5>
 $$t_{obs} = \frac{\bar x_A - \bar x_B}{\sqrt{s_p^2 \left(\frac{1}{n_A} + \frac{1}{n_B} \right)}}  = \frac{`r xbar`-`r ybar`}{\sqrt{`r s2p` \left( \frac{1}{`r n`} + \frac{1}{`r m`} \right)}} = `r zobs2`$$
+</font>
 
 Para um nível de significância $\alpha = `r alpha`$, rejeitamos $H_0$  se $|t_{obs}| \geq t_{n+m-2,`r alpha/2`}$.
 
@@ -556,10 +560,12 @@ em que $\hat p$  é a proporção de sucessos entre os $n_1 + n_2$ elementos amo
 
 ## Teste de hipótese para duas proporções 
 
+<font size=5>
 Para testar $H_0: p_1-p_2 = 0$, calcula-se a estatística do teste
 $$Z = \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}(1 - \hat{p}) \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}} \sim N(0, 1)$$
 
 O valor de p e a conclusão se dá de acordo com a hipótese alternativa na tabela:
+</font>
 
 Hipótese Alternativa  | Valor crítico para $\alpha$ | Valor de p
 ----------------------|--------------------------|--------------
