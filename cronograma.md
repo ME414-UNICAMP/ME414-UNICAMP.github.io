@@ -5,7 +5,7 @@ title: ""
 
 # Cronograma
 
-Este cronograma é válido exclusivamente para as **Turmas A, B, D e E** do 2S2024.
+Este cronograma é válido exclusivamente para as **Turmas C** do 1S2025.
 
 Os docentes seguirão este programa, mas não necessariamente estarão trabalhando conteúdos idênticos na mesma semana cronológica. O conteúdo disponível neste site pode ser atualizado a qualquer momento. 
 
