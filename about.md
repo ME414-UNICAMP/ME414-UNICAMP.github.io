@@ -21,6 +21,7 @@ Os atendimentos de PEDs e PADs serão feitos de forma presencial, <!-- PEDs ser�
 
 | Monitor                           | Horários                        |  Local             |  
 |:----------------------------------|:--------------------------------|:-------------------|
+| A ser determinado | A ser determinado | A ser determinado |
 
                 
 
