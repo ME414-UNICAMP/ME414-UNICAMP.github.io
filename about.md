@@ -11,10 +11,7 @@ title: " "
 
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:-------------|:-----------------------------|:-----------------------------:|
-| **Turma A**  | Filidor Labra|  [clique aqui](https://moodle.ggte.unicamp.br) |
-| **Turma B**  | Larissa Avila Matos      |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=19182)  |
-| **Turma D**  | Tatiana Benaglia         |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=19625)  |
-| **Turma E**  | Felipe Augusto Fernandes |  [clique aqui](https://moodle.ggte.unicamp.br)  |
+| **Turma C**  | Benilton Carvalho|  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=21221) |
 
 <br />
 
@@ -24,12 +21,7 @@ Os atendimentos de PEDs e PADs serão feitos de forma presencial, <!-- PEDs ser�
 
 | Monitor                           | Horários                        |  Local             |  
 |:----------------------------------|:--------------------------------|:-------------------|
-| Robinson Ortega Meza (PED)        | 3as-feiras das 12h às 13h       | Sala 323 IMECC     | 
-| Viviane de Moura (PED)            | 4as-feiras das 12h às 13h       | CB03               | 
-| Diego da Silva Santos (PED)       | 5as-feiras das 13h às 14h       | Sala 322 IMECC     |   
-| Mariana Peres Nascimento (PAD)    | 2as e 4as-feiras das 12h às 13h | Sala 224 IMECC     |   
-| Brenda Luiza Correa (PAD)         | 2as e 4as-feiras das 18h às 19h | Sala 325 IMECC     |      
-| Nicole Maestri Meyer (PAD) | 3as-feiras das 18h às 19h <br/> 5as-feiras das 12h às 13h | CB07   |            
+
                 
 
 <!-- Contatos para agendamento de atendimentos (adicionar o símbolo arroba seguido de dac <ponto> unicamp <ponto> br:  -->
