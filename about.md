@@ -7,11 +7,12 @@ title: " "
 
 <br/>
 
-### ME414 - Turmas do 2º Semestre de 2024
+### ME414 - Turmas do 2º Semestre de 2025
 
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:-------------|:-----------------------------|:-----------------------------:|
-| **Turma C**  | Benilton Carvalho|  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=21221) |
+| **Turma B**  | Tatiana Benaglia |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=22072) |
+| **Turma E**  | Christophe Gallesco |  [clique aqui]() |
 
 <br />
 
@@ -21,8 +22,8 @@ Os atendimentos de PEDs e PADs serão feitos de forma presencial, <!-- PEDs ser�
 
 | Monitor                           | Horários                        |  Local             |  
 |:----------------------------------|:--------------------------------|:-------------------|
-| A ser determinado | A ser determinado | A ser determinado |
-
+| José Matheus Saldanha Barcelos (PAD) | 3as e 5as-feiras das 13-14h | IMECC sala 223 |
+| Alexis Marichi Zela (PED) | 2as e 6as-feiras das 12-13h | PB03 |
                 
 
 <!-- Contatos para agendamento de atendimentos (adicionar o símbolo arroba seguido de dac <ponto> unicamp <ponto> br:  -->
