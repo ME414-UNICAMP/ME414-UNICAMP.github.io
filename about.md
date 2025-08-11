@@ -12,7 +12,7 @@ title: " "
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:-------------|:-----------------------------|:-----------------------------:|
 | **Turma B**  | Tatiana Benaglia |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=22072) |
-| **Turma E**  | Christophe Gallesco |  [clique aqui]() |
+| **Turma E**  | Christophe F. Gallesco |  [clique aqui]() |
 
 <br />
 
