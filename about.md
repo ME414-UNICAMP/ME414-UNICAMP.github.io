@@ -39,11 +39,11 @@ Os atendimentos de PEDs e PADs serão feitos de forma presencial, <!-- PEDs ser�
 
 ### Bibliografia
 
-* Ross, S. M. (2010). [Introductory Statistics](http://www.sciencedirect.com/science/book/9780123743886).
-* Diez, D. M.; Barr, C. D.; Çetinkaya-Rundel, M. (2015). [OpenIntro Statistics](https://www.openintro.org/go?id=os4_for_screen_reader&referrer=/book/os/index.php).
-* Bussab, W.O. e Morettin, P.A. (2017). Estatística Básica. 9a edição.
+* Ross, S. M. (2010). [Introductory Statistics](http://www.sciencedirect.com/science/book/9780123743886). Elsevier.
+* Diez, D. M.; Çetinkaya-Rundel, M.; Barr, C. D. (2015). [OpenIntro Statistics](https://www.openintro.org/go?id=os4_for_screen_reader&referrer=/book/os/index.php).
+* Bussab, W.O. e Morettin, P.A. (2017). Estatística Básica. Editora Saraiva. 9a edição.
 * Magalhães, M.N. e de Lima, A.C.P. (2025). Noções de Probabilidade e Estatística. IME-USP. 8a edição. 
-* Devore, J. L. (2018). [Probabilidade e estatística para engenharia e ciências](	http://acervus.unicamp.br/index.asp?codigo_sophia=1138563)
+* Devore, J. L. (2018). [Probabilidade e Estatística para Engenharia e Ciências](https://wp.ufpel.edu.br/clause/files/2020/09/Probalidade-e-Estatistica-para-Engenharia-e-Ciencias-Devore.pdf). Cengage.
 
 Para acessar livros digitais fora da Unicamp, você precisará do VPN. Veja instruções de instalação [aqui](http://www.ccuec.unicamp.br/ccuec/acesso_remoto_vpn). <br />
 Para acessar o livro do Devore, siga as instruções disponíveis [aqui](https://www.biblioteca.fea.unicamp.br/sites/biblioteca/files/GuiaDeAcessoAosE-booksCengage.pdf).
