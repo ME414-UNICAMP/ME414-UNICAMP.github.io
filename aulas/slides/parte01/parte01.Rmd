@@ -354,42 +354,38 @@ Colunas:
 * `r colnames(dados)[5]`: indica se o email não continha nenhum número (none), um número pequeno (small) ou um número grande (big).
 
 
-## Estrutura básica dos dados {.build}
+## Estrutura básica dos dados
 
-<img src="figuras/later.jpg" width=340 style="float: right; margin-top: 0cm">
+Para que possamos resumir os dados, é importante primeiramente entender como eles são organizados e também os diversos *tipos de variável*.
 
-Para que possamos resumir os dados, é importante primeiramente entender como eles são organizados e também os diversos tipos de cada variável.
+**Variável**: qualquer característica observável ou mensurável de um indivíduo ou unidade pertencente a uma população.
 
-**Variável** é uma condição ou característica de um elemento de estudo. Pode assumir valores diferentes em diferentes elementos.
+<img src="figuras/10-classificacaoVariaveis.jpg" width=500 style="float: left; margin-right: 2cm">
 
-**Tipos de Variáveis**
-
-<img src="figuras/tiposDados.png" width=500 style="float: left; margin-top: 0cm; margin-right: 1cm">
-
-**Exemplos**: peso, altura, curso. 
+**Exemplos**: peso, altura, escolaridade, curso. 
 
 Veja que para cada pessoa, os valores não necessariamente são os mesmos.
 
 
-## Tipos de Variável {.build}
+## Tipos de Variáveis
 
-<img src="figuras/tiposDados.png" width=400 style="float: right; margin: 1cm">
+**Qualitativa/Categórica**: representam atributos que não são numéricos.
 
-**Qualitativa**
+<img src="figuras/10-graficos.jpg" width=400 style="float: right; margin-top:-0.5cm; margin-bottom: -1cm">
+  
+  * **Nominal**: não possuem uma ordem natural. Ex.: sexo, cor dos olhos.
+  * **Ordinal**: apresentam uma ordem ou hierarquia entre as categorias. Ex.: grau de instrução, classe social.
 
-* **Nominal**: Não existe ordenação. <br /> Ex: sexo, estado civil, profissão.
-
-* **Ordinal**: Existe uma certa ordem. <br /> Ex: escolaridade, estágio da doença, classe social.
-
-<br /> 
-
-**Quantitativa**
-
-* **Discreta**: os valores possíveis formam um conjunto enumerável (finito ou infinito). Ex: número de filhos, números de ovos de Páscoa que você comeu.
-
-* **Contínua**: os valores possíveis estão dentro de um intervalo, aberto ou fechado, dos números reais. Ex: peso, altura, salário.
+**Quantitativa/Numérica**: representam quantidades expressas por números resultantes de uma contagem ou mensuração.
+  
+  * **Discreta**: assumem valores inteiros, geralmente provenientes de uma contagem. Ex.: número de filhos, número de carros na família.
+  * **Contínua**: assumem qualquer valor dentro de um intervalo, sendo resultado de uma mensuração. Ex.: peso, altura, tempo.
 
 
+## Comparação entre os Tipos de Variáveis
+
+<img src="figuras/10-comparacaoVariaveis.png" width=700 style="margin-left: 2cm"> 
+  
 
 ## Tipos de Variável {.build}
 
@@ -399,7 +395,7 @@ Cada pergunta se refere a uma variável, que pode ter valores diferentes para ca
 
 Dentre outras coisas, perguntamos sobre as seguintes variáveis:
 
-<img src="figuras/tiposDados.png" width=500 style="float: right; margin-left: 2cm; margin-top:1cm">
+<img src="figuras/10-classificacaoVariaveis.jpg" width=400 style="float: left; margin-right: 2cm; margin-top:0cm">
 
 * Número de irmãos
 * Altura
