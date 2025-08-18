@@ -24,8 +24,8 @@ Os atendimentos de PEDs e PADs serão feitos de forma presencial, <!-- PEDs ser�
 |:----------------------------------|:--------------------------------|:-------------------|
 | José Matheus Saldanha Barcelos (PAD) | 3as-feiras das 13-14h | IMECC sala 223 |
 | José Matheus Saldanha Barcelos (PAD) | 5as-feiras das 13-14h | IMECC sala 223 |
-| Alexis Marichi Zela (PED) | 2as-feiras das 12-13h | PB03 |
-| Alexis Marichi Zela (PED) | 6as-feiras das 12-13h | PB03 |
+| Alexis Marichi Zela (PED) | 2as-feiras das 12-13h | PB07 |
+| Alexis Marichi Zela (PED) | 6as-feiras das 12-13h | PB07 |
                 
 
 <!-- Contatos para agendamento de atendimentos (adicionar o símbolo arroba seguido de dac <ponto> unicamp <ponto> br:  -->
