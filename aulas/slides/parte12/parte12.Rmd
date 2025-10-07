@@ -7,6 +7,13 @@ output:
 logo: ../logo-imecc.png
 ---
 
+<style>
+.twocol { display:flex; gap:22px; align-items:flex-start; }
+.twocol .col-left  { flex:1; }
+.twocol .col-right { flex:1; font-size:90%; }
+</style>
+
+
 # Variáveis Aleatórias Contínuas
 
 ## Variáveis Aleatórias Contínuas {.build}
@@ -95,8 +102,9 @@ par(mfrow = c(1, 2))
 A probabilidade de que uma v.a. $X$ contínua pertença a um intervalo da reta (a,b], $a<b$ é dada por:  
 $$P(a<X\leq b)=\int_{a}^{b}f(x)dx.$$  
  
-<center> 
-```{r, echo=FALSE, fig.height=3.5, fig.width=4}
+<div class="twocol">
+<div class="col-left">
+```{r, echo=FALSE, fig.height=4, fig.width=5}
 a=1
 b=4
 codx <- c(a,seq(a, b, 0.01), b)
@@ -107,9 +115,20 @@ curve(dchisq(x, df=3), xlim=c(0, 10), main="", ylab="f(x)", xlab="x", xaxt='n', 
 axis(1, at=c(a,b), labels=c(letters[1:2])) 
 polygon(codx, cody, col='lightblue')
 ```
-</center>
 
-Obs: Quando $X$ é v.a. contínua $P(a<X\leq b)=P(a\leq X\leq b)=P(a<X< b)=P(a\leq X <b)$. 
+
+</div> 
+<div class="col-right">
+
+\
+\
+**Observação:** Quando $X$ é uma v.a. contínua:
+$$\begin{aligned}
+P(a < X \leq b) &= P(a\leq X\leq b) \\
+&=P(a<X< b) \\
+&=P(a\leq X <b)
+\end{aligned}$$ 
+</div></div>
 
 
 ## Variáveis Aleatórias Contínuas{.build}
@@ -227,8 +246,8 @@ $$\mathbb E(X^k) = \int_{-\infty}^{\infty}x^k \, f_{X}(x)dx \,.$$
 
 $$Var(X) = \mathbb E([X - \mathbb E(X)]^2) = \mathbb E(X^2) - [\mathbb E(X)]^2\,.$$  
 
-> E definimos como **desvio-padrão**:
-$$\sigma = \sqrt{Var(X)}\,.$$  
+> E definimos como **desvio padrão**:
+$$\sigma = \sqrt{Var(X)}$$  
 
 > Note que assim como no caso discreto, ambas as quantidades oferecem medidas de dispersão da variável $X$ em relação ao valor esperado $\mathbb E(X)$.
  
@@ -286,17 +305,13 @@ Item 1 -  Devemos escolher $C$ de modo que $f(x)$ satisfaça:
 	   
 > Pela primeira condição, temos que $C>0$.   Agora, para que $C$ satisfaça a segunda condição, devemos integrar $f_{X}(x)$:  
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 \int_{-\infty}^{\infty} f_{X}(x) dx &=   \int_{-\infty}^{0}\!\! 0 dx +  \int_0^{1/2}\!\! Cx dx + \int_{1/2}^1\!\! C(1-x) dx + \int_{1}^{\infty}\!\! 0dx \\  
 & = C \int_0^{1/2}\!\! x dx + C \int_{1/2}^1\!\! (1-x) dx = C \left ( \left[ \frac{x^2}{2} \right]_0^{1/2} + \left[ x- \frac{x^2}{2} \right]_{1/2}^1 \right) \\
-& = C \left( \frac{1}{8} + 1 - \frac{1}{2} - \frac{1}{2} + \frac{1}{8} \right) = \frac{C}{4}
-\\
+& = C \left( \frac{1}{8} + 1 - \frac{1}{2} - \frac{1}{2} + \frac{1}{8} \right) = \frac{C}{4} \\
 & \Rightarrow \frac{C}{4}=1 \\ 
-&  \\ 
 & \therefore C \mbox{ deve ser igual a 4.} 
-\end{aligned}
-$$
+\end{aligned}$$
 
 
 ## Exemplo
