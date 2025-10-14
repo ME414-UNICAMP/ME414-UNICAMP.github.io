@@ -11,7 +11,7 @@ logo: ../logo-imecc.png
 # Distribuição Amostral e Teorema Central do Limite
 
 
-## Eleições para a Prefeitura: Estimar uma Proporção  {.build}
+## Estimar uma Proporção: Eleições para a Prefeitura {.build}
 
 <img src="figuras/image-from-rawpixel-id-409554-original.jpg" width=270 style="float: right; margin-left: 30px">
 
@@ -108,7 +108,7 @@ barplot(c(0.4, 0.6), names.arg=namess, col="turquoise3", main="",
 
 ## Modo 1 - Exemplo $N=5$ e $n=2$ {.smaller}
 
-$N^n=25$ amostras possíveis.
+$N^n=5^2=25$ amostras possíveis.
 
 <div style="float: left; width: 50%;">
 <center>
@@ -185,7 +185,7 @@ barplot(ff$Prop, names.arg=namess, col="turquoise3", main="",
 
 ## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
 
-$N^n=125$ amostras possíveis.
+$N^n = 5^3 = 125$ amostras possíveis.
 
 <div style="float: left; width: 45%;">
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
@@ -296,7 +296,7 @@ kable(aa[111:125,], align = 'ccc', row.names = T, col.names = c("Pessoa 1","Pess
 
 ## Modo 1 - Exemplo $N=5$ e $n=3$
 
-Distribuição **amostral** de $\hat{p}$:
+**Distribuição amostral** de $\hat{p}$:
 
 <center>
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
@@ -493,7 +493,7 @@ barplot(c(0.36, 0.48, 0.16), las = 1, col = "turquoise3",
 
 ## Resultado  {.smaller}
 
-Seja $X$ uma v.a. com distribuição de Bernoulli com parâmetro $p$. Sabe-se que $E(X)=p$ e $Var(X)=p(1-p)$.
+Seja $X$ uma v.a. com distribuição de Bernoulli com parâmetro $p$. Sabe-se que $\mathbb E(X)=p$ e $Var(X)=p(1-p)$.
 Considere uma amostra aleatória $X_1, X_2,\ldots, X_n$ de $X$.
 
 A proporção amostral
@@ -656,13 +656,14 @@ stat_function(fun = dnorm, args = list(mean = 0.6, sd = sqrt(0.6*.4/n)),col="red
 
 ## Resumo dos exemplos {.build}
 
-> * Modo 1: repostas são "fixas", com média populacional $p$ e variância populacional $p(1-p)$.
+> * **Modo 1**: repostas são "fixas", com média populacional $p$ e variância populacional $p(1-p)$.
 
-> * Modo 2: respostas são v.a.'s $X\sim Bernoulli(p)$, $E(X)=p$, $Var(X)=p(1-p)$.
+> * **Modo 2**: respostas são v.a.'s $X \sim b(p)$, com $\mathbb E(X)=p$ e $Var(X)=p(1-p)$.
 
-> * Em ambos os casos, a partir do momento que retiro uma amostra aleatória de tamanho $n$, temos as mesmas propriedades e comportamento para a proporção amostral $\hat{p}$: $E(\hat{p})=p$ e $Var(\hat{p})=\frac{p(1-p)}{n}$
+> * Em ambos os casos, a partir do momento que retiro uma amostra aleatória de tamanho $n$, temos as mesmas propriedades e comportamento para a proporção amostral $\hat{p}$: $\quad \mathbb E(\hat p)=p \qquad \text{e} \qquad Var(\hat{p})=\frac{p(1-p)}{n}$
 
-> E, conforme $n$ aumenta, vimos nos gráficos que: $\hat{p}\sim \mathcal{N}\left(p,\frac{p(1-p)}{n}\right)$
+> * E, conforme $n$ aumenta, vimos nos gráficos que: 
+$$\hat{p} \sim N\left(p,\frac{p(1-p)}{n}\right)$$
 
 
 ## Estimar uma média: Salários {.build}
@@ -726,13 +727,13 @@ Gráfico de barras (proporção) dos dados populacionais:
 ```{r,echo=FALSE,fig.align='center'}
 namess <- c("1000","2000","3000","4000","5000")
 barplot(c(rep(1/5,5)), names.arg=namess, col="turquoise3", main="", 
-            cex.lab=1.0, cex.axis=1.0, cex.names=1.0, cex.main=2, las=2)
+            cex.lab=1.0, cex.axis=1.0, cex.names=1.0, cex.main=2, las=1)
 ```
 
 
 ## Modo 1 - Exemplo $N=5$ e $n=2$ {.smaller}
 
-$N^n=25$ amostras possíveis.
+$N^n = 5^2 = 25$ amostras possíveis.
 
 <div style="float: left; width: 50%;">
 <center>
@@ -746,7 +747,7 @@ aa$phat <- phat
 
 #datatable(aa, colnames = c("Primeira pessoa","Segunda pessoa", "bar{X}"))
 
-kable(aa[1:13,], align = 'ccc', row.names = T, col.names = c("Primeira pessoa","Segunda pessoa","$\\bar{X}$"))  %>%
+kable(aa[1:13,], align = 'ccc', row.names = T, col.names = c("Pessoa 1", "Pessoa 2","$\\bar{X}$"))  %>%
   row_spec(0, align = "c") %>% 
   kable_styling(position = "left", 
                 bootstrap_options = c("striped", "condensed", "bordered"), 
@@ -758,7 +759,7 @@ kable(aa[1:13,], align = 'ccc', row.names = T, col.names = c("Primeira pessoa","
 <div style="float: right; width: 50%;">
 <center>
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
-kable(aa[14:25,], align = 'ccc', row.names = T, col.names = c("Primeira pessoa","Segunda pessoa","$\\bar{X}$"))  %>%
+kable(aa[14:25,], align = 'ccc', row.names = T, col.names = c("Pessoa 1","Pessoa 2","$\\bar{X}$"))  %>%
   row_spec(0, align = "c") %>% 
   kable_styling(position = "left", 
                 bootstrap_options = c("striped", "condensed", "bordered"), 
@@ -770,7 +771,7 @@ kable(aa[14:25,], align = 'ccc', row.names = T, col.names = c("Primeira pessoa",
 
 ## Modo 1 - Exemplo $N=5$ e $n=2$
 
-Distribuição **amostral** de $\bar{X}$:
+**Distribuição amostral** de $\bar{X}$:
 
 <div style="float: left; width: 40%;">
 <center>
@@ -814,13 +815,13 @@ Distribuição amostral de $\bar{X}$:
 ```{r,echo=FALSE,fig.align='center'}
 namess <- as.character(round(as.numeric(as.character(ff$Var1)),2))
 barplot(ff$Prop, names.arg=namess, col="turquoise3", main="", 
-            cex.lab=1.0, cex.axis=1.0, cex.names=1.0, cex.main=2, las=2)
+            cex.lab=1.0, cex.axis=1.0, cex.names=1.0, cex.main=2, las=1)
 ```
 
 
 ## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
 
-$N^n=125$ amostras possíveis.
+$N^n=5^3=125$ amostras possíveis.
 
 <div style="float: left; width: 45%;">
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
@@ -834,7 +835,7 @@ aa$phat <- round(phat,3)
 
 #datatable(aa, colnames = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3", "bar{X}"))
 
-kable(aa[1:13,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))  %>%
+kable(aa[1:13,], align = 'ccc', row.names = T, col.names = c("Pessoa 1","Pessoa 2","Pessoa 3","$\\bar{X}$"))  %>%
   row_spec(0, align = "c") %>% 
   kable_styling(position = "left", 
                 bootstrap_options = c("striped", "condensed", "bordered"), 
@@ -844,7 +845,7 @@ kable(aa[1:13,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1
 
 <div style="float: right; width: 45%;">
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
-kable(aa[14:26,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))  %>%
+kable(aa[14:26,], align = 'ccc', row.names = T, col.names = c("Pessoa 1","Pessoa 2","Pessoa 3","$\\bar{X}$"))  %>%
   row_spec(0, align = "c") %>% 
   kable_styling(position = "left", 
                 bootstrap_options = c("striped", "condensed", "bordered"), 
@@ -857,7 +858,7 @@ kable(aa[14:26,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 
 
 <div style="float: left; width: 45%;">
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
-kable(aa[27:40,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))  %>%
+kable(aa[27:40,], align = 'ccc', row.names = T, col.names = c("Pessoa 1","Pessoa 2","Pessoa 3","$\\bar{X}$"))  %>%
   row_spec(0, align = "c") %>% 
   kable_styling(position = "left", 
                 bootstrap_options = c("striped", "condensed", "bordered"), 
@@ -867,7 +868,7 @@ kable(aa[27:40,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 
 
 <div style="float: right; width: 45%;">
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
-kable(aa[41:54,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))  %>%
+kable(aa[41:54,], align = 'ccc', row.names = T, col.names = c("Pessoa 1","Pessoa 2","Pessoa 3","$\\bar{X}$"))  %>%
   row_spec(0, align = "c") %>% 
   kable_styling(position = "left", 
                 bootstrap_options = c("striped", "condensed", "bordered"), 
@@ -880,7 +881,7 @@ kable(aa[41:54,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 
 
 <div style="float: left; width: 45%;">
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
-kable(aa[55:68,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))  %>%
+kable(aa[55:68,], align = 'ccc', row.names = T, col.names = c("Pessoa 1","Pessoa 2","Pessoa 3","$\\bar{X}$"))  %>%
   row_spec(0, align = "c") %>% 
   kable_styling(position = "left", 
                 bootstrap_options = c("striped", "condensed", "bordered"), 
@@ -890,7 +891,7 @@ kable(aa[55:68,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 
 
 <div style="float: right; width: 45%;">
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
-kable(aa[69:82,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))  %>%
+kable(aa[69:82,], align = 'ccc', row.names = T, col.names = c("Pessoa 1","Pessoa 2","Pessoa 3","$\\bar{X}$"))  %>%
   row_spec(0, align = "c") %>% 
   kable_styling(position = "left", 
                 bootstrap_options = c("striped", "condensed", "bordered"), 
@@ -903,7 +904,7 @@ kable(aa[69:82,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 
 
 <div style="float: left; width: 45%;">
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
-kable(aa[83:96,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))  %>%
+kable(aa[83:96,], align = 'ccc', row.names = T, col.names = c("Pessoa 1","Pessoa 2","Pessoa 3","$\\bar{X}$"))  %>%
   row_spec(0, align = "c") %>% 
   kable_styling(position = "left", 
                 bootstrap_options = c("striped", "condensed", "bordered"), 
@@ -913,7 +914,7 @@ kable(aa[83:96,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 
 
 <div style="float: right; width: 45%;">
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
-kable(aa[97:110,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))  %>%
+kable(aa[97:110,], align = 'ccc', row.names = T, col.names = c("Pessoa 1","Pessoa 2","Pessoa 3","$\\bar{X}$"))  %>%
   row_spec(0, align = "c") %>% 
   kable_styling(position = "left", 
                 bootstrap_options = c("striped", "condensed", "bordered"), 
@@ -925,7 +926,7 @@ kable(aa[97:110,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada
 ## Modo 1 - Exemplo $N=5$ e $n=3$ {.smaller}
 
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
-kable(aa[111:125,], align = 'ccc', row.names = T, col.names = c("Pessoa amostrada 1","Pessoa amostrada 2","Pessoa amostrada 3","$\\bar{X}$"))  %>%
+kable(aa[111:125,], align = 'ccc', row.names = T, col.names = c("Pessoa 1","Pessoa 2","Pessoa 3","$\\bar{X}$"))  %>%
   row_spec(0, align = "c") %>% 
   kable_styling(position = "left", 
                 bootstrap_options = c("striped", "condensed", "bordered"), 
@@ -979,7 +980,7 @@ Distribuição amostral de $\bar{X}$:
 ```{r,echo=FALSE,fig.align='center'}
 namess <- as.character(round(as.numeric(as.character(ff$Var1)),2))
 barplot(ff$Prop, names.arg=namess, col="turquoise3", main="", 
-            cex.lab=1.0, cex.axis=1.0, cex.names=1.0, cex.main=2, las=2)
+            cex.lab=1.0, cex.axis=1.0, cex.names=1.0, cex.main=2, las=1)
 ```
 
 
@@ -993,7 +994,7 @@ barplot(ff$Prop, names.arg=namess, col="turquoise3", main="",
 
 * $\bar{X}$ é v.a.
 
-* $E(\bar{X})=\mu$
+* $\mathbb E(\bar{X})=\mu$
 
 * $Var(\bar{X})=\frac{\sigma^2}{n}$
 
@@ -1092,7 +1093,7 @@ Distribuição da variável $X$ (do salário de cada indivíduo da população):
 ```{r,echo=FALSE,fig.align='center'}
 namess <- c("1000","2000","3000","4000","5000")
 barplot(c(rep(1/5,5)), names.arg=namess, col="turquoise3", main="", 
-            cex.lab=1.0, cex.axis=1.0, cex.names=1.0, cex.main=2, las=2)
+            cex.lab=1.0, cex.axis=1.0, cex.names=1.0, cex.main=2, las=1)
 ```
 
 
@@ -1218,22 +1219,17 @@ Temos uma população com média (proporção) $\mu$ ($p$) e variância $\sigma^
 Retira-se uma amostra aleatória de tamanho $n$ e calcula-se a média (ou proporção) amostral $\bar{X}$ (ou $\hat{p}$) para estimar o parâmetro populacional desconhecido $\mu$ (ou $p$).
 
 Temos as propriedades:
+$$\mathbb E(\bar{X})=\mu \quad \quad Var(\bar{X})=\frac{\sigma^2}{n}$$
 
-
-$$E(\bar{X})=\mu \quad \quad Var(\bar{X})=\frac{\sigma^2}{n}$$
-
-$$E(\hat{p})=p\quad \quad Var(\hat{p})=\frac{p(1-p)}{n}$$
-
-##
-
+$$\mathbb E(\hat{p})=p\quad \quad Var(\hat{p})=\frac{p(1-p)}{n}$$
 
 E, conforme $n$ aumenta, pelos gráficos, *parece* que a distribuição amostral de $\bar{X}$ e $\hat{p}$ se aproxima da normal:
 
-$$\bar{X}\sim \mathcal{N}\left(\mu,\frac{\sigma^2}{n}\right) \quad \quad \hat{p}\sim \mathcal{N}\left(p,\frac{p(1-p)}{n}\right)$$
+$$\bar{X}\sim N\left(\mu,\frac{\sigma^2}{n}\right) \quad \quad \hat{p}\sim N\left(p,\frac{p(1-p)}{n}\right)$$
 
 
 
-##  {.smaller .build}
+## Resultados {.smaller .build}
 
 Para uma amostra aleatória de tamanho $n$ a partir de uma população:
 
@@ -1259,12 +1255,12 @@ Para uma amostra aleatória de tamanho $n$ a partir de uma população:
 
 > * a distribuição amostral de $\bar X$ aproxima-se de uma **distribuição Normal** de média $\mu$ e variância $\frac{\sigma^{2}}{n}$, quando $n$ for suficientemente grande:
 
-$$\bar{X}\sim\mathcal{N}\left(\mu,\frac{\sigma^2}{n}\right)$$
+$$\bar{X} \sim N\left(\mu,\frac{\sigma^2}{n}\right)$$
 
 
 >
 
-$$Z = \frac{\bar X - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0,1)$$ 
+$$Z = \frac{\bar X - \mu}{\sigma / \sqrt{n}} \sim N(0,1)$$ 
 
 Obs: o resultado vale para $\hat{p}$, com $\mu=p$ e $\sigma^2=p(1-p)$.
 
