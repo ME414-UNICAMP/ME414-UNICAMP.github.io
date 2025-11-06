@@ -19,18 +19,18 @@ logo: ../logo-imecc.png
 
 > * **Passo 3**: Estatística do Teste
 
-> * **Passo 4**: Valor-de-p
+> * **Passo 4**: p-valor
 
 > * **Passo 5**: Conclusões
 
 
 ## Teste de Hipótese para uma proporção {.build}
 
-Suponha que temos uma população e uma hipótese sobre a proporção $p$ de indíviduos  com certa característica
+Suponha que temos uma população e uma hipótese sobre a proporção $p$ de indíviduos  com certa característica.
 
 **Hipóteses:**   	
 $$ \begin{aligned} H_0:  p = p_0	 \quad \mbox{vs} \quad    	   
-H_a: & p \neq p_0 \mbox{ (bilateral)} \\
+H_A: & p \neq p_0 \mbox{ (bilateral)} \\
 		& p < p_0 \mbox{ (unilateral à esquerda)} \\
 		&  p > p_0 \mbox{ (unilateral à direita)}	
 \end{aligned}
@@ -39,35 +39,35 @@ $$
 **Estatística do teste:** Baseada na distribuição amostral de $\hat p$
 $$Z=\frac{\hat{p}-p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}} \overset{H_0}{\sim} N(0,1)$$
 
-**Condição:** $np_0 ≥ 10$ e $n(1−p_0) ≥ 10$ para aproximação normal
+**Condição:** $np_0 ≥ 10$ e $n(1−p_0) ≥ 10$ para aproximação normal.
 
 
 ## Teste de Hipótese para uma proporção {.build}
 
-**valor-de-p** 
+**p-valor** 
 
-* $H_a: p \neq p_0$  (bilateral): valor-de-p=$P(|Z| ≥|z_{obs}|)$ <br />
-* $H_a: p < p_0$ (unilateral à esquerda): valor-de-p=$P(Z \leq z_{obs})$ <br />
-* $H_a: p > p_0$ (unilateral à direita): valor-de-p=$P(Z \geq z_{obs})$
+* $H_A: p \neq p_0$  (bilateral): p-valor=$P(|Z| ≥|z_{obs}|)$ <br />
+* $H_A: p < p_0$ (unilateral à esquerda): p-valor=$P(Z \leq z_{obs})$ <br />
+* $H_A: p > p_0$ (unilateral à direita): p-valor=$P(Z \geq z_{obs})$
 
 <br />
 
 **Conclusão**: Para um nível de significância $\alpha$
 
-* Se valor-de-p $\leq \alpha$: rejeitamos $H_0$ <br />
-* Se valor-de-p > $\alpha$: não rejeitamos $H_0$
+* Se p-valor $\leq \alpha$: rejeitamos $H_0$ <br />
+* Se p-valor > $\alpha$: não rejeitamos $H_0$
 
 
-<!-- ## Valor-de-p Teste Bilateral -->
+<!-- ## p-valor Teste Bilateral -->
 
-<!-- $H_a: p \neq p_0$  (bilateral) $\quad \Rightarrow \quad$ valor-de-p=$P(|Z| ≥|z_{obs}|)$ -->
+<!-- $H_A: p \neq p_0$  (bilateral) $\quad \Rightarrow \quad$ p-valor=$P(|Z| ≥|z_{obs}|)$ -->
 
 <!-- <center><img src="figuras/pvalor_bilateral.png" width=900 height=350></center> -->
 
 
-<!-- ## Valor-de-p Teste Unilateral -->
+<!-- ## p-valor Teste Unilateral -->
 
-<!-- $H_a: p > p_0$ (unilateral à direita) $\quad \Rightarrow \quad$ valor-de-p=$P(Z \geq z_{obs})$ -->
+<!-- $H_A: p > p_0$ (unilateral à direita) $\quad \Rightarrow \quad$ p-valor=$P(Z \geq z_{obs})$ -->
 
 <!-- <center><img src="figuras/pvalor_unilateral.png" width=900 height=350></center> -->
 
@@ -95,28 +95,30 @@ valorpn <- pnorm(zobs, lower.tail=FALSE)
 dec <- ifelse(valorp < alpha, "rejeitamos", "não rejeitamos")
 ```
 
-Em sala de aula, vários alunos disseram que conseguem distinguir entre Coca-Cola normal e Coca-Cola Zero.
+Os alunos dizem que conseguem distinguir entre Coca-Cola normal e Coca-Cola Zero.
 
-Fizemos então o teste para comprovar se a afirmação é verdadeira.
+Um experimento foi feito em sala de aula para comprovar se a afirmação é verdadeira.
 
-Um dos alunos experimentou, em ordem aleatória, 20 amostras (ao acaso era Coca normal ou zero) e anotamos a quantidade de acertos.
+Um aluno experimentou, em ordem aleatória, 20 amostras (ao acaso era Coca normal ou zero) e anotou-se a quantidade de acertos.
 
 > Cada tentativa, $X_i$, é uma Bernoulli$(p)$, em que $p$ é a probabilidade de acerto.
 
 Veja que $T=\sum_{i=1}^{20}X_i \sim Bin(20, p)$, onde $T$ é o número de acertos.
 
-Dos 20 testes, o aluno acertou `r acertos`! Temos então uma proporção amostral de acertos $\hat p = `r acertos`/`r n`=`r phat`$. Isso mostra que o aluno realmente sabe a diferença?
+Dos 20 testes, o aluno acertou `r acertos`! Temos então uma proporção amostral de acertos $\hat p = `r acertos`/`r n`=`r phat`$.  
+Isso mostra que o aluno realmente sabe a diferença?
 
 
 ## Experimento da Coca vs Coca Zero {.build}
+
 Vamos testar o seguinte:
-$$H_0: p = 0.50	\quad \mbox{vs} \quad H_a: p > 0.50$$
+$$H_0: p = 0.50	\quad \mbox{vs} \quad H_A: p > 0.50$$
 
 Podemos testar essas hipóteses de duas maneiras:
 
 * Usando a aproximação normal para a proporção de acertos, como vimos na última aula, já que as condições $np_0 \geq 10$ e $n(1-p_0) \geq 10$ são satisfeitas.
 
-> * Usando a distribuição exata do número total de acertos
+> * Usando a distribuição exata do número total de acertos.
 
 Vamos revisar o que vimos na aula passada e também fazer o teste com a distribuição exata de $T$.
 
@@ -125,14 +127,14 @@ Vamos revisar o que vimos na aula passada e também fazer o teste com a distribu
 
 <!-- Usando a aproximação normal. -->
 
-<!-- > **Hipóteses:**  $H_0: p = 0.50	\quad \mbox{vs} \quad H_a: p > 0.50$ -->
+<!-- > **Hipóteses:**  $H_0: p = 0.50	\quad \mbox{vs} \quad H_A: p > 0.50$ -->
 
 <!-- > A proporção amostral de acertos $\hat p = \frac{T}{20}= `r acertos`/`r n`=`r acertos/n`$ -->
 
 <!-- > **Estatística do teste:** -->
 <!-- > $$z_{obs} = \frac{\hat p - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}} = \frac{`r phat`- `r p0`}{\sqrt{\frac{(`r p0`)(`r 1-p0`)}{`r n`}}} = `r zobs`$$ -->
 
-<!-- > **valor-de-p** = $P(Z \geq `r zobs`) = `r format(valorpn, digits=1,scientific=FALSE)`$ -->
+<!-- > **p-valor** = $P(Z \geq `r zobs`) = `r format(valorpn, digits=1,scientific=FALSE)`$ -->
 
 <!-- > **Conclusão:** Fixando $\alpha=0.05$, rejeitamos a hipótese de que $p=0.5$ e, portanto, acreditamos que a probabilidade de acertos é maior que 50%. -->
 
@@ -159,7 +161,7 @@ Vamos revisar o que vimos na aula passada e também fazer o teste com a distribu
 <!--        length = 0.1, -->
 <!--        col = COL[1], -->
 <!--        lwd = 1.5) -->
-<!-- text(3.5, yMax / 2, labels= paste0("valor-de-p = ", format(valorpn,digits=1,scientific=FALSE)), -->
+<!-- text(3.5, yMax / 2, labels= paste0("p-valor = ", format(valorpn,digits=1,scientific=FALSE)), -->
 <!--      pos = 3, -->
 <!--      cex = 1.2, -->
 <!--      col = COL[1]) -->
@@ -170,15 +172,15 @@ Vamos revisar o que vimos na aula passada e também fazer o teste com a distribu
 ## Experimento da Coca vs Coca Zero {.build}
 Usando a distribuição exata do número de acertos em 20 tentativas.
 
-**Hipóteses:**  $H_0: p = 0.50	\quad \mbox{vs} \quad H_a: p > 0.50$
+**Hipóteses:**  $H_0: p = 0.50	\quad \mbox{vs} \quad H_A: p > 0.50$
 
-**Hipóteses:**  $H_0: Acertos = 10	\quad \mbox{vs} \quad H_a: Acertos > 10$
+**Hipóteses:**  $H_0: \text{Acertos} = 10	\quad \mbox{vs} \quad H_A: \text{Acertos} > 10$
 		
 **Estatística do teste:** $T= \sum_{i=1}^{20}X_i \overset{H_0}{\sim} Bin(20, 0.5)$
 
 O valor observado da estatística do teste é $t_{obs}=`r acertos`$, ou seja, o número total de acertos.
 
-**valor-de-p** = $P(T\geq `r acertos`)=`r format(valorp, digits=1,scientific=FALSE)`$
+**p-valor** = $P(T\geq `r acertos`)=`r format(valorp, digits=1,scientific=FALSE)`$
 
 **Conclusão:** Fixando $\alpha=0.05$, `r dec` a hipótese de que $p=0.5$ e, portanto, acreditamos que a probabilidade de acertos é maior que 50%.
 
@@ -232,9 +234,9 @@ Quando realizamos um teste de hipóteses, podemos cometer 2 tipos de erros:
 <img src="figuras/errosTipos.jpg" width=600 style="float: left; margin-right:30px">
 
 <br /><br /><br /><br />
-$H_0: \mbox{você não está grávida(o)}$
+$H_0: \text{você não está grávida(o)}$
 
-$H_A: \mbox{você está grávida(o)}$
+$H_A: \text{você está grávida(o)}$
 
 
 ## Tipos de Erro {.build}
@@ -266,7 +268,7 @@ Esse valor é chamado de **valor crítico** e vamos denotá-lo por $t_c$.
 ## Tipos de Erro {.build}
 
 No experimento da Coca-Cola:
-$H_{0}: p=0.5 \quad  \mbox{vs} \quad  H_a: p>0.5$ 
+$H_{0}: p=0.5 \quad  \mbox{vs} \quad  H_A: p>0.5$ 
 
 Seja $T$ o número de acertos em uma amostra de tamanho $n=20$. Então $T \sim Bin(20,p)$. 
 
@@ -295,7 +297,7 @@ P(\mbox{Erro Tipo II}) & =  P(\mbox{Não Rejeitar }H_{0}|H_{0}\mbox{ falsa})  \\
 
 ## Tipos de Erro {.build}
 
-Observando a relação entre os erros tipo I e II, e $t_c$: <font size=5>$H_{0}: p=0.5 \; \mbox{vs} \; H_a: p=0.7$</font>
+Observando a relação entre os erros tipo I e II, e $t_c$: <font size=5>$H_{0}: p=0.5 \; \mbox{vs} \; H_A: p=0.7$</font>
 
 $t_c$ | P(Erro Tipo I) | P(Erro Tipo II)  
 ----- | -------------- | --------------
@@ -306,7 +308,7 @@ $15$ | 0.02 | 0.58
 
 Veja que à medida que $\alpha=$P(Erro Tipo I) diminui, $\beta=$P(Erro Tipo II) aumenta. 
 
-Então, optamos por controlar $\alpha=$P(Erro Tipo I), que é considerado o erro mais grave. Geralmente fixamos $\alpha=0.05$ e rejeitamos $H_0$ se valor-de-p $<\alpha$.
+Então, optamos por controlar $\alpha=$P(Erro Tipo I), que é considerado o erro mais grave. Geralmente fixamos $\alpha=0.05$ e rejeitamos $H_0$ se p-valor $<\alpha$.
 
 
 # Teste de hipóteses para média ($\sigma$ conhecido)
@@ -330,7 +332,7 @@ Vamos voltar no problema da máquina que enche pacotes de café. Digamos que o p
 	$$IC(\mu, 0.95) = [481.08; 488.92]$$
 
 > Vamos agora testar as hipóteses:
-			$$H_0: \mu = 500 \quad \mbox{vs} \quad H_a: \mu \neq 500$$
+			$$H_0: \mu = 500 \quad \mbox{vs} \quad H_A: \mu \neq 500$$
 
 
 ## Exemplo: Café {.build}
@@ -338,7 +340,7 @@ Vamos voltar no problema da máquina que enche pacotes de café. Digamos que o p
 <font size=5>
 **Suposições:** Seja $X_i$ o peso do $i$-ésimo pacote de café. Sabemos que $\mathbb E(X_i)=\mu$ e $Var(X_i)=\sigma^2$. Coletou-se uma amostra de tamanho $n=25$. Pelo TCL: $$\bar{X}\sim N(\mu,\sigma^2/n)$$ 
 
-**Hipóteses:** $H_0: \mu = \mu_0 = 500 \quad \mbox{vs} \quad H_a: \mu \neq \mu_0 = 500$
+**Hipóteses:** $H_0: \mu = \mu_0 = 500 \quad \mbox{vs} \quad H_A: \mu \neq \mu_0 = 500$
 
 **Estatística do teste**: 
 $$Z = \frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}} \overset{H_0}{\sim} N(0,1)$$
@@ -351,13 +353,13 @@ $$z_{obs} = \frac{485-500}{10/5}=-7.5$$
 
 Como medir se $-7.5$ é evidência contra $H_0$?
 
-O teste é bilateral, portanto o valor-de-p é calculado como:
+O teste é bilateral, portanto o p-valor é calculado como:
 
-**Valor-de-p**: $P(|Z| \geq 7.5) = 2P(Z \geq 7.5) \approx 0$
+**p-valor**: $P(|Z| \geq 7.5) = 2P(Z \geq 7.5) \approx 0$
 
 <br />
 
-**Conclusão:** Como o valor-de-p é praticamente zero, rejeitamos $H_0$, ou seja, rejeitamos a hipótese de que a média é 500g.
+**Conclusão:** Como o p-valor é praticamente zero, rejeitamos $H_0$, ou seja, rejeitamos a hipótese de que a média é 500g.
 
 ## Região Crítica (Região de Rejeição) {.build}
 
@@ -367,16 +369,18 @@ Outra forma de decidirmos se a evidência encontrada nos dados é forte o sufici
 
 ## Região crítica: teste bilateral
 
-$H_0: \mu=\mu_0$ vs $H_a: \mu \neq \mu_0$ e um nível de significância $\alpha$, definimos a região crítica do teste:
+**Hipóteses** $\quad H_0: \mu=\mu_0$ vs $H_A: \mu \neq \mu_0$  
+Para um **nível de significância** $\alpha$, definimos a **região crítica** do teste:
 
-```{r, echo=FALSE, fig.align = 'center', fig.height=4, fig.width=7, results='hide', message=FALSE}
+```{r, echo=FALSE, fig.align = 'center', fig.height=4.2, fig.width=7, results='hide', message=FALSE}
 library(openintro)
 source("../functions/BuildNullX.R")
 
+par(mar = c(4, 4, 1, 2))
 BuildNullX()
-segments(2 * c(-1, 1), rep(0, 2), y1 = rep(0.15, 2),
+segments(1.96 * c(-1, 1), rep(0, 2), y1 = rep(0.15, 2),
          col = COL[4], lty = 3, lwd = 3)
-segments(2 * c(-1, 1), rep(0, 2), y1 = rep(0.15, 2),
+segments(1.96 * c(-1, 1), rep(0, 2), y1 = rep(0.15, 2),
          col = COL[4], lty = 3, lwd = 1.5)
 text(c(-3, 0, 0, 3), c(0.07, 0.09, 0.05, 0.07),
      c(expression("Rejeita " * H[0]),
@@ -389,15 +393,17 @@ text(c(-3, 0, 0, 3), c(0.07, 0.09, 0.05, 0.07),
 
 ## Região crítica: teste unilateral à direita
 
-$H_0: \mu=\mu_0$ vs $H_a: \mu > \mu_0$ e um nível de significância $\alpha$, definimos a região crítica do teste:
+**Hipóteses** $H_0: \mu=\mu_0$ vs $H_A: \mu > \mu_0$  
+Para um **nível de significância** $\alpha$, definimos a **região crítica** do teste:
 
-```{r, echo=FALSE, fig.align = 'center', fig.height=4, fig.width=7, results='hide'}
+```{r, echo=FALSE, fig.align = 'center', fig.height=4.2, fig.width=7, results='hide'}
 source("../functions/BuildNullXuni.R")
 
+par(mar = c(4, 4, 1, 2))
 BuildNullXuni()
-segments(2 , rep(0, 2), y1 = rep(0.15, 2),
+segments(1.65 , rep(0, 2), y1 = rep(0.15, 2),
          col = COL[4], lty = 3, lwd = 3)
-segments(2 , rep(0, 2), y1 = rep(0.15, 2),
+segments(1.65 , rep(0, 2), y1 = rep(0.15, 2),
          col = COL[4], lty = 3, lwd = 1.5)
 text(c(0, 0, 3), c( 0.09, 0.05, 0.07),
      c("Não",
@@ -409,13 +415,15 @@ text(c(0, 0, 3), c( 0.09, 0.05, 0.07),
 
 ## Região crítica: teste unilateral à esquerda
 
-$H_0: \mu=\mu_0$ vs $H_a: \mu < \mu_0$ e um nível de significância $\alpha$, definimos a região crítica do teste:
+**Hipóteses** $H_0: \mu=\mu_0$ vs $H_A: \mu < \mu_0$  
+Para um **nível de significância** $\alpha$, definimos a **região crítica** do teste:
 
-```{r, echo=FALSE, fig.align = 'center', fig.height=4, fig.width=7, results='hide'}
+```{r, echo=FALSE, fig.align = 'center', fig.height=4.2, fig.width=7, results='hide'}
+par(mar = c(4, 4, 1, 2))
 BuildNullXuni()
-segments(-2 , rep(0, 2), y1 = rep(0.15, 2),
+segments(-1.65 , rep(0, 2), y1 = rep(0.15, 2),
          col = COL[4], lty = 3, lwd = 3)
-segments(-2 , rep(0, 2), y1 = rep(0.15, 2),
+segments(-1.65 , rep(0, 2), y1 = rep(0.15, 2),
          col = COL[4], lty = 3, lwd = 1.5)
 text(c(-3, 0, 0), c(0.07, 0.09, 0.05),
      c(expression("Rejeita " * H[0]),
@@ -427,7 +435,7 @@ text(c(-3, 0, 0), c(0.07, 0.09, 0.05),
 
 ## Região Crítica: teste bilateral {.build}
 
-Quando o teste for bilateral: $H_0: \mu = 500 \quad \mbox{vs} \quad H_a: \mu \neq 500$
+Quando o teste for bilateral: $H_0: \mu = 500 \quad \mbox{vs} \quad H_A: \mu \neq 500$
 
 A região critíca, para $\alpha=0.05$, é a área em azul na figura abaixo:
 
@@ -470,7 +478,7 @@ No nosso exemplo, $z_{obs}=-7.5$. Portanto, rejeitamos $H_0$.
 
 
 ## Região Crítica: teste unilateral à esquerda {.build}
-Quando o teste for unilateral à esquerda: $H_0: \mu = \mu_0 \quad \mbox{vs} \quad H_a: \mu < \mu_0$
+Quando o teste for unilateral à esquerda: $H_0: \mu = \mu_0 \quad \mbox{vs} \quad H_A: \mu < \mu_0$
 
 A região critíca, para $\alpha=0.05$, é a área em azul na figura:
 
@@ -503,7 +511,7 @@ text(-2.5, yMax / 2, labels= expression('área '* 0.05),
 
 
 ## Região Crítica: teste unilateral à direita {.build}
-Quando o teste for unilateral à direita: $H_0: \mu = \mu_0 \quad \mbox{vs} \quad H_a: \mu > \mu_0$
+Quando o teste for unilateral à direita: $H_0: \mu = \mu_0 \quad \mbox{vs} \quad H_A: \mu > \mu_0$
 
 A região critíca, para $\alpha=0.05$, é a área em azul na figura:
 
@@ -538,26 +546,25 @@ text(2.5, yMax / 2, labels= expression('área '* 0.05),
 # Teste de hipóteses para média ($\sigma$ desconhecido)
 
 ## Teste de hipóteses para média ($\sigma$ desconhecido) {.build}
-No caso de testar $$H_0: \mu = \mu_0 \quad \mbox{vs} \quad H_a: \mu \neq \mu_0$$
+No caso de testar $$H_0: \mu = \mu_0 \quad \mbox{vs} \quad H_A: \mu \neq \mu_0$$
 quando $\sigma$ é desconhecido e a amostra é pequena ($n<30$) devemos utilizar a distribuição $t$.
 
 **Estatística do teste**: 
 $$t = \frac{\bar{X}-\mu_0}{s/\sqrt{n}} \overset{H_0}{\sim} t_{n-1}$$
 
-**valor-de-p:** $P(|t_{n−1}| ≥ |t_{obs}|) = 2P(t_{n−1} ≥ |t_{obs}|)$
-
+**p-valor:** $P(|t_{n−1}| ≥ |t_{obs}|) = 2P(t_{n−1} ≥ |t_{obs}|)$  
 Para as hipóteses unilaterais, o raciocínio é semelhante ao que foi feito anteriormente quando $\sigma$ é conhecido.
 
 
 ## Teste de hipóteses para média ($\sigma$ desconhecido) {.build}
 
 No nosso exemplo, suponha que não sabemos o valor de $\sigma$, mas o desvio padrão da amostra é 7.1g. Queremos testar
-<font size=5> $$H_0: \mu = 500 \quad \mbox{vs} \quad H_a: \mu \neq 500$$ </font>
+<font size=5> $$H_0: \mu = 500 \quad \mbox{vs} \quad H_A: \mu \neq 500$$ </font>
 
 **Estatística do teste:**
 <font size=5>$$t_{obs} = \frac{\bar{x}_{obs}-\mu_0}{s/\sqrt{n}} = \frac{485-500}{7.1/5} = -10.56$$ </font>
 
-**valor-de-p:** <font size=5>$P(|t_{24}| ≥ 10.56) = 2P(t_{24} ≥ 10.56) \approx 0$ </font>
+**p-valor:** <font size=5>$P(|t_{24}| ≥ 10.56) = 2P(t_{24} ≥ 10.56) \approx 0$ </font>
 
 **Conclusão:** Rejeitamos a hipótese de que a média é 500g.
 
@@ -593,7 +600,7 @@ Coletou-se uma amostra de tamanho $n=41$.
 Pelo TCL: $\bar{X}\sim N(\mu,\sigma^2/n)$
 
 <br />
-**Hipóteses**: $H_0: \mu= 0 \quad \mbox{vs} \quad H_a:\mu <  0$
+**Hipóteses**: $H_0: \mu= 0 \quad \mbox{vs} \quad H_A:\mu <  0$
 
 Ou seja, estamos testando se não há diferença no peso após a dieta versus a hipótese que há redução no peso após a dieta. 
 
@@ -604,13 +611,13 @@ Ou seja, estamos testando se não há diferença no peso após a dieta versus a 
 
 **Estatística do teste**: Como $n=41$, podemos usar a aproximação normal $$z_{obs}=\frac{\bar{x}_{obs}-\mu_0}{s/\sqrt{n}}=\frac{-9.7-0}{3.4/\sqrt{41}}=-18.3$$
 
-**Valor-de-p**: Como o teste é unilateral à esquerda
+**p-valor**: Como o teste é unilateral à esquerda
 
-$\qquad \mbox{valor-de-p}=P(Z<-18.3) \approx 0$
+$\qquad \mbox{p-valor}=P(Z<-18.3) \approx 0$
 
 <br />
 
-**Conclusão:** Como o valor-de-p é bem pequeno (<0.05) rejeitamos $H_0$, ou seja, rejeitamos a hipótese de que a dieta não produz diferença no peso.
+**Conclusão:** Como o p-valor é bem pequeno (<0.05) rejeitamos $H_0$, ou seja, rejeitamos a hipótese de que a dieta não produz diferença no peso.
 
 
 ## Exemplo: Acidentes de trabalho {.build}
@@ -630,14 +637,14 @@ Você diria, a um nível de significância de $5\%$, que há evidência de melho
 ## Exemplo: Acidentes de trabalho {.build}
 
 Queremos testar a hipótese que $\mu$, o número médio de horas perdidas com acidentes de trabalho, tenha permanecido o mesmo. Ou seja, 
-$$H_0: \mu = 60 \quad \mbox{vs} \quad H_a: \mu < 60$$ 
+$$H_0: \mu = 60 \quad \mbox{vs} \quad H_A: \mu < 60$$ 
 
 **Estatística do teste:**
 $$z_{obs} = \frac{\bar{x}_{obs}-\mu_0}{\sigma/\sqrt{n}} = \frac{50-60}{20/3} = -1.5 $$
 
-**valor-de-p:** $P(Z \leq -1.5) = 0.067$
+**p-valor:** $P(Z \leq -1.5) = 0.067$
 
-**Conclusão:** Como o valor-de-p é maior que 0.05, não rejeitamos a hipótese de que a média é 60. Ou seja, não há evidência contra da hipótese de que o número médio de horas perdidas tenha se mantido o mesmo.
+**Conclusão:** Como o p-valor é maior que 0.05, não rejeitamos a hipótese de que a média é 60. Ou seja, não há evidência contra da hipótese de que o número médio de horas perdidas tenha se mantido o mesmo.
 
 
 ## Exemplo: Acidentes de trabalho {.build}
@@ -693,14 +700,11 @@ Como $z_{obs}=-1.5 > -1.645$, então não rejeitamos $H_0$.
 * [OpenIntro](https://www.openintro.org/stat/textbook.php): seção 5.1.
 * Magalhães: capítulo 8.
 
-<br /><br />
+<br />
 
 Slides produzidos pelos professores:
 
 * Samara Kiihl
-
 * Tatiana Benaglia
-
 * Larissa Matos
-
 * Benilton Carvalho
