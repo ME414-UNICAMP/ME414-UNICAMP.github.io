@@ -21,9 +21,8 @@ A população 1 é independente da população 2.
 
 **Condições:** 
 
-(a) As populações 1 e 2 são aproximadamente normais ou 
-
-(b) Os tamanhos amostrais $n$ e $m$ são suficientemente grandes.
+1) As populações 1 e 2 são aproximadamente normais ou 
+2) Os tamanhos amostrais $n$ e $m$ são suficientemente grandes.
 
 Se pelo menos uma das condições acima é satisfeita, temos:
 $$\bar{X} \sim N\left(\mu_1,\frac{\sigma_1^2}{n} \right) \quad \mbox{e} \quad  \bar{Y} \sim N\left(\mu_2,\frac{\sigma_2^2}{m} \right)$$
@@ -34,11 +33,11 @@ $$\bar{X} \sim N\left(\mu_1,\frac{\sigma_1^2}{n} \right) \quad \mbox{e} \quad  \
 **Caso 1: Variâncias diferentes e conhecidas**
 
 Assumindo que as duas amostras $X_1, \ldots, X_n$ e $Y_1, \ldots, Y_m$ são independentes com $\sigma_1^2 \neq \sigma_2^2$ conhecidas, temos:
-
 $$ \bar{X} - \bar{Y} \sim N\left(\mu_1 - \mu_2, \frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}  \right)$$
 
 E daí,
 $$Z= \frac{(\bar{X} - \bar{Y}) - (\mu_1 - \mu_2)}{\displaystyle \sqrt{\frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}} \sim N(0, 1)$$
+
 
 ## Intervalo de Confiança para Duas Médias {.build}
 
@@ -107,6 +106,7 @@ $$Z= \frac{(\bar{X} - \bar{Y}) - (\mu_1 - \mu_2)}{\displaystyle \sqrt{\sigma^2 \
 E um IC de $100(1-\alpha)\%$ para $\mu_1 - \mu_2$ é dado por:
 $$IC(\mu_1 - \mu_2, 1-\alpha) = (\bar{x} - \bar{y}) \pm z_{\alpha/2} \sqrt{\sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$$
 
+
 ## Intervalo de Confiança para Duas Médias {.build}
 
 **Caso 3: Variâncias iguais e desconhecidas**
@@ -135,7 +135,7 @@ $$IC(\mu_1 - \mu_2, 1-\alpha) = (\bar x - \bar y) \pm t_{n+m-2, \alpha/2} \sqrt{
 $$P(-t_{\nu,\alpha/2} < T < t_{\nu,\alpha/2}) = 1-\alpha$$
 
 <center>
-```{r, echo=FALSE, results='hide', fig.height=4, fig.width=6}
+```{r, echo=FALSE, results='hide', fig.height=3.7, fig.width=6}
 par(mar=c(2, 4, 1, 1) + 0.1)
 normTail(U = 2,L=-2,
          col = COL[1],
@@ -182,7 +182,7 @@ Variâncias                             | Margem de Erro  | $IC(\mu_1 - \mu_2, 1
 -------------------------------------- | --------------- | --------------
 Diferentes e conhecidas ($\sigma_1^2 \neq \sigma_2^2$) | $z_{\alpha/2} \sqrt{\displaystyle \frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}$ | $(\bar{x} - \bar{y}) \pm z_{\alpha/2} \sqrt{\displaystyle \frac{\sigma_1^{2}}{n} + \frac{\sigma_2^{2}}{m}}$
 Iguais e conhecidas ($\sigma_1^2 = \sigma_2^2 =\sigma^2$) | $z_{\alpha/2} \sqrt{\displaystyle \sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$ | $(\bar{x} - \bar{y}) \pm z_{\alpha/2} \sqrt{\displaystyle \sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$
-Iguais e desconhecidas $(\sigma_1^2 = \sigma_2^2 =\sigma^2)$ | $t_{n+m-2, \alpha/2} \sqrt{\displaystyle s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$ | $(\bar{x} - \bar{y}) \pm t_{n+m-2, \alpha/2} \sqrt{\displaystyle s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$
+Iguais e desconhecidas $(\sigma_1^2 = \sigma_2^2 =\sigma^2)$ | $t_{n+m-2, \alpha/2} \sqrt{\displaystyle S_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$ | $(\bar{x} - \bar{y}) \pm t_{n+m-2, \alpha/2} \sqrt{\displaystyle S_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)}$
 
 
 ## Exemplo: Tempos de Incubação {.build}
@@ -234,19 +234,24 @@ Construa um IC de $95\%$ para a diferença do tempo médio de incubação entre 
 Os tempos de incubação (em meses) registrados foram:
 
 X: tempo de incubação do vírus 1 (`r n` observações)
-```{r, echo=FALSE}
-x
+```{r, echo=FALSE, message=FALSE}
+library(knitr)
+library(kableExtra)
+library(tidyverse)
+rbind(x[1:(n/2)] , x[(n/2 + 1): n]) %>% 
+  kable() %>% 
+  kable_styling(font_size = 20, full_width = FALSE, 
+                html_font = "arial", position = "left")
 ```
 
 Y: tempo de incubação do vírus 2 (`r m` observações)
 ```{r, echo=FALSE}
-y
+rbind(y[1:(m/2)] , y[(m/2 + 1): m]) %>% kable() %>% 
+  kable_styling(font_size = 20, full_width = FALSE, 
+                html_font = "arial", position = "left")
 ```
 
-Pelo enunciado, as duas populações são normais e as variâncias são diferentes mas conhecidas:
-$\sigma_1^2 = `r sigma21`$ e $\sigma_2^2= `r sigma22`$.
-
-Além disso, $n=`r n`$ e $m=`r m`$.
+Pelo enunciado, as duas populações são normais e as variâncias são diferentes, mas conhecidas: $\sigma_1^2 = `r sigma21`$ e $\sigma_2^2= `r sigma22`$.  Além disso, $n=`r n`$ e $m=`r m`$.
 
 
 ## Exemplo: Tempos de Incubação
@@ -291,9 +296,8 @@ B     | 39| 27| 35| 42| 31| 39| 22
 <br />
 Construa um IC de 95% para a diferença entre os pesos médios dos tecidos. Admita que a variância é a mesma, e igual a 49. 
 
-Quais outras suposições são necessárias para que o IC seja válido?
-
-*Adaptado de: Profa. Nancy Garcia*, Notas de aula.
+Quais outras suposições são necessárias para que o IC seja válido?  
+**Fonte:** Adaptado das Notas de aula, Profa. Nancy Garcia.
 
 
 ## Exemplo: Tecidos {.build}
@@ -327,11 +331,15 @@ me2 <- round(t.alfa2*se.est2, 2)
 ic2 <- round(est + c(-1, 1)*me2, 2)
 ```
 
-Os tecidos do tipo A tem uma média amostral igual a $\bar{x}_A=`r xbar`$. Já os tecidos do tipo B têm média amostral de $\bar{x}_B=`r ybar`$. 
+Os tecidos do tipo A tem uma média amostral igual a $\bar{x}_A=`r xbar`$.  
+Já os tecidos do tipo B têm média amostral de $\bar{x}_B=`r ybar`$. 
 
-A variância populacional é igual a `r sigma2`, enquanto as variâncias amostrais são `r sigma21` e `r sigma22`, respectivamente.
+A **variância populacional** é igual a `r sigma2`, enquanto as **variâncias amostrais** são `r sigma21` e `r sigma22`, respectivamente.
 
-**Suposições:** Como os tamanhos amostrais $n=m=`r n`$ são pequenos, devemos assumir os pesos dos tecidos dos dois tipos são normalmente distribuídos ou seja, $X_A \sim N(\mu_A, \sigma^2)$ e $X_B \sim N(\mu_B, \sigma^2)$. Além disso são independentes e com variâncias iguais.
+**Suposições:** 
+
+* Como os tamanhos amostrais $n=m=`r n`$ são pequenos, devemos assumir os pesos dos tecidos dos dois tipos são normalmente distribuídos ou seja, $X_A \sim N(\mu_A, \sigma^2)$ e $X_B \sim N(\mu_B, \sigma^2)$. 
+* Além disso, são independentes e com variâncias iguais.
 
 
 ## Exemplo: Tecidos {.build}
@@ -354,9 +362,9 @@ Vamos assumir agora que a variância populacional não fosse conhecida.
 
 Assumindo ainda que as variâncias são iguais mas **desconhecidas**, vamos então estimar a variância amostral combinada.
 
-Sabendo que $s_1^2=`r sigma21`$, $s_2^2=`r sigma22`$ e $n=m=`r n`$ temos:
+Sabendo que $S_1^2=`r sigma21`$, $S_2^2=`r sigma22`$ e $n=m=`r n`$ temos:
 $$\begin{aligned}
-s_p^2 &= \frac{(n-1)s_1^2 + (m-1)s_2^2}{n+m-2}\\
+S_p^2 &= \frac{(n-1)S_1^2 + (m-1)S_2^2}{n+m-2}\\
 &= \frac{(`r n`-1) `r sigma21` + (`r m`-1)`r sigma22`}{`r n` + `r m` - 2} \\
 &= `r s2p`
 \end{aligned}$$
@@ -366,7 +374,7 @@ s_p^2 &= \frac{(n-1)s_1^2 + (m-1)s_2^2}{n+m-2}\\
 
 Nesse caso, um IC de 95% para $\mu_A - \mu_B$ é dado por:
 $$\begin{aligned}
-IC(\mu_A - \mu_B, 0.95) &= (\bar x_A - \bar x_B) \pm t_{n+m-2, 0.025} \sqrt{s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
+IC(\mu_A - \mu_B, 0.95) &= (\bar x_A - \bar x_B) \pm t_{n+m-2, 0.025} \sqrt{S_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
 &= (`r xbar` - `r ybar`) \pm `r t.alfa2` \sqrt{`r s2p` \left(\frac{1}{`r n`} + \frac{1}{`r m`}\right)} \\
 &= `r est` \pm `r t.alfa2` \times `r round(se.est2, 2)` \\
 &= `r est` \pm `r me2` = [`r ic2[1]`; `r ic2[2]`]
@@ -390,7 +398,7 @@ Desvio Padrão | 0.8 | 0.9
 
 Construa um IC de 95% para a diferença entre o tempo médio de adaptação para homens e mulheres.
 
-*Fonte:* Adaptado de Morettin \& Bussab, Estatística Básica $5^a$ edição, pág 365.
+**Fonte:** Adaptado de Morettin \& Bussab, Estatística Básica $5^a$ edição, pág 365.
 
 
 ## Exemplo: Tempo de Adaptação {.build}
@@ -419,9 +427,9 @@ Veja que não sabemos a variância populacional, mas temos os desvios padrão am
 
 Nesse caso, vamos então estimar a variância amostral combinada.
 
-Sabendo que $s_H=`r sigma1`$, $s_M=`r sigma2`$ e $n=m=`r n`$ temos:
+Sabendo que $S_H=`r sigma1`$, $S_M=`r sigma2`$ e $n=m=`r n`$ temos:
 $$\begin{aligned}
-s_p^2 &= \frac{(n-1)s_H^2 + (m-1)s_M^2}{n+m-2}\\
+S_p^2 &= \frac{(n-1)S_H^2 + (m-1)S_M^2}{n + m - 2}\\
 &= \frac{(`r n`-1) (`r sigma1`)^2 + (`r m`-1)(`r sigma2`)^2}{`r n` + `r m` - 2} \\
 &= `r s2p`
 \end{aligned}$$
@@ -431,7 +439,7 @@ s_p^2 &= \frac{(n-1)s_H^2 + (m-1)s_M^2}{n+m-2}\\
 
 Nesse caso, um IC de 95% para $\mu_H - \mu_M$ é dado por:
 $$\begin{aligned}
-IC(\mu_H - \mu_M, 0.95) &= (\bar x_H - \bar x_M) \pm t_{n+m-2, 0.025} \sqrt{s_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
+IC(\mu_H - \mu_M, 0.95) &= (\bar x_H - \bar x_M) \pm t_{n+m-2, 0.025} \sqrt{S_p^2 \left(\frac{1}{n} + \frac{1}{m} \right)} \\
 &= (`r xbar` - `r ybar`) \pm `r t.alfa2` \sqrt{`r s2p` \left(\frac{1}{`r n`} + \frac{1}{`r m`}\right)} \\
 &= `r est` \pm `r t.alfa2` \times `r round(se.est, 2)` \\
 &= `r est` \pm `r me` \\
@@ -481,8 +489,7 @@ $$IC(p_1 - p_2, 1-\alpha) = (\hat p_1 - \hat p_2) \pm z_{\alpha/2} \sqrt{\frac{\
 
 Para o lançamento da nova embalagem de um sabonete a divisão de criação estuda duas propostas:
 
-*	A: amarela com letras vermelhas ou
-
+*	A: amarela com letras vermelhas
 *	B: preta com letras douradas
 
 Eles acreditam que a proposta A chama mais a atenção que B.
@@ -516,11 +523,10 @@ A | 168 | 232 | 400
 B | 180 | 420 | 600
 Total | 348 | 652 | 1000
 
-* Seja $p_A$ a proporção de pessoas que notaram a proposta A e $p_B$ a proporção de pessoas que notaram a proposta B.
+\
+Seja $p_A$ a proporção de pessoas que notaram a proposta A e $p_B$ a proporção de pessoas que notaram a proposta B. Encontre um IC de 95% para $p_A – p_B$.
 
-* Encontre um IC de 95% para $p_A – p_B$.
-
-* Usando os dados da tabela:
+Usando os dados da tabela:
 <font size=5>
 $$\hat p_A = \frac{168}{400}=`r p1` \quad \mbox{e} \quad \hat p_B = \frac{180}{600}=`r p2`$$
 </font>
@@ -547,7 +553,6 @@ Portanto, com um grau de confiança de `r (1-alpha)*100`\%, estimamos que a dife
 <img src="figuras/remedios.jpg" width=350 style="float: right; margin-left:30px">
 
 Um ensaio clínico é realizado para avaliar um novo tipo de tratamento contra uma doença e comparar os resultados com aqueles obtidos usando o tratamento tradicional. 
-
 * Dos 50 pacientes tratados com o tratamento novo, 36 se curaram. <br />
 * Dos 45 pacientes tratados com o tratamento antigo, 29 se curaram. 
 
@@ -582,14 +587,11 @@ $$\hat p_1 = \frac{36}{50}=`r p1` \quad \mbox{e} \quad \hat p_2 = \frac{29}{45}=
 
 
 Então um IC de 99% para $p_1 - p_2$ é dado por:
-<font size=4>
 $$\begin{aligned}
 IC(p_1 - p_2, `r 1-alpha`) &= (`r p1` - `r p2`) \pm z_{0.005} \sqrt{\frac{`r p1` (`r 1-p1`)}{`r n1`} + \frac{`r p2` (`r 1-p2`)}{`r n2`}} \\
 &= `r est` \pm `r z.alfa2` \times `r round(se.est, 3)` \\
-&= `r est` \pm `r me` \\
-&= [`r ic[1]`; `r ic[2]`]
+&= `r est` \pm `r me` = [`r ic[1]`; `r ic[2]`]
 \end{aligned}$$
-</font>
 
 Portanto, com um grau de confiança de `r (1-alpha)*100`\%, estimamos que a diferença entre as  proporções de curados pelos tratamentos novo e antigo está entre `r ic[1]` e `r ic[2]`. 
 
@@ -600,14 +602,10 @@ Portanto, com um grau de confiança de `r (1-alpha)*100`\%, estimamos que a dife
 * [OpenIntro](https://www.openintro.org/stat/textbook.php): seção 5.3.1. e 6.2.2
 * Magalhães: capítulo 9.
 
-<br /><br /><br />
-
+<br /><br />
 Slides produzidos pelos professores:
 
 * Samara Kiihl
-
 * Tatiana Benaglia
-
 * Larissa Matos
-
 * Benilton Carvalho
