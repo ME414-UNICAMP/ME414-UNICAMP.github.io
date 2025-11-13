@@ -345,19 +345,26 @@ Os tempos de incubação de ambos os vírus são considerados independentes.
 Afirma-se que em média, o tempo de incubação do vírus 1 é 3 meses depois do tempo médio de incubação do vírus 2.
 
 
-## Exemplo: Tempo de Incubação {.build}
+## Exemplo: Tempo de Incubação
 
 Realizaram um estudo de controle e os tempos de incubação registrados foram (tempo em meses):
 
 X: tempo de incubação do vírus 1 (`r n` observações)
-```{r, echo=FALSE}
-x
+```{r, echo=FALSE, message=FALSE}
+library(knitr)
+library(kableExtra)
+library(tidyverse)
+rbind(x[1:(n/2)] , x[(n/2 + 1): n]) %>% 
+  kable() %>% 
+  kable_styling(font_size = 20, full_width = FALSE, 
+                html_font = "arial", position = "left")
 ```
 
-<br />
 Y: tempo de incubação do vírus 2 (`r m` observações)
 ```{r, echo=FALSE}
-y
+rbind(y[1:(m/2)] , y[(m/2 + 1): m]) %>% kable() %>% 
+  kable_styling(font_size = 20, full_width = FALSE, 
+                html_font = "arial", position = "left")
 ```
 
 
@@ -406,9 +413,8 @@ B     | 39| 27| 35| 42| 31| 39| 22
 
 Construa um teste de hipótese com nível de significância 5% para testar a hipótese nula de igualdade entre os pesos médios dos tecidos. Admita que a variância é a mesma, e igual a 49. 
 
-Quais outras suposições são necessárias para que o teste seja válido?
-
-*Adaptado de: Profa. Nancy Garcia*, Notas de aula.
+Quais outras suposições são necessárias para que o teste seja válido?  
+**Fonte:** Adaptado das Notas de aula, Profa. Nancy Garcia.
 
 
 ## Exemplo: Tecidos {.build}
@@ -464,7 +470,8 @@ $H_0: \mu_A - \mu_B = 0 \qquad \mbox{vs} \qquad H_A: \mu_A - \mu_B \neq 0$
 
 Como a variância é conhecida, a estatística do teste é dada por $$Z = \frac{(\bar X_A - \bar X_B) - \Delta_0}{\sqrt{\sigma^2 \left(\frac{1}{n_A} + \frac{1}{n_B} \right)}}$$
 
-Se a hipótese nula é verdadeira, temos que $\Delta_0 = \mu_A - \mu_B = 0$ e $Z \sim N \left(0, 1 \right)$. Note que a hipótese alternativa é do tipo $\neq$, então o teste é bilateral.
+Se a hipótese nula é verdadeira, temos que $\Delta_0 = \mu_A - \mu_B = 0$ e $Z \sim N(0, 1).$.  
+Note que a hipótese alternativa é do tipo $\neq$, então o teste é bilateral.
 
 
 ## Exemplo: Tecidos {.build}
@@ -498,14 +505,10 @@ s_p^2 &= \frac{(n-1)s_1^2 + (m-1)s_2^2}{n+m-2}\\
 ## Exemplo: Tecidos {.build}
 
 Nesse caso, a estatística do teste, sob $H_0$, é dada por:
-<font size=5>
 $$T = \frac{\bar X_A - \bar X_B}{\sqrt{S_p^2 \left(\frac{1}{n_A} + \frac{1}{n_B} \right)}}\sim t_{n+m-2}$$
-</font>
 
 Então,
-<font size=5>
 $$t_{obs} = \frac{\bar x_A - \bar x_B}{\sqrt{s_p^2 \left(\frac{1}{n_A} + \frac{1}{n_B} \right)}}  = \frac{`r xbar`-`r ybar`}{\sqrt{`r s2p` \left( \frac{1}{`r n`} + \frac{1}{`r m`} \right)}} = `r zobs2`$$
-</font>
 
 Para um nível de significância $\alpha = `r alpha`$, rejeitamos $H_0$  se $|t_{obs}| \geq t_{n+m-2,`r alpha/2`}$.
 
@@ -653,9 +656,9 @@ O dinheiro que não é gasto hoje pode ser gasto depois.
 
 ## Exemplo: decisão sobre gastos {.build .smaller}
 
-Alunos de ME414 do segundo semestres de 2015 foram recrutados para um estudo e cada um recebeu a seguinte informação através do Google Forms:
+Alunos de uma turma de ME414 foram recrutados para um estudo e cada um recebeu a seguinte informação através do Google Forms:
 
-*Imagine que você estivesse poupando para comprar algo especial. Em uma visita ao shopping você encontra um DVD da sua série/filme favorita que estava na sua "lista de desejos" há tempos. O DVD está em promoção, custando R$ 20,00. O que você faria?*
+"Imagine que você estivesse poupando para comprar algo especial. Em uma visita ao shopping você encontra um DVD da sua série/filme favorita que estava na sua "lista de desejos" há tempos. O DVD está em promoção, custando R$ 20,00. O que você faria?"
 
 `r n1` alunos (Grupo 1) selecionados ao acaso receberam a seguinte opção de resposta:
 
@@ -704,7 +707,7 @@ Queremos testar:
 $$H_0: p_1 = p_2 \qquad \mbox{vs} \qquad H_A: p_1 < p_2$$
 
 
-## Exemplo: decisão sobre gastos {.build .smaller}
+## Exemplo: decisão sobre gastos {.build}
 
 Seja $\hat{p}_1$ a proporção que decide não comprar entre os $n_1$ alunos **amostrados do Grupo 1**. <br />
 Seja $\hat{p}_2$ a proporção que decide não comprar entre os $n_2$ alunos **amostrados do Grupo 2**.
@@ -713,6 +716,9 @@ Relembrando o TCL:
 $$\hat p_1 \sim N\left(p_1,\frac{ p_1(1 - p_1)}{n_1} \right) \quad \mbox{e} \quad  \hat p_2 \sim N\left(p_2,\frac{ p_2(1 -  p_2)}{n_2} \right)$$
 
 **Condições:** Todas as quantidades $n_1\hat p_1, \; n_1(1- \hat p_1), \; n_2\hat p_2 \; \mbox{ e } \; n_2(1- \hat p_2)$ devem ser pelo menos igual a 10 para que a aproximação pela normal seja válida.
+
+
+## Exemplo: decisão sobre gastos {.build}
 
 Então, para $H_0$: $p_1=p_2$ usamos a estatística do teste a seguir:
 $$Z = \frac{(\hat p_1 - \hat p_2)}{\sqrt{\hat p(1 - \hat p) \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}} \sim N(0, 1),$$
@@ -735,7 +741,6 @@ $$
 Calculando a estatística do teste:
 $$Z = \frac{\hat p_1 - \hat p_2}{\sqrt{\hat p(1 - \hat p) \left(\frac{1}{n_1} + \frac{1}{n_2} \right)}} = \frac{`r p1`-`r p2`}{\sqrt{(`r p`)(`r 1-p`) \left( \frac{1}{`r n1`} + \frac{1}{`r n2`} \right)}} = `r zobs` = z_{obs}$$
 
-<br />
 Para um nível de significância $\alpha = `r alpha`$, rejeitamos $H_0$ se $z_{obs} \leq -z_{`r alpha`}$. <br />No caso, $z_{obs} = `r zobs` > `r zc` = -z_{`r alpha`}$. Portanto, não temos evidências para rejeitar a hipótese de que as duas proporções são iguais.
 
 valor de p = $P(Z \leq z_{obs}) = P(Z \leq `r zobs`) = `r valorp` > \alpha$. Portanto, não rejeitamos $H_0$.
@@ -752,9 +757,6 @@ valor de p = $P(Z \leq z_{obs}) = P(Z \leq `r zobs`) = `r valorp` > \alpha$. Por
 Slides produzidos pelos professores:
 
 * Samara Kiihl
-
 * Tatiana Benaglia
-
 * Larissa Matos
-
 * Benilton Carvalho
