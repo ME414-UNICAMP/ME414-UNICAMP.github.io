@@ -229,7 +229,7 @@ Sabe-se que:
 Construa um IC de $95\%$ para a diferença do tempo médio de incubação entre os vírus, isto é, $\mu_1 - \mu_2$.
 
 
-## Exemplo: Tempos de Incubação {.build}
+## Exemplo: Tempos de Incubação
 
 Os tempos de incubação (em meses) registrados foram:
 
@@ -553,7 +553,8 @@ Portanto, com um grau de confiança de `r (1-alpha)*100`\%, estimamos que a dife
 <img src="figuras/remedios.jpg" width=350 style="float: right; margin-left:30px">
 
 Um ensaio clínico é realizado para avaliar um novo tipo de tratamento contra uma doença e comparar os resultados com aqueles obtidos usando o tratamento tradicional. 
-* Dos 50 pacientes tratados com o tratamento novo, 36 se curaram. <br />
+
+* Dos 50 pacientes tratados com o tratamento novo, 36 se curaram.
 * Dos 45 pacientes tratados com o tratamento antigo, 29 se curaram. 
 
 Seja $p_1$ a proporção de curados com o tratamento novo e $p_2$ a proporção de curados com o tratamento antigo.
