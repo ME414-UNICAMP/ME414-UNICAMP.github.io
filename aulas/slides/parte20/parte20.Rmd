@@ -71,7 +71,7 @@ $$Z= \frac{(\bar X - \bar Y) - \overbrace{(\mu_1 - \mu_2)}^{\Delta_0}}{ \sqrt{\f
 
 ## Teste de hipótese para duas médias ($\sigma_1^2 \neq \sigma_2^2$) {.build}
 
-O valor-de-p é calculado de acordo com a hipótese alternativa.
+O p-valor é calculado de acordo com a hipótese alternativa.
 
 <img src="figuras/regiao_critica_bilateral.png" width=430 style="float: right; margin-left:30px">
 
@@ -83,18 +83,18 @@ H_A: \mu_1 - \mu_2 & \neq \Delta_0
 
 Usando o valor observado da estatística do teste:
 $$\begin{aligned}
-\mbox{valor-p} &= P(|Z| \geq |z_{obs}|) \\
+\mbox{p-valor} &= P(|Z| \geq |z_{obs}|) \\
 &= 2P(Z \leq -|z_{obs}|)
 \end{aligned}$$
 
 <br />
-**Conclusão**: Rejeita-se $H_0$ se valor-p $\leq \alpha$ ou, de forma equivalente, se $z_{obs}$ cai na região crítica (área cinza do gráfico).
+**Conclusão**: Rejeita-se $H_0$ se p-valor $\leq \alpha$ ou, de forma equivalente, se $z_{obs}$ cai na região crítica (área cinza do gráfico).
 
 
 
 ## Teste de hipótese para duas médias ($\sigma_1^2 \neq \sigma_2^2$) {.build}
 
-O valor-de-p é calculado de acordo com a hipótese alternativa.
+O p-valor é calculado de acordo com a hipótese alternativa.
 
 <img src="figuras/regiao_critica_unilateral_esquerda.png" width=430 style="float: right; margin-left:30px">
 
@@ -105,15 +105,15 @@ H_A: \mu_1 - \mu_2 & < \Delta_0
 \end{aligned}$$
 
 Usando o valor observado da estatística do teste:
-$$\mbox{valor-p} = P(Z \leq z_{obs})$$
+$$\mbox{p-valor} = P(Z \leq z_{obs})$$
 
 <br />
-**Conclusão**: Rejeita-se $H_0$ se valor-p $\leq \alpha$ ou, de forma equivalente, se $z_{obs}$ cai na região crítica (área cinza à esquerda do gráfico).
+**Conclusão**: Rejeita-se $H_0$ se p-valor $\leq \alpha$ ou, de forma equivalente, se $z_{obs}$ cai na região crítica (área cinza à esquerda do gráfico).
 
 
 ## Teste de hipótese para duas médias ($\sigma_1^2 \neq \sigma_2^2$) {.build}
 
-O valor-de-p é calculado de acordo com a hipótese alternativa.
+O p-valor é calculado de acordo com a hipótese alternativa.
 
 <img src="figuras/regiao_critica_unilateral_direita.png" width=430 style="float: right; margin-left:30px">
 
@@ -124,10 +124,10 @@ H_A: \mu_1 - \mu_2 & > \Delta_0
 \end{aligned}$$
 
 Usando o valor observado da estatística do teste:
-$$\mbox{valor-p} = P(Z \geq z_{obs})$$
+$$\mbox{p-valor} = P(Z \geq z_{obs})$$
 
 <br />
-**Conclusão**: Rejeita-se $H_0$ se valor-p $\leq \alpha$ ou, de forma equivalente, se $z_{obs}$ cai na região crítica (área cinza à direita do gráfico).
+**Conclusão**: Rejeita-se $H_0$ se p-valor $\leq \alpha$ ou, de forma equivalente, se $z_{obs}$ cai na região crítica (área cinza à direita do gráfico).
 
 
 ## Teste de hipótese para duas médias ($\sigma_1^2 = \sigma_2^2$) {.build}
@@ -393,8 +393,8 @@ Cálculo da estatística do teste:
 $$z_{obs} = \frac{(\bar x - \bar y) - \Delta_0}{\sqrt{\frac{\sigma_1^2}{n} + \frac{\sigma_2^2}{m}}}  = \frac{(`r xbar` - `r ybar`) - `r Delta0`}{\sqrt{\frac{`r sigma21`}{`r n`} + \frac{`r sigma22`}{`r m`}}} =  `r zobs` $$
 
 <br />
-Como é um teste bilateral, o valor de p é dado por:
-$$\mbox{valor-p} = P(|Z| \geq |z_{obs}|) = P(|Z| \geq `r abs(zobs)`) = 2 P(Z \leq - `r abs(zobs)`) =  `r valorp`$$ 
+Como é um teste bilateral, o p-valor é dado por:
+$$\mbox{p-valor} = P(|Z| \geq |z_{obs}|) = P(|Z| \geq `r abs(zobs)`) = 2 P(Z \leq - `r abs(zobs)`) =  `r valorp`$$ 
 
 
 Para um nível de significância $\alpha=0.01$: Como p-valor = `r valorp` $> \alpha=0.01$, não temos evidência para rejeitar $H_{0}: \mu_1 = 3 + \mu_2$.
@@ -470,18 +470,18 @@ $H_0: \mu_A - \mu_B = 0 \qquad \mbox{vs} \qquad H_A: \mu_A - \mu_B \neq 0$
 
 Como a variância é conhecida, a estatística do teste é dada por $$Z = \frac{(\bar X_A - \bar X_B) - \Delta_0}{\sqrt{\sigma^2 \left(\frac{1}{n_A} + \frac{1}{n_B} \right)}}$$
 
-Se a hipótese nula é verdadeira, temos que $\Delta_0 = \mu_A - \mu_B = 0$ e $Z \sim N(0, 1).$.  
+Se a hipótese nula é verdadeira, temos que $\Delta_0 = \mu_A - \mu_B = 0$ e $Z \sim N(0, 1).$   
 Note que a hipótese alternativa é do tipo $\neq$, então o teste é bilateral.
 
 
 ## Exemplo: Tecidos {.build}
 
 Cálculo da estatística do teste:
-$$z_obs = \frac{(\bar x_A - \bar x_B) - \Delta_0}{\sqrt{\sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}} = \frac{(`r xbar` - `r ybar`) - `r Delta0`}{\sqrt{`r sigma2` \left(\frac{1}{`r n`} + \frac{1}{`r m`} \right)}} =  `r zobs`$$
+$$z_{obs} = \frac{(\bar x_A - \bar x_B) - \Delta_0}{\sqrt{\sigma^2 \left(\frac{1}{n} + \frac{1}{m} \right)}} = \frac{(`r xbar` - `r ybar`) - `r Delta0`}{\sqrt{`r sigma2` \left(\frac{1}{`r n`} + \frac{1}{`r m`} \right)}} =  `r zobs`$$
 
 <br />
-Como é um teste bilateral, o valor de p é dado por:
-$$\mbox{valor-p} = P(|Z| \geq |z_{obs}|) = P(|Z| \geq `r abs(zobs)`) = 2 P(Z \leq - `r abs(zobs)`) = `r valorp`$$ 
+Como é um teste bilateral, o p-valor é dado por:
+$$\mbox{p-valor} = P(|Z| \geq |z_{obs}|) = P(|Z| \geq `r abs(zobs)`) = 2 P(Z \leq - `r abs(zobs)`) = `r valorp`$$ 
 
 Para um nível de significância $\alpha=0.05$: Como p-valor = $`r valorp` > \alpha=0.05$, não temos evidência para rejeitar $H_{0}: \mu_A = \mu_B$.
 
@@ -494,9 +494,9 @@ Vamos assumir agora que a variância populacional não fosse conhecida.
 
 Assumindo ainda que as variâncias são iguais mas **desconhecidas**, vamos então estimar a variância amostral combinada.
 
-Sabendo que $s_1^2=`r sigma21`$, $s_2^2=`r sigma22`$ e $n=m=`r n`$ temos:
+Sabendo que $S_1^2=`r sigma21`$, $S_2^2=`r sigma22`$ e $n=m=`r n`$ temos:
 $$\begin{aligned}
-s_p^2 &= \frac{(n-1)s_1^2 + (m-1)s_2^2}{n+m-2}\\
+S_p^2 &= \frac{(n-1)S_1^2 + (m-1)S_2^2}{n+m-2}\\
 &= \frac{(`r n`-1) `r sigma21` + (`r m`-1)`r sigma22`}{`r n` + `r m` - 2} \\
 &= `r s2p`
 \end{aligned}$$
@@ -508,11 +508,9 @@ Nesse caso, a estatística do teste, sob $H_0$, é dada por:
 $$T = \frac{\bar X_A - \bar X_B}{\sqrt{S_p^2 \left(\frac{1}{n_A} + \frac{1}{n_B} \right)}}\sim t_{n+m-2}$$
 
 Então,
-$$t_{obs} = \frac{\bar x_A - \bar x_B}{\sqrt{s_p^2 \left(\frac{1}{n_A} + \frac{1}{n_B} \right)}}  = \frac{`r xbar`-`r ybar`}{\sqrt{`r s2p` \left( \frac{1}{`r n`} + \frac{1}{`r m`} \right)}} = `r zobs2`$$
+$$t_{obs} = \frac{\bar x_A - \bar x_B}{\sqrt{S_p^2 \left(\frac{1}{n_A} + \frac{1}{n_B} \right)}}  = \frac{`r xbar`-`r ybar`}{\sqrt{`r s2p` \left( \frac{1}{`r n`} + \frac{1}{`r m`} \right)}} = `r zobs2`$$
 
-Para um nível de significância $\alpha = `r alpha`$, rejeitamos $H_0$  se $|t_{obs}| \geq t_{n+m-2,`r alpha/2`}$.
-
-No caso, $|t_{obs}| = `r abs(zobs2)` < `r zc2` = t_{`r n + m -2`,`r alpha/2`}$. Portanto, não temos evidências para rejeitar a hipótese de que as médias dos dois tecidos são iguais.
+Para um nível de significância $\alpha = `r alpha`$, rejeitamos $H_0$  se $|t_{obs}| \geq t_{n+m-2,`r alpha/2`}$. No caso, $|t_{obs}| = `r abs(zobs2)` < `r zc2` = t_{`r n + m -2`,`r alpha/2`}$. Portanto, não temos evidências para rejeitar a hipótese de que as médias dos dois tecidos são iguais.
 
 
 
@@ -567,7 +565,7 @@ em que $\hat p$  é a proporção de sucessos entre os $n_1 + n_2$ elementos amo
 Para testar $H_0: p_1-p_2 = 0$, calcula-se a estatística do teste
 $$Z = \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}(1 - \hat{p}) \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}} \sim N(0, 1)$$
 
-O valor de p e a conclusão se dá de acordo com a hipótese alternativa na tabela:
+O p-valor e a conclusão se dá de acordo com a hipótese alternativa na tabela:
 </font>
 
 Hipótese Alternativa  | Valor crítico para $\alpha$ | Valor de p
@@ -743,7 +741,7 @@ $$Z = \frac{\hat p_1 - \hat p_2}{\sqrt{\hat p(1 - \hat p) \left(\frac{1}{n_1} + 
 
 Para um nível de significância $\alpha = `r alpha`$, rejeitamos $H_0$ se $z_{obs} \leq -z_{`r alpha`}$. <br />No caso, $z_{obs} = `r zobs` > `r zc` = -z_{`r alpha`}$. Portanto, não temos evidências para rejeitar a hipótese de que as duas proporções são iguais.
 
-valor de p = $P(Z \leq z_{obs}) = P(Z \leq `r zobs`) = `r valorp` > \alpha$. Portanto, não rejeitamos $H_0$.
+p-valor = $P(Z \leq z_{obs}) = P(Z \leq `r zobs`) = `r valorp` > \alpha$. Portanto, não rejeitamos $H_0$.
 
 ## Leituras
 
