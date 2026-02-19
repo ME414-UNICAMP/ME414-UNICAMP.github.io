@@ -11,8 +11,8 @@ title: " "
 
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:-------------|:-----------------------------|:-----------------------------:|
-| **Turma B**  | Tatiana Benaglia |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=22072) |
-| **Turma E**  | Christophe F. Gallesco |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=22303) |
+| **Turma A**  | Mariela Pentón Machado |  [clique aqui]() |
+| **Turma C**  | Larissa Avila Matos    |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=4343) |
 
 <br />
 
@@ -22,11 +22,12 @@ Os atendimentos de PEDs e PADs serão feitos de forma presencial, <!-- PEDs ser�
 
 | Monitor                           | Horários                        |  Local             |  
 |:----------------------------------|:--------------------------------|:-------------------|
-| José Matheus Saldanha Barcelos (PAD) | 3as-feiras das 13-14h | IMECC sala 223 |
-| José Matheus Saldanha Barcelos (PAD) | 5as-feiras das 13-14h | IMECC sala 223 |
-| Alexis Marichi Zela (PED) | 2as-feiras das 12-13h | PB07 |
-| Alexis Marichi Zela (PED) | 6as-feiras das 12-13h | PB07 |
-                
+| Arthur Felipe Chagas Sales (PAD) | Xas-feiras das XX-XXh | IMECC sala XX |
+| Arthur Felipe Chagas Sales (PAD) | Xas-feiras das XX-XXh | IMECC sala XX |
+| Pablo Adrian Zuñiga Guaman (PED) | Xas-feiras das XX-XXh | XX |
+| Pablo Adrian Zuñiga Guaman (PED) | Xas-feiras das XX-XXh | XX |
+| Lucas Luiz de Castro Gomes (PED) | Xas-feiras das XX-XXh | XX |
+| Lucas Luiz de Castro Gomes (PED) | Xas-feiras das XX-XXh | XX |
 
 <!-- Contatos para agendamento de atendimentos (adicionar o símbolo arroba seguido de dac <ponto> unicamp <ponto> br:  -->
 
