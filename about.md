@@ -7,7 +7,7 @@ title: " "
 
 <br/>
 
-### ME414 - Turmas do 2º Semestre de 2025
+### ME414 - Turmas do 1º Semestre de 2026
 
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:-------------|:-----------------------------|:-----------------------------:|
