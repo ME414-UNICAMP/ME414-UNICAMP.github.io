@@ -11,7 +11,7 @@ title: " "
 
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:-------------|:-----------------------------|:-----------------------------:|
-| **Turma A**  | Mariela Pentón Machado |  [clique aqui]() |
+| **Turma A**  | Mariela Pentón Machado |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=5865) |
 | **Turma C**  | Larissa Avila Matos    |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=4343) |
 
 <br />
