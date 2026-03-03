@@ -24,8 +24,8 @@ Os atendimentos de PEDs e PADs serão feitos de forma presencial, <!-- PEDs ser�
 |:----------------------------------|:--------------------------------|:-------------------|
 | Arthur Felipe Chagas Sales (PAD) | Terças-feiras das 18h às 19h | CB06 |
 | Arthur Felipe Chagas Sales (PAD) | Quartas-feiras das 18 às 19h | CB06 |
-| Pablo Adrian Zuñiga Guaman (PED) | Segundas-feiras das 18 às 19h | XX |
-| Pablo Adrian Zuñiga Guaman (PED) | Quintas-feiras das 18 às 19h | XX |
+| Pablo Adrian Zuñiga Guaman (PED) | Segundas-feiras das 18 às 19h | CB01 |
+| Pablo Adrian Zuñiga Guaman (PED) | Quintas-feiras das 18 às 19h | CB01 |
 | Lucas Luiz de Castro Gomes (PED) | Terças-feiras das 13 às 14h | CB04 |
 | Lucas Luiz de Castro Gomes (PED) | Quintas-feiras das 13 às 14h | CB04 |
 
