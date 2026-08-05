@@ -5,7 +5,9 @@ title: ""
 
 # Cronograma
 
-Este cronograma é válido exclusivamente para as **Turmas A e C** (profs. Mariela e Larissa, respectivamente) do 1S2026.
+<!-- Este cronograma é válido exclusivamente para as **Turmas A e C** (profs. Mariela e Larissa, respectivamente) do 1S2026. -->
+
+Este cronograma é válido para as turmas de ME414 do 2S2026. 
 
 Os docentes seguirão este programa, mas não necessariamente estarão trabalhando conteúdos idênticos na mesma semana cronológica. O conteúdo disponível neste site pode ser atualizado a qualquer momento. 
 

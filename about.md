@@ -7,12 +7,15 @@ title: " "
 
 <br/>
 
-### ME414 - Turmas do 1º Semestre de 2026
+### ME414 - Turmas do 2º Semestre de 2026
 
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:-------------|:-----------------------------|:-----------------------------:|
-| **Turma A**  | Mariela Pentón Machado |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=5865) |
-| **Turma C**  | Larissa Avila Matos    |  [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=4343) |
+| **Turma A**  | Larissa Avila Matos          | [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=9758) |
+| **Turma B**  | Alex Rodrigo Dos Santos Sousa| [clique aqui]() |
+| **Turma C**  | Rafael Pimentel Maia         | [clique aqui]() |
+| **Turma D**  | Mariana Rodrigues Motta      | [clique aqui]() |
+| **Turma E**  | Hildete Prisco Pinheiro      | [clique aqui]() |
 
 <br />
 
@@ -22,12 +25,8 @@ Os atendimentos de PEDs e PADs serão feitos de forma presencial, <!-- PEDs ser�
 
 | Monitor                           | Horários                        |  Local             |  
 |:----------------------------------|:--------------------------------|:-------------------|
-| Arthur Felipe Chagas Sales (PAD) | Terças-feiras das 18h às 19h | CB06 |
-| Arthur Felipe Chagas Sales (PAD) | Quartas-feiras das 18 às 19h | CB06 |
-| Pablo Adrian Zuñiga Guaman (PED) | Segundas-feiras das 18 às 19h | CB01 |
-| Pablo Adrian Zuñiga Guaman (PED) | Quintas-feiras das 18 às 19h | CB01 |
-| Lucas Luiz de Castro Gomes (PED) | Terças-feiras das 13 às 14h | CB04 |
-| Lucas Luiz de Castro Gomes (PED) | Quintas-feiras das 13 às 14h | CB04 |
+<!-- | Arthur Felipe Chagas Sales (PAD) | Terças-feiras das 18h às 19h | CB06 | -->
+
 
 <!-- Contatos para agendamento de atendimentos (adicionar o símbolo arroba seguido de dac <ponto> unicamp <ponto> br:  -->
 
