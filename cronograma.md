@@ -22,6 +22,7 @@ Os vídeos foram produzidos durante a pandemia da Covid-19 e podem ser utilizado
 * Profa. Samara Kiihl (Partes 14 - 20)
 * Prof. Mauricio Zevallos (Partes 21 - 24)
 
+</br>
 
 | Semana  | Conteúdo | Slides em PDF   | Vídeos  | Extras |
 |:------:| :-------:| :---------------:|:-------:|:------:|
@@ -42,5 +43,5 @@ Os vídeos foram produzidos durante a pandemia da Covid-19 e podem ser utilizado
 |   15   |  Regressão Linear Simples e Análise de Variância |[Regressão](http://me414-unicamp.github.io/aulas/slides/parte23/Regressao.pdf) [ANOVA](http://me414-unicamp.github.io/aulas/slides/parte24/ANOVA.pdf)  | [Parte23](https://bit.ly/3kx7JWr) [Parte24](https://bit.ly/3n9UPiP) | [GRETL 2](https://drive.google.com/file/d/1p6fRPlJ2ydrSNTInoLGhSyyQISgBUh7W/view?usp=sharing)
 |   16   |  Aderência, Homogeneidade e Independência |[Aderência](https://drive.google.com/file/d/1cLBMSr92sMHiZep7AGXeGMjD1MLli76K/view?usp=sharing) [Homogeneidade e Independência](https://drive.google.com/file/d/15tNYzJEvkS-1kZVLWJTT7-yuzWu830dE/view?usp=sharing)  | [Parte21](https://bit.ly/3CEM58J) [Parte22](https://bit.ly/3qVFgha) |
 |   17   | **Prova 2** (data exata está no PDD da sua turma)  |   
-|   -    | Semana de Estudos |
+|   -    | Semana de Estudos | 
 |   -    | **Exame** (data exata está no PDD da sua turma) |
