@@ -25,7 +25,9 @@ Os atendimentos de PEDs e PADs serão feitos de forma presencial, <!-- PEDs ser�
 
 | Monitor                           | Horários                        |  Local             |  
 |:----------------------------------|:--------------------------------|:-------------------|
-<!-- | Arthur Felipe Chagas Sales (PAD) | Terças-feiras das 18h às 19h | CB06 | -->
+| Marília Gabriela Rocha (PED) |  |  |
+
+<!--  Arthur Felipe Chagas Sales (PAD) | Terças-feiras das 18h às 19h | CB06  -->
 
 
 <!-- Contatos para agendamento de atendimentos (adicionar o símbolo arroba seguido de dac <ponto> unicamp <ponto> br:  -->

@@ -22,7 +22,7 @@ Os vídeos foram produzidos durante a pandemia da Covid-19 e podem ser utilizado
 * Profa. Samara Kiihl (Partes 14 - 20)
 * Prof. Mauricio Zevallos (Partes 21 - 24)
 
-</br>
+<br>
 
 | Semana  | Conteúdo | Slides em PDF   | Vídeos  | Extras |
 |:------:| :-------:| :---------------:|:-------:|:------:|
