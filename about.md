@@ -14,8 +14,8 @@ title: " "
 | **Turma A**  | Larissa Avila Matos          | [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=9758) |
 | **Turma B**  | Alex Rodrigo Dos Santos Sousa| [clique aqui]() |
 | **Turma C**  | Rafael Pimentel Maia         | [clique aqui]() |
-| **Turma D**  | Mariana Rodrigues Motta      | [clique aqui]() |
-| **Turma E**  | Hildete Prisco Pinheiro      | [clique aqui]() |
+| **Turma D**  | Mariana Rodrigues Motta      | [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=4251) |
+| **Turma E**  | Hildete Prisco Pinheiro      | [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=9504) |
 
 <br />
 
