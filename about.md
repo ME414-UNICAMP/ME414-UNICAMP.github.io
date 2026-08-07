@@ -25,10 +25,10 @@ Os atendimentos de PEDs e PADs serão feitos de forma presencial, <!-- PEDs ser�
 
 | Monitor                           | Horários                        |  Local             |  
 |:----------------------------------|:--------------------------------|:-------------------|
-| Pablo Adrian Zuñiga Guaman (PED)  | Segundas-feiras das 13h às 14h |  |
+| Pablo Adrian Zuñiga Guaman (PED)  | Segundas-feiras das 18h às 19h |  |
 | Marília Gabriela Rocha (PED)      | Terças-feiras das 18h às 19h   |  |
 | Marília Gabriela Rocha (PED)      | Quartas-feiras das 13h às 14h  |  |
-| Pablo Adrian Zuñiga Guaman (PED)  | Quintas-feiras das 18h às 19Xh |  |
+| Pablo Adrian Zuñiga Guaman (PED)  | Quintas-feiras das 13h às 14h |  |
 | Luis Davi de Araújo Pereira (PED) |                                |  |
 
 
