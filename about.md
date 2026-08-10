@@ -12,7 +12,7 @@ title: " "
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:-------------|:-----------------------------|:-----------------------------:|
 | **Turma A**  | Larissa Avila Matos          | [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=9758) |
-| **Turma B**  | Alex Rodrigo Dos Santos Sousa| [clique aqui]() |
+| **Turma B**  | Alex Rodrigo Dos Santos Sousa| [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=9967) |
 | **Turma C**  | Rafael Pimentel Maia         | [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=9429) |
 | **Turma D**  | Mariana Rodrigues Motta      | [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=4251) |
 | **Turma E**  | Hildete Prisco Pinheiro      | [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=9504) |
@@ -26,10 +26,11 @@ Os atendimentos de PEDs e PADs serão feitos de forma presencial, <!-- PEDs ser�
 | Monitor                           | Horários                        |  Local             |  
 |:----------------------------------|:--------------------------------|:-------------------|
 | Pablo Adrian Zuñiga Guaman (PED)  | Segundas-feiras das 18h às 19h |  |
+| Luis Davi de Araújo Pereira (PED) | Terças-feiras das 13h às 14h   |  |
 | Marília Gabriela Rocha (PED)      | Terças-feiras das 18h às 19h   |  |
 | Marília Gabriela Rocha (PED)      | Quartas-feiras das 13h às 14h  |  |
-| Pablo Adrian Zuñiga Guaman (PED)  | Quintas-feiras das 13h às 14h |  |
-| Luis Davi de Araújo Pereira (PED) |                                |  |
+| Pablo Adrian Zuñiga Guaman (PED)  | Quintas-feiras das 13h às 14h  |  |
+| Luis Davi de Araújo Pereira (PED) | Quintas-feiras das 18h às 19h  |  |
 
 
 
