@@ -12,9 +12,9 @@ title: " "
 | ME414        | Professor Responsável        |  Moodle da Disciplina |  
 |:-------------|:-----------------------------|:-----------------------------:|
 | **Turma A**  | Larissa Avila Matos          | [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=9758) |
-| **Turma B**  | Alex Rodrigo Dos Santos Sousa| [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=9967) |
+| **Turma B**  | Alex Rodrigo dos Santos Sousa| [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=9967) |
 | **Turma C**  | Rafael Pimentel Maia         | [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=9429) |
-| **Turma D**  | Mariana Rodrigues Motta      | [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=4251) |
+| **Turma D**  | Mariana Rodrigues Motta      | [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=10041) |
 | **Turma E**  | Hildete Prisco Pinheiro      | [clique aqui](https://moodle.ggte.unicamp.br/course/view.php?id=9504) |
 
 <br />
