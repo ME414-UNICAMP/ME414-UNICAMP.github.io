@@ -26,9 +26,9 @@ Os atendimentos de PEDs e PADs serão feitos de forma presencial, <!-- PEDs ser�
 | Monitor                           | Horários                        |  Local             |  
 |:----------------------------------|:--------------------------------|:-------------------|
 | Pablo Adrian Zuñiga Guaman (PED)  | Segundas-feiras das 18h às 19h |  |
-| Marília Gabriela Rocha (PED)      | Terças-feiras das 13h às 14h   |  |
+| Marília Gabriela Rocha (PED)      | Terças-feiras das 13h às 14h   | Sala 222 - IMECC |
 | Luis Davi de Araújo Pereira (PED) | Terças-feiras das 18h às 19h   |  |
-| Marília Gabriela Rocha (PED)      | Quartas-feiras das 13h às 14h  |  |
+| Marília Gabriela Rocha (PED)      | Quartas-feiras das 13h às 14h  | Sala 222 - IMECC |
 | Pablo Adrian Zuñiga Guaman (PED)  | Quintas-feiras das 13h às 14h  |  |
 | Luis Davi de Araújo Pereira (PED) | Quintas-feiras das 18h às 19h  |  |
 
